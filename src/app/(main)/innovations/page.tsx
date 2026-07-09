@@ -42,7 +42,7 @@ const AboutSection = () => {
           objectFit="cover"
           priority
         />
-        <div className="absolute inset-0 bg-black/60"></div>
+        <div className="absolute inset-0 bg-[#0A3161]/60"></div>
       </div>
       <div className="relative z-10 container mx-auto px-4 text-center">
         <h2 className="text-[40px] pb-12 font-extrabold tracking-tight text-white mb-8">
@@ -51,7 +51,7 @@ const AboutSection = () => {
 
         {/* === 3. CONTENT WRAPPER === */}
         <div className="relative z-10 container mx-auto px-4     text-center">
-          <p className="text-[20px]   font-semibold uppercase tracking-widest text-[#cc2221] mb-2">
+          <p className="text-[20px]   font-semibold uppercase tracking-widest text-[#B31942] mb-2">
             MEGA FOUNDRIES - FOR THE INDUSTRY
           </p>
           {/* MOBILE CARD EFFECT: Adds a white glass box on mobile only so text is readable */}
@@ -69,7 +69,7 @@ const AboutSection = () => {
             </h1>
 
             {/* Quote */}
-            <p className="text-[14px] md:text-[22px] text-[#cc2221] font-medium italic mt-4 mb-6">
+            <p className="text-[14px] md:text-[22px] text-[#B31942] font-medium italic mt-4 mb-6">
               ROLLS ROYCE FROM BRITIAN
             </p>
 
@@ -96,3 +96,4 @@ const AboutSection = () => {
 
 
 export default AboutSection
+

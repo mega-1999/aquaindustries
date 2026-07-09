@@ -114,7 +114,7 @@ export default function SettingsPage() {
 
             </CardContent>
             <CardFooter className="border-t px-6 py-4">
-              <Button className="bg-[#cc2221] hover:bg-red-700">Save Changes</Button>
+              <Button className="bg-[#B31942] hover:bg-red-700">Save Changes</Button>
             </CardFooter>
           </Card>
         </TabsContent>
@@ -166,7 +166,7 @@ export default function SettingsPage() {
                 )}
             </CardContent>
             <CardFooter className="border-t px-6 py-4">
-              <Button type="submit" form="pwd-form" className="bg-[#cc2221] hover:bg-red-700" disabled={isLoading}>
+              <Button type="submit" form="pwd-form" className="bg-[#B31942] hover:bg-red-700" disabled={isLoading}>
                 {isLoading && <Loader2 className="animate-spin mr-2 h-4 w-4" />}
                 Change Password
               </Button>

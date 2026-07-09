@@ -70,10 +70,10 @@ export function MegaStories() {
     <section className="w-full px-4 md:px-8 py-12 bg-white">
 
       <div className="flex items-center justify-between mb-8">
-        <h2 className="text-3xl font-bold tracking-tight text-[#cc2221] uppercase border-l-4 border-black pl-4">
+        <h2 className="text-3xl font-bold tracking-tight text-[#B31942] uppercase border-l-4 border-black pl-4">
           Casting zone
         </h2>
-        <Button variant="outline" className="hidden sm:flex group border-black text-black hover:bg-zinc-100">
+        <Button variant="outline" className="hidden sm:flex group border-black text-[#0A3161] hover:bg-zinc-100">
           View All Categories <ArrowRight className="ml-2 h-4 w-4 transition-transform group-hover:translate-x-1" />
         </Button>
       </div>
@@ -120,12 +120,12 @@ export function MegaStories() {
                 {/* Content Wrapper */}
                 <div className="absolute bottom-0 left-0 pt-8 z-20 w-full bg-white/90 backdrop-blur-sm border-t border-gray-100">
                   <div className="flex justify-between items-start">
-                    <Badge className="mb-2 bg-transparent border border-[#cc2221] text-[#cc2221] hover:bg-[#cc2221] hover:text-white rounded-none px-2 py-0.5">
+                    <Badge className="mb-2 bg-transparent border border-[#B31942] text-[#B31942] hover:bg-[#B31942] hover:text-white rounded-none px-2 py-0.5">
                       TOP SELLER
                     </Badge>
                   </div>
 
-                  <h3 className="text-2xl md:text-3xl font-black leading-tight text-[#cc2221] mb-2 uppercase tracking-tight">
+                  <h3 className="text-2xl md:text-3xl font-black leading-tight text-[#B31942] mb-2 uppercase tracking-tight">
                     {heroProduct.title}
                   </h3>
                   
@@ -168,15 +168,15 @@ export function MegaStories() {
 
                   <CardContent className="flex-1 p-4 flex flex-col justify-between bg-white">
                     <div>
-                      <h4 className="font-bold text-sm md:text-base leading-snug line-clamp-2 text-[#cc2221] group-hover:text-orange-600 transition-colors uppercase ">
+                      <h4 className="font-bold text-sm md:text-base leading-snug line-clamp-2 text-[#B31942] group-hover:text-orange-600 transition-colors uppercase ">
                         {product.title}
                       </h4>
                     </div>
                     <div className="flex items-center justify-between text-xs text-muted-foreground mt-3 pt-3 border-t border-zinc-100">
-                      <span className="font-medium text-black flex items-center gap-1">
+                      <span className="font-medium text-[#0A3161] flex items-center gap-1">
                         <Icon className="h-3 w-3" /> {product.brand}
                       </span>
-                      <span className="font-bold text-black bg-zinc-100 px-2 py-1">
+                      <span className="font-bold text-[#0A3161] bg-zinc-100 px-2 py-1">
                         {product.price}
                       </span>
                     </div>

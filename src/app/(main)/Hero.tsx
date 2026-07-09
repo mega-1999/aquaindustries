@@ -42,7 +42,7 @@ export const Hero = ({
   }, [subIndex, index, reverse]);
 
   return (
-    <header className="relative w-full overflow-hidden flex items-center justify-center min-h-[600px] md:min-h-[800px] bg-black">
+    <header className="relative w-full overflow-hidden flex items-center justify-center min-h-[600px] md:min-h-[800px] bg-[#0A3161]">
 
       {/* 1. HERO VIDEO BACKGROUND - FIXED TO 100% OPACITY */}
       <video
@@ -56,8 +56,8 @@ export const Hero = ({
       </video>
 
       {/* Ambient Gradient Overlays */}
-      <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-black/50 z-0 pointer-events-none" />
-      <div className="absolute inset-0 bg-[#cc2221]/5 z-0 pointer-events-none mix-blend-color" />
+      <div className="absolute inset-0 bg-gradient-to-t from-[#0A3161]/80 via-[#0A3161]/20 to-[#0A3161]/50 z-0 pointer-events-none" />
+      <div className="absolute inset-0 bg-[#B31942]/5 z-0 pointer-events-none mix-blend-color" />
 
       {/* 2. FLUID EDGES CONTAINER - SHIFTED CONTENT UP via pb-24 md:pb-36 */}
       <div className="relative z-10 w-full mx-auto px-4 sm:px-6 lg:px-10 pt-12 pb-48 md:pb-60">
@@ -67,7 +67,7 @@ export const Hero = ({
           <div className="lg:col-span-8 text-left space-y-6">
  
             {/* Meta Tag Block */}
-            <div className="inline-block text-xs text-white tracking-[0.25em] font-black bg-[#cc2221] border border-[#cc2221] shadow-[0_0_20px_rgba(204,34,33,0.4)] px-4 py-2 uppercase">
+            <div className="inline-block text-xs text-white tracking-[0.25em] font-black bg-[#B31942] border border-[#B31942] shadow-[0_0_20px_rgba(204,34,33,0.4)] px-4 py-2 uppercase">
               MEGA FOUNDRIES | Global Industrial Hub
             </div>
 
@@ -92,7 +92,7 @@ export const Hero = ({
                   <motion.span
                     animate={{ opacity: [1, 0] }}
                     transition={{ repeat: Infinity, duration: 0.8 }}
-                    className="w-1.5 h-10 sm:h-14 md:h-16 bg-[#cc2221] ml-3 shadow-[0_0_15px_#cc2221] shrink-0 inline-block"
+                    className="w-1.5 h-10 sm:h-14 md:h-16 bg-[#B31942] ml-3 shadow-[0_0_15px_#B31942] shrink-0 inline-block"
                   />
                 </span>
               </span>
@@ -101,7 +101,7 @@ export const Hero = ({
           </div>
 
           {/* RIGHT SIDE ACTION PANEL - SHIFTED UP via lg:mt-4 */}
-          <div className="lg:col-span-4 flex flex-col items-center lg:items-end justify-center text-center lg:text-right space-y-6 lg:mt-4 w-full">
+          <div className="lg:col-span-4 flex flex-col items-center lg:items-end pr-12 justify-center text-center lg:text-right space-y-6 lg:mt-4 w-full">
 
             <div className="w-full">
               <span className="block text-2xl sm:text-3xl font-black tracking-tighter uppercase italic text-white drop-shadow-[0_4px_12px_rgba(204,34,33,0.5)]">
@@ -110,11 +110,11 @@ export const Hero = ({
             </div>
 
             <div className="flex flex-col gap-3 w-full max-w-xs">
-              <Button className="w-full bg-[#cc2221] hover:bg-[#b01e1d] text-white font-black uppercase tracking-widest h-12 text-xs rounded-none shadow-[0_4px_20px_rgba(204,34,33,0.3)] transition-all duration-200 border-none">
+              <Button className="w-full bg-[#B31942] hover:bg-[#8f1435] text-white font-black uppercase tracking-widest h-12 text-xs rounded-none shadow-[0_4px_20px_rgba(204,34,33,0.3)] transition-all duration-200 border-none">
                 Explore Capabilities
               </Button>
 
-              <Button variant="outline" asChild className="w-full border-2 border-white text-white bg-transparent hover:bg-white hover:text-black font-black uppercase tracking-widest h-12 text-xs rounded-none transition-all duration-200">
+              <Button variant="outline" asChild className="w-full border-2 border-white text-white bg-transparent hover:bg-white hover:text-[#0A3161] font-black uppercase tracking-widest h-12 text-xs rounded-none transition-all duration-200">
                 <Link href="/sellerHomepage">Succeed With Us</Link>
               </Button>
             </div>
@@ -125,7 +125,7 @@ export const Hero = ({
       </div>
 
       {/* Base Identity Accent Bar */}
-      <div className="absolute bottom-0 left-0 w-full h-2 bg-gradient-to-r from-[#cc2221] via-black to-[#cc2221] z-20"></div>
+      <div className="absolute bottom-0 left-0 w-full h-2 bg-gradient-to-r from-[#B31942] via-[#0A3161] to-[#B31942] z-20"></div>
     </header>
   );
 };

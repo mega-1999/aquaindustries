@@ -69,7 +69,7 @@ const Footer = () => {
 
           <div className="flex flex-col justify-evenly gap-16 space-y-6">
             <div>
-              <h3 className="text-[#cc2221] font-bold uppercase tracking-wider text-sm border-b border-[#cc2221]/30 pb-2 w-fit">
+              <h3 className="text-[#B31942] font-bold uppercase tracking-wider text-sm border-b border-[#B31942]/30 pb-2 w-fit">
                 USA Operations
               </h3>
 
@@ -102,10 +102,10 @@ const Footer = () => {
               {/* Added Mobile Number with Link */}
               <p className='mt-4'>
                 <a
-                  href="tel:+15127828880"
+                  href="tel:3077887700"
                   className="hover:text-white transition-colors duration-200"
                 >
-                  +1 (512) 782-8880
+                  307 788 7700
                 </a>
               </p>
             </div>
@@ -117,7 +117,7 @@ const Footer = () => {
             <div className="flex  ">
               <div className="bg-white p-2 rounded-lg w-80 h-36 flex items-center justify-center shadow-md hover:scale-105 transition-transform">
                 <Link href={'/'} className="w-full h-full relative">
-                  <Image src={'/MEGA INDUSTRIES2.png'} alt='Mega Industries' fill className="object-contain" />
+                  <Image src={'/MIL.png'} alt='Mega Industries' fill className="object-contain" />
                 </Link>
               </div>
             </div>
@@ -126,7 +126,7 @@ const Footer = () => {
           {/* --- COL 5: CANADA OPERATIONS (Logos + Info + Subscribe) --- */}
           <div className="flex items-end justify-evenly gap-16 flex-col space-y-6">
             <div>
-              <h3 className="text-[#cc2221] text-left font-bold uppercase tracking-wider text-sm border-b border-[#cc2221]/30 pb-2 w-fit">
+              <h3 className="text-[#B31942] text-left font-bold uppercase tracking-wider text-sm border-b border-[#B31942]/30 pb-2 w-fit">
                 Canada Operations
               </h3>
 
@@ -153,17 +153,17 @@ const Footer = () => {
 
             <div>
               <div className="text-sm space-y-1 text-gray-400">
-                <p>ONE YOUNGE STREET</p>
-                <p>TORONTO, ONTARIO M5E 1R4 CANADA</p>
+                <p>18 King St E Ste 1400</p>
+                <p>Toronto, ON M5C IC4, CANADA</p>
 
               </div>
               {/* Added Mobile Number with Link */}
               <p className='mt-4'>
                 <a
-                  href="tel:+14388059990"
+                  href="tel:7057105505"
                   className="hover:text-white transition-colors duration-200"
                 >
-                  +1 (438) 805-9990
+                  705 710 5505
                 </a>
               </p>
             </div>
@@ -192,7 +192,7 @@ const Footer = () => {
                       <li key={link.href}>
                         <Link
                           href={link.href}
-                          className="text-xs text-gray-400 hover:text-[#cc2221] transition-colors block"
+                          className="text-xs text-gray-400 hover:text-[#B31942] transition-colors block"
                         >
                           {link.label}
                         </Link>
@@ -222,9 +222,9 @@ const Footer = () => {
               <Input
                 type="email"
                 placeholder="Enter Email Address"
-                className="rounded-r-none border-gray-700 bg-gray-800/50 text-white focus:border-[#cc2221] h-10 text-sm"
+                className="rounded-r-none border-gray-700 bg-gray-800/50 text-white focus:border-[#B31942] h-10 text-sm"
               />
-              <Button className="rounded-l-none bg-[#cc2221] hover:bg-red-700 text-white font-bold h-10 px-6 transition-colors">
+              <Button className="rounded-l-none bg-[#B31942] hover:bg-red-700 text-white font-bold h-10 px-6 transition-colors">
                 Submit
               </Button>
             </div>
@@ -238,7 +238,7 @@ const Footer = () => {
                 <Link
                   key={i}
                   href={'/'}
-                  className='p-2.5 border border-gray-700 rounded-full text-gray-400 hover:border-[#cc2221] hover:text-white hover:bg-[#cc2221] transition-all duration-300'
+                  className='p-2.5 border border-gray-700 rounded-full text-gray-400 hover:border-[#B31942] hover:text-white hover:bg-[#B31942] transition-all duration-300'
                 >
                   <Icon className='w-4 h-4' />
                 </Link>
@@ -248,7 +248,7 @@ const Footer = () => {
 
         </div>
       </div>
-      <div className="border-t border-red-800 w-full px-4 sm:px-6 lg:px-10 py-6 pb-10 bg-[#cc2221]">
+      <div className="border-t border-red-800 w-full px-4 sm:px-6 lg:px-10 py-6 pb-10 bg-[#B31942]">
         <div className="flex justify-center items-center">
           <p className="text-lg text-white font-medium">
             ©1999-2026 Copyright <strong>Mega Industries & Groups</strong> — All Rights Reserved.

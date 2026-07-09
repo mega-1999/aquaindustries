@@ -46,7 +46,7 @@ export default function CommonQuestions() {
         {/* === HEADER === */}
         <div className="text-center mb-12">
           <h2 className="text-3xl md:text-4xl font-bold text-gray-900">
-            Common <span className="text-[#cc2221]">Questions</span>
+            Common <span className="text-[#B31942]">Questions</span>
           </h2>
         </div>
 
@@ -64,7 +64,7 @@ export default function CommonQuestions() {
                   className={`
                     w-full flex items-center justify-between p-5 text-left transition-all duration-200
                     bg-gray-50 hover:bg-gray-100
-                    border-l-[6px] ${isOpen ? 'border-[#cc2221]' : 'border-[#cc2221]'} 
+                    border-l-[6px] ${isOpen ? 'border-[#B31942]' : 'border-[#B31942]'} 
                     /* Note: The image shows red border for all items, even closed ones */
                   `}
                 >

@@ -67,7 +67,7 @@ export default async function CategoryDetailPage({ params }: PageProps) {
             className="object-cover"
             priority
           />
-          <div className="absolute inset-0 bg-black/60"></div>
+          <div className="absolute inset-0 bg-[#0A3161]/60"></div>
           <div className="absolute inset-0 flex flex-col items-center justify-center text-center px-4">
             <h1 className="text-4xl md:text-6xl font-bold text-white mb-4">{mainCategory.label}</h1>
             <div className="flex items-center text-white/80 text-sm font-medium">
@@ -97,16 +97,16 @@ export default async function CategoryDetailPage({ params }: PageProps) {
                       fill
                       className="object-cover transition-transform duration-500 group-hover:scale-110"
                     />
-                    <div className="absolute inset-0 bg-black/0 group-hover:bg-black/10 transition-colors duration-300"></div>
+                    <div className="absolute inset-0 bg-[#0A3161]/0 group-hover:bg-[#0A3161]/10 transition-colors duration-300"></div>
                   </div>
                   <div className="p-6 flex flex-col grow">
-                    <h3 className="font-bold text-gray-900 text-lg mb-3 group-hover:text-[#cc2221] transition-colors">
+                    <h3 className="font-bold text-gray-900 text-lg mb-3 group-hover:text-[#B31942] transition-colors">
                       {sub.name}
                     </h3>
                     <p className="text-sm text-gray-500 leading-relaxed line-clamp-3 mb-4">
                       {sub.description}
                     </p>
-                    <span className="text-[#cc2221] text-xs font-bold uppercase tracking-wider mt-auto">
+                    <span className="text-[#B31942] text-xs font-bold uppercase tracking-wider mt-auto">
                       View Products &rarr;
                     </span>
                   </div>
@@ -144,7 +144,7 @@ export default async function CategoryDetailPage({ params }: PageProps) {
 
           {/* Back Button & Title */}
           <div className="mb-8">
-            <Link href={`/category/${subCategoryData.parentId}`} className="inline-flex items-center text-sm text-gray-500 hover:text-[#cc2221] mb-4">
+            <Link href={`/category/${subCategoryData.parentId}`} className="inline-flex items-center text-sm text-gray-500 hover:text-[#B31942] mb-4">
               <ArrowLeft className="w-4 h-4 mr-1" /> Back to {subCategoryData.parent}
             </Link>
             <h1 className="text-3xl md:text-4xl font-bold text-gray-900">
@@ -160,14 +160,14 @@ export default async function CategoryDetailPage({ params }: PageProps) {
                 <Link
                   key={index}
                   href={`/products/${item.toLowerCase().replace(/ /g, '-').replace(/[^\w-]+/g, '')}`}
-                  className="bg-white p-6 rounded-xl border border-gray-200 hover:border-[#cc2221] hover:shadow-md transition-all group flex flex-col justify-between"
+                  className="bg-white p-6 rounded-xl border border-gray-200 hover:border-[#B31942] hover:shadow-md transition-all group flex flex-col justify-between"
                 >
                   <div className='flex justify-evenly'>
                     <div>
-                      <div className="w-12 h-12 bg-red-50 rounded-lg mb-4 text-[#cc2221]">
+                      <div className="w-12 h-12 bg-red-50 rounded-lg mb-4 text-[#B31942]">
                         <ChevronRight />
                       </div>
-                      <h3 className="font-bold text-lg text-gray-800 group-hover:text-[#cc2221] mb-2">
+                      <h3 className="font-bold text-lg text-gray-800 group-hover:text-[#B31942] mb-2">
                         {item}
                       </h3>
                     </div>
@@ -185,7 +185,7 @@ export default async function CategoryDetailPage({ params }: PageProps) {
             ) : (
               <div className="col-span-full py-12 text-center bg-white rounded-xl border border-dashed border-gray-300">
                 <p className="text-gray-500">No specific products listed under this category yet.</p>
-                <Link href="/contact" className="text-[#cc2221] font-bold mt-2 inline-block">Contact us for custom requirements &rarr;</Link>
+                <Link href="/contact" className="text-[#B31942] font-bold mt-2 inline-block">Contact us for custom requirements &rarr;</Link>
               </div>
             )}
           </div>

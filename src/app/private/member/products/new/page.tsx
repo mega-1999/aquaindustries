@@ -134,7 +134,7 @@ export default function NewProductPage() {
           <button
             onClick={handleSubmit(onSubmit)}
             disabled={isSubmitting}
-            className="flex items-center gap-2 px-6 py-2 text-sm font-medium text-white bg-[#cc2221] rounded-lg hover:bg-[#cc2221] disabled:opacity-50 disabled:cursor-not-allowed"
+            className="flex items-center gap-2 px-6 py-2 text-sm font-medium text-white bg-[#B31942] rounded-lg hover:bg-[#B31942] disabled:opacity-50 disabled:cursor-not-allowed"
           >
             {isSubmitting ? 'Saving...' : (
               <>
@@ -170,7 +170,7 @@ export default function NewProductPage() {
                   <label className="block text-sm font-medium text-gray-700 mb-1">Product Name *</label>
                   <input
                     {...register("productName", { required: true })}
-                    className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-[#cc2221] outline-none"
+                    className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-[#B31942] outline-none"
                     placeholder="e.g. Industrial Steel Valve"
                   />
                   {errors.productName && <span className="text-xs text-red-500">Name is required</span>}
@@ -181,7 +181,7 @@ export default function NewProductPage() {
                     <label className="block text-sm font-medium text-gray-700 mb-1">SKU *</label>
                     <input
                       {...register("sku", { required: true })}
-                      className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-[#cc2221] outline-none"
+                      className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-[#B31942] outline-none"
                       placeholder="INV-001"
                     />
                   </div>
@@ -200,7 +200,7 @@ export default function NewProductPage() {
                   <textarea
                     {...register("shortDescription")}
                     rows={4}
-                    className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-[#cc2221] outline-none"
+                    className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-[#B31942] outline-none"
                     placeholder="Brief summary of the product..."
                   />
                 </div>
@@ -219,7 +219,7 @@ export default function NewProductPage() {
                   <input
                     type="number" step="0.01"
                     {...register("pricing.unitPrice", { required: true, min: 0 })}
-                    className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-[#cc2221] outline-none"
+                    className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-[#B31942] outline-none"
                   />
                 </div>
                 <div>
@@ -227,7 +227,7 @@ export default function NewProductPage() {
                   <input
                     type="number" step="0.01"
                     {...register("pricing.salePrice")}
-                    className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-[#cc2221] outline-none"
+                    className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-[#B31942] outline-none"
                   />
                 </div>
                 <div>
@@ -284,7 +284,7 @@ export default function NewProductPage() {
                   <input
                     type="checkbox"
                     {...register("availability.inStock")}
-                    className="w-5 h-5 text-[#cc2221] rounded focus:ring-[#cc2221]"
+                    className="w-5 h-5 text-[#B31942] rounded focus:ring-[#B31942]"
                   />
                 </div>
 
@@ -293,7 +293,7 @@ export default function NewProductPage() {
                   <input
                     type="number"
                     {...register("availability.stockQuantity")}
-                    className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-[#cc2221] outline-none"
+                    className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-[#B31942] outline-none"
                   />
                 </div>
 
@@ -302,7 +302,7 @@ export default function NewProductPage() {
                   <input
                     type="number"
                     {...register("availability.leadTimeDays")}
-                    className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-[#cc2221] outline-none"
+                    className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-[#B31942] outline-none"
                   />
                 </div>
               </div>

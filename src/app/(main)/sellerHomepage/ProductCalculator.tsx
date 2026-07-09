@@ -49,7 +49,7 @@ export default function ProductCalculator() {
           <div className="text-center lg:text-left">
             <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-8 leading-tight">
               Simplify Complex Pricing with Our <br />
-              <span className="text-[#cc2221]">Built-in Product Calculator..</span>
+              <span className="text-[#B31942]">Built-in Product Calculator..</span>
             </h2>
             
             <div className="relative w-full max-w-md mx-auto lg:mx-0 aspect-square"> 
@@ -68,12 +68,12 @@ export default function ProductCalculator() {
                  
                 <div className="shrink-0">
                   <div className="w-12 h-12 bg-white rounded-lg border border-red-100 shadow-sm flex items-center justify-center group-hover:scale-110 transition-transform duration-300">
-                    <feature.icon className="w-6 h-6 text-[#cc2221]" strokeWidth={1.5} />
+                    <feature.icon className="w-6 h-6 text-[#B31942]" strokeWidth={1.5} />
                   </div>
                 </div>
  
                 <div>
-                  <h3 className="text-xl font-bold text-gray-900 mb-2 group-hover:text-[#cc2221] transition-colors">
+                  <h3 className="text-xl font-bold text-gray-900 mb-2 group-hover:text-[#B31942] transition-colors">
                     {feature.title}
                   </h3>
                   <p className="text-gray-600 text-sm leading-relaxed">

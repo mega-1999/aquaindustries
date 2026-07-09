@@ -12,25 +12,25 @@ interface ManifestPhase {
 
 const MANIFEST_STEPS: ManifestPhase[] = [
   {
-    icon: <Cpu className="w-5 h-5 text-[#cc2221]" />,
+    icon: <Cpu className="w-5 h-5 text-[#B31942]" />,
     label: "Phase 01 / Design Architecture",
     title: "Metallurgical CAD Engine",
     description: "Instant 3D rendering and structural finite element load simulation. Your custom casting concepts are parameterized and locked for production within hours, bypassing weeks of drafting backlog."
   },
   {
-    icon: <Flame className="w-5 h-5 text-[#cc2221]" />,
+    icon: <Flame className="w-5 h-5 text-[#B31942]" />,
     label: "Phase 02 / Advanced Melting",
     title: "Electric Arc Smart Burn",
     description: "Pure nodular graphite nodularization via real-time spectrometer verification. We adjust molecular carbon chains during liquid state transfer to ensure flawless consistency before pouring."
   },
   {
-    icon: <Zap className="w-5 h-5 text-[#cc2221]" />,
+    icon: <Zap className="w-5 h-5 text-[#B31942]" />,
     label: "Phase 03 / High Velocity Mold",
     title: "Automated Flaskless Casting",
     description: "High-pressure sand molding machines compress and cycle multi-ton forms instantly. Zero bottleneck pouring means your volume runs are pressed and chilled concurrently."
   },
   {
-    icon: <ShieldCheck className="w-5 h-5 text-[#cc2221]" />,
+    icon: <ShieldCheck className="w-5 h-5 text-[#B31942]" />,
     label: "Phase 04 / Destructive Stress Test",
     title: "Proof Load Verification",
     description: "Hydraulic crush beds subject product samples up to 90 tons of raw shear stress. Every deployment leaves our foundry stamped with verifiable Fe 50007 compliance."
@@ -46,19 +46,19 @@ export default function IndustrialManifest() {
         {/* Core Tagline Manifesto Header */}
         <div className="border-b border-zinc-900 pb-12 mb-20 flex flex-col xl:flex-row xl:items-end justify-between gap-8">
           <div className="space-y-4">
-            <span className="text-xs uppercase tracking-[0.4em] font-black text-[#cc2221] block">
+            <span className="text-xs uppercase tracking-[0.4em] font-black text-[#B31942] block">
               The Mega Foundries Speed-Matrix
             </span>
             <h2 className="text-4xl sm:text-6xl md:text-7xl font-black uppercase tracking-tighter leading-none">
               NOT ONE STEP BUT <br />
-              <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#cc2221] to-white">
+              <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#B31942] to-white">
                 ALL THE STEPS ON A FLASH
               </span>
             </h2>
           </div>
           
-          <div className="max-w-md bg-[#141414] border-l-2 border-[#cc2221] p-6 rounded-xs">
-            <p className="text-xs font-mono uppercase tracking-widest text-[#cc2221] mb-2 font-bold">
+          <div className="max-w-md bg-[#0A3161] border-l-2 border-[#B31942] p-6 rounded-xs">
+            <p className="text-xs font-mono uppercase tracking-widest text-[#B31942] mb-2 font-bold">
               Operational Paradigm
             </p>
             <p className="text-zinc-400 text-sm leading-relaxed font-light">
@@ -68,8 +68,8 @@ export default function IndustrialManifest() {
         </div>
 
         {/* Big Banner Callout: Conception to Inception */}
-        <div className="w-full bg-[#141414] border border-zinc-900 p-8 sm:p-12 mb-16 relative overflow-hidden group rounded-sm shadow-2xl">
-          <div className="absolute top-0 right-0 w-96 h-96 bg-gradient-to-bl from-[#cc2221]/10 via-transparent to-transparent pointer-events-none" />
+        <div className="w-full bg-[#0A3161] border border-zinc-900 p-8 sm:p-12 mb-16 relative overflow-hidden group rounded-sm shadow-2xl">
+          <div className="absolute top-0 right-0 w-96 h-96 bg-gradient-to-bl from-[#B31942]/10 via-transparent to-transparent pointer-events-none" />
           
           <div className="relative z-10 max-w-4xl">
             <span className="text-xs font-mono uppercase tracking-[0.2em] font-semibold text-zinc-500 block mb-2">
@@ -77,13 +77,13 @@ export default function IndustrialManifest() {
             </span>
             <h3 className="text-3xl sm:text-5xl md:text-6xl font-black uppercase tracking-tight text-white mb-6 leading-tight">
               CONCEPTION TO INCEPTION <br className="hidden sm:inline" /> 
-              <span className="text-[#cc2221]">ALL IN ONE GO</span>
+              <span className="text-[#B31942]">ALL IN ONE GO</span>
             </h3>
             <p className="text-zinc-400 text-base max-w-2xl font-light leading-relaxed mb-8">
               No intermediary standard hand-offs. Mega Foundries integrates rapid metallurgical prototyping straight into heavy industrial mass production lines, flashing raw blueprints into solid iron castings flawlessly.
             </p>
             
-            <button className="inline-flex items-center gap-3 px-6 py-3.5 bg-[#cc2221] hover:bg-[#b01e1d] text-white text-xs font-bold uppercase tracking-widest transition-all duration-300 rounded-xs">
+            <button className="inline-flex items-center gap-3 px-6 py-3.5 bg-[#B31942] hover:bg-[#8f1435] text-white text-xs font-bold uppercase tracking-widest transition-all duration-300 rounded-xs">
               Initiate Direct Blast Build <ArrowUpRight className="w-4 h-4" />
             </button>
           </div>
@@ -97,7 +97,7 @@ export default function IndustrialManifest() {
               className="bg-[#0f0f0f] border border-zinc-900 p-6 flex flex-col justify-between hover:border-zinc-800 transition-all duration-300 relative group min-h-[260px] rounded-xs"
             >
               {/* Highlight bar on card hover */}
-              <div className="absolute top-0 left-0 w-full h-[1px] bg-transparent group-hover:bg-[#cc2221] transition-colors duration-300" />
+              <div className="absolute top-0 left-0 w-full h-[1px] bg-transparent group-hover:bg-[#B31942] transition-colors duration-300" />
               
               <div>
                 {/* Meta Phase Numbering */}
@@ -105,13 +105,13 @@ export default function IndustrialManifest() {
                   <span className="text-[10px] font-mono uppercase tracking-wider text-zinc-500 font-bold">
                     {step.label}
                   </span>
-                  <div className="w-8 h-8 bg-[#141414] border border-zinc-800 flex items-center justify-center rounded-xs group-hover:border-[#cc2221]/50 transition-colors">
+                  <div className="w-8 h-8 bg-[#0A3161] border border-zinc-800 flex items-center justify-center rounded-xs group-hover:border-[#B31942]/50 transition-colors">
                     {step.icon}
                   </div>
                 </div>
 
                 {/* Content Block */}
-                <h4 className="text-lg font-bold text-white mb-2 tracking-tight group-hover:text-[#cc2221] transition-colors duration-200">
+                <h4 className="text-lg font-bold text-white mb-2 tracking-tight group-hover:text-[#B31942] transition-colors duration-200">
                   {step.title}
                 </h4>
                 <p className="text-zinc-500 text-xs leading-relaxed font-light group-hover:text-zinc-400 transition-colors duration-300">
@@ -121,7 +121,7 @@ export default function IndustrialManifest() {
 
               {/* Seamless Sync Status Light */}
               <div className="mt-6 pt-4 border-t border-zinc-900/50 flex items-center gap-2">
-                <span className="w-1.5 h-1.5 bg-[#cc2221] rounded-full animate-pulse" />
+                <span className="w-1.5 h-1.5 bg-[#B31942] rounded-full animate-pulse" />
                 <span className="text-[9px] font-mono uppercase tracking-widest text-zinc-600 font-bold">
                   Synchronous Thread
                 </span>

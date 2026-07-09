@@ -15,7 +15,7 @@ export default function MegaFeaShowcase() {
           
           {/* Left Text Column (7 Columns Wide) */}
           <div className="lg:col-span-7 space-y-6">
-            <div className="flex items-center gap-2 text-[#cc2221]">
+            <div className="flex items-center gap-2 text-[#B31942]">
               <Activity className="w-5 h-5 animate-pulse" />
               <span className="text-xs font-mono uppercase tracking-[0.3em] font-black">
                 Advanced Predictive Modeling
@@ -24,7 +24,7 @@ export default function MegaFeaShowcase() {
             
             <h2 className="text-3xl md:text-5xl font-black uppercase tracking-tighter leading-none text-[#0a0a0a]">
               Finite Element Analysis <br />
-              <span className="text-[#cc2221]">& Stress Simulation</span>
+              <span className="text-[#B31942]">& Stress Simulation</span>
             </h2>
             
             <div className="space-y-4 text-gray-600 text-sm md:text-base font-light leading-relaxed">
@@ -39,7 +39,7 @@ export default function MegaFeaShowcase() {
 
           {/* Right Visual FEA Heat Map Column (5 Columns Wide) */}
           <div className="lg:col-span-5 w-full flex justify-end">
-            <div className="relative w-full max-w-[480px] aspect-[4/3] bg-gray-50 border border-gray-200 p-4 shadow-md rounded-xs group hover:border-[#cc2221] transition-colors duration-300">
+            <div className="relative w-full max-w-[480px] aspect-[4/3] bg-gray-50 border border-gray-200 p-4 shadow-md rounded-xs group hover:border-[#B31942] transition-colors duration-300">
               <Image
                 src="/assets/image2.jpeg" // Replace with your FEA color heat map simulation image
                 alt="Finite Element Analysis Structural Heat Map Simulation"
@@ -63,7 +63,7 @@ export default function MegaFeaShowcase() {
               <h3 className="text-2xl font-black uppercase tracking-tight text-[#0a0a0a] mb-1">
                 Mega Q-Series
               </h3>
-              <p className="text-xs font-mono uppercase tracking-widest text-[#cc2221] font-bold">
+              <p className="text-xs font-mono uppercase tracking-widest text-[#B31942] font-bold">
                 Key Features & Benefits
               </p>
             </div>
@@ -71,7 +71,7 @@ export default function MegaFeaShowcase() {
             <div className="space-y-8 w-full">
               {/* Feature 1 */}
               <div className="flex items-start gap-4">
-                <div className="w-10 h-10 bg-gray-50 border border-gray-200 flex items-center justify-center text-[#cc2221] shrink-0 rounded-xs">
+                <div className="w-10 h-10 bg-gray-50 border border-gray-200 flex items-center justify-center text-[#B31942] shrink-0 rounded-xs">
                   <Hammer className="w-5 h-5" />
                 </div>
                 <div className="space-y-1">
@@ -86,7 +86,7 @@ export default function MegaFeaShowcase() {
 
               {/* Feature 2 */}
               <div className="flex items-start gap-4">
-                <div className="w-10 h-10 bg-gray-50 border border-gray-200 flex items-center justify-center text-[#cc2221] shrink-0 rounded-xs">
+                <div className="w-10 h-10 bg-gray-50 border border-gray-200 flex items-center justify-center text-[#B31942] shrink-0 rounded-xs">
                   <ShieldAlert className="w-5 h-5" />
                 </div>
                 <div className="space-y-1">
@@ -101,7 +101,7 @@ export default function MegaFeaShowcase() {
 
               {/* Feature 3 */}
               <div className="flex items-start gap-4">
-                <div className="w-10 h-10 bg-gray-50 border border-gray-200 flex items-center justify-center text-[#cc2221] shrink-0 rounded-xs">
+                <div className="w-10 h-10 bg-gray-50 border border-gray-200 flex items-center justify-center text-[#B31942] shrink-0 rounded-xs">
                   <Lock className="w-5 h-5" />
                 </div>
                 <div className="space-y-1">
@@ -118,14 +118,14 @@ export default function MegaFeaShowcase() {
 
           {/* Right Product Close-up Image Column (5 Columns Wide) */}
           <div className="lg:col-span-5 w-full flex justify-end">
-            <div className="relative w-full max-w-[480px] aspect-[4/3] bg-gray-50 border border-gray-200 p-4 shadow-md rounded-xs group hover:border-[#cc2221] transition-colors duration-300">
+            <div className="relative w-full max-w-[480px] aspect-[4/3] bg-gray-50 border border-gray-200 p-4 shadow-md rounded-xs group hover:border-[#B31942] transition-colors duration-300">
               <Image
                 src="/assets/image2.jpeg" // Replace with your close-up product casting macro image
                 alt="Mega High-Precision Iron Casting Surface View"
                 fill
                 className="object-cover transition-transform duration-500 group-hover:scale-102"
               />
-              <div className="absolute top-3 right-3 bg-[#cc2221] text-white text-[9px] font-mono uppercase tracking-widest px-2 py-1 font-bold">
+              <div className="absolute top-3 right-3 bg-[#B31942] text-white text-[9px] font-mono uppercase tracking-widest px-2 py-1 font-bold">
                 Heavy Duty Close-Up Spec
               </div>
             </div>

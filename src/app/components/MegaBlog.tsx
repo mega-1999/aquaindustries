@@ -62,7 +62,7 @@ export default function MegaBlog() {
         {/* Unconventional Header: Massive Side-by-Side Typography */}
         <div className="flex flex-col lg:flex-row lg:items-end justify-between border-b border-zinc-800 pb-12 mb-16 gap-6">
           <div className="max-w-2xl">
-            <span className="text-xs uppercase tracking-[0.3em] font-black text-[#cc2221] block mb-4">
+            <span className="text-xs uppercase tracking-[0.3em] font-black text-[#B31942] block mb-4">
               Foundry Insights & Engineering
             </span>
             <h2 className="text-5xl md:text-7xl font-black tracking-tighter uppercase leading-none">
@@ -90,10 +90,10 @@ export default function MegaBlog() {
               >
                 {/* 1. Large Index Indicator + Category Accent */}
                 <div className="lg:col-span-2 mb-4 lg:mb-0 flex flex-row lg:flex-col justify-between lg:justify-start gap-2">
-                  <span className="text-4xl font-black tracking-tighter text-zinc-800 group-hover:text-[#cc2221] transition-colors duration-300">
+                  <span className="text-4xl font-black tracking-tighter text-zinc-800 group-hover:text-[#B31942] transition-colors duration-300">
                     {String(index + 1).padStart(2, "0")}
                   </span>
-                  <span className="text-xs uppercase tracking-widest font-bold text-[#cc2221] self-center lg:self-start bg-[#cc2221]/10 px-2 py-1 rounded-sm lg:mt-2">
+                  <span className="text-xs uppercase tracking-widest font-bold text-[#B31942] self-center lg:self-start bg-[#B31942]/10 px-2 py-1 rounded-sm lg:mt-2">
                     {post.category}
                   </span>
                 </div>
@@ -103,7 +103,7 @@ export default function MegaBlog() {
                   {/* Meta Details Row */}
                   <div className="flex flex-wrap gap-4 text-xs text-zinc-500 mb-3 font-mono">
                     <span className="flex items-center gap-1">
-                      <User className="w-3 h-3 text-[#cc2221]" /> {post.author}
+                      <User className="w-3 h-3 text-[#B31942]" /> {post.author}
                     </span>
                     <span className="flex items-center gap-1">
                       <Clock className="w-3 h-3" /> {post.readTime}
@@ -111,7 +111,7 @@ export default function MegaBlog() {
                   </div>
 
                   {/* Title */}
-                  <Link href={`/blog/${post.slug}`} className="inline-block group-hover:text-[#cc2221] transition-colors duration-200">
+                  <Link href={`/blog/${post.slug}`} className="inline-block group-hover:text-[#B31942] transition-colors duration-200">
                     <h3 className="text-xl md:text-3xl font-bold tracking-tight leading-snug text-white mb-4">
                       {post.title}
                     </h3>
@@ -125,7 +125,7 @@ export default function MegaBlog() {
 
                 {/* 3. Dynamic Interactive Preview Window */}
                 <div className="lg:col-span-4 mt-6 lg:mt-0 flex items-center justify-end relative h-48 lg:h-auto">
-                  <div className="w-full h-full max-h-[160px] lg:max-h-none lg:w-4/5 rounded-sm overflow-hidden bg-zinc-900 border border-zinc-800 relative shadow-2xl transition-all duration-500 group-hover:border-[#cc2221] group-hover:scale-[1.02]">
+                  <div className="w-full h-full max-h-[160px] lg:max-h-none lg:w-4/5 rounded-sm overflow-hidden bg-zinc-900 border border-zinc-800 relative shadow-2xl transition-all duration-500 group-hover:border-[#B31942] group-hover:scale-[1.02]">
                     {/* Dark gradient overlay matching layout colors */}
                     <div className="absolute inset-0 bg-gradient-to-t from-[#0a0a0a] via-transparent to-transparent z-10 opacity-70" />
                     
@@ -141,7 +141,7 @@ export default function MegaBlog() {
                     {/* Industrial Action Button Floating in Corner */}
                     <Link
                       href={`/blog/${post.slug}`}
-                      className="absolute bottom-4 right-4 z-20 w-10 h-10 bg-[#cc2221] text-white rounded-full flex items-center justify-center transform translate-y-2 opacity-0 group-hover:translate-y-0 group-hover:opacity-100 transition-all duration-300"
+                      className="absolute bottom-4 right-4 z-20 w-10 h-10 bg-[#B31942] text-white rounded-full flex items-center justify-center transform translate-y-2 opacity-0 group-hover:translate-y-0 group-hover:opacity-100 transition-all duration-300"
                     >
                       <ArrowUpRight className="w-5 h-5" />
                     </Link>

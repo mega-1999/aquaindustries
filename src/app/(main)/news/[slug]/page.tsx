@@ -47,7 +47,7 @@ export default async function NewsDetailPage({ params }: PageProps) {
 
         {/* Content Body */}
         <div className="prose prose-lg max-w-none text-gray-700 leading-relaxed">
-          <p className="text-xl font-medium mb-6 text-gray-900 border-l-4 border-[#cc2221] pl-4">
+          <p className="text-xl font-medium mb-6 text-gray-900 border-l-4 border-[#B31942] pl-4">
             {article.excerpt}
           </p>
           <p>

@@ -149,7 +149,7 @@ const Taglines = () => {
 
                     {/* TEXT */}
                     <div className="w-full md:w-1/2 space-y-2">
-                        <h3 className="text-[18px] font-bold text-[#cc2221] leading-tight">
+                        <h3 className="text-[18px] font-bold text-[#B31942] leading-tight">
                             {item.lines}
                         </h3>
                         <p className="text-[13px] text-gray-600 leading-relaxed">
@@ -162,3 +162,4 @@ const Taglines = () => {
     );
 };
 export default Taglines
+

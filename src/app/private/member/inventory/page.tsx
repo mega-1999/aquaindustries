@@ -70,7 +70,7 @@ export default function InventoryPage() {
         
         {/* ✅ Link to the "New Product" page we created */}
         <Link href="/private/member/products/new">
-            <Button className="bg-[#cc2221] hover:bg-red-700">
+            <Button className="bg-[#B31942] hover:bg-red-700">
             <Plus className="mr-2 h-4 w-4" /> Add Product
             </Button>
         </Link>
@@ -82,7 +82,7 @@ export default function InventoryPage() {
         </CardHeader>
         <CardContent>
           {loading ? (
-            <div className="flex justify-center py-10 text-[#cc2221]">
+            <div className="flex justify-center py-10 text-[#B31942]">
                 <Loader2 className="animate-spin w-8 h-8" />
             </div>
           ) : (

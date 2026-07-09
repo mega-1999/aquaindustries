@@ -26,9 +26,9 @@ export default async function ProductDetailPage({ params }: PageProps) {
             <div className="bg-gray-50 border-b border-gray-100">
                 <div className="w-full mx-auto px-4 sm:px-6 lg:px-8 py-4">
                     <div className="flex items-center text-sm text-gray-500">
-                        <Link href="/" className="hover:text-[#cc2221]">Home</Link>
+                        <Link href="/" className="hover:text-[#B31942]">Home</Link>
                         <ChevronRight className="w-4 h-4 mx-2" />
-                        <Link href="/category" className="hover:text-[#cc2221]">Category</Link>
+                        <Link href="/category" className="hover:text-[#B31942]">Category</Link>
                         <ChevronRight className="w-4 h-4 mx-2" />
                         <span className="text-gray-900 font-medium">{product.title}</span>
                     </div>
@@ -53,7 +53,7 @@ export default async function ProductDetailPage({ params }: PageProps) {
 
                     {/* RIGHT: Info */}
                     <div>
-                        <span className="text-[#cc2221] font-bold uppercase tracking-wider text-sm">
+                        <span className="text-[#B31942] font-bold uppercase tracking-wider text-sm">
                             {product.category}
                         </span>
                         <h1 className="text-4xl font-bold text-gray-900 mt-2 mb-6">
@@ -66,12 +66,12 @@ export default async function ProductDetailPage({ params }: PageProps) {
                         {/* Key Features */}
                         <div className="mb-8">
                             <h3 className="font-bold text-gray-900 mb-4 flex items-center gap-2">
-                                <Settings className="w-5 h-5 text-[#cc2221]" /> Key Features
+                                <Settings className="w-5 h-5 text-[#B31942]" /> Key Features
                             </h3>
                             <ul className="grid grid-cols-1 sm:grid-cols-2 gap-3">
                                 {product.features?.map((feature: string, index: number) => (
                                     <li key={index} className="flex items-start gap-2 text-sm text-gray-600">
-                                        <CheckCircle2 className="w-4 h-4 text-[#cc2221] mt-0.5 shrink-0" />
+                                        <CheckCircle2 className="w-4 h-4 text-[#B31942] mt-0.5 shrink-0" />
                                         {feature}
                                     </li>
                                 ))}
@@ -80,7 +80,7 @@ export default async function ProductDetailPage({ params }: PageProps) {
 
                         {/* Buttons */}
                         <div className="flex flex-col sm:flex-row gap-4">
-                            <Button className="bg-[#cc2221] hover:bg-red-700 text-white px-8 py-6 text-lg">
+                            <Button className="bg-[#B31942] hover:bg-red-700 text-white px-8 py-6 text-lg">
                                 Request Quote
                             </Button>
                             <Button variant="outline" className="px-8 py-6 text-lg border-gray-300">

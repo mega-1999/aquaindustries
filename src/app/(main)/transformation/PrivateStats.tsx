@@ -32,7 +32,7 @@ export default function PrivateStats() {
          
         <div className="text-center mb-16">
           <h2 className="text-3xl md:text-5xl font-bold text-gray-900 mb-4">
-            Our <span className="text-[#cc2221]">Stats</span>
+            Our <span className="text-[#B31942]">Stats</span>
           </h2> 
           <p className="text-gray-400 text-sm italic uppercase tracking-wide">
             Stats & Facts... Not for public display. Available to members only.
@@ -44,7 +44,7 @@ export default function PrivateStats() {
             <div key={stat.id} className="flex flex-col items-center text-center p-6 bg-slate-50 rounded-xl border border-slate-100 hover:shadow-md transition-shadow">
         
               <div className="mb-4 p-3 bg-red-50 rounded-full">
-                <stat.icon className="w-8 h-8 text-[#cc2221]" strokeWidth={1.5} />
+                <stat.icon className="w-8 h-8 text-[#B31942]" strokeWidth={1.5} />
               </div>
                
               <h3 className="text-4xl font-extrabold text-slate-900 mb-2">
@@ -68,7 +68,7 @@ export default function PrivateStats() {
               placeholder="Enter your email address" 
               className="bg-white/10 border-white/20 text-white placeholder:text-gray-500 h-12"
             />
-            <Button className="bg-[#cc2221] hover:bg-red-700 h-12 px-8 font-bold">
+            <Button className="bg-[#B31942] hover:bg-red-700 h-12 px-8 font-bold">
               Subscribe
             </Button>
           </form>

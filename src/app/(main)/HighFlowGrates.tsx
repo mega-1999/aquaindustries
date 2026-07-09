@@ -28,7 +28,7 @@ export default function HighFlowGrates() {
         {/* Section Heading Banner */}
         <div className="border-b border-gray-200 pb-8 mb-16 flex flex-col md:flex-row items-start md:items-end justify-between gap-4">
           <div>
-            <span className="text-xs uppercase tracking-[0.3em] font-black text-[#cc2221] block mb-3">
+            <span className="text-xs uppercase tracking-[0.3em] font-black text-[#B31942] block mb-3">
               Hydraulic Performance Logs
             </span>
             <h2 className="text-4xl md:text-6xl font-black uppercase tracking-tighter text-[#0a0a0a]">
@@ -67,10 +67,10 @@ export default function HighFlowGrates() {
               />
               
               {/* Dark Ambient Mask Layer */}
-              <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent pointer-events-none z-10" />
+              <div className="absolute inset-0 bg-gradient-to-t from-[#0A3161]/80 via-[#0A3161]/20 to-transparent pointer-events-none z-10" />
 
               {/* Floating Top Indicator */}
-              <div className="relative z-20 self-start bg-[#cc2221] text-white px-3 py-1 text-[10px] font-mono uppercase tracking-wider font-bold">
+              <div className="relative z-20 self-start bg-[#B31942] text-white px-3 py-1 text-[10px] font-mono uppercase tracking-wider font-bold">
                 Hover to Play Test
               </div>
 
@@ -79,7 +79,7 @@ export default function HighFlowGrates() {
                 href="https://youtu.be/-TLP3uBB55o" 
                 target="_blank" 
                 rel="noopener noreferrer"
-                className="relative z-20 self-start inline-flex items-center gap-2 text-xs font-bold text-white hover:text-[#cc2221] transition-colors border-b border-dashed border-white pb-0.5 mt-auto"
+                className="relative z-20 self-start inline-flex items-center gap-2 text-xs font-bold text-white hover:text-[#B31942] transition-colors border-b border-dashed border-white pb-0.5 mt-auto"
               >
                 Watch Lab Demonstration <ExternalLink className="w-3 h-3" />
               </a>
@@ -90,9 +90,9 @@ export default function HighFlowGrates() {
           <div className="lg:col-span-7 flex flex-col gap-6">
             
             {/* Feature 1 */}
-            <div className="flex items-start gap-4 p-5 bg-gray-50 border border-gray-100 rounded-xs group hover:border-[#cc2221] hover:bg-white transition-all duration-300 shadow-sm">
-              <div className="w-10 h-10 bg-white border border-gray-200 flex items-center justify-center flex-shrink-0 group-hover:border-[#cc2221]/40 transition-colors">
-                <Droplet className="w-5 h-5 text-[#cc2221]" />
+            <div className="flex items-start gap-4 p-5 bg-gray-50 border border-gray-100 rounded-xs group hover:border-[#B31942] hover:bg-white transition-all duration-300 shadow-sm">
+              <div className="w-10 h-10 bg-white border border-gray-200 flex items-center justify-center flex-shrink-0 group-hover:border-[#B31942]/40 transition-colors">
+                <Droplet className="w-5 h-5 text-[#B31942]" />
               </div>
               <div>
                 <h4 className="text-lg font-black uppercase tracking-wide text-[#0a0a0a] mb-1">
@@ -105,9 +105,9 @@ export default function HighFlowGrates() {
             </div>
 
             {/* Feature 2 */}
-            <div className="flex items-start gap-4 p-5 bg-gray-50 border border-gray-100 rounded-xs group hover:border-[#cc2221] hover:bg-white transition-all duration-300 shadow-sm">
-              <div className="w-10 h-10 bg-white border border-gray-200 flex items-center justify-center flex-shrink-0 group-hover:border-[#cc2221]/40 transition-colors">
-                <Activity className="w-5 h-5 text-[#cc2221]" />
+            <div className="flex items-start gap-4 p-5 bg-gray-50 border border-gray-100 rounded-xs group hover:border-[#B31942] hover:bg-white transition-all duration-300 shadow-sm">
+              <div className="w-10 h-10 bg-white border border-gray-200 flex items-center justify-center flex-shrink-0 group-hover:border-[#B31942]/40 transition-colors">
+                <Activity className="w-5 h-5 text-[#B31942]" />
               </div>
               <div>
                 <h4 className="text-lg font-black uppercase tracking-wide text-[#0a0a0a] mb-1">
@@ -120,9 +120,9 @@ export default function HighFlowGrates() {
             </div>
 
             {/* Feature 3 */}
-            <div className="flex items-start gap-4 p-5 bg-gray-50 border border-gray-100 rounded-xs group hover:border-[#cc2221] hover:bg-white transition-all duration-300 shadow-sm">
-              <div className="w-10 h-10 bg-white border border-gray-200 flex items-center justify-center flex-shrink-0 group-hover:border-[#cc2221]/40 transition-colors">
-                <ShieldCheck className="w-5 h-5 text-[#cc2221]" />
+            <div className="flex items-start gap-4 p-5 bg-gray-50 border border-gray-100 rounded-xs group hover:border-[#B31942] hover:bg-white transition-all duration-300 shadow-sm">
+              <div className="w-10 h-10 bg-white border border-gray-200 flex items-center justify-center flex-shrink-0 group-hover:border-[#B31942]/40 transition-colors">
+                <ShieldCheck className="w-5 h-5 text-[#B31942]" />
               </div>
               <div>
                 <h4 className="text-lg font-black uppercase tracking-wide text-[#0a0a0a] mb-1">
@@ -141,7 +141,7 @@ export default function HighFlowGrates() {
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 pt-12 border-t border-gray-200">
           
           {/* IMAGE 2 slot: Standard Flat Matrix */}
-          <div className="bg-gray-50 border border-gray-100 p-6 flex flex-col justify-between group rounded-xs min-h-[280px] shadow-sm hover:bg-white hover:border-[#cc2221] transition-all duration-300">
+          <div className="bg-gray-50 border border-gray-100 p-6 flex flex-col justify-between group rounded-xs min-h-[280px] shadow-sm hover:bg-white hover:border-[#B31942] transition-all duration-300">
             <span className="text-[10px] font-mono tracking-widest text-gray-400 uppercase font-bold block mb-4">
               Casting Spec 01 // Inline Profile
             </span>
@@ -153,13 +153,13 @@ export default function HighFlowGrates() {
                 className="object-contain p-2 grayscale group-hover:grayscale-0 transition-all duration-300"
               />
             </div>
-            <p className="text-xs font-bold text-gray-500 uppercase tracking-wider group-hover:text-[#cc2221] transition-colors">
+            <p className="text-xs font-bold text-gray-500 uppercase tracking-wider group-hover:text-[#B31942] transition-colors">
               Standard Flat Grid Casting
             </p>
           </div>
 
           {/* IMAGE 3 slot: Single Rear Hood */}
-          <div className="bg-gray-50 border border-gray-100 p-6 flex flex-col justify-between group rounded-xs min-h-[280px] shadow-sm hover:bg-white hover:border-[#cc2221] transition-all duration-300">
+          <div className="bg-gray-50 border border-gray-100 p-6 flex flex-col justify-between group rounded-xs min-h-[280px] shadow-sm hover:bg-white hover:border-[#B31942] transition-all duration-300">
             <span className="text-[10px] font-mono tracking-widest text-gray-400 uppercase font-bold block mb-4">
               Casting Spec 02 // Rear Hood
             </span>
@@ -171,13 +171,13 @@ export default function HighFlowGrates() {
                 className="object-contain p-2 grayscale group-hover:grayscale-0 transition-all duration-300"
               />
             </div>
-            <p className="text-xs font-bold text-gray-500 uppercase tracking-wider group-hover:text-[#cc2221] transition-colors">
+            <p className="text-xs font-bold text-gray-500 uppercase tracking-wider group-hover:text-[#B31942] transition-colors">
               Rear-Curb Deflection Unit
             </p>
           </div>
 
           {/* IMAGE 4 slot: Multi-Window Curb Port */}
-          <div className="bg-gray-50 border border-gray-100 p-6 flex flex-col justify-between group rounded-xs min-h-[280px] shadow-sm hover:bg-white hover:border-[#cc2221] transition-all duration-300">
+          <div className="bg-gray-50 border border-gray-100 p-6 flex flex-col justify-between group rounded-xs min-h-[280px] shadow-sm hover:bg-white hover:border-[#B31942] transition-all duration-300">
             <span className="text-[10px] font-mono tracking-widest text-gray-400 uppercase font-bold block mb-4">
               Casting Spec 03 // Ported Curb
             </span>
@@ -189,13 +189,13 @@ export default function HighFlowGrates() {
                 className="object-contain p-2 grayscale group-hover:grayscale-0 transition-all duration-300"
               />
             </div>
-            <p className="text-xs font-bold text-gray-500 uppercase tracking-wider group-hover:text-[#cc2221] transition-colors">
+            <p className="text-xs font-bold text-gray-500 uppercase tracking-wider group-hover:text-[#B31942] transition-colors">
               Integrated Weir Configuration
             </p>
           </div>
 
           {/* IMAGE 5 slot: Heavy-Duty Structural Installation Assembly */}
-          <div className="bg-gray-50 border border-gray-100 p-6 flex flex-col justify-between group rounded-xs min-h-[280px] shadow-sm hover:bg-white hover:border-[#cc2221] transition-all duration-300">
+          <div className="bg-gray-50 border border-gray-100 p-6 flex flex-col justify-between group rounded-xs min-h-[280px] shadow-sm hover:bg-white hover:border-[#B31942] transition-all duration-300">
             <span className="text-[10px] font-mono tracking-widest text-gray-400 uppercase font-bold block mb-4">
               Casting Spec 04 // Complete Assembly
             </span>
@@ -207,7 +207,7 @@ export default function HighFlowGrates() {
                 className="object-contain p-2 grayscale group-hover:grayscale-0 transition-all duration-300"
               />
             </div>
-            <p className="text-xs font-bold text-gray-500 uppercase tracking-wider group-hover:text-[#cc2221] transition-colors">
+            <p className="text-xs font-bold text-gray-500 uppercase tracking-wider group-hover:text-[#B31942] transition-colors">
               Heavy Duty Assembly Setup
             </p>
           </div>

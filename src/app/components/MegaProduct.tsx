@@ -122,7 +122,7 @@ const MegaProduct = () => {
         {/* Header Section */}
         <div className="border-b border-zinc-800 pb-6 mb-10">
           <h2 className="text-3xl font-light tracking-wide text-white mb-2">
-            Explore <span className="font-semibold text-[#cc2221]">Mega Foundries</span> Products
+            Explore <span className="font-semibold text-[#B31942]">Mega Foundries</span> Products
           </h2>
           <p className="text-sm text-zinc-400">
             Complete line of world-class nodular ductile iron castings (Fe 50007), delivering ultimate durability and engineering modernity to your infrastructure projects.
@@ -134,7 +134,7 @@ const MegaProduct = () => {
           {categories.map((cat, index) => (
             <button
               key={index}
-              className="px-3 py-2 border border-zinc-800 bg-[#1a1a1a] hover:bg-[#cc2221] hover:border-[#cc2221] text-zinc-300 hover:text-white transition-all duration-200 rounded-sm"
+              className="px-3 py-2 border border-zinc-800 bg-[#1a1a1a] hover:bg-[#B31942] hover:border-[#B31942] text-zinc-300 hover:text-white transition-all duration-200 rounded-sm"
             >
               {cat}
             </button>
@@ -174,8 +174,8 @@ const MegaProduct = () => {
                   href={product.link}
                   className="
                     inline-block text-xs font-bold uppercase tracking-widest text-white 
-                    border border-[#cc2221] px-6 py-3 bg-transparent 
-                    hover:bg-[#cc2221] transition-all duration-300 ease-in-out
+                    border border-[#B31942] px-6 py-3 bg-transparent 
+                    hover:bg-[#B31942] transition-all duration-300 ease-in-out
                     rounded-xs
                   "
                 >

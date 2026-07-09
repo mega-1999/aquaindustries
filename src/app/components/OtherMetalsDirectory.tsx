@@ -65,7 +65,7 @@ export default function OtherMetalsDirectory() {
         
         {/* Section Header */}
         <div className="border-b border-zinc-900 pb-10 mb-16">
-          <span className="text-xs uppercase tracking-[0.3em] font-black text-[#cc2221] block mb-3">
+          <span className="text-xs uppercase tracking-[0.3em] font-black text-[#B31942] block mb-3">
             Secondary & Custom Castings
           </span>
           <h2 className="text-4xl md:text-6xl font-black uppercase tracking-tighter">
@@ -88,36 +88,36 @@ export default function OtherMetalsDirectory() {
                     w-full text-left p-5 transition-all duration-300 rounded-xs border
                     flex items-center justify-between group
                     ${isActive 
-                      ? "bg-[#141414] border-[#cc2221] text-white shadow-xl" 
+                      ? "bg-[#0A3161] border-[#B31942] text-white shadow-xl" 
                       : "bg-[#0f0f0f] border-zinc-900 text-zinc-500 hover:border-zinc-800 hover:text-zinc-300"
                     }
                   `}
                 >
                   <div>
-                    <p className={`text-lg font-bold tracking-tight transition-colors ${isActive ? 'text-[#cc2221]' : 'text-zinc-400 group-hover:text-white'}`}>
+                    <p className={`text-lg font-bold tracking-tight transition-colors ${isActive ? 'text-[#B31942]' : 'text-zinc-400 group-hover:text-white'}`}>
                       {metal.name}
                     </p>
                     <p className="text-xs text-zinc-600 mt-0.5 uppercase tracking-wider font-medium">
                       {metal.subtitle}
                     </p>
                   </div>
-                  <ArrowRight className={`w-4 h-4 transition-all duration-300 ${isActive ? 'text-[#cc2221] translate-x-1' : 'text-zinc-800 group-hover:text-zinc-400'}`} />
+                  <ArrowRight className={`w-4 h-4 transition-all duration-300 ${isActive ? 'text-[#B31942] translate-x-1' : 'text-zinc-800 group-hover:text-zinc-400'}`} />
                 </button>
               );
             })}
           </div>
 
           {/* RIGHT DETAILED SPECTRAL PREVIEW CONTAINER */}
-          <div className="lg:col-span-7 bg-[#141414] border border-zinc-900 p-8 md:p-12 rounded-sm relative overflow-hidden min-h-[500px] flex flex-col justify-between shadow-2xl">
+          <div className="lg:col-span-7 bg-[#0A3161] border border-zinc-900 p-8 md:p-12 rounded-sm relative overflow-hidden min-h-[500px] flex flex-col justify-between shadow-2xl">
             
             {/* Structural Geometry Overlay Accent */}
-            <div className="absolute top-0 right-0 w-32 h-32 bg-gradient-to-br from-[#cc2221]/10 to-transparent pointer-events-none" />
+            <div className="absolute top-0 right-0 w-32 h-32 bg-gradient-to-br from-[#B31942]/10 to-transparent pointer-events-none" />
             
             <div>
               {/* Active Sheet Badge */}
-              <div className="inline-flex items-center gap-2 px-3 py-1 bg-[#cc2221]/10 border border-[#cc2221]/20 rounded-full mb-6">
-                <Layers className="w-3.5 h-3.5 text-[#cc2221]" />
-                <span className="text-[10px] uppercase tracking-widest font-black text-[#cc2221]">
+              <div className="inline-flex items-center gap-2 px-3 py-1 bg-[#B31942]/10 border border-[#B31942]/20 rounded-full mb-6">
+                <Layers className="w-3.5 h-3.5 text-[#B31942]" />
+                <span className="text-[10px] uppercase tracking-widest font-black text-[#B31942]">
                   Secondary Spec Log
                 </span>
               </div>
@@ -142,9 +142,9 @@ export default function OtherMetalsDirectory() {
               {/* Chemistry/Structure Element Ratio */}
               <div>
                 <span className="flex items-center gap-1.5 text-xs font-bold text-zinc-500 uppercase tracking-wider mb-3">
-                  <Activity className="w-3.5 h-3.5 text-[#cc2221]" /> Elemental Composition
+                  <Activity className="w-3.5 h-3.5 text-[#B31942]" /> Elemental Composition
                 </span>
-                <div className="font-mono text-sm bg-[#0a0a0a] border border-zinc-900 p-3 text-[#cc2221] rounded-xs font-semibold">
+                <div className="font-mono text-sm bg-[#0a0a0a] border border-zinc-900 p-3 text-[#B31942] rounded-xs font-semibold">
                   {selectedMetal.composition}
                 </div>
               </div>
@@ -152,12 +152,12 @@ export default function OtherMetalsDirectory() {
               {/* Core Physical Application Properties */}
               <div>
                 <span className="flex items-center gap-1.5 text-xs font-bold text-zinc-500 uppercase tracking-wider mb-3">
-                  <ShieldAlert className="w-3.5 h-3.5 text-[#cc2221]" /> Core Mechanical Traits
+                  <ShieldAlert className="w-3.5 h-3.5 text-[#B31942]" /> Core Mechanical Traits
                 </span>
                 <ul className="space-y-1.5">
                   {selectedMetal.properties.map((prop, idx) => (
                     <li key={idx} className="text-xs text-zinc-400 flex items-center gap-2">
-                      <span className="w-1.5 h-1.5 bg-[#cc2221] rounded-full flex-shrink-0" />
+                      <span className="w-1.5 h-1.5 bg-[#B31942] rounded-full flex-shrink-0" />
                       {prop}
                     </li>
                   ))}

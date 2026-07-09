@@ -53,7 +53,7 @@ const SearchWithSuggestions = () => {
       <div className="relative group">
         <div className="absolute inset-y-0 left-0 pl-4 flex items-center pointer-events-none">
           {/* Icon turns red when focused */}
-          <Search className="h-5 w-5 text-gray-400 group-focus-within:text-[#cc2221] transition-colors" />
+          <Search className="h-5 w-5 text-gray-400 group-focus-within:text-[#B31942] transition-colors" />
         </div>
         <input
           type="text"
@@ -81,12 +81,12 @@ const SearchWithSuggestions = () => {
                   key={index} 
                   href={item.href}
                   onClick={() => setIsOpen(false)}
-                  className="block px-4 py-3 hover:bg-gray-50 transition-colors border-l-4 border-transparent hover:border-[#cc2221]"
+                  className="block px-4 py-3 hover:bg-gray-50 transition-colors border-l-4 border-transparent hover:border-[#B31942]"
                 >
                   <div className="flex items-start">
                     <FileText className="w-4 h-4 text-gray-400 mt-1 mr-3 shrink-0" />
                     <div>
-                      <p className="text-sm font-semibold text-[#cc2221]">
+                      <p className="text-sm font-semibold text-[#B31942]">
                         {item.title}
                       </p>
                       <p className="text-xs text-gray-400 mt-0.5 flex items-center gap-1">

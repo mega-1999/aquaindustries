@@ -19,7 +19,7 @@ export default function FooterHero({
                     objectFit="cover"
                     priority
                 />
-                <div className="absolute inset-0 bg-black/60"></div>
+                <div className="absolute inset-0 bg-[#0A3161]/60"></div>
             </div>
             <div className="relative z-10 container mx-auto px-4 text-center">
                 <h1 className="scroll-m-20 text-4xl font-extrabold tracking-tight lg:text-6xl text-white mb-6">

@@ -16,10 +16,10 @@ export const MegaProducts = () => {
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
-          className="mb-16 border-l-4 border-[#cc2221] pl-6"
+          className="mb-16 border-l-4 border-[#B31942] pl-6"
         >
           <h2 className="text-5xl font-black text-slate-900 tracking-tighter uppercase">
-            New products <span className="text-[#cc2221]">Innovation's</span>
+            New products <span className="text-[#B31942]">Innovation's</span>
           </h2>
           <p className="text-slate-500 mt-4 text-lg max-w-xl">
             Precision-engineered casting solutions for the world's most demanding infrastructure.
@@ -84,7 +84,7 @@ export const MegaProducts = () => {
                   )}
 
                   {/* Dark Gradient Mask Overlay Shield */}
-                  <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent pointer-events-none" />
+                  <div className="absolute inset-0 bg-gradient-to-t from-[#0A3161]/80 via-[#0A3161]/20 to-transparent pointer-events-none" />
                   
                   {/* Category Status Badge */}
                   <div className={`absolute bottom-4 left-4 p-3 rounded-xl text-white shadow-lg ${item.color}`}>
@@ -94,7 +94,7 @@ export const MegaProducts = () => {
 
                 {/* Main Content Info Block */}
                 <div className="p-8 flex flex-col flex-grow">
-                  <h3 className="text-2xl font-bold text-slate-900 mb-3 group-hover:text-[#cc2221] transition-colors">
+                  <h3 className="text-2xl font-bold text-slate-900 mb-3 group-hover:text-[#B31942] transition-colors">
                     {item.title}
                   </h3>
                   <p className="text-slate-600 mb-8 flex-grow leading-relaxed font-light">
@@ -103,7 +103,7 @@ export const MegaProducts = () => {
                   
                   <Link
                     href={`/categories/${item.slug}`}
-                    className="flex items-center justify-center gap-3 w-full py-4 bg-slate-50 rounded-2xl text-[#cc2221] font-black uppercase tracking-widest text-xs hover:bg-[#cc2221] hover:text-white transition-all duration-300"
+                    className="flex items-center justify-center gap-3 w-full py-4 bg-slate-50 rounded-2xl text-[#B31942] font-black uppercase tracking-widest text-xs hover:bg-[#B31942] hover:text-white transition-all duration-300"
                   >
                     View Details <ArrowRight size={16} />
                   </Link>

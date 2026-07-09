@@ -100,7 +100,7 @@ export default function HotProductVideos({ title, videos, videoUrl, videoName }:
                 }}
               >
                 {/* Thumbnail Container */}
-                <div className="relative aspect-square w-full rounded-lg overflow-hidden border border-gray-200 bg-black mb-3 shadow-sm hover:shadow-md transition-all">
+                <div className="relative aspect-square w-full rounded-lg overflow-hidden border border-gray-200 bg-[#0A3161] mb-3 shadow-sm hover:shadow-md transition-all">
                   <video
                     src={video.videoUrl}
                     muted
@@ -111,7 +111,7 @@ export default function HotProductVideos({ title, videos, videoUrl, videoName }:
 
                   {/* Overlay Icon */}
                   <div className="absolute inset-0 flex items-center justify-center pointer-events-none">
-                    <div className="w-10 h-10 bg-black/40 rounded-full flex items-center justify-center backdrop-blur-sm border border-white/20 group-hover:bg-red-600/80 group-hover:border-red-600 transition-colors">
+                    <div className="w-10 h-10 bg-[#0A3161]/40 rounded-full flex items-center justify-center backdrop-blur-sm border border-white/20 group-hover:bg-red-600/80 group-hover:border-red-600 transition-colors">
                       <Maximize2 className="w-5 h-5 text-white" />
                     </div>
                   </div>

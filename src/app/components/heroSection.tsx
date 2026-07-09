@@ -9,7 +9,7 @@ const heroSection = () => {
             <h2 className="text-[40px] pb-12 font-extrabold tracking-tight text-white mb-8">
                 Get In Touch With Us
             </h2>
-            <p className="text-[20px] py-5 font-semibold uppercase tracking-widest text-[#cc2221] mb-2">
+            <p className="text-[20px] py-5 font-semibold uppercase tracking-widest text-[#B31942] mb-2">
                 MEGA FOUNDRIES | the best industry services
             </p>
             <div className="relative z-10 container mx-auto px-4 text-center">
@@ -17,7 +17,7 @@ const heroSection = () => {
                 <h1 className="text-[30px] lg:text-[40px] font-bold leading-tight tracking-tight">
                     The World's Largest and Advanced <br />
                     Consortium of
-                    <span className="block mt-2 text-[#cc2221] uppercase tracking-wide drop-shadow-lg">
+                    <span className="block mt-2 text-[#B31942] uppercase tracking-wide drop-shadow-lg">
                         Foundries, Forge Shops & Fabricators
                     </span>
                     <span className="block mt-2 text-2xl  md:text-4xl font-light ">
@@ -26,15 +26,15 @@ const heroSection = () => {
                 </h1>
 
                 {/* Tagline */}
-                <p className="text-xl text-[#cc2221] md:text-[22px] font-medium   italic">
+                <p className="text-xl text-[#B31942] md:text-[22px] font-medium   italic">
                     "Think Fast and Succeed Faster"
                 </p>
 
                 <div className="flex flex-col py-5 sm:flex-row items-center justify-center gap-4 mt-8">
-                    <Button className="bg-[#cc2221] hover:bg-red-700 text-white px-10 py-7 text-xl rounded-md font-bold shadow-[0_0_20px_rgba(204,34,33,0.4)] transition-all transform hover:scale-105">
+                    <Button className="bg-[#B31942] hover:bg-red-700 text-white px-10 py-7 text-xl rounded-md font-bold shadow-[0_0_20px_rgba(204,34,33,0.4)] transition-all transform hover:scale-105">
                         Explore Capabilities
                     </Button>
-                    <Button variant="outline" className="px-10 text-[#cc2221] border-2 border-[#cc2221] py-7 text-xl  hover:bg-white/10 backdrop-blur-sm">
+                    <Button variant="outline" className="px-10 text-[#B31942] border-2 border-[#B31942] py-7 text-xl  hover:bg-white/10 backdrop-blur-sm">
                         Succeed With Us <ArrowRight className="ml-2 w-5 h-5" />
                     </Button>
                 </div>
@@ -46,3 +46,4 @@ const heroSection = () => {
 }
 
 export default heroSection
+

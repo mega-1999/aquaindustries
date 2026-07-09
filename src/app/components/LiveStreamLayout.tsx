@@ -14,7 +14,7 @@ const AdPlaceholder = ({ side }: { side: 'Left' | 'Right' }) => (
 
 export default function LiveStreamLayout() {
   return (
-    <div className="min-h-screen bg-black text-white">
+    <div className="min-h-screen bg-[#0A3161] text-white">
       
       {/* MAIN CONTAINER */}
       <div className="container mx-auto px-4 py-8 flex justify-center gap-6">

@@ -117,7 +117,7 @@ export default function NewProductPage() {
                     </Link>
                     <h1 className="text-xl font-bold text-gray-900">Add New Product</h1>
                 </div>
-                <button onClick={handleSubmit(onSubmit)} className="flex items-center gap-2 px-6 py-2 text-sm font-medium text-white bg-[#cc2221] rounded-lg hover:bg-red-700">
+                <button onClick={handleSubmit(onSubmit)} className="flex items-center gap-2 px-6 py-2 text-sm font-medium text-white bg-[#B31942] rounded-lg hover:bg-red-700">
                     <Save className="w-4 h-4" /> Save
                 </button>
             </div>

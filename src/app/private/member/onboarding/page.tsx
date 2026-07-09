@@ -205,7 +205,7 @@ export default function VendorOnboardingPage() {
   if (fetchingUser) {
     return (
       <div className="min-h-screen flex flex-col items-center justify-center bg-slate-50 gap-3">
-        <Loader2 className="animate-spin w-10 h-10 text-[#cc2221]" />
+        <Loader2 className="animate-spin w-10 h-10 text-[#B31942]" />
         <p className="text-slate-500 font-medium">Verifying User Identity...</p>
       </div>
     );
@@ -238,10 +238,10 @@ export default function VendorOnboardingPage() {
   // --- MAIN FORM ---
   return (
     <div className="min-h-screen bg-slate-50 py-10 px-4 flex justify-center">
-      <Card className="max-w-3xl w-full shadow-xl border-t-4 border-t-[#cc2221]">
+      <Card className="max-w-3xl w-full shadow-xl border-t-4 border-t-[#B31942]">
         <CardHeader className="bg-slate-900 text-white rounded-t-sm mt-1">
           <div className="flex items-center gap-3 mb-2">
-            <Store className="w-8 h-8 text-[#cc2221]" />
+            <Store className="w-8 h-8 text-[#B31942]" />
             <CardTitle className="text-2xl">Vendor Registration</CardTitle>
           </div>
           <CardDescription className="text-slate-400">
@@ -332,7 +332,7 @@ export default function VendorOnboardingPage() {
             </div>
 
             <div className="pt-4">
-              <Button className="w-full bg-[#cc2221] hover:bg-red-700 h-12 text-lg font-bold" disabled={loading}>
+              <Button className="w-full bg-[#B31942] hover:bg-red-700 h-12 text-lg font-bold" disabled={loading}>
                 {loading ? <Loader2 className="animate-spin mr-2" /> : "Complete Registration"}
               </Button>
             </div>

@@ -53,7 +53,7 @@ const CosmoBlog = () => {
             {cosmoBlogContent.map((item, index) => (
               <div key={index} className='flex gap-4'>
                 <div className='shrink-0 pt-1'>
-                  <item.icon size={24} className='h-4 w-4 text-[#cc2221]' />
+                  <item.icon size={24} className='h-4 w-4 text-[#B31942]' />
                 </div>
 
                 <div>

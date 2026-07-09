@@ -5,7 +5,7 @@ export const menuData = {
     label: 'CONSTRUCTION CASTINGS',
     icon: Zap, // change icon if you like
     bannerImage: '/assets/image1.jpeg',
-    color: 'bg-[#cc2221] text-white',
+    color: 'bg-[#B31942] text-white',
 
     categories: [
 
@@ -204,7 +204,7 @@ export const menuData = {
     label: 'TRENCH PRODUCTS',
     icon: Settings,
     bannerImage: '/assets/image3.jpeg',
-    color: 'bg-[#cc2221] text-white',
+    color: 'bg-[#B31942] text-white',
     categories: [
       {
         name: "ZINC & ALUMINIUM CAST ANODES",
@@ -949,7 +949,7 @@ export const menuData = {
     label: 'PAVING RISERS',
     icon: Cog, // change if you prefer
     bannerImage: '/assets/PAVING-RISERS/paving riser 1.5200.png',
-    color: 'bg-[#cc2221] text-white',
+    color: 'bg-[#B31942] text-white',
 
     categories: [
 

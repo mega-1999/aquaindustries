@@ -26,10 +26,10 @@ export default function PledgeAndOffer() {
             </div>
             
             <h2 className="text-4xl md:text-5xl font-extrabold text-white leading-tight">
-              Our <span className="text-[#cc2221]">Pledge</span>
+              Our <span className="text-[#B31942]">Pledge</span>
             </h2>
             
-            <blockquote className="border-l-4 border-[#cc2221] pl-6 py-2">
+            <blockquote className="border-l-4 border-[#B31942] pl-6 py-2">
               <p className="text-xl md:text-2xl text-slate-300 italic font-light leading-relaxed">
                 "We will undertake every casting that is presented to us... regardless."
               </p>
@@ -48,15 +48,15 @@ export default function PledgeAndOffer() {
             <div className="relative bg-white rounded-xl p-8 md:p-10 text-center shadow-2xl">
               
               <div className="w-16 h-16 bg-red-100 rounded-full flex items-center justify-center mx-auto mb-6">
-                <Gift className="w-8 h-8 text-[#cc2221]" />
+                <Gift className="w-8 h-8 text-[#B31942]" />
               </div>
 
               <h3 className="text-2xl md:text-3xl font-black text-gray-900 uppercase mb-2">
                 Order Your Prototypes
               </h3>
               
-              <div className="text-4xl md:text-5xl font-black text-[#cc2221] mb-6 tracking-tight">
-                ON US <span className="text-black">FREE</span>
+              <div className="text-4xl md:text-5xl font-black text-[#B31942] mb-6 tracking-tight">
+                ON US <span className="text-[#0A3161]">FREE</span>
               </div>
 
               <p className="text-gray-600 mb-8">
@@ -64,7 +64,7 @@ export default function PledgeAndOffer() {
               </p>
 
               <Link href="/contact">
-                <Button className="w-full bg-[#cc2221] hover:bg-red-700 text-white text-lg font-bold py-7 rounded-lg shadow-lg hover:shadow-red-500/25 transition-all transform hover:-translate-y-1">
+                <Button className="w-full bg-[#B31942] hover:bg-red-700 text-white text-lg font-bold py-7 rounded-lg shadow-lg hover:shadow-red-500/25 transition-all transform hover:-translate-y-1">
                   Claim Your Free Prototype
                 </Button>
               </Link>

@@ -55,10 +55,10 @@ export default function DashboardPage() {
       </div>
 
       {/* DEBUG CARD: Shows exactly what data we have */}
-      <Card className="border-t-4 border-t-[#cc2221]">
+      <Card className="border-t-4 border-t-[#B31942]">
         <CardContent className="pt-6">
             <h3 className="text-lg font-bold flex items-center gap-2 mb-4">
-                <User className="w-5 h-5 text-[#cc2221]" /> Current User Data
+                <User className="w-5 h-5 text-[#B31942]" /> Current User Data
             </h3>
             
             {user ? (

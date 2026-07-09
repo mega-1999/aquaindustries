@@ -84,10 +84,10 @@ function RegisterForm() {
   }
 
   return (
-    <Card className="max-w-lg w-full shadow-xl border-t-4 border-t-[#cc2221]">
+    <Card className="max-w-lg w-full shadow-xl border-t-4 border-t-[#B31942]">
       <CardHeader className="text-center pb-2">
          <div className="mx-auto bg-red-50 w-12 h-12 rounded-full flex items-center justify-center mb-4">
-           <ShieldCheck className="w-6 h-6 text-[#cc2221]" />
+           <ShieldCheck className="w-6 h-6 text-[#B31942]" />
          </div>
         <CardTitle className="text-2xl">Complete Your Profile</CardTitle>
         <CardDescription>
@@ -131,7 +131,7 @@ function RegisterForm() {
             </p>
           )}
 
-          <Button className="w-full bg-[#cc2221] hover:bg-red-700 py-6 text-md font-bold" disabled={loading}>
+          <Button className="w-full bg-[#B31942] hover:bg-red-700 py-6 text-md font-bold" disabled={loading}>
             {loading ? (
               <>
                 <Loader2 className="animate-spin mr-2 h-5 w-5" /> Creating Account...

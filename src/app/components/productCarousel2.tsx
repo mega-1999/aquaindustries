@@ -41,7 +41,7 @@ export default function AssociationsCarousel() {
         <h2 className="text-2xl md:text-3xl font-bold   uppercase tracking-wide">
           Associations & Standards
         </h2>
-        {/* <div className="w-24 h-1 bg-[#cc2221] mx-auto mt-4 rounded-full"></div> */}
+        {/* <div className="w-24 h-1 bg-[#B31942] mx-auto mt-4 rounded-full"></div> */}
       </div>
 
       {/* === CAROUSEL WRAPPER === */}

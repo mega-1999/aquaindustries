@@ -117,7 +117,7 @@ function ResetPasswordForm({ clientId }: { clientId: string }) {
                         </p>
                     )}
 
-                    <Button className="w-full bg-[#cc2221] hover:bg-red-700" disabled={loading}>
+                    <Button className="w-full bg-[#B31942] hover:bg-red-700" disabled={loading}>
                         {loading ? <Loader2 className="animate-spin mr-2" /> : "Reset Password"}
                     </Button>
                 </form>

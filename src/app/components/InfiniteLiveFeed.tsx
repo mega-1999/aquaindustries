@@ -43,7 +43,7 @@ export default function InfiniteLiveFeed() {
            <h2 className="text-xl font-bold text-white flex items-center gap-2">
              <span className="relative flex h-3 w-3">
                <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-red-400 opacity-75"></span>
-               <span className="relative inline-flex rounded-full h-3 w-3 bg-[#cc2221]"></span>
+               <span className="relative inline-flex rounded-full h-3 w-3 bg-[#B31942]"></span>
              </span>
              Live Factory Network
            </h2>
@@ -63,7 +63,7 @@ export default function InfiniteLiveFeed() {
             className="
               relative shrink-0 w-[280px] h-[180px] 
               bg-neutral-800 rounded-lg overflow-hidden 
-              border border-neutral-700 hover:border-[#cc2221] 
+              border border-neutral-700 hover:border-[#B31942] 
               group cursor-pointer transition-all
             "
           >
@@ -98,17 +98,17 @@ export default function InfiniteLiveFeed() {
                 }}
             />
             
-            <div className="absolute inset-0 bg-gradient-to-t from-black/90 via-black/20 to-transparent pointer-events-none" />
+            <div className="absolute inset-0 bg-gradient-to-t from-[#0A3161]/90 via-[#0A3161]/20 to-transparent pointer-events-none" />
 
             {item.isLive && (
-                <div className="absolute top-2 right-2 bg-[#cc2221] text-white text-[9px] font-bold px-1.5 py-0.5 rounded z-10">
+                <div className="absolute top-2 right-2 bg-[#B31942] text-white text-[9px] font-bold px-1.5 py-0.5 rounded z-10">
                 LIVE
                 </div>
             )}
 
             {/* Play Button Overlay (Disappears on Hover) */}
             <div className="absolute inset-0 flex items-center justify-center group-hover:opacity-0 transition-opacity pointer-events-none">
-               <div className="bg-black/40 backdrop-blur-sm p-3 rounded-full">
+               <div className="bg-[#0A3161]/40 backdrop-blur-sm p-3 rounded-full">
                   <Play className="w-6 h-6 text-white fill-current" />
                </div>
             </div>
@@ -122,7 +122,7 @@ export default function InfiniteLiveFeed() {
 
         {loading && (
           <div className="shrink-0 w-[280px] h-[180px] flex items-center justify-center">
-             <div className="w-6 h-6 border-2 border-[#cc2221] border-t-transparent rounded-full animate-spin"></div>
+             <div className="w-6 h-6 border-2 border-[#B31942] border-t-transparent rounded-full animate-spin"></div>
           </div>
         )}
 

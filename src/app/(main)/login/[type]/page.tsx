@@ -89,14 +89,14 @@ export default function LoginPage({ params }: { params: Promise<{ type: string }
 
   return (
     <div className="min-h-screen flex items-center justify-center bg-slate-50 p-4">
-      <Card className="max-w-md w-full shadow-xl border-t-4 border-t-[#cc2221]">
+      <Card className="max-w-md w-full shadow-xl border-t-4 border-t-[#B31942]">
 
         <CardHeader className="text-center">
           <div className="mx-auto bg-red-50 w-12 h-12 rounded-full flex items-center justify-center mb-4">
             {step === 'credentials' ? (
-              <LogIn className="w-6 h-6 text-[#cc2221]" />
+              <LogIn className="w-6 h-6 text-[#B31942]" />
             ) : (
-              <LockKeyhole className="w-6 h-6 text-[#cc2221]" />
+              <LockKeyhole className="w-6 h-6 text-[#B31942]" />
             )}
           </div>
           <CardTitle className="text-2xl font-bold">
@@ -129,7 +129,7 @@ export default function LoginPage({ params }: { params: Promise<{ type: string }
               <div className="space-y-2">
                 <div className="flex items-center justify-between">
                   <Label htmlFor="password">Password</Label>
-                  <a href="#" className="text-xs text-[#cc2221] hover:underline">Forgot password?</a>
+                  <a href="#" className="text-xs text-[#B31942] hover:underline">Forgot password?</a>
                 </div>
                 <Input
                   id="password"
@@ -147,7 +147,7 @@ export default function LoginPage({ params }: { params: Promise<{ type: string }
                 </p>
               )}
 
-              <Button className="w-full bg-[#cc2221] hover:bg-red-700 py-6 text-md font-bold" disabled={loading}>
+              <Button className="w-full bg-[#B31942] hover:bg-red-700 py-6 text-md font-bold" disabled={loading}>
                 {loading ? <Loader2 className="animate-spin mr-2" /> : "Sign In"}
               </Button>
             </form>
@@ -174,7 +174,7 @@ export default function LoginPage({ params }: { params: Promise<{ type: string }
 
               <Button
                 onClick={handleVerify}
-                className="w-full bg-[#cc2221] hover:bg-red-700 py-6 text-lg font-bold"
+                className="w-full bg-[#B31942] hover:bg-red-700 py-6 text-lg font-bold"
                 disabled={loading}
               >
                 {loading ? <Loader2 className="animate-spin mr-2" /> : "Verify & Login"}
@@ -193,7 +193,7 @@ export default function LoginPage({ params }: { params: Promise<{ type: string }
         {step === 'credentials' && (
           <CardFooter className="justify-center border-t pt-4">
             <p className="text-sm text-slate-500">
-              Don't have an account? <a href={`/signup/${type || 'customer'}`} className="text-[#cc2221] font-semibold hover:underline">Sign up</a>
+              Don't have an account? <a href={`/signup/${type || 'customer'}`} className="text-[#B31942] font-semibold hover:underline">Sign up</a>
             </p>
           </CardFooter>
         )}

@@ -228,7 +228,7 @@ export default function FactoryStories() {
           </div>
 
           {/* Floating Plus Button */}
-          <div className="absolute top-[65%] left-1/2 -translate-x-1/2 -translate-y-1/2 bg-[#cc2221] rounded-full p-1 border-4 border-white shadow-sm">
+          <div className="absolute top-[65%] left-1/2 -translate-x-1/2 -translate-y-1/2 bg-[#B31942] rounded-full p-1 border-4 border-white shadow-sm">
             <Plus className="w-4 h-4 text-white" strokeWidth={3} />
           </div>
         </div>
@@ -251,11 +251,11 @@ export default function FactoryStories() {
             )}
 
             {/* Dark Overlay Gradient */}
-            <div className="absolute inset-0 bg-gradient-to-b from-black/10 via-transparent to-black/70 pointer-events-none" />
+            <div className="absolute inset-0 bg-gradient-to-b from-[#0A3161]/10 via-transparent to-[#0A3161]/70 pointer-events-none" />
 
             {/* Avatar Badge (Top Left) */}
             <div className={`
-                absolute top-2 left-2 rounded-full border-4 border-[#cc2221] p-[2px] bg-[#cc2221]
+                absolute top-2 left-2 rounded-full border-4 border-[#B31942] p-[2px] bg-[#B31942]
                 ${story.isViewed ? 'border-slate-300 bg-slate-300' : ''}
                 shadow-md
             `}>
@@ -324,17 +324,17 @@ function StoryViewer({ stories, initialIndex, onClose }: { stories: Story[], ini
   };
 
   return (
-    <div className="fixed inset-0 z-[9999] bg-black/95 flex items-center justify-center">
+    <div className="fixed inset-0 z-[9999] bg-[#0A3161]/95 flex items-center justify-center">
       {/* Close Button */}
-      <button onClick={onClose} className="absolute top-4 right-4 text-white hover:text-gray-300 z-50 p-2 bg-black/20 rounded-full backdrop-blur-md">
+      <button onClick={onClose} className="absolute top-4 right-4 text-white hover:text-gray-300 z-50 p-2 bg-[#0A3161]/20 rounded-full backdrop-blur-md">
         <X className="w-6 h-6" />
       </button>
 
       {/* Main Content Area */}
-      <div className="relative h-full w-full md:max-w-md bg-black md:rounded-xl overflow-hidden md:h-[90vh] md:border md:border-zinc-800 shadow-2xl">
+      <div className="relative h-full w-full md:max-w-md bg-[#0A3161] md:rounded-xl overflow-hidden md:h-[90vh] md:border md:border-zinc-800 shadow-2xl">
 
         {/* Progress & Header */}
-        <div className="absolute top-0 left-0 right-0 p-4 z-20 bg-gradient-to-b from-black/80 to-transparent">
+        <div className="absolute top-0 left-0 right-0 p-4 z-20 bg-gradient-to-b from-[#0A3161]/80 to-transparent">
           {/* Progress Bars */}
           <div className="flex gap-1 mb-3">
             {stories.map((_, idx) => (
@@ -383,7 +383,7 @@ function StoryViewer({ stories, initialIndex, onClose }: { stories: Story[], ini
 // ==========================================
 function UploadStoryModal({ onClose }: { onClose: () => void }) {
   return (
-    <div className="fixed inset-0 z-[100] bg-black/60 flex items-center justify-center backdrop-blur-sm p-4 animate-in fade-in duration-200">
+    <div className="fixed inset-0 z-[100] bg-[#0A3161]/60 flex items-center justify-center backdrop-blur-sm p-4 animate-in fade-in duration-200">
       <div className="bg-white rounded-xl p-6 w-full max-w-sm shadow-xl">
         <h3 className="font-bold text-xl text-slate-800 mb-4">Add to Story</h3>
         <div className="h-48 bg-slate-50 border-2 border-dashed border-slate-300 rounded-xl flex flex-col items-center justify-center text-slate-400 hover:bg-slate-100 hover:border-blue-400 transition-colors cursor-pointer">

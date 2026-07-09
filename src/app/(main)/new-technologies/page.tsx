@@ -31,12 +31,12 @@ const TECH_HIGHLIGHTS = [
 
 export default function NewTechnologiesPage() {
   return (
-    <div className="min-h-screen bg-slate-950 text-white font-sans selection:bg-cyan-500 selection:text-black">
+    <div className="min-h-screen bg-slate-950 text-white font-sans selection:bg-cyan-500 selection:text-[#0A3161]">
       
       {/* === HERO SECTION === */}
       <section className="relative h-[70vh] flex items-center justify-center overflow-hidden">
         {/* Background Effects */}
-        <div className="absolute inset-0 bg-[radial-gradient(circle_at_center,_var(--tw-gradient-stops))] from-slate-900 via-slate-950 to-black"></div>
+        <div className="absolute inset-0 bg-[radial-gradient(circle_at_center,_var(--tw-gradient-stops))] from-slate-900 via-slate-950 to-[#0A3161]"></div>
         <div className="absolute top-0 left-0 w-full h-full bg-[url('/assets/image9.jpeg')] opacity-10"></div>
         
         {/* Glowing Orb/Graphic */}
@@ -95,7 +95,7 @@ export default function NewTechnologiesPage() {
       </section>
 
       {/* === THE LAB (R&D) SECTION === */}
-      <section className="py-24 bg-black border-y border-slate-800">
+      <section className="py-24 bg-[#0A3161] border-y border-slate-800">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex flex-col md:flex-row items-center gap-16">
           
           <div className="w-full md:w-1/2">

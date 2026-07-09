@@ -90,12 +90,12 @@ const Navbar = () => {
                     return (
                         <DropdownMenu key={item.label}>
                             <DropdownMenuTrigger className="flex items-center gap-2 group outline-none cursor-pointer">
-                                <div className='text-neutral-600 group-hover:text-[#cc2221] transition-colors'>
+                                <div className='text-neutral-600 group-hover:text-[#B31942] transition-colors'>
                                     <item.icon size={28} strokeWidth={1.5} />
                                 </div>
                                 <div className="flex flex-col justify-center text-left">
                                     <p className='text-sm text-neutral-500 leading-tight'>{item.label}</p>
-                                    <p className='text-xs font-bold text-neutral-800 group-hover:text-[#cc2221] transition-colors'>{item.content}</p>
+                                    <p className='text-xs font-bold text-neutral-800 group-hover:text-[#B31942] transition-colors'>{item.content}</p>
                                 </div>
                             </DropdownMenuTrigger>
                             <DropdownMenuContent align="end" className="w-[420px] p-3 bg-white border border-gray-100 shadow-lg rounded-md">
@@ -106,8 +106,8 @@ const Navbar = () => {
                                             {group.links.map((item) => (
                                                 <DropdownMenuItem key={item.href} asChild>
                                                     <Link href={item.href} className="cursor-pointer flex items-center gap-2 py-2 hover:bg-red-50 rounded px-2 group">
-                                                        <ChevronRight className="w-4 h-4 text-[#cc2221] opacity-0 group-hover:opacity-100 transition-opacity" />
-                                                        <span className="font-medium text-[13px] text-gray-700 group-hover:text-[#cc2221]">{item.label}</span>
+                                                        <ChevronRight className="w-4 h-4 text-[#B31942] opacity-0 group-hover:opacity-100 transition-opacity" />
+                                                        <span className="font-medium text-[13px] text-gray-700 group-hover:text-[#B31942]">{item.label}</span>
                                                     </Link>
                                                 </DropdownMenuItem>
                                             ))}
@@ -120,12 +120,12 @@ const Navbar = () => {
                 }
                 return (
                     <Link className='flex items-center gap-2 group' key={item.label} href={item.href}>
-                        <div className='text-neutral-600 group-hover:text-[#cc2221] transition-colors'>
+                        <div className='text-neutral-600 group-hover:text-[#B31942] transition-colors'>
                             <item.icon size={28} strokeWidth={1.5} />
                         </div>
                         <div className="flex flex-col justify-center">
                             <p className='text-sm text-neutral-500 leading-tight'>{item.label}</p>
-                            <p className='text-xs font-bold text-neutral-800 group-hover:text-[#cc2221] transition-colors'>{item.content}</p>
+                            <p className='text-xs font-bold text-neutral-800 group-hover:text-[#B31942] transition-colors'>{item.content}</p>
                         </div>
                     </Link>
                 )
@@ -159,7 +159,7 @@ const Navbar = () => {
                                 </div>
                             </div>
                             <div className="flex items-center gap-2 lg:hidden">
-                                <button onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)} className="p-2 text-neutral-600 hover:text-[#cc2221] transition-colors">
+                                <button onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)} className="p-2 text-neutral-600 hover:text-[#B31942] transition-colors">
                                     {isMobileMenuOpen ? <X size={28} /> : <Menu size={28} />}
                                 </button>
                             </div>
@@ -167,7 +167,7 @@ const Navbar = () => {
                         <div className="hidden lg:flex flex-col items-center gap-2">  
                             <Link href={'/'} className="shrink-0 flex items-center justify-center">
                                 <Image
-                                    src={'/MEGA INDUSTRIES2.png'}
+                                    src={'/MIL.png'}
                                     alt='Mega Industries'
                                     width={300}    
                                     height={400}   
@@ -220,7 +220,7 @@ const Navbar = () => {
                             {/* ... Mobile Menu Button code ... */}
                             {/* 2. User Menu (Aligned Bottom) */}
                             <div className="mt-4">
-                                <h1 className='text-xl md:text-2xl text-[#cc2221] flex gap-4 items-center'>Globally Connected <ChevronDownIcon className='h-8 w-8 text-gray-800 ' /></h1>
+                                <h1 className='text-xl md:text-2xl text-[#B31942] flex gap-4 items-center'>Globally Connected <ChevronDownIcon className='h-8 w-8 text-gray-800 ' /></h1>
                             </div>
                         </div>
 
@@ -229,7 +229,7 @@ const Navbar = () => {
                             {/* Logo */}
                             <Link href={'/'} className="shrink-0 flex items-center justify-center">
                                 <Image
-                                    src={'/MEGA INDUSTRIES2.png'}
+                                    src={'/MIL.png'}
                                     alt='Mega Industries'
                                     width={400}
                                     height={120}
@@ -278,7 +278,7 @@ const Navbar = () => {
                             <div key={item.label}>
                                 {item.isLogin ? (
                                     <div className="space-y-2 bg-white p-3 rounded-lg border border-gray-100">
-                                        <div className='flex items-center gap-4 text-[#cc2221] mb-3'>
+                                        <div className='flex items-center gap-4 text-[#B31942] mb-3'>
                                             <item.icon size={24} />
                                             <div>
                                                 <p className='text-xs text-neutral-500'>{item.label}</p>
@@ -290,7 +290,7 @@ const Navbar = () => {
                                                 <div key={group.id} className="space-y-1">
                                                     <h4 className="text-[12px] font-semibold text-gray-500 pl-1">{group.title}</h4>
                                                     {group.links.map((link) => (
-                                                        <Link key={link.href} href={link.href} className="flex items-center gap-2 p-2 rounded text-[13px] text-neutral-600 hover:bg-red-50 hover:text-[#cc2221]">
+                                                        <Link key={link.href} href={link.href} className="flex items-center gap-2 p-2 rounded text-[13px] text-neutral-600 hover:bg-red-50 hover:text-[#B31942]">
                                                             <ChevronRight className="w-3 h-3" />
                                                             {link.label}
                                                         </Link>
@@ -301,7 +301,7 @@ const Navbar = () => {
                                     </div>
                                 ) : (
                                     <Link className='flex items-center gap-4 p-2 rounded-lg hover:bg-white hover:shadow-sm transition-all' href={item.href}>
-                                        <div className='text-[#cc2221]'><item.icon size={24} /></div>
+                                        <div className='text-[#B31942]'><item.icon size={24} /></div>
                                         <div>
                                             <p className='text-xs text-neutral-500'>{item.label}</p>
                                             <p className='text-sm font-bold text-neutral-800'>{item.content}</p>
@@ -323,7 +323,7 @@ const Navbar = () => {
                     <div className="flex items-center justify-between gap-4 -pb-4">
                         {/* Sticky Logo */}
                         <Link href={'/'} className="shrink-0">
-                            <Image src={'/MEGA INDUSTRIES2.png'} alt='Mega Industries' height={70} width={130} className=" object-contain py-2 h-16 w-auto" />
+                            <Image src={'/MIL.png'} alt='Mega Industries' height={70} width={130} className=" object-contain py-2 h-16 w-auto" />
                         </Link>
 
                         <SearchBar />

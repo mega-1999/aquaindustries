@@ -29,7 +29,7 @@ export default function RelatedSearch({ tags }: RelatedSearchProps) {
               bg-white 
               border border-gray-300 
               text-sm text-gray-600 
-              hover:text-[#cc2221] hover:border-[#cc2221] 
+              hover:text-[#B31942] hover:border-[#B31942] 
               transition-colors duration-200
               cursor-pointer
             "

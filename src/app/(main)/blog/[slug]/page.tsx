@@ -56,7 +56,7 @@ export default async function BlogPostPage({ params }: PageProps) {
         </div>
  
         <div className="prose prose-lg max-w-none text-gray-700 leading-relaxed">
-          <p className="text-xl font-medium text-gray-900 mb-8 border-l-4 border-[#cc2221] pl-6 italic">
+          <p className="text-xl font-medium text-gray-900 mb-8 border-l-4 border-[#B31942] pl-6 italic">
             {post.excerpt}
           </p>
           
@@ -69,7 +69,7 @@ export default async function BlogPostPage({ params }: PageProps) {
           <p className="mb-6">
             Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt 
             ut labore et dolore magna aliqua. Integrating these systems can lead to a 
-            <span className="font-bold text-[#cc2221]"> 20% increase in efficiency</span>.
+            <span className="font-bold text-[#B31942]"> 20% increase in efficiency</span>.
           </p>
           
           <ul className="list-disc pl-6 space-y-2 mb-8">
@@ -87,7 +87,7 @@ export default async function BlogPostPage({ params }: PageProps) {
         {/* Share / Footer of Article */}
         <div className="mt-12 pt-8 border-t border-gray-100 flex justify-between items-center">
             <p className="text-sm text-gray-500">Tags: Foundry, Innovation, Manufacturing</p>
-            <button className="flex items-center gap-2 text-sm font-bold text-[#cc2221] hover:text-red-700">
+            <button className="flex items-center gap-2 text-sm font-bold text-[#B31942] hover:text-red-700">
                 <Share2 className="w-4 h-4" /> Share Article
             </button>
         </div>

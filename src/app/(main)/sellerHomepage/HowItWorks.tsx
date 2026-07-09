@@ -37,11 +37,11 @@ export default function HowItWorks() {
   return (
     <div className="w-full px-4 sm:px-6 lg:px-10 py-3">
       <div className="text-center mb-24">
-        <span className="text-[#cc2221] font-bold text-xs uppercase tracking-widest">
+        <span className="text-[#B31942] font-bold text-xs uppercase tracking-widest">
           Mega Foundries Process
         </span>
         <h2 className="text-[30px] md:text-[40px] font-bold text-gray-900 mt-2">
-          How It <span className="text-[#cc2221]">Works</span>
+          How It <span className="text-[#B31942]">Works</span>
         </h2>
       </div>
       <div className="hidden lg:block relative h-[500px] w-full max-w-6xl mx-auto">
@@ -86,13 +86,13 @@ export default function HowItWorks() {
 
               {step.position === 'top' ? (
                 <>
-                  <div className="absolute top-[60px] text-7xl font-black text-[#cc2221] bg-white/80 px-4 rounded-xl backdrop-blur-sm z-20">
+                  <div className="absolute top-[60px] text-7xl font-black text-[#B31942] bg-white/80 px-4 rounded-xl backdrop-blur-sm z-20">
                     {step.id}
                   </div>
 
                   <div className="absolute top-[280px] px-4 text-center max-w-[280px]">
                     <h3 className="text-xl font-bold text-gray-900 mb-3">
-                      <span className="text-[#cc2221]">{step.highlight}</span> {step.title.replace(step.highlight, "")}
+                      <span className="text-[#B31942]">{step.highlight}</span> {step.title.replace(step.highlight, "")}
                     </h3>
                     <p className="text-sm text-gray-600 leading-relaxed font-medium">
                       {step.description}
@@ -103,7 +103,7 @@ export default function HowItWorks() {
                 <>
                   <div className="absolute top-0 px-4 text-center max-w-[280px]">
                     <h3 className="text-xl font-bold text-gray-900 mb-3">
-                      <span className="text-[#cc2221]">{step.highlight}</span> {step.title.replace(step.highlight, "")}
+                      <span className="text-[#B31942]">{step.highlight}</span> {step.title.replace(step.highlight, "")}
                     </h3>
                     <p className="text-sm text-gray-600 leading-relaxed font-medium">
                       {step.description}
@@ -129,7 +129,7 @@ export default function HowItWorks() {
         <div className="absolute left-8 top-0 bottom-0 w-1 bg-gray-100 -z-10"></div>
         {steps.map((step) => (
           <div key={step.id} className="relative pl-12">
-            <div className="absolute left-0 top-0 w-16 h-16 bg-white border-4 border-gray-100 rounded-2xl flex items-center justify-center text-3xl font-black text-[#cc2221] shadow-sm z-10">
+            <div className="absolute left-0 top-0 w-16 h-16 bg-white border-4 border-gray-100 rounded-2xl flex items-center justify-center text-3xl font-black text-[#B31942] shadow-sm z-10">
               {step.id}
             </div>
             <div className="bg-gray-50 p-6 rounded-xl border border-gray-100 shadow-sm">

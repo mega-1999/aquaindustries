@@ -14,14 +14,14 @@ export default function BlogSection() {
         {/* Header with Red Accent */}
         <div className="flex items-end justify-between mb-12">
           <div>
-            <span className="text-[#cc2221] font-bold text-xs uppercase tracking-widest block mb-2">
+            <span className="text-[#B31942] font-bold text-xs uppercase tracking-widest block mb-2">
               Knowledge Hub
             </span>
             <h2 className="text-3xl md:text-4xl font-bold text-gray-900">
-              Latest <span className="text-[#cc2221]">Insights</span>
+              Latest <span className="text-[#B31942]">Insights</span>
             </h2>
           </div>
-          <Link href="/blog" className="hidden md:block text-sm font-semibold text-gray-600 hover:text-[#cc2221] transition-colors">
+          <Link href="/blog" className="hidden md:block text-sm font-semibold text-gray-600 hover:text-[#B31942] transition-colors">
             View All Articles &rarr;
           </Link>
         </div>
@@ -44,7 +44,7 @@ export default function BlogSection() {
                   className="object-cover transition-transform duration-700 group-hover:scale-110"
                 />
                 {/* Date Badge over Image */}
-                <div className="absolute top-4 left-4 bg-white/90 backdrop-blur-sm px-3 py-1 rounded-full text-xs font-bold text-[#cc2221] shadow-sm">
+                <div className="absolute top-4 left-4 bg-white/90 backdrop-blur-sm px-3 py-1 rounded-full text-xs font-bold text-[#B31942] shadow-sm">
                   {post.date}
                 </div>
               </div>
@@ -59,7 +59,7 @@ export default function BlogSection() {
                 </div>
 
                 {/* Title */}
-                <h3 className="text-lg font-bold text-gray-900 mb-3 line-clamp-2 group-hover:text-[#cc2221] transition-colors">
+                <h3 className="text-lg font-bold text-gray-900 mb-3 line-clamp-2 group-hover:text-[#B31942] transition-colors">
                   {post.title}
                 </h3>
 
@@ -70,7 +70,7 @@ export default function BlogSection() {
 
                 {/* Read More Link */}
                 <div className="mt-auto">
-                  <span className="text-xs font-bold uppercase tracking-wide text-[#cc2221] group-hover:underline">
+                  <span className="text-xs font-bold uppercase tracking-wide text-[#B31942] group-hover:underline">
                     Read Article
                   </span>
                 </div>

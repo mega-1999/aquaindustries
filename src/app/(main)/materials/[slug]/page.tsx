@@ -33,9 +33,9 @@ export default async function MaterialPage({ params }: PageProps) {
           className="object-cover"
           priority
         />
-        <div className="absolute inset-0 bg-black/70"></div>
+        <div className="absolute inset-0 bg-[#0A3161]/70"></div>
         <div className="absolute inset-0 flex flex-col items-center justify-center text-center px-4">
-          <div className="bg-[#cc2221] p-3 rounded-full mb-4">
+          <div className="bg-[#B31942] p-3 rounded-full mb-4">
             <Icon className="w-10 h-10 text-white" />
           </div>
           <h1 className="text-[30px]   font-bold text-white mb-4">{data.title}</h1>
@@ -44,7 +44,7 @@ export default async function MaterialPage({ params }: PageProps) {
       </div>
 
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16">
-        <Link href="/materials" className="inline-flex items-center text-gray-500 hover:text-[#cc2221] mb-8 transition-colors text-xl">
+        <Link href="/materials" className="inline-flex items-center text-gray-500 hover:text-[#B31942] mb-8 transition-colors text-xl">
           <ChevronLeft className="w-3 h-3 mr-1" /> Back to Home
         </Link>
 
@@ -54,7 +54,7 @@ export default async function MaterialPage({ params }: PageProps) {
             <ul className="space-y-4">
               {data.properties.map((prop: string, i: number) => (
                 <li key={i} className="flex items-start">
-                  <CheckCircle2 className="w-3 h-3 text-[#cc2221] mr-3 shrink-0" />
+                  <CheckCircle2 className="w-3 h-3 text-[#B31942] mr-3 shrink-0" />
                   <span className="text-gray-700 text-sm">{prop}</span>
                 </li>
               ))}
@@ -70,10 +70,10 @@ export default async function MaterialPage({ params }: PageProps) {
                 </span>
               ))}
             </div>
-            <div className="mt-10 p-6 text-xl bg-[#cc2221]/5 rounded-xl border border-[#cc2221]/10">
+            <div className="mt-10 p-6 text-xl bg-[#B31942]/5 rounded-xl border border-[#B31942]/10">
               <h3 className="font-bold text-gray-900 mb-2">Need a custom ?</h3>
               <Link href="/custom-projects">
-                <Button className="w-full  text-xl bg-[#cc2221] hover:bg-red-700 text-white mt-4">
+                <Button className="w-full  text-xl bg-[#B31942] hover:bg-red-700 text-white mt-4">
                   Request Quote for {data.title}
                 </Button>
               </Link>

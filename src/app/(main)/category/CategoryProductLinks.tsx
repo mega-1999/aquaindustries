@@ -31,7 +31,7 @@ export default function CategoryProductLinks({ items }: CategoryProductLinksProp
                 bg-white 
                 border border-gray-200 
                 text-sm text-gray-600 
-                hover:text-[#cc2221] hover:border-[#cc2221] hover:shadow-sm
+                hover:text-[#B31942] hover:border-[#B31942] hover:shadow-sm
                 transition-all duration-200
                 cursor-pointer
                 rounded-md

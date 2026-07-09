@@ -99,8 +99,8 @@ export default function Product3DShowcase() {
         <div className="flex flex-col md:flex-row justify-between items-end mb-10 gap-6">
           <div>
             <div className="flex items-center gap-2 mb-2">
-              <Rotate3d className="text-[#cc2221] w-5 h-5 animate-spin-slow" />
-              <span className="text-[#cc2221] font-bold uppercase tracking-widest text-sm">
+              <Rotate3d className="text-[#B31942] w-5 h-5 animate-spin-slow" />
+              <span className="text-[#B31942] font-bold uppercase tracking-widest text-sm">
                 Interactive Showroom
               </span>
             </div>
@@ -114,8 +114,8 @@ export default function Product3DShowcase() {
             className={cn(
               "gap-2 font-bold uppercase tracking-wider px-8 h-12 transition-all",
               isAutoPlayAll 
-                ? "bg-[#cc2221] text-white animate-pulse" 
-                : "bg-white text-black hover:bg-gray-200"
+                ? "bg-[#B31942] text-white animate-pulse" 
+                : "bg-white text-[#0A3161] hover:bg-gray-200"
             )}
           >
             {isAutoPlayAll ? <Pause className="w-4 h-4" /> : <Play className="w-4 h-4" />}
@@ -128,14 +128,14 @@ export default function Product3DShowcase() {
           
           {/* LEFT: The Main Screen */}
           <div className="lg:col-span-2">
-            <div className="relative aspect-video bg-black rounded-lg border border-zinc-800 shadow-2xl overflow-hidden group">
+            <div className="relative aspect-video bg-[#0A3161] rounded-lg border border-zinc-800 shadow-2xl overflow-hidden group">
               
               {/* VIDEO PLAYER LOGIC */}
               {isPlaying ? (
                   <video
                     ref={videoRef}
                     key={activeVideo.src} // Key ensures react rebuilds element on change
-                    className="w-full h-full object-contain bg-black"
+                    className="w-full h-full object-contain bg-[#0A3161]"
                     controls
                     autoPlay
                     onEnded={handleVideoEnd}
@@ -155,8 +155,8 @@ export default function Product3DShowcase() {
                     />
                     
                     {/* Play Button Overlay */}
-                    <div className="absolute inset-0 flex flex-col items-center justify-center cursor-pointer hover:bg-black/30 transition-all z-10" onClick={() => setIsPlaying(true)}>
-                        <div className="w-20 h-20 bg-[#cc2221] rounded-full flex items-center justify-center shadow-lg group-hover:scale-110 transition-transform">
+                    <div className="absolute inset-0 flex flex-col items-center justify-center cursor-pointer hover:bg-[#0A3161]/30 transition-all z-10" onClick={() => setIsPlaying(true)}>
+                        <div className="w-20 h-20 bg-[#B31942] rounded-full flex items-center justify-center shadow-lg group-hover:scale-110 transition-transform">
                             <Play className="w-8 h-8 text-white fill-current ml-1" />
                         </div>
                         <p className="mt-4 font-bold uppercase tracking-wider text-sm text-white drop-shadow-md">Start Interactive Tour</p>
@@ -166,9 +166,9 @@ export default function Product3DShowcase() {
 
               {/* Video Info Overlay (Only show when NOT playing so controls aren't blocked, or keep at bottom) */}
               {!isPlaying && (
-                  <div className="absolute bottom-0 left-0 right-0 p-6 bg-gradient-to-t from-black via-black/80 to-transparent z-20">
+                  <div className="absolute bottom-0 left-0 right-0 p-6 bg-gradient-to-t from-[#0A3161] via-[#0A3161]/80 to-transparent z-20">
                     <div className="flex items-center gap-3 mb-1">
-                      <Badge variant="outline" className="text-[#cc2221] border-[#cc2221] bg-[#cc2221]/10">
+                      <Badge variant="outline" className="text-[#B31942] border-[#B31942] bg-[#B31942]/10">
                         {activeVideo.type.replace('_', ' ')}
                       </Badge>
                       <span className="text-xs text-gray-400 font-mono">{activeVideo.duration}</span>
@@ -199,8 +199,8 @@ export default function Product3DShowcase() {
                   className={cn(
                     "flex gap-4 p-3 rounded-md cursor-pointer transition-all border group",
                     activeVideoIndex === idx 
-                      ? "bg-[#cc2221]/10 border-[#cc2221]" 
-                      : "bg-black border-zinc-800 hover:border-zinc-600"
+                      ? "bg-[#B31942]/10 border-[#B31942]" 
+                      : "bg-[#0A3161] border-zinc-800 hover:border-zinc-600"
                   )}
                 >
                   {/* Thumbnail Placeholder */}
@@ -213,7 +213,7 @@ export default function Product3DShowcase() {
                     />
                     
                     {activeVideoIndex === idx && isPlaying && (
-                       <div className="absolute inset-0 bg-black/50 flex items-center justify-center z-10">
+                       <div className="absolute inset-0 bg-[#0A3161]/50 flex items-center justify-center z-10">
                           <div className="w-2 h-2 bg-red-500 rounded-full animate-ping" />
                        </div>
                     )}
@@ -221,7 +221,7 @@ export default function Product3DShowcase() {
 
                   {/* Text Info */}
                   <div className="flex flex-col justify-center">
-                    <h5 className={cn("font-bold text-sm leading-tight mb-1 group-hover:text-[#cc2221] transition-colors", activeVideoIndex === idx ? "text-[#cc2221]" : "text-white")}>
+                    <h5 className={cn("font-bold text-sm leading-tight mb-1 group-hover:text-[#B31942] transition-colors", activeVideoIndex === idx ? "text-[#B31942]" : "text-white")}>
                       {video.title}
                     </h5>
                     <p className="text-xs text-gray-500 line-clamp-1">{video.description}</p>
@@ -232,8 +232,8 @@ export default function Product3DShowcase() {
 
             {/* Bottom Call to Action */}
             <div className="mt-4 pt-4 border-t border-zinc-800 text-center">
-               <p className="text-xs text-black mb-3">Need 3D CAD files for your project?</p>
-               <Button variant="outline" className="w-full text-xs text-black border-zinc-700 hover:bg-white hover:text-black uppercase">
+               <p className="text-xs text-[#0A3161] mb-3">Need 3D CAD files for your project?</p>
+               <Button variant="outline" className="w-full text-xs text-[#0A3161] border-zinc-700 hover:bg-white hover:text-[#0A3161] uppercase">
                  Request CAD / BIM Files <ChevronRight className="w-3 h-3 ml-1" />
                </Button>
             </div>

@@ -20,12 +20,12 @@ const ScrollableMenu = () => {
                                         group flex items-center 
                                         text-[10px] md:text-[12px] 
                                         gap-1 md:gap-1.5 
-                                        text-[#cc2221] cursor-pointer transition-colors font-semibold 
+                                        text-[#B31942] cursor-pointer transition-colors font-semibold 
                                         px-2 py-1.5 md:px-3 
                                         whitespace-nowrap rounded-none
-                                        hover:bg-[#cc2221] hover:text-white 
-                                        focus:bg-[#cc2221] focus:text-white 
-                                        data-[state=open]:bg-[#cc2221] data-[state=open]:text-white
+                                        hover:bg-[#B31942] hover:text-white 
+                                        focus:bg-[#B31942] focus:text-white 
+                                        data-[state=open]:bg-[#B31942] data-[state=open]:text-white
                                     "
                                 >
                                     <section.icon 
@@ -42,13 +42,13 @@ const ScrollableMenu = () => {
                                 <MenubarContent className="bg-white border border-gray-100 shadow-xl rounded-md min-w-[220px] p-1">
                                     {section.categories.map((category, index) => (
                                         <MenubarSub key={index}>
-                                            <MenubarSubTrigger className="cursor-pointer text-sm py-2 px-3 rounded-sm text-gray-700 hover:text-[#cc2221] hover:bg-red-50">
+                                            <MenubarSubTrigger className="cursor-pointer text-sm py-2 px-3 rounded-sm text-gray-700 hover:text-[#B31942] hover:bg-red-50">
                                                 {category.name}
                                             </MenubarSubTrigger>
                                             <MenubarSubContent className="max-h-[400px] overflow-y-auto bg-white border border-gray-100 shadow-lg min-w-[200px] p-1 ml-1">
                                                 {category.items.map((item, i) => (
                                                     <MenubarItem key={i} asChild>
-                                                        <Link href={`/products/${item.toLowerCase().replace(/ /g, '-').replace(/[^\w-]+/g, '')}`} className="cursor-pointer text-sm py-1.5 px-2 block w-full hover:text-[#cc2221] hover:bg-red-50">
+                                                        <Link href={`/products/${item.toLowerCase().replace(/ /g, '-').replace(/[^\w-]+/g, '')}`} className="cursor-pointer text-sm py-1.5 px-2 block w-full hover:text-[#B31942] hover:bg-red-50">
                                                             {item}
                                                         </Link>
                                                     </MenubarItem>
@@ -64,7 +64,7 @@ const ScrollableMenu = () => {
 
                 {/* View All Button: Fixed size, shrink-0 prevents it from collapsing */}
                 <div className="flex items-center pl-2 shrink-0 border-l border-gray-200 md:border-none">
-                    <Link href="/category/list" className='text-[10px] md:text-[12px] font-semibold text-neutral-700 flex items-center gap-1.5 hover:text-[#cc2221] transition-colors whitespace-nowrap'>
+                    <Link href="/category/list" className='text-[10px] md:text-[12px] font-semibold text-neutral-700 flex items-center gap-1.5 hover:text-[#B31942] transition-colors whitespace-nowrap'>
                         <Menu className='h-3 w-3 md:h-3.5 md:w-3.5' /> 
                         <span className="hidden sm:inline">VIEW ALL CATEGORIES</span>
                         <span className="sm:hidden">VIEW ALL</span>

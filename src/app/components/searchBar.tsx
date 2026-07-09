@@ -38,13 +38,13 @@ const SearchBar = () => {
 
         /* === NORMAL STATE === */
         bg-white 
-        text-black 
+        text-[#0A3161] 
         border-r border-[#CCCCCC]
 
         /* === HOVER STATE === */
-        hover:bg-[#cc2221] 
+        hover:bg-[#B31942] 
         hover:text-white
-        hover:border-[#cc2221]
+        hover:border-[#B31942]
     "
                     >
                         <span className="block w-full truncate">
@@ -52,7 +52,7 @@ const SearchBar = () => {
                         </span>
 
                         {/* Chevron Icon: Black normally, turns White on hover via group logic */}
-                        <ChevronDown className="absolute right-2 top-1/2 -translate-y-1/2 w-3 h-3 text-black pointer-events-none transition-colors duration-200" />
+                        <ChevronDown className="absolute right-2 top-1/2 -translate-y-1/2 w-3 h-3 text-[#0A3161] pointer-events-none transition-colors duration-200" />
 
                         {/* Note: The icon won't change color automatically unless you add a CSS rule or 
        use the 'group' class on the button and 'group-hover:text-white' on the icon.
@@ -76,7 +76,7 @@ const SearchBar = () => {
                         className="
                             cursor-pointer text-xs font-semibold px-3 py-2 text-neutral-800
                             rounded-none
-                            focus:bg-[#cc2221] focus:text-white
+                            focus:bg-[#B31942] focus:text-white
                         "
                     >
                         All
@@ -90,7 +90,7 @@ const SearchBar = () => {
                             className="
                                 cursor-pointer text-xs font-semibold px-3 py-2 text-neutral-800
                                 rounded-none
-                                focus:bg-[#cc2221] focus:text-white
+                                focus:bg-[#B31942] focus:text-white
                             "
                         >
                             {section.label}
@@ -107,7 +107,7 @@ const SearchBar = () => {
             />
 
             {/* === 3. BUTTON === */}
-            <Button className="h-full rounded-none px-6 bg-[#cc2221] hover:bg-red-700 text-white font-semibold text-xs uppercase tracking-wide">
+            <Button className="h-full rounded-none px-6 bg-[#B31942] hover:bg-red-700 text-white font-semibold text-xs uppercase tracking-wide">
                 Search
             </Button>
         </div>

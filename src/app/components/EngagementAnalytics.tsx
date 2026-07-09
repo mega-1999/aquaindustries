@@ -12,7 +12,7 @@ interface FeatureItemProps {
 
 const FeatureItem = ({ icon: Icon, title, description }: FeatureItemProps) => (<div className="flex flex-col items-start gap-3">
   <div className="p-0">
-    <Icon className="w-10 h-10 text-[#cc2221]" strokeWidth={2} />
+    <Icon className="w-10 h-10 text-[#B31942]" strokeWidth={2} />
   </div>
   <div className="space-y-2">
     <h3 className="text-xl font-bold text-gray-900">{title}</h3>
@@ -84,7 +84,7 @@ export default function App() {
 
             {/* CTA Section */}
             <div className="flex justify-start md:justify-end pt-4">
-              <Button variant="destructive" size="lg" className="text-base px-8 py-6 font-semibold bg-[#cc2221] hover:bg-[#cc2221]">
+              <Button variant="destructive" size="lg" className="text-base px-8 py-6 font-semibold bg-[#B31942] hover:bg-[#B31942]">
               <Link href={'/sellerHomepage'}>Join As Supplier</Link>
               </Button>
             </div>

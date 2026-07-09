@@ -50,7 +50,7 @@ export default function MakingHistoryPage() {
       {/* === HERO SECTION === */}
       <section className="relative h-[60vh] flex items-center justify-center bg-slate-900 text-white overflow-hidden">
         {/* Background Overlay (Simulating industrial dark mode) */}
-        <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_center,_var(--tw-gradient-stops))] from-slate-800 via-slate-950 to-black opacity-90 z-0"></div>
+        <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_center,_var(--tw-gradient-stops))] from-slate-800 via-slate-950 to-[#0A3161] opacity-90 z-0"></div>
 
         {/* Decorative 'Sparks' or Graphic (Optional) */}
         <div className="absolute top-0 left-0 w-full h-full opacity-20 bg-[url('/assets/image2.jpeg')]"></div>

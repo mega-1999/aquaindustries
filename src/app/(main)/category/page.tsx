@@ -18,7 +18,7 @@ export default function CategoryList() {
  
             <div className="w-full px-4 sm:px-6 lg:px-10 mx-auto">
                 <p className="text-sm font-bold text-gray-700">
-                    <Link href={'/'} className="hover:text-[#cc2221]">Home</Link>
+                    <Link href={'/'} className="hover:text-[#B31942]">Home</Link>
                     <span className="mx-2">/</span>
                     <span className="text-gray-500 font-normal">All Categories</span>
                 </p>
@@ -36,7 +36,7 @@ export default function CategoryList() {
                                 fill
                                 className="object-cover transition-transform duration-700 group-hover:scale-105"
                             />
-                            <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-black/20 to-transparent"></div>
+                            <div className="absolute inset-0 bg-gradient-to-t from-[#0A3161]/60 via-[#0A3161]/20 to-transparent"></div>
  
                             <div className={`absolute top-6 left-0 px-6 py-2 rounded-r-full font-bold text-lg shadow-sm ${category.color || 'bg-gray-100 text-gray-900'}`}>
                                 {category.label}
@@ -64,7 +64,7 @@ export default function CategoryList() {
 
                                         {/* Content */}
                                         <div className="flex flex-col grow">
-                                            <h3 className="font-bold text-gray-900 text-lg mb-2 group-hover:text-[#cc2221] transition-colors">
+                                            <h3 className="font-bold text-gray-900 text-lg mb-2 group-hover:text-[#B31942] transition-colors">
                                                 {sub.name}
                                             </h3>
                                             <p className="text-sm text-gray-500 leading-relaxed line-clamp-3">
@@ -80,7 +80,7 @@ export default function CategoryList() {
                                 <Link href={`/category/${category.id}`}>
                                     <Button
                                         variant="ghost"
-                                        className="text-[#cc2221] hover:text-[#a01b1b] hover:bg-red-50 font-semibold flex items-center gap-2 px-4"
+                                        className="text-[#B31942] hover:text-[#a01b1b] hover:bg-red-50 font-semibold flex items-center gap-2 px-4"
                                     >
                                         View More <ChevronDown className="w-4 h-4" />
                                     </Button>

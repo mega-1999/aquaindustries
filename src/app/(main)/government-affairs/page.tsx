@@ -152,7 +152,7 @@ export default function GovernmentAffairsPage() {
                <p className="text-slate-600">Director of Government Relations</p>
                <div className="h-px bg-slate-100 my-4"></div>
                <p className="text-slate-900 font-medium">govt.relations@megafoundries.com</p>
-               <p className="text-slate-900 font-medium">+1 (438) 805-9990</p>
+               <p className="text-slate-900 font-medium">705 710 5505</p>
                <p className="text-xs text-slate-400 mt-4">UEI: XJ9283KLS82</p>
             </div>
           </div>

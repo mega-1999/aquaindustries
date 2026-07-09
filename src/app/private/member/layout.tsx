@@ -129,7 +129,7 @@ export default function DashboardLayout({ children }: { children: React.ReactNod
       {/* --- DESKTOP SIDEBAR --- */}
       <aside className="hidden md:flex w-64 flex-col bg-slate-900 text-white fixed h-full inset-y-0 z-50">
         <div className="h-16 flex items-center px-6 border-b border-slate-800 font-bold text-xl tracking-wider">
-          <span className="text-[#cc2221]">MEGA</span>FOUNDRIES
+          <span className="text-[#B31942]">MEGA</span>FOUNDRIES
         </div>
 
         <nav className="flex-1 py-6 px-3 space-y-1">
@@ -138,7 +138,7 @@ export default function DashboardLayout({ children }: { children: React.ReactNod
             return (
               <Link key={item.href} href={item.href}>
                 <span className={`flex items-center gap-3 px-3 py-2.5 rounded-md text-sm font-medium transition-colors ${isActive
-                  ? 'bg-[#cc2221] text-white'
+                  ? 'bg-[#B31942] text-white'
                   : 'text-slate-400 hover:text-white hover:bg-slate-800'
                   }`}>
                   <item.icon className="w-4 h-4" />
@@ -171,7 +171,7 @@ export default function DashboardLayout({ children }: { children: React.ReactNod
               </Button>
             </SheetTrigger>
             <SheetContent side="left" className="bg-slate-900 text-white border-none">
-              <div className="font-bold text-xl mb-8"><span className="text-[#cc2221]">MEGA</span>FOUNDRIES</div>
+              <div className="font-bold text-xl mb-8"><span className="text-[#B31942]">MEGA</span>FOUNDRIES</div>
               <nav className="space-y-2">
                 {navItems.map((item) => (
                   <Link key={item.href} href={item.href} className="flex items-center gap-3 px-3 py-2 text-slate-300 hover:text-white">

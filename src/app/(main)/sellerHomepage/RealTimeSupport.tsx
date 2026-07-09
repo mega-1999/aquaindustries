@@ -11,11 +11,11 @@ export default function RealTimeSupport() {
 
           {/* === LEFT COLUMN: 24/7 SUPPORT === */}
           <div className="space-y-6">
-            <h2 className="text-3xl md:text-4xl font-bold text-[#cc2221]">
+            <h2 className="text-3xl md:text-4xl font-bold text-[#B31942]">
               24/7 real-time support.
             </h2>
 
-            <p className="text-[#cc2221] font-medium text-xl">
+            <p className="text-[#B31942] font-medium text-xl">
               We're here for you — anytime, every day.
             </p>
 
@@ -32,7 +32,7 @@ export default function RealTimeSupport() {
             </div>
 
             <div className="pt-6 space-y-4">
-              <h4 className="text-[#cc2221] font-bold text-lg">Why it matters:</h4>
+              <h4 className="text-[#B31942] font-bold text-lg">Why it matters:</h4>
               <ul className="space-y-3 text-gray-600 text-sm">
                 <li>- No downtime — get help whenever your shift is running</li>
                 <li>- Fast resolution for technical casting queries</li>
@@ -52,13 +52,13 @@ export default function RealTimeSupport() {
               </div>
               <div>
                 <p className="text-gray-900 font-medium text-lg">Online Chat</p>
-                <h2 className="text-3xl md:text-4xl font-bold text-[#cc2221] mt-1">
+                <h2 className="text-3xl md:text-4xl font-bold text-[#B31942] mt-1">
                   Live Chat Now
                 </h2>
               </div>
             </div>
 
-            <p className="text-[#cc2221] font-medium text-lg">
+            <p className="text-[#B31942] font-medium text-lg">
               Connect instantly with buyers — no delays, no barriers.
             </p>
 
@@ -74,7 +74,7 @@ export default function RealTimeSupport() {
             </p>
 
             <div className="pt-6 space-y-4">
-              <h4 className="text-[#cc2221] font-bold text-lg">Key features:</h4>
+              <h4 className="text-[#B31942] font-bold text-lg">Key features:</h4>
               <ul className="space-y-3 text-gray-600 text-sm">
                 <li>- Real-time messaging between foundry and OEM buyer</li>
                 <li>- Share blueprints, certifications, and heat charts instantly</li>

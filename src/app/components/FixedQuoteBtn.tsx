@@ -38,7 +38,7 @@ const FixedQuoteBtn = () => {
           href="/quote"
           className="
             flex items-center gap-2
-            bg-[#cc2221] hover:bg-[#b01e1d] text-white font-bold
+            bg-[#B31942] hover:bg-[#8f1435] text-white font-bold
             py-3 px-8 rounded-t-lg shadow-[0_0_10px_rgba(0,0,0,0.3)]
             transition-all duration-300 ease-in-out
             origin-bottom-right 
@@ -65,8 +65,8 @@ const FixedQuoteBtn = () => {
           target="_blank"
           className="
             w-12 h-12 flex items-center justify-center 
-            bg-[#cc2221] hover:bg-[#b01e1d] text-white 
-            rounded-full shadow-lg shadow-[#cc2221]/30
+            bg-[#B31942] hover:bg-[#8f1435] text-white 
+            rounded-full shadow-lg shadow-[#B31942]/30
             transition-transform hover:scale-110
           "
           title="Chat on WhatsApp"
@@ -76,11 +76,11 @@ const FixedQuoteBtn = () => {
 
         {/* B. Phone Call */}
         <Link
-          href="tel:+15127828880"
+          href="tel:3077887700"
           className="
             w-12 h-12 flex items-center justify-center 
-            bg-[#cc2221] hover:bg-[#b01e1d] text-white 
-            rounded-full shadow-lg shadow-[#cc2221]/30
+            bg-[#B31942] hover:bg-[#8f1435] text-white 
+            rounded-full shadow-lg shadow-[#B31942]/30
             transition-transform hover:scale-110
           "
           title="Call Us"
@@ -93,8 +93,8 @@ const FixedQuoteBtn = () => {
           href="mailto:sales@megafoundries.com"
           className="
             w-12 h-12 flex items-center justify-center 
-            bg-[#cc2221] hover:bg-[#b01e1d] text-white 
-            rounded-full shadow-lg shadow-[#cc2221]/30
+            bg-[#B31942] hover:bg-[#8f1435] text-white 
+            rounded-full shadow-lg shadow-[#B31942]/30
             transition-transform hover:scale-110
           "
           title="Send Email"

@@ -68,7 +68,7 @@ const MaterialsHelpCenter = () => {
             className="object-cover"
             priority
           />
-          <div className="absolute inset-0 bg-black/60"></div>
+          <div className="absolute inset-0 bg-[#0A3161]/60"></div>
         </div>
 
         <div className="relative z-10 max-w-4xl mx-auto space-y-6">
@@ -94,11 +94,11 @@ const MaterialsHelpCenter = () => {
               href={item.href}
               className="group bg-white rounded-xl shadow-sm hover:shadow-xl transition-all duration-300 p-8 border border-gray-100 flex flex-col items-start"
             >
-              <div className="mb-6 p-3 bg-red-50 rounded-lg group-hover:bg-[#cc2221] transition-colors duration-300">
-                <item.icon className="w-8 h-8 text-[#cc2221] group-hover:text-white transition-colors duration-300" />
+              <div className="mb-6 p-3 bg-red-50 rounded-lg group-hover:bg-[#B31942] transition-colors duration-300">
+                <item.icon className="w-8 h-8 text-[#B31942] group-hover:text-white transition-colors duration-300" />
               </div>
 
-              <h3 className="text-xl font-bold text-gray-900 mb-3 group-hover:text-[#cc2221] text-xl transition-colors">
+              <h3 className="text-xl font-bold text-gray-900 mb-3 group-hover:text-[#B31942] text-xl transition-colors">
                 {item.title}
               </h3>
 
@@ -106,7 +106,7 @@ const MaterialsHelpCenter = () => {
                 {item.description}
               </p>
 
-              <div className="flex items-center text-[#cc2221] font-semibold mt-auto  text-xl group-hover:translate-x-1 transition-transform">
+              <div className="flex items-center text-[#B31942] font-semibold mt-auto  text-xl group-hover:translate-x-1 transition-transform">
                 Explore Specs <ArrowRight className="ml-2 w-4 h-4" />
               </div>
             </Link>
@@ -116,7 +116,7 @@ const MaterialsHelpCenter = () => {
 
       <section className="text-center py-12 pb-24">
         <p className="text-gray-600 mb-4">Can't find what you are looking for?</p>
-        <Button className="bg-[#cc2221] hover:bg-red-700 text-white px-8 py-6 text-lg rounded-full">
+        <Button className="bg-[#B31942] hover:bg-red-700 text-white px-8 py-6 text-lg rounded-full">
           Contact Our Engineering Team
         </Button>
       </section>

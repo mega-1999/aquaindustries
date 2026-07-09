@@ -19,10 +19,10 @@ const SideStreamPlayer = ({
   <div className="w-[200px] h-[calc(100vh-100px)] sticky top-24 flex flex-col gap-4">
 
     {/* === Video Container 1 (Top) === */}
-    <div className={`relative w-full h-1/2 bg-black rounded-xl overflow-hidden border-2 border-${color}-500 shadow-[0_0_15px_rgba(0,0,0,0.5)]`}>
+    <div className={`relative w-full h-1/2 bg-[#0A3161] rounded-xl overflow-hidden border-2 border-${color}-500 shadow-[0_0_15px_rgba(0,0,0,0.5)]`}>
 
       {/* Live Badge */}
-      <div className="absolute top-2 left-2 z-10 flex items-center gap-1.5 bg-black/60 backdrop-blur-md px-2 py-1 rounded text-[10px] font-bold text-white">
+      <div className="absolute top-2 left-2 z-10 flex items-center gap-1.5 bg-[#0A3161]/60 backdrop-blur-md px-2 py-1 rounded text-[10px] font-bold text-white">
         <span className="w-1.5 h-1.5 bg-red-500 rounded-full animate-pulse"></span> LIVE
       </div>
 
@@ -36,7 +36,7 @@ const SideStreamPlayer = ({
       />
 
       {/* Gradient Overlay */}
-      <div className="absolute inset-0 pointer-events-none bg-gradient-to-t from-black/80 to-transparent"></div>
+      <div className="absolute inset-0 pointer-events-none bg-gradient-to-t from-[#0A3161]/80 to-transparent"></div>
       <div className="absolute bottom-3 left-3 text-white text-xs font-bold">
         {title} - Unit A
       </div>
@@ -44,7 +44,7 @@ const SideStreamPlayer = ({
 
     {/* === Video Container 2 (Bottom) === */}
     {/* UPDATED: Added border-2, dynamic color border, and shadow to match the top video */}
-    <div className={`relative w-full h-1/2 bg-black rounded-xl overflow-hidden border-2 border-${color}-500 shadow-[0_0_15px_rgba(0,0,0,0.5)] opacity-80 hover:opacity-100 transition-opacity`}>
+    <div className={`relative w-full h-1/2 bg-[#0A3161] rounded-xl overflow-hidden border-2 border-${color}-500 shadow-[0_0_15px_rgba(0,0,0,0.5)] opacity-80 hover:opacity-100 transition-opacity`}>
 
       <video
         autoPlay
@@ -56,7 +56,7 @@ const SideStreamPlayer = ({
       />
 
       {/* Overlay info */}
-      <div className="absolute inset-0 pointer-events-none bg-gradient-to-t from-black/80 to-transparent"></div>
+      <div className="absolute inset-0 pointer-events-none bg-gradient-to-t from-[#0A3161]/80 to-transparent"></div>
       <div className="absolute bottom-3 left-3 text-white text-xs font-bold">
         {title} - Unit B
       </div>
@@ -93,12 +93,12 @@ export default function LiveStreamCommandCenter() {
             </h1>
 
             <div className="flex justify-center gap-6 text-xs text-gray-400 font-mono mt-4">
-              <span className="flex items-center gap-1 "><span className="text-[#cc2221]">●</span> 54,201 FACTORIES <div className="text-[#cc2221]">ONLINE</div> </span>
+              <span className="flex items-center gap-1 "><span className="text-[#B31942]">●</span> 54,201 FACTORIES <div className="text-[#B31942]">ONLINE</div> </span>
               <span className="flex items-center gap-1"><span className="text-green-500">●</span> 98.4% UPTIME</span>
             </div>
             <div className="flex justify-center gap-6 text-xs text-gray-400 mt-4">
             </div>
-            <span className="text-xl md:text-2xl font-bold  bg-clip-text text-[#cc2221] mb-2 uppercase tracking-tight">FOLLOW YOUR PRODUCT BEING BORN & DELIVERED TO YOU LIVE <span className="text-sm "> (PRE-REGISTRATION REQUIRED) </span> </span>
+            <span className="text-xl md:text-2xl font-bold  bg-clip-text text-[#B31942] mb-2 uppercase tracking-tight">FOLLOW YOUR PRODUCT BEING BORN & DELIVERED TO YOU LIVE <span className="text-sm "> (PRE-REGISTRATION REQUIRED) </span> </span>
           </div>
 
           {/* THE INFINITE SCROLL FEED (Your main content) */}
@@ -110,7 +110,7 @@ export default function LiveStreamCommandCenter() {
           <div className="w-full mt-12 grid grid-cols-1 md:grid-cols-2 gap-4">
 
             {/* 1. ANALYTICS GRAPH (Simulated Line Chart) */}
-            <div className="h-40 bg-neutral-900/50 border border-[#cc2221] rounded-lg p-5 relative overflow-hidden group hover:border-[#cc2221]/50 transition-colors">
+            <div className="h-40 bg-neutral-900/50 border border-[#B31942] rounded-lg p-5 relative overflow-hidden group hover:border-[#B31942]/50 transition-colors">
               <div className="flex justify-between items-start mb-4">
                 <div>
                   <h3 className="text-gray-400 text-xs font-bold uppercase tracking-wider">Overall Efficiency</h3>
@@ -124,11 +124,11 @@ export default function LiveStreamCommandCenter() {
               <div className="absolute bottom-0 left-0 right-0 h-16 opacity-50">
                 <svg className="w-full h-full" viewBox="0 0 100 20" preserveAspectRatio="none">
                   <path d="M0 15 Q 10 5, 20 12 T 40 10 T 60 5 T 80 12 T 100 8 L 100 20 L 0 20 Z" fill="url(#gradient)" />
-                  <path d="M0 15 Q 10 5, 20 12 T 40 10 T 60 5 T 80 12 T 100 8" fill="none" stroke="#cc2221" strokeWidth="0.5" />
+                  <path d="M0 15 Q 10 5, 20 12 T 40 10 T 60 5 T 80 12 T 100 8" fill="none" stroke="#B31942" strokeWidth="0.5" />
                   <defs>
                     <linearGradient id="gradient" x1="0" y1="0" x2="0" y2="1">
-                      <stop offset="0%" stopColor="#cc2221" stopOpacity="0.4" />
-                      <stop offset="100%" stopColor="#cc2221" stopOpacity="0" />
+                      <stop offset="0%" stopColor="#B31942" stopOpacity="0.4" />
+                      <stop offset="100%" stopColor="#B31942" stopOpacity="0" />
                     </linearGradient>
                   </defs>
                 </svg>
@@ -136,7 +136,7 @@ export default function LiveStreamCommandCenter() {
             </div>
 
             {/* 2. PRODUCTION OUTPUT (Progress Bars) */}
-            <div className="h-40 bg-neutral-900/50 border border-[#cc2221] rounded-lg p-5 flex flex-col justify-between hover:border-[#cc2221]/50 transition-colors">
+            <div className="h-40 bg-neutral-900/50 border border-[#B31942] rounded-lg p-5 flex flex-col justify-between hover:border-[#B31942]/50 transition-colors">
               <h3 className="text-gray-400 text-xs font-bold uppercase tracking-wider">Daily Production</h3>
 
               <div className="space-y-3">
@@ -147,7 +147,7 @@ export default function LiveStreamCommandCenter() {
                     <span className="text-white font-mono">1,240 / 1,500</span>
                   </div>
                   <div className="w-full bg-neutral-800 h-1.5 rounded-full overflow-hidden">
-                    <div className="bg-[#cc2221] h-full rounded-full w-[82%]"></div>
+                    <div className="bg-[#B31942] h-full rounded-full w-[82%]"></div>
                   </div>
                 </div>
                 {/* Item 2 */}
@@ -164,12 +164,12 @@ export default function LiveStreamCommandCenter() {
             </div>
 
             {/* 3. ENERGY CONSUMPTION (Gauge/Stats) */}
-            <div className="h-40 bg-neutral-900/50 border border-[#cc2221] rounded-lg p-5 hover:border-[#cc2221]/50 transition-colors">
+            <div className="h-40 bg-neutral-900/50 border border-[#B31942] rounded-lg p-5 hover:border-[#B31942]/50 transition-colors">
               <h3 className="text-gray-400 text-xs font-bold uppercase tracking-wider mb-4">Grid Load</h3>
               <div className="flex items-center gap-4">
                 {/* Circular "Gauge" using CSS borders */}
                 <div className="relative w-16 h-16 rounded-full border-4 border-neutral-800 flex items-center justify-center">
-                  <div className="absolute inset-0 border-4 border-[#cc2221] rounded-full border-l-transparent border-b-transparent rotate-45"></div>
+                  <div className="absolute inset-0 border-4 border-[#B31942] rounded-full border-l-transparent border-b-transparent rotate-45"></div>
                   <span className="text-xs font-bold text-white">78%</span>
                 </div>
                 <div className="space-y-1">
@@ -181,7 +181,7 @@ export default function LiveStreamCommandCenter() {
             </div>
 
             {/* 4. LOGISTICS MAP (Dot Simulation) */}
-            <div className="h-40 bg-neutral-900/50 border border-[#cc2221] rounded-lg p-5 relative overflow-hidden hover:border-[#cc2221]/50 transition-colors">
+            <div className="h-40 bg-neutral-900/50 border border-[#B31942] rounded-lg p-5 relative overflow-hidden hover:border-[#B31942]/50 transition-colors">
               <h3 className="text-gray-400 text-xs font-bold uppercase tracking-wider relative z-10">Active Shipments</h3>
 
               {/* Fake Map Dots */}
