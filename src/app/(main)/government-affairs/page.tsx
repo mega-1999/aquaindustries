@@ -24,7 +24,7 @@ export default function GovernmentAffairsPage() {
               <span className="text-transparent bg-clip-text bg-gradient-to-r from-red-500 to-red-400">Backbone</span>
             </h1>
             <p className="text-lg md:text-xl text-[#0A3161]/40 leading-relaxed mb-8">
-              Mega Foundries is a trusted partner to local, state, and federal agencies. We provide the critical infrastructure and defense components that keep America secure and moving forward.
+              METALSVERSE Foundries is a trusted partner to local, state, and federal agencies. We provide the critical infrastructure and defense components that keep America secure and moving forward.
             </p>
             <div className="flex flex-wrap gap-4">
               <button className="flex items-center gap-2 bg-[#B31942] hover:bg-[#B31942] text-white font-bold py-3 px-6 rounded transition-colors">
@@ -122,7 +122,7 @@ export default function GovernmentAffairsPage() {
             </div>
             <h2 className="text-3xl md:text-4xl font-bold mb-6">Securing the Supply Chain</h2>
             <p className="text-[#0A3161]/60 mb-6 leading-relaxed">
-              When international supply chains faltered, Mega Foundries stepped up to produce critical turbine housings for the Department of Energy's hydroelectric expansion project. By reshoring this production, we reduced lead times by 40% and ensured 100% domestic compliance.
+              When international supply chains faltered, METALSVERSE Foundries stepped up to produce critical turbine housings for the Department of Energy's hydroelectric expansion project. By reshoring this production, we reduced lead times by 40% and ensured 100% domestic compliance.
             </p>
             <ul className="space-y-4">
               <li className="flex items-center gap-3">

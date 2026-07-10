@@ -31,7 +31,7 @@ const loginOptions = [
         id: 1,
         title: "Corporate & Operations",
         links: [
-            { label: "Team Mega Login", href: "/login/team" },
+            { label: "Team METALSVERSE Login", href: "/login/team" },
             { label: "Customer Login", href: "/login/customer" },
             { label: "Logistics Login", href: "/login/logistics" },
             { label: "Foundries Login", href: "/login/foundry" },
@@ -142,20 +142,20 @@ const Navbar = () => {
                         <div className="w-full lg:w-auto flex justify-between item-start gap-6 shrink-0">
                             <div className='flex flex-col gap-4'>
                                 <div className="items-center gap-4 hidden lg:flex">
-                                    <Link href={'/'} className="shrink-0"><Image src={'/MEGA FOUNDRIES.png'} alt='Mega Foundries' height={80} width={80} className="object-contain h-12 w-12 sm:h-16 sm:w-16 lg:h-20 lg:w-20" /></Link>
-                                    <Link href={'/'} className="shrink-0"><Image src={'/MEGA METALS.png'} alt='Fabricator' height={80} width={80} className="object-contain h-12 w-12 sm:h-16 sm:w-16 lg:h-20 lg:w-20" /></Link>
-                                    <Link href={'/'} className="shrink-0"><Image src={'/MEGA FABRICATORS.png'} alt='Fabricator' height={80} width={80} className="object-contain h-24 w-24 sm:h-16 sm:w-16 lg:h-20 lg:w-20" /></Link>
+                                    <Link href={'/'} className="shrink-0"><Image src={'/METALSVERSE FOUNDRIES.png'} alt='METALSVERSE Foundries' height={80} width={80} className="object-contain h-12 w-12 sm:h-16 sm:w-16 lg:h-20 lg:w-20" /></Link>
+                                    <Link href={'/'} className="shrink-0"><Image src={'/METALSVERSE METALS.png'} alt='Fabricator' height={80} width={80} className="object-contain h-12 w-12 sm:h-16 sm:w-16 lg:h-20 lg:w-20" /></Link>
+                                    <Link href={'/'} className="shrink-0"><Image src={'/METALSVERSE FABRICATORS.png'} alt='Fabricator' height={80} width={80} className="object-contain h-24 w-24 sm:h-16 sm:w-16 lg:h-20 lg:w-20" /></Link>
                                 </div> 
                             </div>
                             <div className="pt-2 lg:hidden">
                                 <div className="grid grid-cols-7 gap-4 items-center justify-items-center">
-                                    <Image src={'/MEGA FOUNDRIES.png'} alt='Mega' width={60} height={60} className="object-contain h-12 w-12" />
-                                    <Image src={'/MEGA FABRICATORS.png'} alt='Fabricator' width={60} height={60} className="object-contain h-12 w-12" />
-                                    <Image src={'/MEGA INDUSTRIES.png'} alt='Fabricator' width={60} height={60} className="object-contain h-12 w-12" />
-                                    <Image src={'/MEGA METALS.png'} alt='Fabricator' width={100} height={100} className="object-contain h-24 w-24" />
+                                    <Image src={'/METALSVERSE FOUNDRIES.png'} alt='Mega' width={60} height={60} className="object-contain h-12 w-12" />
+                                    <Image src={'/METALSVERSE FABRICATORS.png'} alt='Fabricator' width={60} height={60} className="object-contain h-12 w-12" />
+                                    <Image src={'/METALSVERSE INDUSTRIES.png'} alt='Fabricator' width={60} height={60} className="object-contain h-12 w-12" />
+                                    <Image src={'/METALSVERSE METALS.png'} alt='Fabricator' width={100} height={100} className="object-contain h-24 w-24" />
                                     <Image src={'/CANADA FOUNDRIES.png'} alt='Fabricator' width={60} height={60} className="object-contain h-12 w-12" />
-                                    <Image src={'/MEGA FORGE.png'} alt='Forge' width={60} height={60} className="object-contain h-12 w-12" />
-                                    <Image src={'/MEGA MOLDS.png'} alt='Canada' width={60} height={60} className="object-contain h-12 w-12" />
+                                    <Image src={'/METALSVERSE FORGE.png'} alt='Forge' width={60} height={60} className="object-contain h-12 w-12" />
+                                    <Image src={'/METALSVERSE MOLDS.png'} alt='Canada' width={60} height={60} className="object-contain h-12 w-12" />
                                 </div>
                             </div>
                             <div className="flex items-center gap-2 lg:hidden">
@@ -168,7 +168,7 @@ const Navbar = () => {
                             <Link href={'/'} className="shrink-0 flex items-center justify-center">
                                 <Image
                                     src={'/MIL.png'}
-                                    alt='Mega Industries'
+                                    alt='METALSVERSE Industries'
                                     width={300}    
                                     height={400}   
                                     className="object-contain w-auto h-28 lg:h-20"  
@@ -183,10 +183,10 @@ const Navbar = () => {
                         <div className="hidden lg:flex flex-col justify-between items-end">
                             <div className="flex items-center gap-4">
                                 <Link href={'/'} className="shrink-0">
-                                    <Image src={'/MEGA MOLDS.png'} alt='Molds' height={80} width={80} className="object-contain h-24 w-24" />
+                                    <Image src={'/METALSVERSE MOLDS.png'} alt='Molds' height={80} width={80} className="object-contain h-24 w-24" />
                                 </Link>
                                 <Link href={'/'} className="shrink-0">
-                                    <Image src={'/MEGA FORGE.png'} alt='Forge' height={80} width={80} className="object-contain h-24 w-24" />
+                                    <Image src={'/METALSVERSE FORGE.png'} alt='Forge' height={80} width={80} className="object-contain h-24 w-24" />
                                 </Link>
                                 <Link href={'/'} className="shrink-0">
                                     <Image src={'/CANADA FOUNDRIES.png'} alt='Canada' height={80} width={80} className="object-contain h-24 w-24" />
@@ -208,13 +208,13 @@ const Navbar = () => {
                         <div className="w-full lg:w-auto flex flex-col justify-between items-start shrink-0">
                             <div className="flex items-center gap-4 lg:flex"> {/* Added mt-2 to align with center logo text baseline if needed */}
                                 <Link href={'/'} className="shrink-0">
-                                    <Image src={'/MEGA FOUNDRIES.png'} alt='Mega Foundries' height={80} width={80} className="object-contain h-14 w-14 lg:h-18   lg:w-24" />
+                                    <Image src={'/METALSVERSE FOUNDRIES.png'} alt='METALSVERSE Foundries' height={80} width={80} className="object-contain h-14 w-14 lg:h-18   lg:w-24" />
                                 </Link>
                                 <Link href={'/'} className="shrink-0">
-                                    <Image src={'/MEGA METALS.png'} alt='Fabricator' height={80} width={80} className="object-contain h-14 w-14 lg:h-18  lg:w-24" />
+                                    <Image src={'/METALSVERSE METALS.png'} alt='Fabricator' height={80} width={80} className="object-contain h-14 w-14 lg:h-18  lg:w-24" />
                                 </Link>
                                 <Link href={'/'} className="shrink-0">
-                                    <Image src={'/MEGA FABRICATORS.png'} alt='Fabricator' height={80} width={80} className="object-contain h-14 w-14 lg:h-18     lg:w-24" />
+                                    <Image src={'/METALSVERSE FABRICATORS.png'} alt='Fabricator' height={80} width={80} className="object-contain h-14 w-14 lg:h-18     lg:w-24" />
                                 </Link>
                             </div>
                             {/* ... Mobile Menu Button code ... */}
@@ -230,7 +230,7 @@ const Navbar = () => {
                             <Link href={'/'} className="shrink-0 flex items-center justify-center">
                                 <Image
                                     src={'/MIL.png'}
-                                    alt='Mega Industries'
+                                    alt='METALSVERSE Industries'
                                     width={400}
                                     height={120}
                                     className="object-contain h-16 w-auto lg:h-20" // Adjusted height
@@ -251,10 +251,10 @@ const Navbar = () => {
                             {/* 1. Logos (Aligned Top) */}
                             <div className="flex items-center gap-4"> {/* mt-2 matches Left Section */}
                                 <Link href={'/'} className="shrink-0">
-                                    <Image src={'/MEGA MOLDS.png'} alt='Molds' height={80} width={80} className="object-contain h-14 w-14 lg:h-18 lg:w-24" />
+                                    <Image src={'/METALSVERSE MOLDS.png'} alt='Molds' height={80} width={80} className="object-contain h-14 w-14 lg:h-18 lg:w-24" />
                                 </Link>
                                 <Link href={'/'} className="shrink-0">
-                                    <Image src={'/MEGA FORGE.png'} alt='Forge' height={80} width={80} className="object-contain h-14 w-14 lg:h-18 lg:w-24" />
+                                    <Image src={'/METALSVERSE FORGE.png'} alt='Forge' height={80} width={80} className="object-contain h-14 w-14 lg:h-18 lg:w-24" />
                                 </Link>
                                 <Link href={'/'} className="shrink-0">
                                     <Image src={'/CANADA FOUNDRIES.png'} alt='Canada' height={80} width={80} className="object-contain h-14 w-14 lg:h-18 lg:w-24" />
@@ -323,7 +323,7 @@ const Navbar = () => {
                     <div className="flex items-center justify-between gap-4 -pb-4">
                         {/* Sticky Logo */}
                         <Link href={'/'} className="shrink-0">
-                            <Image src={'/MIL.png'} alt='Mega Industries' height={70} width={130} className=" object-contain py-2 h-16 w-auto" />
+                            <Image src={'/MIL.png'} alt='METALSVERSE Industries' height={70} width={130} className=" object-contain py-2 h-16 w-auto" />
                         </Link>
 
                         <SearchBar />

@@ -68,7 +68,7 @@ const SideStreamPlayer = ({
 
 export default function LiveStreamCommandCenter() {
   return (
-    <div className="min-h-screen bg-[#050505] text-white overflow-x-hidden">
+    <div className="min-h-screen bg-[#0A3161] text-white overflow-x-hidden">
 
       {/* MAIN LAYOUT GRID */}
       <div className="w-full mx-auto px-2 md:px-6 py-6 flex justify-between gap-4 md:gap-8 relative">
@@ -83,13 +83,13 @@ export default function LiveStreamCommandCenter() {
           />
         </aside>
         <FixedQuoteBtn />
-        {/* === CENTER COLUMN: MEGA FOUNDRIES FEED === */}
+        {/* === CENTER COLUMN: METALSVERSE FOUNDRIES FEED === */}
         <main className="flex-1 min-w-0 flex flex-col items-center">
 
           {/* Header / Stats */}
           <div className="w-full text-center mb-8 border-b border-white/10 pb-6">
             <h1 className="text-2xl md:text-4xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-white to-gray-500 mb-2 uppercase tracking-tight">
-              MEGA GLOBAL MANUFACTURING NETWORK
+              METALSVERSE GLOBAL MANUFACTURING NETWORK
             </h1>
 
             <div className="flex justify-center gap-6 text-xs text-[#0A3161]/60 font-mono mt-4">

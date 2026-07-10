@@ -42,10 +42,10 @@ const CosmoBlog = () => {
         <div className='order-first md:order-last'>
           <div className='mb-8'>
             <h2 className='text-[22px] font-extrabold text-[#0A3161] leading-tight'>
-              What is Mega Foundries CRM?
+              What is METALSVERSE Foundries CRM?
             </h2>
             <p className='mt-3 text-sm'>
-              Mega Foundries's CRM is a custom-built solution designed to simplify and enhance business interactions. Tailored for B2B companies in the energy, power generation, oil & gas, and water management sectors, our CRM empowers you to efficiently manage leads, track customer engagement, and build stronger relationships. With intuitive features like real-time analytics, automated workflows, and seamless integration into our platform, businesses can streamline their sales cycles and maximize growth. Mega Foundries CRM ensures that every client interaction is organized, insightful, and actionable, allowing you to stay ahead in today's competitive market.
+              METALSVERSE Foundries's CRM is a custom-built solution designed to simplify and enhance business interactions. Tailored for B2B companies in the energy, power generation, oil & gas, and water management sectors, our CRM empowers you to efficiently manage leads, track customer engagement, and build stronger relationships. With intuitive features like real-time analytics, automated workflows, and seamless integration into our platform, businesses can streamline their sales cycles and maximize growth. METALSVERSE Foundries CRM ensures that every client interaction is organized, insightful, and actionable, allowing you to stay ahead in today's competitive market.
             </p>
           </div>
 

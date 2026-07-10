@@ -16,7 +16,7 @@ const geistMono = Geist_Mono({
 
 // ✅ 1. Add Metadata (Title & Description)
 export const metadata: Metadata = {
-  title: "Mega Foundry | B2B Manufacturing Portal",
+  title: "METALSVERSE Foundry | B2B Manufacturing Portal",
   description: "The complete platform for foundries, forgers, and fabricators.",
 };
 

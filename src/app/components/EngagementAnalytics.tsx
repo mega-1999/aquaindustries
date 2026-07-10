@@ -52,7 +52,7 @@ export default function App() {
       <div className="w-full px-4 sm:px-6 lg:px-10 py-3">
         <div className="text-center">
           <h2 className="text-3xl pb-8 md:text-4xl font-bold text-[#0A3161]">
-            Start Selling Smarter with Mega Foundries?
+            Start Selling Smarter with METALSVERSE Foundries?
           </h2>
         </div>
         <div className="grid grid-cols-1 lg:grid-cols-3 gap-8 lg:gap-16 items-start">

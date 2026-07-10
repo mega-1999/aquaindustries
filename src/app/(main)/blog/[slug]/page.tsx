@@ -79,7 +79,7 @@ export default async function BlogPostPage({ params }: PageProps) {
           </ul>
 
           <p>
-            For more information on how Mega Foundries is implementing these changes, 
+            For more information on how METALSVERSE Foundries is implementing these changes, 
             contact our engineering department or subscribe to our newsletter.
           </p>
         </div>

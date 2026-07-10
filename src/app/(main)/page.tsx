@@ -45,6 +45,7 @@ import MegaQSeries from './MegaQSeries';
 import MegaFoundationPage from './mega-foundation/page';
  import MegaFeaShowcase from './MegaFeaShowcase';
 import { Hero } from './Hero';
+import DotMatrixSlider from './DotMatrixSlider';
 
 export default function Home() {
     const [isLoggedIn, setIsLoggedIn] = useState(false);
@@ -77,7 +78,7 @@ export default function Home() {
                 <div className="relative z-10 container mx-auto px-4 text-center">
                     <div className="inline-block p-6 md:p-0">
                         <p className="text-[12px] md:text-[16px] font-bold uppercase tracking-widest text-[#B31942] mb-4 bg-white/90 px-4 py-2 rounded-full inline-block shadow-sm">
-                            MEGA FOUNDRIES | Global Industrial Hub
+                            METALSVERSE FOUNDRIES | Global Industrial Hub
                         </p>
                         <h1 className="text-white font-bold leading-tight tracking-tight drop-shadow-lg">
                             <span className="block text-[24px] md:text-[50px]">The World's Advanced Consortium of</span>
@@ -99,6 +100,7 @@ export default function Home() {
                 </div>
             </header> */}
             <Hero />
+            <DotMatrixSlider/>
             <Product3DShowcase />
             {/* 2. CORE PRODUCTS (High Priority) */}
             <MegaQSeries/>

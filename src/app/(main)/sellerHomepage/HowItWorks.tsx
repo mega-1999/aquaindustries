@@ -38,7 +38,7 @@ export default function HowItWorks() {
     <div className="w-full px-4 sm:px-6 lg:px-10 py-3">
       <div className="text-center mb-24">
         <span className="text-[#B31942] font-bold text-xs uppercase tracking-widest">
-          Mega Foundries Process
+          METALSVERSE Foundries Process
         </span>
         <h2 className="text-[30px] md:text-[40px] font-bold text-[#0A3161] mt-2">
           How It <span className="text-[#B31942]">Works</span>

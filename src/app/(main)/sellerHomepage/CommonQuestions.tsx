@@ -6,7 +6,7 @@ import { ChevronRight, ChevronDown } from 'lucide-react';
 const faqData = [
   {
     id: 1,
-    question: "What tools are available for foundries on Mega Portal?",
+    question: "What tools are available for foundries on METALSVERSE Portal?",
     answer: "Sellers have access to a full suite of industrial tools including the Product Calculator, Dynamic Pricing Engine for raw material indexing, and a Smart RFQ Manager to handle technical blueprints."
   },
   {

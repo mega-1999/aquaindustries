@@ -62,7 +62,7 @@ export default function NewProductPage() {
 
         // Vendor Info (Use real UUIDs)
         vendorId: "3fa85f64-5717-4562-b3fc-2c963f66afa6", // Replace with a REAL vendor ID from your database if possible
-        vendorName: "Mega Vendor",
+        vendorName: "METALSVERSE Vendor",
         vendorSlug: "mega-vendor",
 
         // Category Info

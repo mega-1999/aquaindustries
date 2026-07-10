@@ -69,7 +69,7 @@ export default function OtherMetalsDirectory() {
             Secondary & Custom Castings
           </span>
           <h2 className="text-4xl md:text-6xl font-black uppercase tracking-tighter">
-            Other Metals <span className="text-[#0A3161]/80">& Alloys</span>
+            Other Metals <span className="text-white/80">& Alloys</span>
           </h2>
         </div>
 
@@ -94,14 +94,14 @@ export default function OtherMetalsDirectory() {
                   `}
                 >
                   <div>
-                    <p className={`text-lg font-bold tracking-tight transition-colors ${isActive ? 'text-[#B31942]' : 'text-[#0A3161]/60 group-hover:text-white'}`}>
+                    <p className={`text-lg font-bold tracking-tight transition-colors ${isActive ? 'text-[#B31942]' : 'text-white/60 group-hover:text-white'}`}>
                       {metal.name}
                     </p>
-                    <p className="text-xs text-[#0A3161]/80 mt-0.5 uppercase tracking-wider font-medium">
+                    <p className="text-xs text-white/80 mt-0.5 uppercase tracking-wider font-medium">
                       {metal.subtitle}
                     </p>
                   </div>
-                  <ArrowRight className={`w-4 h-4 transition-all duration-300 ${isActive ? 'text-[#B31942] translate-x-1' : 'text-[#0A3161] group-hover:text-[#0A3161]/60'}`} />
+                  <ArrowRight className={`w-4 h-4 transition-all duration-300 ${isActive ? 'text-[#B31942] translate-x-1' : 'text-white group-hover:text-white/60'}`} />
                 </button>
               );
             })}
@@ -126,18 +126,17 @@ export default function OtherMetalsDirectory() {
               <h3 className="text-3xl md:text-5xl font-black text-white tracking-tight mb-2">
                 {selectedMetal.name}
               </h3>
-              <p className="text-sm font-mono text-[#0A3161]/70 uppercase tracking-widest border-b border-[#0A3161]/30 pb-6 mb-6">
+              <p className="text-sm font-mono text-white/70 uppercase tracking-widest border-b border-white/10 pb-6 mb-6">
                 {selectedMetal.subtitle}
               </p>
 
               {/* Description Body */}
-              <p className="text-[#0A3161]/60 text-base leading-relaxed mb-8 font-light">
-                {selectedMetal.description}
+              <p className="text-white/60 text-base leading-relaxed mb-8 font-light">
               </p>
             </div>
 
             {/* Technical Analytical Footers */}
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-8 border-t border-[#0A3161]/30/80 pt-8 mt-auto">
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-8 border-t border-white/10 pt-8 mt-auto">
               
               {/* Chemistry/Structure Element Ratio */}
               <div>

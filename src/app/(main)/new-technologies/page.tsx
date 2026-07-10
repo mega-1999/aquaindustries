@@ -46,7 +46,7 @@ export default function NewTechnologiesPage() {
         <div className="relative z-10 text-center max-w-5xl px-4">
           <div className="inline-flex items-center gap-2 border border-cyan-500/30 bg-cyan-500/10 text-cyan-400 px-3 py-1 rounded-full text-xs font-bold uppercase tracking-widest mb-6 backdrop-blur-md">
             <Atom className="w-3 h-3 animate-spin-slow" />
-            Mega Research Labs
+            METALSVERSE Research Labs
           </div>
           <h1 className="text-5xl md:text-8xl font-black tracking-tighter mb-6">
             THE FUTURE IS <br />

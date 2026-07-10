@@ -19,7 +19,7 @@ interface AccordionItem {
     icon?: React.ElementType;
 }
 
-// 16 Items based on your Mega Products / Industrial Data
+// 16 Items based on your METALSVERSE Products / Industrial Data
 const items: AccordionItem[] = [
     {
         id: "1",

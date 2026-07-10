@@ -96,23 +96,22 @@ export default function MegaMagazine() {
   const currentContent = MAGAZINE_DATA[activeTab] || MAGAZINE_DATA["ductile-iron"];
 
   return (
-    <section className="bg-[#0A3161] text-white/40 py-10 font-sans border-t border-zinc-950">
+    <section className="bg-[#0A3161] text-white/70 py-10 font-sans border-t border-white/10">
       {/* Absolute strict fluid full width padding */}
       <div className="w-full px-4 sm:px-6 lg:px-10">
         
-        {/* TOP ROW: Mega Foundries Custom Header Banner */}
-        <div className="w-full bg-[#0A3161] border border-[#0A3161]/30 p-6 mb-8 flex flex-col md:flex-row items-center justify-between rounded-xs gap-4">
+        {/* TOP ROW: METALSVERSE Foundries Custom Header Banner */}
+        <div className="w-full bg-[#0A3161] border border-white/10 p-6 mb-8 flex flex-col md:flex-row items-center justify-between rounded-xs gap-4">
           <div className="flex items-center gap-3">
             <div className="text-2xl font-black tracking-tighter text-white">
-              MEGA <span className="text-[#B31942]">FOUNDRIES</span>
+              METALSVERSE <span className="text-[#B31942]">FOUNDRIES</span>
             </div>
             <div className="h-6 w-[1px] bg-[#0A3161] hidden md:block" />
-            <span className="text-[10px] font-mono tracking-widest text-[#0A3161]/70 uppercase">
+            <span className="text-[10px] font-mono tracking-widest text-white/70 uppercase">
               Primary Metals Spec Index
             </span>
           </div>
-          <div className="text-center md:text-right text-xs text-[#0A3161]/60 font-mono">
-            CALL: (512) 782-8880 <span className="mx-2 text-[#0A3161]">•</span> VISIT: WWW.MEGAFOUNDRIES.COM
+            CALL: (307) 788-7700 <span className="mx-2 text-white">•</span> VISIT: WWW.MEGAFOUNDRIES.COM
           </div>
         </div>
 
@@ -120,8 +119,8 @@ export default function MegaMagazine() {
         <div className="grid grid-cols-1 md:grid-cols-12 gap-8 items-start">
           
           {/* COLUMN 1: LEFT SIDEBAR TABS INDEX (Metals Selectors) */}
-          <div className="md:col-span-3 bg-[#0A3161] border border-[#0A3161]/30 rounded-xs overflow-hidden shadow-xl">
-            <div className="bg-[#0A3161] p-4 border-b border-[#0A3161]/30">
+          <div className="md:col-span-3 bg-[#0A3161] border border-white/10 rounded-xs overflow-hidden shadow-xl">
+            <div className="bg-[#0A3161] p-4 border-b border-white/10">
               <h3 className="text-xs font-bold uppercase tracking-wider text-white leading-tight">
                 Casting Source <br />
                 <span className="text-[#B31942]">Magazine</span>
@@ -136,8 +135,8 @@ export default function MegaMagazine() {
                     onClick={() => setActiveTab(tab.id)}
                     className={`w-full text-left px-4 py-2.5 text-xs font-medium border-l-2 transition-all duration-200
                       ${isActive 
-                        ? "bg-[#0A3161] text-[#B31942] border-[#B31942] font-bold" 
-                        : "bg-transparent text-[#0A3161]/60 border-transparent hover:bg-[#0A3161] hover:text-white"
+                        ? "bg-white/10 text-[#B31942] border-[#B31942] font-bold" 
+                        : "bg-transparent text-white/60 border-transparent hover:bg-white/5 hover:text-white"
                       }
                     `}
                   >

@@ -8,8 +8,8 @@ import React, { useState } from 'react';
 // === SAMPLE DATA: In real app, fetch this from your DB ===
 // You need a database table with: id, factory_name, location, thumbnail_url, vimeo_id
 const sampleStreams = [
-  { id: 1, name: "Mega Forge USA - Plant A", location: "Texas, USA", thumbnail: "/assets/factory1.jpg", vimeoId: "76979871" }, // Sample Vimeo ID
-  { id: 2, name: "Mega Casting India", location: "Gujarat, India", thumbnail: "/assets/factory2.jpg", vimeoId: "76979871" },
+  { id: 1, name: "METALSVERSE Forge USA - Plant A", location: "Texas, USA", thumbnail: "/assets/factory1.jpg", vimeoId: "76979871" }, // Sample Vimeo ID
+  { id: 2, name: "METALSVERSE Casting India", location: "Gujarat, India", thumbnail: "/assets/factory2.jpg", vimeoId: "76979871" },
   { id: 3, name: "Canada Foundries Unit 4", location: "Ontario, Canada", thumbnail: "/assets/factory3.jpg", vimeoId: "76979871" },
   { id: 4, name: "Precision Molds UK", location: "London, UK", thumbnail: "/assets/factory4.jpg", vimeoId: "76979871" },
   { id: 5, name: "Euro Fabricators", location: "Berlin, Germany", thumbnail: "/assets/factory5.jpg", vimeoId: "76979871" },

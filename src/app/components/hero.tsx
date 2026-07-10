@@ -26,7 +26,7 @@ const HeroSection = () => {
                     The Largest group of Foundries & Forge Shops
                 </h1>
                 <p className="text-sm   text-white/90 leading-relaxed font-light mx-auto max-w-3xl">
-                    Mega Foundries delivers a comprehensive portfolio of products, including turbines, oil & gas equipment, water management technologies, and power generation systems. We also enable seamless access to FPC services, empowering businesses to execute large-scale industrial projects with confidence.
+                    METALSVERSE Foundries delivers a comprehensive portfolio of products, including turbines, oil & gas equipment, water management technologies, and power generation systems. We also enable seamless access to FPC services, empowering businesses to execute large-scale industrial projects with confidence.
                 </p>
             </div>
         </div>

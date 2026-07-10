@@ -71,7 +71,7 @@ export default function AiRobotics() {
               The Future is <span className="text-[#B31942]">Automated</span>
             </motion.h2>
             <p className="text-[#0A3161]/60 text-lg mb-12 leading-relaxed">
-              Mega Foundries is leading the transition to Industry 4.0. We integrate neural networks and robotic precision to eliminate human error and maximize casting efficiency.
+              METALSVERSE Foundries is leading the transition to Industry 4.0. We integrate neural networks and robotic precision to eliminate human error and maximize casting efficiency.
             </p>
 
             <div className="space-y-6">

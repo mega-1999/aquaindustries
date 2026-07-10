@@ -168,11 +168,11 @@ export function MegaStories() {
 
                   <CardContent className="flex-1 p-4 flex flex-col justify-between bg-white">
                     <div>
-                      <h4 className="font-bold text-sm md:text-base leading-snug line-clamp-2 text-[#B31942] group-hover:text-orange-600 transition-colors uppercase ">
+                      <h4 className="font-bold text-sm md:text-base leading-snug line-clamp-2 text-[#B31942] group-hover:text-[#0A3161] transition-colors uppercase ">
                         {product.title}
                       </h4>
                     </div>
-                    <div className="flex items-center justify-between text-xs text-muted-foreground mt-3 pt-3 border-t border-zinc-100">
+                    <div className="flex items-center justify-between text-xs text-muted-foreground mt-3 pt-3 border-t border-[#0A3161]/10">
                       <span className="font-medium text-[#0A3161] flex items-center gap-1">
                         <Icon className="h-3 w-3" /> {product.brand}
                       </span>
@@ -188,11 +188,11 @@ export function MegaStories() {
         </div>
 
         {/* 4. The Bottom Shelf Lip (Visual Anchor) */}
-        <div className="h-4 bg-[#0A3161] w-full border-t border-zinc-600"></div>
+        <div className="h-4 bg-[#0A3161] w-full border-t border-[#0A3161]"></div>
       </div>
 
       <div className="mt-12 text-center pb-8">
-        <Button size="lg" className="bg-[#0A3161] text-white hover:bg-zinc-700 min-w-[200px] rounded-none">
+        <Button size="lg" className="bg-[#0A3161] text-white hover:bg-[#B31942] min-w-[200px] rounded-none">
           Download Full Spec Sheet
         </Button>
       </div>

@@ -22,7 +22,7 @@ interface Story {
 const INITIAL_STORIES: Story[] = [
   // {
   //   id: '1',
-  //   vendorName: 'Mega Foundries – Precast Systems',
+  //   vendorName: 'METALSVERSE Foundries – Precast Systems',
   //   vendorAvatar: '/assets/marine_castings/marine_castings2.jpeg',
   //   mediaUrl: '/video/4. MJ x FE 11.25 Degree.968.mp4',
   //   mediaType: 'VIDEO',
@@ -30,7 +30,7 @@ const INITIAL_STORIES: Story[] = [
   // },
   {
     id: '2',
-    vendorName: 'Mega Foundries – Manufacturing',
+    vendorName: 'METALSVERSE Foundries – Manufacturing',
     vendorAvatar: '/assets/marine_castings/marine_castings2.jpeg',
     mediaUrl: '/video/5. MJ x FE 180 Degree.969.mp4',
     mediaType: 'VIDEO',
@@ -38,7 +38,7 @@ const INITIAL_STORIES: Story[] = [
   },
   {
     id: '3',
-    vendorName: 'Mega Foundries – Infrastructure',
+    vendorName: 'METALSVERSE Foundries – Infrastructure',
     vendorAvatar: '/assets/marine_castings/marine_castings2.jpeg',
     mediaUrl: '/assets/image3.jpeg',
     mediaType: 'IMAGE',
@@ -46,7 +46,7 @@ const INITIAL_STORIES: Story[] = [
   },
   {
     id: '4',
-    vendorName: 'Mega Foundries – Installation',
+    vendorName: 'METALSVERSE Foundries – Installation',
     vendorAvatar: '/assets/marine_castings/marine_castings2.jpeg',
     mediaUrl: '/video/Fire Dumper Mega.470.mp4',
     mediaType: 'VIDEO',
@@ -54,7 +54,7 @@ const INITIAL_STORIES: Story[] = [
   },
   {
     id: '5',
-    vendorName: 'Mega Foundries – Plant Operations',
+    vendorName: 'METALSVERSE Foundries – Plant Operations',
     vendorAvatar: '/assets/image5.jpeg',
     mediaUrl: '/video/NEW NEXT GENERATION DESIGNER MANHOLE COVER.mp4',
     mediaType: 'VIDEO',
@@ -62,7 +62,7 @@ const INITIAL_STORIES: Story[] = [
   },
   {
     id: '6',
-    vendorName: 'Mega Foundries – Structural Elements',
+    vendorName: 'METALSVERSE Foundries – Structural Elements',
     vendorAvatar: '/assets/marine_castings/marine_castings2.jpeg',
     mediaUrl: '/assets/image6.jpg',
     mediaType: 'IMAGE',
@@ -70,7 +70,7 @@ const INITIAL_STORIES: Story[] = [
   },
   // {
   //   id: '7',
-  //   vendorName: 'Mega Foundries – Precast Panels',
+  //   vendorName: 'METALSVERSE Foundries – Precast Panels',
   //   vendorAvatar: '/assets/marine_castings/marine_castings2.jpeg',
   //   mediaUrl: '/assets/image7.jpeg',
   //   mediaType: 'IMAGE',
@@ -78,7 +78,7 @@ const INITIAL_STORIES: Story[] = [
   // },
   {
     id: '8',
-    vendorName: 'Mega Foundries – Heavy Lifting',
+    vendorName: 'METALSVERSE Foundries – Heavy Lifting',
     vendorAvatar: '/assets/marine_castings/marine_castings2.jpeg',
     mediaUrl: '/video/NEW NEXT GENERATION DESIGNER MANHOLE COVER.mp4',
     mediaType: 'VIDEO',
@@ -86,7 +86,7 @@ const INITIAL_STORIES: Story[] = [
   },
   {
     id: '9',
-    vendorName: 'Mega Foundries – Plant Automation',
+    vendorName: 'METALSVERSE Foundries – Plant Automation',
     vendorAvatar: '/assets/marine_castings/marine_castings2.jpeg',
     mediaUrl: '/assets/image9.jpeg',
     mediaType: 'IMAGE',
@@ -94,7 +94,7 @@ const INITIAL_STORIES: Story[] = [
   },
   {
     id: '10',
-    vendorName: 'Mega Foundries – Quality Control',
+    vendorName: 'METALSVERSE Foundries – Quality Control',
     vendorAvatar: '/assets/marine_castings/marine_castings2.jpeg',
     mediaUrl: '/assets/image10.jpeg',
     mediaType: 'IMAGE',
@@ -102,7 +102,7 @@ const INITIAL_STORIES: Story[] = [
   },
   {
     id: '11',
-    vendorName: 'Mega Foundries – Site Execution',
+    vendorName: 'METALSVERSE Foundries – Site Execution',
     vendorAvatar: '/assets/marine_castings/marine_castings2.jpeg',
     mediaUrl: '/video/NEW NEXT GENERATION DESIGNER MANHOLE COVER.mp4',
     mediaType: 'VIDEO',
@@ -110,7 +110,7 @@ const INITIAL_STORIES: Story[] = [
   },
   {
     id: '12',
-    vendorName: 'Mega Foundries – Infrastructure Projects',
+    vendorName: 'METALSVERSE Foundries – Infrastructure Projects',
     vendorAvatar: '/assets/marine_castings/marine_castings2.jpeg',
     mediaUrl: '/assets/image12.jpg',
     mediaType: 'IMAGE',
@@ -118,7 +118,7 @@ const INITIAL_STORIES: Story[] = [
   }, 
   // {
   //   id: '13',
-  //   vendorName: 'Mega Foundries – Precast Beams & Columns',
+  //   vendorName: 'METALSVERSE Foundries – Precast Beams & Columns',
   //   vendorAvatar: '/assets/image5.jpeg',
   //   mediaUrl: '/assets/image13.jpg',
   //   mediaType: 'IMAGE',
@@ -126,7 +126,7 @@ const INITIAL_STORIES: Story[] = [
   // },
   {
     id: '14',
-    vendorName: 'Mega Foundries – Mold Fabrication',
+    vendorName: 'METALSVERSE Foundries – Mold Fabrication',
     vendorAvatar: '/assets/image5.jpeg',
     mediaUrl: '/assets/image14.jpeg',
     mediaType: 'IMAGE',
@@ -134,7 +134,7 @@ const INITIAL_STORIES: Story[] = [
   },
   {
     id: '15',
-    vendorName: 'Mega Foundries – Yard Storage & Handling',
+    vendorName: 'METALSVERSE Foundries – Yard Storage & Handling',
     vendorAvatar: '/assets/image5.jpeg',
     mediaUrl: '/assets/image15.jpeg',
     mediaType: 'IMAGE',
@@ -142,7 +142,7 @@ const INITIAL_STORIES: Story[] = [
   },
   {
     id: '16',
-    vendorName: 'Mega Foundries – Crane Operations',
+    vendorName: 'METALSVERSE Foundries – Crane Operations',
     vendorAvatar: '/assets/image5.jpeg',
     mediaUrl: '/video/NEW NEXT GENERATION DESIGNER MANHOLE COVER.mp4',
     mediaType: 'VIDEO',
@@ -150,7 +150,7 @@ const INITIAL_STORIES: Story[] = [
   },
   {
     id: '17',
-    vendorName: 'Mega Foundries – Batch Plant Operations',
+    vendorName: 'METALSVERSE Foundries – Batch Plant Operations',
     vendorAvatar: '/assets/image5.jpeg',
     mediaUrl: '/assets/image17.jpg',
     mediaType: 'IMAGE',
@@ -158,7 +158,7 @@ const INITIAL_STORIES: Story[] = [
   },
   {
     id: '18',
-    vendorName: 'Mega Foundries – On-Site Assembly',
+    vendorName: 'METALSVERSE Foundries – On-Site Assembly',
     vendorAvatar: '/assets/image5.jpeg',
     mediaUrl: '/assets/image18.jpeg',
     mediaType: 'IMAGE',
@@ -166,7 +166,7 @@ const INITIAL_STORIES: Story[] = [
   },
   // {
   //   id: '19',
-  //   vendorName: 'Mega Foundries – Finished Precast Structures',
+  //   vendorName: 'METALSVERSE Foundries – Finished Precast Structures',
   //   vendorAvatar: '/assets/image5.jpeg',
   //   mediaUrl: '/assets/image19.jpeg',
   //   mediaType: 'IMAGE',
@@ -191,7 +191,7 @@ export default function FactoryStories() {
 
   return (
     // 1. OUTER WRAPPER: Ensures full width of the parent container
-    <div className="w-full bg-white py-6 border-b border-[#0A3161]/10 relative group">
+    <div className="w-full bg-[#0A3161] py-6 border-b border-white/10 relative group">
 
       {/* 2. SCROLL CONTAINER: 
           - w-full: Takes full width
@@ -208,10 +208,10 @@ export default function FactoryStories() {
         {/* flex-none: Prevents shrinking. Fixed width/height ensuring consistent look */}
         <div
           onClick={() => setIsUploading(true)}
-          className="flex-none w-28 h-48 md:w-32 md:h-56 relative rounded-xl overflow-hidden cursor-pointer shadow-sm border border-[#0A3161]/10 group/create hover:bg-[#0A3161]/5 transition-colors"
+          className="flex-none w-28 h-48 md:w-32 md:h-56 relative rounded-xl overflow-hidden cursor-pointer shadow-sm border border-white/10 group/create hover:bg-white/5 transition-colors"
         >
           {/* Top Half (User Image) */}
-          <div className="h-[65%] w-full bg-[#0A3161]/10">
+          <div className="h-[65%] w-full bg-white/10">
             {/* eslint-disable-next-line @next/next/no-img-element */}
             <Image
               width={1200}
@@ -223,8 +223,8 @@ export default function FactoryStories() {
           </div>
 
           {/* Bottom Half (Action) */}
-          <div className="absolute bottom-0 left-0 right-0 h-[35%] bg-white flex flex-col items-center justify-end pb-3">
-            <span className="text-xs font-bold text-[#0A3161] text-center px-1">Create Story</span>
+          <div className="absolute bottom-0 left-0 right-0 h-[35%] bg-[#0A3161] flex flex-col items-center justify-end pb-3 border-t border-white/10">
+            <span className="text-xs font-bold text-white text-center px-1">Create Story</span>
           </div>
 
           {/* Floating Plus Button */}

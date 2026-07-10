@@ -10,7 +10,7 @@ const heroSection = () => {
                 Get In Touch With Us
             </h2>
             <p className="text-[20px] py-5 font-semibold uppercase tracking-widest text-[#B31942] mb-2">
-                MEGA FOUNDRIES | the best industry services
+                METALSVERSE FOUNDRIES | the best industry services
             </p>
             <div className="relative z-10 container mx-auto px-4 text-center">
 

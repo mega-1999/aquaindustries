@@ -9,7 +9,7 @@ const topMenuItems = [
   { label: 'Acquisitions', href: '/acquisitions' },
   { label: 'Ventures', href: '/products' },
   { label: 'HR', href: '/hr' },
-  { label: 'Mega Foundation', href: '/mega-foundation' },
+  { label: 'METALSVERSE Foundation', href: '/mega-foundation' },
   { label: 'Metal Price Index', href: '/materials' },
   { label: 'New Technologies', href: '/new-technologies' },
 ];

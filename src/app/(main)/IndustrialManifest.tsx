@@ -47,7 +47,7 @@ export default function IndustrialManifest() {
         <div className="border-b border-[#0A3161]/30 pb-12 mb-20 flex flex-col xl:flex-row xl:items-end justify-between gap-8">
           <div className="space-y-4">
             <span className="text-xs uppercase tracking-[0.4em] font-black text-[#B31942] block">
-              The Mega Foundries Speed-Matrix
+              The METALSVERSE Foundries Speed-Matrix
             </span>
             <h2 className="text-4xl sm:text-6xl md:text-7xl font-black uppercase tracking-tighter leading-none">
               NOT ONE STEP BUT <br />
@@ -61,7 +61,7 @@ export default function IndustrialManifest() {
             <p className="text-xs font-mono uppercase tracking-widest text-[#B31942] mb-2 font-bold">
               Operational Paradigm
             </p>
-            <p className="text-[#0A3161]/60 text-sm leading-relaxed font-light">
+            <p className="text-white/70 text-sm leading-relaxed font-light">
               We eliminated the sequential lag of traditional manufacturing. By unifying pattern design, alloy formulation, and automated molding, we process the entire lifecycle in parallel.
             </p>
           </div>
@@ -72,15 +72,15 @@ export default function IndustrialManifest() {
           <div className="absolute top-0 right-0 w-96 h-96 bg-gradient-to-bl from-[#B31942]/10 via-transparent to-transparent pointer-events-none" />
           
           <div className="relative z-10 max-w-4xl">
-            <span className="text-xs font-mono uppercase tracking-[0.2em] font-semibold text-[#0A3161]/70 block mb-2">
+            <span className="text-xs font-mono uppercase tracking-[0.2em] font-semibold text-white/70 block mb-2">
               Foundry Velocity Architecture
             </span>
             <h3 className="text-3xl sm:text-5xl md:text-6xl font-black uppercase tracking-tight text-white mb-6 leading-tight">
               CONCEPTION TO INCEPTION <br className="hidden sm:inline" /> 
               <span className="text-[#B31942]">ALL IN ONE GO</span>
             </h3>
-            <p className="text-[#0A3161]/60 text-base max-w-2xl font-light leading-relaxed mb-8">
-              No intermediary standard hand-offs. Mega Foundries integrates rapid metallurgical prototyping straight into heavy industrial mass production lines, flashing raw blueprints into solid iron castings flawlessly.
+            <p className="text-white/70 text-base max-w-2xl font-light leading-relaxed mb-8">
+              No intermediary standard hand-offs. METALSVERSE Foundries integrates rapid metallurgical prototyping straight into heavy industrial mass production lines, flashing raw blueprints into solid iron castings flawlessly.
             </p>
             
             <button className="inline-flex items-center gap-3 px-6 py-3.5 bg-[#B31942] hover:bg-[#8f1435] text-white text-xs font-bold uppercase tracking-widest transition-all duration-300 rounded-xs">

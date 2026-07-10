@@ -21,7 +21,7 @@ export default function RealTimeSupport() {
 
             <div className="space-y-4 text-[#0A3161]/80 text-lg leading-relaxed">
               <p>
-                At Mega Foundries, production doesn't sleep. Whether you need help setting up
+                At METALSVERSE Foundries, production doesn't sleep. Whether you need help setting up
                 your foundry profile, resolving a technical query, or understanding alloy index pricing — our team is
                 available 24/7 to assist you.
               </p>
@@ -63,7 +63,7 @@ export default function RealTimeSupport() {
             </p>
 
             <p className="text-[#0A3161]/80 text-lg leading-relaxed">
-              Mega Foundries' built-in Live Chat lets you communicate directly with
+              METALSVERSE Foundries' built-in Live Chat lets you communicate directly with
               potential procurement officers in real time. Whether it's answering specification
               questions, negotiating tonnage rates, or sharing CAD files — you're
               always just a message away.

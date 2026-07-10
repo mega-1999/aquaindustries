@@ -17,7 +17,7 @@ const products = [
   {
     id: "manhole-covers",
     title: "Manhole Covers",
-    description: "Available in modern designs and various resistance classes. Mega Foundries ductile iron castings are engineered securely for high-load municipal sealing and sewage networks.",
+    description: "Available in modern designs and various resistance classes. METALSVERSE Foundries ductile iron castings are engineered securely for high-load municipal sealing and sewage networks.",
     image: "/assets/image7.jpeg",
     link: "/products/manhole-covers"
   },
@@ -116,15 +116,15 @@ const products = [
 
 const MegaProduct = () => {
   return (
-    <section className="bg-[#121212] text-gray-200 py-16 w-full px-4 sm:px-6 lg:px-10 font-sans">
+    <section className="bg-[#0A3161] text-white py-16 w-full px-4 sm:px-6 lg:px-10 font-sans border-t border-white/10">
       <div className="">
 
         {/* Header Section */}
-        <div className="border-b border-[#0A3161] pb-6 mb-10">
+        <div className="border-b border-white/20 pb-6 mb-10">
           <h2 className="text-3xl font-light tracking-wide text-white mb-2">
-            Explore <span className="font-semibold text-[#B31942]">Mega Foundries</span> Products
+            Explore <span className="font-semibold text-[#B31942]">METALSVERSE Foundries</span> Products
           </h2>
-          <p className="text-sm text-[#0A3161]/60">
+          <p className="text-sm text-white/60">
             Complete line of world-class nodular ductile iron castings (Fe 50007), delivering ultimate durability and engineering modernity to your infrastructure projects.
           </p>
         </div>
@@ -134,7 +134,7 @@ const MegaProduct = () => {
           {categories.map((cat, index) => (
             <button
               key={index}
-              className="px-3 py-2 border border-[#0A3161] bg-[#0A3161] hover:bg-[#B31942] hover:border-[#B31942] text-white/40 hover:text-white transition-all duration-200 rounded-sm"
+              className="px-3 py-2 border border-white/20 bg-white/5 hover:bg-[#B31942] hover:border-[#B31942] text-white/60 hover:text-white transition-all duration-200 rounded-sm"
             >
               {cat}
             </button>
@@ -146,10 +146,10 @@ const MegaProduct = () => {
           {products.map((product) => (
             <div
               key={product.id}
-              className="flex flex-col md:flex-row items-center gap-8 md:gap-16 border-b border-[#0A3161]/30 filter drop-shadow-[0_10px_15px_rgba(10,49,97,0.6)] transition-transform duration-300  pb-12 last:border-0"
+              className="flex flex-col md:flex-row items-center gap-8 md:gap-16 border-b border-white/10 filter drop-shadow-[0_10px_15px_rgba(10,49,97,0.6)] transition-transform duration-300  pb-12 last:border-0"
             >
               {/* Product Image Wrapper Container */}
-              <div className="w-full md:w-1/3 flex justify-center items-center bg-[#181818] p-6 rounded-lg border border-[#0A3161]/40 shadow-inner group">
+              <div className="w-full md:w-1/3 flex justify-center items-center bg-[#B31942] p-6 rounded-lg border border-[#B31942]/40 shadow-inner group">
                 <img
                   src={product.image}
                   alt={product.title}
@@ -165,7 +165,7 @@ const MegaProduct = () => {
                 <h3 className="text-2xl font-semibold text-white tracking-wide mb-3">
                   {product.title}
                 </h3>
-                <p className="text-[#0A3161]/60 text-sm leading-relaxed mb-6 max-w-2xl">
+                <p className="text-white/60 text-sm leading-relaxed mb-6 max-w-2xl">
                   {product.description}
                 </p>
 

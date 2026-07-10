@@ -16,8 +16,8 @@ const apricotsFont = localFont({
   fallback: ['sans-serif']
 });
 
-const words = ["Foundries.", "Forge Shops.", "Fabricators."]; 
-
+const words = ["Water Works.", "Precast Molds", "Minerals & Metals."]; 
+   
 export const Hero = ({
   videoSrc = "/video/282244_small.mp4"
 }: HeroProps) => {
@@ -68,7 +68,7 @@ export const Hero = ({
  
             {/* Meta Tag Block */}
             <div className="inline-block text-xs text-white tracking-[0.25em] font-black bg-[#B31942] border border-[#B31942] shadow-[0_0_20px_rgba(204,34,33,0.4)] px-4 py-2 uppercase">
-              MEGA FOUNDRIES | Global Industrial Hub
+              METALSVERSE | Global Metals & Minerals Hub
             </div>
 
             {/* Main Title Heading */}

@@ -124,7 +124,7 @@ const ContactUs = () => {
           Get In Touch With Us
         </h2>
         <p className="text-[20px] py-5 font-semibold uppercase tracking-widest text-[#B31942] mb-2">
-          MEGA FOUNDRIES | the best industry services
+          METALSVERSE FOUNDRIES | the best industry services
         </p>
         <div className="relative z-10 container mx-auto px-4 text-center">
 
@@ -168,7 +168,7 @@ const ContactUs = () => {
           {/* Section 2: Form Header Text */}
           <div className="text-center mb-12">
             <h4 className="text-[#B31942] font-bold uppercase tracking-wider mb-3">
-              MEGA FOUNDRIES | SEND US A MESSAGE
+              METALSVERSE FOUNDRIES | SEND US A MESSAGE
             </h4>
             <p className="text-[#0A3161]/70">
               The next-generation platform for industrial trade.

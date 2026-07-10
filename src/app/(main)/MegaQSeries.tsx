@@ -18,7 +18,7 @@ interface QProductVariant {
 const Q_SERIES_VARIANTS: QProductVariant[] = [
   {
     id: "q-500",
-    name: "Mega Q-500",
+    name: "METALSVERSE Q-500",
     tagline: "High-Velocity Linear Interception Matrix",
     description: "Engineered for intense transit hubs demanding continuous surface drainage. Features a self-locking monolithic seating geometry that drops into existing concrete channels instantly.",
     metric: "F900+",
@@ -27,7 +27,7 @@ const Q_SERIES_VARIANTS: QProductVariant[] = [
   },
   {
     id: "q-700",
-    name: "Mega Q-700",
+    name: "METALSVERSE Q-700",
     tagline: "Seismic-Rated Municipal Distribution Hub",
     description: "Specially formulated from premium nodular ductile iron to withstand unpredictable lateral shifting forces. Optimized for heavy airport taxiways and industrial container shipping ports.",
     metric: "90-Ton",
@@ -36,7 +36,7 @@ const Q_SERIES_VARIANTS: QProductVariant[] = [
   },
   {
     id: "q-alpha",
-    name: "Mega Q-Alpha",
+    name: "METALSVERSE Q-Alpha",
     tagline: "Smart IoT-Ready Inspection System",
     description: "Our most advanced foundry design yet. Features integrated low-frequency structural health sensors embedded directly within the iron casting frame to track load cycles in real-time.",
     metric: "0.01mm",
