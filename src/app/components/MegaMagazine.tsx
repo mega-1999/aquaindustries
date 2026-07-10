@@ -162,13 +162,13 @@ export default function MegaMagazine() {
                 {currentContent.title}
               </h3>
               
-              <div className="flex flex-wrap gap-2 text-xs font-mono text-[#0A3161]/70">
+              <div className="flex flex-wrap gap-2 text-xs font-mono text-white/70">
                 <span className="text-[#B31942] font-bold italic">{currentContent.author}</span>
                 <span>•</span>
                 <span>{currentContent.date}</span>
               </div>
 
-              <p className="text-[#0A3161]/60 text-sm leading-relaxed font-light">
+              <p className="text-white/80 text-sm leading-relaxed font-light">
                 {currentContent.excerpt}
               </p>
 
@@ -184,8 +184,8 @@ export default function MegaMagazine() {
           </div>
 
           {/* COLUMN 3: RIGHT SUB-CATEGORIES DIRECTORY PANEL */}
-          <div className="md:col-span-3 bg-[#0A3161]/40 border border-[#0A3161]/30/60 p-5 rounded-xs shadow-inner">
-            <h4 className="text-xs font-black uppercase tracking-widest text-white border-b border-[#0A3161]/30 pb-3 mb-4">
+          <div className="md:col-span-3 bg-white/5 border border-white/10 p-5 rounded-xs shadow-inner">
+            <h4 className="text-xs font-black uppercase tracking-widest text-white border-b border-white/10 pb-3 mb-4">
               Technical Matrix
             </h4>
             <ul className="space-y-2">
@@ -193,7 +193,7 @@ export default function MegaMagazine() {
                 <li key={index}>
                   <Link 
                     href={`/magazine/matrix/${category.toLowerCase().replace(/ /g, "-")}`}
-                    className="text-xs text-[#0A3161]/70 hover:text-[#B31942] transition-colors duration-150 block py-0.5"
+                    className="text-xs text-white/70 hover:text-white transition-colors duration-150 block py-0.5"
                   >
                     {category}
                   </Link>
