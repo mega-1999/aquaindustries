@@ -34,7 +34,7 @@ const ChatBlog = () => {
             <h2 className='text-[22px]   font-extrabold text-[#0A3161] leading-tight'>
               Live Chat: Resolve up to 80% of cases
             </h2>
-            <p className='mt-3 text-sm'>
+            <p className='mt-3 text-sm text-[#0A3161]/80'>
               METALSVERSE Foundries’s Live Chat enables real-time support, allowing businesses to resolve up to 80% of inquiries instantly and efficiently.
             </p>
           </div>
@@ -45,7 +45,7 @@ const ChatBlog = () => {
               <div key={index} className='flex gap-4'>
                 {/* Icon Container: Ensure icon is visible and properly sized */}
                 <div className='shrink-0 pt-1'>
-                  <item.icon size={24} className='h-6 w-6' />
+                  <item.icon size={24} className='h-6 w-6 text-[#B31942]' />
                 </div>
 
                 {/* Text Container */}
@@ -53,7 +53,7 @@ const ChatBlog = () => {
                   <h3 className='text-[14px] font-bold text-[#0A3161]'>
                     {item.title}
                   </h3>
-                  <p className='mt-1 text-sm '>
+                  <p className='mt-1 text-sm text-[#0A3161]/70'>
                     {item.description}
                   </p>
                 </div>
