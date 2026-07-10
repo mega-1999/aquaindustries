@@ -19,7 +19,7 @@ const SideStreamPlayer = ({
   <div className="w-[200px] h-[calc(100vh-100px)] sticky top-24 flex flex-col gap-4">
 
     {/* === Video Container 1 (Top) === */}
-    <div className={`relative w-full h-1/2 bg-[#0A3161] rounded-xl overflow-hidden border-2 border-${color}-500 shadow-[0_0_15px_rgba(0,0,0,0.5)]`}>
+    <div className={`relative w-full h-1/2 bg-[#0A3161] rounded-xl overflow-hidden border-2 border-${color}-500 shadow-[0_0_15px_rgba(10,49,97,0.5)]`}>
 
       {/* Live Badge */}
       <div className="absolute top-2 left-2 z-10 flex items-center gap-1.5 bg-[#0A3161]/60 backdrop-blur-md px-2 py-1 rounded text-[10px] font-bold text-white">
@@ -44,7 +44,7 @@ const SideStreamPlayer = ({
 
     {/* === Video Container 2 (Bottom) === */}
     {/* UPDATED: Added border-2, dynamic color border, and shadow to match the top video */}
-    <div className={`relative w-full h-1/2 bg-[#0A3161] rounded-xl overflow-hidden border-2 border-${color}-500 shadow-[0_0_15px_rgba(0,0,0,0.5)] opacity-80 hover:opacity-100 transition-opacity`}>
+    <div className={`relative w-full h-1/2 bg-[#0A3161] rounded-xl overflow-hidden border-2 border-${color}-500 shadow-[0_0_15px_rgba(10,49,97,0.5)] opacity-80 hover:opacity-100 transition-opacity`}>
 
       <video
         autoPlay

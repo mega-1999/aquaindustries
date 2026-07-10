@@ -39,7 +39,7 @@ const FixedQuoteBtn = () => {
           className="
             flex items-center gap-2
             bg-[#B31942] hover:bg-[#8f1435] text-white font-bold
-            py-3 px-8 rounded-t-lg shadow-[0_0_10px_rgba(0,0,0,0.3)]
+            py-3 px-8 rounded-t-lg shadow-[0_0_10px_rgba(10,49,97,0.3)]
             transition-all duration-300 ease-in-out
             origin-bottom-right 
             rotate-[-90deg]

@@ -138,7 +138,7 @@ export default function CategoryMegaMenu() {
                     className={`w-full flex items-center justify-between px-6 py-3 text-sm font-bold transition-colors ${
                       isActive 
                         ? 'text-[#B31942] bg-[#B31942]/5/50' 
-                        : 'text-[#0A3161] hover:text-[#B31942]'
+                        : 'text-white hover:text-[#B31942]'
                     }`}
                   >
                     <span>{cat.name}</span>

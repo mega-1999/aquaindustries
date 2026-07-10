@@ -76,7 +76,7 @@ export default function SellerTools() {
                     ${isActive ? 'border-[#B31942] bg-[#B31942]/5/30 rounded-r-lg' : 'border-transparent hover:border-red-100'}
                   `}
                 >
-                  <h3 className={`text-xl font-bold transition-colors ${isActive ? 'text-[#B31942]' : 'text-[#0A3161]/80 group-hover:text-[#0A3161]'}`}>
+                  <h3 className={`text-xl font-bold transition-colors ${isActive ? 'text-[#B31942]' : 'text-white/80 group-hover:text-[#0A3161]'}`}>
                     {tool.number} {tool.title}
                   </h3>
 

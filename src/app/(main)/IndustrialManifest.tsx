@@ -44,7 +44,7 @@ export default function IndustrialManifest() {
       <div className="w-full px-4 sm:px-6 lg:px-10">
         
         {/* Core Tagline Manifesto Header */}
-        <div className="border-b border-zinc-900 pb-12 mb-20 flex flex-col xl:flex-row xl:items-end justify-between gap-8">
+        <div className="border-b border-[#0A3161]/30 pb-12 mb-20 flex flex-col xl:flex-row xl:items-end justify-between gap-8">
           <div className="space-y-4">
             <span className="text-xs uppercase tracking-[0.4em] font-black text-[#B31942] block">
               The Mega Foundries Speed-Matrix
@@ -68,7 +68,7 @@ export default function IndustrialManifest() {
         </div>
 
         {/* Big Banner Callout: Conception to Inception */}
-        <div className="w-full bg-[#0A3161] border border-zinc-900 p-8 sm:p-12 mb-16 relative overflow-hidden group rounded-sm shadow-2xl">
+        <div className="w-full bg-[#0A3161] border border-[#0A3161]/30 p-8 sm:p-12 mb-16 relative overflow-hidden group rounded-sm shadow-2xl">
           <div className="absolute top-0 right-0 w-96 h-96 bg-gradient-to-bl from-[#B31942]/10 via-transparent to-transparent pointer-events-none" />
           
           <div className="relative z-10 max-w-4xl">
@@ -94,14 +94,14 @@ export default function IndustrialManifest() {
           {MANIFEST_STEPS.map((step, index) => (
             <div 
               key={index}
-              className="bg-[#0f0f0f] border border-zinc-900 p-6 flex flex-col justify-between hover:border-[#0A3161] transition-all duration-300 relative group min-h-[260px] rounded-xs"
+              className="bg-[#0A3161] border border-[#0A3161]/30 p-6 flex flex-col justify-between hover:border-[#0A3161] transition-all duration-300 relative group min-h-[260px] rounded-xs"
             >
               {/* Highlight bar on card hover */}
               <div className="absolute top-0 left-0 w-full h-[1px] bg-transparent group-hover:bg-[#B31942] transition-colors duration-300" />
               
               <div>
                 {/* Meta Phase Numbering */}
-                <div className="flex items-center justify-between mb-6 border-b border-zinc-900/50 pb-4">
+                <div className="flex items-center justify-between mb-6 border-b border-[#0A3161]/30/50 pb-4">
                   <span className="text-[10px] font-mono uppercase tracking-wider text-[#0A3161]/70 font-bold">
                     {step.label}
                   </span>
@@ -120,7 +120,7 @@ export default function IndustrialManifest() {
               </div>
 
               {/* Seamless Sync Status Light */}
-              <div className="mt-6 pt-4 border-t border-zinc-900/50 flex items-center gap-2">
+              <div className="mt-6 pt-4 border-t border-[#0A3161]/30/50 flex items-center gap-2">
                 <span className="w-1.5 h-1.5 bg-[#B31942] rounded-full animate-pulse" />
                 <span className="text-[9px] font-mono uppercase tracking-widest text-[#0A3161]/80 font-bold">
                   Synchronous Thread

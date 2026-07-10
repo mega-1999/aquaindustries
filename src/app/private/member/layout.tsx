@@ -139,7 +139,7 @@ export default function DashboardLayout({ children }: { children: React.ReactNod
               <Link key={item.href} href={item.href}>
                 <span className={`flex items-center gap-3 px-3 py-2.5 rounded-md text-sm font-medium transition-colors ${isActive
                   ? 'bg-[#B31942] text-white'
-                  : 'text-[#0A3161]/60 hover:text-white hover:bg-[#0A3161]'
+                  : 'text-white/60 hover:text-white hover:bg-[#0A3161]'
                   }`}>
                   <item.icon className="w-4 h-4" />
                   {item.label}
@@ -150,7 +150,7 @@ export default function DashboardLayout({ children }: { children: React.ReactNod
         </nav>
 
         <div className="p-4 border-t border-slate-800">
-          <div className="bg-[#0A3161] rounded-lg p-3 text-xs text-[#0A3161]/60">
+          <div className="bg-[#0A3161] rounded-lg p-3 text-xs text-white/60">
             <p className="font-semibold text-white mb-1">Foundry Portal</p>
             <p>v1.2.0 • Enterprise</p>
           </div>

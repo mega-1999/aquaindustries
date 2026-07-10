@@ -96,12 +96,12 @@ export default function MegaMagazine() {
   const currentContent = MAGAZINE_DATA[activeTab] || MAGAZINE_DATA["ductile-iron"];
 
   return (
-    <section className="bg-[#0A3161] text-[#0A3161]/40 py-10 font-sans border-t border-zinc-950">
+    <section className="bg-[#0A3161] text-white/40 py-10 font-sans border-t border-zinc-950">
       {/* Absolute strict fluid full width padding */}
       <div className="w-full px-4 sm:px-6 lg:px-10">
         
         {/* TOP ROW: Mega Foundries Custom Header Banner */}
-        <div className="w-full bg-[#0A3161] border border-zinc-900 p-6 mb-8 flex flex-col md:flex-row items-center justify-between rounded-xs gap-4">
+        <div className="w-full bg-[#0A3161] border border-[#0A3161]/30 p-6 mb-8 flex flex-col md:flex-row items-center justify-between rounded-xs gap-4">
           <div className="flex items-center gap-3">
             <div className="text-2xl font-black tracking-tighter text-white">
               MEGA <span className="text-[#B31942]">FOUNDRIES</span>
@@ -120,8 +120,8 @@ export default function MegaMagazine() {
         <div className="grid grid-cols-1 md:grid-cols-12 gap-8 items-start">
           
           {/* COLUMN 1: LEFT SIDEBAR TABS INDEX (Metals Selectors) */}
-          <div className="md:col-span-3 bg-[#0A3161] border border-zinc-900 rounded-xs overflow-hidden shadow-xl">
-            <div className="bg-[#1c1c1c] p-4 border-b border-zinc-900">
+          <div className="md:col-span-3 bg-[#0A3161] border border-[#0A3161]/30 rounded-xs overflow-hidden shadow-xl">
+            <div className="bg-[#0A3161] p-4 border-b border-[#0A3161]/30">
               <h3 className="text-xs font-bold uppercase tracking-wider text-white leading-tight">
                 Casting Source <br />
                 <span className="text-[#B31942]">Magazine</span>
@@ -150,7 +150,7 @@ export default function MegaMagazine() {
 
           {/* COLUMN 2: CENTER READING PANEL (Metallurgy Log Content) */}
           <div className="md:col-span-6 space-y-6">
-            <div className="border-b border-zinc-900 pb-3">
+            <div className="border-b border-[#0A3161]/30 pb-3">
               <h2 className="text-3xl font-black tracking-tight text-white uppercase inline-block relative whitespace-nowrap">
                 {activeTab.replace("-", " ")}
                 <span className="absolute bottom-[-13px] left-0 w-12 h-[3px] bg-[#B31942]" />
@@ -184,8 +184,8 @@ export default function MegaMagazine() {
           </div>
 
           {/* COLUMN 3: RIGHT SUB-CATEGORIES DIRECTORY PANEL */}
-          <div className="md:col-span-3 bg-[#0A3161]/40 border border-zinc-900/60 p-5 rounded-xs shadow-inner">
-            <h4 className="text-xs font-black uppercase tracking-widest text-white border-b border-zinc-900 pb-3 mb-4">
+          <div className="md:col-span-3 bg-[#0A3161]/40 border border-[#0A3161]/30/60 p-5 rounded-xs shadow-inner">
+            <h4 className="text-xs font-black uppercase tracking-widest text-white border-b border-[#0A3161]/30 pb-3 mb-4">
               Technical Matrix
             </h4>
             <ul className="space-y-2">

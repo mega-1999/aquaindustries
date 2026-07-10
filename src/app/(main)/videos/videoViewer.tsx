@@ -16,7 +16,7 @@ import Image from 'next/image';
 const ModelViewer = dynamic(() => import('./ModelViewer'), {
     ssr: false, // Disables server rendering for this component
     loading: () => (
-        <div className="w-full h-full flex flex-col items-center justify-center bg-[#0A3161]/5 text-[#0A3161]/60">
+        <div className="w-full h-full flex flex-col items-center justify-center bg-[#0A3161]/5 text-white/60">
             <div className="animate-spin rounded-full h-8 w-8 border-b-2 border-[#0A3161] mb-2"></div>
             <span className="text-xs">Loading 3D Engine...</span>
         </div>
@@ -112,7 +112,7 @@ export default function NewProductPage() {
             {/* Header */}
             <div className="bg-white border-b border-[#0A3161]/10 sticky top-0 z-30 px-6 py-4 flex items-center justify-between shadow-sm">
                 <div className="flex items-center gap-4">
-                    <Link href="/private/member/products" className="p-2 hover:bg-[#0A3161]/10 rounded-full text-[#0A3161]/70">
+                    <Link href="/private/member/products" className="p-2 hover:bg-[#0A3161]/10 rounded-full text-white/70">
                         <ChevronLeft className="w-5 h-5" />
                     </Link>
                     <h1 className="text-xl font-bold text-[#0A3161]">Add New Product</h1>

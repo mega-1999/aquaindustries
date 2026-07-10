@@ -145,7 +145,7 @@ export default function PartnerProgramPage() {
               </div>
             </div>
 
-            <div className="relative bg-neutral-300 h-6 md:h-4 w-full rounded-b-3xl shadow-[0_30px_60px_-15px_rgba(0,0,0,0.3)] mx-auto border-t border-[#0A3161]/20">
+            <div className="relative bg-[#0A3161]/20 h-6 md:h-4 w-full rounded-b-3xl shadow-[0_30px_60px_-15px_rgba(10,49,97,0.3)] mx-auto border-t border-[#0A3161]/20">
               <div className="absolute top-0 left-1/2 -translate-x-1/2 w-[15%] h-2 bg-neutral-400 rounded-b-md"></div>
             </div>
 

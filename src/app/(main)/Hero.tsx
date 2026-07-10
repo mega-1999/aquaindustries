@@ -73,7 +73,7 @@ export const Hero = ({
 
             {/* Main Title Heading */}
             <h1 className="text-white font-black uppercase tracking-tighter leading-none">
-              <span className="block text-3xl sm:text-5xl md:text-6xl xl:text-7xl font-black text-white drop-shadow-[0_5px_15px_rgba(0,0,0,0.95)]">
+              <span className="block text-3xl sm:text-5xl md:text-6xl xl:text-7xl font-black text-white drop-shadow-[0_5px_15px_rgba(10,49,97,0.95)]">
                 The World's Advanced <br />
                 Consortium of{" "}
                 <span className="block min-h-[1.2em] relative mt-2 lg:mt-4 flex items-center">

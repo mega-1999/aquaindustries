@@ -95,7 +95,7 @@ export default function AdminProductList() {
         <div className="overflow-x-auto">
           <table className="w-full text-left border-collapse">
             <thead>
-              <tr className="bg-[#0A3161]/5 text-xs font-semibold text-[#0A3161]/70 uppercase tracking-wider border-b border-[#0A3161]/10">
+              <tr className="bg-[#0A3161]/5 text-xs font-semibold text-white/70 uppercase tracking-wider border-b border-[#0A3161]/10">
                 <th className="px-6 py-4">Product</th>
                 <th className="px-6 py-4">Category</th>
                 <th className="px-6 py-4">Stock</th>

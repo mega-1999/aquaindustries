@@ -55,7 +55,7 @@ export const MegaProducts = () => {
                 viewport={{ once: true }}
                 onMouseEnter={handleMouseEnter}
                 onMouseLeave={handleMouseLeave}
-                className="group relative flex flex-col bg-white rounded-3xl overflow-hidden shadow-[0_10px_40px_-15px_rgba(0,0,0,0.1)] hover:shadow-[0_20px_60px_-15px_rgba(204,34,33,0.2)] transition-all duration-500"
+                className="group relative flex flex-col bg-white rounded-3xl overflow-hidden shadow-[0_10px_40px_-15px_rgba(10,49,97,0.1)] hover:shadow-[0_20px_60px_-15px_rgba(204,34,33,0.2)] transition-all duration-500"
               >
                 {/* Media Container Box */}
                 <div className="relative h-64 overflow-hidden bg-slate-950">

@@ -39,7 +39,7 @@ const EngagementAnalytics = () => {
 
                 <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
 
-                    <div className="w-full bg-white p-4 md:p-8 rounded-2xl shadow-[0_8px_30px_rgba(0,0,0,0.04)] border border-[#0A3161]/10 h-[400px]">
+                    <div className="w-full bg-white p-4 md:p-8 rounded-2xl shadow-[0_8px_30px_rgba(10,49,97,0.04)] border border-[#0A3161]/10 h-[400px]">
                         <ResponsiveContainer width="100%" height="100%">
                             <AreaChart
                                 data={data}
@@ -72,7 +72,7 @@ const EngagementAnalytics = () => {
                                 />
 
                                 <Tooltip
-                                    contentStyle={{ backgroundColor: '#fff', borderRadius: '8px', border: '1px solid #e5e7eb', boxShadow: '0 4px 12px rgba(0,0,0,0.1)' }}
+                                    contentStyle={{ backgroundColor: '#fff', borderRadius: '8px', border: '1px solid #e5e7eb', boxShadow: '0 4px 12px rgba(10,49,97,0.1)' }}
                                     itemStyle={{ fontSize: '14px', fontWeight: 'bold' }}
                                 />
 

@@ -56,7 +56,7 @@ export default function MegaBlog() {
   const [activeHover, setActiveHover] = useState<string | null>(null);
 
   return (
-    <section className="bg-[#0A3161] text-white py-24 px-4 md:px-8 font-sans border-t border-zinc-900 overflow-hidden">
+    <section className="bg-[#0A3161] text-white py-24 px-4 md:px-8 font-sans border-t border-[#0A3161]/30 overflow-hidden">
       <div className="">
         
         {/* Unconventional Header: Massive Side-by-Side Typography */}
@@ -84,7 +84,7 @@ export default function MegaBlog() {
             return (
               <div
                 key={post.id}
-                className="group relative grid grid-cols-1 lg:grid-cols-12 pt-10 pb-12 border-b border-zinc-900 last:border-0 transition-all duration-500"
+                className="group relative grid grid-cols-1 lg:grid-cols-12 pt-10 pb-12 border-b border-[#0A3161]/30 last:border-0 transition-all duration-500"
                 onMouseEnter={() => setActiveHover(post.id)}
                 onMouseLeave={() => setActiveHover(null)}
               >

@@ -102,7 +102,7 @@ export default function VendorListPage() {
 
                                     {/* Status Badge */}
                                     <TableCell>
-                                        <span className={`px-2 py-1 rounded-full text-xs font-bold ${vendor.isActive ? "bg-green-100 text-green-700" : "bg-[#0A3161]/10 text-[#0A3161]"
+                                        <span className={`px-2 py-1 rounded-full text-xs font-bold ${vendor.isActive ? "bg-green-100 text-green-700" : "bg-[#0A3161]/10 text-white"
                                             }`}>
                                             {vendor.isActive ? "Active" : "Inactive"}
                                         </span>

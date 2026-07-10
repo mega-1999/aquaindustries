@@ -386,7 +386,7 @@ function UploadStoryModal({ onClose }: { onClose: () => void }) {
     <div className="fixed inset-0 z-[100] bg-[#0A3161]/60 flex items-center justify-center backdrop-blur-sm p-4 animate-in fade-in duration-200">
       <div className="bg-white rounded-xl p-6 w-full max-w-sm shadow-xl">
         <h3 className="font-bold text-xl text-[#0A3161] mb-4">Add to Story</h3>
-        <div className="h-48 bg-[#0A3161]/5 border-2 border-dashed border-slate-300 rounded-xl flex flex-col items-center justify-center text-[#0A3161]/60 hover:bg-[#0A3161]/10 hover:border-blue-400 transition-colors cursor-pointer">
+        <div className="h-48 bg-[#0A3161]/5 border-2 border-dashed border-slate-300 rounded-xl flex flex-col items-center justify-center text-white/60 hover:bg-[#0A3161]/10 hover:border-blue-400 transition-colors cursor-pointer">
           <div className="bg-white p-3 rounded-full mb-3 shadow-sm">
             <Plus className="w-6 h-6 text-blue-600" />
           </div>

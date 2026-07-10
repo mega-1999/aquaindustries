@@ -45,7 +45,7 @@ const STATS = [
 
 export default function MakingHistoryPage() {
   return (
-    <div className="min-h-screen bg-[#0A3161]/5 text-[#0A3161] font-sans">
+    <div className="min-h-screen bg-[#0A3161]/5 text-white font-sans">
 
       {/* === HERO SECTION === */}
       <section className="relative h-[60vh] flex items-center justify-center bg-[#0A3161] text-white overflow-hidden">

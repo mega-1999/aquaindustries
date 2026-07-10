@@ -58,7 +58,7 @@ const DEPARTMENTS = [
     title: "Corporate & Admin",
     roleCount: 4,
     desc: "HR, Finance, and Sales roles supporting the global mission.",
-    color: "bg-[#0A3161]/5 text-[#0A3161]"
+    color: "bg-[#0A3161]/5 text-white"
   }
 ];
 

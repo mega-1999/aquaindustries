@@ -80,7 +80,7 @@ export default function MetalDirectory() {
       <div className="w-full px-4 sm:px-6 lg:px-10">
         
         {/* Dynamic Header */}
-        <div className="border-b border-zinc-900 pb-10 mb-16">
+        <div className="border-b border-[#0A3161]/30 pb-10 mb-16">
           <span className="text-xs uppercase tracking-[0.3em] font-black text-[#B31942] block mb-3">
             Material Specifications
           </span>
@@ -105,7 +105,7 @@ export default function MetalDirectory() {
                     flex items-center justify-between group
                     ${isActive 
                       ? "bg-[#0A3161] border-[#B31942] text-white shadow-xl" 
-                      : "bg-[#0f0f0f] border-zinc-900 text-[#0A3161]/70 hover:border-[#0A3161] hover:text-[#0A3161]/40"
+                      : "bg-[#0A3161] border-[#0A3161]/30 text-white/70 hover:border-[#0A3161] hover:text-white/40"
                     }
                   `}
                 >
@@ -124,7 +124,7 @@ export default function MetalDirectory() {
           </div>
 
           {/* RIGHT COLUMN: The Interactive Focal Blast Window */}
-          <div className="lg:col-span-7 bg-[#0A3161] border border-zinc-900 p-8 md:p-12 rounded-sm relative overflow-hidden min-h-[500px] flex flex-col justify-between shadow-2xl">
+          <div className="lg:col-span-7 bg-[#0A3161] border border-[#0A3161]/30 p-8 md:p-12 rounded-sm relative overflow-hidden min-h-[500px] flex flex-col justify-between shadow-2xl">
             
             {/* Structural Geometric Backing Accents */}
             <div className="absolute top-0 right-0 w-32 h-32 bg-gradient-to-br from-[#B31942]/10 to-transparent pointer-events-none" />
@@ -142,7 +142,7 @@ export default function MetalDirectory() {
               <h3 className="text-3xl md:text-5xl font-black text-white tracking-tight mb-2">
                 {selectedMetal.name}
               </h3>
-              <p className="text-sm font-mono text-[#0A3161]/70 uppercase tracking-widest border-b border-zinc-900 pb-6 mb-6">
+              <p className="text-sm font-mono text-[#0A3161]/70 uppercase tracking-widest border-b border-[#0A3161]/30 pb-6 mb-6">
                 {selectedMetal.subtitle}
               </p>
 
@@ -153,14 +153,14 @@ export default function MetalDirectory() {
             </div>
 
             {/* Technical Analytical Footers */}
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-8 border-t border-zinc-900/80 pt-8 mt-auto">
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-8 border-t border-[#0A3161]/30/80 pt-8 mt-auto">
               
               {/* Formula & Chemical Composition */}
               <div>
                 <span className="flex items-center gap-1.5 text-xs font-bold text-[#0A3161]/70 uppercase tracking-wider mb-3">
                   <Activity className="w-3.5 h-3.5 text-[#B31942]" /> Elemental Composition
                 </span>
-                <div className="font-mono text-sm bg-[#0A3161] border border-zinc-900 p-3 text-[#B31942] rounded-xs font-semibold">
+                <div className="font-mono text-sm bg-[#0A3161] border border-[#0A3161]/30 p-3 text-[#B31942] rounded-xs font-semibold">
                   {selectedMetal.composition}
                 </div>
               </div>

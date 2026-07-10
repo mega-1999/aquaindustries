@@ -133,7 +133,7 @@ export default function HotProductVideos({ title, videos, videoUrl, videoName }:
           slides={slides}
           plugins={[Video]}
           styles={{
-            container: { backgroundColor: "rgba(0, 0, 0, .9)" },
+            container: { backgroundColor: "rgba(10,49,97, .9)" },
             icon: { color: "white" }
           }}
           video={{

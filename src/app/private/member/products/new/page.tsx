@@ -122,7 +122,7 @@ export default function NewProductPage() {
       {/* === TOP BAR === */}
       <div className="bg-white border-b border-[#0A3161]/10 sticky top-0 z-30 px-6 py-4 flex items-center justify-between shadow-sm">
         <div className="flex items-center gap-4">
-          <Link href="/private/member/products" className="p-2 hover:bg-[#0A3161]/10 rounded-full text-[#0A3161]/70">
+          <Link href="/private/member/products" className="p-2 hover:bg-[#0A3161]/10 rounded-full text-white/70">
             <ChevronLeft className="w-5 h-5" />
           </Link>
           <h1 className="text-xl font-bold text-[#0A3161]">Add New Product</h1>
@@ -190,7 +190,7 @@ export default function NewProductPage() {
                     <input
                       {...register("productSlug")}
                       readOnly
-                      className="w-full px-4 py-2 bg-[#0A3161]/5 border border-[#0A3161]/20 rounded-lg text-[#0A3161]/70 cursor-not-allowed"
+                      className="w-full px-4 py-2 bg-[#0A3161]/5 border border-[#0A3161]/20 rounded-lg text-white/70 cursor-not-allowed"
                     />
                   </div>
                 </div>

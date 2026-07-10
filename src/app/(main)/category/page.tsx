@@ -27,7 +27,7 @@ export default function CategoryList() {
             <div className="w-full px-4 sm:px-6 lg:px-10  mx-auto">
 
                 {categories.map((category) => (
-                    <div key={category.id} className="bg-white rounded-3xl overflow-hidden shadow-[0_2px_20px_rgba(0,0,0,0.04)] border border-[#0A3161]/10 flex flex-col lg:flex-row h-auto lg:h-[600px]">
+                    <div key={category.id} className="bg-white rounded-3xl overflow-hidden shadow-[0_2px_20px_rgba(10,49,97,0.04)] border border-[#0A3161]/10 flex flex-col lg:flex-row h-auto lg:h-[600px]">
  
                         <div className="relative w-full lg:w-[320px] h-64 lg:h-full shrink-0 group">
                             <Image 
@@ -38,7 +38,7 @@ export default function CategoryList() {
                             />
                             <div className="absolute inset-0 bg-gradient-to-t from-[#0A3161]/60 via-[#0A3161]/20 to-transparent"></div>
  
-                            <div className={`absolute top-6 left-0 px-6 py-2 rounded-r-full font-bold text-lg shadow-sm ${category.color || 'bg-[#0A3161]/10 text-[#0A3161]'}`}>
+                            <div className={`absolute top-6 left-0 px-6 py-2 rounded-r-full font-bold text-lg shadow-sm ${category.color || 'bg-[#0A3161]/10 text-white'}`}>
                                 {category.label}
                             </div>
                         </div>

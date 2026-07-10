@@ -120,7 +120,7 @@ export default function HistoryPage() {
                     {era.content}
                   </p>
 
-                  <div className="inline-flex items-center gap-2 text-xs font-bold bg-[#0A3161]/10 px-3 py-1.5 rounded text-[#0A3161]">
+                  <div className="inline-flex items-center gap-2 text-xs font-bold bg-[#0A3161]/10 px-3 py-1.5 rounded text-white">
                     <TrendingUp className="w-3 h-3" />
                     Key Stat: {era.stat}
                   </div>

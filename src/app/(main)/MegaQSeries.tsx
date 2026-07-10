@@ -169,7 +169,7 @@ export default function MegaQSeries() {
               <div className="absolute bottom-3 left-3 w-3 h-3 border-b border-l border-[#0A3161]/20" />
               <div className="absolute bottom-3 right-3 w-3 h-3 border-b border-r border-[#0A3161]/20" />
 
-              <div className="absolute bottom-4 left-4 right-4 bg-[#0A3161]/95 text-[9px] font-mono uppercase font-bold tracking-wider text-[#0A3161]/60 text-center py-1.5 opacity-80 group-hover:opacity-100 transition-opacity">
+              <div className="absolute bottom-4 left-4 right-4 bg-[#0A3161]/95 text-[9px] font-mono uppercase font-bold tracking-wider text-white/60 text-center py-1.5 opacity-80 group-hover:opacity-100 transition-opacity">
                 Component Focal Frame // Active Spec
               </div>
             </div>

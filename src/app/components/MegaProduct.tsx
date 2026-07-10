@@ -134,7 +134,7 @@ const MegaProduct = () => {
           {categories.map((cat, index) => (
             <button
               key={index}
-              className="px-3 py-2 border border-[#0A3161] bg-[#0A3161] hover:bg-[#B31942] hover:border-[#B31942] text-[#0A3161]/40 hover:text-white transition-all duration-200 rounded-sm"
+              className="px-3 py-2 border border-[#0A3161] bg-[#0A3161] hover:bg-[#B31942] hover:border-[#B31942] text-white/40 hover:text-white transition-all duration-200 rounded-sm"
             >
               {cat}
             </button>
@@ -146,14 +146,14 @@ const MegaProduct = () => {
           {products.map((product) => (
             <div
               key={product.id}
-              className="flex flex-col md:flex-row items-center gap-8 md:gap-16 border-b border-zinc-900 filter drop-shadow-[0_10px_15px_rgba(0,0,0,0.6)] transition-transform duration-300  pb-12 last:border-0"
+              className="flex flex-col md:flex-row items-center gap-8 md:gap-16 border-b border-[#0A3161]/30 filter drop-shadow-[0_10px_15px_rgba(10,49,97,0.6)] transition-transform duration-300  pb-12 last:border-0"
             >
               {/* Product Image Wrapper Container */}
               <div className="w-full md:w-1/3 flex justify-center items-center bg-[#181818] p-6 rounded-lg border border-[#0A3161]/40 shadow-inner group">
                 <img
                   src={product.image}
                   alt={product.title}
-                  className="max-h-56 object-contain filter drop-shadow-[0_10px_15px_rgba(0,0,0,0.6)] transition-transform duration-300 group-hover:scale-105"
+                  className="max-h-56 object-contain filter drop-shadow-[0_10px_15px_rgba(10,49,97,0.6)] transition-transform duration-300 group-hover:scale-105"
                   onError={(e) => {
                     e.currentTarget.src = "https://via.placeholder.com/300x200/222/fff?text=Casting+Product";
                   }}

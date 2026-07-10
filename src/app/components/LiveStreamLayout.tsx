@@ -3,7 +3,7 @@ import InfiniteLiveFeed from './InfiniteLiveFeed'; // Import your feed component
 import React from 'react';
 
 const AdPlaceholder = ({ side }: { side: 'Left' | 'Right' }) => (
-  <div className="w-[160px] h-[600px] bg-[#0A3161] border border-[#0A3161]/50 rounded-lg flex flex-col items-center justify-center text-[#0A3161]/70 text-xs gap-2 sticky top-24">
+  <div className="w-[160px] h-[600px] bg-[#0A3161] border border-[#0A3161]/50 rounded-lg flex flex-col items-center justify-center text-white/70 text-xs gap-2 sticky top-24">
     <span className="font-bold tracking-widest text-[#0A3161]/80">ADVERTISEMENT</span>
     <div className="w-full h-full bg-[#0A3161]/50 flex items-center justify-center">
       {/* Replace this with your Google AdSense / Vimeo Ad Code */}

@@ -70,7 +70,7 @@ const SearchWithSuggestions = () => {
       {isOpen && (
         <div className="absolute top-full left-0 w-full mt-2 bg-white rounded-lg shadow-xl border border-[#0A3161]/10 overflow-hidden max-h-[400px] overflow-y-auto animate-in fade-in slide-in-from-top-2 duration-200">
           
-          <div className="bg-[#0A3161]/5 px-4 py-2 text-xs font-semibold text-[#0A3161]/70 uppercase tracking-wider border-b border-[#0A3161]/10">
+          <div className="bg-[#0A3161]/5 px-4 py-2 text-xs font-semibold text-white/70 uppercase tracking-wider border-b border-[#0A3161]/10">
             {filteredItems.length > 0 ? "Recommended Results" : "No results found"}
           </div>
 

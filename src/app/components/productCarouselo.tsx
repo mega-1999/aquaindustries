@@ -98,15 +98,15 @@ const ProductCarouselo = () => {
                     className="relative flex overflow-x-hidden"
                     style={{
                         maskImage: `linear-gradient(to right, 
-                            rgba(0,0,0,0) 20%, 
-                            rgba(0,0,0,1) 55%, 
-                            rgba(0,0,0,1) 95%, 
-                            rgba(0,0,0,0) 100%)`,
+                            rgba(10,49,97,0) 20%, 
+                            rgba(10,49,97,1) 55%, 
+                            rgba(10,49,97,1) 95%, 
+                            rgba(10,49,97,0) 100%)`,
                         WebkitMaskImage: `linear-gradient(to right, 
-                            rgba(0,0,0,0) 0%, 
-                            rgba(0,0,0,1) 5%, 
-                            rgba(0,0,0,1) 95%, 
-                            rgba(0,0,0,0) 100%)`,
+                            rgba(10,49,97,0) 0%, 
+                            rgba(10,49,97,1) 5%, 
+                            rgba(10,49,97,1) 95%, 
+                            rgba(10,49,97,0) 100%)`,
                     }}
                 >
                     <ScrollRow data={scrollingData.slice(0, totalItems)} duration={60} />
@@ -117,15 +117,15 @@ const ProductCarouselo = () => {
                     className="relative flex overflow-x-hidden"
                     style={{
                         maskImage: `linear-gradient(to right, 
-                            rgba(0,0,0,0) 0%, 
-                            rgba(0,0,0,1) 5%, 
-                            rgba(0,0,0,1) 95%, 
-                            rgba(0,0,0,0) 100%)`,
+                            rgba(10,49,97,0) 0%, 
+                            rgba(10,49,97,1) 5%, 
+                            rgba(10,49,97,1) 95%, 
+                            rgba(10,49,97,0) 100%)`,
                         WebkitMaskImage: `linear-gradient(to right, 
-                            rgba(0,0,0,0) 0%, 
-                            rgba(0,0,0,1) 5%, 
-                            rgba(0,0,0,1) 95%, 
-                            rgba(0,0,0,0) 100%)`,
+                            rgba(10,49,97,0) 0%, 
+                            rgba(10,49,97,1) 5%, 
+                            rgba(10,49,97,1) 95%, 
+                            rgba(10,49,97,0) 100%)`,
                     }}
                 >
                     {/* We can use the same data source but it runs in a separate row */}

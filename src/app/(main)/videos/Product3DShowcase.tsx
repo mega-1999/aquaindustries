@@ -92,7 +92,7 @@ export default function Product3DShowcase() {
   };
 
   return (
-    <section className="bg-zinc-950 text-white py-20 border-t border-zinc-900">
+    <section className="bg-zinc-950 text-white py-20 border-t border-[#0A3161]/30">
       <div className="container mx-auto px-4">
         
         {/* --- SECTION HEADER --- */}

@@ -248,7 +248,7 @@ export function VerticalAccordion() {
                                     style={{ 
                                         writingMode: 'vertical-rl', 
                                         transform: 'rotate(180deg)',
-                                        textShadow: '0px 0px 10px rgba(0,0,0,0.5)'
+                                        textShadow: '0px 0px 10px rgba(10,49,97,0.5)'
                                     }}
                                 >
                                     {item.category}

@@ -28,7 +28,7 @@ const OfficeCard = ({
   mapSrc
 }: OfficeCardProps) => {
   return (
-    <div className="bg-white rounded-2xl shadow-[0_4px_20px_rgba(0,0,0,0.05)] p-6 md:p-8 flex flex-col items-center text-center border-t-4 border-transparent hover:border-[#B31942] transition-all duration-300 relative mt-8">
+    <div className="bg-white rounded-2xl shadow-[0_4px_20px_rgba(10,49,97,0.05)] p-6 md:p-8 flex flex-col items-center text-center border-t-4 border-transparent hover:border-[#B31942] transition-all duration-300 relative mt-8">
       {/* Circular Flag Container overlapping top border */}
       <div className="absolute -top-8 p-1 bg-white rounded-full shadow-sm">
         <div className="w-14 h-14 rounded-full overflow-hidden border-2 border-[#0A3161]/10 relative">
@@ -175,7 +175,7 @@ const ContactUs = () => {
             </p>
           </div>
           {/* Section 3: Contact Form Container */}
-          <div className="bg-white shadow-[0_8px_30px_rgba(0,0,0,0.06)] rounded-3xl p-8 md:p-12 lg:p-16 max-w-6xl mx-auto">
+          <div className="bg-white shadow-[0_8px_30px_rgba(10,49,97,0.06)] rounded-3xl p-8 md:p-12 lg:p-16 max-w-6xl mx-auto">
             <div className="grid grid-cols-1 lg:grid-cols-5 gap-12">
 
               {/* Left Side Text Content (takes 2/5 columns on large screens) */}
