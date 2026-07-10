@@ -89,7 +89,7 @@ export default function OtherMetalsDirectory() {
                     flex items-center justify-between group
                     ${isActive 
                       ? "bg-[#0A3161] border-[#B31942] text-white shadow-xl" 
-                      : "bg-[#0A3161] border-[#0A3161]/30 text-white/70 hover:border-[#0A3161] hover:text-white/40"
+                      : "bg-white/5 border-white/10 text-white/70 hover:border-[#B31942] hover:text-white"
                     }
                   `}
                 >
@@ -108,7 +108,7 @@ export default function OtherMetalsDirectory() {
           </div>
 
           {/* RIGHT DETAILED SPECTRAL PREVIEW CONTAINER */}
-          <div className="lg:col-span-7 bg-[#0A3161] border border-[#0A3161]/30 p-8 md:p-12 rounded-sm relative overflow-hidden min-h-[500px] flex flex-col justify-between shadow-2xl">
+          <div className="lg:col-span-7 bg-[#0A3161] border border-white/10 p-8 md:p-12 rounded-sm relative overflow-hidden min-h-[500px] flex flex-col justify-between shadow-2xl">
             
             {/* Structural Geometry Overlay Accent */}
             <div className="absolute top-0 right-0 w-32 h-32 bg-gradient-to-br from-[#B31942]/10 to-transparent pointer-events-none" />
@@ -131,7 +131,8 @@ export default function OtherMetalsDirectory() {
               </p>
 
               {/* Description Body */}
-              <p className="text-white/60 text-base leading-relaxed mb-8 font-light">
+              <p className="text-white/80 text-base leading-relaxed mb-8 font-light">
+                {selectedMetal.description}
               </p>
             </div>
 
@@ -140,22 +141,22 @@ export default function OtherMetalsDirectory() {
               
               {/* Chemistry/Structure Element Ratio */}
               <div>
-                <span className="flex items-center gap-1.5 text-xs font-bold text-[#0A3161]/70 uppercase tracking-wider mb-3">
+                <span className="flex items-center gap-1.5 text-xs font-bold text-white/70 uppercase tracking-wider mb-3">
                   <Activity className="w-3.5 h-3.5 text-[#B31942]" /> Elemental Composition
                 </span>
-                <div className="font-mono text-sm bg-[#0A3161] border border-[#0A3161]/30 p-3 text-[#B31942] rounded-xs font-semibold">
+                <div className="font-mono text-sm bg-white/5 border border-white/10 p-3 text-[#B31942] rounded-xs font-semibold">
                   {selectedMetal.composition}
                 </div>
               </div>
 
               {/* Core Physical Application Properties */}
               <div>
-                <span className="flex items-center gap-1.5 text-xs font-bold text-[#0A3161]/70 uppercase tracking-wider mb-3">
+                <span className="flex items-center gap-1.5 text-xs font-bold text-white/70 uppercase tracking-wider mb-3">
                   <ShieldAlert className="w-3.5 h-3.5 text-[#B31942]" /> Core Mechanical Traits
                 </span>
                 <ul className="space-y-1.5">
                   {selectedMetal.properties.map((prop, idx) => (
-                    <li key={idx} className="text-xs text-[#0A3161]/60 flex items-center gap-2">
+                    <li key={idx} className="text-xs text-white/60 flex items-center gap-2">
                       <span className="w-1.5 h-1.5 bg-[#B31942] rounded-full flex-shrink-0" />
                       {prop}
                     </li>
