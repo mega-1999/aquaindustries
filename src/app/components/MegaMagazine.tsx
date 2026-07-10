@@ -111,6 +111,7 @@ export default function MegaMagazine() {
               Primary Metals Spec Index
             </span>
           </div>
+          <div className="text-center md:text-right text-xs text-white font-mono">
             CALL: (307) 788-7700 <span className="mx-2 text-white">•</span> VISIT: WWW.MEGAFOUNDRIES.COM
           </div>
         </div>
