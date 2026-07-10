@@ -24,10 +24,10 @@ export default async function NewsDetailPage({ params }: PageProps) {
          
         {/* Header */}
         <div className="mb-8">
-          <h1 className="text-3xl md:text-5xl font-bold text-gray-900 mb-4">
+          <h1 className="text-3xl md:text-5xl font-bold text-[#0A3161] mb-4">
             {article.title}
           </h1>
-          <div className="flex items-center text-gray-500 text-sm">
+          <div className="flex items-center text-[#0A3161]/70 text-sm">
             <span>By {article.author}</span>
             <span className="mx-2">•</span>
             <span>{article.date}</span>
@@ -46,8 +46,8 @@ export default async function NewsDetailPage({ params }: PageProps) {
         </div>
 
         {/* Content Body */}
-        <div className="prose prose-lg max-w-none text-gray-700 leading-relaxed">
-          <p className="text-xl font-medium mb-6 text-gray-900 border-l-4 border-[#B31942] pl-4">
+        <div className="prose prose-lg max-w-none text-[#0A3161] leading-relaxed">
+          <p className="text-xl font-medium mb-6 text-[#0A3161] border-l-4 border-[#B31942] pl-4">
             {article.excerpt}
           </p>
           <p>

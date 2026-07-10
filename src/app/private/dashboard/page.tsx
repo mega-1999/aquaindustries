@@ -63,21 +63,21 @@ export default function DashboardPage() {
             
             {user ? (
                 <div className="grid grid-cols-2 gap-4 text-sm">
-                    <div className="p-3 bg-slate-50 rounded">
-                        <span className="block text-slate-500 text-xs uppercase">Full Name</span>
+                    <div className="p-3 bg-[#0A3161]/5 rounded">
+                        <span className="block text-[#0A3161]/70 text-xs uppercase">Full Name</span>
                         <span className="font-medium text-lg">{user.fullName}</span>
                     </div>
-                    <div className="p-3 bg-slate-50 rounded">
-                        <span className="block text-slate-500 text-xs uppercase">Email</span>
+                    <div className="p-3 bg-[#0A3161]/5 rounded">
+                        <span className="block text-[#0A3161]/70 text-xs uppercase">Email</span>
                         <span className="font-medium text-lg">{user.email}</span>
                     </div>
-                    <div className="p-3 bg-slate-50 rounded col-span-2 border border-blue-100 bg-blue-50 text-blue-900">
+                    <div className="p-3 bg-[#0A3161]/5 rounded col-span-2 border border-blue-100 bg-blue-50 text-blue-900">
                         <span className="block text-blue-400 text-xs uppercase">User ID (Client ID)</span>
                         <span className="font-mono font-bold">{user.id}</span>
                     </div>
                 </div>
             ) : (
-                <div className="text-red-500 bg-red-50 p-4 rounded">
+                <div className="text-[#B31942] bg-[#B31942]/5 p-4 rounded">
                     Could not fetch profile data. Please check Console (F12).
                 </div>
             )}

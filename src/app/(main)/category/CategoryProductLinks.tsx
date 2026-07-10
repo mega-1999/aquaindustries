@@ -11,8 +11,8 @@ export default function CategoryProductLinks({ items }: CategoryProductLinksProp
   if (!items || items.length === 0) return null;
 
   return (
-    <div className="mt-12 pt-8 border-t border-gray-100">
-      <h3 className="text-xl font-bold text-gray-900 mb-6">
+    <div className="mt-12 pt-8 border-t border-[#0A3161]/10">
+      <h3 className="text-xl font-bold text-[#0A3161] mb-6">
         All Products in this Category
       </h3>
       
@@ -29,8 +29,8 @@ export default function CategoryProductLinks({ items }: CategoryProductLinksProp
               className="
                 px-4 py-2 
                 bg-white 
-                border border-gray-200 
-                text-sm text-gray-600 
+                border border-[#0A3161]/10 
+                text-sm text-[#0A3161]/80 
                 hover:text-[#B31942] hover:border-[#B31942] hover:shadow-sm
                 transition-all duration-200
                 cursor-pointer

@@ -18,10 +18,10 @@ export const MegaProducts = () => {
           viewport={{ once: true }}
           className="mb-16 border-l-4 border-[#B31942] pl-6"
         >
-          <h2 className="text-5xl font-black text-slate-900 tracking-tighter uppercase">
+          <h2 className="text-5xl font-black text-[#0A3161] tracking-tighter uppercase">
             New products <span className="text-[#B31942]">Innovation's</span>
           </h2>
-          <p className="text-slate-500 mt-4 text-lg max-w-xl">
+          <p className="text-[#0A3161]/70 mt-4 text-lg max-w-xl">
             Precision-engineered casting solutions for the world's most demanding infrastructure.
           </p>
         </motion.div>
@@ -94,16 +94,16 @@ export const MegaProducts = () => {
 
                 {/* Main Content Info Block */}
                 <div className="p-8 flex flex-col flex-grow">
-                  <h3 className="text-2xl font-bold text-slate-900 mb-3 group-hover:text-[#B31942] transition-colors">
+                  <h3 className="text-2xl font-bold text-[#0A3161] mb-3 group-hover:text-[#B31942] transition-colors">
                     {item.title}
                   </h3>
-                  <p className="text-slate-600 mb-8 flex-grow leading-relaxed font-light">
+                  <p className="text-[#0A3161]/80 mb-8 flex-grow leading-relaxed font-light">
                     {item.description}
                   </p>
                   
                   <Link
                     href={`/categories/${item.slug}`}
-                    className="flex items-center justify-center gap-3 w-full py-4 bg-slate-50 rounded-2xl text-[#B31942] font-black uppercase tracking-widest text-xs hover:bg-[#B31942] hover:text-white transition-all duration-300"
+                    className="flex items-center justify-center gap-3 w-full py-4 bg-[#0A3161]/5 rounded-2xl text-[#B31942] font-black uppercase tracking-widest text-xs hover:bg-[#B31942] hover:text-white transition-all duration-300"
                   >
                     View Details <ArrowRight size={16} />
                   </Link>

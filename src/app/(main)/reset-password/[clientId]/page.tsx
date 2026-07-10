@@ -72,8 +72,8 @@ function ResetPasswordForm({ clientId }: { clientId: string }) {
     return (
         <Card className="max-w-md w-full shadow-xl">
             <CardHeader className="text-center">
-                <div className="mx-auto bg-slate-100 w-12 h-12 rounded-full flex items-center justify-center mb-4">
-                    <Lock className="w-6 h-6 text-slate-600" />
+                <div className="mx-auto bg-[#0A3161]/10 w-12 h-12 rounded-full flex items-center justify-center mb-4">
+                    <Lock className="w-6 h-6 text-[#0A3161]/80" />
                 </div>
                 <CardTitle className="text-2xl font-bold">Reset Password</CardTitle>
                 <CardDescription>
@@ -86,7 +86,7 @@ function ResetPasswordForm({ clientId }: { clientId: string }) {
                     {/* Read-only email to confirm context */}
                     <div className="space-y-2">
                         <Label>Email</Label>
-                        <Input value={email} disabled className="bg-slate-50" />
+                        <Input value={email} disabled className="bg-[#0A3161]/5" />
                     </div>
 
                     <div className="space-y-2">
@@ -112,12 +112,12 @@ function ResetPasswordForm({ clientId }: { clientId: string }) {
                     </div>
 
                     {error && (
-                        <p className="text-red-600 text-sm font-medium bg-red-50 p-2 rounded text-center">
+                        <p className="text-[#B31942] text-sm font-medium bg-[#B31942]/5 p-2 rounded text-center">
                             {error}
                         </p>
                     )}
 
-                    <Button className="w-full bg-[#B31942] hover:bg-red-700" disabled={loading}>
+                    <Button className="w-full bg-[#B31942] hover:bg-[#B31942]" disabled={loading}>
                         {loading ? <Loader2 className="animate-spin mr-2" /> : "Reset Password"}
                     </Button>
                 </form>
@@ -130,7 +130,7 @@ export default function ResetPasswordPage({ params }: { params: Promise<{ client
     const { clientId } = use(params);
 
     return (
-        <div className="min-h-screen flex items-center justify-center bg-slate-50 p-4">
+        <div className="min-h-screen flex items-center justify-center bg-[#0A3161]/5 p-4">
             <Suspense fallback={<div>Loading...</div>}>
                 <ResetPasswordForm clientId={clientId} />
             </Suspense>

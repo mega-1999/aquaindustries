@@ -36,7 +36,7 @@ export default function InfiniteLiveFeed() {
   };
 
   return (
-    <div className="w-full py-10 bg-neutral-900 border-y  ">
+    <div className="w-full py-10 bg-[#0A3161] border-y  ">
       
       <div className=" mx-auto px-4 mb-4 flex justify-between items-end">
         <div>
@@ -47,9 +47,9 @@ export default function InfiniteLiveFeed() {
              </span>
              Live Factory Network
            </h2>
-           <p className="text-xs text-gray-400">Showing {items.length} of {allFactoryVideos.length} Streams</p>
+           <p className="text-xs text-[#0A3161]/60">Showing {items.length} of {allFactoryVideos.length} Streams</p>
         </div>
-        <div className="text-xs text-gray-500 hidden md:block">Scroll for more →</div>
+        <div className="text-xs text-[#0A3161]/70 hidden md:block">Scroll for more →</div>
       </div>
 
       <div 
@@ -62,8 +62,8 @@ export default function InfiniteLiveFeed() {
             key={item.id} 
             className="
               relative shrink-0 w-[280px] h-[180px] 
-              bg-neutral-800 rounded-lg overflow-hidden 
-              border border-neutral-700 hover:border-[#B31942] 
+              bg-[#0A3161] rounded-lg overflow-hidden 
+              border border-[#0A3161]/50 hover:border-[#B31942] 
               group cursor-pointer transition-all
             "
           >
@@ -115,7 +115,7 @@ export default function InfiniteLiveFeed() {
 
             <div className="absolute bottom-3 left-3 right-3 pointer-events-none">
               <h3 className="text-white text-sm font-bold truncate">{item.name}</h3>
-              <p className="text-gray-400 text-xs truncate">{item.location}</p>
+              <p className="text-[#0A3161]/60 text-xs truncate">{item.location}</p>
             </div>
           </div>
         ))}

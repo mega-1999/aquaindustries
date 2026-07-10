@@ -56,11 +56,11 @@ export default function MegaBlog() {
   const [activeHover, setActiveHover] = useState<string | null>(null);
 
   return (
-    <section className="bg-[#0a0a0a] text-white py-24 px-4 md:px-8 font-sans border-t border-zinc-900 overflow-hidden">
+    <section className="bg-[#0A3161] text-white py-24 px-4 md:px-8 font-sans border-t border-zinc-900 overflow-hidden">
       <div className="">
         
         {/* Unconventional Header: Massive Side-by-Side Typography */}
-        <div className="flex flex-col lg:flex-row lg:items-end justify-between border-b border-zinc-800 pb-12 mb-16 gap-6">
+        <div className="flex flex-col lg:flex-row lg:items-end justify-between border-b border-[#0A3161] pb-12 mb-16 gap-6">
           <div className="max-w-2xl">
             <span className="text-xs uppercase tracking-[0.3em] font-black text-[#B31942] block mb-4">
               Foundry Insights & Engineering
@@ -72,7 +72,7 @@ export default function MegaBlog() {
               </span>
             </h2>
           </div>
-          <p className="text-zinc-500 text-sm max-w-sm font-medium leading-relaxed">
+          <p className="text-[#0A3161]/70 text-sm max-w-sm font-medium leading-relaxed">
             Raw industrial perspectives, deep metallurgical studies, and infrastructure updates directly from the manufacturing floor of Mega Foundries.
           </p>
         </div>
@@ -90,7 +90,7 @@ export default function MegaBlog() {
               >
                 {/* 1. Large Index Indicator + Category Accent */}
                 <div className="lg:col-span-2 mb-4 lg:mb-0 flex flex-row lg:flex-col justify-between lg:justify-start gap-2">
-                  <span className="text-4xl font-black tracking-tighter text-zinc-800 group-hover:text-[#B31942] transition-colors duration-300">
+                  <span className="text-4xl font-black tracking-tighter text-[#0A3161] group-hover:text-[#B31942] transition-colors duration-300">
                     {String(index + 1).padStart(2, "0")}
                   </span>
                   <span className="text-xs uppercase tracking-widest font-bold text-[#B31942] self-center lg:self-start bg-[#B31942]/10 px-2 py-1 rounded-sm lg:mt-2">
@@ -101,7 +101,7 @@ export default function MegaBlog() {
                 {/* 2. Main Textual Segment */}
                 <div className="lg:col-span-6 flex flex-col justify-center pr-0 lg:pr-10">
                   {/* Meta Details Row */}
-                  <div className="flex flex-wrap gap-4 text-xs text-zinc-500 mb-3 font-mono">
+                  <div className="flex flex-wrap gap-4 text-xs text-[#0A3161]/70 mb-3 font-mono">
                     <span className="flex items-center gap-1">
                       <User className="w-3 h-3 text-[#B31942]" /> {post.author}
                     </span>
@@ -118,16 +118,16 @@ export default function MegaBlog() {
                   </Link>
 
                   {/* Excerpt */}
-                  <p className="text-zinc-400 text-sm leading-relaxed max-w-xl font-light">
+                  <p className="text-[#0A3161]/60 text-sm leading-relaxed max-w-xl font-light">
                     {post.excerpt}
                   </p>
                 </div>
 
                 {/* 3. Dynamic Interactive Preview Window */}
                 <div className="lg:col-span-4 mt-6 lg:mt-0 flex items-center justify-end relative h-48 lg:h-auto">
-                  <div className="w-full h-full max-h-[160px] lg:max-h-none lg:w-4/5 rounded-sm overflow-hidden bg-zinc-900 border border-zinc-800 relative shadow-2xl transition-all duration-500 group-hover:border-[#B31942] group-hover:scale-[1.02]">
+                  <div className="w-full h-full max-h-[160px] lg:max-h-none lg:w-4/5 rounded-sm overflow-hidden bg-[#0A3161] border border-[#0A3161] relative shadow-2xl transition-all duration-500 group-hover:border-[#B31942] group-hover:scale-[1.02]">
                     {/* Dark gradient overlay matching layout colors */}
-                    <div className="absolute inset-0 bg-gradient-to-t from-[#0a0a0a] via-transparent to-transparent z-10 opacity-70" />
+                    <div className="absolute inset-0 bg-gradient-to-t from-[#0A3161] via-transparent to-transparent z-10 opacity-70" />
                     
                     <img
                       src={post.image}

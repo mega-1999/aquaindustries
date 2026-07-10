@@ -11,7 +11,7 @@ import { MegaProducts } from '../components/MegaProducts';
 // --- DYNAMIC IMPORTS (Lazy Loaded for Speed) ---
 const FactoryStories = dynamic(() => import('../private/dashboard/FactoryStories'), { ssr: false });
 const LiveStreamCommandCenter = dynamic(() => import('../components/LiveStreamCommandCenter'), {
-    loading: () => <div className="h-96 animate-pulse bg-slate-100 rounded-lg" />
+    loading: () => <div className="h-96 animate-pulse bg-[#0A3161]/10 rounded-lg" />
 });
 const ProductPage = dynamic(() => import('./videos/ProductPage'));
 const HeroSection = dynamic(() => import('../components/hero'));
@@ -88,7 +88,7 @@ export default function Home() {
                         </h1>
 
                         <div className="flex flex-col sm:flex-row items-center justify-center gap-4 mt-8">
-                            <Button className="w-full sm:w-auto bg-[#B31942] hover:bg-red-700 text-white md:px-12 md:py-8 md:text-xl rounded-full">
+                            <Button className="w-full sm:w-auto bg-[#B31942] hover:bg-[#B31942] text-white md:px-12 md:py-8 md:text-xl rounded-full">
                                 Explore Capabilities
                             </Button>
                             <Button variant="outline" className="w-full sm:w-auto border-2 border-white text-white bg-transparent hover:bg-white hover:text-[#B31942] md:px-12 md:py-8 md:text-xl rounded-full">

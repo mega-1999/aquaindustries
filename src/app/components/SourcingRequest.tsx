@@ -48,7 +48,7 @@ export default function SourcingRequest() {
                             <span className="text-[#B31942] font-bold uppercase tracking-wider text-sm">
                                 SEND US A MESSAGE
                             </span>
-                            <h3 className="text-2xl md:text-3xl font-bold text-gray-900 mt-1">
+                            <h3 className="text-2xl md:text-3xl font-bold text-[#0A3161] mt-1">
                                 Let’s commence <span className="text-[#B31942]">your projects</span>
                             </h3>
                         </div>
@@ -59,7 +59,7 @@ export default function SourcingRequest() {
                                 <Input
                                     type="text"
                                     placeholder="Product Name"
-                                    className="bg-white border-gray-300 h-12"
+                                    className="bg-white border-[#0A3161]/20 h-12"
                                 />
                             </div>
 
@@ -68,11 +68,11 @@ export default function SourcingRequest() {
                                 <Input
                                     type="number"
                                     placeholder="Purchase Quantity"
-                                    className="bg-white border-gray-300 h-12"
+                                    className="bg-white border-[#0A3161]/20 h-12"
                                 />
 
                                 <Select>
-                                    <SelectTrigger className="h-12 border-gray-300 text-gray-500">
+                                    <SelectTrigger className="h-12 border-[#0A3161]/20 text-[#0A3161]/70">
                                         <SelectValue placeholder="Unit/Sets" />
                                     </SelectTrigger>
                                     <SelectContent>
@@ -88,7 +88,7 @@ export default function SourcingRequest() {
                             <div>
                                 <Textarea
                                     placeholder="Please describe your specific sourcing requirements for product attributes, desired quantity, and any additional services you expect from suppliers"
-                                    className="bg-white border-gray-300 min-h-[120px] resize-none"
+                                    className="bg-white border-[#0A3161]/20 min-h-[120px] resize-none"
                                 />
                             </div>
 
@@ -99,7 +99,7 @@ export default function SourcingRequest() {
                             </div>
 
                             {/* Submit Button */}
-                            <Button className="w-full sm:w-auto bg-[#B31942] hover:bg-red-700 text-white font-bold py-6 px-8 text-base rounded-md mt-2">
+                            <Button className="w-full sm:w-auto bg-[#B31942] hover:bg-[#B31942] text-white font-bold py-6 px-8 text-base rounded-md mt-2">
                                 Post Your Request
                             </Button>
                         </form>
@@ -111,7 +111,7 @@ export default function SourcingRequest() {
                             <h2 className="text-3xl md:text-4xl font-bold mb-4">
                                 Seamless and smart production on your own terms
                             </h2>
-                            <p className="text-gray-300 text-lg">
+                            <p className="text-[#0A3161]/40 text-lg">
                                 Easily submit your sourcing inquiries and receive competitive quotes.
                             </p>
                         </div>

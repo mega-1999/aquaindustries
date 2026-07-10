@@ -25,8 +25,8 @@ export default function FooterHero({
                 <h1 className="scroll-m-20 text-4xl font-extrabold tracking-tight lg:text-6xl text-white mb-6">
                     {title}
                 </h1>
-                <p className="pb-4 text-xl item-center text-slate-300  leading-relaxed">
-                    We have a never-ending drive to stay committed to the industry by giving the best efficient <span className="text-red-500 font-semibold">products to our Valued Clients</span>.
+                <p className="pb-4 text-xl item-center text-[#0A3161]/40  leading-relaxed">
+                    We have a never-ending drive to stay committed to the industry by giving the best efficient <span className="text-[#B31942] font-semibold">products to our Valued Clients</span>.
                 </p>
             </div>
 
@@ -39,34 +39,34 @@ export default function FooterHero({
 
                             {/* Custom Header with Red Line */}
                             <div className="flex items-center gap-4">
-                                <div className="h-8 w-1.5 bg-red-600 rounded-full" />
-                                <h2 className="text-sm font-bold tracking-[0.2em] text-slate-500 uppercase">
+                                <div className="h-8 w-1.5 bg-[#B31942] rounded-full" />
+                                <h2 className="text-sm font-bold tracking-[0.2em] text-[#0A3161]/70 uppercase">
                                     Overview
                                 </h2>
                             </div>
 
-                            <div className="space-y-6 text-slate-600 leading-7">
+                            <div className="space-y-6 text-[#0A3161]/80 leading-7">
                                 <p>
-                                    <span className="font-bold text-slate-900">Foundry-Grade Casting Solutions</span> are engineered with precise metallurgical compositions to ensure superior tensile strength and thermal stability. As a critical component in heavy machinery, our castings are utilized in <span className="font-bold text-slate-900">automotive, aerospace, and energy sectors</span> to withstand extreme operational stresses and high-temperature environments.
+                                    <span className="font-bold text-[#0A3161]">Foundry-Grade Casting Solutions</span> are engineered with precise metallurgical compositions to ensure superior tensile strength and thermal stability. As a critical component in heavy machinery, our castings are utilized in <span className="font-bold text-[#0A3161]">automotive, aerospace, and energy sectors</span> to withstand extreme operational stresses and high-temperature environments.
                                 </p>
                                 <p>
-                                    Beyond standard casting, our capabilities extend to high-precision <span className="font-bold text-slate-900">forging and fabrication for critical infrastructure</span> such as turbine housings, pipeline valves, and structural supports. Our material science expertise allows us to customize alloy blends—from ductile iron to high-grade steel—ensuring every component meets rigorous international safety standards.
+                                    Beyond standard casting, our capabilities extend to high-precision <span className="font-bold text-[#0A3161]">forging and fabrication for critical infrastructure</span> such as turbine housings, pipeline valves, and structural supports. Our material science expertise allows us to customize alloy blends—from ductile iron to high-grade steel—ensuring every component meets rigorous international safety standards.
                                 </p>
                                 <p>
-                                    Within the manufacturing lifecycle, our <span className="font-bold text-slate-900">integrated quality assurance process</span> prevents common defects like porosity and shrinkage. Each casting undergoes extensive non-destructive testing (NDT) to guarantee structural integrity before it ever leaves the foundry floor, providing our clients with reliable, long-lasting industrial components.
+                                    Within the manufacturing lifecycle, our <span className="font-bold text-[#0A3161]">integrated quality assurance process</span> prevents common defects like porosity and shrinkage. Each casting undergoes extensive non-destructive testing (NDT) to guarantee structural integrity before it ever leaves the foundry floor, providing our clients with reliable, long-lasting industrial components.
                                 </p>
                             </div>
 
                             {/* Mobile CTA (visible only on small screens) */}
                             <div className="lg:hidden pt-4">
-                                <Button variant="outline" className="w-full border-red-200 text-red-600 hover:text-red-700 hover:bg-red-50">
+                                <Button variant="outline" className="w-full border-red-200 text-[#B31942] hover:text-[#B31942] hover:bg-[#B31942]/5">
                                     Contact Us
                                 </Button>
                             </div>
                         </div>
 
                         {/* RIGHT COLUMN: Sidebar / Product Highlight */}
-                        <div className="lg:w-5/12 bg-slate-50/80 p-8 lg:p-12 border-t lg:border-t-0 lg:border-l border-slate-100 relative">
+                        <div className="lg:w-5/12 bg-[#0A3161]/5/80 p-8 lg:p-12 border-t lg:border-t-0 lg:border-l border-[#0A3161]/10 relative">
 
                             {/* Decorative Background Icon */}
                             <Settings className="absolute bottom-[-20px] right-[-20px] w-64 h-64 text-slate-200/40 animate-spin-slow pointer-events-none" />
@@ -75,18 +75,18 @@ export default function FooterHero({
 
                                 {/* Quote Box */}
                                 <div className="bg-blue-50/50 border border-blue-100 rounded-lg p-4">
-                                    <p className="text-slate-700 font-medium italic">
+                                    <p className="text-[#0A3161] font-medium italic">
                                         "Mega Foundries delivers precision-engineered components for hydraulic systems, power transmission, and heavy earth-moving machinery, setting the benchmark for industrial durability."
                                     </p>
                                 </div>
 
                                 {/* Image Caption */}
-                                <p className="text-xs text-slate-500 max-w-[250px]">
+                                <p className="text-xs text-[#0A3161]/70 max-w-[250px]">
                                     Explore Mega Foundries' comprehensive range of Castings, Forgings, and Fabricated assemblies.
                                 </p>
 
                                 {/* Product Image Card */}
-                                <div className="bg-white rounded-xl p-6 shadow-sm border border-slate-200 flex flex-col items-center text-center space-y-4 transition-transform hover:scale-[1.02] duration-300">
+                                <div className="bg-white rounded-xl p-6 shadow-sm border border-[#0A3161]/10 flex flex-col items-center text-center space-y-4 transition-transform hover:scale-[1.02] duration-300">
                                     <div className="w-full aspect-[4/3] relative flex items-center justify-center">
                                         <Image
                                             width={1200}
@@ -96,14 +96,14 @@ export default function FooterHero({
                                             className="max-h-full max-w-full object-contain drop-shadow-lg"
                                         />
                                     </div>
-                                    <p className="text-xs text-slate-500 max-w-[250px]">
+                                    <p className="text-xs text-[#0A3161]/70 max-w-[250px]">
                                         Find out Power Mega's Foundries Transmission and Distribution product range.
                                     </p>
                                 </div>
 
                                 {/* Desktop CTA */}
                                 <div className="mt-auto hidden lg:block">
-                                    <Button variant="outline" className="group border-red-200 text-red-600 hover:bg-red-50 hover:text-red-700 px-8">
+                                    <Button variant="outline" className="group border-red-200 text-[#B31942] hover:bg-[#B31942]/5 hover:text-[#B31942] px-8">
                                         Contact us
                                         <ArrowRight className="ml-2 h-4 w-4 transition-transform group-hover:translate-x-1" />
                                     </Button>

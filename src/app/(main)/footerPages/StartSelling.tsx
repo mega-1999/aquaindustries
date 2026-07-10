@@ -36,7 +36,7 @@ export default function StartSelling() {
         
         {/* Header */}
         <div className="text-center mb-16">
-          <h2 className="text-3xl md:text-4xl font-bold text-gray-900">
+          <h2 className="text-3xl md:text-4xl font-bold text-[#0A3161]">
             Start Selling Smarter with <span className="text-[#B31942]">Mega Foundries?</span>
           </h2>
         </div>
@@ -65,12 +65,12 @@ export default function StartSelling() {
                   <feature.icon className="w-10 h-10 text-[#B31942] mb-4" strokeWidth={2} />
                   
                   {/* Title */}
-                  <h3 className="text-xl font-bold text-gray-900 mb-3">
+                  <h3 className="text-xl font-bold text-[#0A3161] mb-3">
                     {feature.title}
                   </h3>
                   
                   {/* Description */}
-                  <p className="text-gray-600 leading-relaxed text-sm">
+                  <p className="text-[#0A3161]/80 leading-relaxed text-sm">
                     {feature.description}
                   </p>
                 </div>
@@ -80,7 +80,7 @@ export default function StartSelling() {
             {/* CTA Button */}
             <div className="mt-12 text-center lg:text-right">
               <Link href="/seller-registration">
-                <Button className="bg-[#B31942] hover:bg-red-700 text-white font-bold px-8 py-6 text-lg rounded-md shadow-md transition-transform hover:-translate-y-1">
+                <Button className="bg-[#B31942] hover:bg-[#B31942] text-white font-bold px-8 py-6 text-lg rounded-md shadow-md transition-transform hover:-translate-y-1">
                   Join As Supplier
                 </Button>
               </Link>

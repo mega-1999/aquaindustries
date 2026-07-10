@@ -27,7 +27,7 @@ export default function LiveFactoryFeed() {
   );
 
   return (
-    <section className="w-full py-12 bg-neutral-900 text-white">
+    <section className="w-full py-12 bg-[#0A3161] text-white">
       <div className="container mx-auto px-4">
         
         {/* HEADER */}
@@ -37,18 +37,18 @@ export default function LiveFactoryFeed() {
               <Signal className="text-[#B31942] animate-pulse" /> 
               Global Live Operations
             </h2>
-            <p className="text-gray-400 mt-2">
+            <p className="text-[#0A3161]/60 mt-2">
               Real-time monitoring of 50,000+ active manufacturing units.
             </p>
           </div>
 
           {/* SEARCH BAR */}
           <div className="relative w-full md:w-96">
-            <Search className="absolute left-3 top-1/2 -translate-y-1/2 w-4 h-4 text-gray-400" />
+            <Search className="absolute left-3 top-1/2 -translate-y-1/2 w-4 h-4 text-[#0A3161]/60" />
             <input 
               type="text" 
               placeholder="Search by Factory or Country..." 
-              className="w-full pl-10 pr-4 py-2 bg-neutral-800 border border-neutral-700 rounded-full focus:border-[#B31942] focus:outline-none text-sm transition-colors"
+              className="w-full pl-10 pr-4 py-2 bg-[#0A3161] border border-[#0A3161]/50 rounded-full focus:border-[#B31942] focus:outline-none text-sm transition-colors"
               onChange={(e) => setSearchTerm(e.target.value)}
             />
           </div>
@@ -59,13 +59,13 @@ export default function LiveFactoryFeed() {
           {filteredStreams.map((stream) => (
             <div 
               key={stream.id} 
-              className="group relative bg-neutral-800 rounded-xl overflow-hidden cursor-pointer border border-neutral-700 hover:border-[#B31942] transition-all hover:-translate-y-1"
+              className="group relative bg-[#0A3161] rounded-xl overflow-hidden cursor-pointer border border-[#0A3161]/50 hover:border-[#B31942] transition-all hover:-translate-y-1"
               onClick={() => setSelectedStream(stream)}
             >
               {/* Thumbnail */}
-              <div className="relative h-48 w-full bg-neutral-900">
+              <div className="relative h-48 w-full bg-[#0A3161]">
                 {/* Replace src with real images */}
-                <div className="absolute inset-0 bg-neutral-800 flex items-center justify-center text-gray-600">
+                <div className="absolute inset-0 bg-[#0A3161] flex items-center justify-center text-[#0A3161]/80">
                     {/* Placeholder if image missing */}
                     <span className="text-xs">Thumbnail: {stream.name}</span>
                 </div>
@@ -87,7 +87,7 @@ export default function LiveFactoryFeed() {
               {/* Info */}
               <div className="p-4">
                 <h3 className="font-bold text-sm truncate">{stream.name}</h3>
-                <p className="text-xs text-gray-400 mt-1 flex items-center gap-1">
+                <p className="text-xs text-[#0A3161]/60 mt-1 flex items-center gap-1">
                   📍 {stream.location}
                 </p>
               </div>
@@ -97,7 +97,7 @@ export default function LiveFactoryFeed() {
 
         {/* VIDEO MODAL (Dialog) */}
         <Dialog open={!!selectedStream} onOpenChange={() => setSelectedStream(null)}>
-          <DialogContent className="bg-[#0A3161] border-neutral-800 text-white max-w-4xl p-0 overflow-hidden">
+          <DialogContent className="bg-[#0A3161] border-[#0A3161] text-white max-w-4xl p-0 overflow-hidden">
             <DialogHeader className="p-4 absolute top-0 left-0 z-10 w-full bg-gradient-to-b from-[#0A3161]/80 to-transparent">
               <DialogTitle className="text-sm font-medium flex items-center gap-2">
                 <span className="w-2 h-2 bg-[#B31942] rounded-full animate-pulse" /> 

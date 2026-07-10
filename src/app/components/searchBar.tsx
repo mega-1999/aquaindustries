@@ -66,7 +66,7 @@ const SearchBar = () => {
                     align="start"
                     className="
                         w-[200px] max-h-[300px] overflow-y-auto 
-                        bg-white p-0 shadow-lg border border-gray-200 z-[60]
+                        bg-white p-0 shadow-lg border border-[#0A3161]/10 z-[60]
                         rounded-none 
                     "
                 >
@@ -74,7 +74,7 @@ const SearchBar = () => {
                     <DropdownMenuItem
                         onClick={() => setSelectedId("all")}
                         className="
-                            cursor-pointer text-xs font-semibold px-3 py-2 text-neutral-800
+                            cursor-pointer text-xs font-semibold px-3 py-2 text-[#0A3161]
                             rounded-none
                             focus:bg-[#B31942] focus:text-white
                         "
@@ -88,7 +88,7 @@ const SearchBar = () => {
                             key={section.id}
                             onClick={() => setSelectedId(section.id)}
                             className="
-                                cursor-pointer text-xs font-semibold px-3 py-2 text-neutral-800
+                                cursor-pointer text-xs font-semibold px-3 py-2 text-[#0A3161]
                                 rounded-none
                                 focus:bg-[#B31942] focus:text-white
                             "
@@ -103,11 +103,11 @@ const SearchBar = () => {
             <input
                 type="text"
                 placeholder="Search products..."
-                className="w-full h-full pl-3 pr-4 text-sm text-neutral-700 focus:outline-none placeholder:text-neutral-400"
+                className="w-full h-full pl-3 pr-4 text-sm text-[#0A3161] focus:outline-none placeholder:text-[#0A3161]/60"
             />
 
             {/* === 3. BUTTON === */}
-            <Button className="h-full rounded-none px-6 bg-[#B31942] hover:bg-red-700 text-white font-semibold text-xs uppercase tracking-wide">
+            <Button className="h-full rounded-none px-6 bg-[#B31942] hover:bg-[#B31942] text-white font-semibold text-xs uppercase tracking-wide">
                 Search
             </Button>
         </div>

@@ -41,7 +41,7 @@ const CosmoBlog = () => {
 
         <div className='order-first md:order-last'>
           <div className='mb-8'>
-            <h2 className='text-[22px] font-extrabold text-gray-900 leading-tight'>
+            <h2 className='text-[22px] font-extrabold text-[#0A3161] leading-tight'>
               What is Mega Foundries CRM?
             </h2>
             <p className='mt-3 text-sm'>
@@ -57,7 +57,7 @@ const CosmoBlog = () => {
                 </div>
 
                 <div>
-                  <h3 className='text-sm font-bold text-gray-900'>
+                  <h3 className='text-sm font-bold text-[#0A3161]'>
                     {item.title}
                   </h3>
                   <p className='mt-1 text-sm '>

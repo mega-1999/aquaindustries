@@ -25,7 +25,7 @@ const StatusText = ({ status }: { status: string }) => {
     return <span className="text-green-600 text-xs font-medium flex items-center gap-1"><Check size={14} /> In Stock</span>;
   }
   if (status === "By Order") {
-    return <span className="text-red-500 text-xs font-medium flex items-center gap-1"><Check size={14} /> By Order</span>;
+    return <span className="text-[#B31942] text-xs font-medium flex items-center gap-1"><Check size={14} /> By Order</span>;
   }
   return null;
 };
@@ -36,7 +36,7 @@ const FeaturedCard = ({ product }: { product: any }) => {
     <Card className="hover:shadow-md transition-shadow h-full flex flex-col">
       <CardHeader className="p-4 pb-2">
         <div className="flex justify-between items-start">
-          <Badge variant="secondary" className="font-normal text-xs text-muted-foreground bg-gray-100 hover:bg-gray-200">
+          <Badge variant="secondary" className="font-normal text-xs text-muted-foreground bg-[#0A3161]/10 hover:bg-[#0A3161]/10">
             {product.category}
           </Badge>
           <StatusText status={product.status} />
@@ -62,7 +62,7 @@ const FeaturedCard = ({ product }: { product: any }) => {
         <h3 className="font-medium text-sm mb-2 line-clamp-2 min-h-[40px]">
           {product.title}
         </h3>
-        <div className="text-red-600 font-bold text-lg mb-4">
+        <div className="text-[#B31942] font-bold text-lg mb-4">
           ${product.price.toLocaleString()} <span className="text-muted-foreground text-sm font-normal">/ {product.unit}</span>
         </div>
 
@@ -81,10 +81,10 @@ const FeaturedCard = ({ product }: { product: any }) => {
       </CardContent>
 
       <CardFooter className="p-4 pt-0 gap-2">
-        <Button variant="outline" className="flex-1 text-red-600 border-red-200 hover:bg-red-50 hover:text-red-700">
+        <Button variant="outline" className="flex-1 text-[#B31942] border-red-200 hover:bg-[#B31942]/5 hover:text-[#B31942]">
           Get Quote
         </Button>
-        <Button variant="outline" size="icon" className="text-muted-foreground hover:bg-gray-50">
+        <Button variant="outline" size="icon" className="text-muted-foreground hover:bg-[#0A3161]/5">
           <MessageSquare size={18} />
         </Button>
       </CardFooter>
@@ -99,7 +99,7 @@ const StandardCard = ({ product }: { product: any }) => {
       {/* Configured Ribbon */}
       {product.isConfigured && (
         <div className="absolute top-0 right-0 z-10">
-          <div className="bg-red-600 text-primary-foreground text-[10px] px-2 py-1 rounded-bl-lg font-bold shadow-sm">
+          <div className="bg-[#B31942] text-primary-foreground text-[10px] px-2 py-1 rounded-bl-lg font-bold shadow-sm">
             Configured
           </div>
         </div>
@@ -107,7 +107,7 @@ const StandardCard = ({ product }: { product: any }) => {
 
       <CardHeader className="p-4 pb-2">
         <div className="flex justify-between items-start">
-          <Badge variant="secondary" className="font-normal text-xs text-muted-foreground bg-gray-100">
+          <Badge variant="secondary" className="font-normal text-xs text-muted-foreground bg-[#0A3161]/10">
             {product.category}
           </Badge>
           <div className="pr-6"> {/* Padding right to avoid overlap with ribbon */}
@@ -121,7 +121,7 @@ const StandardCard = ({ product }: { product: any }) => {
         <Button
           variant="ghost"
           size="icon"
-          className="absolute top-12 left-2 h-8 w-8 bg-background/80 hover:bg-background text-red-500 rounded-full shadow-sm z-10"
+          className="absolute top-12 left-2 h-8 w-8 bg-background/80 hover:bg-background text-[#B31942] rounded-full shadow-sm z-10"
         >
           <Heart size={16} />
         </Button>
@@ -138,7 +138,7 @@ const StandardCard = ({ product }: { product: any }) => {
 
         {/* Price */}
         {product.price ? (
-          <div className="text-red-600 font-bold text-lg mb-3">
+          <div className="text-[#B31942] font-bold text-lg mb-3">
             ${product.price.toLocaleString()} <span className="text-muted-foreground text-sm font-normal">/ {product.unit}</span>
           </div>
         ) : (
@@ -161,10 +161,10 @@ const StandardCard = ({ product }: { product: any }) => {
       </CardContent>
 
       <CardFooter className="p-4 pt-0 gap-2">
-        <Button variant="outline" className="flex-1 text-red-600 border-red-200 hover:bg-red-50 hover:text-red-700">
+        <Button variant="outline" className="flex-1 text-[#B31942] border-red-200 hover:bg-[#B31942]/5 hover:text-[#B31942]">
           Get Quote
         </Button>
-        <Button variant="outline" size="icon" className="text-red-500 border-red-100 hover:bg-red-50">
+        <Button variant="outline" size="icon" className="text-[#B31942] border-red-100 hover:bg-[#B31942]/5">
           <MessageSquare size={18} />
         </Button>
       </CardFooter>
@@ -224,7 +224,7 @@ export default function MarketplacePage() {
   ];
 
   return (
-    <div className="min-h-screen bg-gray-50/50 py-10 px-4">
+    <div className="min-h-screen bg-[#0A3161]/5/50 py-10 px-4">
       <div className="max-w-7xl mx-auto">
 
         <h1 className="text-3xl font-bold text-foreground text-center mb-10 tracking-tight">

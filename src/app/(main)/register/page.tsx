@@ -86,7 +86,7 @@ function RegisterForm() {
   return (
     <Card className="max-w-lg w-full shadow-xl border-t-4 border-t-[#B31942]">
       <CardHeader className="text-center pb-2">
-         <div className="mx-auto bg-red-50 w-12 h-12 rounded-full flex items-center justify-center mb-4">
+         <div className="mx-auto bg-[#B31942]/5 w-12 h-12 rounded-full flex items-center justify-center mb-4">
            <ShieldCheck className="w-6 h-6 text-[#B31942]" />
          </div>
         <CardTitle className="text-2xl">Complete Your Profile</CardTitle>
@@ -105,7 +105,7 @@ function RegisterForm() {
               name="email" 
               value={emailParam} 
               disabled 
-              className="bg-slate-100 text-slate-500 cursor-not-allowed"
+              className="bg-[#0A3161]/10 text-[#0A3161]/70 cursor-not-allowed"
             />
           </div>
 
@@ -126,12 +126,12 @@ function RegisterForm() {
           </div>
 
           {error && (
-            <p className="text-red-600 text-sm font-medium bg-red-50 p-2 rounded border border-red-100 text-center">
+            <p className="text-[#B31942] text-sm font-medium bg-[#B31942]/5 p-2 rounded border border-red-100 text-center">
               {error}
             </p>
           )}
 
-          <Button className="w-full bg-[#B31942] hover:bg-red-700 py-6 text-md font-bold" disabled={loading}>
+          <Button className="w-full bg-[#B31942] hover:bg-[#B31942] py-6 text-md font-bold" disabled={loading}>
             {loading ? (
               <>
                 <Loader2 className="animate-spin mr-2 h-5 w-5" /> Creating Account...
@@ -148,7 +148,7 @@ function RegisterForm() {
 
 export default function RegisterPage() {
   return (
-    <div className="min-h-screen flex items-center justify-center bg-slate-50 p-4">
+    <div className="min-h-screen flex items-center justify-center bg-[#0A3161]/5 p-4">
       <Suspense fallback={<div className="text-center">Loading registration form...</div>}>
         <RegisterForm />
       </Suspense>

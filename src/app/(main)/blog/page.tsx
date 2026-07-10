@@ -17,11 +17,11 @@ export default function BlogSection() {
             <span className="text-[#B31942] font-bold text-xs uppercase tracking-widest block mb-2">
               Knowledge Hub
             </span>
-            <h2 className="text-3xl md:text-4xl font-bold text-gray-900">
+            <h2 className="text-3xl md:text-4xl font-bold text-[#0A3161]">
               Latest <span className="text-[#B31942]">Insights</span>
             </h2>
           </div>
-          <Link href="/blog" className="hidden md:block text-sm font-semibold text-gray-600 hover:text-[#B31942] transition-colors">
+          <Link href="/blog" className="hidden md:block text-sm font-semibold text-[#0A3161]/80 hover:text-[#B31942] transition-colors">
             View All Articles &rarr;
           </Link>
         </div>
@@ -32,11 +32,11 @@ export default function BlogSection() {
             <Link 
               key={post.id} 
               href={`/blog/${post.slug}`} // Link to the dynamic blog page
-              className="group flex flex-col h-full bg-white rounded-xl overflow-hidden border border-transparent hover:border-gray-100 hover:shadow-lg transition-all duration-300"
+              className="group flex flex-col h-full bg-white rounded-xl overflow-hidden border border-transparent hover:border-[#0A3161]/10 hover:shadow-lg transition-all duration-300"
             >
               
               {/* Image with Zoom Effect */}
-              <div className="relative aspect-[4/3] w-full overflow-hidden bg-gray-100">
+              <div className="relative aspect-[4/3] w-full overflow-hidden bg-[#0A3161]/10">
                 <Image
                   src={post.image}
                   alt={post.title}
@@ -53,18 +53,18 @@ export default function BlogSection() {
               <div className="flex flex-col grow p-5">
                 
                 {/* Author Meta */}
-                <div className="flex items-center text-xs text-gray-400 mb-3">
+                <div className="flex items-center text-xs text-[#0A3161]/60 mb-3">
                   <User className="w-3 h-3 mr-1" />
                   {post.author}
                 </div>
 
                 {/* Title */}
-                <h3 className="text-lg font-bold text-gray-900 mb-3 line-clamp-2 group-hover:text-[#B31942] transition-colors">
+                <h3 className="text-lg font-bold text-[#0A3161] mb-3 line-clamp-2 group-hover:text-[#B31942] transition-colors">
                   {post.title}
                 </h3>
 
                 {/* Excerpt */}
-                <p className="text-sm text-gray-600 leading-relaxed line-clamp-3 mb-4">
+                <p className="text-sm text-[#0A3161]/80 leading-relaxed line-clamp-3 mb-4">
                   {post.excerpt}
                 </p>
 

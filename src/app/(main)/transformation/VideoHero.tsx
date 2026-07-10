@@ -6,7 +6,7 @@ import { ArrowRight } from 'lucide-react';
 
 export default function VideoHero() {
   return (
-    <section className="relative w-full h-[600px] md:h-[700px] flex items-center justify-center overflow-hidden bg-slate-900">
+    <section className="relative w-full h-[600px] md:h-[700px] flex items-center justify-center overflow-hidden bg-[#0A3161]">
 
       <video
         autoPlay
@@ -39,7 +39,7 @@ export default function VideoHero() {
         </p>
 
         <div className="pt-8">
-          <Button className="bg-[#B31942] hover:bg-red-700 text-white px-10 py-7 text-xl rounded-md font-bold shadow-[0_0_20px_rgba(204,34,33,0.4)]">
+          <Button className="bg-[#B31942] hover:bg-[#B31942] text-white px-10 py-7 text-xl rounded-md font-bold shadow-[0_0_20px_rgba(204,34,33,0.4)]">
             View Our Products <ArrowRight className="ml-2 w-5 h-5" />
           </Button>
         </div>

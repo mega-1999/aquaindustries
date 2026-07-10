@@ -88,11 +88,11 @@ export default function LoginPage({ params }: { params: Promise<{ type: string }
   const displayTitle = type ? type.toUpperCase() : 'PORTAL';
 
   return (
-    <div className="min-h-screen flex items-center justify-center bg-slate-50 p-4">
+    <div className="min-h-screen flex items-center justify-center bg-[#0A3161]/5 p-4">
       <Card className="max-w-md w-full shadow-xl border-t-4 border-t-[#B31942]">
 
         <CardHeader className="text-center">
-          <div className="mx-auto bg-red-50 w-12 h-12 rounded-full flex items-center justify-center mb-4">
+          <div className="mx-auto bg-[#B31942]/5 w-12 h-12 rounded-full flex items-center justify-center mb-4">
             {step === 'credentials' ? (
               <LogIn className="w-6 h-6 text-[#B31942]" />
             ) : (
@@ -142,12 +142,12 @@ export default function LoginPage({ params }: { params: Promise<{ type: string }
               </div>
 
               {error && (
-                <p className="text-red-500 text-sm font-medium bg-red-50 p-2 rounded text-center border border-red-100">
+                <p className="text-[#B31942] text-sm font-medium bg-[#B31942]/5 p-2 rounded text-center border border-red-100">
                   {error}
                 </p>
               )}
 
-              <Button className="w-full bg-[#B31942] hover:bg-red-700 py-6 text-md font-bold" disabled={loading}>
+              <Button className="w-full bg-[#B31942] hover:bg-[#B31942] py-6 text-md font-bold" disabled={loading}>
                 {loading ? <Loader2 className="animate-spin mr-2" /> : "Sign In"}
               </Button>
             </form>
@@ -167,14 +167,14 @@ export default function LoginPage({ params }: { params: Promise<{ type: string }
               </div>
 
               {error && (
-                <p className="text-red-500 text-sm font-medium bg-red-50 px-4 py-2 rounded">
+                <p className="text-[#B31942] text-sm font-medium bg-[#B31942]/5 px-4 py-2 rounded">
                   {error}
                 </p>
               )}
 
               <Button
                 onClick={handleVerify}
-                className="w-full bg-[#B31942] hover:bg-red-700 py-6 text-lg font-bold"
+                className="w-full bg-[#B31942] hover:bg-[#B31942] py-6 text-lg font-bold"
                 disabled={loading}
               >
                 {loading ? <Loader2 className="animate-spin mr-2" /> : "Verify & Login"}
@@ -182,7 +182,7 @@ export default function LoginPage({ params }: { params: Promise<{ type: string }
 
               <button
                 onClick={() => { setStep('credentials'); setError(''); }}
-                className="flex items-center text-sm text-slate-500 hover:text-slate-800"
+                className="flex items-center text-sm text-[#0A3161]/70 hover:text-[#0A3161]"
               >
                 <ArrowLeft className="w-3 h-3 mr-1" /> Back to Login
               </button>
@@ -192,7 +192,7 @@ export default function LoginPage({ params }: { params: Promise<{ type: string }
 
         {step === 'credentials' && (
           <CardFooter className="justify-center border-t pt-4">
-            <p className="text-sm text-slate-500">
+            <p className="text-sm text-[#0A3161]/70">
               Don't have an account? <a href={`/signup/${type || 'customer'}`} className="text-[#B31942] font-semibold hover:underline">Sign up</a>
             </p>
           </CardFooter>

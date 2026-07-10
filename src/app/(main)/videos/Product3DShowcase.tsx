@@ -115,7 +115,7 @@ export default function Product3DShowcase() {
               "gap-2 font-bold uppercase tracking-wider px-8 h-12 transition-all",
               isAutoPlayAll 
                 ? "bg-[#B31942] text-white animate-pulse" 
-                : "bg-white text-[#0A3161] hover:bg-gray-200"
+                : "bg-white text-[#0A3161] hover:bg-[#0A3161]/10"
             )}
           >
             {isAutoPlayAll ? <Pause className="w-4 h-4" /> : <Play className="w-4 h-4" />}
@@ -128,7 +128,7 @@ export default function Product3DShowcase() {
           
           {/* LEFT: The Main Screen */}
           <div className="lg:col-span-2">
-            <div className="relative aspect-video bg-[#0A3161] rounded-lg border border-zinc-800 shadow-2xl overflow-hidden group">
+            <div className="relative aspect-video bg-[#0A3161] rounded-lg border border-[#0A3161] shadow-2xl overflow-hidden group">
               
               {/* VIDEO PLAYER LOGIC */}
               {isPlaying ? (
@@ -171,18 +171,18 @@ export default function Product3DShowcase() {
                       <Badge variant="outline" className="text-[#B31942] border-[#B31942] bg-[#B31942]/10">
                         {activeVideo.type.replace('_', ' ')}
                       </Badge>
-                      <span className="text-xs text-gray-400 font-mono">{activeVideo.duration}</span>
+                      <span className="text-xs text-[#0A3161]/60 font-mono">{activeVideo.duration}</span>
                     </div>
                     <h3 className="text-2xl font-bold">{activeVideo.title}</h3>
-                    <p className="text-gray-300 text-sm max-w-xl">{activeVideo.description}</p>
+                    <p className="text-[#0A3161]/40 text-sm max-w-xl">{activeVideo.description}</p>
                   </div>
               )}
             </div>
           </div>
 
           {/* RIGHT: Playlist */}
-          <div className="lg:col-span-1 bg-zinc-900/50 rounded-lg border border-zinc-800 p-4 h-full flex flex-col">
-            <h4 className="text-gray-400 font-bold uppercase text-xs tracking-widest mb-4 flex items-center gap-2">
+          <div className="lg:col-span-1 bg-[#0A3161]/50 rounded-lg border border-[#0A3161] p-4 h-full flex flex-col">
+            <h4 className="text-[#0A3161]/60 font-bold uppercase text-xs tracking-widest mb-4 flex items-center gap-2">
               <Layers className="w-4 h-4" /> 
               Up Next
             </h4>
@@ -200,11 +200,11 @@ export default function Product3DShowcase() {
                     "flex gap-4 p-3 rounded-md cursor-pointer transition-all border group",
                     activeVideoIndex === idx 
                       ? "bg-[#B31942]/10 border-[#B31942]" 
-                      : "bg-[#0A3161] border-zinc-800 hover:border-zinc-600"
+                      : "bg-[#0A3161] border-[#0A3161] hover:border-zinc-600"
                   )}
                 >
                   {/* Thumbnail Placeholder */}
-                  <div className="relative w-24 h-16 bg-zinc-800 rounded overflow-hidden shrink-0 flex items-center justify-center">
+                  <div className="relative w-24 h-16 bg-[#0A3161] rounded overflow-hidden shrink-0 flex items-center justify-center">
                     <Image 
                         src={video.thumbnail} 
                         alt="thumb" 
@@ -214,7 +214,7 @@ export default function Product3DShowcase() {
                     
                     {activeVideoIndex === idx && isPlaying && (
                        <div className="absolute inset-0 bg-[#0A3161]/50 flex items-center justify-center z-10">
-                          <div className="w-2 h-2 bg-red-500 rounded-full animate-ping" />
+                          <div className="w-2 h-2 bg-[#B31942]/50 rounded-full animate-ping" />
                        </div>
                     )}
                   </div>
@@ -224,16 +224,16 @@ export default function Product3DShowcase() {
                     <h5 className={cn("font-bold text-sm leading-tight mb-1 group-hover:text-[#B31942] transition-colors", activeVideoIndex === idx ? "text-[#B31942]" : "text-white")}>
                       {video.title}
                     </h5>
-                    <p className="text-xs text-gray-500 line-clamp-1">{video.description}</p>
+                    <p className="text-xs text-[#0A3161]/70 line-clamp-1">{video.description}</p>
                   </div>
                 </div>
               ))}
             </div>
 
             {/* Bottom Call to Action */}
-            <div className="mt-4 pt-4 border-t border-zinc-800 text-center">
+            <div className="mt-4 pt-4 border-t border-[#0A3161] text-center">
                <p className="text-xs text-[#0A3161] mb-3">Need 3D CAD files for your project?</p>
-               <Button variant="outline" className="w-full text-xs text-[#0A3161] border-zinc-700 hover:bg-white hover:text-[#0A3161] uppercase">
+               <Button variant="outline" className="w-full text-xs text-[#0A3161] border-[#0A3161]/50 hover:bg-white hover:text-[#0A3161] uppercase">
                  Request CAD / BIM Files <ChevronRight className="w-3 h-3 ml-1" />
                </Button>
             </div>

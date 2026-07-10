@@ -107,7 +107,7 @@ const FixedQuoteBtn = () => {
           onClick={scrollToTop}
           className={`
             w-12 h-12 flex items-center justify-center 
-            bg-slate-800 hover:bg-slate-900 text-white 
+            bg-[#0A3161] hover:bg-[#0A3161] text-white 
             rounded-full shadow-lg transition-all duration-300
             ${isVisible ? "opacity-100 scale-100" : "opacity-0 scale-0 pointer-events-none h-0 w-0 !gap-0"}
           `}

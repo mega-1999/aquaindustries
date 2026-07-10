@@ -31,7 +31,7 @@ const heroSection = () => {
                 </p>
 
                 <div className="flex flex-col py-5 sm:flex-row items-center justify-center gap-4 mt-8">
-                    <Button className="bg-[#B31942] hover:bg-red-700 text-white px-10 py-7 text-xl rounded-md font-bold shadow-[0_0_20px_rgba(204,34,33,0.4)] transition-all transform hover:scale-105">
+                    <Button className="bg-[#B31942] hover:bg-[#B31942] text-white px-10 py-7 text-xl rounded-md font-bold shadow-[0_0_20px_rgba(204,34,33,0.4)] transition-all transform hover:scale-105">
                         Explore Capabilities
                     </Button>
                     <Button variant="outline" className="px-10 text-[#B31942] border-2 border-[#B31942] py-7 text-xl  hover:bg-white/10 backdrop-blur-sm">
@@ -39,7 +39,7 @@ const heroSection = () => {
                     </Button>
                 </div>
             </div>
-            <p className="text-[18px] text-gray-700 max-w-4xl mx-auto mb-16">Engage with dedicated experts
+            <p className="text-[18px] text-[#0A3161] max-w-4xl mx-auto mb-16">Engage with dedicated experts
             </p>
         </div>
     )

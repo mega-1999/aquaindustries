@@ -120,11 +120,11 @@ const MegaProduct = () => {
       <div className="">
 
         {/* Header Section */}
-        <div className="border-b border-zinc-800 pb-6 mb-10">
+        <div className="border-b border-[#0A3161] pb-6 mb-10">
           <h2 className="text-3xl font-light tracking-wide text-white mb-2">
             Explore <span className="font-semibold text-[#B31942]">Mega Foundries</span> Products
           </h2>
-          <p className="text-sm text-zinc-400">
+          <p className="text-sm text-[#0A3161]/60">
             Complete line of world-class nodular ductile iron castings (Fe 50007), delivering ultimate durability and engineering modernity to your infrastructure projects.
           </p>
         </div>
@@ -134,7 +134,7 @@ const MegaProduct = () => {
           {categories.map((cat, index) => (
             <button
               key={index}
-              className="px-3 py-2 border border-zinc-800 bg-[#1a1a1a] hover:bg-[#B31942] hover:border-[#B31942] text-zinc-300 hover:text-white transition-all duration-200 rounded-sm"
+              className="px-3 py-2 border border-[#0A3161] bg-[#0A3161] hover:bg-[#B31942] hover:border-[#B31942] text-[#0A3161]/40 hover:text-white transition-all duration-200 rounded-sm"
             >
               {cat}
             </button>
@@ -149,7 +149,7 @@ const MegaProduct = () => {
               className="flex flex-col md:flex-row items-center gap-8 md:gap-16 border-b border-zinc-900 filter drop-shadow-[0_10px_15px_rgba(0,0,0,0.6)] transition-transform duration-300  pb-12 last:border-0"
             >
               {/* Product Image Wrapper Container */}
-              <div className="w-full md:w-1/3 flex justify-center items-center bg-[#181818] p-6 rounded-lg border border-zinc-800/40 shadow-inner group">
+              <div className="w-full md:w-1/3 flex justify-center items-center bg-[#181818] p-6 rounded-lg border border-[#0A3161]/40 shadow-inner group">
                 <img
                   src={product.image}
                   alt={product.title}
@@ -165,7 +165,7 @@ const MegaProduct = () => {
                 <h3 className="text-2xl font-semibold text-white tracking-wide mb-3">
                   {product.title}
                 </h3>
-                <p className="text-zinc-400 text-sm leading-relaxed mb-6 max-w-2xl">
+                <p className="text-[#0A3161]/60 text-sm leading-relaxed mb-6 max-w-2xl">
                   {product.description}
                 </p>
 

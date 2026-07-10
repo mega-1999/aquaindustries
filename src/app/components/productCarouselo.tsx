@@ -27,13 +27,13 @@ const MetricSection = () => {
                 {/* <div className="grid grid-cols-2 gap-8 md:grid-cols-4 md:gap-4 py-8">
                     {metrics.map((metric, index) => (
                         <div key={index} className="flex flex-col items-center p-4">
-                            <div className="relative p-3 rounded-full bg-neutral-100/50 mb-3">
-                                 <metric.icon className="w-6 h-6 text-neutral-800" />
-                                 <div className="absolute inset-0 border border-neutral-300 rounded-full"></div>
+                            <div className="relative p-3 rounded-full bg-white/50 mb-3">
+                                 <metric.icon className="w-6 h-6 text-[#0A3161]" />
+                                 <div className="absolute inset-0 border border-[#0A3161]/20 rounded-full"></div>
                             </div>
 
                             <div className="text-[14px] font-extrabold text-[#B31942] mb-1">{metric.value}</div>
-                            <p className="text-[10px] text-neutral-600 text-center">{metric.label}</p>
+                            <p className="text-[10px] text-[#0A3161] text-center">{metric.label}</p>
                         </div>
                     ))}
                 </div> */}

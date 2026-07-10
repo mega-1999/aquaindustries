@@ -12,7 +12,7 @@ import Image from 'next/image';
 // --- DYNAMIC IMPORT FOR 3D VIEWER ---
 const ModelViewer = dynamic(() => import('./ModelViewer'), { 
   ssr: false,
-  loading: () => <div className="h-full flex items-center justify-center bg-gray-100 text-xs">Loading 3D Engine...</div>
+  loading: () => <div className="h-full flex items-center justify-center bg-[#0A3161]/10 text-xs">Loading 3D Engine...</div>
 });
 
 // --- 10 MEGA FOUNDRIES CASTING ASSETS (No Precast) ---
@@ -164,21 +164,21 @@ export default function ProductPage() {
   };
 
   return (
-    <div className="bg-gray-50 pb-4">
+    <div className="bg-[#0A3161]/5 pb-4">
       {/* === 3D ASSET SELECTION === */}
-      <section className="bg-white p-6 rounded-xl shadow-sm border border-gray-200">
-        <h2 className="text-lg font-bold text-gray-900 mb-4 flex items-center gap-2">
-          <Box className="w-5 h-5 text-gray-400" /> Select 3D Casting Model
+      <section className="bg-white p-6 rounded-xl shadow-sm border border-[#0A3161]/10">
+        <h2 className="text-lg font-bold text-[#0A3161] mb-4 flex items-center gap-2">
+          <Box className="w-5 h-5 text-[#0A3161]/60" /> Select 3D Casting Model
         </h2> 
 
         <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
            
            {/* 1. PREVIEW WINDOW (The 360 Viewer) */}
-           <div className="h-[300px] bg-gray-100 rounded-xl overflow-hidden border border-gray-200 relative">
+           <div className="h-[300px] bg-[#0A3161]/10 rounded-xl overflow-hidden border border-[#0A3161]/10 relative">
               {previewUrl && mediaType === 'MODEL' ? (
                  <ModelViewer src={previewUrl} />
               ) : (
-                 <div className="w-full h-full flex flex-col items-center justify-center text-gray-400">
+                 <div className="w-full h-full flex flex-col items-center justify-center text-[#0A3161]/60">
                     <Box className="w-10 h-10 mb-2 opacity-50" />
                     <span className="text-sm">Select a casting model from the list</span>
                  </div>
@@ -195,19 +195,19 @@ export default function ProductPage() {
                      flex items-center gap-3 p-3 rounded-lg border cursor-pointer transition-all
                      ${selectedAssetId === asset.id 
                        ? 'border-blue-600 bg-blue-50 ring-1 ring-blue-600' 
-                       : 'border-gray-200 hover:border-gray-300 hover:bg-gray-50'
+                       : 'border-[#0A3161]/10 hover:border-[#0A3161]/20 hover:bg-[#0A3161]/5'
                      }
                    `}
                  >
                     {/* Thumbnail */}
-                    <div className="w-12 h-12 bg-gray-200 rounded-md overflow-hidden flex-shrink-0">
+                    <div className="w-12 h-12 bg-[#0A3161]/10 rounded-md overflow-hidden flex-shrink-0">
                        <Image width={1200} height={600} src={asset.thumbnail} alt={asset.name} className="w-full h-full object-cover" />
                     </div>
                     
                     {/* Info */}
                     <div className="flex-1">
-                       <p className="text-sm font-bold text-gray-800">{asset.name}</p>
-                       <p className="text-xs text-gray-500">{asset.type} • FOUNDRY CASTING</p>
+                       <p className="text-sm font-bold text-[#0A3161]">{asset.name}</p>
+                       <p className="text-xs text-[#0A3161]/70">{asset.type} • FOUNDRY CASTING</p>
                     </div>
 
                     {/* Checkmark */}

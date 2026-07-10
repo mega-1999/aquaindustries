@@ -60,7 +60,7 @@ export default function VendorListPage() {
             <div className="flex justify-between items-center mb-8">
                 <div>
                     <h1 className="text-3xl font-bold tracking-tight">All Vendors</h1>
-                    <p className="text-gray-500">Manage your registered foundries and suppliers.</p>
+                    <p className="text-[#0A3161]/70">Manage your registered foundries and suppliers.</p>
                 </div>
                 <Button>
                     <Plus className="mr-2 h-4 w-4" /> Add New Vendor
@@ -82,7 +82,7 @@ export default function VendorListPage() {
                     <TableBody>
                         {vendors.length === 0 ? (
                             <TableRow>
-                                <TableCell colSpan={5} className="text-center h-24 text-gray-500">
+                                <TableCell colSpan={5} className="text-center h-24 text-[#0A3161]/70">
                                     No vendors found.
                                 </TableCell>
                             </TableRow>
@@ -102,14 +102,14 @@ export default function VendorListPage() {
 
                                     {/* Status Badge */}
                                     <TableCell>
-                                        <span className={`px-2 py-1 rounded-full text-xs font-bold ${vendor.isActive ? "bg-green-100 text-green-700" : "bg-gray-100 text-gray-700"
+                                        <span className={`px-2 py-1 rounded-full text-xs font-bold ${vendor.isActive ? "bg-green-100 text-green-700" : "bg-[#0A3161]/10 text-[#0A3161]"
                                             }`}>
                                             {vendor.isActive ? "Active" : "Inactive"}
                                         </span>
                                     </TableCell>
 
                                     {/* The ID you were looking for */}
-                                    <TableCell className="font-mono text-xs text-gray-400">
+                                    <TableCell className="font-mono text-xs text-[#0A3161]/60">
                                         {vendor.id}
                                     </TableCell>
 

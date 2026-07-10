@@ -61,7 +61,7 @@ export default function SettingsPage() {
     <div className="space-y-6 max-w-4xl mx-auto pb-10">
       <div>
         <h3 className="text-2xl font-medium">Settings</h3>
-        <p className="text-sm text-slate-500">Manage your account settings and preferences.</p>
+        <p className="text-sm text-[#0A3161]/70">Manage your account settings and preferences.</p>
       </div>
       
       <Tabs defaultValue="general" className="w-full">
@@ -80,13 +80,13 @@ export default function SettingsPage() {
             <CardContent className="space-y-6">
               
               <div className="flex items-center gap-6">
-                <Avatar className="h-20 w-20 border-2 border-slate-100">
+                <Avatar className="h-20 w-20 border-2 border-[#0A3161]/10">
                     <AvatarImage src="/placeholder-user.jpg" />
-                    <AvatarFallback className="text-lg bg-slate-900 text-white">RP</AvatarFallback>
+                    <AvatarFallback className="text-lg bg-[#0A3161] text-white">RP</AvatarFallback>
                 </Avatar>
                 <div>
                     <Button variant="outline" size="sm">Change Avatar</Button>
-                    <p className="text-xs text-slate-400 mt-2">JPG, GIF or PNG. 1MB max.</p>
+                    <p className="text-xs text-[#0A3161]/60 mt-2">JPG, GIF or PNG. 1MB max.</p>
                 </div>
               </div>
 
@@ -100,21 +100,21 @@ export default function SettingsPage() {
                 </div>
                 <div className="space-y-2">
                   <Label>Username</Label>
-                  <Input value={user.username} disabled className="bg-slate-50" />
+                  <Input value={user.username} disabled className="bg-[#0A3161]/5" />
                 </div>
                 <div className="space-y-2">
                   <Label>Email</Label>
-                  <Input value={user.email} disabled className="bg-slate-50" />
+                  <Input value={user.email} disabled className="bg-[#0A3161]/5" />
                 </div>
                 <div className="space-y-2">
                   <Label>Role</Label>
-                  <Input value={user.role} disabled className="bg-slate-50" />
+                  <Input value={user.role} disabled className="bg-[#0A3161]/5" />
                 </div>
               </div>
 
             </CardContent>
             <CardFooter className="border-t px-6 py-4">
-              <Button className="bg-[#B31942] hover:bg-red-700">Save Changes</Button>
+              <Button className="bg-[#B31942] hover:bg-[#B31942]">Save Changes</Button>
             </CardFooter>
           </Card>
         </TabsContent>
@@ -160,13 +160,13 @@ export default function SettingsPage() {
                 </form>
 
                 {message && (
-                    <div className={`p-3 rounded text-sm font-medium ${message.type === 'success' ? 'bg-green-100 text-green-700' : 'bg-red-100 text-red-700'}`}>
+                    <div className={`p-3 rounded text-sm font-medium ${message.type === 'success' ? 'bg-green-100 text-green-700' : 'bg-[#B31942]/10 text-[#B31942]'}`}>
                         {message.text}
                     </div>
                 )}
             </CardContent>
             <CardFooter className="border-t px-6 py-4">
-              <Button type="submit" form="pwd-form" className="bg-[#B31942] hover:bg-red-700" disabled={isLoading}>
+              <Button type="submit" form="pwd-form" className="bg-[#B31942] hover:bg-[#B31942]" disabled={isLoading}>
                 {isLoading && <Loader2 className="animate-spin mr-2 h-4 w-4" />}
                 Change Password
               </Button>

@@ -40,7 +40,7 @@ export default function HowItWorks() {
         <span className="text-[#B31942] font-bold text-xs uppercase tracking-widest">
           Mega Foundries Process
         </span>
-        <h2 className="text-[30px] md:text-[40px] font-bold text-gray-900 mt-2">
+        <h2 className="text-[30px] md:text-[40px] font-bold text-[#0A3161] mt-2">
           How It <span className="text-[#B31942]">Works</span>
         </h2>
       </div>
@@ -91,10 +91,10 @@ export default function HowItWorks() {
                   </div>
 
                   <div className="absolute top-[280px] px-4 text-center max-w-[280px]">
-                    <h3 className="text-xl font-bold text-gray-900 mb-3">
+                    <h3 className="text-xl font-bold text-[#0A3161] mb-3">
                       <span className="text-[#B31942]">{step.highlight}</span> {step.title.replace(step.highlight, "")}
                     </h3>
-                    <p className="text-sm text-gray-600 leading-relaxed font-medium">
+                    <p className="text-sm text-[#0A3161]/80 leading-relaxed font-medium">
                       {step.description}
                     </p>
                   </div>
@@ -102,16 +102,16 @@ export default function HowItWorks() {
               ) : (
                 <>
                   <div className="absolute top-0 px-4 text-center max-w-[280px]">
-                    <h3 className="text-xl font-bold text-gray-900 mb-3">
+                    <h3 className="text-xl font-bold text-[#0A3161] mb-3">
                       <span className="text-[#B31942]">{step.highlight}</span> {step.title.replace(step.highlight, "")}
                     </h3>
-                    <p className="text-sm text-gray-600 leading-relaxed font-medium">
+                    <p className="text-sm text-[#0A3161]/80 leading-relaxed font-medium">
                       {step.description}
                     </p>
                   </div>
 
                   {/* Number sits INSIDE the bottom bend */}
-                  <div className="absolute top-[320px] text-7xl font-black text-gray-900 bg-white/80 px-4 rounded-xl backdrop-blur-sm z-20">
+                  <div className="absolute top-[320px] text-7xl font-black text-[#0A3161] bg-white/80 px-4 rounded-xl backdrop-blur-sm z-20">
                     {step.id}
                   </div>
                 </>
@@ -121,22 +121,22 @@ export default function HowItWorks() {
         </div>
 
         {/* Start/End Caps */}
-        <div className="absolute left-[-20px] bottom-[80px] w-10 h-10 bg-gray-200 rounded-full border-4 border-white"></div>
-        <div className="absolute right-[-20px] bottom-[80px] w-10 h-10 bg-gray-200 rounded-full border-4 border-white"></div>
+        <div className="absolute left-[-20px] bottom-[80px] w-10 h-10 bg-[#0A3161]/10 rounded-full border-4 border-white"></div>
+        <div className="absolute right-[-20px] bottom-[80px] w-10 h-10 bg-[#0A3161]/10 rounded-full border-4 border-white"></div>
 
       </div>
       <div className="lg:hidden space-y-8 relative pl-4">
-        <div className="absolute left-8 top-0 bottom-0 w-1 bg-gray-100 -z-10"></div>
+        <div className="absolute left-8 top-0 bottom-0 w-1 bg-[#0A3161]/10 -z-10"></div>
         {steps.map((step) => (
           <div key={step.id} className="relative pl-12">
-            <div className="absolute left-0 top-0 w-16 h-16 bg-white border-4 border-gray-100 rounded-2xl flex items-center justify-center text-3xl font-black text-[#B31942] shadow-sm z-10">
+            <div className="absolute left-0 top-0 w-16 h-16 bg-white border-4 border-[#0A3161]/10 rounded-2xl flex items-center justify-center text-3xl font-black text-[#B31942] shadow-sm z-10">
               {step.id}
             </div>
-            <div className="bg-gray-50 p-6 rounded-xl border border-gray-100 shadow-sm">
-              <h3 className="text-lg font-bold text-gray-900 mb-2">
+            <div className="bg-[#0A3161]/5 p-6 rounded-xl border border-[#0A3161]/10 shadow-sm">
+              <h3 className="text-lg font-bold text-[#0A3161] mb-2">
                 {step.title}
               </h3>
-              <p className="text-gray-600 text-sm leading-relaxed">
+              <p className="text-[#0A3161]/80 text-sm leading-relaxed">
                 {step.description}
               </p>
             </div>

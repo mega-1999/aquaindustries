@@ -31,34 +31,34 @@ const OfficeCard = ({
     <div className="bg-white rounded-2xl shadow-[0_4px_20px_rgba(0,0,0,0.05)] p-6 md:p-8 flex flex-col items-center text-center border-t-4 border-transparent hover:border-[#B31942] transition-all duration-300 relative mt-8">
       {/* Circular Flag Container overlapping top border */}
       <div className="absolute -top-8 p-1 bg-white rounded-full shadow-sm">
-        <div className="w-14 h-14 rounded-full overflow-hidden border-2 border-gray-100 relative">
+        <div className="w-14 h-14 rounded-full overflow-hidden border-2 border-[#0A3161]/10 relative">
           {/* Replace src with actual flag image assets */}
           <Image width={1200} height={600} src={flagSrc} alt={`${title} flag`} className="w-full h-full object-cover" />
         </div>
       </div>
 
-      <h3 className="text-2xl font-semibold text-gray-800 mt-8 mb-4">{title}</h3>
-      <p className="text-gray-500 text-sm mb-8 leading-relaxed max-w-sm mx-auto">
+      <h3 className="text-2xl font-semibold text-[#0A3161] mt-8 mb-4">{title}</h3>
+      <p className="text-[#0A3161]/70 text-sm mb-8 leading-relaxed max-w-sm mx-auto">
         {description}
       </p>
 
-      <div className="w-full space-y-4 text-left mb-8 text-gray-600 text-sm">
+      <div className="w-full space-y-4 text-left mb-8 text-[#0A3161]/80 text-sm">
         <div className="flex items-start gap-3">
-          <MapPin className="w-5 h-5 text-gray-400 mt-0.5 shrink-0" />
+          <MapPin className="w-5 h-5 text-[#0A3161]/60 mt-0.5 shrink-0" />
           <span>{address}</span>
         </div>
         <div className="flex items-center gap-3">
-          <Phone className="w-5 h-5 text-gray-400 shrink-0" />
+          <Phone className="w-5 h-5 text-[#0A3161]/60 shrink-0" />
           <span>{phone}</span>
         </div>
         <div className="flex items-center gap-3">
-          <Mail className="w-5 h-5 text-gray-400 shrink-0" />
+          <Mail className="w-5 h-5 text-[#0A3161]/60 shrink-0" />
           <span>{email}</span>
         </div>
       </div>
 
       {/* Google Maps Embed */}
-      <div className="w-full h-48 bg-gray-200 rounded-lg overflow-hidden">
+      <div className="w-full h-48 bg-[#0A3161]/10 rounded-lg overflow-hidden">
         <iframe
           src={mapSrc}
           width="100%"
@@ -146,7 +146,7 @@ const ContactUs = () => {
 
           {/* CTA Buttons */}
           <div className="flex flex-col py-5 sm:flex-row items-center justify-center gap-4 mt-8">
-            <Button className="bg-[#B31942] hover:bg-red-700 text-white px-10 py-7 text-xl rounded-md font-bold shadow-[0_0_20px_rgba(204,34,33,0.4)] transition-all transform hover:scale-105">
+            <Button className="bg-[#B31942] hover:bg-[#B31942] text-white px-10 py-7 text-xl rounded-md font-bold shadow-[0_0_20px_rgba(204,34,33,0.4)] transition-all transform hover:scale-105">
               Explore Capabilities
             </Button>
             <Button variant="outline" className="px-10 text-[#B31942] border-2 border-[#B31942] py-7 text-xl  hover:bg-white/10 backdrop-blur-sm">
@@ -154,11 +154,11 @@ const ContactUs = () => {
             </Button>
           </div>
         </div>
-        <p className="text-[18px] text-gray-700 max-w-4xl mx-auto mb-16">
+        <p className="text-[18px] text-[#0A3161] max-w-4xl mx-auto mb-16">
           Engage with dedicated experts
         </p>
       </div>
-      <div className="bg-gray-50 min-h-screen px-4 sm:px-6 lg:px-8">
+      <div className="bg-[#0A3161]/5 min-h-screen px-4 sm:px-6 lg:px-8">
         <div className="max-w-7xl mx-auto">
           {/* Section 1: Office Locations Cards */}
           <div className="grid grid-cols-1 md:grid-cols-2 gap-8 lg:gap-16 mb-24">
@@ -170,7 +170,7 @@ const ContactUs = () => {
             <h4 className="text-[#B31942] font-bold uppercase tracking-wider mb-3">
               MEGA FOUNDRIES | SEND US A MESSAGE
             </h4>
-            <p className="text-gray-500">
+            <p className="text-[#0A3161]/70">
               The next-generation platform for industrial trade.
             </p>
           </div>
@@ -180,10 +180,10 @@ const ContactUs = () => {
 
               {/* Left Side Text Content (takes 2/5 columns on large screens) */}
               <div className="lg:col-span-2 space-y-6">
-                <h2 className="text-3xl md:text-4xl text-gray-800">
+                <h2 className="text-3xl md:text-4xl text-[#0A3161]">
                   Send Your Inquiry. <span className="font-bold block mt-2">We Will Respond Shortly.</span>
                 </h2>
-                <p className="text-gray-500 leading-relaxed">
+                <p className="text-[#0A3161]/70 leading-relaxed">
                   We are committed to exceeding your expectations. Feel free to send us your questions or suggestions—we are here to listen and assist.
                 </p>
               </div>
@@ -197,7 +197,7 @@ const ContactUs = () => {
                         type="text"
                         id="name"
                         placeholder="Name"
-                        className="bg-gray-50 border-gray-200"
+                        className="bg-[#0A3161]/5 border-[#0A3161]/10"
                       />
                     </div>
                     <div>
@@ -205,7 +205,7 @@ const ContactUs = () => {
                         type="email"
                         id="email"
                         placeholder="Email"
-                        className="bg-gray-50 border-gray-200"
+                        className="bg-[#0A3161]/5 border-[#0A3161]/10"
                       />
                     </div>
                   </div>
@@ -215,7 +215,7 @@ const ContactUs = () => {
                       type="text"
                       id="subject"
                       placeholder="Subject"
-                      className="bg-gray-50 border-gray-200 "
+                      className="bg-[#0A3161]/5 border-[#0A3161]/10 "
                     />
                   </div>
 
@@ -223,7 +223,7 @@ const ContactUs = () => {
                     <Textarea
                       id="message"
                       placeholder="Your Message"
-                      className="min-h-[150px] bg-gray-50 border-gray-200  resize-none"
+                      className="min-h-[150px] bg-[#0A3161]/5 border-[#0A3161]/10  resize-none"
                     />
                   </div>
 
@@ -231,7 +231,7 @@ const ContactUs = () => {
                     <Button
                       type="submit"
                       variant="outline"
-                      className="h-auto py-2 px-4 border border-[#B31942] text-[#B31942] hover:bg-red-50 hover:text-[#B31942] font-semibold text-base transition-all duration-300"
+                      className="h-auto py-2 px-4 border border-[#B31942] text-[#B31942] hover:bg-[#B31942]/5 hover:text-[#B31942] font-semibold text-base transition-all duration-300"
                     >
                       Submit Request!
                     </Button>

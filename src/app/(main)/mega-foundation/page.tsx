@@ -20,7 +20,7 @@ const PILLARS = [
     icon: Users,
     title: "Veteran Reintegration",
     desc: "We partner with 'Helmets to Hardhats' to provide training, mental health support, and career placement for returning service members.",
-    color: "bg-red-50 text-red-700"
+    color: "bg-[#B31942]/5 text-[#B31942]"
   }
 ];
 
@@ -33,10 +33,10 @@ const IMPACT_STATS = [
 
 export default function MegaFoundationPage() {
   return (
-    <div className="min-h-screen bg-white text-slate-900 font-sans">
+    <div className="min-h-screen bg-white text-[#0A3161] font-sans">
 
       {/* === HERO SECTION === */}
-      <section className="relative h-[60vh] flex items-center justify-center bg-slate-900 text-white overflow-hidden">
+      <section className="relative h-[60vh] flex items-center justify-center bg-[#0A3161] text-white overflow-hidden">
         {/* Background: Warm, community focused image overlay */}
         <div className="absolute inset-0 bg-[url('/assets/image4.jpg')] opacity-10"></div>
         <div className="absolute inset-0 bg-gradient-to-r from-slate-900 via-slate-800 to-red-900/40"></div>
@@ -50,24 +50,24 @@ export default function MegaFoundationPage() {
             Forging Stronger <br />
             <span className="text-transparent bg-clip-text bg-gradient-to-r from-red-400 to-orange-300">Communities</span>
           </h1>
-          <p className="text-xl text-slate-300 max-w-2xl mx-auto leading-relaxed mb-8">
+          <p className="text-xl text-[#0A3161]/40 max-w-2xl mx-auto leading-relaxed mb-8">
             We believe that a strong company relies on a strong community. Since 2005, the Mega Foundation has been dedicated to giving back to the towns and cities that build our products.
           </p>
-          <button className="bg-red-600 hover:bg-red-700 text-white font-bold py-3 px-8 rounded-full shadow-lg transition-transform hover:-translate-y-1">
+          <button className="bg-[#B31942] hover:bg-[#B31942] text-white font-bold py-3 px-8 rounded-full shadow-lg transition-transform hover:-translate-y-1">
             Apply for a Grant
           </button>
         </div>
       </section>
 
       {/* === IMPACT COUNTER === */}
-      <section className="bg-white border-b border-slate-100 relative -mt-10 z-20 mx-4 md:mx-auto max-w-7xl rounded-xl shadow-xl overflow-hidden">
+      <section className="bg-white border-b border-[#0A3161]/10 relative -mt-10 z-20 mx-4 md:mx-auto max-w-7xl rounded-xl shadow-xl overflow-hidden">
         <div className="grid grid-cols-2 md:grid-cols-4 divide-x divide-slate-100">
           {IMPACT_STATS.map((stat, idx) => (
-            <div key={idx} className="p-8 text-center bg-white group hover:bg-slate-50 transition-colors">
-              <div className="text-3xl md:text-4xl font-extrabold text-slate-900 mb-2 group-hover:text-red-600 transition-colors">
+            <div key={idx} className="p-8 text-center bg-white group hover:bg-[#0A3161]/5 transition-colors">
+              <div className="text-3xl md:text-4xl font-extrabold text-[#0A3161] mb-2 group-hover:text-[#B31942] transition-colors">
                 {stat.value}
               </div>
-              <div className="text-xs uppercase tracking-widest text-slate-500 font-bold">
+              <div className="text-xs uppercase tracking-widest text-[#0A3161]/70 font-bold">
                 {stat.label}
               </div>
             </div>
@@ -78,23 +78,23 @@ export default function MegaFoundationPage() {
       {/* === OUR PILLARS === */}
       <section className="py-24 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="text-center mb-16">
-          <h2 className="text-3xl font-bold text-slate-900">Our Mission Pillars</h2>
-          <p className="mt-4 text-slate-600 max-w-2xl mx-auto">
+          <h2 className="text-3xl font-bold text-[#0A3161]">Our Mission Pillars</h2>
+          <p className="mt-4 text-[#0A3161]/80 max-w-2xl mx-auto">
             Our giving is focused on three core areas where we believe we can make the most significant, long-term impact.
           </p>
         </div>
 
         <div className="grid md:grid-cols-3 gap-8">
           {PILLARS.map((pillar, idx) => (
-            <div key={idx} className="bg-white p-8 rounded-2xl border border-slate-200 hover:shadow-xl hover:-translate-y-2 transition-all duration-300">
+            <div key={idx} className="bg-white p-8 rounded-2xl border border-[#0A3161]/10 hover:shadow-xl hover:-translate-y-2 transition-all duration-300">
               <div className={`w-14 h-14 rounded-full flex items-center justify-center ${pillar.color} mb-6`}>
                 <pillar.icon className="w-7 h-7" />
               </div>
-              <h3 className="text-xl font-bold text-slate-900 mb-4">{pillar.title}</h3>
-              <p className="text-slate-600 leading-relaxed text-sm">
+              <h3 className="text-xl font-bold text-[#0A3161] mb-4">{pillar.title}</h3>
+              <p className="text-[#0A3161]/80 leading-relaxed text-sm">
                 {pillar.desc}
               </p>
-              <Link href="#" className="inline-flex items-center gap-2 text-sm font-bold text-slate-900 mt-6 hover:text-red-600 group">
+              <Link href="#" className="inline-flex items-center gap-2 text-sm font-bold text-[#0A3161] mt-6 hover:text-[#B31942] group">
                 Learn More <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
               </Link>
             </div>
@@ -103,14 +103,14 @@ export default function MegaFoundationPage() {
       </section>
 
       {/* === FEATURED STORY === */}
-      <section className="bg-slate-50 py-24">
+      <section className="bg-[#0A3161]/5 py-24">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="flex flex-col lg:flex-row items-center gap-16">
 
             {/* Image Box */}
             <div className="w-full lg:w-1/2 relative">
               <div className="aspect-[4/3] bg-slate-200 rounded-2xl overflow-hidden shadow-lg">
-                <div className="absolute inset-0 flex items-center justify-center text-slate-500 font-bold">
+                <div className="absolute inset-0 flex items-center justify-center text-[#0A3161]/70 font-bold">
                   <Image
                     src={'/assets/image8.jpg'}
                     alt="Case Study Image"
@@ -121,14 +121,14 @@ export default function MegaFoundationPage() {
                 </div>
               </div>
               {/* Floating Badge */}
-              <div className="absolute -bottom-6 -right-6 bg-white p-4 rounded-xl shadow-xl border border-slate-100 hidden md:block">
+              <div className="absolute -bottom-6 -right-6 bg-white p-4 rounded-xl shadow-xl border border-[#0A3161]/10 hidden md:block">
                 <div className="flex items-center gap-3">
                   <div className="bg-yellow-100 p-2 rounded-full">
                     <Calendar className="w-5 h-5 text-yellow-700" />
                   </div>
                   <div>
-                    <p className="text-xs text-slate-500 uppercase font-bold">Next Event</p>
-                    <p className="text-sm font-bold text-slate-900">Robotics Final: Dec 12</p>
+                    <p className="text-xs text-[#0A3161]/70 uppercase font-bold">Next Event</p>
+                    <p className="text-sm font-bold text-[#0A3161]">Robotics Final: Dec 12</p>
                   </div>
                 </div>
               </div>
@@ -139,16 +139,16 @@ export default function MegaFoundationPage() {
               <div className="inline-block px-3 py-1 bg-blue-100 text-blue-700 text-xs font-bold rounded mb-4">
                 Success Story
               </div>
-              <h2 className="text-3xl md:text-4xl font-bold text-slate-900 mb-6">
+              <h2 className="text-3xl md:text-4xl font-bold text-[#0A3161] mb-6">
                 The "Iron Minds" Initiative
               </h2>
-              <p className="text-slate-600 mb-6 leading-relaxed">
+              <p className="text-[#0A3161]/80 mb-6 leading-relaxed">
                 Last year, Mega Foundation launched a pilot program in Detroit high schools to teach advanced CAD design and metallurgy.
               </p>
-              <p className="text-slate-600 mb-8 leading-relaxed">
+              <p className="text-[#0A3161]/80 mb-8 leading-relaxed">
                 The result? 12 graduating seniors received full-ride engineering scholarships, and another 20 secured apprenticeships within our facilities. We are proving that American manufacturing has a bright, high-tech future.
               </p>
-              <button className="text-red-600 font-bold border-b-2 border-red-600 pb-1 hover:text-red-800 hover:border-red-800 transition-colors">
+              <button className="text-[#B31942] font-bold border-b-2 border-[#B31942] pb-1 hover:text-red-800 hover:border-red-800 transition-colors">
                 Read Full Story
               </button>
             </div>
@@ -158,22 +158,22 @@ export default function MegaFoundationPage() {
       </section>
 
       {/* === GRANT APPLICATION / CTA === */}
-      <section className="py-24 bg-slate-900 text-white relative overflow-hidden">
+      <section className="py-24 bg-[#0A3161] text-white relative overflow-hidden">
         {/* Decorative Circles */}
         <div className="absolute top-0 right-0 w-64 h-64 bg-white opacity-5 rounded-full -translate-y-1/2 translate-x-1/2"></div>
-        <div className="absolute bottom-0 left-0 w-96 h-96 bg-red-600 opacity-10 rounded-full translate-y-1/3 -translate-x-1/3 blur-3xl"></div>
+        <div className="absolute bottom-0 left-0 w-96 h-96 bg-[#B31942] opacity-10 rounded-full translate-y-1/3 -translate-x-1/3 blur-3xl"></div>
 
         <div className="max-w-4xl mx-auto px-4 text-center relative z-10">
-          <HandHeart className="w-16 h-16 mx-auto text-red-500 mb-6" />
+          <HandHeart className="w-16 h-16 mx-auto text-[#B31942] mb-6" />
           <h2 className="text-3xl md:text-5xl font-bold mb-6">Need Funding for a Local Project?</h2>
-          <p className="text-xl text-slate-300 mb-10 leading-relaxed">
+          <p className="text-xl text-[#0A3161]/40 mb-10 leading-relaxed">
             We review grant applications quarterly. If your non-profit aligns with our pillars of Education, Environment, or Veteran Support, we want to hear from you.
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
-            <button className="bg-red-600 hover:bg-red-700 text-white font-bold py-4 px-10 rounded-lg shadow-lg transition-transform transform hover:-translate-y-1">
+            <button className="bg-[#B31942] hover:bg-[#B31942] text-white font-bold py-4 px-10 rounded-lg shadow-lg transition-transform transform hover:-translate-y-1">
               Download Grant Guidelines
             </button>
-            <button className="bg-transparent border border-white text-white font-bold py-4 px-10 rounded-lg hover:bg-white hover:text-slate-900 transition-colors">
+            <button className="bg-transparent border border-white text-white font-bold py-4 px-10 rounded-lg hover:bg-white hover:text-[#0A3161] transition-colors">
               Contact Foundation Director
             </button>
           </div>

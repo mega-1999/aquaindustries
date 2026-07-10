@@ -92,17 +92,17 @@ const MaterialsHelpCenter = () => {
             <Link
               key={item.title}
               href={item.href}
-              className="group bg-white rounded-xl shadow-sm hover:shadow-xl transition-all duration-300 p-8 border border-gray-100 flex flex-col items-start"
+              className="group bg-white rounded-xl shadow-sm hover:shadow-xl transition-all duration-300 p-8 border border-[#0A3161]/10 flex flex-col items-start"
             >
-              <div className="mb-6 p-3 bg-red-50 rounded-lg group-hover:bg-[#B31942] transition-colors duration-300">
+              <div className="mb-6 p-3 bg-[#B31942]/5 rounded-lg group-hover:bg-[#B31942] transition-colors duration-300">
                 <item.icon className="w-8 h-8 text-[#B31942] group-hover:text-white transition-colors duration-300" />
               </div>
 
-              <h3 className="text-xl font-bold text-gray-900 mb-3 group-hover:text-[#B31942] text-xl transition-colors">
+              <h3 className="text-xl font-bold text-[#0A3161] mb-3 group-hover:text-[#B31942] text-xl transition-colors">
                 {item.title}
               </h3>
 
-              <p className="text-gray-500 text-sm mb-6 leading-relaxed grow">
+              <p className="text-[#0A3161]/70 text-sm mb-6 leading-relaxed grow">
                 {item.description}
               </p>
 
@@ -115,8 +115,8 @@ const MaterialsHelpCenter = () => {
       </section>
 
       <section className="text-center py-12 pb-24">
-        <p className="text-gray-600 mb-4">Can't find what you are looking for?</p>
-        <Button className="bg-[#B31942] hover:bg-red-700 text-white px-8 py-6 text-lg rounded-full">
+        <p className="text-[#0A3161]/80 mb-4">Can't find what you are looking for?</p>
+        <Button className="bg-[#B31942] hover:bg-[#B31942] text-white px-8 py-6 text-lg rounded-full">
           Contact Our Engineering Team
         </Button>
       </section>

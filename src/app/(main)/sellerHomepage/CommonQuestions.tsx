@@ -45,7 +45,7 @@ export default function CommonQuestions() {
         
         {/* === HEADER === */}
         <div className="text-center mb-12">
-          <h2 className="text-3xl md:text-4xl font-bold text-gray-900">
+          <h2 className="text-3xl md:text-4xl font-bold text-[#0A3161]">
             Common <span className="text-[#B31942]">Questions</span>
           </h2>
         </div>
@@ -63,20 +63,20 @@ export default function CommonQuestions() {
                   onClick={() => toggleFAQ(index)}
                   className={`
                     w-full flex items-center justify-between p-5 text-left transition-all duration-200
-                    bg-gray-50 hover:bg-gray-100
+                    bg-[#0A3161]/5 hover:bg-[#0A3161]/10
                     border-l-[6px] ${isOpen ? 'border-[#B31942]' : 'border-[#B31942]'} 
                     /* Note: The image shows red border for all items, even closed ones */
                   `}
                 >
-                  <span className="text-lg font-medium text-gray-800">
-                    <span className="font-bold text-gray-900 mr-2">Q:</span> 
+                  <span className="text-lg font-medium text-[#0A3161]">
+                    <span className="font-bold text-[#0A3161] mr-2">Q:</span> 
                     {faq.question}
                   </span>
                   
                   {isOpen ? (
-                    <ChevronDown className="w-5 h-5 text-gray-500" />
+                    <ChevronDown className="w-5 h-5 text-[#0A3161]/70" />
                   ) : (
-                    <ChevronRight className="w-5 h-5 text-gray-400" />
+                    <ChevronRight className="w-5 h-5 text-[#0A3161]/60" />
                   )}
                 </button>
 
@@ -87,8 +87,8 @@ export default function CommonQuestions() {
                     ${isOpen ? 'max-h-48 opacity-100' : 'max-h-0 opacity-0'}
                   `}
                 >
-                  <div className="p-5 pl-8 bg-white text-gray-600 text-base leading-relaxed border-l-[6px] border-transparent">
-                    <span className="font-bold text-gray-900 mr-2">A:</span> 
+                  <div className="p-5 pl-8 bg-white text-[#0A3161]/80 text-base leading-relaxed border-l-[6px] border-transparent">
+                    <span className="font-bold text-[#0A3161] mr-2">A:</span> 
                     {faq.answer}
                   </div>
                 </div>

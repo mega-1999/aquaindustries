@@ -15,8 +15,8 @@ const FeatureItem = ({ icon: Icon, title, description }: FeatureItemProps) => (<
     <Icon className="w-10 h-10 text-[#B31942]" strokeWidth={2} />
   </div>
   <div className="space-y-2">
-    <h3 className="text-xl font-bold text-gray-900">{title}</h3>
-    <p className="text-gray-600 leading-relaxed text-base">
+    <h3 className="text-xl font-bold text-[#0A3161]">{title}</h3>
+    <p className="text-[#0A3161]/80 leading-relaxed text-base">
       {description}
     </p>
   </div>
@@ -51,7 +51,7 @@ export default function App() {
     <div className="min-h-screen bg-white flex flex-col items-center justify-center font-sans">
       <div className="w-full px-4 sm:px-6 lg:px-10 py-3">
         <div className="text-center">
-          <h2 className="text-3xl pb-8 md:text-4xl font-bold text-gray-900">
+          <h2 className="text-3xl pb-8 md:text-4xl font-bold text-[#0A3161]">
             Start Selling Smarter with Mega Foundries?
           </h2>
         </div>

@@ -9,7 +9,7 @@ interface SeriesCardProps {
 
 export default function SeriesCard({ title, items }: SeriesCardProps) {
   return (
-    <div className="flex flex-col h-full bg-gray-50 rounded-xl overflow-hidden shadow-sm border border-gray-100 relative group hover:shadow-md transition-shadow duration-300">
+    <div className="flex flex-col h-full bg-[#0A3161]/5 rounded-xl overflow-hidden shadow-sm border border-[#0A3161]/10 relative group hover:shadow-md transition-shadow duration-300">
       
       {/* Header */}
       <div className="bg-[#B31942] text-white font-bold text-lg py-2 px-4 uppercase tracking-wider">
@@ -23,7 +23,7 @@ export default function SeriesCard({ title, items }: SeriesCardProps) {
             <li key={index}>
               <Link 
                 href={`/products/${title.toLowerCase().replace(" ", "-")}`} 
-                className="text-sm font-medium text-slate-700 hover:text-[#B31942] flex items-center gap-1 transition-colors"
+                className="text-sm font-medium text-[#0A3161] hover:text-[#B31942] flex items-center gap-1 transition-colors"
               >
                 {/* Logic to underline specific headers like "SPECIALITY PRODUCTS" */}
                 <span className={item === item.toUpperCase() && item.length > 10 ? "underline decoration-2 underline-offset-4 font-bold" : ""}>

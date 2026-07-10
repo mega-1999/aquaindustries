@@ -89,7 +89,7 @@ export default async function CategoryDetailPage({ params }: PageProps) {
           <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-8">
             {mainCategory.categories.map((sub, index) => (
               <Link href={`/category/${sub.slug}`} key={index} className="group block h-full">
-                <div className="bg-white rounded-xl overflow-hidden border border-gray-100 shadow-sm hover:shadow-lg transition-all duration-300 h-full flex flex-col">
+                <div className="bg-white rounded-xl overflow-hidden border border-[#0A3161]/10 shadow-sm hover:shadow-lg transition-all duration-300 h-full flex flex-col">
                   <div className="relative aspect-[4/3] w-full overflow-hidden">
                     <Image
                       src={sub.image || '/assets/placeholder.jpg'}
@@ -100,10 +100,10 @@ export default async function CategoryDetailPage({ params }: PageProps) {
                     <div className="absolute inset-0 bg-[#0A3161]/0 group-hover:bg-[#0A3161]/10 transition-colors duration-300"></div>
                   </div>
                   <div className="p-6 flex flex-col grow">
-                    <h3 className="font-bold text-gray-900 text-lg mb-3 group-hover:text-[#B31942] transition-colors">
+                    <h3 className="font-bold text-[#0A3161] text-lg mb-3 group-hover:text-[#B31942] transition-colors">
                       {sub.name}
                     </h3>
-                    <p className="text-sm text-gray-500 leading-relaxed line-clamp-3 mb-4">
+                    <p className="text-sm text-[#0A3161]/70 leading-relaxed line-clamp-3 mb-4">
                       {sub.description}
                     </p>
                     <span className="text-[#B31942] text-xs font-bold uppercase tracking-wider mt-auto">
@@ -139,18 +139,18 @@ export default async function CategoryDetailPage({ params }: PageProps) {
       : []; 
 
     return (
-      <div className="min-h-screen bg-gray-50 py-12">
+      <div className="min-h-screen bg-[#0A3161]/5 py-12">
         <div className="w-full mx-auto px-4 sm:px-6 lg:px-8">
 
           {/* Back Button & Title */}
           <div className="mb-8">
-            <Link href={`/category/${subCategoryData.parentId}`} className="inline-flex items-center text-sm text-gray-500 hover:text-[#B31942] mb-4">
+            <Link href={`/category/${subCategoryData.parentId}`} className="inline-flex items-center text-sm text-[#0A3161]/70 hover:text-[#B31942] mb-4">
               <ArrowLeft className="w-4 h-4 mr-1" /> Back to {subCategoryData.parent}
             </Link>
-            <h1 className="text-3xl md:text-4xl font-bold text-gray-900">
+            <h1 className="text-3xl md:text-4xl font-bold text-[#0A3161]">
               {subCategoryData.title}
             </h1>
-            <p className="text-gray-500 mt-2 max-w-3xl text-lg">{subCategoryData.description}</p>
+            <p className="text-[#0A3161]/70 mt-2 max-w-3xl text-lg">{subCategoryData.description}</p>
           </div>
 
           {/* Product Items Grid */}
@@ -160,14 +160,14 @@ export default async function CategoryDetailPage({ params }: PageProps) {
                 <Link
                   key={index}
                   href={`/products/${item.toLowerCase().replace(/ /g, '-').replace(/[^\w-]+/g, '')}`}
-                  className="bg-white p-6 rounded-xl border border-gray-200 hover:border-[#B31942] hover:shadow-md transition-all group flex flex-col justify-between"
+                  className="bg-white p-6 rounded-xl border border-[#0A3161]/10 hover:border-[#B31942] hover:shadow-md transition-all group flex flex-col justify-between"
                 >
                   <div className='flex justify-evenly'>
                     <div>
-                      <div className="w-12 h-12 bg-red-50 rounded-lg mb-4 text-[#B31942]">
+                      <div className="w-12 h-12 bg-[#B31942]/5 rounded-lg mb-4 text-[#B31942]">
                         <ChevronRight />
                       </div>
-                      <h3 className="font-bold text-lg text-gray-800 group-hover:text-[#B31942] mb-2">
+                      <h3 className="font-bold text-lg text-[#0A3161] group-hover:text-[#B31942] mb-2">
                         {item}
                       </h3>
                     </div>
@@ -177,14 +177,14 @@ export default async function CategoryDetailPage({ params }: PageProps) {
                       height={100} width={100}
                     />
                   </div>
-                  <p className="text-sm text-gray-400 mt-4 flex items-center font-medium">
+                  <p className="text-sm text-[#0A3161]/60 mt-4 flex items-center font-medium">
                     View Specs &rarr;
                   </p>
                 </Link>
               ))
             ) : (
-              <div className="col-span-full py-12 text-center bg-white rounded-xl border border-dashed border-gray-300">
-                <p className="text-gray-500">No specific products listed under this category yet.</p>
+              <div className="col-span-full py-12 text-center bg-white rounded-xl border border-dashed border-[#0A3161]/20">
+                <p className="text-[#0A3161]/70">No specific products listed under this category yet.</p>
                 <Link href="/contact" className="text-[#B31942] font-bold mt-2 inline-block">Contact us for custom requirements &rarr;</Link>
               </div>
             )}

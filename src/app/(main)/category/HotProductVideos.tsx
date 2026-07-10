@@ -65,10 +65,10 @@ export default function HotProductVideos({ title, videos, videoUrl, videoName }:
   };
 
   return (
-    <section className="py-12 bg-white border-t border-gray-100 overflow-hidden">
+    <section className="py-12 bg-white border-t border-[#0A3161]/10 overflow-hidden">
       <div className="w-full px-4 sm:px-6 lg:px-10 mx-auto">
 
-        <h2 className="text-xl md:text-2xl font-bold text-gray-900 mb-6 border-l-4 border-red-600 pl-3">
+        <h2 className="text-xl md:text-2xl font-bold text-[#0A3161] mb-6 border-l-4 border-[#B31942] pl-3">
           {title}
         </h2>
 
@@ -100,7 +100,7 @@ export default function HotProductVideos({ title, videos, videoUrl, videoName }:
                 }}
               >
                 {/* Thumbnail Container */}
-                <div className="relative aspect-square w-full rounded-lg overflow-hidden border border-gray-200 bg-[#0A3161] mb-3 shadow-sm hover:shadow-md transition-all">
+                <div className="relative aspect-square w-full rounded-lg overflow-hidden border border-[#0A3161]/10 bg-[#0A3161] mb-3 shadow-sm hover:shadow-md transition-all">
                   <video
                     src={video.videoUrl}
                     muted
@@ -111,13 +111,13 @@ export default function HotProductVideos({ title, videos, videoUrl, videoName }:
 
                   {/* Overlay Icon */}
                   <div className="absolute inset-0 flex items-center justify-center pointer-events-none">
-                    <div className="w-10 h-10 bg-[#0A3161]/40 rounded-full flex items-center justify-center backdrop-blur-sm border border-white/20 group-hover:bg-red-600/80 group-hover:border-red-600 transition-colors">
+                    <div className="w-10 h-10 bg-[#0A3161]/40 rounded-full flex items-center justify-center backdrop-blur-sm border border-white/20 group-hover:bg-[#B31942]/80 group-hover:border-[#B31942] transition-colors">
                       <Maximize2 className="w-5 h-5 text-white" />
                     </div>
                   </div>
                 </div>
 
-                <h3 className="text-sm font-bold text-gray-800 leading-snug group-hover:text-red-600 transition-colors line-clamp-2">
+                <h3 className="text-sm font-bold text-[#0A3161] leading-snug group-hover:text-[#B31942] transition-colors line-clamp-2">
                   {video.title}
                 </h3>
               </div>

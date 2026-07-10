@@ -176,7 +176,7 @@ export function VerticalAccordion() {
             {/* w-full: Full Width
                 h-[600px]: Fixed height for the bookshelf effect
             */}
-            <div className="flex w-full h-[700px] overflow-hidden border-y border-zinc-200">
+            <div className="flex w-full h-[700px] overflow-hidden border-y border-[#0A3161]/10">
 
                 {items.map((item) => {
                     const isActive = activeId === item.id;
@@ -187,12 +187,12 @@ export function VerticalAccordion() {
                             key={item.id}
                             onMouseEnter={() => setActiveId(item.id)}
                             className={cn(
-                                "relative transition-all duration-500 ease-in-out border-r border-zinc-800 last:border-r-0 cursor-pointer overflow-hidden",
+                                "relative transition-all duration-500 ease-in-out border-r border-[#0A3161] last:border-r-0 cursor-pointer overflow-hidden",
                                 // Active: Grow to flex-5 (takes up 5x space) with RED background
                                 // Inactive: Shrink to flex-1 (takes up 1x space) with BLACK background (No Blue)
                                 isActive 
                                     ? `flex-[5] ${item.color}` 
-                                    : "flex-[1] bg-zinc-900 hover:bg-zinc-800"
+                                    : "flex-[1] bg-[#0A3161] hover:bg-[#0A3161]"
                             )}
                         >
                             {/* --- CONTENT WHEN EXPANDED (VISIBLE ONLY ON ACTIVE) --- */}

@@ -101,7 +101,7 @@ export default function DashboardPage() {
       return (
         <div className="h-[80vh] flex flex-col items-center justify-center gap-2">
             <Loader2 className="animate-spin text-[#B31942] w-10 h-10" />
-            <p className="text-slate-500">Loading Dashboard...</p>
+            <p className="text-[#0A3161]/70">Loading Dashboard...</p>
         </div>
       );
   }
@@ -112,16 +112,16 @@ export default function DashboardPage() {
       {/* --- WELCOME BANNER --- */}
       <div className="flex flex-col md:flex-row md:items-center justify-between gap-4">
         <div>
-            <h2 className="text-3xl font-bold tracking-tight text-slate-900">
+            <h2 className="text-3xl font-bold tracking-tight text-[#0A3161]">
                 Welcome back, {user.name} 👋
             </h2>
-            <p className="text-slate-500">
+            <p className="text-[#0A3161]/70">
                 Here is what's happening with your projects today.
             </p>
         </div>
         <div className="flex gap-2">
             <Button variant="outline">Download Report</Button>
-            <Button className="bg-[#B31942] hover:bg-red-700">
+            <Button className="bg-[#B31942] hover:bg-[#B31942]">
                 <ShieldCheck className="w-4 h-4 mr-2"/> Verify Identity
             </Button>
         </div>
@@ -132,14 +132,14 @@ export default function DashboardPage() {
         {stats.map((stat, i) => (
           <Card key={i} className="shadow-sm hover:shadow-md transition-shadow border-t-4 border-t-transparent hover:border-t-[#B31942]">
             <CardHeader className="flex flex-row items-center justify-between space-y-0 pb-2">
-              <CardTitle className="text-sm font-medium text-slate-600">
+              <CardTitle className="text-sm font-medium text-[#0A3161]/80">
                 {stat.title}
               </CardTitle>
               <stat.icon className="h-4 w-4 text-[#B31942]" />
             </CardHeader>
             <CardContent>
-              <div className="text-2xl font-bold text-slate-900">{stat.value}</div>
-              <p className="text-xs text-slate-500 mt-1">
+              <div className="text-2xl font-bold text-[#0A3161]">{stat.value}</div>
+              <p className="text-xs text-[#0A3161]/70 mt-1">
                 {stat.change}
               </p>
             </CardContent>
@@ -157,7 +157,7 @@ export default function DashboardPage() {
                     You have 12 orders moving through production today.
                 </CardDescription>
             </div>
-            <Button className="bg-slate-900 hover:bg-slate-800 text-white">
+            <Button className="bg-[#0A3161] hover:bg-[#0A3161] text-white">
                 View All Orders <ArrowUpRight className="ml-2 h-4 w-4"/>
             </Button>
           </CardHeader>
@@ -193,7 +193,7 @@ export default function DashboardPage() {
                             <DropdownMenuContent align="end">
                                 <DropdownMenuItem>View Details</DropdownMenuItem>
                                 <DropdownMenuItem>Download Invoice</DropdownMenuItem>
-                                <DropdownMenuItem className="text-red-600">Cancel Order</DropdownMenuItem>
+                                <DropdownMenuItem className="text-[#B31942]">Cancel Order</DropdownMenuItem>
                             </DropdownMenuContent>
                         </DropdownMenu>
                     </TableCell>
@@ -210,7 +210,7 @@ export default function DashboardPage() {
 
 // Helper for status colors
 function StatusBadge({ status }: { status: string }) {
-    let styles = "bg-slate-100 text-slate-600";
+    let styles = "bg-[#0A3161]/10 text-[#0A3161]/80";
     if (status === 'In Production') styles = "bg-blue-100 text-blue-700 border-blue-200 border";
     if (status === 'Shipped') styles = "bg-yellow-100 text-yellow-700 border-yellow-200 border";
     if (status === 'Delivered') styles = "bg-green-100 text-green-700 border-green-200 border";

@@ -117,18 +117,18 @@ export default function NewProductPage() {
     }
   };
   return (
-    <div className="min-h-screen bg-gray-50 pb-20">
+    <div className="min-h-screen bg-[#0A3161]/5 pb-20">
 
       {/* === TOP BAR === */}
-      <div className="bg-white border-b border-gray-200 sticky top-0 z-30 px-6 py-4 flex items-center justify-between shadow-sm">
+      <div className="bg-white border-b border-[#0A3161]/10 sticky top-0 z-30 px-6 py-4 flex items-center justify-between shadow-sm">
         <div className="flex items-center gap-4">
-          <Link href="/private/member/products" className="p-2 hover:bg-gray-100 rounded-full text-gray-500">
+          <Link href="/private/member/products" className="p-2 hover:bg-[#0A3161]/10 rounded-full text-[#0A3161]/70">
             <ChevronLeft className="w-5 h-5" />
           </Link>
-          <h1 className="text-xl font-bold text-gray-900">Add New Product</h1>
+          <h1 className="text-xl font-bold text-[#0A3161]">Add New Product</h1>
         </div>
         <div className="flex items-center gap-3">
-          <Link href="/private/member/products" className="px-4 py-2 text-sm font-medium text-gray-700 bg-white border border-gray-300 rounded-lg hover:bg-gray-50">
+          <Link href="/private/member/products" className="px-4 py-2 text-sm font-medium text-[#0A3161] bg-white border border-[#0A3161]/20 rounded-lg hover:bg-[#0A3161]/5">
             Cancel
           </Link>
           <button
@@ -148,7 +148,7 @@ export default function NewProductPage() {
       <div className="max-w-5xl mx-auto px-6 py-8">
 
         {error && (
-          <div className="mb-6 p-4 bg-red-50 border border-red-200 text-red-700 rounded-lg flex items-center gap-2">
+          <div className="mb-6 p-4 bg-[#B31942]/5 border border-red-200 text-[#B31942] rounded-lg flex items-center gap-2">
             <X className="w-5 h-5" />
             {error}
           </div>
@@ -160,47 +160,47 @@ export default function NewProductPage() {
           <div className="lg:col-span-2 space-y-6">
 
             {/* 1. BASIC INFO */}
-            <section className="bg-white p-6 rounded-xl shadow-sm border border-gray-200">
-              <h2 className="text-lg font-bold text-gray-900 mb-4 flex items-center gap-2">
-                <FileText className="w-5 h-5 text-gray-400" /> Basic Information
+            <section className="bg-white p-6 rounded-xl shadow-sm border border-[#0A3161]/10">
+              <h2 className="text-lg font-bold text-[#0A3161] mb-4 flex items-center gap-2">
+                <FileText className="w-5 h-5 text-[#0A3161]/60" /> Basic Information
               </h2>
 
               <div className="space-y-4">
                 <div>
-                  <label className="block text-sm font-medium text-gray-700 mb-1">Product Name *</label>
+                  <label className="block text-sm font-medium text-[#0A3161] mb-1">Product Name *</label>
                   <input
                     {...register("productName", { required: true })}
-                    className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-[#B31942] outline-none"
+                    className="w-full px-4 py-2 border border-[#0A3161]/20 rounded-lg focus:ring-2 focus:ring-[#B31942] outline-none"
                     placeholder="e.g. Industrial Steel Valve"
                   />
-                  {errors.productName && <span className="text-xs text-red-500">Name is required</span>}
+                  {errors.productName && <span className="text-xs text-[#B31942]">Name is required</span>}
                 </div>
 
                 <div className="grid grid-cols-2 gap-4">
                   <div>
-                    <label className="block text-sm font-medium text-gray-700 mb-1">SKU *</label>
+                    <label className="block text-sm font-medium text-[#0A3161] mb-1">SKU *</label>
                     <input
                       {...register("sku", { required: true })}
-                      className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-[#B31942] outline-none"
+                      className="w-full px-4 py-2 border border-[#0A3161]/20 rounded-lg focus:ring-2 focus:ring-[#B31942] outline-none"
                       placeholder="INV-001"
                     />
                   </div>
                   <div>
-                    <label className="block text-sm font-medium text-gray-700 mb-1">Slug (Auto)</label>
+                    <label className="block text-sm font-medium text-[#0A3161] mb-1">Slug (Auto)</label>
                     <input
                       {...register("productSlug")}
                       readOnly
-                      className="w-full px-4 py-2 bg-gray-50 border border-gray-300 rounded-lg text-gray-500 cursor-not-allowed"
+                      className="w-full px-4 py-2 bg-[#0A3161]/5 border border-[#0A3161]/20 rounded-lg text-[#0A3161]/70 cursor-not-allowed"
                     />
                   </div>
                 </div>
 
                 <div>
-                  <label className="block text-sm font-medium text-gray-700 mb-1">Description</label>
+                  <label className="block text-sm font-medium text-[#0A3161] mb-1">Description</label>
                   <textarea
                     {...register("shortDescription")}
                     rows={4}
-                    className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-[#B31942] outline-none"
+                    className="w-full px-4 py-2 border border-[#0A3161]/20 rounded-lg focus:ring-2 focus:ring-[#B31942] outline-none"
                     placeholder="Brief summary of the product..."
                   />
                 </div>
@@ -208,33 +208,33 @@ export default function NewProductPage() {
             </section>
 
             {/* 2. PRICING */}
-            <section className="bg-white p-6 rounded-xl shadow-sm border border-gray-200">
-              <h2 className="text-lg font-bold text-gray-900 mb-4 flex items-center gap-2">
-                <DollarSign className="w-5 h-5 text-gray-400" /> Pricing
+            <section className="bg-white p-6 rounded-xl shadow-sm border border-[#0A3161]/10">
+              <h2 className="text-lg font-bold text-[#0A3161] mb-4 flex items-center gap-2">
+                <DollarSign className="w-5 h-5 text-[#0A3161]/60" /> Pricing
               </h2>
 
               <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
                 <div>
-                  <label className="block text-sm font-medium text-gray-700 mb-1">Unit Price ($) *</label>
+                  <label className="block text-sm font-medium text-[#0A3161] mb-1">Unit Price ($) *</label>
                   <input
                     type="number" step="0.01"
                     {...register("pricing.unitPrice", { required: true, min: 0 })}
-                    className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-[#B31942] outline-none"
+                    className="w-full px-4 py-2 border border-[#0A3161]/20 rounded-lg focus:ring-2 focus:ring-[#B31942] outline-none"
                   />
                 </div>
                 <div>
-                  <label className="block text-sm font-medium text-gray-700 mb-1">Sale Price ($)</label>
+                  <label className="block text-sm font-medium text-[#0A3161] mb-1">Sale Price ($)</label>
                   <input
                     type="number" step="0.01"
                     {...register("pricing.salePrice")}
-                    className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-[#B31942] outline-none"
+                    className="w-full px-4 py-2 border border-[#0A3161]/20 rounded-lg focus:ring-2 focus:ring-[#B31942] outline-none"
                   />
                 </div>
                 <div>
-                  <label className="block text-sm font-medium text-gray-700 mb-1">Currency</label>
+                  <label className="block text-sm font-medium text-[#0A3161] mb-1">Currency</label>
                   <select
                     {...register("pricing.currency")}
-                    className="w-full px-4 py-2 border border-gray-300 rounded-lg bg-white"
+                    className="w-full px-4 py-2 border border-[#0A3161]/20 rounded-lg bg-white"
                   >
                     <option value="USD">USD</option>
                     <option value="EUR">EUR</option>
@@ -245,13 +245,13 @@ export default function NewProductPage() {
             </section>
 
             {/* 3. MEDIA (Placeholder for URL) */}
-            <section className="bg-white p-6 rounded-xl shadow-sm border border-gray-200">
-              <h2 className="text-lg font-bold text-gray-900 mb-4 flex items-center gap-2">
-                <UploadCloud className="w-5 h-5 text-gray-400" /> Media
+            <section className="bg-white p-6 rounded-xl shadow-sm border border-[#0A3161]/10">
+              <h2 className="text-lg font-bold text-[#0A3161] mb-4 flex items-center gap-2">
+                <UploadCloud className="w-5 h-5 text-[#0A3161]/60" /> Media
               </h2>
-              <div className="border-2 border-dashed border-gray-300 rounded-xl p-8 text-center bg-gray-50">
-                <p className="text-sm text-gray-500 mb-2">Image Upload not fully implemented yet.</p>
-                <p className="text-xs text-gray-400">For now, images are handled via external URLs.</p>
+              <div className="border-2 border-dashed border-[#0A3161]/20 rounded-xl p-8 text-center bg-[#0A3161]/5">
+                <p className="text-sm text-[#0A3161]/70 mb-2">Image Upload not fully implemented yet.</p>
+                <p className="text-xs text-[#0A3161]/60">For now, images are handled via external URLs.</p>
               </div>
             </section>
 
@@ -261,17 +261,17 @@ export default function NewProductPage() {
           <div className="space-y-6">
 
             {/* 4. STATUS & INVENTORY */}
-            <section className="bg-white p-6 rounded-xl shadow-sm border border-gray-200">
-              <h2 className="text-lg font-bold text-gray-900 mb-4 flex items-center gap-2">
-                <Package className="w-5 h-5 text-gray-400" /> Inventory
+            <section className="bg-white p-6 rounded-xl shadow-sm border border-[#0A3161]/10">
+              <h2 className="text-lg font-bold text-[#0A3161] mb-4 flex items-center gap-2">
+                <Package className="w-5 h-5 text-[#0A3161]/60" /> Inventory
               </h2>
 
               <div className="space-y-4">
                 <div>
-                  <label className="block text-sm font-medium text-gray-700 mb-1">Status</label>
+                  <label className="block text-sm font-medium text-[#0A3161] mb-1">Status</label>
                   <select
                     {...register("status")}
-                    className="w-full px-4 py-2 border border-gray-300 rounded-lg bg-white"
+                    className="w-full px-4 py-2 border border-[#0A3161]/20 rounded-lg bg-white"
                   >
                     <option value="DRAFT">Draft</option>
                     <option value="PUBLISHED">Published</option>
@@ -279,8 +279,8 @@ export default function NewProductPage() {
                   </select>
                 </div>
 
-                <div className="flex items-center justify-between py-2 border-b border-gray-100">
-                  <label className="text-sm font-medium text-gray-700">In Stock?</label>
+                <div className="flex items-center justify-between py-2 border-b border-[#0A3161]/10">
+                  <label className="text-sm font-medium text-[#0A3161]">In Stock?</label>
                   <input
                     type="checkbox"
                     {...register("availability.inStock")}
@@ -289,62 +289,62 @@ export default function NewProductPage() {
                 </div>
 
                 <div>
-                  <label className="block text-sm font-medium text-gray-700 mb-1">Quantity</label>
+                  <label className="block text-sm font-medium text-[#0A3161] mb-1">Quantity</label>
                   <input
                     type="number"
                     {...register("availability.stockQuantity")}
-                    className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-[#B31942] outline-none"
+                    className="w-full px-4 py-2 border border-[#0A3161]/20 rounded-lg focus:ring-2 focus:ring-[#B31942] outline-none"
                   />
                 </div>
 
                 <div>
-                  <label className="block text-sm font-medium text-gray-700 mb-1">Lead Time (Days)</label>
+                  <label className="block text-sm font-medium text-[#0A3161] mb-1">Lead Time (Days)</label>
                   <input
                     type="number"
                     {...register("availability.leadTimeDays")}
-                    className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-[#B31942] outline-none"
+                    className="w-full px-4 py-2 border border-[#0A3161]/20 rounded-lg focus:ring-2 focus:ring-[#B31942] outline-none"
                   />
                 </div>
               </div>
             </section>
 
             {/* 5. DIMENSIONS */}
-            <section className="bg-white p-6 rounded-xl shadow-sm border border-gray-200">
-              <h2 className="text-lg font-bold text-gray-900 mb-4 flex items-center gap-2">
-                <Ruler className="w-5 h-5 text-gray-400" /> Shipping Specs
+            <section className="bg-white p-6 rounded-xl shadow-sm border border-[#0A3161]/10">
+              <h2 className="text-lg font-bold text-[#0A3161] mb-4 flex items-center gap-2">
+                <Ruler className="w-5 h-5 text-[#0A3161]/60" /> Shipping Specs
               </h2>
 
               <div className="grid grid-cols-2 gap-3">
                 <div className="col-span-2">
-                  <label className="text-xs font-bold text-gray-500 uppercase">Weight (LB)</label>
+                  <label className="text-xs font-bold text-[#0A3161]/70 uppercase">Weight (LB)</label>
                   <input
                     type="number" step="0.1"
                     {...register("dimensions.weight")}
-                    className="w-full mt-1 px-3 py-1.5 border border-gray-300 rounded text-sm"
+                    className="w-full mt-1 px-3 py-1.5 border border-[#0A3161]/20 rounded text-sm"
                   />
                 </div>
                 <div>
-                  <label className="text-xs font-bold text-gray-500 uppercase">Length (IN)</label>
+                  <label className="text-xs font-bold text-[#0A3161]/70 uppercase">Length (IN)</label>
                   <input
                     type="number" step="0.1"
                     {...register("dimensions.length")}
-                    className="w-full mt-1 px-3 py-1.5 border border-gray-300 rounded text-sm"
+                    className="w-full mt-1 px-3 py-1.5 border border-[#0A3161]/20 rounded text-sm"
                   />
                 </div>
                 <div>
-                  <label className="text-xs font-bold text-gray-500 uppercase">Width (IN)</label>
+                  <label className="text-xs font-bold text-[#0A3161]/70 uppercase">Width (IN)</label>
                   <input
                     type="number" step="0.1"
                     {...register("dimensions.width")}
-                    className="w-full mt-1 px-3 py-1.5 border border-gray-300 rounded text-sm"
+                    className="w-full mt-1 px-3 py-1.5 border border-[#0A3161]/20 rounded text-sm"
                   />
                 </div>
                 <div>
-                  <label className="text-xs font-bold text-gray-500 uppercase">Height (IN)</label>
+                  <label className="text-xs font-bold text-[#0A3161]/70 uppercase">Height (IN)</label>
                   <input
                     type="number" step="0.1"
                     {...register("dimensions.height")}
-                    className="w-full mt-1 px-3 py-1.5 border border-gray-300 rounded text-sm"
+                    className="w-full mt-1 px-3 py-1.5 border border-[#0A3161]/20 rounded text-sm"
                   />
                 </div>
               </div>

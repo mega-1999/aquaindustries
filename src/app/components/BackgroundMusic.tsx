@@ -61,7 +61,7 @@ export default function BackgroundMusic() {
           w-12 h-12 
           bg-[#B31942] text-white 
           rounded-full shadow-lg border-2 border-white
-          hover:bg-red-700 hover:scale-110 
+          hover:bg-[#B31942] hover:scale-110 
           transition-all duration-300
           animate-fade-in
         "

@@ -19,7 +19,7 @@ export const categories = [
     description: "Heavy-duty drainage solutions for high-traffic industrial environments.",
     specs: ["Ductile Iron Construction", "Load Class D400+", "Anti-Slip Surface", "UV Resistant Coating"],
     icon: Wrench,
-    color: "bg-red-700",
+    color: "bg-[#B31942]",
   },
   {
     title: "Cleanouts",
@@ -28,7 +28,7 @@ export const categories = [
     description: "Professional grade access points for plumbing and waste systems.",
     specs: ["Gas-tight Seals", "Brass/Nickel Finish", "Easy-access Design", "Corrosion Resistant"],
     icon: Droplet,
-    color: "bg-red-700",
+    color: "bg-[#B31942]",
   },
   {
     title: "New Innovations",
@@ -37,7 +37,7 @@ export const categories = [
     description: "Cutting-edge casting technologies and patent-pending industrial designs.",
     specs: ["Patent-pending Technology", "Sustainable Materials", "IoT Ready Sensors", "High Precision Molding"],
     icon: Lightbulb,
-    color: "bg-red-700",
+    color: "bg-[#B31942]",
   },
   {
     title: "Pipe Grates",
@@ -46,7 +46,7 @@ export const categories = [
     description: "Optimized water flow and debris management for municipal projects.",
     specs: ["High Flow Efficiency", "Debris Filtration", "Cast Iron Durability", "Custom Sizes Available"],
     icon: Grid3X3,
-    color: "bg-red-700",
+    color: "bg-[#B31942]",
   },
   {
     title: "Hinged Castings",
@@ -55,7 +55,7 @@ export const categories = [
     description: "Ergonomic, easy-access manhole and utility covers for safety.",
     specs: ["Ergonomic Lift Assist", "Safety Lock System", "Heavy Duty Hinge", "Reduced Maintenance Cost"],
     icon: DoorOpen,
-    color: "bg-red-700",
+    color: "bg-[#B31942]",
   }, 
   {
     title: "Trench Products",
@@ -64,7 +64,7 @@ export const categories = [
     description: "Heavy-duty drainage solutions for high-traffic industrial environments.",
     specs: ["Ductile Iron Construction", "Load Class D400+", "Anti-Slip Surface", "UV Resistant Coating"],
     icon: Wrench,
-    color: "bg-red-700",
+    color: "bg-[#B31942]",
   }
 ];
 

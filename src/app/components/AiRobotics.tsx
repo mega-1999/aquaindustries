@@ -70,7 +70,7 @@ export default function AiRobotics() {
             >
               The Future is <span className="text-[#B31942]">Automated</span>
             </motion.h2>
-            <p className="text-slate-400 text-lg mb-12 leading-relaxed">
+            <p className="text-[#0A3161]/60 text-lg mb-12 leading-relaxed">
               Mega Foundries is leading the transition to Industry 4.0. We integrate neural networks and robotic precision to eliminate human error and maximize casting efficiency.
             </p>
 
@@ -89,7 +89,7 @@ export default function AiRobotics() {
                   </div>
                   <div>
                     <h4 className="text-xl font-bold mb-1 tracking-tight">{tech.title}</h4>
-                    <p className="text-slate-500 text-sm leading-relaxed">{tech.desc}</p>
+                    <p className="text-[#0A3161]/70 text-sm leading-relaxed">{tech.desc}</p>
                   </div>
                 </motion.div>
               ))}

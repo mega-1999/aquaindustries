@@ -65,12 +65,12 @@ export default function InventoryPage() {
       <div className="flex items-center justify-between">
         <div>
             <h2 className="text-3xl font-bold tracking-tight">Inventory</h2>
-            <p className="text-slate-500">Manage your product catalog and stock levels.</p>
+            <p className="text-[#0A3161]/70">Manage your product catalog and stock levels.</p>
         </div>
         
         {/* ✅ Link to the "New Product" page we created */}
         <Link href="/private/member/products/new">
-            <Button className="bg-[#B31942] hover:bg-red-700">
+            <Button className="bg-[#B31942] hover:bg-[#B31942]">
             <Plus className="mr-2 h-4 w-4" /> Add Product
             </Button>
         </Link>
@@ -104,14 +104,14 @@ export default function InventoryPage() {
                       <TableCell className="font-medium">
                         <div className="flex flex-col">
                             <span>{product.productName}</span>
-                            <span className="text-xs text-slate-400">{product.productSlug}</span>
+                            <span className="text-xs text-[#0A3161]/60">{product.productSlug}</span>
                         </div>
                       </TableCell>
                       <TableCell>{product.id.substring(0, 8)}...</TableCell>
                       <TableCell>
                         <span className={`px-2 py-1 rounded-full text-xs font-bold ${
                             product.status === 'PUBLISHED' ? 'bg-green-100 text-green-700' : 
-                            product.status === 'DRAFT' ? 'bg-slate-100 text-slate-600' : 'bg-red-50 text-red-600'
+                            product.status === 'DRAFT' ? 'bg-[#0A3161]/10 text-[#0A3161]/80' : 'bg-[#B31942]/5 text-[#B31942]'
                         }`}>
                             {product.status || 'DRAFT'}
                         </span>
@@ -125,10 +125,10 @@ export default function InventoryPage() {
                       <TableCell className="text-right">
                         <div className="flex justify-end gap-2">
                             <Button variant="ghost" size="icon" className="h-8 w-8">
-                                <Edit className="w-4 h-4 text-slate-500" />
+                                <Edit className="w-4 h-4 text-[#0A3161]/70" />
                             </Button>
                             <Button variant="ghost" size="icon" className="h-8 w-8" onClick={() => handleDelete(product.id)}>
-                                <Trash2 className="w-4 h-4 text-red-500" />
+                                <Trash2 className="w-4 h-4 text-[#B31942]" />
                             </Button>
                         </div>
                       </TableCell>
@@ -136,7 +136,7 @@ export default function InventoryPage() {
                   ))
                 ) : (
                     <TableRow>
-                        <TableCell colSpan={6} className="h-24 text-center text-slate-500">
+                        <TableCell colSpan={6} className="h-24 text-center text-[#0A3161]/70">
                             <div className="flex flex-col items-center gap-2">
                                 <AlertCircle className="w-6 h-6 opacity-50" />
                                 <p>No products found. Start by adding one.</p>

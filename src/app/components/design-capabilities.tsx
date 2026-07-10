@@ -134,11 +134,11 @@ export function DesignCapabilities() {
   );
 
   return (
-    <section className="w-full py-16 px-4 md:px-8 bg-zinc-50">
+    <section className="w-full py-16 px-4 md:px-8 bg-[#0A3161]/5">
       <div className="w-full px-4 sm:px-6 lg:px-10 py-3">
         
         {/* Section Heading */}
-        <h2 className="text-3xl md:text-4xl font-bold text-zinc-900 mb-10 border-l-4 border-[#B31942] pl-4">
+        <h2 className="text-3xl md:text-4xl font-bold text-[#0A3161] mb-10 border-l-4 border-[#B31942] pl-4">
           The Mega Philosophy
         </h2>
 
@@ -154,7 +154,7 @@ export function DesignCapabilities() {
                   className="group flex flex-row border border-[#cccccc] shadow-xl overflow-hidden hover:shadow-none transition-shadow duration-300 min-h-[240px] bg-white"
                 >
                   {/* Left Side: Image (Approx 35% width) */}
-                  <div className="relative w-[35%] min-w-[35%] bg-zinc-100">
+                  <div className="relative w-[35%] min-w-[35%] bg-[#0A3161]/10">
                     <Image
                       src={item.imgUrl} 
                       alt={item.lines}
@@ -173,10 +173,10 @@ export function DesignCapabilities() {
                        {categoryTitle}
                     </span>
 
-                    <h3 className="text-lg md:text-xl font-bold text-zinc-900 mb-3 leading-tight group-hover:text-[#B31942] transition-colors">
+                    <h3 className="text-lg md:text-xl font-bold text-[#0A3161] mb-3 leading-tight group-hover:text-[#B31942] transition-colors">
                       {item.lines}
                     </h3>
-                    <p className="text-sm text-zinc-600 leading-relaxed">
+                    <p className="text-sm text-[#0A3161]/80 leading-relaxed">
                       {item.description}
                     </p>
                   </div>

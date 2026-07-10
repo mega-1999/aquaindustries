@@ -72,7 +72,7 @@ export default function ProductVideoShowcase() {
             <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative">
 
                 {/* Header */}
-                <h2 className="text-3xl md:text-4xl font-bold text-center text-gray-900 mb-16">
+                <h2 className="text-3xl md:text-4xl font-bold text-center text-[#0A3161] mb-16">
                     Featured <span className="text-[#B31942]">Products</span>
                 </h2>
 
@@ -91,7 +91,7 @@ export default function ProductVideoShowcase() {
                                 <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-16 items-center">
 
                                     {/* LEFT: Video Section */}
-                                    <div className="relative h-[300px] md:h-[400px] w-full rounded-2xl overflow-hidden shadow-2xl border border-gray-200 bg-[#0A3161]">
+                                    <div className="relative h-[300px] md:h-[400px] w-full rounded-2xl overflow-hidden shadow-2xl border border-[#0A3161]/10 bg-[#0A3161]">
                                         <video
                                             className="w-full h-full object-cover"
                                             controls
@@ -106,18 +106,18 @@ export default function ProductVideoShowcase() {
 
                                     {/* RIGHT: Text Content */}
                                     <div className="flex flex-col justify-center space-y-6">
-                                        <h3 className="text-3xl font-bold text-gray-900">
+                                        <h3 className="text-3xl font-bold text-[#0A3161]">
                                             {product.title}
                                         </h3>
 
-                                        <p className="text-gray-600 text-lg leading-relaxed">
+                                        <p className="text-[#0A3161]/80 text-lg leading-relaxed">
                                             {product.description}
                                         </p>
 
                                         {/* Features List */}
                                         <ul className="space-y-3">
                                             {product.features.map((feature, i) => (
-                                                <li key={i} className="flex items-center gap-3 text-gray-700 font-medium">
+                                                <li key={i} className="flex items-center gap-3 text-[#0A3161] font-medium">
                                                     <CheckCircle2 className="w-5 h-5 text-[#B31942]" />
                                                     {feature}
                                                 </li>
@@ -125,7 +125,7 @@ export default function ProductVideoShowcase() {
                                         </ul>
 
                                         <div className="pt-4">
-                                            <Button className="bg-[#B31942] hover:bg-red-700 text-white px-8 py-6 text-lg rounded-full">
+                                            <Button className="bg-[#B31942] hover:bg-[#B31942] text-white px-8 py-6 text-lg rounded-full">
                                                 View Specifications
                                             </Button>
                                         </div>
@@ -141,14 +141,14 @@ export default function ProductVideoShowcase() {
                     {/* Arrows */}
                     <button
                         onClick={prevSlide}
-                        className="hidden md:flex absolute top-1/2 -left-4 lg:-left-12 -translate-y-1/2 w-12 h-12 bg-white text-gray-800 rounded-full shadow-lg items-center justify-center hover:bg-[#B31942] hover:text-white transition-all z-20 border border-gray-100"
+                        className="hidden md:flex absolute top-1/2 -left-4 lg:-left-12 -translate-y-1/2 w-12 h-12 bg-white text-[#0A3161] rounded-full shadow-lg items-center justify-center hover:bg-[#B31942] hover:text-white transition-all z-20 border border-[#0A3161]/10"
                     >
                         <ChevronLeft className="w-6 h-6" />
                     </button>
 
                     <button
                         onClick={nextSlide}
-                        className="hidden md:flex absolute top-1/2 -right-4 lg:-right-12 -translate-y-1/2 w-12 h-12 bg-white text-gray-800 rounded-full shadow-lg items-center justify-center hover:bg-[#B31942] hover:text-white transition-all z-20 border border-gray-100"
+                        className="hidden md:flex absolute top-1/2 -right-4 lg:-right-12 -translate-y-1/2 w-12 h-12 bg-white text-[#0A3161] rounded-full shadow-lg items-center justify-center hover:bg-[#B31942] hover:text-white transition-all z-20 border border-[#0A3161]/10"
                     >
                         <ChevronRight className="w-6 h-6" />
                     </button>
@@ -163,7 +163,7 @@ export default function ProductVideoShowcase() {
                             onClick={() => setActiveIndex(index)}
                             className={`h-3 rounded-full transition-all duration-300 ${index === activeIndex
                                     ? 'w-8 bg-[#B31942]'
-                                    : 'w-3 bg-gray-300 hover:bg-gray-400'
+                                    : 'w-3 bg-[#0A3161]/20 hover:bg-[#0A3161]/40'
                                 }`}
                             aria-label={`Go to product ${index + 1}`}
                         />

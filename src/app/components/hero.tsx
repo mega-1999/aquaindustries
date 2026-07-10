@@ -15,7 +15,7 @@ const HeroSection = () => {
                 clipPath: 'polygon(0 0, 100% 0, 100% 95%, 0 100%)',
             }}
         > 
-            <div className="absolute inset-0 bg-neutral-900/40 backdrop-blur-[1px]"></div>
+            <div className="absolute inset-0 bg-[#0A3161]/40 backdrop-blur-[1px]"></div>
             <div className="relative z-10 text-center max-w-4xl px-4">
 
                 <p className="text-xl   font-medium text-white/90 mb-3 tracking-widest uppercase">

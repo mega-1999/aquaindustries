@@ -853,7 +853,7 @@ export const menuData = {
     label: 'FABRICATION PRODUCTS',
     icon: Wrench, // choose any lucide icon you prefer
     bannerImage: '/assets/image8.jpg',
-    color: 'bg-gray-100 text-gray-900',
+    color: 'bg-[#0A3161]/10 text-[#0A3161]',
 
     categories: [
 
@@ -1906,7 +1906,7 @@ export const menuData = {
     label: 'FORGE SHOP PRODUCTS',
     icon: Hammer, // choose any lucide icon you like
     bannerImage: '/assets/image17.jpg',
-    color: 'bg-red-100 text-red-900',
+    color: 'bg-[#B31942]/10 text-red-900',
 
     categories: [
 
@@ -2002,7 +2002,7 @@ export const menuData = {
     label: 'INDUSTRIAL MACHINERY',
     icon: Factory, // choose any lucide icon you prefer
     bannerImage: '/assets/image18.jpeg',
-    color: 'bg-gray-100 text-gray-900',
+    color: 'bg-[#0A3161]/10 text-[#0A3161]',
 
     categories: [
 
@@ -2193,7 +2193,7 @@ export const menuData = {
     label: 'METALS & ALLOYS',
     icon: Zap, // choose any lucide icon you prefer
     bannerImage: '/assets/image6.jpg',
-    color: 'bg-slate-100 text-slate-900',
+    color: 'bg-[#0A3161]/10 text-[#0A3161]',
 
     categories: [
 

@@ -191,7 +191,7 @@ export default function FactoryStories() {
 
   return (
     // 1. OUTER WRAPPER: Ensures full width of the parent container
-    <div className="w-full bg-white py-6 border-b border-gray-100 relative group">
+    <div className="w-full bg-white py-6 border-b border-[#0A3161]/10 relative group">
 
       {/* 2. SCROLL CONTAINER: 
           - w-full: Takes full width
@@ -208,10 +208,10 @@ export default function FactoryStories() {
         {/* flex-none: Prevents shrinking. Fixed width/height ensuring consistent look */}
         <div
           onClick={() => setIsUploading(true)}
-          className="flex-none w-28 h-48 md:w-32 md:h-56 relative rounded-xl overflow-hidden cursor-pointer shadow-sm border border-slate-200 group/create hover:bg-slate-50 transition-colors"
+          className="flex-none w-28 h-48 md:w-32 md:h-56 relative rounded-xl overflow-hidden cursor-pointer shadow-sm border border-[#0A3161]/10 group/create hover:bg-[#0A3161]/5 transition-colors"
         >
           {/* Top Half (User Image) */}
-          <div className="h-[65%] w-full bg-slate-100">
+          <div className="h-[65%] w-full bg-[#0A3161]/10">
             {/* eslint-disable-next-line @next/next/no-img-element */}
             <Image
               width={1200}
@@ -224,7 +224,7 @@ export default function FactoryStories() {
 
           {/* Bottom Half (Action) */}
           <div className="absolute bottom-0 left-0 right-0 h-[35%] bg-white flex flex-col items-center justify-end pb-3">
-            <span className="text-xs font-bold text-slate-800 text-center px-1">Create Story</span>
+            <span className="text-xs font-bold text-[#0A3161] text-center px-1">Create Story</span>
           </div>
 
           {/* Floating Plus Button */}
@@ -283,7 +283,7 @@ export default function FactoryStories() {
       <div className="absolute top-1/2 -translate-y-1/2 right-4 z-10 hidden md:group-hover:block">
         <button
           onClick={scrollRight}
-          className="bg-white/90 backdrop-blur-sm rounded-full p-2 shadow-lg border border-slate-100 hover:bg-white transition-colors text-slate-700"
+          className="bg-white/90 backdrop-blur-sm rounded-full p-2 shadow-lg border border-[#0A3161]/10 hover:bg-white transition-colors text-[#0A3161]"
         >
           <ArrowRight className="w-5 h-5" />
         </button>
@@ -326,12 +326,12 @@ function StoryViewer({ stories, initialIndex, onClose }: { stories: Story[], ini
   return (
     <div className="fixed inset-0 z-[9999] bg-[#0A3161]/95 flex items-center justify-center">
       {/* Close Button */}
-      <button onClick={onClose} className="absolute top-4 right-4 text-white hover:text-gray-300 z-50 p-2 bg-[#0A3161]/20 rounded-full backdrop-blur-md">
+      <button onClick={onClose} className="absolute top-4 right-4 text-white hover:text-[#0A3161]/40 z-50 p-2 bg-[#0A3161]/20 rounded-full backdrop-blur-md">
         <X className="w-6 h-6" />
       </button>
 
       {/* Main Content Area */}
-      <div className="relative h-full w-full md:max-w-md bg-[#0A3161] md:rounded-xl overflow-hidden md:h-[90vh] md:border md:border-zinc-800 shadow-2xl">
+      <div className="relative h-full w-full md:max-w-md bg-[#0A3161] md:rounded-xl overflow-hidden md:h-[90vh] md:border md:border-[#0A3161] shadow-2xl">
 
         {/* Progress & Header */}
         <div className="absolute top-0 left-0 right-0 p-4 z-20 bg-gradient-to-b from-[#0A3161]/80 to-transparent">
@@ -354,7 +354,7 @@ function StoryViewer({ stories, initialIndex, onClose }: { stories: Story[], ini
         </div>
 
         {/* Media */}
-        <div className="h-full w-full flex items-center justify-center bg-zinc-900">
+        <div className="h-full w-full flex items-center justify-center bg-[#0A3161]">
           {currentStory.mediaType === 'VIDEO' ? (
             <video src={currentStory.mediaUrl} className="w-full h-full object-contain" autoPlay playsInline />
           ) : (
@@ -385,13 +385,13 @@ function UploadStoryModal({ onClose }: { onClose: () => void }) {
   return (
     <div className="fixed inset-0 z-[100] bg-[#0A3161]/60 flex items-center justify-center backdrop-blur-sm p-4 animate-in fade-in duration-200">
       <div className="bg-white rounded-xl p-6 w-full max-w-sm shadow-xl">
-        <h3 className="font-bold text-xl text-slate-800 mb-4">Add to Story</h3>
-        <div className="h-48 bg-slate-50 border-2 border-dashed border-slate-300 rounded-xl flex flex-col items-center justify-center text-slate-400 hover:bg-slate-100 hover:border-blue-400 transition-colors cursor-pointer">
+        <h3 className="font-bold text-xl text-[#0A3161] mb-4">Add to Story</h3>
+        <div className="h-48 bg-[#0A3161]/5 border-2 border-dashed border-slate-300 rounded-xl flex flex-col items-center justify-center text-[#0A3161]/60 hover:bg-[#0A3161]/10 hover:border-blue-400 transition-colors cursor-pointer">
           <div className="bg-white p-3 rounded-full mb-3 shadow-sm">
             <Plus className="w-6 h-6 text-blue-600" />
           </div>
           <span className="font-medium">Upload Photo/Video</span>
-          <span className="text-xs mt-1 text-slate-400">Drag & drop or click</span>
+          <span className="text-xs mt-1 text-[#0A3161]/60">Drag & drop or click</span>
         </div>
         <div className="flex gap-3 mt-6">
           <Button variant="outline" className="flex-1" onClick={onClose}>Cancel</Button>

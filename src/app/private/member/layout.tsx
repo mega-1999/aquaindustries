@@ -124,10 +124,10 @@ export default function DashboardLayout({ children }: { children: React.ReactNod
   ];
 
   return (
-    <div className="min-h-screen flex bg-slate-50">
+    <div className="min-h-screen flex bg-[#0A3161]/5">
 
       {/* --- DESKTOP SIDEBAR --- */}
-      <aside className="hidden md:flex w-64 flex-col bg-slate-900 text-white fixed h-full inset-y-0 z-50">
+      <aside className="hidden md:flex w-64 flex-col bg-[#0A3161] text-white fixed h-full inset-y-0 z-50">
         <div className="h-16 flex items-center px-6 border-b border-slate-800 font-bold text-xl tracking-wider">
           <span className="text-[#B31942]">MEGA</span>FOUNDRIES
         </div>
@@ -139,7 +139,7 @@ export default function DashboardLayout({ children }: { children: React.ReactNod
               <Link key={item.href} href={item.href}>
                 <span className={`flex items-center gap-3 px-3 py-2.5 rounded-md text-sm font-medium transition-colors ${isActive
                   ? 'bg-[#B31942] text-white'
-                  : 'text-slate-400 hover:text-white hover:bg-slate-800'
+                  : 'text-[#0A3161]/60 hover:text-white hover:bg-[#0A3161]'
                   }`}>
                   <item.icon className="w-4 h-4" />
                   {item.label}
@@ -150,7 +150,7 @@ export default function DashboardLayout({ children }: { children: React.ReactNod
         </nav>
 
         <div className="p-4 border-t border-slate-800">
-          <div className="bg-slate-800 rounded-lg p-3 text-xs text-slate-400">
+          <div className="bg-[#0A3161] rounded-lg p-3 text-xs text-[#0A3161]/60">
             <p className="font-semibold text-white mb-1">Foundry Portal</p>
             <p>v1.2.0 • Enterprise</p>
           </div>
@@ -161,7 +161,7 @@ export default function DashboardLayout({ children }: { children: React.ReactNod
       <div className="flex-1 md:ml-64 flex flex-col min-h-screen">
 
         {/* TOP HEADER */}
-        <header className="h-16 bg-white border-b border-slate-200 flex items-center justify-between px-4 sm:px-6 sticky top-0 z-40">
+        <header className="h-16 bg-white border-b border-[#0A3161]/10 flex items-center justify-between px-4 sm:px-6 sticky top-0 z-40">
 
           {/* Mobile Menu Trigger */}
           <Sheet>
@@ -170,11 +170,11 @@ export default function DashboardLayout({ children }: { children: React.ReactNod
                 <Menu className="w-5 h-5" />
               </Button>
             </SheetTrigger>
-            <SheetContent side="left" className="bg-slate-900 text-white border-none">
+            <SheetContent side="left" className="bg-[#0A3161] text-white border-none">
               <div className="font-bold text-xl mb-8"><span className="text-[#B31942]">MEGA</span>FOUNDRIES</div>
               <nav className="space-y-2">
                 {navItems.map((item) => (
-                  <Link key={item.href} href={item.href} className="flex items-center gap-3 px-3 py-2 text-slate-300 hover:text-white">
+                  <Link key={item.href} href={item.href} className="flex items-center gap-3 px-3 py-2 text-[#0A3161]/40 hover:text-white">
                     <item.icon className="w-4 h-4" />
                     {item.label}
                   </Link>
@@ -184,7 +184,7 @@ export default function DashboardLayout({ children }: { children: React.ReactNod
           </Sheet>
 
           {/* Breadcrumb / Title */}
-          <h1 className="text-lg font-semibold text-slate-800 hidden sm:block">
+          <h1 className="text-lg font-semibold text-[#0A3161] hidden sm:block">
             Dashboard Overview
           </h1>
 
@@ -193,10 +193,10 @@ export default function DashboardLayout({ children }: { children: React.ReactNod
             <DropdownMenu>
               <DropdownMenuTrigger asChild>
                 <Button variant="ghost" className="relative h-9 w-9 rounded-full">
-                  <Avatar className="h-9 w-9 border border-slate-200">
+                  <Avatar className="h-9 w-9 border border-[#0A3161]/10">
                     {/* Add User Image URL if you have it in state */}
                     <AvatarImage src="" alt={user.name} />
-                    <AvatarFallback className="bg-slate-900 text-white font-semibold">
+                    <AvatarFallback className="bg-[#0A3161] text-white font-semibold">
                       {isProfileLoading ? (
                         <Loader2 className="w-4 h-4 animate-spin" />
                       ) : (
@@ -210,7 +210,7 @@ export default function DashboardLayout({ children }: { children: React.ReactNod
                 <DropdownMenuLabel className="font-normal">
                   <div className="flex flex-col space-y-1">
                     {isProfileLoading ? (
-                       <div className="h-8 bg-slate-100 rounded animate-pulse" />
+                       <div className="h-8 bg-[#0A3161]/10 rounded animate-pulse" />
                     ) : (
                       <>
                         <p className="text-sm font-medium leading-none">{user.name}</p>
@@ -229,7 +229,7 @@ export default function DashboardLayout({ children }: { children: React.ReactNod
                 <DropdownMenuSeparator />
 
                 {/* LOGOUT BUTTON */}
-                <DropdownMenuItem onClick={handleLogout} className="text-red-600 cursor-pointer focus:text-red-600 focus:bg-red-50">
+                <DropdownMenuItem onClick={handleLogout} className="text-[#B31942] cursor-pointer focus:text-[#B31942] focus:bg-[#B31942]/5">
                   <LogOut className="w-4 h-4 mr-2" />
                   Log out
                 </DropdownMenuItem>

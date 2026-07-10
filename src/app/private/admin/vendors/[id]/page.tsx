@@ -12,7 +12,7 @@ export default function VendorDashboard({ params }: { params: { id: string } }) 
       <h1 className="text-3xl font-bold mb-6">Vendor Management</h1>
       
       <Tabs defaultValue="marketplace" className="w-full">
-        <TabsList className="mb-6 bg-gray-100 p-1 rounded-lg">
+        <TabsList className="mb-6 bg-[#0A3161]/10 p-1 rounded-lg">
           <TabsTrigger value="marketplace">Marketplace Showcase</TabsTrigger>
           <TabsTrigger value="locations">Locations (Add/Remove)</TabsTrigger>
           <TabsTrigger value="compliance">Compliance</TabsTrigger>

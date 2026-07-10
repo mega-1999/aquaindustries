@@ -31,7 +31,7 @@ const ChatBlog = () => {
         <div>
           {/* Main Heading and Subtitle */}
           <div className='mb-8'>
-            <h2 className='text-[22px]   font-extrabold text-gray-900 leading-tight'>
+            <h2 className='text-[22px]   font-extrabold text-[#0A3161] leading-tight'>
               Live Chat: Resolve up to 80% of cases
             </h2>
             <p className='mt-3 text-sm'>
@@ -50,7 +50,7 @@ const ChatBlog = () => {
 
                 {/* Text Container */}
                 <div>
-                  <h3 className='text-[14px] font-bold text-gray-900'>
+                  <h3 className='text-[14px] font-bold text-[#0A3161]'>
                     {item.title}
                   </h3>
                   <p className='mt-1 text-sm '>

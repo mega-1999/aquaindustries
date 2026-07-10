@@ -74,7 +74,7 @@ const BusinessSolutions = () => {
 
             {/* Dynamic Typewriter Showcase Block */}
             <div className="text-left px-10 mb-12">
-                <p className="text-7xl md:text-5xl font-sans uppercase tracking-[0.1em] text-neutral-500 font-bold inline-block">
+                <p className="text-7xl md:text-5xl font-sans uppercase tracking-[0.1em] text-[#0A3161]/70 font-bold inline-block">
                   All Metals Popular:{" "}
                   <span className="text-[#B31942] border-r-2 border-[#B31942] pr-1 animate-pulse font-black">
                      {currentSubText}
@@ -95,13 +95,13 @@ const BusinessSolutions = () => {
                                 </div>
                             </div>
                             <h3 className="text-sm font-bold text-[#B31942] mb-3">{service.title}</h3>
-                            <p className="text-sm text-neutral-600 mb-4 h-20 overflow-hidden leading-relaxed">
+                            <p className="text-sm text-[#0A3161] mb-4 h-20 overflow-hidden leading-relaxed">
                                 {service.description}
                             </p>
 
                             <Link
                                 href="#"
-                                className="inline-flex text-sm items-center font-semibold text-neutral-800 hover:text-[#B31942] transition-colors group"
+                                className="inline-flex text-sm items-center font-semibold text-[#0A3161] hover:text-[#B31942] transition-colors group"
                             >
                                 Learn More
                                 <ChevronsRight className='h-3 w-3 ml-2 transform group-hover:translate-x-1 transition-transform' />

@@ -9,7 +9,7 @@ interface ModelViewerProps {
 
 const ModelViewer = ({ src }: ModelViewerProps) => {
   return (
-    <div className="w-full h-full bg-gray-100 rounded-lg overflow-hidden relative group">
+    <div className="w-full h-full bg-[#0A3161]/10 rounded-lg overflow-hidden relative group">
       {/* ✅ 2. The @ts-ignore suppresses the 'intrinsic element' error 
          if your global types aren't being picked up yet.
       */}

@@ -22,9 +22,9 @@ export default async function BlogPostPage({ params }: PageProps) {
   return (
     <div className="min-h-screen bg-white pb-20">
        
-      <div className="bg-slate-900 text-white py-20 px-4">
+      <div className="bg-[#0A3161] text-white py-20 px-4">
         <div className="max-w-4xl mx-auto text-center">
-            <Link href="/blog" className="inline-flex items-center text-sm text-gray-400 hover:text-white mb-8 transition-colors">
+            <Link href="/blog" className="inline-flex items-center text-sm text-[#0A3161]/60 hover:text-white mb-8 transition-colors">
                 <ArrowLeft className="w-4 h-4 mr-2" /> Back to Home
             </Link>
             
@@ -32,7 +32,7 @@ export default async function BlogPostPage({ params }: PageProps) {
                 {post.title}
             </h1>
 
-            <div className="flex items-center justify-center gap-6 text-sm text-gray-300">
+            <div className="flex items-center justify-center gap-6 text-sm text-[#0A3161]/40">
                 <div className="flex items-center gap-2">
                     <User className="w-4 h-4" /> {post.author}
                 </div>
@@ -55,8 +55,8 @@ export default async function BlogPostPage({ params }: PageProps) {
           />
         </div>
  
-        <div className="prose prose-lg max-w-none text-gray-700 leading-relaxed">
-          <p className="text-xl font-medium text-gray-900 mb-8 border-l-4 border-[#B31942] pl-6 italic">
+        <div className="prose prose-lg max-w-none text-[#0A3161] leading-relaxed">
+          <p className="text-xl font-medium text-[#0A3161] mb-8 border-l-4 border-[#B31942] pl-6 italic">
             {post.excerpt}
           </p>
           
@@ -65,7 +65,7 @@ export default async function BlogPostPage({ params }: PageProps) {
             this would likely be rich text or markdown content fetched from a database.
           </p>
           
-          <h2 className="text-2xl font-bold text-gray-900 mt-10 mb-4">Key Takeaways for Foundries</h2>
+          <h2 className="text-2xl font-bold text-[#0A3161] mt-10 mb-4">Key Takeaways for Foundries</h2>
           <p className="mb-6">
             Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt 
             ut labore et dolore magna aliqua. Integrating these systems can lead to a 
@@ -85,9 +85,9 @@ export default async function BlogPostPage({ params }: PageProps) {
         </div>
 
         {/* Share / Footer of Article */}
-        <div className="mt-12 pt-8 border-t border-gray-100 flex justify-between items-center">
-            <p className="text-sm text-gray-500">Tags: Foundry, Innovation, Manufacturing</p>
-            <button className="flex items-center gap-2 text-sm font-bold text-[#B31942] hover:text-red-700">
+        <div className="mt-12 pt-8 border-t border-[#0A3161]/10 flex justify-between items-center">
+            <p className="text-sm text-[#0A3161]/70">Tags: Foundry, Innovation, Manufacturing</p>
+            <button className="flex items-center gap-2 text-sm font-bold text-[#B31942] hover:text-[#B31942]">
                 <Share2 className="w-4 h-4" /> Share Article
             </button>
         </div>

@@ -204,9 +204,9 @@ export default function VendorOnboardingPage() {
   // --- LOADING VIEW ---
   if (fetchingUser) {
     return (
-      <div className="min-h-screen flex flex-col items-center justify-center bg-slate-50 gap-3">
+      <div className="min-h-screen flex flex-col items-center justify-center bg-[#0A3161]/5 gap-3">
         <Loader2 className="animate-spin w-10 h-10 text-[#B31942]" />
-        <p className="text-slate-500 font-medium">Verifying User Identity...</p>
+        <p className="text-[#0A3161]/70 font-medium">Verifying User Identity...</p>
       </div>
     );
   }
@@ -214,19 +214,19 @@ export default function VendorOnboardingPage() {
   // --- ERROR VIEW ---
   if (loadError) {
     return (
-      <div className="min-h-screen flex items-center justify-center bg-slate-50 p-4">
-        <Card className="max-w-md w-full border-red-200 bg-red-50">
+      <div className="min-h-screen flex items-center justify-center bg-[#0A3161]/5 p-4">
+        <Card className="max-w-md w-full border-red-200 bg-[#B31942]/5">
           <CardHeader className="text-center">
-            <div className="mx-auto bg-red-100 w-12 h-12 rounded-full flex items-center justify-center mb-2">
-              <AlertCircle className="w-6 h-6 text-red-600" />
+            <div className="mx-auto bg-[#B31942]/10 w-12 h-12 rounded-full flex items-center justify-center mb-2">
+              <AlertCircle className="w-6 h-6 text-[#B31942]" />
             </div>
-            <CardTitle className="text-red-700">Unable to Verify Identity</CardTitle>
-            <CardDescription className="text-red-600/80">
+            <CardTitle className="text-[#B31942]">Unable to Verify Identity</CardTitle>
+            <CardDescription className="text-[#B31942]/80">
               {loadError}
             </CardDescription>
           </CardHeader>
           <CardContent className="flex justify-center pb-6">
-            <Button variant="outline" className="border-red-200 bg-white hover:bg-red-100 text-red-700" onClick={() => router.push('/login/foundry')}>
+            <Button variant="outline" className="border-red-200 bg-white hover:bg-[#B31942]/10 text-[#B31942]" onClick={() => router.push('/login/foundry')}>
               <LogOut className="w-4 h-4 mr-2" /> Log Out & Try Again
             </Button>
           </CardContent>
@@ -237,14 +237,14 @@ export default function VendorOnboardingPage() {
 
   // --- MAIN FORM ---
   return (
-    <div className="min-h-screen bg-slate-50 py-10 px-4 flex justify-center">
+    <div className="min-h-screen bg-[#0A3161]/5 py-10 px-4 flex justify-center">
       <Card className="max-w-3xl w-full shadow-xl border-t-4 border-t-[#B31942]">
-        <CardHeader className="bg-slate-900 text-white rounded-t-sm mt-1">
+        <CardHeader className="bg-[#0A3161] text-white rounded-t-sm mt-1">
           <div className="flex items-center gap-3 mb-2">
             <Store className="w-8 h-8 text-[#B31942]" />
             <CardTitle className="text-2xl">Vendor Registration</CardTitle>
           </div>
-          <CardDescription className="text-slate-400">
+          <CardDescription className="text-[#0A3161]/60">
             You are logged in as <span className="text-white font-semibold">{formData.email}</span>.
             Complete this form to upgrade.
           </CardDescription>
@@ -255,12 +255,12 @@ export default function VendorOnboardingPage() {
 
             {/* 1. BUSINESS INFO */}
             <div className="space-y-4">
-              <h3 className="text-lg font-semibold flex items-center gap-2 text-slate-800 border-b pb-2">
+              <h3 className="text-lg font-semibold flex items-center gap-2 text-[#0A3161] border-b pb-2">
                 <Store className="w-4 h-4" /> Business Details
               </h3>
               <div className="grid md:grid-cols-2 gap-4">
                 <div className="space-y-2">
-                  <Label>Company Name <span className="text-red-500">*</span></Label>
+                  <Label>Company Name <span className="text-[#B31942]">*</span></Label>
                   <Input name="vendorName" required placeholder="Acme Industries" onChange={handleChange} />
                 </div>
                 <div className="space-y-2">
@@ -272,7 +272,7 @@ export default function VendorOnboardingPage() {
 
             {/* 2. CONTACT */}
             <div className="space-y-4">
-              <h3 className="text-lg font-semibold flex items-center gap-2 text-slate-800 border-b pb-2">
+              <h3 className="text-lg font-semibold flex items-center gap-2 text-[#0A3161] border-b pb-2">
                 <User className="w-4 h-4" /> Primary Contact
               </h3>
               <div className="grid md:grid-cols-2 gap-4">
@@ -282,10 +282,10 @@ export default function VendorOnboardingPage() {
                 </div>
                 <div className="space-y-2">
                   <Label>Email</Label>
-                  <Input name="email" required value={formData.email} disabled className="bg-slate-100 cursor-not-allowed" />
+                  <Input name="email" required value={formData.email} disabled className="bg-[#0A3161]/10 cursor-not-allowed" />
                 </div>
                 <div className="space-y-2">
-                  <Label>Phone <span className="text-red-500">*</span></Label>
+                  <Label>Phone <span className="text-[#B31942]">*</span></Label>
                   <Input name="phone" required placeholder="+1 234..." onChange={handleChange} />
                 </div>
               </div>
@@ -293,24 +293,24 @@ export default function VendorOnboardingPage() {
 
             {/* 3. ADDRESS */}
             <div className="space-y-4">
-              <h3 className="text-lg font-semibold flex items-center gap-2 text-slate-800 border-b pb-2">
+              <h3 className="text-lg font-semibold flex items-center gap-2 text-[#0A3161] border-b pb-2">
                 <MapPin className="w-4 h-4" /> Headquarters Address
               </h3>
               <div className="grid md:grid-cols-2 gap-4">
                 <div className="space-y-2 md:col-span-2">
-                  <Label>Street Address <span className="text-red-500">*</span></Label>
+                  <Label>Street Address <span className="text-[#B31942]">*</span></Label>
                   <Input name="addressLine1" required onChange={handleChange} />
                 </div>
                 <div className="space-y-2">
-                  <Label>City <span className="text-red-500">*</span></Label>
+                  <Label>City <span className="text-[#B31942]">*</span></Label>
                   <Input name="city" required onChange={handleChange} />
                 </div>
                 <div className="space-y-2">
-                  <Label>State <span className="text-red-500">*</span></Label>
+                  <Label>State <span className="text-[#B31942]">*</span></Label>
                   <Input name="state" required onChange={handleChange} />
                 </div>
                 <div className="space-y-2">
-                  <Label>Zip Code <span className="text-red-500">*</span></Label>
+                  <Label>Zip Code <span className="text-[#B31942]">*</span></Label>
                   <Input name="postalCode" required onChange={handleChange} />
                 </div>
                 <div className="space-y-2">
@@ -322,17 +322,17 @@ export default function VendorOnboardingPage() {
 
             {/* 4. COMPLIANCE */}
             <div className="space-y-4">
-              <h3 className="text-lg font-semibold flex items-center gap-2 text-slate-800 border-b pb-2">
+              <h3 className="text-lg font-semibold flex items-center gap-2 text-[#0A3161] border-b pb-2">
                 <FileText className="w-4 h-4" /> Tax Info
               </h3>
               <div className="space-y-2">
-                <Label>Tax ID / GST <span className="text-red-500">*</span></Label>
+                <Label>Tax ID / GST <span className="text-[#B31942]">*</span></Label>
                 <Input name="taxNumber" required placeholder="GST..." onChange={handleChange} />
               </div>
             </div>
 
             <div className="pt-4">
-              <Button className="w-full bg-[#B31942] hover:bg-red-700 h-12 text-lg font-bold" disabled={loading}>
+              <Button className="w-full bg-[#B31942] hover:bg-[#B31942] h-12 text-lg font-bold" disabled={loading}>
                 {loading ? <Loader2 className="animate-spin mr-2" /> : "Complete Registration"}
               </Button>
             </div>

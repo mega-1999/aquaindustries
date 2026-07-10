@@ -53,10 +53,10 @@ export default function SellerTools() {
           <span className="text-[#B31942] font-bold text-sm uppercase tracking-widest">
             Mega Foundries | PARTNER SUITE
           </span>
-          <h2 className="text-[30px] md:text-[40px] font-bold text-gray-900">
+          <h2 className="text-[30px] md:text-[40px] font-bold text-[#0A3161]">
             Engineered for <span className="text-[#B31942]">Modern Foundries</span>
           </h2>
-          <p className="text-gray-500 max-w-2xl mx-auto text-xl">
+          <p className="text-[#0A3161]/70 max-w-2xl mx-auto text-xl">
             Transition from traditional job-work to a digitally integrated manufacturing hub.
             Utilize our specialized tools to optimize your production workflow.
           </p>
@@ -73,10 +73,10 @@ export default function SellerTools() {
                   onClick={() => setActiveTab(index)}
                   className={`
                     cursor-pointer group transition-all duration-300 border-l-4 pl-6 py-4
-                    ${isActive ? 'border-[#B31942] bg-red-50/30 rounded-r-lg' : 'border-transparent hover:border-red-100'}
+                    ${isActive ? 'border-[#B31942] bg-[#B31942]/5/30 rounded-r-lg' : 'border-transparent hover:border-red-100'}
                   `}
                 >
-                  <h3 className={`text-xl font-bold transition-colors ${isActive ? 'text-[#B31942]' : 'text-gray-600 group-hover:text-gray-900'}`}>
+                  <h3 className={`text-xl font-bold transition-colors ${isActive ? 'text-[#B31942]' : 'text-[#0A3161]/80 group-hover:text-[#0A3161]'}`}>
                     {tool.number} {tool.title}
                   </h3>
 
@@ -86,7 +86,7 @@ export default function SellerTools() {
                       ${isActive ? 'max-h-40 opacity-100 mt-3' : 'max-h-0 opacity-0'}
                     `}
                   >
-                    <p className="text-sm text-gray-500 leading-relaxed">
+                    <p className="text-sm text-[#0A3161]/70 leading-relaxed">
                       {tool.description}
                     </p>
                   </div>
@@ -96,10 +96,10 @@ export default function SellerTools() {
           </div>
 
           <div className="lg:col-span-8">
-            <div className="relative bg-gray-900 rounded-xl overflow-hidden shadow-2xl border border-gray-800 aspect-[16/10]">
+            <div className="relative bg-[#0A3161] rounded-xl overflow-hidden shadow-2xl border border-[#0A3161] aspect-[16/10]">
 
-              <div className="absolute top-0 left-0 right-0 h-8 bg-gray-800 flex items-center px-4 space-x-2 z-10 border-b border-gray-700">
-                <div className="w-3 h-3 rounded-full bg-red-500"></div>
+              <div className="absolute top-0 left-0 right-0 h-8 bg-[#0A3161] flex items-center px-4 space-x-2 z-10 border-b border-[#0A3161]/50">
+                <div className="w-3 h-3 rounded-full bg-[#B31942]/50"></div>
                 <div className="w-3 h-3 rounded-full bg-yellow-500"></div>
                 <div className="w-3 h-3 rounded-full bg-green-500"></div>
               </div>

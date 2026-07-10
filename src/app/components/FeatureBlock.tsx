@@ -30,11 +30,11 @@ export function FeatureBlockItem({ data, imageOnLeft = false, className }: Featu
           {/* Main Heading and Subtitle */}
           <div className='mb-6 md:mb-10'>
             {/* Mobile: text-2xl | Tablet: text-3xl | Desktop: text-4xl */}
-            <h2 className='text-2xl sm:text-3xl md:text-4xl font-extrabold text-gray-900 leading-tight'>
+            <h2 className='text-2xl sm:text-3xl md:text-4xl font-extrabold text-[#0A3161] leading-tight'>
               {data.headline}
             </h2>
             {/* Mobile: text-sm | Desktop: text-base */}
-            <p className='mt-3 md:mt-4 text-sm sm:text-base text-gray-600'>
+            <p className='mt-3 md:mt-4 text-sm sm:text-base text-[#0A3161]/80'>
               {data.tagline}
             </p>
           </div>
@@ -47,17 +47,17 @@ export function FeatureBlockItem({ data, imageOnLeft = false, className }: Featu
                 {/* Icon Container */}
                 <div className='shrink-0 pt-1'>
                   {/* Mobile: 5x5 (20px) | Desktop: 6x6 (24px) */}
-                  <item.icon className='h-5 w-5 md:h-6 md:w-6 text-gray-900' />
+                  <item.icon className='h-5 w-5 md:h-6 md:w-6 text-[#0A3161]' />
                 </div>
 
                 {/* Text Container */}
                 <div>
                   {/* Mobile: text-base (16px) | Desktop: text-lg (18px) */}
-                  <h3 className='text-base sm:text-lg font-bold text-gray-900'>
+                  <h3 className='text-base sm:text-lg font-bold text-[#0A3161]'>
                     {item.title}
                   </h3>
                   {/* Mobile: text-sm (14px) */}
-                  <p className='mt-1 text-sm text-gray-600 leading-relaxed'>
+                  <p className='mt-1 text-sm text-[#0A3161]/80 leading-relaxed'>
                     {item.description}
                   </p>
                 </div>
