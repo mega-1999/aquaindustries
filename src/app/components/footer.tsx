@@ -63,9 +63,9 @@ const Footer = () => {
   ]
 
   return (
-    <footer className="bg-[#0A3161] text-[#0A3161]/40 border-t border-[#0A3161] font-sans">
+    <footer className="bg-[#0A3161] text-white/70 border-t border-white/10 font-sans">
       <div className="w-full px-4 sm:px-6 lg:px-10 py-3 pt-16 ">
-        <div className="grid grid-cols-1 lg:grid-cols-3 gap-12 xl:gap-16 border-b border-[#0A3161] pb-12">
+        <div className="grid grid-cols-1 lg:grid-cols-3 gap-12 xl:gap-16 border-b border-white/10 pb-12">
 
           <div className="flex flex-col justify-evenly gap-16 space-y-6">
             <div>
@@ -94,7 +94,7 @@ const Footer = () => {
             </div>
 
             <div>
-              <div className="text-sm space-y-1 text-[#0A3161]/60">
+              <div className="text-sm space-y-1 text-white/70">
                 <p>105 MAXES ROAD</p>
                 <p>MELVILLE, NY 11737, USA</p>
 
@@ -152,7 +152,7 @@ const Footer = () => {
 
 
             <div>
-              <div className="text-sm space-y-1 text-[#0A3161]/60">
+              <div className="text-sm space-y-1 text-white/70">
                 <p>18 King St E Ste 1400</p>
                 <p>Toronto, ON M5C IC4, CANADA</p>
 
@@ -192,7 +192,7 @@ const Footer = () => {
                       <li key={link.href}>
                         <Link
                           href={link.href}
-                          className="text-xs text-[#0A3161]/60 hover:text-[#B31942] transition-colors block"
+                          className="text-xs text-white/60 hover:text-[#B31942] transition-colors block"
                         >
                           {link.label}
                         </Link>
@@ -202,7 +202,7 @@ const Footer = () => {
 
                   {/* Optional Divider if a column has multiple sections (like Support & Quality) */}
                   {index < col.sections.length - 1 && (
-                    <hr className="border-t border-[#0A3161]/50 opacity-50 mt-6 mb-2" />
+                    <hr className="border-t border-white/20 opacity-50 mt-6 mb-2" />
                   )}
                 </div>
               ))}
@@ -211,8 +211,8 @@ const Footer = () => {
 
         </div>
       </div>
-      <div className="w-full px-4 sm:px-6 lg:px-10 py-2  bg-[#0f0f0f] border-t border-[#0A3161]">
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-8 items-center border-b border-[#0A3161] pb-8">
+      <div className="w-full px-4 sm:px-6 lg:px-10 py-2  bg-[#0A3161] border-t border-white/10">
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-8 items-center border-b border-white/10 pb-8">
 
 
           {/* --- COL 2: NEWSLETTER (Centered) --- */}
@@ -222,7 +222,7 @@ const Footer = () => {
               <Input
                 type="email"
                 placeholder="Enter Email Address"
-                className="rounded-r-none border-[#0A3161]/50 bg-[#0A3161]/50 text-white focus:border-[#B31942] h-10 text-sm"
+                className="rounded-r-none border-white/20 bg-white/10 text-white focus:border-[#B31942] h-10 text-sm"
               />
               <Button className="rounded-l-none bg-[#B31942] hover:bg-[#B31942] text-white font-bold h-10 px-6 transition-colors">
                 Submit
@@ -238,7 +238,7 @@ const Footer = () => {
                 <Link
                   key={i}
                   href={'/'}
-                  className='p-2.5 border border-[#0A3161]/50 rounded-full text-[#0A3161]/60 hover:border-[#B31942] hover:text-white hover:bg-[#B31942] transition-all duration-300'
+                  className='p-2.5 border border-white/20 rounded-full text-white/60 hover:border-[#B31942] hover:text-white hover:bg-[#B31942] transition-all duration-300'
                 >
                   <Icon className='w-4 h-4' />
                 </Link>
