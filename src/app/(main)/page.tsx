@@ -46,6 +46,7 @@ import MegaFoundationPage from './mega-foundation/page';
  import MegaFeaShowcase from './MegaFeaShowcase';
 import { Hero } from './Hero';
 import DotMatrixSlider from './DotMatrixSlider';
+import { ResourceDirectory } from './ResourceDirectory';
 
 export default function Home() {
     const [isLoggedIn, setIsLoggedIn] = useState(false);
@@ -100,6 +101,7 @@ export default function Home() {
                 </div>
             </header> */}
             <Hero />
+            <ResourceDirectory/>
             <DotMatrixSlider/>
             <Product3DShowcase />
             {/* 2. CORE PRODUCTS (High Priority) */}
