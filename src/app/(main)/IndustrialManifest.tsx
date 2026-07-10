@@ -94,18 +94,18 @@ export default function IndustrialManifest() {
           {MANIFEST_STEPS.map((step, index) => (
             <div 
               key={index}
-              className="bg-[#0A3161] border border-[#0A3161]/30 p-6 flex flex-col justify-between hover:border-[#0A3161] transition-all duration-300 relative group min-h-[260px] rounded-xs"
+              className="bg-[#0A3161] border border-white/10 p-6 flex flex-col justify-between hover:border-[#B31942] transition-all duration-300 relative group min-h-[260px] rounded-xs"
             >
               {/* Highlight bar on card hover */}
               <div className="absolute top-0 left-0 w-full h-[1px] bg-transparent group-hover:bg-[#B31942] transition-colors duration-300" />
               
               <div>
                 {/* Meta Phase Numbering */}
-                <div className="flex items-center justify-between mb-6 border-b border-[#0A3161]/30/50 pb-4">
-                  <span className="text-[10px] font-mono uppercase tracking-wider text-[#0A3161]/70 font-bold">
+                <div className="flex items-center justify-between mb-6 border-b border-white/10 pb-4">
+                  <span className="text-[10px] font-mono uppercase tracking-wider text-white/70 font-bold">
                     {step.label}
                   </span>
-                  <div className="w-8 h-8 bg-[#0A3161] border border-[#0A3161] flex items-center justify-center rounded-xs group-hover:border-[#B31942]/50 transition-colors">
+                  <div className="w-8 h-8 bg-white/5 border border-white/10 flex items-center justify-center rounded-xs group-hover:border-[#B31942]/50 transition-colors">
                     {step.icon}
                   </div>
                 </div>
@@ -114,15 +114,15 @@ export default function IndustrialManifest() {
                 <h4 className="text-lg font-bold text-white mb-2 tracking-tight group-hover:text-[#B31942] transition-colors duration-200">
                   {step.title}
                 </h4>
-                <p className="text-[#0A3161]/70 text-xs leading-relaxed font-light group-hover:text-[#0A3161]/60 transition-colors duration-300">
+                <p className="text-white/70 text-xs leading-relaxed font-light group-hover:text-white/60 transition-colors duration-300">
                   {step.description}
                 </p>
               </div>
 
               {/* Seamless Sync Status Light */}
-              <div className="mt-6 pt-4 border-t border-[#0A3161]/30/50 flex items-center gap-2">
+              <div className="mt-6 pt-4 border-t border-white/10 flex items-center gap-2">
                 <span className="w-1.5 h-1.5 bg-[#B31942] rounded-full animate-pulse" />
-                <span className="text-[9px] font-mono uppercase tracking-widest text-[#0A3161]/80 font-bold">
+                <span className="text-[9px] font-mono uppercase tracking-widest text-white/80 font-bold">
                   Synchronous Thread
                 </span>
               </div>
