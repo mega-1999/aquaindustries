@@ -7,7 +7,7 @@ const PILLARS = [
   {
     icon: BookOpen,
     title: "STEM Education",
-    desc: "We invest in the next generation of engineers. The METALSVERSE Foundation provides robotics grants and welding scholarships to 50+ high schools across the Rust Belt.",
+    desc: "We invest in the next generation of engineers. The Mega Foundation provides robotics grants and welding scholarships to 50+ high schools across the Rust Belt.",
     color: "bg-blue-50 text-blue-700"
   },
   {
@@ -51,7 +51,7 @@ export default function MegaFoundationPage() {
             <span className="text-transparent bg-clip-text bg-gradient-to-r from-red-400 to-orange-300">Communities</span>
           </h1>
           <p className="text-xl text-[#0A3161]/40 max-w-2xl mx-auto leading-relaxed mb-8">
-            We believe that a strong company relies on a strong community. Since 2005, the METALSVERSE Foundation has been dedicated to giving back to the towns and cities that build our products.
+            We believe that a strong company relies on a strong community. Since 2005, the Mega Foundation has been dedicated to giving back to the towns and cities that build our products.
           </p>
           <button className="bg-[#B31942] hover:bg-[#B31942] text-white font-bold py-3 px-8 rounded-full shadow-lg transition-transform hover:-translate-y-1">
             Apply for a Grant
@@ -143,7 +143,7 @@ export default function MegaFoundationPage() {
                 The "Iron Minds" Initiative
               </h2>
               <p className="text-[#0A3161]/80 mb-6 leading-relaxed">
-                Last year, METALSVERSE Foundation launched a pilot program in Detroit high schools to teach advanced CAD design and metallurgy.
+                Last year, Mega Foundation launched a pilot program in Detroit high schools to teach advanced CAD design and metallurgy.
               </p>
               <p className="text-[#0A3161]/80 mb-8 leading-relaxed">
                 The result? 12 graduating seniors received full-ride engineering scholarships, and another 20 secured apprenticeships within our facilities. We are proving that American manufacturing has a bright, high-tech future.

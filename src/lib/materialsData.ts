@@ -42,7 +42,7 @@ export const categories = [
   {
     title: "Pipe Grates",
     slug: "pipe-grates",
-    image: "/assets/PAVING-RISERS/products/pipe grid.jpeg",
+    video: "/assets/PAVING-RISERS/products/pipe grate.mp4",
     description: "Optimized water flow and debris management for municipal projects.",
     specs: ["High Flow Efficiency", "Debris Filtration", "Cast Iron Durability", "Custom Sizes Available"],
     icon: Grid3X3,

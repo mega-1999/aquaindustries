@@ -77,17 +77,17 @@ const Footer = () => {
               <div className="flex gap-4">
                 <div className="bg-white p-2 rounded-lg w-28 h-24 flex items-center justify-center shadow-md hover:scale-105 transition-transform">
                   <Link href={'/'} className="w-full h-full relative">
-                    <Image src={'/MEGA FOUNDRIES.png'} alt='METALSVERSE Foundries' fill className="object-contain" />
+                    <Image src={'/MMO.png'} alt='METALSVERSE Foundries' fill className="object-contain" />
                   </Link>
                 </div>
                 <div className="bg-white p-2 rounded-lg w-28 h-24 flex items-center justify-center shadow-md hover:scale-105 transition-transform">
                   <Link href={'/'} className="w-full h-full relative">
-                    <Image src={'/MEGA METALS.png'} alt='METALSVERSE METALS' fill className="object-contain" />
+                    <Image src={'/MME.png'} alt='METALSVERSE METALS' fill className="object-contain" />
                   </Link>
                 </div>
                 <div className="bg-white p-2 rounded-lg w-28 h-24 flex items-center justify-center shadow-md hover:scale-105 transition-transform">
                   <Link href={'/'} className="w-full h-full relative">
-                    <Image src={'/MEGA FABRICATORS.png'} alt='Fabricators' fill className="object-contain" />
+                    <Image src={'/MFA.png'} alt='Fabricators' fill className="object-contain" />
                   </Link>
                 </div>
               </div>
@@ -134,17 +134,17 @@ const Footer = () => {
               <div className="flex gap-4  justify-end">
                 <div className="bg-white p-2 rounded-lg w-28 h-24 flex items-center justify-center shadow-md hover:scale-105 transition-transform">
                   <Link href={'/'} className="w-full h-full relative">
-                    <Image src={'/MEGA MOLDS.png'} alt='Canada Foundries' fill className="object-contain" />
+                    <Image src={'/MFO.png'} alt='MWA' fill className="object-contain" />
                   </Link>
                 </div>
                 <div className="bg-white p-2 rounded-lg w-28 h-24 flex items-center justify-center shadow-md hover:scale-105 transition-transform">
                   <Link href={'/'} className="w-full h-full relative">
-                    <Image src={'/MEGA FORGE.png'} alt='METALSVERSE Forge' fill className="object-contain" />
+                    <Image src={'/MCA.png'} alt='METALSVERSE Forge' fill className="object-contain" />
                   </Link>
                 </div>
                 <div className="bg-white p-2 rounded-lg w-28 h-24 flex items-center justify-center shadow-md hover:scale-105 transition-transform">
                   <Link href={'/'} className="w-full h-full relative">
-                    <Image src={'/CANADA FOUNDRIES.png'} alt='METALSVERSE Forge' fill className="object-contain" />
+                    <Image src={'/MWA.png'} alt='METALSVERSE Forge' fill className="object-contain" />
                   </Link>
                 </div>
               </div>
@@ -244,7 +244,7 @@ const Footer = () => {
                 </Link>
               ))}</div>
           </div>
- 
+
 
         </div>
       </div>
