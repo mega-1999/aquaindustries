@@ -73,7 +73,7 @@ export default function MegaBlog() {
             </h2>
           </div>
           <p className="text-white/60 text-sm max-w-sm font-medium leading-relaxed">
-            Raw industrial perspectives, deep metallurgical studies, and infrastructure updates directly from the manufacturing floor of METALSVERSE Foundries.
+            Raw industrial perspectives, deep metallurgical studies, and infrastructure updates directly from the manufacturing floor of Metalverse  Industries.
           </p>
         </div>
 

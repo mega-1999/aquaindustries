@@ -3,7 +3,7 @@
 import React, { useState } from 'react';
 import Image from 'next/image';
 
-// --- CUSTOM CONTENT FOR METALSVERSE FOUNDRIES (Zero Plagiarism) ---
+// --- CUSTOM CONTENT FOR Metalverse  Industries (Zero Plagiarism) ---
 const tools = [
   {
     id: 1,
@@ -51,7 +51,7 @@ export default function SellerTools() {
 
         <div className="text-center mb-16 space-y-4">
           <span className="text-[#B31942] font-bold text-sm uppercase tracking-widest">
-            METALSVERSE Foundries | PARTNER SUITE
+            Metalverse  Industries | PARTNER SUITE
           </span>
           <h2 className="text-[30px] md:text-[40px] font-bold text-[#0A3161]">
             Engineered for <span className="text-[#B31942]">Modern Foundries</span>

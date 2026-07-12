@@ -44,7 +44,7 @@ export default function MegaFoundationPage() {
         <div className="relative z-10 text-center px-4 max-w-4xl mx-auto">
           <div className="inline-flex items-center gap-2 bg-white/10 backdrop-blur border border-white/20 text-white text-xs font-bold px-4 py-1.5 rounded-full mb-6 uppercase tracking-wider">
             <Heart className="w-3 h-3 text-red-400" />
-            The Philanthropic Arm of METALSVERSE Foundries
+            The Philanthropic Arm of Metalverse  Industries
           </div>
           <h1 className="text-5xl md:text-7xl font-bold tracking-tight mb-6">
             Forging Stronger <br />

@@ -37,7 +37,7 @@ export default function StartSelling() {
         {/* Header */}
         <div className="text-center mb-16">
           <h2 className="text-3xl md:text-4xl font-bold text-[#0A3161]">
-            Start Selling Smarter with <span className="text-[#B31942]">METALSVERSE Foundries?</span>
+            Start Selling Smarter with <span className="text-[#B31942]">Metalverse  Industries?</span>
           </h2>
         </div>
 

@@ -83,17 +83,17 @@ export default function LiveStreamCommandCenter() {
           />
         </aside>
         <FixedQuoteBtn />
-        {/* === CENTER COLUMN: METALSVERSE FOUNDRIES FEED === */}
+        {/* === CENTER COLUMN: Metalverse  Industries FEED === */}
         <main className="flex-1 min-w-0 flex flex-col items-center">
 
           {/* Header / Stats */}
           <div className="w-full text-center mb-8 border-b border-white/10 pb-6">
             <h1 className="text-2xl md:text-4xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-white to-gray-500 mb-2 uppercase tracking-tight">
-              METALSVERSE GLOBAL MANUFACTURING NETWORK
+              Metalverse GLOBAL MANUFACTURING NETWORK
             </h1>
 
-            <div className="flex justify-center gap-6 text-xs text-[#0A3161]/60 font-mono mt-4">
-              <span className="flex items-center gap-1 "><span className="text-[#B31942]">●</span> 54,201 FACTORIES <div className="text-[#B31942]">ONLINE</div> </span>
+            <div className="flex justify-center gap-6 text-xs text-white font-mono mt-4">
+              <span className="flex items-center gap-1 "><span className="text-[#B31942]">●</span> 54,201 FACTORIES <div  >ONLINE</div> </span>
               <span className="flex items-center gap-1"><span className="text-green-500">●</span> 98.4% UPTIME</span>
             </div>
             <div className="flex justify-center gap-6 text-xs text-[#0A3161]/60 mt-4">
@@ -113,10 +113,10 @@ export default function LiveStreamCommandCenter() {
             <div className="h-40 bg-[#0A3161]/50 border border-[#B31942] rounded-lg p-5 relative overflow-hidden group hover:border-[#B31942]/50 transition-colors">
               <div className="flex justify-between items-start mb-4">
                 <div>
-                  <h3 className="text-[#0A3161]/60 text-xs font-bold uppercase tracking-wider">Overall Efficiency</h3>
-                  <p className="text-2xl font-bold text-white mt-1">94.2% <span className="text-green-500 text-xs">▲ 2.4%</span></p>
+                  <h3 className="text-[#B31942] text-xs font-bold uppercase tracking-wider">Overall Efficiency</h3>
+                  <p className="text-2xl font-bold text-white mt-1">94.2% <span className="text-white text-xs">▲ 2.4%</span></p>
                 </div>
-                <div className="p-1.5 bg-green-500/10 rounded text-green-500">
+                <div className="p-1.5 bg-green-500/10 rounded text-white">
                   <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M13 7h8m0 0v8m0-8l-8 8-4-4-6 6"></path></svg>
                 </div>
               </div>
@@ -137,13 +137,13 @@ export default function LiveStreamCommandCenter() {
 
             {/* 2. PRODUCTION OUTPUT (Progress Bars) */}
             <div className="h-40 bg-[#0A3161]/50 border border-[#B31942] rounded-lg p-5 flex flex-col justify-between hover:border-[#B31942]/50 transition-colors">
-              <h3 className="text-[#0A3161]/60 text-xs font-bold uppercase tracking-wider">Daily Production</h3>
+              <h3 className="text-[#B31942] text-xs font-bold uppercase tracking-wider">Daily Production</h3>
 
               <div className="space-y-3">
                 {/* Item 1 */}
                 <div>
                   <div className="flex justify-between text-xs mb-1">
-                    <span className="text-[#0A3161]/40">Steel Castings</span>
+                    <span className="text-white">Steel Castings</span>
                     <span className="text-white font-mono">1,240 / 1,500</span>
                   </div>
                   <div className="w-full bg-[#0A3161] h-1.5 rounded-full overflow-hidden">
@@ -165,7 +165,7 @@ export default function LiveStreamCommandCenter() {
 
             {/* 3. ENERGY CONSUMPTION (Gauge/Stats) */}
             <div className="h-40 bg-[#0A3161]/50 border border-[#B31942] rounded-lg p-5 hover:border-[#B31942]/50 transition-colors">
-              <h3 className="text-[#0A3161]/60 text-xs font-bold uppercase tracking-wider mb-4">Grid Load</h3>
+              <h3 className="text-[#B31942] text-xs font-bold uppercase tracking-wider mb-4">Grid Load</h3>
               <div className="flex items-center gap-4">
                 {/* Circular "Gauge" using CSS borders */}
                 <div className="relative w-16 h-16 rounded-full border-4 border-[#0A3161] flex items-center justify-center">
@@ -173,16 +173,16 @@ export default function LiveStreamCommandCenter() {
                   <span className="text-xs font-bold text-white">78%</span>
                 </div>
                 <div className="space-y-1">
-                  <p className="text-sm text-[#0A3161]/40">Current Usage</p>
+                  <p className="text-sm text-white">Current Usage</p>
                   <p className="text-xl font-bold text-white">42.5 <span className="text-sm font-normal text-[#0A3161]/70">MW</span></p>
-                  <p className="text-[10px] text-green-500">● Optimal Range</p>
+                  <p className="text-[10px] text-white">● Optimal Range</p>
                 </div>
               </div>
             </div>
 
             {/* 4. LOGISTICS MAP (Dot Simulation) */}
             <div className="h-40 bg-[#0A3161]/50 border border-[#B31942] rounded-lg p-5 relative overflow-hidden hover:border-[#B31942]/50 transition-colors">
-              <h3 className="text-[#0A3161]/60 text-xs font-bold uppercase tracking-wider relative z-10">Active Shipments</h3>
+              <h3 className="text-[#B31942] text-xs font-bold uppercase tracking-wider relative z-10">Active Shipments</h3>
 
               {/* Fake Map Dots */}
               <div className="absolute inset-0 opacity-30">
@@ -206,7 +206,7 @@ export default function LiveStreamCommandCenter() {
 
               <div className="absolute bottom-4 left-5 z-10">
                 <p className="text-2xl font-bold text-white">1,892</p>
-                <p className="text-[10px] text-[#0A3161]/60">In Transit Global</p>
+                <p className="text-[10px] text-white">In Transit Global</p>
               </div>
             </div>
 

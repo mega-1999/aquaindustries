@@ -9,7 +9,7 @@ const searchData = [
   { title: "Ductile Iron Benefits", category: "Materials > Ductile Iron", href: "/materials/ductile-iron" },
   { title: "1000 Series Curb Boxes", category: "Products > 1000 Series", href: "/products/1000-series" },
   { title: "How to Request a Quote", category: "Support > Quotations", href: "/request-quote" },
-  { title: "Team METALSVERSE Login Portal", category: "Login > Team", href: "/login/team" },
+  { title: "Team Metalverse Login Portal", category: "Login > Team", href: "/login/team" },
   { title: "Customer Login Portal", category: "Login > Customer", href: "/login/customer" },
   { title: "Logistics & Shipping Info", category: "Corporate > Logistics", href: "/logistics" },
   { title: "Warranties & Return Policy", category: "Policies > Warranties", href: "/policies" },

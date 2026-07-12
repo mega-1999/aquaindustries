@@ -4,11 +4,11 @@ import React from 'react';
 import Image from 'next/image';
 import Link from 'next/link';
 
-// Adapted content for METALSVERSE Foundries
+// Adapted content for Metalverse  Industries
 const marketUpdates = [
   {
     id: 1,
-    title: "METALSVERSE Foundries Quality Tests",
+    title: "Metalverse  Industries Quality Tests",
     description: "We test every casting batch for excellent tensile strength and durability to keep components and personnel safe under extreme conditions.",
     image: "/assets/image9.jpeg"
   },

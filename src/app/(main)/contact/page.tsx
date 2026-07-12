@@ -85,7 +85,7 @@ const ContactUs = () => {
     description: "We are dedicated to providing excellent service. Contact us anytime; we look forward to assisting you",
     address: "18 King St E Ste 1400, Toronto, ON M5C IC4, CANADA",
     phone: "705 710 5505",
-    email: "info@megafoundries.com",
+    email: "info@metalversefoundries.com",
     // Google Map Embed for Toronto
     mapSrc: "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d184551.8097336271!2d-79.54286569827758!3d43.71840371276628!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x89d4cb90d7c63ba5%3A0x323555502ab4c477!2sToronto%2C%20ON%2C%20Canada!5e0!3m2!1sen!2sus!4v1652901234567!5m2!1sen!2sus"
   };
@@ -97,7 +97,7 @@ const ContactUs = () => {
     description: "We are dedicated to providing excellent service. Contact us anytime; we look forward to assisting you",
     address: "105 MAXES ROAD Melville, NY 11737 USA",
     phone: "307 788 7700",
-    email: "info@megafoundries.com",
+    email: "info@metalversefoundries.com",
     // Google Map Embed for New York
     mapSrc: "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d193595.15830894612!2d-74.11976389064203!3d40.69766374869555!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x89c24fa5d33f083b%3A0xc80b8f06e177fe62!2sNew%20York%2C%20NY%2C%20USA!5e0!3m2!1sen!2sus!4v1652901987654!5m2!1sen!2sus"
   };
@@ -124,7 +124,7 @@ const ContactUs = () => {
           Get In Touch With Us
         </h2>
         <p className="text-[20px] py-5 font-semibold uppercase tracking-widest text-[#B31942] mb-2">
-          METALSVERSE FOUNDRIES | the best industry services
+          Metalverse  Industries | the best industry services
         </p>
         <div className="relative z-10 container mx-auto px-4 text-center">
 
@@ -168,7 +168,7 @@ const ContactUs = () => {
           {/* Section 2: Form Header Text */}
           <div className="text-center mb-12">
             <h4 className="text-[#B31942] font-bold uppercase tracking-wider mb-3">
-              METALSVERSE FOUNDRIES | SEND US A MESSAGE
+              Metalverse  Industries | SEND US A MESSAGE
             </h4>
             <p className="text-[#0A3161]/70">
               The next-generation platform for industrial trade.

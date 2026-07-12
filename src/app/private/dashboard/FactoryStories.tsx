@@ -22,7 +22,7 @@ interface Story {
 const INITIAL_STORIES: Story[] = [
   // {
   //   id: '1',
-  //   vendorName: 'METALSVERSE Foundries – Precast Systems',
+  //   vendorName: 'Metalverse  Industries – Precast Systems',
   //   vendorAvatar: '/assets/marine_castings/marine_castings2.jpeg',
   //   mediaUrl: '/video/4. MJ x FE 11.25 Degree.968.mp4',
   //   mediaType: 'VIDEO',
@@ -30,7 +30,7 @@ const INITIAL_STORIES: Story[] = [
   // },
   {
     id: '2',
-    vendorName: 'METALSVERSE Foundries – Manufacturing',
+    vendorName: 'Metalverse  Industries – Manufacturing',
     vendorAvatar: '/assets/marine_castings/marine_castings2.jpeg',
     mediaUrl: '/video/5. MJ x FE 180 Degree.969.mp4',
     mediaType: 'VIDEO',
@@ -38,7 +38,7 @@ const INITIAL_STORIES: Story[] = [
   },
   {
     id: '3',
-    vendorName: 'METALSVERSE Foundries – Infrastructure',
+    vendorName: 'Metalverse  Industries – Infrastructure',
     vendorAvatar: '/assets/marine_castings/marine_castings2.jpeg',
     mediaUrl: '/assets/image3.jpeg',
     mediaType: 'IMAGE',
@@ -46,7 +46,7 @@ const INITIAL_STORIES: Story[] = [
   },
   {
     id: '4',
-    vendorName: 'METALSVERSE Foundries – Installation',
+    vendorName: 'Metalverse  Industries – Installation',
     vendorAvatar: '/assets/marine_castings/marine_castings2.jpeg',
     mediaUrl: '/video/Fire Dumper Mega.470.mp4',
     mediaType: 'VIDEO',
@@ -54,7 +54,7 @@ const INITIAL_STORIES: Story[] = [
   },
   {
     id: '5',
-    vendorName: 'METALSVERSE Foundries – Plant Operations',
+    vendorName: 'Metalverse  Industries – Plant Operations',
     vendorAvatar: '/assets/image5.jpeg',
     mediaUrl: '/video/NEW NEXT GENERATION DESIGNER MANHOLE COVER.mp4',
     mediaType: 'VIDEO',
@@ -62,7 +62,7 @@ const INITIAL_STORIES: Story[] = [
   },
   {
     id: '6',
-    vendorName: 'METALSVERSE Foundries – Structural Elements',
+    vendorName: 'Metalverse  Industries – Structural Elements',
     vendorAvatar: '/assets/marine_castings/marine_castings2.jpeg',
     mediaUrl: '/assets/image6.jpg',
     mediaType: 'IMAGE',
@@ -70,7 +70,7 @@ const INITIAL_STORIES: Story[] = [
   },
   // {
   //   id: '7',
-  //   vendorName: 'METALSVERSE Foundries – Precast Panels',
+  //   vendorName: 'Metalverse  Industries – Precast Panels',
   //   vendorAvatar: '/assets/marine_castings/marine_castings2.jpeg',
   //   mediaUrl: '/assets/image7.jpeg',
   //   mediaType: 'IMAGE',
@@ -78,7 +78,7 @@ const INITIAL_STORIES: Story[] = [
   // },
   {
     id: '8',
-    vendorName: 'METALSVERSE Foundries – Heavy Lifting',
+    vendorName: 'Metalverse  Industries – Heavy Lifting',
     vendorAvatar: '/assets/marine_castings/marine_castings2.jpeg',
     mediaUrl: '/video/NEW NEXT GENERATION DESIGNER MANHOLE COVER.mp4',
     mediaType: 'VIDEO',
@@ -86,7 +86,7 @@ const INITIAL_STORIES: Story[] = [
   },
   {
     id: '9',
-    vendorName: 'METALSVERSE Foundries – Plant Automation',
+    vendorName: 'Metalverse  Industries – Plant Automation',
     vendorAvatar: '/assets/marine_castings/marine_castings2.jpeg',
     mediaUrl: '/assets/image9.jpeg',
     mediaType: 'IMAGE',
@@ -94,7 +94,7 @@ const INITIAL_STORIES: Story[] = [
   },
   {
     id: '10',
-    vendorName: 'METALSVERSE Foundries – Quality Control',
+    vendorName: 'Metalverse  Industries – Quality Control',
     vendorAvatar: '/assets/marine_castings/marine_castings2.jpeg',
     mediaUrl: '/assets/image10.jpeg',
     mediaType: 'IMAGE',
@@ -102,7 +102,7 @@ const INITIAL_STORIES: Story[] = [
   },
   {
     id: '11',
-    vendorName: 'METALSVERSE Foundries – Site Execution',
+    vendorName: 'Metalverse  Industries – Site Execution',
     vendorAvatar: '/assets/marine_castings/marine_castings2.jpeg',
     mediaUrl: '/video/NEW NEXT GENERATION DESIGNER MANHOLE COVER.mp4',
     mediaType: 'VIDEO',
@@ -110,7 +110,7 @@ const INITIAL_STORIES: Story[] = [
   },
   {
     id: '12',
-    vendorName: 'METALSVERSE Foundries – Infrastructure Projects',
+    vendorName: 'Metalverse  Industries – Infrastructure Projects',
     vendorAvatar: '/assets/marine_castings/marine_castings2.jpeg',
     mediaUrl: '/assets/image12.jpg',
     mediaType: 'IMAGE',
@@ -118,7 +118,7 @@ const INITIAL_STORIES: Story[] = [
   }, 
   // {
   //   id: '13',
-  //   vendorName: 'METALSVERSE Foundries – Precast Beams & Columns',
+  //   vendorName: 'Metalverse  Industries – Precast Beams & Columns',
   //   vendorAvatar: '/assets/image5.jpeg',
   //   mediaUrl: '/assets/image13.jpg',
   //   mediaType: 'IMAGE',
@@ -126,7 +126,7 @@ const INITIAL_STORIES: Story[] = [
   // },
   {
     id: '14',
-    vendorName: 'METALSVERSE Foundries – Mold Fabrication',
+    vendorName: 'Metalverse  Industries – Mold Fabrication',
     vendorAvatar: '/assets/image5.jpeg',
     mediaUrl: '/assets/image14.jpeg',
     mediaType: 'IMAGE',
@@ -134,7 +134,7 @@ const INITIAL_STORIES: Story[] = [
   },
   {
     id: '15',
-    vendorName: 'METALSVERSE Foundries – Yard Storage & Handling',
+    vendorName: 'Metalverse  Industries – Yard Storage & Handling',
     vendorAvatar: '/assets/image5.jpeg',
     mediaUrl: '/assets/image15.jpeg',
     mediaType: 'IMAGE',
@@ -142,7 +142,7 @@ const INITIAL_STORIES: Story[] = [
   },
   {
     id: '16',
-    vendorName: 'METALSVERSE Foundries – Crane Operations',
+    vendorName: 'Metalverse  Industries – Crane Operations',
     vendorAvatar: '/assets/image5.jpeg',
     mediaUrl: '/video/NEW NEXT GENERATION DESIGNER MANHOLE COVER.mp4',
     mediaType: 'VIDEO',
@@ -150,7 +150,7 @@ const INITIAL_STORIES: Story[] = [
   },
   {
     id: '17',
-    vendorName: 'METALSVERSE Foundries – Batch Plant Operations',
+    vendorName: 'Metalverse  Industries – Batch Plant Operations',
     vendorAvatar: '/assets/image5.jpeg',
     mediaUrl: '/assets/image17.jpg',
     mediaType: 'IMAGE',
@@ -158,7 +158,7 @@ const INITIAL_STORIES: Story[] = [
   },
   {
     id: '18',
-    vendorName: 'METALSVERSE Foundries – On-Site Assembly',
+    vendorName: 'Metalverse  Industries – On-Site Assembly',
     vendorAvatar: '/assets/image5.jpeg',
     mediaUrl: '/assets/image18.jpeg',
     mediaType: 'IMAGE',
@@ -166,7 +166,7 @@ const INITIAL_STORIES: Story[] = [
   },
   // {
   //   id: '19',
-  //   vendorName: 'METALSVERSE Foundries – Finished Precast Structures',
+  //   vendorName: 'Metalverse  Industries – Finished Precast Structures',
   //   vendorAvatar: '/assets/image5.jpeg',
   //   mediaUrl: '/assets/image19.jpeg',
   //   mediaType: 'IMAGE',

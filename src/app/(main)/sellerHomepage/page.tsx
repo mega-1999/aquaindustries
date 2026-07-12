@@ -23,7 +23,7 @@ export default function PartnerProgramPage() {
 
           <div className="flex flex-col justify-center  py-16   z-10">
             <span className="text-[#0A3161]/70 font-bold tracking-widest uppercase text-sm">
-              METALSVERSE FOUNDRIES PARTNER PROGRAM
+              Metalverse  Industries PARTNER PROGRAM
             </span>
             <span className="text-[#B31942] font-bold tracking-widest uppercase text-sm mb-4">
               Generations ahead with the next generation active
@@ -113,7 +113,7 @@ export default function PartnerProgramPage() {
         <div className="max-w-6xl mx-auto px-4 text-center">
 
           <h4 className="text-[#B31942] font-bold text-sm uppercase tracking-wider mb-3">
-            METALSVERSE Foundries Digital Portal
+            Metalverse  Industries Digital Portal
           </h4>
           <h2 className="text-[30px] md:text-[40px] font-bold text-[#0A3161] mb-6">
             Digitize Your Inventory & Streamline Procurement

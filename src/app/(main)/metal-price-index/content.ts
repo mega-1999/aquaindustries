@@ -24,7 +24,7 @@ export const liveChatData: FeatureBlockContent[] = [{
         {
             icon: Clock,
             title: 'Instant Response Time',
-            description: 'METALSVERSE Foundries, a global startup, headquartered in Amman, Jordan, and has offices across the world. With deep rooted knowledge in sourcing and procurement after years of vetting and handling projects in the power generation, oil & gas, water & wastewater pipeline infrastructure, we clear the pressure points faced in the due process of procuring materials. With an aim to be the power directory of the world, we bring in both a great online portal to ease buying & selling and industrial experts to help you find the right product and business. Sign in with us and see the positive difference we bring in to your business.',
+            description: 'Metalverse  Industries, a global startup, headquartered in Amman, Jordan, and has offices across the world. With deep rooted knowledge in sourcing and procurement after years of vetting and handling projects in the power generation, oil & gas, water & wastewater pipeline infrastructure, we clear the pressure points faced in the due process of procuring materials. With an aim to be the power directory of the world, we bring in both a great online portal to ease buying & selling and industrial experts to help you find the right product and business. Sign in with us and see the positive difference we bring in to your business.',
         },
     ],
     imgSrc: '/assets/image7.jpeg',

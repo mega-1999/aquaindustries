@@ -16,7 +16,7 @@ const chatBlogContent = [
   {
     icon: MessageCircle,
     title: 'Seamless Integration',
-    description: 'Our live chat integrates with METALSVERSE Foundriess CRM, ensuring all interactions are logged and easily accessible for future follow-up.'
+    description: 'Our live chat integrates with Metalverse  Industriess CRM, ensuring all interactions are logged and easily accessible for future follow-up.'
   },
 ]
 
@@ -35,7 +35,7 @@ const ChatBlog = () => {
               Live Chat: Resolve up to 80% of cases
             </h2>
             <p className='mt-3 text-sm text-[#0A3161]/80'>
-              METALSVERSE Foundries’s Live Chat enables real-time support, allowing businesses to resolve up to 80% of inquiries instantly and efficiently.
+              Metalverse  Industries’s Live Chat enables real-time support, allowing businesses to resolve up to 80% of inquiries instantly and efficiently.
             </p>
           </div>
 

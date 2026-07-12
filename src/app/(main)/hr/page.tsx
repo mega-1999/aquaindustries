@@ -99,7 +99,7 @@ export default function CareersPage() {
       {/* === VALUES / CULTURE === */}
       <section className="py-20 bg-white">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-          <h2 className="text-3xl font-bold text-[#0A3161] mb-4">Why METALSVERSE Foundries?</h2>
+          <h2 className="text-3xl font-bold text-[#0A3161] mb-4">Why Metalverse  Industries?</h2>
           <p className="text-[#0A3161]/80 max-w-2xl mx-auto mb-16">
             We don't just cast metal; we forge careers. Our culture is built on respect, safety, and the belief that every employee contributes to our success.
           </p>
@@ -197,7 +197,7 @@ export default function CareersPage() {
                 <span className="text-[#0A3161]/60 text-sm ml-2">Employee since 2012</span>
               </div>
               <blockquote className="text-2xl md:text-3xl font-medium leading-relaxed mb-6">
-                "I started as a shift operator 12 years ago. METALSVERSE Foundries paid for my engineering degree, and now I lead the Quality Control division. This is a place where hard work actually pays off."
+                "I started as a shift operator 12 years ago. Metalverse  Industries paid for my engineering degree, and now I lead the Quality Control division. This is a place where hard work actually pays off."
               </blockquote>
               <div>
                 <cite className="not-italic font-bold text-white text-lg block">David Miller</cite>

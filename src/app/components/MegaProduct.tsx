@@ -2,72 +2,76 @@ import React from "react";
 import Link from "next/link";
 const categories = [
   "Manhole Covers",
-  "Gully Gratings",
-  "Heavy Traffic Gratings",
-  "Access Covers",
-  "Telecom & Electrical",
-  "Drainage Castings",
+  "Trench Systems",
+  "Paving Risers",
+  "Hactches & Access Covers for Inspection Chambers",
+  "Fiber Optic, Telecom & Electrical Covers",
+  "Precast Concrete Molds",
+  "Petro Gas Station Products",
   "Tree Grates",
-  "Standard Junction Boxes",
-  "Industrial Castings",
-  "Support Brackets"
+  "Marine Castings",
+  "Detectable Warning Plates",
+  "Water Works Products",
+  "Ornamental Castings",
+  "Water Sampling Station",
+  "Precast Concrete Molds"
 ];
 
 const products = [
   {
     id: "manhole-covers",
     title: "Manhole Covers",
-    description: "Available in modern designs and various resistance classes. METALSVERSE Foundries ductile iron castings are engineered securely for high-load municipal sealing and sewage networks.",
-    image: "/assets/image7.jpeg",
+    description: "Available in modern designs and various resistance classes. Metalverse  Industries ductile iron castings are engineered securely for high-load municipal sealing and sewage networks.",
+    image: "/assets/image4.jpg",
     link: "/products/manhole-covers"
   },
   {
     id: "trench-system",
     title: "Trench Systems",
     description: "High-performance iron castings supplied in multiple sizes and load classes for efficient rainwater collection on urban roads, highways, parking lots, and industrial plants.",
-    image: "/assets/image7.jpeg",
+    image: "/assets/MEGA/pre-trench-01.JPG",
     link: "/products/gully-gratings"
   },
   {
     id: "paving-risers",
     title: "Paving Risers",
     description: "Heavy-duty iron castings engineered to withstand intensive point loads up to 90 tons. The ultimate casting solution for heavy industrial zones, logistics hubs, airports, and dockyards.",
-    image: "/assets/image7.jpeg",
+    image: "/assets/PAVING-RISERS/paving riser 1.5201.png",
     link: "/products/heavy-traffic"
   },
   {
     id: "Hatches & Access-covers",
     title: "Hactches & Access Covers for Inspection Chambers",
     description: "Versatile casting solutions for inspection and access over water, sewage, and electrical distribution chambers. Built with airtight sealing, dual-face options, and modular sizing.",
-    image: "/assets/image7.jpeg",
+    image: "/assets/MEGA/HATCHES COVER.png",
     link: "/products/access-covers"
   },
   {
     id: "utility-telecom-electrical",
     title: "Fiber Optic, Telecom & Electrical Covers",
     description: "Specialized infrastructure castings offering secure access, single/articulated mechanics, and tamper-proof locking mechanisms across varying heavy-duty utility networks.",
-    image: "/assets/image7.jpeg",
+    image: "/assets/MEGA/white.png",
     link: "/products/telecom-covers"
   },
   {
     id: "precast-concrete molds",
     title: "Precast Concrete Molds",
     description: "Premium linear drainage solutions engineered with solid ductile iron casting gratings to ensure rapid surface water evacuation and maximum performance.",
-    image: "/assets/image7.jpeg",
+    image: "/assets/MEGA/catch-01 (3).JPG",
     link: "/products/drainage-castings"
   },
   {
     id: "petro-gas-station-products",
     title: "Petro Gas Station Products",
     description: "Specialized infrastructure castings offering secure access, single/articulated mechanics, and tamper-proof locking mechanisms across varying heavy-duty utility networks.",
-    image: "/assets/image7.jpeg",
+    image: "/assets/MEGA/MONITERING WELL STATION.11 - Copy.png",
     link: "/products/telecom-covers"
   },
   {
     id: "tree-grates",
     title: "Tree Grates",
     description: "Premium linear drainage solutions engineered with solid ductile iron casting gratings to ensure rapid surface water evacuation and maximum performance.",
-    image: "/assets/image7.jpeg",
+    image: "/assets/image9.jpeg",
     link: "/products/drainage-castings"
   },
   {
@@ -81,35 +85,35 @@ const products = [
     id: "detectable-warning-plates",
     title: "Detectable Warning Plates",
     description: "Premium linear drainage solutions engineered with solid ductile iron casting gratings to ensure rapid surface water evacuation and maximum performance.",
-    image: "/assets/image7.jpeg",
+    image: "/assets/MEGA/white.png",
     link: "/products/drainage-castings"
   },
   {
     id: "water-works-product",
     title: "Water Works Products",
     description: "Specialized infrastructure castings offering secure access, single/articulated mechanics, and tamper-proof locking mechanisms across varying heavy-duty utility networks.",
-    image: "/assets/image7.jpeg",
+    image: "/assets/MEGA/1.1 - Copy.png",
     link: "/products/telecom-covers"
   },
   {
     id: "ornamental-castings",
     title: "Ornamental Castings",
     description: "Premium linear drainage solutions engineered with solid ductile iron casting gratings to ensure rapid surface water evacuation and maximum performance.",
-    image: "/assets/image7.jpeg",
+    image: "/assets/MEGA/white.png",
     link: "/products/drainage-castings"
   },
   {
     id: "water-sampling-station",
     title: "Water Sampling Station",
     description: "Specialized infrastructure castings offering secure access, single/articulated mechanics, and tamper-proof locking mechanisms across varying heavy-duty utility networks.",
-    image: "/assets/image7.jpeg",
+    image: "/assets/MEGA/sampling stations.png",
     link: "/products/telecom-covers"
   },
   {
     id: "precast-concrete molds",
     title: "Precast Concrete Molds",
     description: "Premium linear drainage solutions engineered with solid ductile iron casting gratings to ensure rapid surface water evacuation and maximum performance.",
-    image: "/assets/image7.jpeg",
+    image: "/assets/MEGA/catch-01 (3).JPG",
     link: "/products/drainage-castings"
   }
 ];
@@ -122,7 +126,7 @@ const MegaProduct = () => {
         {/* Header Section */}
         <div className="border-b border-white/20 pb-6 mb-10">
           <h2 className="text-3xl font-light tracking-wide text-white mb-2">
-            Explore <span className="font-semibold text-[#B31942]">METALSVERSE Foundries</span> Products
+            Explore <span className="font-semibold text-[#B31942]">Metalverse  Industries</span> Products
           </h2>
           <p className="text-sm text-white/60">
             Complete line of world-class nodular ductile iron castings (Fe 50007), delivering ultimate durability and engineering modernity to your infrastructure projects.

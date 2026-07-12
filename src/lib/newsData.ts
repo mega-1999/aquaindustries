@@ -5,7 +5,7 @@ export const newsArticles = [
     id: 1,
     title: "Indian Culture: A Tapestry of Diversity and Heritage",
     slug: "indian-culture-tapestry-diversity",
-    author: "METALSVERSE Foundries Admin",
+    author: "Metalverse  Industries Admin",
     date: "20 Nov 2025",
     image: "/assets/image1.jpeg",
     excerpt: "Discover the richness of Indian culture, a vibrant blend of traditions, festivals, art, and spirituality, celebrated worldwide for its diversity."
@@ -14,7 +14,7 @@ export const newsArticles = [
     id: 2,
     title: "Managing power transformers in service efficiently",
     slug: "managing-power-transformers",
-    author: "METALSVERSE Foundries Admin",
+    author: "Metalverse  Industries Admin",
     date: "08 Oct 2025",
     image: "/assets/image2.jpeg",
     excerpt: "Utilities are under intense pressure to maximize the use of their current transformer asset base in order to keep rates down while yet providing excellence."
@@ -23,7 +23,7 @@ export const newsArticles = [
     id: 3,
     title: "Practical guidelines for protection system engineering",
     slug: "guidelines-protection-system",
-    author: "METALSVERSE Foundries Admin",
+    author: "Metalverse  Industries Admin",
     date: "24 Sep 2025",
     image: "/assets/image3.jpeg",
     excerpt: "Relay protection and the whole bunch of protection system engineering around the substation are quite interesting from the point of view of creativity."
@@ -32,7 +32,7 @@ export const newsArticles = [
     id: 4,
     title: "Twelve high voltage cable construction methods",
     slug: "high-voltage-cable-construction",
-    author: "METALSVERSE Foundries Admin",
+    author: "Metalverse  Industries Admin",
     date: "24 Sep 2025",
     image: "/assets/image4.jpg",
     excerpt: "This technical article discusses twelve different methods for laying high voltage cables. Out of the ten, four are deemed conventional and eight are specialized."
@@ -43,7 +43,7 @@ export const blogPosts = [
     id: 1,
     title: "The Future of Metal Casting: Automation & Robotics",
     slug: "future-of-metal-casting-automation",
-    author: "METALSVERSE Editorial Team",
+    author: "Metalverse Editorial Team",
     date: "28 Nov 2025",
     image: "/assets/image15.jpeg",
     excerpt: "How robotic arms and automated molding lines are increasing precision and safety in modern foundries."
@@ -70,7 +70,7 @@ export const blogPosts = [
     id: 4,
     title: "Sustainability in Forging: Reducing Carbon Footprint",
     slug: "sustainability-in-forging",
-    author: "METALSVERSE Admin",
+    author: "Metalverse Admin",
     date: "25 Oct 2025",
     image: "/assets/image11.jpg",
     excerpt: "Exploring new electric furnace technologies and sand reclamation processes that are making foundries greener."
@@ -256,7 +256,7 @@ export const services = [
   {
     icon: TowerControl,
     title: "METALS & FOUNDRY",
-    description: "METALSVERSE Foundries connects businesses with premium foundry metals, castings, and alloy products. Our platform enables seamless sourcing for automotive, construction, engineering, and large-scale industrial manufacturing.",
+    description: "Metalverse  Industries connects businesses with premium foundry metals, castings, and alloy products. Our platform enables seamless sourcing for automotive, construction, engineering, and large-scale industrial manufacturing.",
   },
   {
     icon: Factory,
@@ -266,7 +266,7 @@ export const services = [
   {
     icon: Amphora,
     title: "STEEL & METAL SUPPLIES",
-    description: "METALSVERSE Foundries supports the oil, gas, and petrochemical sectors with equipment, pipelines, valves, and safety systems, ensuring industries meet operational standards and project demands with trusted suppliers.",
+    description: "Metalverse  Industries supports the oil, gas, and petrochemical sectors with equipment, pipelines, valves, and safety systems, ensuring industries meet operational standards and project demands with trusted suppliers.",
   },
   {
     icon: Droplets,

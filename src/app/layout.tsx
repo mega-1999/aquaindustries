@@ -16,7 +16,7 @@ const geistMono = Geist_Mono({
 
 // ✅ 1. Add Metadata (Title & Description)
 export const metadata: Metadata = {
-  title: "METALSVERSE Foundry | B2B Manufacturing Portal",
+  title: "Metalverse Foundry | B2B Manufacturing Portal",
   description: "The complete platform for foundries, forgers, and fabricators.",
 };
 
@@ -29,7 +29,6 @@ export default function RootLayout({
     <html lang="en">
       <head>
          {/* Optional: Add custom favicon links here if needed */}
-         <link rel="icon" type="image/png" href="/apple-touch-icon.png" />
       </head>
       <body className={`${geistSans.variable} ${geistMono.variable} antialiased bg-[#0A3161]/5 text-white`}>
         

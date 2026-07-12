@@ -77,12 +77,12 @@ const Footer = () => {
               <div className="flex gap-4">
                 <div className="bg-white p-2 rounded-lg w-28 h-24 flex items-center justify-center shadow-md hover:scale-105 transition-transform">
                   <Link href={'/'} className="w-full h-full relative">
-                    <Image src={'/MMO.png'} alt='METALSVERSE Foundries' fill className="object-contain" />
+                    <Image src={'/MMO.png'} alt='Metalverse  Industries' fill className="object-contain" />
                   </Link>
                 </div>
                 <div className="bg-white p-2 rounded-lg w-28 h-24 flex items-center justify-center shadow-md hover:scale-105 transition-transform">
                   <Link href={'/'} className="w-full h-full relative">
-                    <Image src={'/MME.png'} alt='METALSVERSE METALS' fill className="object-contain" />
+                    <Image src={'/MME.png'} alt='Metalverse METALS' fill className="object-contain" />
                   </Link>
                 </div>
                 <div className="bg-white p-2 rounded-lg w-28 h-24 flex items-center justify-center shadow-md hover:scale-105 transition-transform">
@@ -117,7 +117,7 @@ const Footer = () => {
             <div className="flex  ">
               <div className="bg-white p-2 rounded-lg w-80 h-36 flex items-center justify-center shadow-md hover:scale-105 transition-transform">
                 <Link href={'/'} className="w-full h-full relative">
-                  <Image src={'/MIL.png'} alt='METALSVERSE Industries' fill className="object-contain" />
+                  <Image src={'/MIL.png'} alt='Metalverse Industries' fill className="object-contain" />
                 </Link>
               </div>
             </div>
@@ -139,12 +139,12 @@ const Footer = () => {
                 </div>
                 <div className="bg-white p-2 rounded-lg w-28 h-24 flex items-center justify-center shadow-md hover:scale-105 transition-transform">
                   <Link href={'/'} className="w-full h-full relative">
-                    <Image src={'/MCA.png'} alt='METALSVERSE Forge' fill className="object-contain" />
+                    <Image src={'/MCA.png'} alt='Metalverse Forge' fill className="object-contain" />
                   </Link>
                 </div>
                 <div className="bg-white p-2 rounded-lg w-28 h-24 flex items-center justify-center shadow-md hover:scale-105 transition-transform">
                   <Link href={'/'} className="w-full h-full relative">
-                    <Image src={'/MWA.png'} alt='METALSVERSE Forge' fill className="object-contain" />
+                    <Image src={'/MWA.png'} alt='Metalverse Forge' fill className="object-contain" />
                   </Link>
                 </div>
               </div>
@@ -232,7 +232,7 @@ const Footer = () => {
 
           {/* --- COL 1: SOCIAL ICONS (Left Aligned) --- */}
           <div className="flex flex-col items-center md:justify-start">
-            <h4 className="text-white text-sm font-semibold mb-3 tracking-wide">info@megafoundries.com</h4>
+            <h4 className="text-white text-sm font-semibold mb-3 tracking-wide">info@metalversefoundries.com</h4>
             <div className="flex   justify-center   items-center md:justify-start gap-3 ">
               {[Linkedin, Facebook, Instagram, Twitter].map((Icon, i) => (
                 <Link
@@ -251,7 +251,7 @@ const Footer = () => {
       <div className="border-t border-red-800 w-full px-4 sm:px-6 lg:px-10 py-6 pb-10 bg-[#B31942]">
         <div className="flex justify-center items-center">
           <p className="text-lg text-white font-medium">
-            ©1999-2026 Copyright <strong>METALSVERSE Industries & Groups</strong> — All Rights Reserved.
+            ©1999-2026 Copyright <strong>Metalverse Industries & Groups</strong> — All Rights Reserved.
           </p>
         </div>
       </div>

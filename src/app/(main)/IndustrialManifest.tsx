@@ -47,7 +47,7 @@ export default function IndustrialManifest() {
         <div className="border-b border-[#0A3161]/30 pb-12 mb-20 flex flex-col xl:flex-row xl:items-end justify-between gap-8">
           <div className="space-y-4">
             <span className="text-xs uppercase tracking-[0.4em] font-black text-[#B31942] block">
-              The METALSVERSE Foundries Speed-Matrix
+              The Metalverse  Industries Speed-Matrix
             </span>
             <h2 className="text-4xl sm:text-6xl md:text-7xl font-black uppercase tracking-tighter leading-none">
               NOT ONE STEP BUT <br />
@@ -80,7 +80,7 @@ export default function IndustrialManifest() {
               <span className="text-[#B31942]">ALL IN ONE GO</span>
             </h3>
             <p className="text-white/70 text-base max-w-2xl font-light leading-relaxed mb-8">
-              No intermediary standard hand-offs. METALSVERSE Foundries integrates rapid metallurgical prototyping straight into heavy industrial mass production lines, flashing raw blueprints into solid iron castings flawlessly.
+              No intermediary standard hand-offs. Metalverse  Industries integrates rapid metallurgical prototyping straight into heavy industrial mass production lines, flashing raw blueprints into solid iron castings flawlessly.
             </p>
             
             <button className="inline-flex items-center gap-3 px-6 py-3.5 bg-[#B31942] hover:bg-[#8f1435] text-white text-xs font-bold uppercase tracking-widest transition-all duration-300 rounded-xs">

@@ -28,7 +28,7 @@ const techFeatures = [
 export default function AiRobotics() {
   return (
     <section className="py-24 bg-[#0A3161] text-white overflow-hidden relative">
-      <div className="absolute inset-0 opacity-10 pointer-events-none bg-[url('/assets/image16.jpg')]" />
+      <div className="absolute inset-0 opacity-40 pointer-events-none bg-[url('/assets/image17.jpeg')]" />
       
       <div className="max-w-7xl mx-auto px-6 relative z-10">
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
@@ -41,7 +41,7 @@ export default function AiRobotics() {
           >
             <div className="relative z-10 rounded-3xl border border-white/10 overflow-hidden bg-[#0A3161] backdrop-blur-xl p-2 shadow-2xl">
               <Image 
-                src="/assets/image8.jpg" 
+                src="/assets/image18.jpeg" 
                 alt="AI Robotics"
                 className="rounded-2xl opacity-80"
                 width={1000}
@@ -70,8 +70,8 @@ export default function AiRobotics() {
             >
               The Future is <span className="text-[#B31942]">Automated</span>
             </motion.h2>
-            <p className="text-[#0A3161]/60 text-lg mb-12 leading-relaxed">
-              METALSVERSE Foundries is leading the transition to Industry 4.0. We integrate neural networks and robotic precision to eliminate human error and maximize casting efficiency.
+            <p className="text-white text-lg mb-12 leading-relaxed">
+              Metalverse  Industries is leading the transition to Industry 4.0. We integrate neural networks and robotic precision to eliminate human error and maximize casting efficiency.
             </p>
 
             <div className="space-y-6">
@@ -89,7 +89,7 @@ export default function AiRobotics() {
                   </div>
                   <div>
                     <h4 className="text-xl font-bold mb-1 tracking-tight">{tech.title}</h4>
-                    <p className="text-[#0A3161]/70 text-sm leading-relaxed">{tech.desc}</p>
+                    <p className="text-white text-sm leading-relaxed">{tech.desc}</p>
                   </div>
                 </motion.div>
               ))}

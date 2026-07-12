@@ -100,11 +100,11 @@ export default function MegaMagazine() {
       {/* Absolute strict fluid full width padding */}
       <div className="w-full px-4 sm:px-6 lg:px-10">
         
-        {/* TOP ROW: METALSVERSE Foundries Custom Header Banner */}
+        {/* TOP ROW: Metalverse  Industries Custom Header Banner */}
         <div className="w-full bg-[#0A3161] border border-white/10 p-6 mb-8 flex flex-col md:flex-row items-center justify-between rounded-xs gap-4">
           <div className="flex items-center gap-3">
             <div className="text-2xl font-black tracking-tighter text-white">
-              METALSVERSE <span className="text-[#B31942]">FOUNDRIES</span>
+              Metalverse <span className="text-[#B31942]">FOUNDRIES</span>
             </div>
             <div className="h-6 w-[1px] bg-[#0A3161] hidden md:block" />
             <span className="text-[10px] font-mono tracking-widest text-white/70 uppercase">
@@ -112,7 +112,7 @@ export default function MegaMagazine() {
             </span>
           </div>
           <div className="text-center md:text-right text-xs text-white font-mono">
-            CALL: (307) 788-7700 <span className="mx-2 text-white">•</span> VISIT: WWW.MEGAFOUNDRIES.COM
+            CALL: (307) 788-7700 <span className="mx-2 text-white">•</span> VISIT: WWW.metalversefoundries.COM
           </div>
         </div>
 

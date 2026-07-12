@@ -2,66 +2,66 @@ import Image from "next/image"
 import { cn } from "@/lib/utils"
 import { menuData } from "@/lib/menuData2" // 1. Import menuData
 
-// Data modeled after your "METALSVERSE Foundries" capabilities
+// Data modeled after your "Metalverse  Industries" capabilities
 const tagLines = [
     {
         id: 1,
-        lines: "Be bold. Be powerful. The Futuristic METALSVERSE Force.",
-        description: "Represents METALSVERSE Foundries’ commitment to bold innovation, powerful engineering, and a futuristic vision. It reflects our focus on pioneering technologies, next-generation materials, and advanced manufacturing systems that position us as a global force transforming the future of metal and industrial engineering.",
+        lines: "Be bold. Be powerful. The Futuristic Metalverse Force.",
+        description: "Represents Metalverse  Industries’ commitment to bold innovation, powerful engineering, and a futuristic vision. It reflects our focus on pioneering technologies, next-generation materials, and advanced manufacturing systems that position us as a global force transforming the future of metal and industrial engineering.",
         imgUrl: "/assets/image1.jpeg"
     },
     {
         id: 2,
-        lines: "METALSVERSE Options. METALSVERSE Outcomes.",
-        description: "Highlights the extensive variety of products, solutions, and industrial services METALSVERSE Foundries offers. From raw materials to advanced manufacturing systems, the company consistently delivers high-value outcomes that exceed expectations through versatility, innovation, and precision engineering.",
+        lines: "Metalverse Options. Metalverse Outcomes.",
+        description: "Highlights the extensive variety of products, solutions, and industrial services Metalverse  Industries offers. From raw materials to advanced manufacturing systems, the company consistently delivers high-value outcomes that exceed expectations through versatility, innovation, and precision engineering.",
         imgUrl: "/assets/image2.jpeg"
     },
     {
         id: 3,
         lines: "A Force to Reckon With.",
-        description: "Positions METALSVERSE Foundries as a dominant and reliable global leader. This tagline reflects our strong industrial capabilities, consistent product performance, and our established reputation in global markets as a trustworthy and powerful industrial partner.",
+        description: "Positions Metalverse  Industries as a dominant and reliable global leader. This tagline reflects our strong industrial capabilities, consistent product performance, and our established reputation in global markets as a trustworthy and powerful industrial partner.",
         imgUrl: "/assets/image3.jpeg"
     },
     {
         id: 4,
         lines: "Learning Never Ends. Excellence Never Stops.",
-        description: "Represents METALSVERSE Foundries’ internal culture of continuous learning, modern training, R&D enhancement, skill development, and dedication to industry-leading standards. Excellence is a process, not a destination.",
+        description: "Represents Metalverse  Industries’ internal culture of continuous learning, modern training, R&D enhancement, skill development, and dedication to industry-leading standards. Excellence is a process, not a destination.",
         imgUrl: "/assets/image4.jpg"
     },
     {
         id: 5,
         lines: "Always Delivering Beyond Expectations.",
-        description: "Emphasizes METALSVERSE Foundries’ reputation for exceeding industry standards and client expectations. The company consistently delivers superior quality, innovative solutions, and high-performance engineering across all product lines.",
+        description: "Emphasizes Metalverse  Industries’ reputation for exceeding industry standards and client expectations. The company consistently delivers superior quality, innovative solutions, and high-performance engineering across all product lines.",
         imgUrl: "/assets/image5.jpeg"
     },
     {
         id: 6,
-        lines: "The METALSVERSE Guarantee.",
-        description: "Assures customers of long-term durability, reliability, and flawless engineering. The METALSVERSE Guarantee symbolizes trust and confidence in the performance, safety, and structural strength of every product.",
+        lines: "The Metalverse Guarantee.",
+        description: "Assures customers of long-term durability, reliability, and flawless engineering. The Metalverse Guarantee symbolizes trust and confidence in the performance, safety, and structural strength of every product.",
         imgUrl: "/assets/image6.jpg"
     },
     {
         id: 7,
-        lines: "METALSVERSE Savings. Zero Compromise.",
-        description: "Communicates cost-efficiency paired with premium quality. It highlights METALSVERSE Foundries’ ability to provide competitive pricing without compromising on material strength, safety, or engineering excellence.",
+        lines: "Metalverse Savings. Zero Compromise.",
+        description: "Communicates cost-efficiency paired with premium quality. It highlights Metalverse  Industries’ ability to provide competitive pricing without compromising on material strength, safety, or engineering excellence.",
         imgUrl: "/assets/image7.jpeg"
     },
     {
         id: 8,
         lines: "Boundless Possibilities.",
-        description: "Reflects the limitless technological, engineering, and industrial capabilities of METALSVERSE Foundries. Whether scaling production or innovating with new materials, the potential for growth is endless.",
+        description: "Reflects the limitless technological, engineering, and industrial capabilities of Metalverse  Industries. Whether scaling production or innovating with new materials, the potential for growth is endless.",
         imgUrl: "/assets/image8.jpg"
     },
     {
         id: 9,
         lines: "Your Vision. Our Undertaking.",
-        description: "Shows a client-centered approach where METALSVERSE Foundries converts customer concepts into real, functioning industrial solutions. This tagline reflects commitment, precision execution, and a long-term partnership mindset.",
+        description: "Shows a client-centered approach where Metalverse  Industries converts customer concepts into real, functioning industrial solutions. This tagline reflects commitment, precision execution, and a long-term partnership mindset.",
         imgUrl: "/assets/image9.jpeg"
     },
     {
         id: 10,
         lines: "Comforting the Future.",
-        description: "Symbolizes the long-term sustainability, safety, and reliability built into METALSVERSE Foundries’ engineering processes and product designs—ensuring the future is strong, stable, and secure.",
+        description: "Symbolizes the long-term sustainability, safety, and reliability built into Metalverse  Industries’ engineering processes and product designs—ensuring the future is strong, stable, and secure.",
         imgUrl: "/assets/image10.jpeg"
     },
     {
@@ -73,43 +73,43 @@ const tagLines = [
     {
         id: 12,
         lines: "Retire the Vintage. Step Into Modern.",
-        description: "Encourages industries to upgrade from outdated machinery and legacy systems to advanced, efficient, and future-ready solutions created by METALSVERSE Foundries.",
+        description: "Encourages industries to upgrade from outdated machinery and legacy systems to advanced, efficient, and future-ready solutions created by Metalverse  Industries.",
         imgUrl: "/assets/image12.jpg"
     },
     {
         id: 13,
         lines: "Non-Stop Innovations. Non-Stop Progress.",
-        description: "Highlights METALSVERSE Foundries’ continuous investment in R&D, new materials, enhanced engineering methods, and innovative industrial solutions that advance global manufacturing standards.",
+        description: "Highlights Metalverse  Industries’ continuous investment in R&D, new materials, enhanced engineering methods, and innovative industrial solutions that advance global manufacturing standards.",
         imgUrl: "/assets/image13.jpg"
     },
     {
         id: 14,
         lines: "Always Ahead of the Industry.",
-        description: "Positions METALSVERSE Foundries as an industry leader in innovation, global expansion, and next-generation engineering. This tagline reflects a future-focused mindset and competitive advantage.",
+        description: "Positions Metalverse  Industries as an industry leader in innovation, global expansion, and next-generation engineering. This tagline reflects a future-focused mindset and competitive advantage.",
         imgUrl: "/assets/image14.jpeg"
     },
     {
         id: 15,
         lines: "Our Investment Today, Your Reward Tomorrow.",
-        description: "Shows METALSVERSE Foundries’ long-term value approach. Every product is engineered to deliver consistent, high-performance results for years or decades—ensuring customers benefit long after installation.",
+        description: "Shows Metalverse  Industries’ long-term value approach. Every product is engineered to deliver consistent, high-performance results for years or decades—ensuring customers benefit long after installation.",
         imgUrl: "/assets/image15.jpeg"
     },
     {
         id: 16,
         lines: "Price is Right. Commitments Are Everlasting.",
-        description: "Reflects transparent pricing, ethical business practices, and commitment to long-term partnerships. METALSVERSE Foundries values trust and delivers continuous support throughout the customer lifecycle.",
+        description: "Reflects transparent pricing, ethical business practices, and commitment to long-term partnerships. Metalverse  Industries values trust and delivers continuous support throughout the customer lifecycle.",
         imgUrl: "/assets/image16.jpg"
     },
     {
         id: 17,
         lines: "Mother Earth to Your Dock.",
-        description: "Perfect for sourcing and logistics sections. It represents METALSVERSE Foundries’ global supply chain strength, where raw materials and products move reliably from international sources directly to client facilities.",
+        description: "Perfect for sourcing and logistics sections. It represents Metalverse  Industries’ global supply chain strength, where raw materials and products move reliably from international sources directly to client facilities.",
         imgUrl: "/assets/image17.jpg"
     },
     {
         id: 18,
-        lines: "METALSVERSE Strength. METALSVERSE Standards.",
-        description: "Defines the exceptional quality, structural strength, durability, and strict compliance standards that METALSVERSE Foundries maintains across all operational and manufacturing processes.",
+        lines: "Metalverse Strength. Metalverse Standards.",
+        description: "Defines the exceptional quality, structural strength, durability, and strict compliance standards that Metalverse  Industries maintains across all operational and manufacturing processes.",
         imgUrl: "/assets/image18.jpeg"
     },
     {
@@ -121,7 +121,7 @@ const tagLines = [
     {
         id: 20,
         lines: "Engineering Beyond Boundaries.",
-        description: "Reflects global scalability. METALSVERSE Foundries designs and manufactures industrial solutions capable of serving international sectors without limitations on geography, complexity, or scale.",
+        description: "Reflects global scalability. Metalverse  Industries designs and manufactures industrial solutions capable of serving international sectors without limitations on geography, complexity, or scale.",
         imgUrl: "/assets/image20.jpeg"
     }
 ];
@@ -139,7 +139,7 @@ export function DesignCapabilities() {
         
         {/* Section Heading */}
         <h2 className="text-3xl md:text-4xl font-bold text-[#0A3161] mb-10 border-l-4 border-[#B31942] pl-4">
-          The METALSVERSE Philosophy
+          The Metalverse Philosophy
         </h2>
 
         {/* The Grid Layout (2 Columns) */}

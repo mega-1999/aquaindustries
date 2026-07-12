@@ -24,7 +24,7 @@ const AboutSection = () => {
           Our Products
         </h2>
         <p className="text-[20px] py-5 font-semibold uppercase tracking-widest text-[#B31942] mb-2">
-          METALSVERSE FOUNDRIES - Products
+          Metalverse  Industries - Products
         </p>
       </div>
       <Testimonials />

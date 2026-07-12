@@ -2,7 +2,7 @@ import React from 'react'
 
 const HeroSection = () => {
     // Note: The image URL is a placeholder. Replace it with your actual image path.
-    const imageUrl = "/assets/image8.jpg";
+    const imageUrl = "/assets/image9.jpeg";
 
     return (
         <div
@@ -26,7 +26,7 @@ const HeroSection = () => {
                     The Largest group of Foundries & Forge Shops
                 </h1>
                 <p className="text-sm   text-white/90 leading-relaxed font-light mx-auto max-w-3xl">
-                    METALSVERSE Foundries delivers a comprehensive portfolio of products, including turbines, oil & gas equipment, water management technologies, and power generation systems. We also enable seamless access to FPC services, empowering businesses to execute large-scale industrial projects with confidence.
+                    Metalverse  Industries delivers a comprehensive portfolio of products, including turbines, oil & gas equipment, water management technologies, and power generation systems. We also enable seamless access to FPC services, empowering businesses to execute large-scale industrial projects with confidence.
                 </p>
             </div>
         </div>

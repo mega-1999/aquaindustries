@@ -2,12 +2,12 @@ import React from 'react';
 import { ArrowDownCircle, Trophy, Users, Globe, Building } from 'lucide-react';
 import Image from 'next/image';
 
-// --- DATA: Mock Data for METALSVERSE Foundries History ---
+// --- DATA: Mock Data for Metalverse  Industries History ---
 const HISTORY_DATA = [
   {
     year: "1985",
     title: " The Foundation",
-    description: "METALSVERSE Foundries was established in Pittsburgh, PA, with a single blast furnace and a mission to forge the highest quality steel components for the American automotive industry.",
+    description: "Metalverse  Industries was established in Pittsburgh, PA, with a single blast furnace and a mission to forge the highest quality steel components for the American automotive industry.",
     image: "/assets/image1.jpeg" // Replace with real image path
   },
   {
@@ -25,13 +25,13 @@ const HISTORY_DATA = [
   {
     year: "2018",
     title: "Sustainable Steel",
-    description: "METALSVERSE Foundries committed to a greener future by retrofitting all plants with electric arc furnaces, reducing carbon emissions by 40% and setting a new industry standard.",
+    description: "Metalverse  Industries committed to a greener future by retrofitting all plants with electric arc furnaces, reducing carbon emissions by 40% and setting a new industry standard.",
     image: "/assets/image4.jpeg"
   },
   {
     year: "2025",
     title: "The Next Era",
-    description: "Today, we are pioneering AI-driven metallurgy and 3D metal printing, ensuring METALSVERSE Foundries remains the backbone of modern infrastructure.",
+    description: "Today, we are pioneering AI-driven metallurgy and 3D metal printing, ensuring Metalverse  Industries remains the backbone of modern infrastructure.",
     image: "/assets/image5.jpeg"
   }
 ];
@@ -63,7 +63,7 @@ export default function MakingHistoryPage() {
             Making <span className="text-transparent bg-clip-text bg-gradient-to-r from-red-500 to-red-800">History</span>
           </h1>
           <p className="text-lg md:text-xl text-[#0A3161]/60 max-w-2xl mx-auto leading-relaxed">
-            From a single furnace in Pennsylvania to a global manufacturing powerhouse. Explore the milestones that forged METALSVERSE Foundries.
+            From a single furnace in Pennsylvania to a global manufacturing powerhouse. Explore the milestones that forged Metalverse  Industries.
           </p>
 
           <div className="mt-10 animate-bounce">
@@ -152,7 +152,7 @@ export default function MakingHistoryPage() {
           <div className="mt-24 text-center">
             <h3 className="text-2xl font-bold text-[#0A3161] mb-4">Be Part of Our Future</h3>
             <p className="text-[#0A3161]/70 mb-8 max-w-lg mx-auto">
-              We are constantly evolving. Join us as we forge the next chapter of METALSVERSE Foundries.
+              We are constantly evolving. Join us as we forge the next chapter of Metalverse  Industries.
             </p>
             <button className="bg-[#B31942] hover:bg-[#B31942] text-white font-bold py-3 px-8 rounded shadow-lg transition-transform transform hover:-translate-y-1">
               View Careers

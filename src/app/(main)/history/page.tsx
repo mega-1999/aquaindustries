@@ -7,14 +7,14 @@ const ERAS = [
     period: "The Early Years (1985-1995)",
     title: "Forging the Foundation",
     icon: Hammer,
-    content: "Founded by Robert Sterling in a defunct rail yard in Pittsburgh, METALSVERSE Foundries began with a single mission: to produce American steel that could outlast the competition. In these early days, the company focused exclusively on heavy rail components, establishing a reputation for unbreakable durability.",
+    content: "Founded by Robert Sterling in a defunct rail yard in Pittsburgh, Metalverse  Industries began with a single mission: to produce American steel that could outlast the competition. In these early days, the company focused exclusively on heavy rail components, establishing a reputation for unbreakable durability.",
     stat: "1 Plant Opened"
   },
   {
     period: "The Expansion (1996-2010)",
     title: "Crossing Oceans",
     icon: Globe2,
-    content: "Recognizing the shift in global manufacturing, METALSVERSE Foundries made the bold decision to acquire facilities in Germany and Japan. This era marked our transition from a domestic supplier to a global logistics partner, allowing us to serve automotive giants on three continents.",
+    content: "Recognizing the shift in global manufacturing, Metalverse  Industries made the bold decision to acquire facilities in Germany and Japan. This era marked our transition from a domestic supplier to a global logistics partner, allowing us to serve automotive giants on three continents.",
     stat: "Expanded to 4 Countries"
   },
   {
@@ -41,7 +41,7 @@ export default function HistoryPage() {
               Our <span className="text-[#B31942]">Legacy</span>
             </h1>
             <p className="text-xl text-[#0A3161]/40 leading-relaxed">
-              For four decades, METALSVERSE Foundries has been the silent backbone of modern infrastructure. This is the story of how we built trust, one pour at a time.
+              For four decades, Metalverse  Industries has been the silent backbone of modern infrastructure. This is the story of how we built trust, one pour at a time.
             </p>
           </div>
 
@@ -61,7 +61,7 @@ export default function HistoryPage() {
           <div>
             <h2 className="text-3xl font-bold text-[#0A3161] mb-6">From Rust Belt to High Tech</h2>
             <p className="text-[#0A3161]/80 mb-6 leading-relaxed">
-              The story of METALSVERSE Foundries is the story of American manufacturing resilience. When others shut down blast furnaces in the late 80s, we doubled down on quality. When the market demanded cheaper materials, we invested in stronger alloys.
+              The story of Metalverse  Industries is the story of American manufacturing resilience. When others shut down blast furnaces in the late 80s, we doubled down on quality. When the market demanded cheaper materials, we invested in stronger alloys.
             </p>
             <p className="text-[#0A3161]/80 mb-8 leading-relaxed">
               We believe that history isn't just about looking back—it's about understanding the foundation we stand on today. Every beam, every bolt, and every chassis we cast carries the DNA of 40 years of expertise.

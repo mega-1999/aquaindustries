@@ -29,7 +29,7 @@ export default function MegaFeaShowcase() {
             
             <div className="space-y-4 text-[#0A3161]/80 text-sm md:text-base font-light leading-relaxed">
               <p>
-                To ensure METALSVERSE casting systems deliver the structural strength and fatigue stability required for heavy modern municipal networks, we utilize advanced Finite Element Analysis (FEA) deep within our pipeline prototyping cycles. This modeling allowing us to map exactly how the physical cover behaves under devastating continuous tire pounding.
+                To ensure Metalverse casting systems deliver the structural strength and fatigue stability required for heavy modern municipal networks, we utilize advanced Finite Element Analysis (FEA) deep within our pipeline prototyping cycles. This modeling allowing us to map exactly how the physical cover behaves under devastating continuous tire pounding.
               </p>
               <p>
                 Our high-fidelity FEA heat maps illustrate how the internal geometric support ribs manage and disperse downward point forces evenly across both the cover and seating frame. By evaluating this strain behavior pattern down to the micron level, we actively refine our structural walls to reduce shifting movement and guarantee long-term wear resistance long before actual metallic pouring begins.
@@ -61,7 +61,7 @@ export default function MegaFeaShowcase() {
           <div className="lg:col-span-7 space-y-10 w-full">
             <div>
               <h3 className="text-2xl font-black uppercase tracking-tight text-[#0A3161] mb-1">
-                METALSVERSE Q-Series
+                Metalverse Q-Series
               </h3>
               <p className="text-xs font-mono uppercase tracking-widest text-[#B31942] font-bold">
                 Key Features & Benefits
@@ -79,7 +79,7 @@ export default function MegaFeaShowcase() {
                     Inverted T-Flange Seating Frame
                   </h4>
                   <p className="text-xs text-[#0A3161]/70 leading-relaxed font-light">
-                    The mechanical core of METALSVERSE systems is its wide structural baseline flange, specifically optimized to anchor secure vault chamber block paths and balance continuous overhead shear stresses safely.
+                    The mechanical core of Metalverse systems is its wide structural baseline flange, specifically optimized to anchor secure vault chamber block paths and balance continuous overhead shear stresses safely.
                   </p>
                 </div>
               </div>
@@ -121,7 +121,7 @@ export default function MegaFeaShowcase() {
             <div className="relative w-full max-w-[480px] aspect-[4/3] bg-[#0A3161]/5 border border-[#0A3161]/10 p-4 shadow-md rounded-xs group hover:border-[#B31942] transition-colors duration-300">
               <Image
                 src="/assets/image2.jpeg" // Replace with your close-up product casting macro image
-                alt="METALSVERSE High-Precision Iron Casting Surface View"
+                alt="Metalverse High-Precision Iron Casting Surface View"
                 fill
                 className="object-cover transition-transform duration-500 group-hover:scale-102"
               />
