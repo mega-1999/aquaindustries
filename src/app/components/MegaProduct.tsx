@@ -86,7 +86,7 @@ const products = [
     id: "detectable-warning-plates",
     title: "Detectable Warning Plates",
     description: "Premium linear drainage solutions engineered with solid ductile iron casting gratings to ensure rapid surface water evacuation and maximum performance.",
-    image: "/assets/MEGA/white.png",
+    image: "/assets/MEGA/Detectable Warning Plates.jpeg",
     link: "/products/drainage-castings"
   },
   {

@@ -180,7 +180,7 @@ export default function CareersPage() {
               <div className="relative aspect-square md:aspect-[4/3] bg-[#0A3161] rounded-xl overflow-hidden border border-slate-700 shadow-2xl">
                 <div className="absolute inset-0 flex items-center justify-center text-[#0A3161]/70">
                   <Image
-                    src={'/assets/image8.jpg'}
+                    src={'/assets/image8.jpeg'}
                     alt="Case Study Image"
                     fill
                     className="object-cover"

@@ -149,7 +149,7 @@ export const menuData = {
       {
         name: "PIPE FITTINGS & CONNECTOR CASTINGS",
         slug: "pipe-fittings-and-connector-castings",
-        image: "/assets/image8.jpg",
+        image: "/assets/image8.jpeg",
         description:
           "Ductile iron and alloy cast fittings engineered for water pipelines, joint connections and network pressure systems.",
         videoUrl: "/video/pipe-fitting-castings.mp4",
@@ -500,7 +500,7 @@ export const menuData = {
   //     {
   //       name: "MOLDS ACCESSORIES",
   //       slug: "molds-accessories",
-  //       image: "/assets/image8.jpg",
+  //       image: "/assets/image8.jpeg",
   //       description:
   //         "Accessories that enhance mold performance, surface finish and production efficiency.",
   //       videoUrl: "/video/mold/2 feet mold.54.mp4",
@@ -852,7 +852,7 @@ export const menuData = {
     id: 'fabrication_products',
     label: 'FABRICATION PRODUCTS',
     icon: Wrench, // choose any lucide icon you prefer
-    bannerImage: '/assets/image8.jpg',
+    bannerImage: '/assets/image8.jpeg',
     color: 'bg-[#0A3161]/10 text-white',
 
     categories: [
@@ -878,7 +878,7 @@ export const menuData = {
       {
         name: "SHEET METAL FABRICATION COMPONENTS",
         slug: "sheet-metal-fabrication-components",
-        image: "/assets/image8.jpg",
+        image: "/assets/image8.jpeg",
         description:
           "Precision sheet metal fabricated parts produced through cutting, bending and forming processes with high dimensional accuracy.",
         videoUrl: "/video/sheet-metal-fabrication.mp4",
@@ -1340,7 +1340,7 @@ export const menuData = {
       {
         name: "PIPES & FITTINGS",
         slug: "pipes-and-fittings",
-        image: "/assets/image8.jpg",
+        image: "/assets/image8.jpeg",
         description:
           "High-performance irrigation pipes and fittings engineered for long-term durability, leak-proof performance and efficient water transport.",
         videoUrl: "/video/IRRIGATION PRODUCTS/video1.mp4",
@@ -1818,7 +1818,7 @@ export const menuData = {
       {
         name: "BUILD-TO-PRINT MANUFACTURING",
         slug: "build-to-print-manufacturing",
-        image: "/assets/image8.jpg",
+        image: "/assets/image8.jpeg",
         description:
           "Manufacturing services based strictly on customer drawings, 3D models and technical specifications with complete confidentiality.",
         videoUrl: "/video/build-to-print.mp4",
@@ -2217,7 +2217,7 @@ export const menuData = {
       {
         name: "HIGH MANGANESE STEEL PARTS",
         slug: "high-manganese-steel-parts",
-        image: "/assets/image8.jpg",
+        image: "/assets/image8.jpeg",
         description:
           "Wear-resistant high manganese steel components ideal for impact and abrasion environments.",
         items: [

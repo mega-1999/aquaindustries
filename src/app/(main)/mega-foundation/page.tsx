@@ -112,7 +112,7 @@ export default function MegaFoundationPage() {
               <div className="aspect-[4/3] bg-slate-200 rounded-2xl overflow-hidden shadow-lg">
                 <div className="absolute inset-0 flex items-center justify-center text-[#0A3161]/70 font-bold">
                   <Image
-                    src={'/assets/image8.jpg'}
+                    src={'/assets/image8.jpeg'}
                     alt="Case Study Image"
                     fill
                     className="object-cover"

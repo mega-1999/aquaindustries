@@ -33,7 +33,7 @@ export const categories = [
   {
     title: "New Innovations",
     slug: "new-innovations",
-    image: "/assets/image15.jpeg", // Construction/Infrastructure image
+    image: "/assets/MEGA/MONITERING WELL STATION.11 - Copy.png", // Construction/Infrastructure image
     description: "Cutting-edge casting technologies and patent-pending industrial designs.",
     specs: ["Patent-pending Technology", "Sustainable Materials", "IoT Ready Sensors", "High Precision Molding"],
     icon: Lightbulb,
@@ -51,18 +51,18 @@ export const categories = [
   {
     title: "Hinged Castings",
     slug: "hinged-castings",
-    image: "/assets/image15.jpeg", // Construction/Infrastructure image
+    image: "/assets/MEGA/HATCHES COVER.jpeg", //     description: "Ergonomic, easy-access manhole and utility covers for safety.",
     description: "Ergonomic, easy-access manhole and utility covers for safety.",
     specs: ["Ergonomic Lift Assist", "Safety Lock System", "Heavy Duty Hinge", "Reduced Maintenance Cost"],
     icon: DoorOpen,
     color: "bg-[#B31942]",
-  }, 
+  },
   {
-    title: "Trench Products",
-    slug: "trench-products",
-    video: "/video/trench/Trench 500 Animation.498.mp4",
-    description: "Heavy-duty drainage solutions for high-traffic industrial environments.",
-    specs: ["Ductile Iron Construction", "Load Class D400+", "Anti-Slip Surface", "UV Resistant Coating"],
+    title: "MJ Fittings",
+    slug: "mj-fittings",
+    image: "/assets/MEGA/MJ Fittings.jpeg",
+    description: "Our range of mechanical joint (MJ) fittings are engineered for superior sealing performance in underground water and gas pipelines.   ",
+    specs: ["ISO 2531/EN 545 Standard", "Flange Sizes: 50mm - 1200mm", "Working Pressure: Up to 16 Bar", "Corrosion-Resistant Epoxy Coating"],
     icon: Wrench,
     color: "bg-[#B31942]",
   }

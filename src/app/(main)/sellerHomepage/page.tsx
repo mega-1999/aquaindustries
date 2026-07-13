@@ -49,7 +49,7 @@ export default function PartnerProgramPage() {
           <div className="relative h-[400px] md:h-full w-full">
             <div className="absolute inset-0 bg-white">
               <Image
-                src="/assets/image8.jpg"
+                src="/assets/image8.jpeg"
                 alt="Global Industrial Logistics"
                 fill
                 className="object-cover"

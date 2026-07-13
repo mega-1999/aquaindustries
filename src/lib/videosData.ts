@@ -59,7 +59,7 @@ export const allFactoryVideos = [
         "id": 8,
         "name": "Metalverse  Industries - Heavy Machinery",
         "location": "Wisconsin, USA",
-        "thumbnail": "/assets/image8.jpg",
+        "thumbnail": "/assets/image8.jpeg",
         "videoUrl": "/video/video8.mp4",
         "isLive": true
     },

@@ -50,7 +50,7 @@ const tagLines = [
         id: 8,
         lines: "Boundless Possibilities.",
         description: "Reflects the limitless technological, engineering, and industrial capabilities of Metalverse  Industries. Whether scaling production or innovating with new materials, the potential for growth is endless.",
-        imgUrl: "/assets/image8.jpg"
+        imgUrl: "/assets/image8.jpeg"
     },
     {
         id: 9,

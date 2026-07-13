@@ -15,80 +15,79 @@ const ModelViewer = dynamic(() => import('./ModelViewer'), {
   loading: () => <div className="h-full flex items-center justify-center bg-[#0A3161]/10 text-xs">Loading 3D Engine...</div>
 });
 
-// --- 10 Metalverse  Industries CASTING ASSETS (No Precast) ---
+// --- 10 MEGA FOUNDRIES CASTING ASSETS (No Precast) ---
 const ASSET_LIBRARY = [
   {
     id: '1',
     name: 'Heavy Duty Manhole Cover & Frame',
     type: 'MODEL',
-    url: '/gib files/1 FT LEACHING GALLEY .glb', 
+    url: '/gib files/black1.glb',
     thumbnail: '/assets/image1.jpeg'
   },
   {
     id: '2',
     name: 'Ductile Iron Gully Grating (Fe 50007)',
     type: 'MODEL',
-    url: '/gib files/2 FT LEACHING GALLEY .glb', 
+    url: '/gib files/black1.glb',
     thumbnail: '/assets/image2.jpeg'
   },
   {
     id: '3',
     name: 'Heavy Traffic Airport Grating - 90 Ton',
     type: 'MODEL',
-    url: '/gib files/3 FT LEACHING GALLEY .glb', 
+    url: '/gib files/black1.glb',
     thumbnail: '/assets/image3.jpeg'
   },
   {
     id: '4',
     name: 'Industrial Cast Iron Oil & Grease Separator',
     type: 'MODEL',
-    url: '/gib files/1250 monogrease trap.glb', 
+    url: '/gib files/black1.glb',
     thumbnail: '/assets/image4.jpg'
   },
   {
     id: '5',
     name: 'Ductile Iron Electrical Junction Box Cover',
     type: 'MODEL',
-    url: '/gib files/d bix.glb', 
+    url: '/gib files/black1.glb',
     thumbnail: '/assets/image5.jpeg'
   },
   {
     id: '6',
     name: 'Cast Iron Multi-Flanged Slurry Valve Body',
     type: 'MODEL',
-    url: '/gib files/1250 monogrease trap.glb', 
+    url: '/gib files/black1.glb',
     thumbnail: '/assets/image6.jpg'
   },
   {
     id: '7',
     name: 'Surface Linear Drainage Casting Segment',
     type: 'MODEL',
-    url: '/gib files/3 FT LEACHING GALLEY .glb', 
+    url: '/gib files/black1.glb',
     thumbnail: '/assets/image7.jpeg'
   },
   {
     id: '8',
     name: 'Articulated Telecom Inspection Chamber Hatch',
     type: 'MODEL',
-    url: '/gib files/2 FT LEACHING GALLEY .glb', 
-    thumbnail: '/assets/image8.jpg'
+    url: '/gib files/black1.glb',
+    thumbnail: '/assets/image8.jpeg'
   },
   {
     id: '9',
     name: 'High-Pressure 90° Flanged Elbow Fitting',
     type: 'MODEL',
-    url: '/gib files/1 FT LEACHING GALLEY .glb', 
+    url: '/gib files/black1.glb',
     thumbnail: '/assets/image9.jpeg'
   },
   {
     id: '10',
     name: 'Ductile Iron Tree Grate Protection Ring',
     type: 'MODEL',
-    url: '/gib files/2 FT LEACHING GALLEY .glb', 
+    url: '/gib files/black1.glb',
     thumbnail: '/assets/image10.jpeg'
   }
 ];
-
 // Helper for UUIDs
 function uuidv4() {
   return "10000000-1000-4000-8000-100000000000".replace(/[018]/g, c =>
