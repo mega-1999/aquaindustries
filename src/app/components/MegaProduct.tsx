@@ -50,7 +50,7 @@ const products = [
     id: "utility-telecom-electrical",
     title: "Fiber Optic, Telecom & Electrical Covers",
     description: "Specialized infrastructure castings offering secure access, single/articulated mechanics, and tamper-proof locking mechanisms across varying heavy-duty utility networks.",
-    image: "/assets/MEGA/white.png",
+    image: "/assets/MEGA/Electrical Covers.jpeg",
     link: "/products/telecom-covers"
   },
   {
@@ -100,7 +100,7 @@ const products = [
     id: "ornamental-castings",
     title: "Ornamental Castings",
     description: "Premium linear drainage solutions engineered with solid ductile iron casting gratings to ensure rapid surface water evacuation and maximum performance.",
-    image: "/assets/MEGA/white.png",
+    image: "/assets/MEGA/Ornamental Castings.jpeg",
     link: "/products/drainage-castings"
   },
   {
