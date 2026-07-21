@@ -117,20 +117,6 @@ export default function MegaMediaHub() {
           ))}
         </div>
 
-        {/* --- PERFORMANCE COMPLIANCE Matrix FOOTER --- */}
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-6 pt-12 border-t border-gray-200 w-full bg-white text-center md:text-left">
-          <div className="p-4 bg-gray-50 border border-gray-100 rounded-none flex items-center gap-3">
-            <Layers className="w-5 h-5 text-[#B31942] shrink-0" />
-            <p className="text-xs uppercase tracking-wider font-bold text-gray-700">
-              AASHTO H-20 & FHWA Lab Certified Data Feeds
-            </p>
-          </div>
-          <div className="p-4 bg-gray-50 border border-gray-100 rounded-none flex items-center justify-center md:justify-end">
-            <p className="text-[10px] font-mono text-gray-400 uppercase tracking-widest">
-              Terminal Node Status: Synchronization Completed
-            </p>
-          </div>
-        </div>
 
       </div>
     </section>

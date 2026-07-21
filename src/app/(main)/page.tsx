@@ -48,6 +48,7 @@ import { Hero } from './Hero';
 import DotMatrixSlider from './DotMatrixSlider';
 import { ResourceDirectory } from './ResourceDirectory';
 import MegaMediaHub from './MegaMediaHub';
+import MegaTactilePlates from './MegaTactilePlates';
 
 export default function Home() {
     const [isLoggedIn, setIsLoggedIn] = useState(false);
@@ -109,6 +110,7 @@ export default function Home() {
             <MegaQSeries />
             <MegaProducts />
             <MegaMediaHub />
+            <MegaTactilePlates/>
             <LiveStreamCommandCenter />
             <MegaFeaShowcase />
             <IndustrialManifest />

@@ -36,7 +36,7 @@ const row2 = [
 
 export default function AssociationsCarousel() {
   return (
-    <section className="w-full py-2 bg-[#0A3161]/5 overflow-hidden">
+    <section className="w-full py-2 bg-[#0A3161]/5 text-[#0A3161] overflow-hidden">
       <div className="container mx-auto px-4 mb-10 text-center">
         <h2 className="text-2xl md:text-3xl font-bold   uppercase tracking-wide">
           Associations & Standards

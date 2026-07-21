@@ -61,7 +61,7 @@ const FixedQuoteBtn = () => {
         {/* BOTTOM THREE: Social / Contact Icons */}
         {/* A. WhatsApp */}
         <Link
-          href="https://wa.me/15127828880"
+          href="https://wa.me/15162521111"
           target="_blank"
           className="
             w-12 h-12 flex items-center justify-center 
@@ -76,7 +76,7 @@ const FixedQuoteBtn = () => {
 
         {/* B. Phone Call */}
         <Link
-          href="tel:3077887700"
+          href="tel:6314581111"
           className="
             w-12 h-12 flex items-center justify-center 
             bg-[#B31942] hover:bg-[#8f1435] text-white 
@@ -90,7 +90,7 @@ const FixedQuoteBtn = () => {
 
         {/* C. Email */}
         <Link
-          href="mailto:sales@metalversefoundries.com"
+          href="mailto:metalverseltd@gmail.com"
           className="
             w-12 h-12 flex items-center justify-center 
             bg-[#B31942] hover:bg-[#8f1435] text-white 

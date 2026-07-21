@@ -100,12 +100,18 @@ const Footer = () => {
 
               </div>
               {/* Added Mobile Number with Link */}
-              <p className='mt-4'>
+              <p className='mt-4 flex flex-col gap-1'>
                 <a
-                  href="tel:3077887700"
+                  href="tel:6314581111"
                   className="hover:text-white transition-colors duration-200"
                 >
-                  307 788 7700
+                  Ph: 631 458 1111
+                </a>
+                <a
+                  href="sms:5162521111"
+                  className="hover:text-white transition-colors duration-200"
+                >
+                  Text: 516 252 1111
                 </a>
               </p>
             </div>
@@ -166,6 +172,7 @@ const Footer = () => {
                   705 710 5505
                 </a>
               </p>
+
             </div>
           </div>
 
@@ -232,7 +239,7 @@ const Footer = () => {
 
           {/* --- COL 1: SOCIAL ICONS (Left Aligned) --- */}
           <div className="flex flex-col items-center md:justify-start">
-            <h4 className="text-white text-sm font-semibold mb-3 tracking-wide">info@metalversefoundries.com</h4>
+            <h4 className="text-white text-sm font-semibold mb-3 tracking-wide">metalverseltd@gmail.com</h4>
             <div className="flex   justify-center   items-center md:justify-start gap-3 ">
               {[Linkedin, Facebook, Instagram, Twitter].map((Icon, i) => (
                 <Link

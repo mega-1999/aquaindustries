@@ -47,7 +47,7 @@ const PRODUCT_VIDEOS = [
     description: "Finite Element Analysis (FEA) testing simulation illustrating severe shear stress distribution on custom cast matrices.",
     duration: "0:30",
     type: "SIMULATION",
-    src: "video/paving_riser/paving riser 1.5213.mp4",
+    src: "/video/Custom Foundry Components.mp4",
     thumbnail: "/assets/PAVING-RISERS/paving riser 1.5204.png"
   }
 ];
