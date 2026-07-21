@@ -67,17 +67,16 @@ const Footer = () => {
       <div className="w-full px-4 sm:px-6 lg:px-10 py-3 pt-16 ">
         <div className="grid grid-cols-1 lg:grid-cols-3 gap-12 xl:gap-16 border-b border-white/10 pb-12">
 
-          <div className="flex flex-col justify-evenly gap-16 space-y-6">
-            <div>
-              <h3 className="text-[#B31942] font-bold uppercase tracking-wider text-sm border-b border-[#B31942]/30 pb-2 w-fit">
-                USA Operations
-              </h3>
+          {/* --- COL 1: SALES OFFICE (Left) --- */}
+          <div className="flex flex-col justify-between gap-8">
+            <div className="space-y-6">
 
-              {/* OPTIMIZED LOGO PLACEMENT: Side by Side */}
+
+              {/* Logos */}
               <div className="flex gap-4">
                 <div className="bg-white p-2 rounded-lg w-28 h-24 flex items-center justify-center shadow-md hover:scale-105 transition-transform">
                   <Link href={'/'} className="w-full h-full relative">
-                    <Image src={'/MMO.png'} alt='Metalverse  Industries' fill className="object-contain" />
+                    <Image src={'/MMO.png'} alt='Metalverse Industries' fill className="object-contain" />
                   </Link>
                 </div>
                 <div className="bg-white p-2 rounded-lg w-28 h-24 flex items-center justify-center shadow-md hover:scale-105 transition-transform">
@@ -91,53 +90,67 @@ const Footer = () => {
                   </Link>
                 </div>
               </div>
+              {/* Category Badge */}
+              <span className="inline-block text-[10px] font-mono font-bold uppercase tracking-[0.2em] text-[#B31942] bg-white px-3 py-1 rounded-sm shadow-sm">
+                Sales Office
+              </span>
             </div>
 
+            {/* Address Details */}
             <div>
-              <div className="text-sm space-y-1 text-white/70">
-                <p>105 MAXES ROAD</p>
+              <div className="text-sm space-y-1 text-white/70 font-light">
+                <p className="font-semibold text-white">105 MAXES ROAD</p>
                 <p>MELVILLE, NY 11737, USA</p>
-
               </div>
-              {/* Added Mobile Number with Link */}
-              <p className='mt-4 flex flex-col gap-1'>
+              <div className="mt-4 flex flex-col gap-1 text-sm text-white/80 font-mono">
                 <a
                   href="tel:6314581111"
-                  className="hover:text-white transition-colors duration-200"
+                  className="hover:text-[#B31942] transition-colors duration-200"
                 >
                   Ph: 631 458 1111
                 </a>
                 <a
                   href="sms:5162521111"
-                  className="hover:text-white transition-colors duration-200"
+                  className="hover:text-[#B31942] transition-colors duration-200"
                 >
                   Text: 516 252 1111
                 </a>
-              </p>
-            </div>
-
-          </div>
-
-          <div className="flex flex-col items-center justify-start">
-            {/* OPTIMIZED LOGO PLACEMENT: Side by Side */}
-            <div className="flex  ">
-              <div className="bg-white p-2 rounded-lg w-80 h-36 flex items-center justify-center shadow-md hover:scale-105 transition-transform">
-                <Link href={'/'} className="w-full h-full relative">
-                  <Image src={'/MIL.png'} alt='Metalverse Industries' fill className="object-contain" />
-                </Link>
               </div>
             </div>
           </div>
 
-          {/* --- COL 5: CANADA OPERATIONS (Logos + Info + Subscribe) --- */}
-          <div className="flex items-end justify-evenly gap-16 flex-col space-y-6">
-            <div>
-              <h3 className="text-[#B31942] text-left font-bold uppercase tracking-wider text-sm border-b border-[#B31942]/30 pb-2 w-fit">
-                Canada Operations
-              </h3>
+          {/* --- COL 2: CORPORATE HEADQUARTERS (Middle) --- */}
+          <div className="flex flex-col items-center justify-between text-center gap-8 border-y lg:border-y-0 lg:border-x border-white/10 py-8 lg:py-0 px-4">
+            <div className="space-y-6 flex flex-col items-center">
 
-              {/* OPTIMIZED LOGO PLACEMENT: Side by Side */}
-              <div className="flex gap-4  justify-end">
+
+              {/* Main Corporate Logo */}
+              <div className="bg-white p-3 rounded-lg w-72 h-32 flex items-center justify-center shadow-md hover:scale-105 transition-transform">
+                <Link href={'/'} className="w-full h-full relative">
+                  <Image src={'/MIL.png'} alt='Metalverse Industries' fill className="object-contain" />
+                </Link>
+              </div>
+              {/* Category Badge */}
+              <span className="inline-block text-[10px] font-mono font-bold uppercase tracking-[0.2em] text-[#B31942] bg-white px-3 py-1 rounded-sm shadow-sm">
+                Corporate Headquarters
+              </span>
+            </div>
+
+            {/* Address Details */}
+            <div className="text-sm space-y-1 text-white/70 font-light">
+              <p className="font-semibold text-white">GLOBAL OPERATIONS HUB</p>
+              <p>105 MAXES ROAD, MELVILLE, NY 11737, USA</p>
+              <p className="pt-2 text-xs text-white/50 font-mono">PRIMARY EXECUTIVE MANAGEMENT</p>
+            </div>
+          </div>
+
+          {/* --- COL 3: INTERNATIONAL OFFICE (Right) --- */}
+          <div className="flex flex-col justify-between items-start lg:items-end text-left lg:text-right gap-8">
+            <div className="space-y-6 flex flex-col items-start lg:items-end">
+
+
+              {/* Logos */}
+              <div className="flex gap-4 justify-start lg:justify-end">
                 <div className="bg-white p-2 rounded-lg w-28 h-24 flex items-center justify-center shadow-md hover:scale-105 transition-transform">
                   <Link href={'/'} className="w-full h-full relative">
                     <Image src={'/MFO.png'} alt='MWA' fill className="object-contain" />
@@ -155,24 +168,24 @@ const Footer = () => {
                 </div>
               </div>
             </div>
-
-
+            {/* Category Badge */}
+            <span className="inline-block text-[10px] font-mono font-bold uppercase tracking-[0.2em] text-[#B31942] bg-white px-3 py-1 rounded-sm shadow-sm">
+              International Office
+            </span>
+            {/* Address Details */}
             <div>
-              <div className="text-sm space-y-1 text-white/70">
-                <p>18 King St E Ste 1400</p>
-                <p>Toronto, ON M5C IC4, CANADA</p>
-
+              <div className="text-sm space-y-1 text-white/70 font-light">
+                <p className="font-semibold text-white">18 KING ST E STE 1400</p>
+                <p>TORONTO, ON M5C 1C4, CANADA</p>
               </div>
-              {/* Added Mobile Number with Link */}
-              <p className='mt-4'>
+              <div className="mt-4 text-sm text-white/80 font-mono">
                 <a
                   href="tel:7057105505"
-                  className="hover:text-white transition-colors duration-200"
+                  className="hover:text-[#B31942] transition-colors duration-200"
                 >
-                  705 710 5505
+                  Ph: 705 710 5505
                 </a>
-              </p>
-
+              </div>
             </div>
           </div>
 
