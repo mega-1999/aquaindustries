@@ -127,7 +127,7 @@ const MegaProduct = () => {
         {/* Header Section */}
         <div className="border-b border-white/20 pb-6 mb-10">
           <h2 className="text-3xl font-light tracking-wide text-white mb-2">
-            Explore <span className="font-semibold text-[#B31942]">Metalverse  Industries</span> Products
+            Explore <span className="font-semibold text-[#B31942]">Metalverse </span> Products
           </h2>
           <p className="text-sm text-white/60">
             Complete line of world-class nodular ductile iron castings (Fe 50007), delivering ultimate durability and engineering modernity to your infrastructure projects.
@@ -154,7 +154,7 @@ const MegaProduct = () => {
               className="flex flex-col md:flex-row items-center gap-8 md:gap-16 border-b border-white/10 filter drop-shadow-[0_10px_15px_rgba(10,49,97,0.6)] transition-transform duration-300  pb-12 last:border-0"
             >
               {/* Product Image Wrapper Container */}
-              <div className="w-full md:w-1/3 flex justify-center items-center bg-[#B31942] p-6 rounded-lg border border-[#B31942]/40 shadow-inner group">
+              <div className="w-full md:w-1/3 flex justify-center items-center bg-[#B31942] p-2 rounded-lg border border-[#B31942]/40 shadow-inner group">
                 <img
                   src={product.image}
                   alt={product.title}
