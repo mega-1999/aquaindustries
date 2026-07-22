@@ -3,6 +3,7 @@ import { Geist, Geist_Mono } from 'next/font/google';
 import "./globals.css";
 import { Toaster } from '@/components/ui/sonner';
 import FixedQuoteBtn from './components/FixedQuoteBtn';
+import EntrySystem from './components/EntrySystem';
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -33,6 +34,7 @@ export default function RootLayout({
       <body className={`${geistSans.variable} ${geistMono.variable} antialiased bg-[#0A3161]/5 text-white`}>
         
         {/* Render the Page Content */}
+        <EntrySystem/>
         <FixedQuoteBtn />
         {children}
         {/* ✅ 2. Add Toaster so popups work across the app */}

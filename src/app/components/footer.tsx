@@ -92,28 +92,22 @@ const Footer = () => {
               </div>
               {/* Category Badge */}
               <span className="inline-block text-[10px] font-mono font-bold uppercase tracking-[0.2em] text-[#B31942] bg-white px-3 py-1 rounded-sm shadow-sm">
-                Sales Office
+                Corporate Headquarters
               </span>
             </div>
 
             {/* Address Details */}
             <div>
               <div className="text-sm space-y-1 text-white/70 font-light">
-                <p className="font-semibold text-white">105 MAXES ROAD</p>
-                <p>MELVILLE, NY 11737, USA</p>
+                <p className="font-semibold text-white">30 N GOULD ST</p>
+                <p>SHERIDAN, WY 82801-6317</p>
               </div>
               <div className="mt-4 flex flex-col gap-1 text-sm text-white/80 font-mono">
                 <a
-                  href="tel:6314581111"
+                  href="tel:6042000616"
                   className="hover:text-[#B31942] transition-colors duration-200"
                 >
-                  Ph: 631 458 1111
-                </a>
-                <a
-                  href="sms:5162521111"
-                  className="hover:text-[#B31942] transition-colors duration-200"
-                >
-                  Text: 516 252 1111
+                  Ph: 604 200 0616
                 </a>
               </div>
             </div>
@@ -132,15 +126,23 @@ const Footer = () => {
               </div>
               {/* Category Badge */}
               <span className="inline-block text-[10px] font-mono font-bold uppercase tracking-[0.2em] text-[#B31942] bg-white px-3 py-1 rounded-sm shadow-sm">
-                Corporate Headquarters
+                Sales
               </span>
             </div>
 
             {/* Address Details */}
             <div className="text-sm space-y-1 text-white/70 font-light">
               <p className="font-semibold text-white">GLOBAL OPERATIONS HUB</p>
-              <p>105 MAXES ROAD, MELVILLE, NY 11737, USA</p>
+              {/* <p>YONGE STREET, TORONTO</p>
               <p className="pt-2 text-xs text-white/50 font-mono">PRIMARY EXECUTIVE MANAGEMENT</p>
+              <div className="mt-4 flex flex-col gap-1 text-sm text-white/80 font-mono">
+                <a
+                  href="tel:4168146157"
+                  className="hover:text-[#B31942] transition-colors duration-200"
+                >
+                  Ph: 416 814 6157
+                </a>
+              </div> */}
             </div>
           </div>
 
@@ -170,22 +172,22 @@ const Footer = () => {
             </div>
             {/* Category Badge */}
             <span className="inline-block text-[10px] font-mono font-bold uppercase tracking-[0.2em] text-[#B31942] bg-white px-3 py-1 rounded-sm shadow-sm">
-              International Office
+              Global
             </span>
             {/* Address Details */}
             <div>
               <div className="text-sm space-y-1 text-white/70 font-light">
-                <p className="font-semibold text-white">18 KING ST E STE 1400</p>
-                <p>TORONTO, ON M5C 1C4, CANADA</p>
+                <p className="font-semibold text-white">105 MAXES ROAD</p>
+                {/* <p>MELVILLE, NY 11737, USA</p> */}
               </div>
-              <div className="mt-4 text-sm text-white/80 font-mono">
+              {/* <div className="mt-4 text-sm text-white/80 font-mono">
                 <a
-                  href="tel:7057105505"
+                  href="tel:6314581111"
                   className="hover:text-[#B31942] transition-colors duration-200"
                 >
-                  Ph: 705 710 5505
+                  Ph: 631 458 1111
                 </a>
-              </div>
+              </div> */}
             </div>
           </div>
 
