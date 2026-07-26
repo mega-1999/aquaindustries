@@ -64,7 +64,7 @@ const Footer = () => {
 
   return (
     <footer className="bg-[#0A3161] text-white/70 border-t border-white/10 font-sans">
-      <div className="w-full px-4 sm:px-6 lg:px-10 py-3 pt-16 ">
+      <div className="w-full px-4 sm:px-6 lg:px-10 lg:pr-20 py-3 pt-16 ">
         <div className="grid grid-cols-1 lg:grid-cols-3 gap-12 xl:gap-16 border-b border-white/10 pb-12">
 
           {/* --- COL 1: SALES OFFICE (Left) --- */}
@@ -123,27 +123,9 @@ const Footer = () => {
                 <Link href={'/'} className="w-full h-full relative">
                   <Image src={'/MIL.png'} alt='Metalverse Industries' fill className="object-contain" />
                 </Link>
-              </div>
-              {/* Category Badge */}
-              <span className="inline-block text-[10px] font-mono font-bold uppercase tracking-[0.2em] text-[#B31942] bg-white px-3 py-1 rounded-sm shadow-sm">
-                Sales
-              </span>
+              </div> 
             </div>
-
-            {/* Address Details */}
-            <div className="text-sm space-y-1 text-white/70 font-light">
-              <p className="font-semibold text-white">GLOBAL OPERATIONS HUB</p>
-              {/* <p>YONGE STREET, TORONTO</p>
-              <p className="pt-2 text-xs text-white/50 font-mono">PRIMARY EXECUTIVE MANAGEMENT</p>
-              <div className="mt-4 flex flex-col gap-1 text-sm text-white/80 font-mono">
-                <a
-                  href="tel:4168146157"
-                  className="hover:text-[#B31942] transition-colors duration-200"
-                >
-                  Ph: 416 814 6157
-                </a>
-              </div> */}
-            </div>
+ 
           </div>
 
           {/* --- COL 3: INTERNATIONAL OFFICE (Right) --- */}
@@ -175,19 +157,36 @@ const Footer = () => {
               Global
             </span>
             {/* Address Details */}
-            <div>
-              <div className="text-sm space-y-1 text-white/70 font-light">
-                <p className="font-semibold text-white">105 MAXES ROAD</p>
-                {/* <p>MELVILLE, NY 11737, USA</p> */}
+            <div className="flex flex-col lg:flex-row gap-8 lg:gap-12">
+              <div>
+                <div className="text-sm space-y-1 text-white/70 font-light">
+                  <p className="font-semibold text-white">105 MAXES ROAD</p>
+                  <p>MELVILLE, NY 11737, USA</p>
+                </div>
+                <div className="mt-4 text-sm text-white/80 font-mono">
+                  <a
+                    href="tel:6314581111"
+                    className="hover:text-[#B31942] transition-colors duration-200"
+                  >
+                    Ph: 631 458 1111
+                  </a>
+                </div>
               </div>
-              {/* <div className="mt-4 text-sm text-white/80 font-mono">
-                <a
-                  href="tel:6314581111"
-                  className="hover:text-[#B31942] transition-colors duration-200"
-                >
-                  Ph: 631 458 1111
-                </a>
-              </div> */}
+
+              <div>
+                <div className="text-sm space-y-1 text-white/70 font-light">
+                  <p className="font-semibold text-white">850 NW FEDERAL HWY</p>
+                  <p>STUART, FL 34994</p>
+                </div>
+                <div className="mt-4 text-sm text-white/80 font-mono">
+                  <a
+                    href="tel:7722970700"
+                    className="hover:text-[#B31942] transition-colors duration-200"
+                  >
+                    Ph: (772) 297-0700
+                  </a>
+                </div>
+              </div>
             </div>
           </div>
 

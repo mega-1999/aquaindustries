@@ -100,9 +100,9 @@ const ContactUs = () => {
     mapSrc: "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d184551.8097336271!2d-79.54286569827758!3d43.71840371276628!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x89d4cb90d7c63ba5%3A0x323555502ab4c477!2sToronto%2C%20ON%2C%20Canada!5e0!3m2!1sen!2sus!4v1652901234567!5m2!1sen!2sus"
   };
 
-  // Data for the USA office
+  // Data for the USA office (NY)
   const usaData = {
-    title: "USA Office",
+    title: "USA Office (NY)",
     flagSrc: "https://upload.wikimedia.org/wikipedia/en/thumb/a/a4/Flag_of_the_United_States.svg/320px-Flag_of_the_United_States.svg.png",
     description: "We are dedicated to providing excellent service. Contact us anytime; we look forward to assisting you",
     address: "105 MAXES ROAD Melville, NY 11737 USA",
@@ -111,6 +111,17 @@ const ContactUs = () => {
     email: "metalverseltd@gmail.com",
     // Google Map Embed for New York
     mapSrc: "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d193595.15830894612!2d-74.11976389064203!3d40.69766374869555!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x89c24fa5d33f083b%3A0xc80b8f06e177fe62!2sNew%20York%2C%20NY%2C%20USA!5e0!3m2!1sen!2sus!4v1652901987654!5m2!1sen!2sus"
+  };
+
+  const floridaData = {
+    title: "USA Office (FL)",
+    flagSrc: "https://upload.wikimedia.org/wikipedia/en/thumb/a/a4/Flag_of_the_United_States.svg/320px-Flag_of_the_United_States.svg.png",
+    description: "We are dedicated to providing excellent service. Contact us anytime; we look forward to assisting you",
+    address: "850 NW FEDERAL HWY, STUART, FL 34994",
+    phone: "(772) 297-0700",
+    email: "metalverseltd@gmail.com",
+    // Google Map Embed for Stuart FL
+    mapSrc: "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d113401.76106263592!2d-80.33400569601438!3d27.165416208953185!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x88dee251648a7351%3A0x67dbdbef19f977bd!2sStuart%2C%20FL!5e0!3m2!1sen!2sus!4v1700000000000!5m2!1sen!2sus"
   };
 
 
@@ -172,9 +183,10 @@ const ContactUs = () => {
       <div className="bg-[#0A3161]/5 min-h-screen px-4 sm:px-6 lg:px-8">
         <div className="max-w-7xl mx-auto">
           {/* Section 1: Office Locations Cards */}
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-8 lg:gap-16 mb-24">
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-8 lg:gap-16 mb-24">
             <OfficeCard {...canadaData} />
             <OfficeCard {...usaData} />
+            <OfficeCard {...floridaData} />
           </div>
           {/* Section 2: Form Header Text */}
           <div className="text-center mb-12">

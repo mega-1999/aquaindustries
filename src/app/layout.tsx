@@ -19,6 +19,9 @@ const geistMono = Geist_Mono({
 export const metadata: Metadata = {
   title: "Metalverse Foundry | B2B Manufacturing Portal",
   description: "The complete platform for foundries, forgers, and fabricators.",
+  icons:{
+    icon:'/favicon.png',
+  }
 };
 
 export default function RootLayout({
