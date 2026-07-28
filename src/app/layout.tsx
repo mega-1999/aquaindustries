@@ -2,9 +2,8 @@ import type { Metadata } from 'next';
 import { Geist, Geist_Mono } from 'next/font/google';
 import "./globals.css";
 import { Toaster } from '@/components/ui/sonner';
-import FixedQuoteBtn from './components/FixedQuoteBtn';
 import EntrySystem from './components/EntrySystem';
-
+ 
 const geistSans = Geist({
   variable: "--font-geist-sans",
   subsets: ["latin"],
@@ -20,7 +19,7 @@ export const metadata: Metadata = {
   title: "Metalverse Foundry | B2B Manufacturing Portal",
   description: "The complete platform for foundries, forgers, and fabricators.",
   icons:{
-    icon:'/favicon.png',
+    icon:'/favicon.png'
   }
 };
 
@@ -33,12 +32,14 @@ export default function RootLayout({
     <html lang="en">
       <head>
          {/* Optional: Add custom favicon links here if needed */}
+         <link rel="shortcut icon" href="/favicon.png" type="image/x-icon" />
       </head>
       <body className={`${geistSans.variable} ${geistMono.variable} antialiased bg-[#0A3161]/5 text-white`}>
         
         {/* Render the Page Content */}
-        <EntrySystem/>
-        <FixedQuoteBtn />
+
+        <EntrySystem />
+
         {children}
         {/* ✅ 2. Add Toaster so popups work across the app */}
         <Toaster />

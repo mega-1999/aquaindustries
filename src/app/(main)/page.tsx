@@ -49,6 +49,7 @@ import DotMatrixSlider from './DotMatrixSlider';
 import { ResourceDirectory } from './ResourceDirectory';
 import MegaMediaHub from './MegaMediaHub';
 import MegaTactilePlates from './MegaTactilePlates';
+import OtherMetalProducts from './OtherMetalProducts';
 
 export default function Home() {
     const [isLoggedIn, setIsLoggedIn] = useState(false);
@@ -111,6 +112,7 @@ export default function Home() {
             <MegaProducts />
             <MegaMediaHub />
             <MegaTactilePlates/>
+            <OtherMetalProducts/>
             <LiveStreamCommandCenter />
             <MegaFeaShowcase />
             <IndustrialManifest />
