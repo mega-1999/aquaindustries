@@ -2,8 +2,7 @@ import type { Metadata } from 'next';
 import { Geist, Geist_Mono } from 'next/font/google';
 import "./globals.css";
 import { Toaster } from '@/components/ui/sonner';
-import EntrySystem from './components/EntrySystem';
- 
+
 const geistSans = Geist({
   variable: "--font-geist-sans",
   subsets: ["latin"],
@@ -15,14 +14,15 @@ const geistMono = Geist_Mono({
 });
 
 // ✅ 1. Add Metadata (Title & Description)
+
 export const metadata: Metadata = {
+
   title: "Metalverse Industries Ltd.",
   description: "The complete platform for foundries, forgers, and fabricators.",
-  icons:{
-    icon:'/favicon.png'
-  }
+  icons: {
+    icon: '/favicon2.png',
+  },
 };
-
 export default function RootLayout({
   children,
 }: {
@@ -31,11 +31,11 @@ export default function RootLayout({
   return (
     <html lang="en">
       <head>
-         {/* Optional: Add custom favicon links here if needed */}
-         <link rel="shortcut icon" href="/favicon.png" type="image/x-icon" />
+        {/* Optional: Add custom favicon links here if needed */}
+        <link rel="shortcut icon" href="/favicon.png" type="image/x-icon" />
       </head>
       <body className={`${geistSans.variable} ${geistMono.variable} antialiased bg-[#0A3161]/5 text-white`}>
-        
+
         {/* Render the Page Content */}
 
         {/* <EntrySystem /> */}
@@ -43,7 +43,7 @@ export default function RootLayout({
         {children}
         {/* ✅ 2. Add Toaster so popups work across the app */}
         <Toaster />
-        
+
       </body>
     </html>
   );
