@@ -16,7 +16,7 @@ const geistMono = Geist_Mono({
 
 // ✅ 1. Add Metadata (Title & Description)
 export const metadata: Metadata = {
-  title: "Metalverse Foundry | B2B Manufacturing Portal",
+  title: "Metalverse Industries Ltd.",
   description: "The complete platform for foundries, forgers, and fabricators.",
   icons:{
     icon:'/favicon.png'
@@ -38,7 +38,7 @@ export default function RootLayout({
         
         {/* Render the Page Content */}
 
-        <EntrySystem />
+        {/* <EntrySystem /> */}
 
         {children}
         {/* ✅ 2. Add Toaster so popups work across the app */}

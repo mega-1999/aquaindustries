@@ -2,22 +2,23 @@
 
 import Link from 'next/link';
 import React, { useEffect, useState } from 'react';
-import { Button } from '@/components/ui/button'; 
+import { Button } from '@/components/ui/button';
 import localFont from 'next/font/local';
 import { motion } from "framer-motion";
+import Marquee from "react-fast-marquee";
 
 interface HeroProps {
   videoSrc?: string;
 }
 
 const apricotsFont = localFont({
-  src: '../../lib/fonts/Horizon.otf', 
+  src: '../../lib/fonts/Horizon.otf',
   display: 'swap',
   fallback: ['sans-serif']
 });
 
-const words = ["Water Works.", "Precast Molds", "Minerals & Metals."]; 
-   
+const words = ["Water Works.", "Precast Molds", "Minerals & Metals."];
+
 export const Hero = ({
   videoSrc = "/video/282244_small.mp4"
 }: HeroProps) => {
@@ -50,7 +51,7 @@ export const Hero = ({
         loop
         muted
         playsInline
-        className="absolute inset-0 w-full h-full object-cover z-0 opacity-100 filter contrast-125"
+        className="absolute inset-0 w-full h-full object-cover z-0 opacity-100 filter contrast-200"
       >
         <source src={videoSrc} type="video/mp4" />
       </video>
@@ -60,12 +61,18 @@ export const Hero = ({
       <div className="absolute inset-0 bg-[#B31942]/5 z-0 pointer-events-none mix-blend-color" />
 
       {/* 2. FLUID EDGES CONTAINER - SHIFTED CONTENT UP via pb-24 md:pb-36 */}
-      <div className="relative z-10 w-full mx-auto px-4 sm:px-6 lg:px-10 pt-12 pb-48 md:pb-60">
-        <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 items-start w-full">
+      <div className="relative z-10 w-full mx-auto px-4 sm:px-6 lg:px-10 pb-48 md:pb-60">
+        <Marquee>
+          <div className="text-3xl text-[#B31942]  tracking-[0.25em] font-black py-2 uppercase">
+           Site Under Construction | Site Under Construction | Site Under Construction |
+          </div>
+        </Marquee>
+        <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 pt-16 pb-8 items-start w-full">
 
           {/* LEFT SIDE CONTENT */}
           <div className="lg:col-span-8 text-left space-y-6">
- 
+
+
             {/* Meta Tag Block */}
             <div className="inline-block text-xs text-white tracking-[0.25em] font-black bg-[#B31942] border border-[#B31942] shadow-[0_0_20px_rgba(204,34,33,0.4)] px-4 py-2 uppercase">
               Metalverse | Global Metals & Minerals Hub
@@ -77,11 +84,11 @@ export const Hero = ({
                 The World's Advanced <br />
                 Consortium of{" "}
                 <span className="block min-h-[1.2em] relative mt-2 lg:mt-4 flex items-center">
-                  
+
                   {/* Transparent Outline Text Effect */}
-                  <span 
+                  <span
                     className="text-transparent drop-shadow-[0_0_20px_rgba(204,34,33,0.4)] font-black select-none"
-                    style={{ 
+                    style={{
                       WebkitTextStroke: "2px #ffffff",
                     }}
                   >

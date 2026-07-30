@@ -90,27 +90,8 @@ const Footer = () => {
                   </Link>
                 </div>
               </div>
-              {/* Category Badge */}
-              <span className="inline-block text-[10px] font-mono font-bold uppercase tracking-[0.2em] text-[#B31942] bg-white px-3 py-1 rounded-sm shadow-sm">
-                Corporate Headquarters
-              </span>
             </div>
 
-            {/* Address Details */}
-            <div>
-              <div className="text-sm space-y-1 text-white/70 font-light">
-                <p className="font-semibold text-white">30 N GOULD ST</p>
-                <p>SHERIDAN, WY 82801-6317</p>
-              </div>
-              <div className="mt-4 flex flex-col gap-1 text-sm text-white/80 font-mono">
-                <a
-                  href="tel:6042000616"
-                  className="hover:text-[#B31942] transition-colors duration-200"
-                >
-                  Ph: 604 200 0616
-                </a>
-              </div>
-            </div>
           </div>
 
           {/* --- COL 2: CORPORATE HEADQUARTERS (Middle) --- */}
@@ -123,9 +104,8 @@ const Footer = () => {
                 <Link href={'/'} className="w-full h-full relative">
                   <Image src={'/MIL.png'} alt='Metalverse Industries' fill className="object-contain" />
                 </Link>
-              </div> 
+              </div>
             </div>
- 
           </div>
 
           {/* --- COL 3: INTERNATIONAL OFFICE (Right) --- */}
@@ -152,16 +132,76 @@ const Footer = () => {
                 </div>
               </div>
             </div>
+
+
+          </div>
+
+        </div>
+      </div>
+      <div className="w-full px-4 sm:px-6 lg:px-10 lg:pr-20 py-3 ">
+        <div className="grid grid-cols-1 lg:grid-cols-3 gap-12 xl:gap-1 pb-12">
+
+
+          <div className="flex flex-col justify-between items-start   text-left lg:text-right gap-8">
+            <div className="space-y-6 flex flex-col items-start lg:items-end">
+
+
+            </div>
             {/* Category Badge */}
             <span className="inline-block text-[10px] font-mono font-bold uppercase tracking-[0.2em] text-[#B31942] bg-white px-3 py-1 rounded-sm shadow-sm">
-              Global
+              Corporate Headquarters
+
+            </span>
+            <div>
+              <div className="text-sm space-y-1 text-white/70 font-light">
+                <p className="font-semibold text-white">OPENING FALL 2026</p>
+                <p >105 MAXESS ROAD</p>
+                <p >MELVILLE, NY 11747</p>
+              </div>
+              <div className="mt-4 flex flex-col gap-1 text-sm text-white/80 font-mono">
+                <a
+                  href="tel:6042000616"
+                  className="hover:text-[#B31942] transition-colors duration-200"
+                >
+                  Ph: 604 200 0616
+                </a>
+              </div>
+            </div>
+          </div>
+          <div className="flex flex-col justify-between items-center   text-left lg:text-right gap-8">
+            <div className="space-y-6 flex flex-col items-start lg:items-end">
+
+
+            </div>
+            {/* Category Badge */}
+            <span className="inline-block text-[10px] font-mono font-bold uppercase tracking-[0.2em] text-[#B31942] bg-white px-3 py-1 rounded-sm shadow-sm">
+              REGISTERED ADDRESS
             </span>
             {/* Address Details */}
-            <div className="flex flex-col lg:flex-row gap-8 lg:gap-12">
+            <div>
+              <div className="text-sm space-y-1 text-white/70 font-light text-center">
+                {/* <p className="font-semibold text-white">REGISTERED ADDRESS</p> */}
+                <p>30 GOULD ST</p>
+                <p>SHERIDAN, WY 82801</p>
+              </div>
+            </div>
+          </div>
+          <div className="flex flex-col justify-between items-start lg:items-end text-left lg:text-right gap-8">
+            <div className="space-y-6 flex flex-col items-start lg:items-end">
+
+
+            </div>
+            {/* Category Badge */}
+            <span className="inline-block text-[10px] font-mono font-bold uppercase tracking-[0.2em] text-[#B31942] bg-white px-3 py-1 rounded-sm shadow-sm">
+              Sales Representative Office
+            </span>
+            {/* Address Details */}
+            <div className="flex flex-col lg:flex-row gap-8 lg:gap-12 justify-end">
               <div>
+                {/* <p className="text-white font-semibold text-xs uppercase mb-1">Sales Representative Office</p> */}
                 <div className="text-sm space-y-1 text-white/70 font-light">
-                  <p className="font-semibold text-white">105 MAXES ROAD</p>
-                  <p>MELVILLE, NY 11737, USA</p>
+                  <p >437 CARLLS PATH</p>
+                  <p>DEER PARK, NY 11729</p>
                 </div>
                 <div className="mt-4 text-sm text-white/80 font-mono">
                   <a
@@ -169,21 +209,6 @@ const Footer = () => {
                     className="hover:text-[#B31942] transition-colors duration-200"
                   >
                     Ph: 631 458 1111
-                  </a>
-                </div>
-              </div>
-
-              <div>
-                <div className="text-sm space-y-1 text-white/70 font-light">
-                  <p className="font-semibold text-white">850 NW FEDERAL HWY</p>
-                  <p>STUART, FL 34994</p>
-                </div>
-                <div className="mt-4 text-sm text-white/80 font-mono">
-                  <a
-                    href="tel:7722970700"
-                    className="hover:text-[#B31942] transition-colors duration-200"
-                  >
-                    Ph: (772) 297-0700
                   </a>
                 </div>
               </div>

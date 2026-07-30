@@ -5,7 +5,7 @@ import TopNavbarr from "../components/top-navbarr";
 import BackgroundMusic from "../components/BackgroundMusic";
 import FixedQuoteBtn from "../components/FixedQuoteBtn";
 
- 
+
 
 export default function MainLayout({
   children,
@@ -19,7 +19,7 @@ export default function MainLayout({
         <TopNavbar />
       </div>
       <TopNavbarr />
-              <FixedQuoteBtn />
+      <FixedQuoteBtn />
       <Navbar />
       {children}
       <Footer />
