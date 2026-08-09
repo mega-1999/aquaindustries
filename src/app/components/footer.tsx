@@ -139,11 +139,11 @@ const Footer = () => {
         </div>
       </div>
       <div className="w-full px-4 sm:px-6 lg:px-10 lg:pr-20 py-3 ">
-        <div className="grid grid-cols-1 lg:grid-cols-3 gap-12 xl:gap-1 pb-12">
+        <div className="grid grid-cols-1 lg:grid-cols-[2.5fr_7fr_2.5fr] gap-12 lg:gap-4 xl:gap-8 pb-12">
 
 
-          <div className="flex flex-col justify-between items-start   text-left lg:text-right gap-8">
-            <div className="space-y-6 flex flex-col items-start lg:items-end">
+          <div className="flex flex-col justify-between items-start text-left gap-8">
+            <div className="space-y-6 flex flex-col items-start">
 
 
             </div>
@@ -168,8 +168,8 @@ const Footer = () => {
               </div>
             </div>
           </div>
-          <div className="flex flex-col justify-between items-center   text-left lg:text-right gap-8">
-            <div className="space-y-6 flex flex-col items-start lg:items-end">
+          <div className="flex flex-col justify-between items-center text-center gap-8 border-y lg:border-y-0 lg:border-x border-white/10 py-8 lg:py-0 px-4">
+            <div className="space-y-6 flex flex-col items-center">
 
 
             </div>
@@ -178,11 +178,36 @@ const Footer = () => {
               REGISTERED ADDRESS
             </span>
             {/* Address Details */}
-            <div>
-              <div className="text-sm space-y-1 text-white/70 font-light text-center">
-                {/* <p className="font-semibold text-white">REGISTERED ADDRESS</p> */}
-                <p>30 GOULD ST</p>
-                <p>SHERIDAN, WY 82801</p>
+            <div className="grid grid-cols-1 md:grid-cols-3 gap-6 justify-items-center w-full">
+              {/* USA */}
+              <div className="flex flex-col items-center w-full">
+                <p className="text-white font-semibold text-xs uppercase mb-1">USA</p>
+                <div className="text-sm space-y-1 text-white/70 font-light text-center">
+                  <p>30 GOULD ST</p>
+                  <p>SHERIDAN, WY 82801</p>
+                </div>
+                <div className="mt-4 flex flex-col gap-1 text-sm text-white/80 font-mono text-center">
+                  <a href="tel:5162521111" className="hover:text-[#B31942] transition-colors duration-200">Ph: (516) 252 1111</a>
+                  <a href="tel:3072697077" className="hover:text-[#B31942] transition-colors duration-200">Ph: (307) 269 7077</a>
+                </div>
+              </div>
+
+              {/* Brazil */}
+              <div className="flex flex-col items-center w-full">
+                <p className="text-white font-semibold text-xs uppercase mb-1">Brazil</p>
+                <div className="text-sm space-y-1 text-white/70 font-light text-center">
+                  <p>Av. Pres. Wilson, 231 - Centro</p>
+                  <p>Rio de Janeiro - RJ, 20030-021</p>
+                </div>
+              </div>
+
+              {/* India */}
+              <div className="flex flex-col items-center w-full">
+                <p className="text-white font-semibold text-xs uppercase mb-1">India</p>
+                <div className="text-sm space-y-1 text-white/70 font-light text-center">
+                  <p>6 Russell Street, Park St</p>
+                  <p>Kolkata, West Bengal 700071</p>
+                </div>
               </div>
             </div>
           </div>
@@ -196,19 +221,25 @@ const Footer = () => {
               Sales Representative Office
             </span>
             {/* Address Details */}
-            <div className="flex flex-col lg:flex-row gap-8 lg:gap-12 justify-end">
+            <div className="flex flex-col gap-6 justify-end text-left lg:text-right">
+              {/* USA */}
               <div>
-                {/* <p className="text-white font-semibold text-xs uppercase mb-1">Sales Representative Office</p> */}
                 <div className="text-sm space-y-1 text-white/70 font-light">
-                  <p >437 CARLLS PATH</p>
+                  <p>437 CARLLS PATH</p>
                   <p>DEER PARK, NY 11729</p>
                 </div>
-                <div className="mt-4 text-sm text-white/80 font-mono">
+                <div className="mt-2 flex flex-col gap-1 text-sm text-white/80 font-mono">
                   <a
                     href="tel:6314581111"
                     className="hover:text-[#B31942] transition-colors duration-200"
                   >
-                    Ph: 631 458 1111
+                    Ph: (631) 458 1111
+                  </a>
+                  <a
+                    href="tel:8444181112"
+                    className="hover:text-[#B31942] transition-colors duration-200"
+                  >
+                    Ph: (844) 418 1112
                   </a>
                 </div>
               </div>
@@ -297,7 +328,7 @@ const Footer = () => {
       <div className="border-t border-red-800 w-full px-4 sm:px-6 lg:px-10 py-6 pb-10 bg-[#B31942]">
         <div className="flex justify-center items-center">
           <p className="text-lg text-white font-medium">
-            ©1999-2026 Copyright <strong>Metalverse Industries & Groups</strong> — All Rights Reserved.
+            ©1999-2026 Copyright <strong>Metalverse Industries Ltd.</strong> — All Rights Reserved.
           </p>
         </div>
       </div>
