@@ -64,188 +64,29 @@ const Footer = () => {
 
   return (
     <footer className="bg-[#0A3161] text-white/70 border-t border-white/10 font-sans">
-      <div className="w-full px-4 sm:px-6 lg:px-10 lg:pr-20 py-3 pt-16 ">
-        <div className="grid grid-cols-1 lg:grid-cols-3 gap-12 xl:gap-16 border-b border-white/10 pb-12">
-
-          {/* --- COL 1: SALES OFFICE (Left) --- */}
-          <div className="flex flex-col justify-between gap-8">
-            <div className="space-y-6">
-
-
-              {/* Logos */}
-              <div className="flex gap-4">
-                <div className="bg-white p-2 rounded-lg w-28 h-24 flex items-center justify-center shadow-md hover:scale-105 transition-transform">
-                  <Link href={'/'} className="w-full h-full relative">
-                    <Image src={'/MMO.png'} alt='Metalverse Industries' fill className="object-contain" />
-                  </Link>
-                </div>
-                <div className="bg-white p-2 rounded-lg w-28 h-24 flex items-center justify-center shadow-md hover:scale-105 transition-transform">
-                  <Link href={'/'} className="w-full h-full relative">
-                    <Image src={'/MME.png'} alt='Metalverse METALS' fill className="object-contain" />
-                  </Link>
-                </div>
-                <div className="bg-white p-2 rounded-lg w-28 h-24 flex items-center justify-center shadow-md hover:scale-105 transition-transform">
-                  <Link href={'/'} className="w-full h-full relative">
-                    <Image src={'/MFA.png'} alt='Fabricators' fill className="object-contain" />
-                  </Link>
-                </div>
-              </div>
-            </div>
-
+      <div className="w-full px-4 sm:px-6 lg:px-10 lg:pr-20 py-3 pt-16">
+        <div className="flex flex-col lg:flex-row justify-between items-center lg:items-start border-b border-white/10 pb-12 gap-12">
+          {/* Main Corporate Logo (Left) */}
+          <div className="bg-white p-3 rounded-lg w-72 h-32 flex items-center justify-center shadow-md hover:scale-105 transition-transform shrink-0">
+            <Link href={'/'} className="w-full h-full relative">
+              <Image src={'/MIL.png'} alt='Metalverse Industries' fill className="object-contain" />
+            </Link>
           </div>
 
-          {/* --- COL 2: CORPORATE HEADQUARTERS (Middle) --- */}
-          <div className="flex flex-col items-center justify-between text-center gap-8 border-y lg:border-y-0 lg:border-x border-white/10 py-8 lg:py-0 px-4">
-            <div className="space-y-6 flex flex-col items-center">
-
-
-              {/* Main Corporate Logo */}
-              <div className="bg-white p-3 rounded-lg w-72 h-32 flex items-center justify-center shadow-md hover:scale-105 transition-transform">
-                <Link href={'/'} className="w-full h-full relative">
-                  <Image src={'/MIL.png'} alt='Metalverse Industries' fill className="object-contain" />
-                </Link>
-              </div>
-            </div>
-          </div>
-
-          {/* --- COL 3: INTERNATIONAL OFFICE (Right) --- */}
-          <div className="flex flex-col justify-between items-start lg:items-end text-left lg:text-right gap-8">
-            <div className="space-y-6 flex flex-col items-start lg:items-end">
-
-
-              {/* Logos */}
-              <div className="flex gap-4 justify-start lg:justify-end">
-                <div className="bg-white p-2 rounded-lg w-28 h-24 flex items-center justify-center shadow-md hover:scale-105 transition-transform">
-                  <Link href={'/'} className="w-full h-full relative">
-                    <Image src={'/MFO.png'} alt='MWA' fill className="object-contain" />
-                  </Link>
-                </div>
-                <div className="bg-white p-2 rounded-lg w-28 h-24 flex items-center justify-center shadow-md hover:scale-105 transition-transform">
-                  <Link href={'/'} className="w-full h-full relative">
-                    <Image src={'/MCA.png'} alt='Metalverse Forge' fill className="object-contain" />
-                  </Link>
-                </div>
-                <div className="bg-white p-2 rounded-lg w-28 h-24 flex items-center justify-center shadow-md hover:scale-105 transition-transform">
-                  <Link href={'/'} className="w-full h-full relative">
-                    <Image src={'/MWA.png'} alt='Metalverse Forge' fill className="object-contain" />
-                  </Link>
-                </div>
-              </div>
-            </div>
-
-
-          </div>
-
-        </div>
-      </div>
-      <div className="w-full px-4 sm:px-6 lg:px-10 lg:pr-20 py-3 ">
-        <div className="grid grid-cols-1 lg:grid-cols-[2.5fr_7fr_2.5fr] gap-12 lg:gap-4 xl:gap-8 pb-12">
-
-
-          <div className="flex flex-col justify-between items-start text-left gap-8">
-            <div className="space-y-6 flex flex-col items-start">
-
-
-            </div>
-            {/* Category Badge */}
+          {/* Address (Right) */}
+          <div className="flex flex-col items-center lg:items-end text-center lg:text-right gap-4">
             <span className="inline-block text-[10px] font-mono font-bold uppercase tracking-[0.2em] text-[#B31942] bg-white px-3 py-1 rounded-sm shadow-sm">
-              Corporate Headquarters
-
+              USA
             </span>
-            <div>
-              <div className="text-sm space-y-1 text-white/70 font-light">
-                <p className="font-semibold text-white">OPENING FALL 2026</p>
-                <p >105 MAXESS ROAD</p>
-                <p >MELVILLE, NY 11747</p>
-              </div>
-              <div className="mt-4 flex flex-col gap-1 text-sm text-white/80 font-mono">
-                <a
-                  href="tel:6042000616"
-                  className="hover:text-[#B31942] transition-colors duration-200"
-                >
-                  Ph: 604 200 0616
-                </a>
-              </div>
+            <div className="text-sm space-y-1 text-white/70 font-light">
+              <p>30 GOULD ST</p>
+              <p>SHERIDAN, WY 82801</p>
+            </div>
+            <div className="mt-2 flex flex-col gap-1 text-sm text-white/80 font-mono">
+              <a href="tel:5162521111" className="hover:text-[#B31942] transition-colors duration-200">Ph: (516) 252 1111</a>
+              <a href="tel:3072697077" className="hover:text-[#B31942] transition-colors duration-200">Ph: (307) 269 7077</a>
             </div>
           </div>
-          <div className="flex flex-col justify-between items-center text-center gap-8 border-y lg:border-y-0 lg:border-x border-white/10 py-8 lg:py-0 px-4">
-            <div className="space-y-6 flex flex-col items-center">
-
-
-            </div>
-            {/* Category Badge */}
-            <span className="inline-block text-[10px] font-mono font-bold uppercase tracking-[0.2em] text-[#B31942] bg-white px-3 py-1 rounded-sm shadow-sm">
-              REGISTERED ADDRESS
-            </span>
-            {/* Address Details */}
-            <div className="grid grid-cols-1 md:grid-cols-3 gap-6 justify-items-center w-full">
-              {/* USA */}
-              <div className="flex flex-col items-center w-full">
-                <p className="text-white font-semibold text-xs uppercase mb-1">USA</p>
-                <div className="text-sm space-y-1 text-white/70 font-light text-center">
-                  <p>30 GOULD ST</p>
-                  <p>SHERIDAN, WY 82801</p>
-                </div>
-                <div className="mt-4 flex flex-col gap-1 text-sm text-white/80 font-mono text-center">
-                  <a href="tel:5162521111" className="hover:text-[#B31942] transition-colors duration-200">Ph: (516) 252 1111</a>
-                  <a href="tel:3072697077" className="hover:text-[#B31942] transition-colors duration-200">Ph: (307) 269 7077</a>
-                </div>
-              </div>
-
-              {/* Brazil */}
-              <div className="flex flex-col items-center w-full">
-                <p className="text-white font-semibold text-xs uppercase mb-1">Brazil</p>
-                <div className="text-sm space-y-1 text-white/70 font-light text-center">
-                  <p>Av. Pres. Wilson, 231 - Centro</p>
-                  <p>Rio de Janeiro - RJ, 20030-021</p>
-                </div>
-              </div>
-
-              {/* India */}
-              <div className="flex flex-col items-center w-full">
-                <p className="text-white font-semibold text-xs uppercase mb-1">India</p>
-                <div className="text-sm space-y-1 text-white/70 font-light text-center">
-                  <p>6 Russell Street, Park St</p>
-                  <p>Kolkata, West Bengal 700071</p>
-                </div>
-              </div>
-            </div>
-          </div>
-          <div className="flex flex-col justify-between items-start lg:items-end text-left lg:text-right gap-8">
-            <div className="space-y-6 flex flex-col items-start lg:items-end">
-
-
-            </div>
-            {/* Category Badge */}
-            <span className="inline-block text-[10px] font-mono font-bold uppercase tracking-[0.2em] text-[#B31942] bg-white px-3 py-1 rounded-sm shadow-sm">
-              Sales Representative Office
-            </span>
-            {/* Address Details */}
-            <div className="flex flex-col gap-6 justify-end text-left lg:text-right">
-              {/* USA */}
-              <div>
-                <div className="text-sm space-y-1 text-white/70 font-light">
-                  <p>437 CARLLS PATH</p>
-                  <p>DEER PARK, NY 11729</p>
-                </div>
-                <div className="mt-2 flex flex-col gap-1 text-sm text-white/80 font-mono">
-                  <a
-                    href="tel:6314581111"
-                    className="hover:text-[#B31942] transition-colors duration-200"
-                  >
-                    Ph: (631) 458 1111
-                  </a>
-                  <a
-                    href="tel:8444181112"
-                    className="hover:text-[#B31942] transition-colors duration-200"
-                  >
-                    Ph: (844) 418 1112
-                  </a>
-                </div>
-              </div>
-            </div>
-          </div>
-
         </div>
       </div>
       <div className="w-full px-4 sm:px-6 lg:px-10 py-3 pb-12  ">

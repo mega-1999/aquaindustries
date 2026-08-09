@@ -137,136 +137,45 @@ const Navbar = () => {
         <>
             <header className="bg-white shadow-md z-40 relative">
 
-                {/* <div className="flex flex-col lg:flex-row items-start justify-between">
- 
-                        <div className="w-full lg:w-auto flex justify-between item-start gap-6 shrink-0">
-                            <div className='flex flex-col gap-4'>
-                                <div className="items-center gap-4 hidden lg:flex">
-                                    <Link href={'/'} className="shrink-0"><Image src={'/MMO.png'} alt='Metalverse  Industries' height={80} width={80} className="object-contain h-12 w-12 sm:h-16 sm:w-16 lg:h-20 lg:w-20" /></Link>
-                                    <Link href={'/'} className="shrink-0"><Image src={'/MME.png'} alt='Fabricator' height={80} width={80} className="object-contain h-12 w-12 sm:h-16 sm:w-16 lg:h-20 lg:w-20" /></Link>
-                                    <Link href={'/'} className="shrink-0"><Image src={'/MFA.png'} alt='Fabricator' height={80} width={80} className="object-contain h-24 w-24 sm:h-16 sm:w-16 lg:h-20 lg:w-20" /></Link>
-                                </div> 
-                            </div>
-                            <div className="pt-2 lg:hidden">
-                                <div className="grid grid-cols-7 gap-4 items-center justify-items-center">
-                                    <Image src={'/MMO.png'} alt='Mega' width={60} height={60} className="object-contain h-12 w-12" />
-                                    <Image src={'/MFA.png'} alt='Fabricator' width={60} height={60} className="object-contain h-12 w-12" />
-                                    <Image src={'/MEGA INDUSTRIES.png'} alt='Fabricator' width={60} height={60} className="object-contain h-12 w-12" />
-                                    <Image src={'/MME.png'} alt='Fabricator' width={100} height={100} className="object-contain h-24 w-24" />
-                                    <Image src={'/MWA.png'} alt='Fabricator' width={60} height={60} className="object-contain h-12 w-12" />
-                                    <Image src={'/MCA.png'} alt='Forge' width={60} height={60} className="object-contain h-12 w-12" />
-                                    <Image src={'/MFO.png'} alt='Canada' width={60} height={60} className="object-contain h-12 w-12" />
-                                </div>
-                            </div>
+
+
+                <div className="w-full px-4 sm:px-6 lg:px-10 "> {/* Added py-4 for spacing */}
+
+                    {/* Changed items-center to items-start to align logos at the top */}
+                    <div className="flex flex-col lg:flex-row items-center justify-between gap-6 py-2">
+
+                        {/* === LEFT SECTION (Logo) === */}
+                        <div className="w-full lg:w-auto flex justify-between items-center shrink-0">
+                            <Link href={'/'} className="shrink-0 flex items-center">
+                                <Image
+                                    src={'/MIL.png'}
+                                    alt='Metalverse Industries'
+                                    width={400}
+                                    height={120}
+                                    className="object-contain h-16 w-auto lg:h-20"
+                                    priority
+                                />
+                            </Link>
+                            
+                            {/* Mobile Menu Button */}
                             <div className="flex items-center gap-2 lg:hidden">
                                 <button onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)} className="p-2 text-[#0A3161] hover:text-[#B31942] transition-colors">
                                     {isMobileMenuOpen ? <X size={28} /> : <Menu size={28} />}
                                 </button>
                             </div>
                         </div>
-                        <div className="hidden lg:flex flex-col items-center gap-2">  
-                            <Link href={'/'} className="shrink-0 flex items-center justify-center">
-                                <Image
-                                    src={'/MIL.png'}
-                                    alt='Metalverse Industries'
-                                    width={300}    
-                                    height={400}   
-                                    className="object-contain w-auto h-28 lg:h-20"  
-                                    priority
-                                />
-                            </Link>
- 
-                            <div className="w-full max-w-2xl">  
-                                <SearchBar />
-                            </div>
-                        </div>
-                        <div className="hidden lg:flex flex-col justify-between items-end">
-                            <div className="flex items-center gap-4">
-                                <Link href={'/'} className="shrink-0">
-                                    <Image src={'/MFO.png'} alt='Molds' height={80} width={80} className="object-contain h-24 w-24" />
-                                </Link>
-                                <Link href={'/'} className="shrink-0">
-                                    <Image src={'/MCA.png'} alt='Forge' height={80} width={80} className="object-contain h-24 w-24" />
-                                </Link>
-                                <Link href={'/'} className="shrink-0">
-                                    <Image src={'/MWA.png'} alt='Canada' height={80} width={80} className="object-contain h-24 w-24" />
-                                </Link>
-                            </div>
-                            <div>
-                                <UserMenu />
-                            </div> 
 
-                        </div>
-                    </div> */}
-
-                <div className="w-full px-4 sm:px-6 lg:px-10 "> {/* Added py-4 for spacing */}
-
-                    {/* Changed items-center to items-start to align logos at the top */}
-                    <div className="flex flex-col lg:flex-row items-start justify-between gap-6">
-
-                        {/* === LEFT SECTION (Logos) === */}
-                        <div className="w-full lg:w-auto flex flex-col justify-between items-start shrink-0">
-                            <div className="flex items-center gap-4 lg:flex"> {/* Added mt-2 to align with center logo text baseline if needed */}
-                                <Link href={'/'} className="shrink-0">
-                                    <Image src={'/MMO.png'} alt='Metalverse  Industries' height={80} width={80} className="object-contain h-14 w-14 lg:h-18   lg:w-24" />
-                                </Link>
-                                <Link href={'/'} className="shrink-0">
-                                    <Image src={'/MME.png'} alt='Fabricator' height={80} width={80} className="object-contain h-14 w-14 lg:h-18  lg:w-24" />
-                                </Link>
-                                <Link href={'/'} className="shrink-0">
-                                    <Image src={'/MFA.png'} alt='Fabricator' height={80} width={80} className="object-contain h-14 w-14 lg:h-18     lg:w-24" />
-                                </Link>
-                            </div>
-                            {/* ... Mobile Menu Button code ... */}
-                            {/* 2. User Menu (Aligned Bottom) */}
-                            <div className="mt-4">
-                                <h1 className='text-xl md:text-2xl text-[#B31942] flex gap-4 items-center'>Globally Connected <ChevronDownIcon className='h-8 w-8 text-[#0A3161] ' /></h1>
-                            </div>
-                        </div>
-
-                        {/* === CENTER SECTION (Logo + Search Stacked) === */}
-                        <div className="hidden lg:flex flex-col items-center gap-2 w-full max-w-2xl">
-                            {/* Logo */}
-                            <Link href={'/'} className="shrink-0 flex items-center justify-center">
-                                <Image
-                                    src={'/MIL.png'}
-                                    alt='Metalverse Industries'
-                                    width={400}
-                                    height={120}
-                                    className="object-contain h-16 w-auto lg:h-20" // Adjusted height
-                                    priority
-                                />
-                            </Link>
-
-                            {/* Search Bar (Below Logo) */}
+                        {/* === CENTER SECTION (Search) === */}
+                        <div className="hidden lg:flex flex-col items-center justify-center w-full max-w-2xl">
                             <div className="w-full">
                                 <SearchBar />
                             </div>
                         </div>
 
-                        {/* === RIGHT SECTION (Logos + User Menu) === */}
-                        {/* Pushes content to edges: Logos at top, Menu at bottom */}
-                        <div className="hidden lg:flex flex-col justify-between items-end shrink-0 h-full min-h-[120px]">
-
-                            {/* 1. Logos (Aligned Top) */}
-                            <div className="flex items-center gap-4"> {/* mt-2 matches Left Section */}
-                                <Link href={'/'} className="shrink-0">
-                                    <Image src={'/MFO.png'} alt='Molds' height={80} width={80} className="object-contain h-14 w-14 lg:h-18 lg:w-24" />
-                                </Link>
-                                <Link href={'/'} className="shrink-0">
-                                    <Image src={'/MCA.png'} alt='Forge' height={80} width={80} className="object-contain h-14 w-14 lg:h-18 lg:w-24" />
-                                </Link>
-                                <Link href={'/'} className="shrink-0">
-                                    <Image src={'/MWA.png'} alt='Canada' height={80} width={80} className="object-contain h-14 w-14 lg:h-18 lg:w-24" />
-                                </Link>
-                            </div>
-
-                            {/* 2. User Menu (Aligned Bottom) */}
-                            <div className="mt-4">
-                                <UserMenu />
-                            </div>
+                        {/* === RIGHT SECTION (User Menu) === */}
+                        <div className="hidden lg:flex flex-col justify-center items-end shrink-0">
+                            <UserMenu />
                         </div>
-
                     </div>
                 </div>
 

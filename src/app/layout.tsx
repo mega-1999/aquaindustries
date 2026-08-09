@@ -20,7 +20,7 @@ export const metadata: Metadata = {
   title: "Metalverse Industries Ltd.",
   description: "The complete platform for foundries, forgers, and fabricators.",
   icons: {
-    icon: '/favicon2.png',
+    icon: '/favicon.svg',
   },
 };
 export default function RootLayout({
@@ -30,9 +30,7 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en">
-      <head>
-        {/* Optional: Add custom favicon links here if needed */}
-        <link rel="shortcut icon" href="/favicon.png" type="image/x-icon" />
+      <head> 
       </head>
       <body className={`${geistSans.variable} ${geistMono.variable} antialiased bg-[#0A3161]/5 text-white`}>
 
