@@ -19,7 +19,8 @@ interface ProductCatalogMatrixProps {
   selectedCategory?: string;
 }
 
-const INITIAL_CARD_LIMIT = 5;
+const INITIAL_CARD_LIMIT = 6;
+const LOAD_MORE_INCREMENT = 6;
 
 export const ProductCatalogMatrix: React.FC<ProductCatalogMatrixProps> = ({
   onAddToRfq,
@@ -43,7 +44,7 @@ export const ProductCatalogMatrix: React.FC<ProductCatalogMatrixProps> = ({
     }
   }, [selectedCategory]);
 
-  // Reset visible card count to 5 whenever category changes
+  // Reset visible card count to 6 whenever category changes
   useEffect(() => {
     setVisibleCount(INITIAL_CARD_LIMIT);
   }, [activeTab]);
@@ -68,14 +69,16 @@ export const ProductCatalogMatrix: React.FC<ProductCatalogMatrixProps> = ({
   const hasMore = visibleCount < filteredProducts.length;
 
   const handleLoadMore = () => {
-    setVisibleCount((prev) => Math.min(prev + 5, filteredProducts.length));
+    setVisibleCount((prev) =>
+      Math.min(prev + LOAD_MORE_INCREMENT, filteredProducts.length),
+    );
   };
 
   const handleShowAll = () => {
     setVisibleCount(filteredProducts.length);
   };
 
-  const handleCollapseToFive = () => {
+  const handleCollapseToSix = () => {
     setVisibleCount(INITIAL_CARD_LIMIT);
     const el = document.getElementById("product-matrix");
     if (el) el.scrollIntoView({ behavior: "smooth" });
@@ -141,7 +144,7 @@ export const ProductCatalogMatrix: React.FC<ProductCatalogMatrixProps> = ({
           ))}
         </div>
 
-        {/* Product Cards Grid (Displaying Initial 5 with Load More) */}
+        {/* Product Cards Grid (Displaying Initial 6 with Load More +6) */}
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
           {displayedProducts.map((product) => {
             const isAdded = addedIds[product.id];
@@ -249,7 +252,7 @@ export const ProductCatalogMatrix: React.FC<ProductCatalogMatrixProps> = ({
           })}
         </div>
 
-        {/* Load More Action Controls (When products are more than 5) */}
+        {/* Load More Action Controls (When products are more than 6) */}
         {hasMore && (
           <div className="mt-12 flex flex-col sm:flex-row items-center justify-center gap-4">
             <button
@@ -257,7 +260,7 @@ export const ProductCatalogMatrix: React.FC<ProductCatalogMatrixProps> = ({
               onClick={handleLoadMore}
               className="w-full sm:w-auto inline-flex items-center justify-center gap-2 px-8 py-3.5 bg-[#0082FC] text-white hover:bg-[#5FD4FD] hover:text-[#0082FC] font-bold text-sm rounded-none border-2 border-[#0082FC] transition-colors duration-150 shadow-md whitespace-nowrap"
             >
-              <span>Load More Products (+5)</span>
+              <span>Load More Products (+6)</span>
               <ChevronDown className="w-4 h-4" />
             </button>
 
@@ -280,10 +283,10 @@ export const ProductCatalogMatrix: React.FC<ProductCatalogMatrixProps> = ({
               </span>
               <button
                 type="button"
-                onClick={handleCollapseToFive}
+                onClick={handleCollapseToSix}
                 className="text-xs font-bold text-[#0082FC] hover:text-[#5FD4FD] underline whitespace-nowrap"
               >
-                Show First 5 Only
+                Show First 6 Only
               </button>
             </div>
           </div>
