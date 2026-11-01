@@ -74,13 +74,13 @@ export const GlobalUtilityTicker: React.FC<GlobalUtilityTickerProps> = ({
           {/* Right: Dispatch Line, Yard Finder, Spec Sheet Portal */}
           <div className="flex items-center gap-3 shrink-0 text-xs sm:text-sm">
             <a
-              href="tel:18005552782"
+              href="tel:+15162521111"
               className="inline-flex items-center gap-1.5 text-white hover:text-[#5fd4fd] transition-colors whitespace-nowrap font-bold"
-              title="Speak with Aqua Industries dispatch"
+              title="Speak with Aqua Industries New York Foundry dispatch"
             >
               <PhoneCall className="w-3.5 h-3.5 text-[#5fd4fd] shrink-0" />
               <span className="whitespace-nowrap">
-                Dispatch: (800) 555-AQUA
+                Dispatch: +1 (516) 252-1111
               </span>
             </a>
 

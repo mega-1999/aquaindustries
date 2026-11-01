@@ -5,6 +5,7 @@ import {
   Factory,
   Flame,
   Gauge,
+  PhoneCall,
   ShieldCheck,
   Truck,
 } from "lucide-react";
@@ -121,6 +122,75 @@ export const FoundryWalkthrough: React.FC = () => {
           >
             Review Quality Standards
           </a>
+        </div>
+
+        {/* Domestic Facilities & Direct Foundry Contact */}
+        <div className="mt-10 grid grid-cols-1 md:grid-cols-2 gap-6">
+          <div className="bg-white border-2 border-[#5FD4FD] p-6 shadow-sm flex flex-col justify-between">
+            <div>
+              <div className="flex items-center justify-between mb-3">
+                <span className="px-3 py-1 bg-[#0082FC] text-white text-xs font-extrabold uppercase tracking-wider whitespace-nowrap">
+                  Corporate HQ &amp; Primary Foundry
+                </span>
+                <span className="text-xs font-bold text-[#0082FC] border border-[#5FD4FD] px-2.5 py-0.5 whitespace-nowrap">
+                  Melville, NY
+                </span>
+              </div>
+              <h4 className="text-xl font-black text-[#0082FC] mb-2">
+                New York Foundry
+              </h4>
+              <p className="text-sm sm:text-base text-[#0082FC] font-medium leading-relaxed mb-4">
+                105 Maxes Road
+                <br />
+                Melville, NY 11747, USA
+              </p>
+            </div>
+            <div className="pt-4 border-t-2 border-[#5FD4FD]/30 flex items-center justify-between">
+              <a
+                href="tel:+15162521111"
+                className="inline-flex items-center gap-2 text-sm sm:text-base font-extrabold text-[#0082FC] hover:text-[#5FD4FD] transition-colors whitespace-nowrap"
+              >
+                <PhoneCall className="w-4 h-4 text-[#0082FC]" />
+                <span>+1 (516) 252-1111</span>
+              </a>
+              <span className="text-xs font-bold text-[#0082FC] bg-[#5FD4FD]/20 px-2.5 py-1 whitespace-nowrap">
+                Direct Dispatch &amp; QA
+              </span>
+            </div>
+          </div>
+
+          <div className="bg-white border-2 border-[#5FD4FD] p-6 shadow-sm flex flex-col justify-between">
+            <div>
+              <div className="flex items-center justify-between mb-3">
+                <span className="px-3 py-1 bg-[#0082FC] text-white text-xs font-extrabold uppercase tracking-wider whitespace-nowrap">
+                  Southeast Logistics Hub
+                </span>
+                <span className="text-xs font-bold text-[#0082FC] border border-[#5FD4FD] px-2.5 py-0.5 whitespace-nowrap">
+                  Orlando, FL
+                </span>
+              </div>
+              <h4 className="text-xl font-black text-[#0082FC] mb-2">
+                Florida Operations
+              </h4>
+              <p className="text-sm sm:text-base text-[#0082FC] font-medium leading-relaxed mb-4">
+                Florida Operations &amp; Distribution Terminal
+                <br />
+                Orlando, FL 32824, USA
+              </p>
+            </div>
+            <div className="pt-4 border-t-2 border-[#5FD4FD]/30 flex items-center justify-between">
+              <a
+                href="tel:+15162521111"
+                className="inline-flex items-center gap-2 text-sm sm:text-base font-extrabold text-[#0082FC] hover:text-[#5FD4FD] transition-colors whitespace-nowrap"
+              >
+                <PhoneCall className="w-4 h-4 text-[#0082FC]" />
+                <span>+1 (516) 252-1111</span>
+              </a>
+              <span className="text-xs font-bold text-[#0082FC] bg-[#5FD4FD]/20 px-2.5 py-1 whitespace-nowrap">
+                Next-Day Jobsite Fleet
+              </span>
+            </div>
+          </div>
         </div>
       </div>
     </section>

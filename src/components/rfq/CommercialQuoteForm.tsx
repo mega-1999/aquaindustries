@@ -482,10 +482,10 @@ export const CommercialQuoteForm: React.FC<CommercialQuoteFormProps> = ({
 
             <div className="pt-4 border-t-2 border-[#5FD4FD]/30">
               <a
-                href="tel:18005552782"
-                className="block text-center py-3 px-4 bg-white hover:bg-[#5FD4FD]/20 text-[#0082FC] text-sm font-bold rounded-none border-2 border-[#0082FC] transition-colors whitespace-nowrap shadow-sm"
+                href="tel:+15162521111"
+                className="block text-center py-3.5 px-4 bg-white hover:bg-[#5FD4FD]/20 text-[#0082FC] text-sm sm:text-base font-extrabold rounded-none border-2 border-[#0082FC] transition-colors whitespace-nowrap shadow-sm"
               >
-                Call Aqua Dispatch: (800) 555-AQUA
+                Call New York Dispatch: +1 (516) 252-1111
               </a>
             </div>
           </div>

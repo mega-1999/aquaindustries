@@ -25,7 +25,7 @@ export const AccountRegistrationModal: React.FC<
   const [legalEntity, setLegalEntity] = useState("");
   const [taxId, setTaxId] = useState("");
   const [accountType, setAccountType] = useState("Contractor");
-  const [assignedYard, setAssignedYard] = useState("chicago-hub");
+  const [assignedYard, setAssignedYard] = useState("new-york-foundry");
   const [w9Uploaded, setW9Uploaded] = useState(false);
   const [resaleUploaded, setResaleUploaded] = useState(false);
   const [registrationComplete, setRegistrationComplete] = useState(false);

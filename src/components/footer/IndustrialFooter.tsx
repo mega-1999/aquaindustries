@@ -47,12 +47,12 @@ export const IndustrialFooter: React.FC<IndustrialFooterProps> = ({
 
             <div className="flex flex-wrap items-center justify-center gap-3 shrink-0">
               <a
-                href="tel:18005552782"
+                href="tel:+15162521111"
                 className="inline-flex items-center gap-2 px-6 py-3 rounded-none bg-white hover:bg-[#5FD4FD] text-[#0082FC] font-extrabold text-sm sm:text-base shadow-md transition-colors whitespace-nowrap"
               >
                 <PhoneCall className="w-4 h-4 text-[#0082FC]" />
                 <span className="whitespace-nowrap">
-                  DISPATCH HOTLINE: (800) 555-AQUA
+                  DISPATCH HOTLINE: +1 (516) 252-1111
                 </span>
               </a>
 
@@ -63,7 +63,7 @@ export const IndustrialFooter: React.FC<IndustrialFooterProps> = ({
               >
                 <MapPin className="w-4 h-4 text-[#5FD4FD] group-hover:text-[#0082FC]" />
                 <span className="whitespace-nowrap">
-                  View All 4 Stocking Hubs
+                  View All Foundries &amp; Yards
                 </span>
               </button>
             </div>
@@ -90,6 +90,30 @@ export const IndustrialFooter: React.FC<IndustrialFooterProps> = ({
               restraints, and municipal street castings. Serving American civil
               contractors, city utilities, and wholesale supply houses.
             </p>
+
+            {/* Direct Address & Mobile */}
+            <div className="p-3 bg-white/10 border border-[#5FD4FD]/40 rounded-none space-y-1.5 text-xs sm:text-sm text-white">
+              <div className="flex items-start gap-2">
+                <MapPin className="w-4 h-4 text-[#5FD4FD] shrink-0 mt-0.5" />
+                <div>
+                  <div className="font-extrabold text-white">
+                    New York Foundry (Corporate HQ)
+                  </div>
+                  <div className="text-white/90">
+                    105 Maxes Road, Melville, NY 11747, USA
+                  </div>
+                </div>
+              </div>
+              <div className="flex items-center gap-2 pt-1 border-t border-[#5FD4FD]/20">
+                <PhoneCall className="w-4 h-4 text-[#5FD4FD] shrink-0" />
+                <a
+                  href="tel:+15162521111"
+                  className="font-extrabold text-white hover:text-[#5FD4FD] transition-colors"
+                >
+                  +1 (516) 252-1111
+                </a>
+              </div>
+            </div>
 
             <div className="space-y-2 pt-2 border-t border-[#5FD4FD]/30 text-xs sm:text-sm text-white/90">
               <div className="flex items-center gap-2">

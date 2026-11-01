@@ -36,7 +36,7 @@ export const ClientPortalModal: React.FC<ClientPortalModalProps> = ({
   const handleBolLookup = () => {
     if (!bolNumber.trim()) return;
     setBolResult(
-      `BOL #${bolNumber.toUpperCase()} — Loaded on flatbed trailer at Midwest Hub (Chicago). En route to jobsite. ETA: Tomorrow 08:00 AM CST. Driver Contact: (312) 555-0142.`,
+      `BOL #${bolNumber.toUpperCase()} — Loaded on flatbed trailer at New York Foundry (Melville, NY). En route to jobsite. ETA: Tomorrow 08:00 AM EST. Driver Contact: +1 (516) 252-1111.`,
     );
   };
 
