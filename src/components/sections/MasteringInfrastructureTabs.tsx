@@ -116,17 +116,17 @@ export function MasteringInfrastructureTabs() {
     <section className="relative w-full bg-white text-[#0082FC] py-20 border-b border-[#0082FC]">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         {/* Section Header */}
-        <div className="text-center max-w-3xl mx-auto mb-12">
-          <div className="inline-flex items-center space-x-2 border-2 border-[#0082FC] bg-white px-3.5 py-1.5 mb-4">
-            <span className="w-2.5 h-2.5 bg-[#0082FC]"></span>
-            <span className="text-sm font-bold uppercase tracking-wider text-[#0082FC] whitespace-nowrap">
+        <div className="text-center max-w-3xl mx-auto mb-10">
+          <div className="inline-flex items-center space-x-2 border-2 border-[#0082FC] bg-white px-3 py-1 mb-3">
+            <span className="w-2 h-2 bg-[#0082FC]"></span>
+            <span className="text-xs font-bold uppercase tracking-wider text-[#0082FC] whitespace-nowrap">
               Sector Expertise
             </span>
           </div>
-          <h2 className="text-3xl sm:text-4xl lg:text-5xl font-black text-[#0082FC] tracking-tight">
+          <h2 className="text-2xl sm:text-3xl lg:text-4xl font-black text-[#0082FC] tracking-tight">
             Building America's Water Solutions Today
           </h2>
-          <p className="mt-4 text-base sm:text-lg text-[#0082FC] font-normal leading-relaxed">
+          <p className="mt-3 text-sm sm:text-base text-[#0082FC]/90 font-normal leading-relaxed">
             From deep municipal water transmission corridors to high-velocity
             stormwater collection, Aqua Industries provides utility contractors
             with certified ductile iron fittings and castings tailored to every
@@ -135,7 +135,7 @@ export function MasteringInfrastructureTabs() {
         </div>
 
         {/* Tab Navigation Ribbon (Single Line Buttons, Sharp Corners) */}
-        <div className="flex flex-wrap border-2 border-[#0082FC] bg-white p-1 mb-10 gap-1.5">
+        <div className="flex flex-wrap border-2 border-[#0082FC] bg-white p-1 mb-8 gap-1">
           {SECTORS.map((sector, idx) => {
             const isActive = idx === activeTab;
             return (
@@ -143,7 +143,7 @@ export function MasteringInfrastructureTabs() {
                 key={sector.id}
                 type="button"
                 onClick={() => setActiveTab(idx)}
-                className={`flex-1 py-3.5 px-5 text-sm sm:text-base font-bold uppercase tracking-wider transition-colors duration-150 whitespace-nowrap ${
+                className={`flex-1 py-2.5 px-3.5 text-xs sm:text-sm font-bold uppercase tracking-wider transition-colors duration-150 whitespace-nowrap cursor-pointer ${
                   isActive
                     ? "bg-[#0082FC] text-white"
                     : "bg-white text-[#0082FC] hover:bg-[#5FD4FD] hover:text-[#0082FC]"
@@ -158,33 +158,33 @@ export function MasteringInfrastructureTabs() {
         {/* Active Content Showcase (Split Layout: Technical Specs on Left, Schematic on Right) */}
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 items-stretch">
           {/* Left Column: Details & Technical Specifications */}
-          <div className="lg:col-span-7 border-2 border-[#0082FC] bg-white p-6 sm:p-8 flex flex-col justify-between">
-            <div className="space-y-6">
-              <div className="space-y-2">
-                <span className="text-sm font-mono font-bold text-[#5FD4FD] bg-[#0082FC] px-3 py-1 uppercase tracking-wider whitespace-nowrap">
+          <div className="lg:col-span-7 border-2 border-[#0082FC] bg-white p-6 sm:p-7 flex flex-col justify-between">
+            <div className="space-y-4">
+              <div className="space-y-1.5">
+                <span className="text-xs font-mono font-bold text-[#5FD4FD] bg-[#0082FC] px-2.5 py-0.5 uppercase tracking-wider whitespace-nowrap inline-block">
                   {current.subhead}
                 </span>
-                <h3 className="text-2xl sm:text-3xl font-black text-[#0082FC] leading-snug">
+                <h3 className="text-xl sm:text-2xl font-black text-[#0082FC] leading-snug">
                   {current.headline}
                 </h3>
               </div>
 
-              <p className="text-base sm:text-lg text-[#0082FC] leading-relaxed">
+              <p className="text-sm sm:text-base text-[#0082FC]/90 leading-relaxed font-normal">
                 {current.description}
               </p>
 
               {/* Bullet points */}
-              <div className="space-y-3 pt-2">
-                <h4 className="text-sm font-mono font-bold uppercase tracking-wider text-[#0082FC]">
-                  Civil Engineering & Contractor Standards:
+              <div className="space-y-2 pt-1">
+                <h4 className="text-xs font-mono font-bold uppercase tracking-wider text-[#0082FC]">
+                  Civil Engineering &amp; Contractor Standards:
                 </h4>
-                <ul className="space-y-2.5">
+                <ul className="space-y-2">
                   {current.bulletSpecs.map((bullet) => (
                     <li
                       key={bullet}
-                      className="flex items-start space-x-3 text-base text-[#0082FC]"
+                      className="flex items-start space-x-2.5 text-xs sm:text-sm text-[#0082FC]"
                     >
-                      <span className="w-2 h-2 mt-2 bg-[#0082FC] flex-shrink-0" />
+                      <span className="w-1.5 h-1.5 mt-1.5 bg-[#0082FC] flex-shrink-0" />
                       <span>{bullet}</span>
                     </li>
                   ))}
@@ -193,36 +193,36 @@ export function MasteringInfrastructureTabs() {
             </div>
 
             {/* 4 Technical Indicators Matrix */}
-            <div className="mt-8 pt-6 border-t-2 border-[#0082FC] grid grid-cols-2 sm:grid-cols-4 gap-3 text-center">
-              <div className="border-2 border-[#0082FC] p-3 bg-white">
-                <div className="text-xs font-mono uppercase text-[#0082FC] font-bold whitespace-nowrap">
+            <div className="mt-6 pt-5 border-t-2 border-[#0082FC] grid grid-cols-2 sm:grid-cols-4 gap-2.5 text-center">
+              <div className="border-2 border-[#0082FC] p-2.5 bg-white">
+                <div className="text-[11px] font-mono uppercase text-[#0082FC] font-bold whitespace-nowrap">
                   Standard
                 </div>
-                <div className="text-sm sm:text-base font-extrabold text-[#0082FC] mt-0.5 whitespace-nowrap">
+                <div className="text-xs sm:text-sm font-bold text-[#0082FC] mt-0.5 whitespace-nowrap">
                   {current.awwaStandard}
                 </div>
               </div>
-              <div className="border-2 border-[#0082FC] p-3 bg-white">
-                <div className="text-xs font-mono uppercase text-[#0082FC] font-bold whitespace-nowrap">
+              <div className="border-2 border-[#0082FC] p-2.5 bg-white">
+                <div className="text-[11px] font-mono uppercase text-[#0082FC] font-bold whitespace-nowrap">
                   Rating
                 </div>
-                <div className="text-sm sm:text-base font-extrabold text-[#0082FC] mt-0.5 whitespace-nowrap">
+                <div className="text-xs sm:text-sm font-bold text-[#0082FC] mt-0.5 whitespace-nowrap">
                   {current.pressureRating}
                 </div>
               </div>
-              <div className="border-2 border-[#0082FC] p-3 bg-white">
-                <div className="text-xs font-mono uppercase text-[#0082FC] font-bold whitespace-nowrap">
+              <div className="border-2 border-[#0082FC] p-2.5 bg-white">
+                <div className="text-[11px] font-mono uppercase text-[#0082FC] font-bold whitespace-nowrap">
                   Metallurgy
                 </div>
-                <div className="text-sm sm:text-base font-extrabold text-[#0082FC] mt-0.5 whitespace-nowrap">
+                <div className="text-xs sm:text-sm font-bold text-[#0082FC] mt-0.5 whitespace-nowrap">
                   {current.materialGrade}
                 </div>
               </div>
-              <div className="border-2 border-[#0082FC] p-3 bg-white">
-                <div className="text-xs font-mono uppercase text-[#0082FC] font-bold whitespace-nowrap">
+              <div className="border-2 border-[#0082FC] p-2.5 bg-white">
+                <div className="text-[11px] font-mono uppercase text-[#0082FC] font-bold whitespace-nowrap">
                   Lining
                 </div>
-                <div className="text-sm sm:text-base font-extrabold text-[#0082FC] mt-0.5 whitespace-nowrap">
+                <div className="text-xs sm:text-sm font-bold text-[#0082FC] mt-0.5 whitespace-nowrap">
                   {current.coatingSystem}
                 </div>
               </div>

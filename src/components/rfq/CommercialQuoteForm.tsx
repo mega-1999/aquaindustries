@@ -104,7 +104,7 @@ export const CommercialQuoteForm: React.FC<CommercialQuoteFormProps> = ({
               Direct Factory-to-Contractor Pricing
             </span>
           </div>
-          <h2 className="text-2xl sm:text-4xl font-extrabold text-[#0082FC] tracking-tight leading-tight">
+          <h2 className="text-2xl sm:text-3xl font-extrabold text-[#0082FC] tracking-tight leading-tight">
             Commercial Quote Request Form
           </h2>
           <p className="mt-3 text-[#0082FC] text-sm sm:text-base leading-relaxed">

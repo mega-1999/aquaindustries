@@ -70,11 +70,11 @@ export function DomesticStandards() {
               </span>
             </div>
 
-            <h2 className="text-3xl sm:text-4xl lg:text-5xl font-black text-white leading-tight">
+            <h2 className="text-2xl sm:text-3xl lg:text-4xl font-black text-white leading-tight">
               Verified by Physical Testing. Backed by Verifiable Paperwork.
             </h2>
 
-            <p className="text-base sm:text-lg text-white font-normal leading-relaxed">
+            <p className="text-sm sm:text-base text-white/95 font-normal leading-relaxed">
               Municipal public works inspectors and utility engineers cannot
               afford fitting failures buried 10 feet under fresh asphalt. Every
               Aqua Industries production run undergoes rigid mechanical,

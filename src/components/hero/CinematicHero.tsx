@@ -92,14 +92,14 @@ export const CinematicHero: React.FC<CinematicHeroProps> = ({
       <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center flex flex-col items-center">
         {/* Top Tagline Pill */}
         <div
-          className={`inline-flex items-center gap-2 px-4 py-2 rounded-none border shadow-lg mb-6 backdrop-blur-md ${
+          className={`inline-flex items-center gap-2 px-3.5 py-1.5 rounded-none border shadow-md mb-4 backdrop-blur-md ${
             isBlue
               ? "bg-white/15 border-[#5FD4FD] text-white"
               : "bg-[#0082FC] border-[#5FD4FD] text-white"
           }`}
         >
-          <Droplets className="w-4 h-4 text-[#5FD4FD] shrink-0" />
-          <span className="text-sm sm:text-base font-bold tracking-wide uppercase whitespace-nowrap">
+          <Droplets className="w-3.5 h-3.5 text-[#5FD4FD] shrink-0" />
+          <span className="text-xs font-bold tracking-wide uppercase whitespace-nowrap">
             Domestic Waterworks Manufacturing &bull; Melville, NY &amp; Florida
             Hubs
           </span>
@@ -107,7 +107,7 @@ export const CinematicHero: React.FC<CinematicHeroProps> = ({
 
         {/* Primary Headline */}
         <h2
-          className={`text-3xl sm:text-5xl lg:text-6xl font-black tracking-tight leading-[1.12] max-w-5xl mb-6 font-sans uppercase ${
+          className={`text-2xl sm:text-4xl lg:text-5xl font-black tracking-tight leading-[1.12] max-w-4xl mb-4 font-sans uppercase ${
             isBlue ? "text-white" : "text-[#0082FC]"
           }`}
         >
@@ -116,7 +116,7 @@ export const CinematicHero: React.FC<CinematicHeroProps> = ({
 
         {/* Grounded, Human US Copy */}
         <p
-          className={`text-base sm:text-lg lg:text-xl max-w-3xl leading-relaxed mb-8 font-normal ${
+          className={`text-sm sm:text-base max-w-2xl leading-relaxed mb-6 font-normal ${
             isBlue ? "text-white" : "text-[#0082FC]/90"
           }`}
         >
@@ -126,41 +126,41 @@ export const CinematicHero: React.FC<CinematicHeroProps> = ({
         </p>
 
         {/* Single-Line Trust Badges */}
-        <div className="w-full max-w-4xl flex flex-wrap items-center justify-center gap-3 mb-10">
+        <div className="w-full max-w-3xl flex flex-wrap items-center justify-center gap-2.5 mb-8">
           <div
-            className={`px-4 py-2 rounded-none border text-sm sm:text-base font-bold whitespace-nowrap inline-flex items-center gap-2 shadow-sm ${
+            className={`px-3 py-1.5 rounded-none border text-xs font-semibold whitespace-nowrap inline-flex items-center gap-1.5 shadow-xs ${
               isBlue
                 ? "bg-white/10 border-[#5FD4FD] text-white"
                 : "bg-white border-2 border-[#0082FC] text-[#0082FC]"
             }`}
           >
-            <ShieldCheck className="w-4 h-4 text-[#5FD4FD] shrink-0" />
+            <ShieldCheck className="w-3.5 h-3.5 text-[#5FD4FD] shrink-0" />
             <span className="whitespace-nowrap">
               AWWA C153 &amp; C110 Compliant
             </span>
           </div>
 
           <div
-            className={`px-4 py-2 rounded-none border text-sm sm:text-base font-bold whitespace-nowrap inline-flex items-center gap-2 shadow-sm ${
+            className={`px-3 py-1.5 rounded-none border text-xs font-semibold whitespace-nowrap inline-flex items-center gap-1.5 shadow-xs ${
               isBlue
                 ? "bg-white/10 border-[#5FD4FD] text-white"
                 : "bg-white border-2 border-[#0082FC] text-[#0082FC]"
             }`}
           >
-            <CheckCircle2 className="w-4 h-4 text-[#5FD4FD] shrink-0" />
+            <CheckCircle2 className="w-3.5 h-3.5 text-[#5FD4FD] shrink-0" />
             <span className="whitespace-nowrap">
               NSF/ANSI 61 &amp; 372 Certified
             </span>
           </div>
 
           <div
-            className={`px-4 py-2 rounded-none border text-sm sm:text-base font-bold whitespace-nowrap inline-flex items-center gap-2 shadow-sm ${
+            className={`px-3 py-1.5 rounded-none border text-xs font-semibold whitespace-nowrap inline-flex items-center gap-1.5 shadow-xs ${
               isBlue
                 ? "bg-white/10 border-[#5FD4FD] text-white"
                 : "bg-white border-2 border-[#0082FC] text-[#0082FC]"
             }`}
           >
-            <Truck className="w-4 h-4 text-[#5FD4FD] shrink-0" />
+            <Truck className="w-3.5 h-3.5 text-[#5FD4FD] shrink-0" />
             <span className="whitespace-nowrap">
               Fast Nationwide Flatbed Dispatch
             </span>
@@ -168,11 +168,11 @@ export const CinematicHero: React.FC<CinematicHeroProps> = ({
         </div>
 
         {/* Action Buttons */}
-        <div className="flex flex-col sm:flex-row items-center justify-center gap-4 w-full sm:w-auto">
+        <div className="flex flex-col sm:flex-row items-center justify-center gap-3.5 w-full sm:w-auto">
           {/* Button 1 */}
           <a
             href="#product-matrix"
-            className={`w-full sm:w-auto inline-flex items-center justify-center gap-2 px-8 py-4 text-base sm:text-lg font-extrabold rounded-none shadow-xl transition-all transform hover:-translate-y-0.5 active:translate-y-0 whitespace-nowrap ${
+            className={`w-full sm:w-auto inline-flex items-center justify-center gap-2 px-6 py-3.5 text-sm sm:text-base font-bold rounded-none shadow-lg transition-all transform hover:-translate-y-0.5 active:translate-y-0 whitespace-nowrap ${
               isBlue
                 ? "text-[#0082FC] bg-white hover:bg-[#5FD4FD] hover:text-[#0082FC]"
                 : "text-white bg-[#0082FC] hover:bg-[#5FD4FD] hover:text-[#0082FC]"
@@ -180,27 +180,27 @@ export const CinematicHero: React.FC<CinematicHeroProps> = ({
           >
             <span>Browse Waterworks Catalog</span>
             <ArrowRight
-              className={`w-5 h-5 ${isBlue ? "text-[#0082FC]" : "text-white group-hover:text-[#0082FC]"}`}
+              className={`w-4 h-4 ${isBlue ? "text-[#0082FC]" : "text-white group-hover:text-[#0082FC]"}`}
             />
           </a>
 
           {/* Button 2 */}
           <a
             href="#submittal-builder"
-            className={`w-full sm:w-auto inline-flex items-center justify-center gap-2 px-8 py-4 text-base sm:text-lg font-extrabold rounded-none shadow-lg transition-all transform hover:-translate-y-0.5 active:translate-y-0 whitespace-nowrap border-2 ${
+            className={`w-full sm:w-auto inline-flex items-center justify-center gap-2 px-6 py-3.5 text-sm sm:text-base font-bold rounded-none shadow-md transition-all transform hover:-translate-y-0.5 active:translate-y-0 whitespace-nowrap border-2 ${
               isBlue
                 ? "text-[#5FD4FD] hover:text-[#0082FC] bg-[#0082FC] hover:bg-[#5FD4FD] border-[#5FD4FD]"
                 : "text-[#0082FC] hover:text-white bg-white hover:bg-[#0082FC] border-[#0082FC]"
             }`}
           >
-            <FileCheck2 className="w-5 h-5 text-[#5FD4FD]" />
+            <FileCheck2 className="w-4 h-4 text-[#5FD4FD]" />
             <span>Build Submittal Package</span>
           </a>
         </div>
 
         {/* Bottom Trust Indicators */}
         <div
-          className={`mt-14 pt-6 border-t flex flex-wrap items-center justify-center gap-6 sm:gap-10 text-sm sm:text-base font-semibold ${
+          className={`mt-10 pt-5 border-t flex flex-wrap items-center justify-center gap-4 sm:gap-8 text-xs sm:text-sm font-normal ${
             isBlue
               ? "border-white/20 text-white"
               : "border-[#0082FC]/20 text-[#0082FC]"

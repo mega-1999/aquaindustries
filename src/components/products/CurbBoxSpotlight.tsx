@@ -49,7 +49,7 @@ export const CurbBoxSpotlight: React.FC<CurbBoxSpotlightProps> = ({
     <section
       id="curb-box-spotlight"
       aria-label="2nd Showcase: The Century Curb Box"
-      className="py-16 sm:py-24 bg-white text-[#0082FC] border-b-4 border-[#0082FC] relative overflow-hidden"
+      className="py-12 sm:py-16 bg-white text-[#0082FC] border-b-4 border-[#0082FC] relative overflow-hidden"
     >
       {/* Background Architectural Grid Lines */}
       <div
@@ -63,19 +63,19 @@ export const CurbBoxSpotlight: React.FC<CurbBoxSpotlightProps> = ({
 
       <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         {/* Section Header */}
-        <div className="max-w-4xl mb-12 sm:mb-16">
-          <div className="inline-flex items-center gap-2 px-3.5 py-1.5 bg-[#0082FC] text-white text-xs sm:text-sm font-extrabold uppercase tracking-wider rounded-none mb-4 shadow-sm">
-            <Award className="w-4 h-4 text-[#5FD4FD] shrink-0" />
+        <div className="max-w-3xl mb-8 sm:mb-12">
+          <div className="inline-flex items-center gap-2 px-3 py-1 bg-[#0082FC] text-white text-xs font-bold uppercase tracking-wider rounded-none mb-3 shadow-xs">
+            <Award className="w-3.5 h-3.5 text-[#5FD4FD] shrink-0" />
             <span>
               2nd Product Showcase &bull; 100+ Years Industry Standard
             </span>
           </div>
 
-          <h2 className="text-3xl sm:text-5xl lg:text-6xl font-black uppercase tracking-tight text-[#0082FC] leading-[1.05] mb-4">
+          <h2 className="text-2xl sm:text-4xl lg:text-5xl font-black uppercase tracking-tight text-[#0082FC] leading-[1.05] mb-3">
             The Century <span className="text-[#5FD4FD]">Curb Service Box</span>
           </h2>
 
-          <p className="text-base sm:text-lg lg:text-xl text-[#0082FC]/90 font-medium leading-relaxed">
+          <p className="text-sm sm:text-base text-[#0082FC]/90 font-normal leading-relaxed">
             The proven American municipal benchmark for over a century. Provides
             secure street-level shut-off access to underground service lines,
             engineered with telescopic frost-heave protection, heavy AASHTO H-20
@@ -262,34 +262,34 @@ export const CurbBoxSpotlight: React.FC<CurbBoxSpotlightProps> = ({
             </div>
 
             {/* CTAs */}
-            <div className="flex flex-col sm:flex-row items-stretch sm:items-center gap-4 pt-2">
+            <div className="flex flex-col sm:flex-row items-stretch sm:items-center gap-3 pt-2">
               <button
                 type="button"
                 onClick={() => onAddToRfq(product)}
-                className="inline-flex items-center justify-center gap-2 px-6 py-4 text-sm sm:text-base font-extrabold text-white bg-[#0082FC] hover:bg-[#5FD4FD] hover:text-[#0082FC] rounded-none shadow-md transition-all uppercase tracking-wide cursor-pointer"
+                className="inline-flex items-center justify-center gap-2 px-5 py-3 text-xs sm:text-sm font-bold text-white bg-[#0082FC] hover:bg-[#5FD4FD] hover:text-[#0082FC] rounded-none shadow-sm transition-all uppercase tracking-wide cursor-pointer"
               >
-                <CheckCircle2 className="w-5 h-5" />
+                <CheckCircle2 className="w-4 h-4" />
                 <span>Add Curb Box to RFQ</span>
               </button>
 
               <button
                 type="button"
                 onClick={() => onPreviewSubmittal(product)}
-                className="inline-flex items-center justify-center gap-2 px-6 py-4 text-sm sm:text-base font-extrabold text-[#0082FC] bg-white border-2 border-[#0082FC] hover:bg-[#0082FC] hover:text-white rounded-none shadow-sm transition-all uppercase tracking-wide cursor-pointer"
+                className="inline-flex items-center justify-center gap-2 px-5 py-3 text-xs sm:text-sm font-bold text-[#0082FC] bg-white border-2 border-[#0082FC] hover:bg-[#0082FC] hover:text-white rounded-none shadow-xs transition-all uppercase tracking-wide cursor-pointer"
               >
-                <FileCheck2 className="w-5 h-5 text-[#0082FC] group-hover:text-white" />
+                <FileCheck2 className="w-4 h-4 text-[#0082FC] group-hover:text-white" />
                 <span>Download Submittal PDF</span>
               </button>
             </div>
 
             {/* Quick Dispatch Strip */}
-            <div className="pt-2 flex items-center justify-between border-t border-[#0082FC]/20 text-xs sm:text-sm font-bold text-[#0082FC]">
+            <div className="pt-2 flex items-center justify-between border-t border-[#0082FC]/20 text-xs font-semibold text-[#0082FC]">
               <span>In-Stock at Melville, NY &amp; FL Logistics Hubs</span>
               <a
                 href="tel:+15162521111"
                 className="inline-flex items-center gap-1 hover:text-[#5FD4FD] transition-colors"
               >
-                <PhoneCall className="w-3.5 h-3.5 text-[#0082FC]" />
+                <PhoneCall className="w-3 h-3 text-[#0082FC]" />
                 <span>+1 (516) 252-1111</span>
               </a>
             </div>

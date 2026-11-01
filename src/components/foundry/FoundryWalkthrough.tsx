@@ -37,16 +37,16 @@ export const FoundryWalkthrough: React.FC = () => {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         {/* Section Header */}
         <div className="text-center max-w-3xl mx-auto mb-16">
-          <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-none bg-white border-2 border-[#5FD4FD] text-[#0082FC] text-sm font-bold uppercase tracking-wider mb-3">
-            <Factory className="w-4 h-4 text-[#0082FC]" />
+          <div className="inline-flex items-center gap-2 px-3 py-1 rounded-none bg-white border-2 border-[#5FD4FD] text-[#0082FC] text-xs font-bold uppercase tracking-wider mb-2.5 shadow-xs">
+            <Factory className="w-3.5 h-3.5 text-[#0082FC]" />
             <span className="whitespace-nowrap">
               Domestic Foundry &amp; Distribution Operations
             </span>
           </div>
-          <h2 className="text-2xl sm:text-4xl font-extrabold text-[#0082FC] tracking-tight leading-tight">
+          <h2 className="text-2xl sm:text-3xl font-extrabold text-[#0082FC] tracking-tight leading-tight">
             Real Foundry &amp; Yard Walkthrough
           </h2>
-          <p className="mt-3 text-[#0082FC] text-base sm:text-lg leading-relaxed font-normal">
+          <p className="mt-2 text-[#0082FC]/90 text-sm sm:text-base leading-relaxed font-normal">
             Take a look inside our manufacturing and yard operations. See how
             clean molds, sharp machining, and tested metallurgy produce
             consistent waterworks fittings ready for immediate flatbed delivery.

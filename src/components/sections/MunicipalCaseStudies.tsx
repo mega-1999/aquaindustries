@@ -95,10 +95,10 @@ export function MunicipalCaseStudies() {
               Field Case Studies
             </span>
           </div>
-          <h2 className="text-3xl sm:text-4xl lg:text-5xl font-black text-[#0082FC] tracking-tight">
+          <h2 className="text-2xl sm:text-3xl lg:text-4xl font-black text-[#0082FC] tracking-tight">
             Proven Field Installations Across North America
           </h2>
-          <p className="mt-4 text-base sm:text-lg text-[#0082FC] font-normal leading-relaxed">
+          <p className="mt-3 text-sm sm:text-base text-[#0082FC]/90 font-normal leading-relaxed">
             Real waterworks projects demand real accountability. Review how
             American utility contractors and public works departments install
             Aqua Industries fittings under strict engineering inspection.

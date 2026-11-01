@@ -28,7 +28,7 @@ export const SamplingStationSpotlight: React.FC<
     <section
       id="sampling-station-spotlight"
       aria-label="3rd Showcase: New Innovation Municipal Water Sampling Station"
-      className="py-16 sm:py-24 bg-[#0082FC] text-white border-b-4 border-[#5FD4FD] relative overflow-hidden"
+      className="py-12 sm:py-16 bg-[#0082FC] text-white border-b-4 border-[#5FD4FD] relative overflow-hidden"
     >
       {/* Background Architectural Grid Lines */}
       <div
@@ -42,18 +42,18 @@ export const SamplingStationSpotlight: React.FC<
 
       <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         {/* Section Header */}
-        <div className="max-w-4xl mb-12 sm:mb-16">
-          <div className="inline-flex items-center gap-2 px-3.5 py-1.5 bg-white text-[#0082FC] text-xs sm:text-sm font-extrabold uppercase tracking-wider rounded-none mb-4 shadow-lg border-2 border-[#5FD4FD]">
-            <FlaskConical className="w-4 h-4 text-[#0082FC] shrink-0" />
+        <div className="max-w-3xl mb-8 sm:mb-12">
+          <div className="inline-flex items-center gap-2 px-3 py-1 bg-white text-[#0082FC] text-xs font-bold uppercase tracking-wider rounded-none mb-3 shadow-md border-2 border-[#5FD4FD]">
+            <FlaskConical className="w-3.5 h-3.5 text-[#0082FC] shrink-0" />
             <span>3rd Product Showcase &bull; New Flagship Innovation</span>
           </div>
 
-          <h2 className="text-3xl sm:text-5xl lg:text-6xl font-black uppercase tracking-tight text-white leading-[1.05] mb-4">
+          <h2 className="text-2xl sm:text-4xl lg:text-5xl font-black uppercase tracking-tight text-white leading-[1.05] mb-3">
             Municipal Water{" "}
             <span className="text-[#5FD4FD]">Sampling Station</span>
           </h2>
 
-          <p className="text-base sm:text-lg lg:text-xl text-white/95 font-medium leading-relaxed">
+          <p className="text-sm sm:text-base text-white/95 font-normal leading-relaxed">
             A critical engineering advancement for municipal public health.
             Provides dedicated, non-contaminated sampling points directly from
             the watermain for real-time chlorine residual, bacteriological
@@ -135,53 +135,53 @@ export const SamplingStationSpotlight: React.FC<
             </div>
 
             {/* Technical Specifications Table */}
-            <div className="border-2 border-[#5FD4FD] bg-white/10 shadow-lg backdrop-blur-sm">
-              <div className="px-5 py-3 bg-white text-[#0082FC] flex justify-between items-center">
-                <span className="text-xs sm:text-sm font-black uppercase tracking-wider">
+            <div className="border-2 border-[#5FD4FD] bg-white/10 shadow-md backdrop-blur-sm">
+              <div className="px-4 py-2.5 bg-white text-[#0082FC] flex justify-between items-center">
+                <span className="text-xs font-bold uppercase tracking-wider">
                   Engineering Submittal Specifications
                 </span>
-                <span className="text-xs font-bold text-[#0082FC]">
+                <span className="text-xs font-semibold text-[#0082FC]">
                   Rev. 2026.1
                 </span>
               </div>
-              <div className="p-5 space-y-3 text-sm sm:text-base text-white">
+              <div className="p-4 space-y-2.5 text-xs sm:text-sm text-white">
                 <div className="flex justify-between border-b border-white/20 pb-2">
-                  <span className="text-white/80 font-medium">
+                  <span className="text-white/80 font-normal">
                     Housing Enclosure:
                   </span>
-                  <span className="text-white font-black uppercase">
+                  <span className="text-white font-bold uppercase">
                     Heavy Ductile Iron (ASTM A536)
                   </span>
                 </div>
                 <div className="flex justify-between border-b border-white/20 pb-2">
-                  <span className="text-white/80 font-medium">
+                  <span className="text-white/80 font-normal">
                     Internal Waterway:
                   </span>
-                  <span className="text-white font-black uppercase">
+                  <span className="text-white font-bold uppercase">
                     Lead-Free Certified Brass (NSF 372)
                   </span>
                 </div>
                 <div className="flex justify-between border-b border-white/20 pb-2">
-                  <span className="text-white/80 font-medium">
+                  <span className="text-white/80 font-normal">
                     Inlet &amp; Outlet:
                   </span>
-                  <span className="text-white font-black">
+                  <span className="text-white font-bold">
                     1&quot; NPT Female Inlet &bull; 3/4&quot; Smooth Bore Bibb
                   </span>
                 </div>
                 <div className="flex justify-between border-b border-white/20 pb-2">
-                  <span className="text-white/80 font-medium">
+                  <span className="text-white/80 font-normal">
                     Freeze Protection:
                   </span>
-                  <span className="text-white font-black">
+                  <span className="text-white font-bold">
                     Polyurethane Insulated Outer Casing
                   </span>
                 </div>
                 <div className="flex justify-between">
-                  <span className="text-white/80 font-medium">
+                  <span className="text-white/80 font-normal">
                     Working Pressure:
                   </span>
-                  <span className="text-[#5FD4FD] font-black">
+                  <span className="text-[#5FD4FD] font-bold">
                     300 PSI Hydrostatic Proof Tested
                   </span>
                 </div>
@@ -189,11 +189,11 @@ export const SamplingStationSpotlight: React.FC<
             </div>
 
             {/* Action CTAs */}
-            <div className="flex flex-col sm:flex-row gap-3 pt-2">
+            <div className="flex flex-col sm:flex-row gap-3 pt-1">
               <button
                 type="button"
                 onClick={() => onAddToRfq(product)}
-                className="flex-1 px-6 py-4 bg-white hover:bg-[#5FD4FD] text-[#0082FC] font-extrabold text-sm sm:text-base rounded-none shadow-xl transition-all whitespace-nowrap text-center uppercase tracking-wide cursor-pointer"
+                className="flex-1 px-5 py-3 bg-white hover:bg-[#5FD4FD] text-[#0082FC] font-bold text-xs sm:text-sm rounded-none shadow-md transition-all whitespace-nowrap text-center uppercase tracking-wide cursor-pointer"
               >
                 + Add Sampling Station to Quote
               </button>
@@ -201,9 +201,9 @@ export const SamplingStationSpotlight: React.FC<
               <button
                 type="button"
                 onClick={() => onPreviewSubmittal(product)}
-                className="flex-1 px-6 py-4 bg-[#0082FC] hover:bg-white text-[#5FD4FD] hover:text-[#0082FC] font-extrabold text-sm sm:text-base rounded-none border-2 border-[#5FD4FD] transition-all whitespace-nowrap text-center inline-flex items-center justify-center gap-2 uppercase tracking-wide cursor-pointer"
+                className="flex-1 px-5 py-3 bg-[#0082FC] hover:bg-white text-[#5FD4FD] hover:text-[#0082FC] font-bold text-xs sm:text-sm rounded-none border-2 border-[#5FD4FD] transition-all whitespace-nowrap text-center inline-flex items-center justify-center gap-2 uppercase tracking-wide cursor-pointer"
               >
-                <FileCheck2 className="w-5 h-5 text-[#5FD4FD] group-hover:text-[#0082FC]" />
+                <FileCheck2 className="w-4 h-4 text-[#5FD4FD] group-hover:text-[#0082FC]" />
                 <span>Download Submittal PDF</span>
               </button>
             </div>

@@ -59,35 +59,35 @@ export const CertifiedMetricsBar: React.FC = () => {
               className="bg-white border-2 border-[#5FD4FD] rounded-none p-5 sm:p-6 shadow-md hover:border-[#0082FC] transition-all duration-300 flex flex-col justify-between group hover:-translate-y-1 overflow-hidden"
             >
               <div>
-                <div className="flex items-center justify-between mb-4">
-                  <span className="p-2 rounded-none bg-white text-[#0082FC] border border-[#5FD4FD]">
-                    <Icon className="w-5 h-5" />
+                <div className="flex items-center justify-between mb-3">
+                  <span className="p-1.5 rounded-none bg-white text-[#0082FC] border border-[#5FD4FD]">
+                    <Icon className="w-4 h-4" />
                   </span>
-                  <span className="text-xs sm:text-sm font-bold text-[#0082FC] bg-white px-2.5 py-0.5 rounded-none border border-[#5FD4FD] whitespace-nowrap">
+                  <span className="text-[11px] font-bold text-[#0082FC] bg-white px-2 py-0.5 rounded-none border border-[#5FD4FD] whitespace-nowrap">
                     {item.standard}
                   </span>
                 </div>
 
-                <div className="mb-2">
-                  <div className="text-xl sm:text-2xl lg:text-[1.4rem] xl:text-2xl font-black text-[#0082FC] tracking-tight font-sans leading-tight">
+                <div className="mb-1.5">
+                  <div className="text-lg sm:text-xl font-black text-[#0082FC] tracking-tight font-sans leading-tight">
                     {item.metric}
                   </div>
-                  <div className="text-xs sm:text-sm font-bold uppercase tracking-wider text-[#0082FC] mt-1.5 leading-snug">
+                  <div className="text-xs font-bold uppercase tracking-wider text-[#0082FC] mt-1 leading-snug">
                     {item.sublabel}
                   </div>
                 </div>
 
-                <p className="text-sm text-[#0082FC] leading-relaxed mt-2.5 font-normal">
+                <p className="text-xs text-[#0082FC]/90 leading-relaxed mt-2 font-normal">
                   {item.description}
                 </p>
               </div>
 
-              <div className="mt-5 pt-3.5 border-t border-[#5FD4FD] flex items-center justify-between text-xs sm:text-sm text-[#0082FC]">
+              <div className="mt-4 pt-3 border-t border-[#5FD4FD]/40 flex items-center justify-between text-xs text-[#0082FC]">
                 <span className="font-bold text-[#0082FC] whitespace-nowrap">
                   Aqua Verified
                 </span>
-                <span className="text-[#0082FC] font-bold flex items-center gap-1 whitespace-nowrap">
-                  <CheckCircle2 className="w-4 h-4 text-[#5FD4FD]" />
+                <span className="text-[#0082FC] font-semibold flex items-center gap-1 whitespace-nowrap">
+                  <CheckCircle2 className="w-3.5 h-3.5 text-[#5FD4FD]" />
                   100% Passed
                 </span>
               </div>

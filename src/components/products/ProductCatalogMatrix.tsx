@@ -100,18 +100,18 @@ export const ProductCatalogMatrix: React.FC<ProductCatalogMatrixProps> = ({
     >
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         {/* Section Header */}
-        <div className="flex flex-col md:flex-row md:items-end justify-between mb-12 gap-6">
+        <div className="flex flex-col md:flex-row md:items-end justify-between mb-8 gap-4">
           <div>
-            <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-none bg-white border-2 border-[#5FD4FD] text-[#0082FC] text-sm font-bold uppercase tracking-wider mb-3">
-              <Layers className="w-4 h-4 text-[#0082FC]" />
+            <div className="inline-flex items-center gap-2 px-3 py-1 rounded-none bg-white border-2 border-[#5FD4FD] text-[#0082FC] text-xs font-bold uppercase tracking-wider mb-2.5 shadow-xs">
+              <Layers className="w-3.5 h-3.5 text-[#0082FC]" />
               <span className="whitespace-nowrap">
                 Complete Municipal Piping Inventory
               </span>
             </div>
-            <h2 className="text-2xl sm:text-4xl font-extrabold text-[#0082FC] tracking-tight leading-tight">
+            <h2 className="text-2xl sm:text-3xl font-extrabold text-[#0082FC] tracking-tight leading-tight">
               Product Showcase Grid
             </h2>
-            <p className="mt-2 text-[#0082FC] text-base sm:text-lg max-w-2xl leading-relaxed font-normal">
+            <p className="mt-1.5 text-[#0082FC]/90 text-sm sm:text-base max-w-xl leading-relaxed font-normal">
               Standardized American waterworks castings, wedge joint restraints,
               linings, and municipal castings engineered to AWWA, ASTM, and
               AASHTO specifications.
@@ -119,7 +119,7 @@ export const ProductCatalogMatrix: React.FC<ProductCatalogMatrixProps> = ({
           </div>
 
           <div className="shrink-0 flex items-center gap-2">
-            <span className="text-sm text-[#0082FC] font-bold bg-white border-2 border-[#5FD4FD] px-4 py-2 rounded-none whitespace-nowrap">
+            <span className="text-xs text-[#0082FC] font-bold bg-white border-2 border-[#5FD4FD] px-3.5 py-1.5 rounded-none whitespace-nowrap shadow-xs">
               Showing {Math.min(visibleCount, filteredProducts.length)} of{" "}
               {filteredProducts.length} Products
             </span>
@@ -127,15 +127,15 @@ export const ProductCatalogMatrix: React.FC<ProductCatalogMatrixProps> = ({
         </div>
 
         {/* Category Filter Tabs (Single-Line Rule: whitespace-nowrap) */}
-        <div className="flex items-center gap-2 overflow-x-auto pb-4 mb-10 no-scrollbar">
+        <div className="flex items-center gap-2 overflow-x-auto pb-3 mb-8 no-scrollbar">
           {categories.map((tab) => (
             <button
               type="button"
               key={tab.id}
               onClick={() => setActiveTab(tab.id)}
-              className={`px-5 py-3 rounded-none text-sm sm:text-base font-bold transition-all whitespace-nowrap shrink-0 border-2 ${
+              className={`px-4 py-2.5 rounded-none text-xs sm:text-sm font-bold transition-all whitespace-nowrap shrink-0 border-2 ${
                 activeTab === tab.id
-                  ? "bg-[#0082FC] text-white border-[#0082FC] shadow-md"
+                  ? "bg-[#0082FC] text-white border-[#0082FC] shadow-sm"
                   : "bg-white text-[#0082FC] border-[#5FD4FD] hover:bg-[#5FD4FD] hover:text-[#0082FC]"
               }`}
             >
@@ -186,26 +186,26 @@ export const ProductCatalogMatrix: React.FC<ProductCatalogMatrixProps> = ({
                 </div>
 
                 {/* Card Content */}
-                <div className="p-6 flex-1 flex flex-col justify-between">
+                <div className="p-5 flex-1 flex flex-col justify-between">
                   <div>
-                    <div className="text-xs sm:text-sm font-bold uppercase tracking-wider text-[#0082FC] mb-1.5 whitespace-nowrap truncate">
+                    <div className="text-xs font-bold uppercase tracking-wider text-[#0082FC] mb-1 whitespace-nowrap truncate">
                       {product.jointType} &bull; {product.diameterRange}
                     </div>
-                    <h3 className="font-extrabold text-[#0082FC] text-lg sm:text-xl leading-snug mb-2 transition-colors">
+                    <h3 className="font-bold text-[#0082FC] text-base sm:text-lg leading-snug mb-1.5 transition-colors">
                       {product.name}
                     </h3>
-                    <p className="text-sm text-[#0082FC] leading-relaxed mb-4 line-clamp-3 font-normal">
+                    <p className="text-xs sm:text-sm text-[#0082FC]/90 leading-relaxed mb-3 line-clamp-3 font-normal">
                       {product.description}
                     </p>
 
                     {/* Features list */}
-                    <div className="space-y-2 mb-5 border-t border-[#5FD4FD] pt-3">
+                    <div className="space-y-1.5 mb-4 border-t border-[#5FD4FD]/40 pt-2.5">
                       {product.keyFeatures.slice(0, 2).map((feature) => (
                         <div
                           key={feature}
-                          className="flex items-start gap-2 text-xs sm:text-sm text-[#0082FC] font-medium"
+                          className="flex items-start gap-1.5 text-xs text-[#0082FC] font-medium"
                         >
-                          <span className="w-2 h-2 rounded-none bg-[#5FD4FD] shrink-0 mt-1" />
+                          <span className="w-1.5 h-1.5 rounded-none bg-[#5FD4FD] shrink-0 mt-1" />
                           <span className="leading-tight">{feature}</span>
                         </div>
                       ))}
@@ -213,13 +213,13 @@ export const ProductCatalogMatrix: React.FC<ProductCatalogMatrixProps> = ({
                   </div>
 
                   {/* Action Buttons: "Download Spec Sheet" | "Add to Quote List" */}
-                  <div className="pt-4 border-t border-[#5FD4FD] space-y-2.5">
+                  <div className="pt-3 border-t border-[#5FD4FD]/40 space-y-2">
                     <button
                       type="button"
                       onClick={() => onPreviewSubmittal(product)}
-                      className="w-full inline-flex items-center justify-center gap-2 py-3 px-4 bg-white hover:bg-[#5FD4FD] text-[#0082FC] text-sm font-bold rounded-none border-2 border-[#0082FC] transition-colors whitespace-nowrap"
+                      className="w-full inline-flex items-center justify-center gap-1.5 py-2.5 px-3 bg-white hover:bg-[#5FD4FD] text-[#0082FC] text-xs font-bold rounded-none border-2 border-[#0082FC] transition-colors whitespace-nowrap"
                     >
-                      <FileText className="w-4 h-4 text-[#0082FC]" />
+                      <FileText className="w-3.5 h-3.5 text-[#0082FC]" />
                       <span className="whitespace-nowrap">
                         Download Spec Sheet
                       </span>
@@ -228,22 +228,22 @@ export const ProductCatalogMatrix: React.FC<ProductCatalogMatrixProps> = ({
                     <button
                       type="button"
                       onClick={() => handleAddProduct(product)}
-                      className={`w-full inline-flex items-center justify-center gap-2 py-3 px-4 rounded-none text-sm font-bold transition-all whitespace-nowrap border-2 ${
+                      className={`w-full inline-flex items-center justify-center gap-1.5 py-2.5 px-3 rounded-none text-xs font-bold transition-all whitespace-nowrap border-2 ${
                         isAdded
                           ? "bg-[#5FD4FD] text-[#0082FC] border-[#5FD4FD]"
-                          : "bg-[#0082FC] hover:bg-[#5FD4FD] hover:text-[#0082FC] text-white border-[#0082FC] shadow-md"
+                          : "bg-[#0082FC] hover:bg-[#5FD4FD] hover:text-[#0082FC] text-white border-[#0082FC] shadow-sm"
                       }`}
                     >
                       {isAdded ? (
                         <>
-                          <Check className="w-4 h-4 stroke-[3]" />
+                          <Check className="w-3.5 h-3.5 stroke-[3]" />
                           <span className="whitespace-nowrap">
                             Added to Quote List
                           </span>
                         </>
                       ) : (
                         <>
-                          <Plus className="w-4 h-4 stroke-[2.5]" />
+                          <Plus className="w-3.5 h-3.5 stroke-[2.5]" />
                           <span className="whitespace-nowrap">
                             Add to Quote List
                           </span>
@@ -259,20 +259,20 @@ export const ProductCatalogMatrix: React.FC<ProductCatalogMatrixProps> = ({
 
         {/* Load More Action Controls (When products are more than 6) */}
         {hasMore && (
-          <div className="mt-12 flex flex-col sm:flex-row items-center justify-center gap-4">
+          <div className="mt-8 flex flex-col sm:flex-row items-center justify-center gap-3">
             <button
               type="button"
               onClick={handleLoadMore}
-              className="w-full sm:w-auto inline-flex items-center justify-center gap-2 px-8 py-4 bg-[#0082FC] text-white hover:bg-[#5FD4FD] hover:text-[#0082FC] font-extrabold text-base rounded-none border-2 border-[#0082FC] transition-colors duration-150 shadow-md whitespace-nowrap"
+              className="w-full sm:w-auto inline-flex items-center justify-center gap-2 px-6 py-3 bg-[#0082FC] text-white hover:bg-[#5FD4FD] hover:text-[#0082FC] font-bold text-sm rounded-none border-2 border-[#0082FC] transition-colors duration-150 shadow-sm whitespace-nowrap cursor-pointer"
             >
               <span>Load More Products (+6)</span>
-              <ChevronDown className="w-5 h-5" />
+              <ChevronDown className="w-4 h-4" />
             </button>
 
             <button
               type="button"
               onClick={handleShowAll}
-              className="w-full sm:w-auto inline-flex items-center justify-center gap-2 px-8 py-4 bg-white text-[#0082FC] hover:bg-[#0082FC] hover:text-white font-extrabold text-base rounded-none border-2 border-[#0082FC] transition-colors duration-150 whitespace-nowrap"
+              className="w-full sm:w-auto inline-flex items-center justify-center gap-2 px-6 py-3 bg-white text-[#0082FC] hover:bg-[#0082FC] hover:text-white font-bold text-sm rounded-none border-2 border-[#0082FC] transition-colors duration-150 whitespace-nowrap cursor-pointer"
             >
               <span>Show All ({filteredProducts.length} Items)</span>
             </button>

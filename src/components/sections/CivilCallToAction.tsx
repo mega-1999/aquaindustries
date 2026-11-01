@@ -183,11 +183,11 @@ export function CivilCallToAction({
               </span>
             </div>
 
-            <h2 className="text-3xl sm:text-4xl lg:text-5xl font-black text-white leading-tight">
+            <h2 className="text-2xl sm:text-3xl lg:text-4xl font-black text-white leading-tight">
               Reliable Waterworks Fittings for Heavy Municipal Infrastructure
             </h2>
 
-            <div className="space-y-4 text-white text-base lg:text-lg leading-relaxed font-normal">
+            <div className="space-y-3 text-white text-sm sm:text-base leading-relaxed font-normal">
               <p>
                 American water and sewer utilities operate under harsh,
                 high-pressure field conditions. Aqua Industries manufactures and
@@ -205,15 +205,15 @@ export function CivilCallToAction({
             </div>
 
             {/* Direct Action Buttons */}
-            <div className="pt-2 flex flex-wrap gap-4 items-center">
+            <div className="pt-2 flex flex-wrap gap-3.5 items-center">
               <button
                 type="button"
                 onClick={scrollToMatrix}
-                className="inline-flex items-center justify-center bg-white text-[#0082FC] hover:bg-[#5FD4FD] hover:text-[#0082FC] font-extrabold text-base px-8 py-4 border-2 border-white transition-colors duration-150 whitespace-nowrap"
+                className="inline-flex items-center justify-center bg-white text-[#0082FC] hover:bg-[#5FD4FD] hover:text-[#0082FC] font-bold text-sm sm:text-base px-6 py-3.5 border-2 border-white transition-colors duration-150 whitespace-nowrap cursor-pointer shadow-sm"
               >
                 <span>Browse Fittings &amp; Castings</span>
                 <svg
-                  className="w-5 h-5 ml-2"
+                  className="w-4 h-4 ml-2"
                   fill="none"
                   stroke="currentColor"
                   viewBox="0 0 24 24"
@@ -230,14 +230,14 @@ export function CivilCallToAction({
               <button
                 type="button"
                 onClick={scrollToQuote}
-                className="inline-flex items-center justify-center bg-[#0082FC] text-white hover:bg-white hover:text-[#0082FC] font-extrabold text-base px-8 py-4 border-2 border-white transition-colors duration-150 whitespace-nowrap"
+                className="inline-flex items-center justify-center bg-[#0082FC] text-white hover:bg-white hover:text-[#0082FC] font-bold text-sm sm:text-base px-6 py-3.5 border-2 border-white transition-colors duration-150 whitespace-nowrap cursor-pointer shadow-sm"
               >
                 <span>Request Project Material Quote</span>
               </button>
             </div>
 
             {/* Bottom 3 Single-line Trust Markers */}
-            <div className="pt-4 border-t border-[#5FD4FD] grid grid-cols-1 sm:grid-cols-3 gap-4 text-sm font-mono font-bold">
+            <div className="pt-4 border-t border-[#5FD4FD] grid grid-cols-1 sm:grid-cols-3 gap-3 text-xs font-mono font-bold">
               <div className="flex items-center space-x-2">
                 <span className="w-2 h-2 bg-[#5FD4FD]"></span>
                 <span className="whitespace-nowrap">

@@ -38,23 +38,23 @@ export const SolenoSamplingHero: React.FC = () => {
           {/* LEFT COLUMN: Soleno Industrial Typography */}
           <div className="lg:col-span-7 text-left space-y-6">
             {/* Top Category Badge */}
-            <div className="inline-flex items-center gap-2 px-4 py-2 bg-white text-[#0082FC] shadow-lg border-2 border-[#5FD4FD] rounded-none">
-              <FlaskConical className="w-5 h-5 text-[#0082FC] shrink-0" />
-              <span className="text-xs sm:text-sm font-black uppercase tracking-wider whitespace-nowrap">
+            <div className="inline-flex items-center gap-2 px-3.5 py-1.5 bg-white text-[#0082FC] shadow-md border-2 border-[#5FD4FD] rounded-none">
+              <FlaskConical className="w-4 h-4 text-[#0082FC] shrink-0" />
+              <span className="text-xs font-bold uppercase tracking-wider whitespace-nowrap">
                 Flagship Product Showcase &bull; Laboratory Grade
               </span>
             </div>
 
-            {/* Soleno-Style Massive Headline */}
-            <h1 className="text-4xl sm:text-6xl xl:text-7xl font-black text-white tracking-tighter leading-[0.92] uppercase font-sans">
+            {/* Soleno-Style Headline (Balanced Scale) */}
+            <h1 className="text-3xl sm:text-5xl lg:text-6xl font-black text-white tracking-tight leading-[0.96] uppercase font-sans">
               <span className="text-[#5FD4FD] block">CONNECTING YOU</span>
               TO THE FUTURE OF
               <br />
               WATER MANAGEMENT
             </h1>
 
-            {/* Grounded Senior-Readable Subtitle */}
-            <p className="text-base sm:text-lg lg:text-xl text-white/95 max-w-2xl leading-relaxed font-normal">
+            {/* Grounded Subtitle */}
+            <p className="text-sm sm:text-base lg:text-lg text-white/95 max-w-xl leading-relaxed font-normal">
               Engineering next-generation municipal water infrastructure and our
               flagship <strong>Water Sampling Station</strong>. Providing
               secure, non-contaminated sampling points for real-time chlorine
@@ -63,38 +63,38 @@ export const SolenoSamplingHero: React.FC = () => {
             </p>
 
             {/* Single-Line Trust Badges */}
-            <div className="flex flex-wrap items-center gap-3 pt-2">
-              <div className="px-3.5 py-1.5 bg-white/10 border border-[#5FD4FD] text-white text-xs sm:text-sm font-bold whitespace-nowrap inline-flex items-center gap-2 shadow-xs backdrop-blur-sm">
-                <ShieldCheck className="w-4 h-4 text-[#5FD4FD] shrink-0" />
+            <div className="flex flex-wrap items-center gap-2.5 pt-1">
+              <div className="px-3 py-1.5 bg-white/10 border border-[#5FD4FD] text-white text-xs font-semibold whitespace-nowrap inline-flex items-center gap-1.5 shadow-xs backdrop-blur-sm">
+                <ShieldCheck className="w-3.5 h-3.5 text-[#5FD4FD] shrink-0" />
                 <span>EPA Lead &amp; Copper Rule Approved</span>
               </div>
 
-              <div className="px-3.5 py-1.5 bg-white/10 border border-[#5FD4FD] text-white text-xs sm:text-sm font-bold whitespace-nowrap inline-flex items-center gap-2 shadow-xs backdrop-blur-sm">
-                <CheckCircle2 className="w-4 h-4 text-[#5FD4FD] shrink-0" />
+              <div className="px-3 py-1.5 bg-white/10 border border-[#5FD4FD] text-white text-xs font-semibold whitespace-nowrap inline-flex items-center gap-1.5 shadow-xs backdrop-blur-sm">
+                <CheckCircle2 className="w-3.5 h-3.5 text-[#5FD4FD] shrink-0" />
                 <span>NSF/ANSI 61 &amp; 372 Certified Lead-Free</span>
               </div>
 
-              <div className="px-3.5 py-1.5 bg-white/10 border border-[#5FD4FD] text-white text-xs sm:text-sm font-bold whitespace-nowrap inline-flex items-center gap-2 shadow-xs backdrop-blur-sm">
-                <Truck className="w-4 h-4 text-[#5FD4FD] shrink-0" />
+              <div className="px-3 py-1.5 bg-white/10 border border-[#5FD4FD] text-white text-xs font-semibold whitespace-nowrap inline-flex items-center gap-1.5 shadow-xs backdrop-blur-sm">
+                <Truck className="w-3.5 h-3.5 text-[#5FD4FD] shrink-0" />
                 <span>Melville, NY Foundry &amp; FL Logistics</span>
               </div>
             </div>
 
             {/* Action Buttons */}
-            <div className="flex flex-col sm:flex-row items-stretch sm:items-center gap-4 pt-4">
+            <div className="flex flex-col sm:flex-row items-stretch sm:items-center gap-3.5 pt-2">
               <a
                 href="#sampling-station-spotlight"
-                className="inline-flex items-center justify-center gap-2 px-8 py-4 text-base sm:text-lg font-extrabold text-[#0082FC] bg-white hover:bg-[#5FD4FD] hover:text-[#0082FC] rounded-none shadow-xl transition-all transform hover:-translate-y-0.5 active:translate-y-0 whitespace-nowrap"
+                className="inline-flex items-center justify-center gap-2 px-6 py-3.5 text-sm sm:text-base font-bold text-[#0082FC] bg-white hover:bg-[#5FD4FD] hover:text-[#0082FC] rounded-none shadow-lg transition-all transform hover:-translate-y-0.5 active:translate-y-0 whitespace-nowrap"
               >
                 <span>Explore Sampling Station</span>
-                <ArrowRight className="w-5 h-5 text-[#0082FC]" />
+                <ArrowRight className="w-4 h-4 text-[#0082FC]" />
               </a>
 
               <a
                 href="#product-matrix"
-                className="inline-flex items-center justify-center gap-2 px-8 py-4 text-base sm:text-lg font-extrabold text-[#5FD4FD] hover:text-[#0082FC] bg-[#0082FC] hover:bg-[#5FD4FD] border-2 border-[#5FD4FD] rounded-none shadow-lg transition-all transform hover:-translate-y-0.5 active:translate-y-0 whitespace-nowrap"
+                className="inline-flex items-center justify-center gap-2 px-6 py-3.5 text-sm sm:text-base font-bold text-[#5FD4FD] hover:text-[#0082FC] bg-[#0082FC] hover:bg-[#5FD4FD] border-2 border-[#5FD4FD] rounded-none shadow-md transition-all transform hover:-translate-y-0.5 active:translate-y-0 whitespace-nowrap"
               >
-                <FileCheck2 className="w-5 h-5 text-[#5FD4FD] group-hover:text-[#0082FC]" />
+                <FileCheck2 className="w-4 h-4 text-[#5FD4FD] group-hover:text-[#0082FC]" />
                 <span>Browse Complete Catalog</span>
               </a>
             </div>
@@ -155,23 +155,23 @@ export const SolenoSamplingHero: React.FC = () => {
               {/* Soleno Circular Floating Interactive CTA Button */}
               <a
                 href="#quote-form"
-                className="absolute -bottom-3 -right-3 sm:bottom-0 sm:right-0 w-28 h-28 sm:w-36 sm:h-36 rounded-full bg-[#0082FC] hover:bg-[#5FD4FD] text-white hover:text-[#0082FC] border-4 border-white flex flex-col items-center justify-center p-2 text-center shadow-2xl transition-all duration-300 hover:scale-105 group z-30"
+                className="absolute -bottom-3 -right-3 sm:bottom-0 sm:right-0 w-24 h-24 sm:w-28 sm:h-28 rounded-full bg-[#0082FC] hover:bg-[#5FD4FD] text-white hover:text-[#0082FC] border-4 border-white flex flex-col items-center justify-center p-2 text-center shadow-xl transition-all duration-300 hover:scale-105 group z-30"
                 title="Start a project with Aqua Industries"
               >
-                <span className="text-[11px] sm:text-xs font-black tracking-widest uppercase leading-tight">
+                <span className="text-[10px] sm:text-[11px] font-black tracking-wider uppercase leading-tight">
                   START A<br />
                   PROJECT
                 </span>
-                <span className="text-xl sm:text-2xl font-black mt-0.5 text-white group-hover:text-[#0082FC] transition-transform duration-300 group-hover:rotate-90">
+                <span className="text-lg sm:text-xl font-black mt-0.5 text-white group-hover:text-[#0082FC] transition-transform duration-300 group-hover:rotate-90">
                   +
                 </span>
               </a>
 
               {/* Floating Engineering Chips */}
-              <div className="absolute -top-3 left-4 bg-white border-2 border-[#0082FC] px-3 py-1 text-xs font-extrabold text-[#0082FC] shadow-md z-20 hidden sm:block whitespace-nowrap">
+              <div className="absolute -top-3 left-4 bg-white border-2 border-[#0082FC] px-2.5 py-1 text-[11px] font-bold text-[#0082FC] shadow-sm z-20 hidden sm:block whitespace-nowrap">
                 ✓ Non-Contaminating Waterway
               </div>
-              <div className="absolute top-12 -right-4 bg-white border-2 border-[#5FD4FD] px-3 py-1 text-xs font-extrabold text-[#0082FC] shadow-md z-20 hidden sm:block whitespace-nowrap">
+              <div className="absolute top-12 -right-4 bg-white border-2 border-[#5FD4FD] px-2.5 py-1 text-[11px] font-bold text-[#0082FC] shadow-sm z-20 hidden sm:block whitespace-nowrap">
                 ✓ Freeze-Proof Insulated
               </div>
             </div>
@@ -179,27 +179,27 @@ export const SolenoSamplingHero: React.FC = () => {
         </div>
 
         {/* Bottom Trust Indicators & Direct Hotline */}
-        <div className="mt-16 pt-8 border-t border-white/25 flex flex-col md:flex-row items-center justify-between gap-6 text-sm sm:text-base text-white font-medium">
-          <div className="flex flex-wrap items-center justify-center md:justify-start gap-6 sm:gap-8">
+        <div className="mt-12 pt-6 border-t border-white/20 flex flex-col md:flex-row items-center justify-between gap-4 text-xs sm:text-sm text-white font-normal">
+          <div className="flex flex-wrap items-center justify-center md:justify-start gap-4 sm:gap-6">
             <div className="flex items-center gap-2 whitespace-nowrap">
-              <span className="w-2.5 h-2.5 bg-[#5FD4FD]" />
+              <span className="w-2 h-2 bg-[#5FD4FD]" />
               <span>Traceable Melt Heat Numbers Cast on Every Body</span>
             </div>
             <div className="flex items-center gap-2 whitespace-nowrap">
-              <span className="w-2.5 h-2.5 bg-[#5FD4FD]" />
+              <span className="w-2 h-2 bg-[#5FD4FD]" />
               <span>New York Foundry &amp; Florida Operations</span>
             </div>
             <div className="flex items-center gap-2 whitespace-nowrap">
-              <span className="w-2.5 h-2.5 bg-[#5FD4FD]" />
+              <span className="w-2 h-2 bg-[#5FD4FD]" />
               <span>Certified Mill Test Reports (MTRs) Provided</span>
             </div>
           </div>
 
           <a
             href="tel:+15162521111"
-            className="inline-flex items-center gap-2 text-sm sm:text-base font-extrabold text-white hover:text-[#5FD4FD] transition-colors whitespace-nowrap bg-white/10 px-4 py-2 border border-[#5FD4FD]/50"
+            className="inline-flex items-center gap-2 text-xs sm:text-sm font-bold text-white hover:text-[#5FD4FD] transition-colors whitespace-nowrap bg-white/10 px-3.5 py-1.5 border border-[#5FD4FD]/50"
           >
-            <PhoneCall className="w-4 h-4 text-[#5FD4FD]" />
+            <PhoneCall className="w-3.5 h-3.5 text-[#5FD4FD]" />
             <span>Direct Dispatch: +1 (516) 252-1111</span>
           </a>
         </div>
