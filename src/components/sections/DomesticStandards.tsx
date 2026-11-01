@@ -41,6 +41,21 @@ const CERTIFICATIONS = [
   },
 ];
 
+const INDUSTRY_ASSOCIATIONS = [
+  "AWWA (American Water Works Association)",
+  "ANSI (American National Standards Institute)",
+  "WASDA (Water & Sewer Distributors)",
+  "NUCA (National Utility Contractors)",
+  "APWA (American Public Works)",
+  "WEFTEC (Water Environment Federation)",
+  "NAPF (Pipe Fabricators)",
+  "NPCA (Precast Concrete)",
+  "FM APPROVALS",
+  "UL LISTED",
+  "NSF INTERNATIONAL",
+  "NRWA (Rural Water)",
+];
+
 export function DomesticStandards() {
   return (
     <section className="relative w-full bg-[#0082FC] text-white py-20 border-b border-[#0082FC]">
@@ -51,7 +66,7 @@ export function DomesticStandards() {
             <div className="inline-flex items-center space-x-2 border border-[#5FD4FD] bg-white px-3 py-1">
               <span className="w-2 h-2 bg-[#0082FC]"></span>
               <span className="text-xs font-bold uppercase tracking-wider text-[#0082FC] whitespace-nowrap">
-                Domestic Standards & Testing
+                Domestic Standards &amp; Testing
               </span>
             </div>
 
@@ -80,7 +95,7 @@ export function DomesticStandards() {
                     <h4 className="text-sm font-bold text-[#0082FC] mt-2 mb-1">
                       {cert.title}
                     </h4>
-                    <p className="text-xs text-[#0082FC] leading-relaxed">
+                    <p className="text-xs text-[#0082FC] leading-relaxed font-normal">
                       {cert.detail}
                     </p>
                   </div>
@@ -91,7 +106,7 @@ export function DomesticStandards() {
             {/* Single-line button */}
             <div className="pt-4">
               <a
-                href="#quote-builder"
+                href="#quote-form"
                 className="inline-flex items-center justify-center bg-white text-[#0082FC] hover:bg-[#5FD4FD] hover:text-[#0082FC] font-bold text-xs uppercase tracking-wider py-3.5 px-6 border-2 border-white transition-colors duration-150 whitespace-nowrap"
               >
                 <span>Request Certified Mill Test Reports (MTR)</span>
@@ -203,6 +218,26 @@ export function DomesticStandards() {
                 </div>
               </div>
             </div>
+          </div>
+        </div>
+
+        {/* Industry Associations Ribbon from SIP Industries */}
+        <div className="mt-14 pt-8 border-t border-[#5FD4FD]">
+          <div className="text-center mb-4">
+            <span className="text-[11px] font-mono font-bold uppercase tracking-widest text-[#5FD4FD] whitespace-nowrap">
+              Approved &amp; Certified Across North American Waterworks
+              Infrastructure Organizations
+            </span>
+          </div>
+          <div className="flex flex-wrap justify-center gap-2">
+            {INDUSTRY_ASSOCIATIONS.map((assoc) => (
+              <span
+                key={assoc}
+                className="px-3 py-1 bg-white text-[#0082FC] text-xs font-bold whitespace-nowrap border border-[#5FD4FD]"
+              >
+                {assoc}
+              </span>
+            ))}
           </div>
         </div>
       </div>
