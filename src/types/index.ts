@@ -1,26 +1,42 @@
 export type ProductStandard =
   | "AWWA C153"
   | "AWWA C110"
-  | "AWWA C151"
-  | "ASTM A888"
-  | "ASTM A74"
+  | "AWWA C115"
+  | "AWWA C111"
+  | "AWWA C104"
+  | "AWWA C116"
   | "ASTM A536"
+  | "ASTM A48"
   | "AASHTO M306"
   | "ANSI/NSF 61"
-  | "UL/FM";
+  | "ANSI/NSF 372"
+  | "UL/FM"
+  | "ISO 8179"
+  | "ADA Standards";
 
 export type JointType =
   | "Mechanical Joint (MJ)"
   | "Flanged (Class 125/250)"
   | "Push-On Joint (Tyton)"
-  | "Hubless No-Hub"
-  | "Hub & Spigot"
-  | "Wedge Action Restrained";
+  | "Wedge Action Restrained"
+  | "Harness Restrained"
+  | "Threaded & Companion"
+  | "Gravity Flow Drop-In";
+
+export type ProductCategory =
+  | "all"
+  | "fittings"
+  | "restraints"
+  | "accessories"
+  | "linings-coatings"
+  | "hydrants-flanges"
+  | "valve-meter-boxes"
+  | "municipal-castings";
 
 export interface ProductItem {
   id: string;
   name: string;
-  category: "waterworks" | "restraints" | "castings" | "soilpipe" | "saddles";
+  category: ProductCategory;
   categoryLabel: string;
   standard: ProductStandard;
   pressureRating: string;

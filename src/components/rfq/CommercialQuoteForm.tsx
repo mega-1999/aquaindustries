@@ -50,9 +50,10 @@ export const CommercialQuoteForm: React.FC<CommercialQuoteFormProps> = ({
   const [isSubmitted, setIsSubmitted] = useState(false);
 
   const categories = [
-    "Waterworks Fittings",
-    "Restraints",
-    "Castings",
+    "C153 & C110 Fittings",
+    "ULTRA & Series 3000 Restraints",
+    "MJ Accessories & Linings",
+    "Municipal Castings & Inlets",
     "Complete Job Package",
   ];
 

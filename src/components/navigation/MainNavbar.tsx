@@ -130,64 +130,64 @@ export const MainNavbar: React.FC<MainNavbarProps> = ({
                         <a
                           href="#product-matrix"
                           onClick={() =>
-                            handleNavClick("#product-matrix", "waterworks")
+                            handleNavClick("#product-matrix", "fittings")
                           }
                           className="p-3 rounded-none hover:bg-[#0082fc] hover:text-white border border-[#5fd4fd] transition-all group block text-[#0082fc]"
                         >
                           <div className="font-extrabold text-xs mb-1 whitespace-nowrap group-hover:text-[#5fd4fd]">
-                            Compact Fittings (AWWA C153)
+                            C153 Compact MJ Fittings
                           </div>
                           <p className="text-[11px] leading-relaxed group-hover:text-white">
-                            MJ bends, tees, and reducers. 350 PSI rated for
-                            3&quot; to 24&quot; lines.
+                            Sizes 2&quot; to 64&quot; MJ bends, tees, and
+                            reducers. 350 PSI rated with UL/FM listings.
                           </p>
                         </a>
 
                         <a
                           href="#product-matrix"
                           onClick={() =>
-                            handleNavClick("#product-matrix", "waterworks")
+                            handleNavClick("#product-matrix", "fittings")
                           }
                           className="p-3 rounded-none hover:bg-[#0082fc] hover:text-white border border-[#5fd4fd] transition-all group block text-[#0082fc]"
                         >
                           <div className="font-extrabold text-xs mb-1 whitespace-nowrap group-hover:text-[#5fd4fd]">
-                            Full Body Fittings (AWWA C110)
+                            C110 Full Body MJ Fittings
                           </div>
                           <p className="text-[11px] leading-relaxed group-hover:text-white">
-                            Heavy-section branch tees, crosses, and flanges with
-                            smooth hydraulic radii.
+                            Heavy full-body ductile iron branch tees, crosses,
+                            and flanges for high-surge mains.
                           </p>
                         </a>
 
                         <a
                           href="#product-matrix"
                           onClick={() =>
-                            handleNavClick("#product-matrix", "waterworks")
+                            handleNavClick("#product-matrix", "fittings")
                           }
                           className="p-3 rounded-none hover:bg-[#0082fc] hover:text-white border border-[#5fd4fd] transition-all group block text-[#0082fc]"
                         >
                           <div className="font-extrabold text-xs mb-1 whitespace-nowrap group-hover:text-[#5fd4fd]">
-                            Flanged Pipe &amp; Fittings
+                            C110 Flange Fittings
                           </div>
                           <p className="text-[11px] leading-relaxed group-hover:text-white">
                             Class 125 &amp; Class 250 flanged spools and
-                            reducers for stations.
+                            reducers for pump station galleries.
                           </p>
                         </a>
 
                         <a
                           href="#product-matrix"
                           onClick={() =>
-                            handleNavClick("#product-matrix", "waterworks")
+                            handleNavClick("#product-matrix", "fittings")
                           }
                           className="p-3 rounded-none hover:bg-[#0082fc] hover:text-white border border-[#5fd4fd] transition-all group block text-[#0082fc]"
                         >
                           <div className="font-extrabold text-xs mb-1 whitespace-nowrap group-hover:text-[#5fd4fd]">
-                            Push-On Joint Fittings
+                            C153 Push-On Fittings
                           </div>
                           <p className="text-[11px] leading-relaxed group-hover:text-white">
-                            Tyton-compatible push-on fittings for ductile iron
-                            water transmission runs.
+                            Tyton-compatible push-on socket fittings for rapid
+                            4&quot; to 24&quot; trench assembly.
                           </p>
                         </a>
                       </div>
@@ -247,7 +247,7 @@ export const MainNavbar: React.FC<MainNavbarProps> = ({
               </button>
 
               {activeMenu === "restraints" && (
-                <div className="absolute top-full left-0 w-72 max-w-[calc(100vw-2rem)] pt-2 z-50">
+                <div className="absolute top-full left-0 w-80 max-w-[calc(100vw-2rem)] pt-2 z-50">
                   <div className="bg-white border-2 border-[#0082fc] rounded-none shadow-2xl p-2.5 text-[#0082fc]">
                     <a
                       href="#product-matrix"
@@ -257,10 +257,10 @@ export const MainNavbar: React.FC<MainNavbarProps> = ({
                       className="block p-2.5 rounded-none hover:bg-[#0082fc] hover:text-white transition-colors"
                     >
                       <div className="font-extrabold text-xs whitespace-nowrap">
-                        Wedge-Action Restraints
+                        ULTRA PVC Restraints
                       </div>
                       <div className="text-[11px]">
-                        Series 3000 glands for PVC and ductile iron mains.
+                        Highest certified pressure rating for C900 PVC pipe.
                       </div>
                     </a>
                     <a
@@ -271,38 +271,38 @@ export const MainNavbar: React.FC<MainNavbarProps> = ({
                       className="block p-2.5 rounded-none hover:bg-[#0082fc] hover:text-white transition-colors"
                     >
                       <div className="font-extrabold text-xs whitespace-nowrap">
-                        Split Harness Restraints
+                        Series 3000 Wedge-Action Restraint Glands
                       </div>
                       <div className="text-[11px]">
-                        Bell harness tie-rods for existing pipeline joints.
+                        For Ductile Iron &amp; C900 PVC with auto-torque screws.
                       </div>
                     </a>
                     <a
                       href="#product-matrix"
                       onClick={() =>
-                        handleNavClick("#product-matrix", "saddles")
+                        handleNavClick("#product-matrix", "restraints")
                       }
                       className="block p-2.5 rounded-none hover:bg-[#0082fc] hover:text-white transition-colors"
                     >
                       <div className="font-extrabold text-xs whitespace-nowrap">
-                        Wide-Range Bolted Couplings
+                        Series 1500 &amp; 1900 Restraint Harnesses
                       </div>
                       <div className="text-[11px]">
-                        Transition couplings spanning differing pipe O.D.s.
+                        Bell harness tie-rods for existing push-on joints.
                       </div>
                     </a>
                     <a
                       href="#product-matrix"
                       onClick={() =>
-                        handleNavClick("#product-matrix", "saddles")
+                        handleNavClick("#product-matrix", "restraints")
                       }
                       className="block p-2.5 rounded-none hover:bg-[#0082fc] hover:text-white transition-colors"
                     >
                       <div className="font-extrabold text-xs whitespace-nowrap">
-                        Tapping Saddles &amp; Clamps
+                        Series 2100 Split MJ Restraint Harness
                       </div>
                       <div className="text-[11px]">
-                        Double-strap saddles and 304 stainless repair sleeves.
+                        Two-piece retrofit restraint for live or existing lines.
                       </div>
                     </a>
                   </div>
@@ -324,9 +324,7 @@ export const MainNavbar: React.FC<MainNavbarProps> = ({
                     : "text-[#0082fc] hover:bg-[#5fd4fd]/20"
                 }`}
               >
-                <span className="whitespace-nowrap">
-                  Municipal &amp; Castings
-                </span>
+                <span className="whitespace-nowrap">Municipal Castings</span>
                 <ChevronDown
                   className={`w-3.5 h-3.5 transition-transform duration-200 ${
                     activeMenu === "castings"
@@ -337,48 +335,63 @@ export const MainNavbar: React.FC<MainNavbarProps> = ({
               </button>
 
               {activeMenu === "castings" && (
-                <div className="absolute top-full left-0 w-72 max-w-[calc(100vw-2rem)] pt-2 z-50">
+                <div className="absolute top-full left-0 w-80 max-w-[calc(100vw-2rem)] pt-2 z-50">
                   <div className="bg-white border-2 border-[#0082fc] rounded-none shadow-2xl p-2.5 text-[#0082fc]">
                     <a
                       href="#product-matrix"
                       onClick={() =>
-                        handleNavClick("#product-matrix", "castings")
+                        handleNavClick("#product-matrix", "municipal-castings")
                       }
                       className="block p-2.5 rounded-none hover:bg-[#0082fc] hover:text-white transition-colors"
                     >
                       <div className="font-extrabold text-xs whitespace-nowrap">
-                        Traffic-Rated Manhole Lids
+                        AASHTO M306 Manhole Frames &amp; Covers
                       </div>
                       <div className="text-[11px]">
-                        AASHTO M306 40,000 lb proof-load frames and covers.
+                        40,000 lb proof-load machined heavy traffic lids.
                       </div>
                     </a>
                     <a
                       href="#product-matrix"
                       onClick={() =>
-                        handleNavClick("#product-matrix", "castings")
+                        handleNavClick("#product-matrix", "municipal-castings")
                       }
                       className="block p-2.5 rounded-none hover:bg-[#0082fc] hover:text-white transition-colors"
                     >
                       <div className="font-extrabold text-xs whitespace-nowrap">
-                        Curb Inlets &amp; Catch Basins
+                        Drainage Grates &amp; Curb Inlets
                       </div>
                       <div className="text-[11px]">
-                        Vane and bar storm drain grates for city streets.
+                        Highway vane grates and bicycle-safe catch basin hoods.
                       </div>
                     </a>
                     <a
                       href="#product-matrix"
                       onClick={() =>
-                        handleNavClick("#product-matrix", "castings")
+                        handleNavClick("#product-matrix", "municipal-castings")
                       }
                       className="block p-2.5 rounded-none hover:bg-[#0082fc] hover:text-white transition-colors"
                     >
                       <div className="font-extrabold text-xs whitespace-nowrap">
-                        Valve Boxes &amp; Meter Boxes
+                        Trench Grates &amp; Warning Plates
                       </div>
                       <div className="text-[11px]">
-                        Screw-type and slide-type adjustable cast iron boxes.
+                        ADA heel-proof trench grates &amp; truncated dome tiles.
+                      </div>
+                    </a>
+                    <a
+                      href="#product-matrix"
+                      onClick={() =>
+                        handleNavClick("#product-matrix", "valve-meter-boxes")
+                      }
+                      className="block p-2.5 rounded-none hover:bg-[#0082fc] hover:text-white transition-colors"
+                    >
+                      <div className="font-extrabold text-xs whitespace-nowrap">
+                        Valve &amp; Meter Service Boxes
+                      </div>
+                      <div className="text-[11px]">
+                        Screw-type &amp; slip-type adjustable boxes &amp;
+                        extension rings.
                       </div>
                     </a>
                   </div>
@@ -694,29 +707,38 @@ export const MainNavbar: React.FC<MainNavbarProps> = ({
                     <a
                       href="#product-matrix"
                       onClick={() =>
-                        handleNavClick("#product-matrix", "waterworks")
+                        handleNavClick("#product-matrix", "fittings")
                       }
                       className="block py-1 hover:text-[#5fd4fd] whitespace-nowrap font-medium"
                     >
-                      • Compact Fittings (AWWA C153)
+                      • C153 Compact MJ Fittings
                     </a>
                     <a
                       href="#product-matrix"
                       onClick={() =>
-                        handleNavClick("#product-matrix", "waterworks")
+                        handleNavClick("#product-matrix", "fittings")
                       }
                       className="block py-1 hover:text-[#5fd4fd] whitespace-nowrap font-medium"
                     >
-                      • Full Body Mechanical Joint (AWWA C110)
+                      • C110 Full Body MJ Fittings
                     </a>
                     <a
                       href="#product-matrix"
                       onClick={() =>
-                        handleNavClick("#product-matrix", "waterworks")
+                        handleNavClick("#product-matrix", "fittings")
                       }
                       className="block py-1 hover:text-[#5fd4fd] whitespace-nowrap font-medium"
                     >
-                      • Flanged Pipe &amp; Fittings
+                      • C110 Flange Fittings
+                    </a>
+                    <a
+                      href="#product-matrix"
+                      onClick={() =>
+                        handleNavClick("#product-matrix", "fittings")
+                      }
+                      className="block py-1 hover:text-[#5fd4fd] whitespace-nowrap font-medium"
+                    >
+                      • C153 Push-On Fittings
                     </a>
                   </div>
                 )}
@@ -733,9 +755,7 @@ export const MainNavbar: React.FC<MainNavbarProps> = ({
                   }
                   className="w-full flex items-center justify-between text-sm font-bold text-[#0082fc] py-2"
                 >
-                  <span className="whitespace-nowrap">
-                    Restraints &amp; Couplings
-                  </span>
+                  <span className="whitespace-nowrap">Joint Restraints</span>
                   <ChevronDown
                     className={`w-4 h-4 text-[#0082fc] transition-transform ${
                       mobileAccordion === "restraints"
@@ -753,7 +773,7 @@ export const MainNavbar: React.FC<MainNavbarProps> = ({
                       }
                       className="block py-1 hover:text-[#5fd4fd] whitespace-nowrap font-medium"
                     >
-                      • Wedge-Action Restraint Glands
+                      • ULTRA PVC Restraints
                     </a>
                     <a
                       href="#product-matrix"
@@ -762,16 +782,16 @@ export const MainNavbar: React.FC<MainNavbarProps> = ({
                       }
                       className="block py-1 hover:text-[#5fd4fd] whitespace-nowrap font-medium"
                     >
-                      • Bell Harness Restraint Assemblies
+                      • Series 3000 Wedge-Action Restraint Glands
                     </a>
                     <a
                       href="#product-matrix"
                       onClick={() =>
-                        handleNavClick("#product-matrix", "saddles")
+                        handleNavClick("#product-matrix", "restraints")
                       }
                       className="block py-1 hover:text-[#5fd4fd] whitespace-nowrap font-medium"
                     >
-                      • Tapping Saddles &amp; Transition Couplings
+                      • Series 1500 &amp; 1900 Harnesses
                     </a>
                   </div>
                 )}
