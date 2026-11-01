@@ -16,6 +16,7 @@ import { YardSelectorModal } from "../components/modals/YardSelectorModal";
 import { GlobalUtilityTicker } from "../components/navigation/GlobalUtilityTicker";
 import { MainNavbar } from "../components/navigation/MainNavbar";
 import { ProductCatalogMatrix } from "../components/products/ProductCatalogMatrix";
+import { CurbBoxSpotlight } from "../components/products/CurbBoxSpotlight";
 import { SamplingStationSpotlight } from "../components/products/SamplingStationSpotlight";
 import { CommercialQuoteForm } from "../components/rfq/CommercialQuoteForm";
 import { CivilCallToAction } from "../components/sections/CivilCallToAction";
@@ -103,23 +104,30 @@ export default function Home() {
         onSelectProductCategory={handleSelectProductCategory}
       />
 
-      {/* Main Single-Page Blueprint Following Soleno's Exact Structural Rhythm */}
+      {/* Main Single-Page Blueprint with Alternating Background Rhythm */}
       <main className="flex-1">
-        {/* Section 1: Soleno Flagship Showcase - CONNECTING YOU TO THE FUTURE OF WATER MANAGEMENT */}
+        {/* Section 1: 1st Place - Soleno Flagship Showcase (Blue Background #0082FC) */}
         <SolenoSamplingHero />
 
-        {/* Section 2: American Infrastructure Ductile Iron Waterworks Hero Overview */}
-        <CinematicHero />
+        {/* Section 2: 2nd Place - The Century Curb Box Showcase (White Background #FFFFFF - Alternating) */}
+        <CurbBoxSpotlight
+          product={PRODUCTS_CATALOG[1]}
+          onAddToRfq={handleAddToRfq}
+          onPreviewSubmittal={(product) => setSubmittalModalProduct(product)}
+        />
 
-        {/* Section 3: Quick Metrics Ribbon (Crisp White Background) */}
-        <CertifiedMetricsBar />
-
-        {/* Section 3: Flagship Product Spotlight - Municipal Water Sampling Station */}
+        {/* Section 3: 3rd Place - New Flagship Innovation Sampling Station (Blue Background #0082FC - Alternating) */}
         <SamplingStationSpotlight
           product={PRODUCTS_CATALOG[0]}
           onAddToRfq={handleAddToRfq}
           onPreviewSubmittal={(product) => setSubmittalModalProduct(product)}
         />
+
+        {/* Section 4: American Infrastructure Ductile Iron Waterworks Overview (White Background #FFFFFF - Alternating) */}
+        <CinematicHero variant="white" />
+
+        {/* Section 5: Quick Metrics Ribbon */}
+        <CertifiedMetricsBar />
 
         {/* Section 4: Civil Call to Action (Soleno call_to_action split pattern) */}
         <CivilCallToAction

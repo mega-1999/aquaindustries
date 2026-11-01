@@ -115,6 +115,41 @@ export const PRODUCTS_CATALOG: ProductItem[] = [
     buyAmericaReady: true,
   },
   {
+    id: "century-curb-box",
+    name: "Century Heavy-Duty Curb Service Box",
+    category: "valve-meter-boxes",
+    categoryLabel: "Curb & Valve Boxes",
+    standard: "ASTM A48",
+    pressureRating:
+      "AASHTO H-20 / HS-20 Traffic Rated (40,000+ LBS Wheel Load)",
+    jointType: "Gravity Flow Drop-In",
+    diameterRange: '2-1/2" to 3" Upper Shaft • 18" to 72" Bury Depth',
+    material:
+      "High-Tensile Gray Iron (ASTM A48 Class 35B) / Ductile Iron (ASTM A536)",
+    coating: "Heavy Asphaltic Bituminous Dip per AWWA Specifications",
+    description:
+      "The American waterworks industry standard for over a century. Arch-pattern and Minneapolis-pattern telescopic curb boxes providing secure street-level access to underground curb stop valves.",
+    cadFile: "AQUA_CENTURY_CURB_BOX.DWG",
+    submittalFile: "SUBMITTAL_CENTURY_CURB_BOX.PDF",
+    specs: {
+      tensileStrength: "35,000 PSI Minimum (Class 35B Gray Iron)",
+      yieldStrength: "Rigid Non-Deflecting Wall Profile",
+      elongation: "Impact Resistant Heavy Casting Section",
+      wallThicknessClass: "Extra Heavy Highway Traffic Wall",
+      standardBoltCount: "Recessed Brass Pentagon Security Bolt",
+      torqueSpec: 'Standard 27/32" Pentagon Curb Key Compatible',
+    },
+    keyFeatures: [
+      'Arch pattern securely straddles 3/4" through 2" municipal curb stop valves',
+      "Vandal-resistant recessed pentagon brass bolt locks lid securely against unauthorized tampering",
+      "Telescopic sliding and screw-style upper shafts prevent frost-heave and pavement settling damage",
+      "Cast with high-contrast 'WATER' lettering for rapid municipal emergency location",
+    ],
+    imageUrl: "/images/our-images/curb-box-ultimate.png",
+    aisCompliant: true,
+    buyAmericaReady: true,
+  },
+  {
     id: "c153-compact-mj-fittings",
     name: "C153 Compact MJ Fittings",
     category: "fittings",
