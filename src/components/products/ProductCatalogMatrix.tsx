@@ -1,6 +1,13 @@
 "use client";
 
-import { Check, Download, FileText, Layers, Plus } from "lucide-react";
+import {
+  Check,
+  ChevronDown,
+  Download,
+  FileText,
+  Layers,
+  Plus,
+} from "lucide-react";
 import type React from "react";
 import { useEffect, useState } from "react";
 import { PRODUCTS_CATALOG } from "../../data/waterworks-data";
@@ -12,18 +19,20 @@ interface ProductCatalogMatrixProps {
   selectedCategory?: string;
 }
 
+const INITIAL_CARD_LIMIT = 5;
+
 export const ProductCatalogMatrix: React.FC<ProductCatalogMatrixProps> = ({
   onAddToRfq,
   onPreviewSubmittal,
   selectedCategory = "all",
 }) => {
   const [activeTab, setActiveTab] = useState<string>(selectedCategory);
+  const [visibleCount, setVisibleCount] = useState<number>(INITIAL_CARD_LIMIT);
   const [addedIds, setAddedIds] = useState<Record<string, boolean>>({});
 
   // Sync tab with navigation category selections
   useEffect(() => {
     if (selectedCategory) {
-      // Map legacy "waterworks" to "fittings" or "castings" to "municipal-castings"
       if (selectedCategory === "waterworks") {
         setActiveTab("fittings");
       } else if (selectedCategory === "castings") {
@@ -33,6 +42,11 @@ export const ProductCatalogMatrix: React.FC<ProductCatalogMatrixProps> = ({
       }
     }
   }, [selectedCategory]);
+
+  // Reset visible card count to 5 whenever category changes
+  useEffect(() => {
+    setVisibleCount(INITIAL_CARD_LIMIT);
+  }, [activeTab]);
 
   const categories = [
     { id: "all", label: "All Products" },
@@ -49,6 +63,23 @@ export const ProductCatalogMatrix: React.FC<ProductCatalogMatrixProps> = ({
     activeTab === "all"
       ? PRODUCTS_CATALOG
       : PRODUCTS_CATALOG.filter((p) => p.category === activeTab);
+
+  const displayedProducts = filteredProducts.slice(0, visibleCount);
+  const hasMore = visibleCount < filteredProducts.length;
+
+  const handleLoadMore = () => {
+    setVisibleCount((prev) => Math.min(prev + 5, filteredProducts.length));
+  };
+
+  const handleShowAll = () => {
+    setVisibleCount(filteredProducts.length);
+  };
+
+  const handleCollapseToFive = () => {
+    setVisibleCount(INITIAL_CARD_LIMIT);
+    const el = document.getElementById("product-matrix");
+    if (el) el.scrollIntoView({ behavior: "smooth" });
+  };
 
   const handleAddProduct = (product: ProductItem) => {
     onAddToRfq(product);
@@ -86,7 +117,8 @@ export const ProductCatalogMatrix: React.FC<ProductCatalogMatrixProps> = ({
 
           <div className="shrink-0 flex items-center gap-2">
             <span className="text-xs text-[#0082FC] font-semibold bg-white border border-[#5FD4FD] px-3 py-1.5 rounded-none whitespace-nowrap">
-              Showing {filteredProducts.length} Product Lines in Catalog
+              Showing {Math.min(visibleCount, filteredProducts.length)} of{" "}
+              {filteredProducts.length} Products
             </span>
           </div>
         </div>
@@ -109,9 +141,9 @@ export const ProductCatalogMatrix: React.FC<ProductCatalogMatrixProps> = ({
           ))}
         </div>
 
-        {/* Product Cards Grid */}
+        {/* Product Cards Grid (Displaying Initial 5 with Load More) */}
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-          {filteredProducts.map((product) => {
+          {displayedProducts.map((product) => {
             const isAdded = addedIds[product.id];
             return (
               <div
@@ -216,6 +248,46 @@ export const ProductCatalogMatrix: React.FC<ProductCatalogMatrixProps> = ({
             );
           })}
         </div>
+
+        {/* Load More Action Controls (When products are more than 5) */}
+        {hasMore && (
+          <div className="mt-12 flex flex-col sm:flex-row items-center justify-center gap-4">
+            <button
+              type="button"
+              onClick={handleLoadMore}
+              className="w-full sm:w-auto inline-flex items-center justify-center gap-2 px-8 py-3.5 bg-[#0082FC] text-white hover:bg-[#5FD4FD] hover:text-[#0082FC] font-bold text-sm rounded-none border-2 border-[#0082FC] transition-colors duration-150 shadow-md whitespace-nowrap"
+            >
+              <span>Load More Products (+5)</span>
+              <ChevronDown className="w-4 h-4" />
+            </button>
+
+            <button
+              type="button"
+              onClick={handleShowAll}
+              className="w-full sm:w-auto inline-flex items-center justify-center gap-2 px-6 py-3.5 bg-white text-[#0082FC] hover:bg-[#0082FC] hover:text-white font-bold text-sm rounded-none border-2 border-[#0082FC] transition-colors duration-150 whitespace-nowrap"
+            >
+              <span>Show All ({filteredProducts.length} Items)</span>
+            </button>
+          </div>
+        )}
+
+        {/* Collapse Option When All Cards Are Fully Loaded */}
+        {!hasMore && filteredProducts.length > INITIAL_CARD_LIMIT && (
+          <div className="mt-12 text-center">
+            <div className="inline-flex items-center gap-4 px-4 py-2 bg-white border border-[#5FD4FD]">
+              <span className="text-xs font-bold text-[#0082FC] whitespace-nowrap">
+                All {filteredProducts.length} Products Displayed
+              </span>
+              <button
+                type="button"
+                onClick={handleCollapseToFive}
+                className="text-xs font-bold text-[#0082FC] hover:text-[#5FD4FD] underline whitespace-nowrap"
+              >
+                Show First 5 Only
+              </button>
+            </div>
+          </div>
+        )}
       </div>
     </section>
   );
