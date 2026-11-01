@@ -6,40 +6,38 @@ import { useEffect, useState } from "react";
 
 export const SolenoPreloader: React.FC = () => {
   const [progress, setProgress] = useState(0);
-  const [isCompleted, setIsCompleted] = useState(false);
-  const [isRemoved, setIsRemoved] = useState(false);
+  const [is100Percent, setIs100Percent] = useState(false);
+  const [isFinished, setIsFinished] = useState(false);
 
   useEffect(() => {
     // Lock body scroll while loader is active
     document.body.style.overflow = "hidden";
 
-    // Progress counter animation from 0% to 100%
-    const duration = 1600; // 1.6 seconds total loading duration
+    const duration = 1500; // 1.5s smooth count up
     const startTime = performance.now();
 
     const updateProgress = (currentTime: number) => {
       const elapsed = currentTime - startTime;
-      const rawProgress = Math.min(100, Math.floor((elapsed / duration) * 100));
+      const progressRatio = Math.min(1, elapsed / duration);
 
-      // Natural ease-out curve for civil engineering precision feel
-      const easedProgress = Math.min(
+      // Smooth ease-out deceleration curve
+      const easedPercent = Math.min(
         100,
-        Math.floor(100 * Math.sin((rawProgress / 100) * (Math.PI / 2))),
+        Math.floor(100 * Math.sin(progressRatio * (Math.PI / 2))),
       );
+      setProgress(easedPercent);
 
-      setProgress(easedProgress);
-
-      if (rawProgress < 100) {
+      if (progressRatio < 1) {
         requestAnimationFrame(updateProgress);
       } else {
-        // Trigger Soleno 100% class: logo fades out, iris scale expands
-        setIsCompleted(true);
+        // Trigger Soleno 100% circle iris wipe
+        setIs100Percent(true);
 
-        // After iris expansion finishes (800ms), unlock body scroll and remove from DOM
+        // After circle expansion transition completes (1.4s), unmount and unlock scroll
         setTimeout(() => {
-          setIsRemoved(true);
+          setIsFinished(true);
           document.body.style.overflow = "";
-        }, 900);
+        }, 1350);
       }
     };
 
@@ -51,44 +49,28 @@ export const SolenoPreloader: React.FC = () => {
     };
   }, []);
 
-  if (isRemoved) return null;
+  if (isFinished) return null;
 
   return (
     <div
       id="myLoader"
-      className={`fixed inset-0 z-[9999] flex items-center justify-center transition-colors duration-700 pointer-events-auto ${
-        isCompleted
-          ? "class_100pourcent bg-transparent pointer-events-none"
-          : "bg-[#0082FC]"
-      }`}
-      aria-hidden={isCompleted}
+      className={is100Percent ? "class_100pourcent" : ""}
+      aria-hidden={is100Percent}
     >
-      {/* Soleno Iris Aperture Expansion Element */}
-      <div
-        className={`invisible_scale fixed top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 border-[#0082FC] pointer-events-none transition-all duration-700 ease-out ${
-          isCompleted
-            ? "opacity-100 p-[120vw] border-[80vw] border-[#0082FC]"
-            : "opacity-0 p-0 border-0"
-        }`}
-      />
+      {/* Soleno's Circular Iris Opening Aperture */}
+      <div className="invisible_scale" />
 
-      {/* Central Logo & Progress Percentage (Fades out on 100%) */}
-      <div
-        className={`logo_loader flex flex-col items-center justify-center transition-all duration-400 transform ${
-          isCompleted
-            ? "opacity-0 scale-95 pointer-events-none"
-            : "opacity-100 scale-100"
-        }`}
-      >
-        {/* Pulsing Aqua Industries Engineering Motif */}
-        <div className="relative mb-5 animate-[scaleAnimation_2s_infinite_ease-in-out]">
+      {/* Central Logo & Numerical Percentage */}
+      <div className="logo_loader">
+        {/* Pulsing Emblem */}
+        <div className="pulse-logo mb-5">
           <div className="w-20 h-20 sm:w-24 sm:h-24 bg-white border-2 border-[#5FD4FD] flex items-center justify-center shadow-2xl relative">
             <Droplets className="w-10 h-10 sm:w-12 sm:h-12 text-[#0082FC]" />
             <div className="absolute top-1 right-1 w-3 h-3 bg-[#5FD4FD]" />
           </div>
         </div>
 
-        {/* Company Title */}
+        {/* Brand Name */}
         <div className="text-white font-extrabold text-2xl sm:text-3xl tracking-tight uppercase whitespace-nowrap mb-1">
           Aqua <span className="text-[#5FD4FD]">Industries</span>
         </div>
@@ -97,26 +79,13 @@ export const SolenoPreloader: React.FC = () => {
           Municipal Waterworks &bull; Domestic Foundries
         </div>
 
-        {/* Numeric Progress Counter */}
-        <div
-          id="progress-text"
-          className="text-white text-3xl sm:text-4xl font-black tracking-tight font-mono"
-        >
-          {progress}%
-        </div>
+        {/* Counter */}
+        <div id="progress-text">{progress}%</div>
       </div>
 
-      {/* Bottom Horizontal Progress Bar (Soleno fix_progress) */}
-      <div
-        className={`fix_progress fixed bottom-[5vw] left-[4vw] w-[calc(100%-8vw)] h-1 sm:h-1.5 bg-white/20 transition-opacity duration-500 overflow-hidden ${
-          isCompleted ? "opacity-0 pointer-events-none" : "opacity-100"
-        }`}
-      >
-        <div
-          id="myBar"
-          className="h-full bg-[#5FD4FD] transition-[width] duration-150 ease-out"
-          style={{ width: `${progress}%` }}
-        />
+      {/* Bottom Horizontal Progress Bar */}
+      <div className="fix_progress">
+        <div id="myBar" style={{ width: `${progress}%` }} />
       </div>
     </div>
   );
