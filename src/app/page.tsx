@@ -15,8 +15,12 @@ import { YardSelectorModal } from "../components/modals/YardSelectorModal";
 import { GlobalUtilityTicker } from "../components/navigation/GlobalUtilityTicker";
 import { MainNavbar } from "../components/navigation/MainNavbar";
 import { ProductCatalogMatrix } from "../components/products/ProductCatalogMatrix";
-import { PlainQualityStandards } from "../components/quality/PlainQualityStandards";
 import { CommercialQuoteForm } from "../components/rfq/CommercialQuoteForm";
+import { CivilCallToAction } from "../components/sections/CivilCallToAction";
+import { DomesticStandards } from "../components/sections/DomesticStandards";
+import { EngineeringSubmittalLibrary } from "../components/sections/EngineeringSubmittalLibrary";
+import { MasteringInfrastructureTabs } from "../components/sections/MasteringInfrastructureTabs";
+import { MunicipalCaseStudies } from "../components/sections/MunicipalCaseStudies";
 
 import { DISTRIBUTION_YARDS, PRODUCTS_CATALOG } from "../data/waterworks-data";
 import type { ProductItem, YardLocation } from "../types";
@@ -69,9 +73,18 @@ export default function Home() {
     }
   };
 
+  const handlePreviewSubmittalDoc = (docTitle: string) => {
+    // Match with one of our products or fallback to default
+    const matchedProduct =
+      PRODUCTS_CATALOG.find((p) =>
+        docTitle.toLowerCase().includes(p.name.toLowerCase().slice(0, 10)),
+      ) || PRODUCTS_CATALOG[0];
+    setSubmittalModalProduct(matchedProduct);
+  };
+
   return (
     <div className="min-h-screen flex flex-col bg-white text-[#0082FC] selection:bg-[#5FD4FD] selection:text-[#0082FC]">
-      {/* Soleno-Style Preloader Animation */}
+      {/* Soleno-Style Iris Aperture Preloader Animation */}
       <SolenoPreloader />
 
       {/* Top Utility Ribbon */}
@@ -88,7 +101,7 @@ export default function Home() {
         onSelectProductCategory={handleSelectProductCategory}
       />
 
-      {/* Main Single-Page Blueprint */}
+      {/* Main Single-Page Blueprint Following Soleno's Exact Structural Rhythm */}
       <main className="flex-1">
         {/* Section 1: Hero Banner (Rich Aqua Blue #0082FC Background) */}
         <CinematicHero />
@@ -96,26 +109,46 @@ export default function Home() {
         {/* Section 2: Quick Metrics Ribbon (Crisp White Background) */}
         <CertifiedMetricsBar />
 
-        {/* Section 3: Product Showcase Grid (Filterable Tabs) */}
+        {/* Section 3: Civil Call to Action (Soleno call_to_action split pattern) */}
+        <CivilCallToAction
+          onExploreCatalog={() => handleSelectProductCategory("all")}
+          onRequestQuote={() => {
+            const el = document.getElementById("quote-builder");
+            if (el) el.scrollIntoView({ behavior: "smooth" });
+          }}
+        />
+
+        {/* Section 4: Civil Sector Interactive Tabs (Soleno mastering_water pattern) */}
+        <MasteringInfrastructureTabs />
+
+        {/* Section 5: Product Catalog Matrix (Soleno categorie pattern) */}
         <ProductCatalogMatrix
           onAddToRfq={handleAddToRfq}
           onPreviewSubmittal={(product) => setSubmittalModalProduct(product)}
           selectedCategory={productCategoryFilter}
         />
 
-        {/* Section 4: Interactive Thrust Restraint Calculator (Light Blue #F0F7FF Background) */}
+        {/* Section 6: Engineering Submittal & Cut Sheet Library (Soleno ressources_single carousel pattern) */}
+        <EngineeringSubmittalLibrary
+          onPreviewSubmittal={handlePreviewSubmittalDoc}
+        />
+
+        {/* Section 7: Municipal Infrastructure Case Studies (Soleno related_project pattern) */}
+        <MunicipalCaseStudies />
+
+        {/* Section 8: Interactive Thrust Restraint Calculator (Civil Engineering Field Tool) */}
         <EngineeringThrustCalculator />
 
-        {/* Section 5: Real Foundry & Yard Walkthrough (Photo Grid) */}
+        {/* Section 9: Real Foundry & Yard Walkthrough (Physical Process & Quality Control) */}
         <FoundryWalkthrough />
 
-        {/* Section 6: Plain-English Quality Standards */}
-        <PlainQualityStandards />
+        {/* Section 10: Domestic Standards & Testing Integrity (Soleno mission pattern) */}
+        <DomesticStandards />
 
-        {/* Section 7: Clear Jobsite & Order Policies (Honest & Direct) */}
+        {/* Section 11: Clear Jobsite & Order Policies (Honest & Direct Insurance Terms) */}
         <ClearJobsitePolicies />
 
-        {/* Section 8: Commercial Quote Request Form */}
+        {/* Section 12: Commercial Quote Request & Submittal Builder (Soleno start project pattern) */}
         <CommercialQuoteForm
           rfqItems={rfqItems}
           onRemoveItem={handleRemoveRfqItem}
@@ -123,13 +156,13 @@ export default function Home() {
         />
       </main>
 
-      {/* Section 9: Footer & Company Directory (Deep Navy Background) */}
+      {/* Section 13: Footer & Company Directory (24/7 Dispatch Hotline & Yard Directory) */}
       <IndustrialFooter
         onOpenYardModal={() => setYardModalOpen(true)}
         onOpenLoginModal={() => setLoginModalOpen(true)}
       />
 
-      {/* Integrated Authentication & Utility Modals */}
+      {/* Integrated Modals */}
       <ClientPortalModal
         isOpen={loginModalOpen}
         onClose={() => setLoginModalOpen(false)}
