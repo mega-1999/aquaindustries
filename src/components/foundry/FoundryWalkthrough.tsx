@@ -36,8 +36,8 @@ export const FoundryWalkthrough: React.FC = () => {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         {/* Section Header */}
         <div className="text-center max-w-3xl mx-auto mb-16">
-          <div className="inline-flex items-center gap-2 px-3 py-1 rounded-none bg-white border-2 border-[#5FD4FD] text-[#0082FC] text-xs font-semibold uppercase tracking-wider mb-3">
-            <Factory className="w-3.5 h-3.5 text-[#0082FC]" />
+          <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-none bg-white border-2 border-[#5FD4FD] text-[#0082FC] text-sm font-bold uppercase tracking-wider mb-3">
+            <Factory className="w-4 h-4 text-[#0082FC]" />
             <span className="whitespace-nowrap">
               Domestic Foundry &amp; Distribution Operations
             </span>
@@ -45,7 +45,7 @@ export const FoundryWalkthrough: React.FC = () => {
           <h2 className="text-2xl sm:text-4xl font-extrabold text-[#0082FC] tracking-tight leading-tight">
             Real Foundry &amp; Yard Walkthrough
           </h2>
-          <p className="mt-3 text-[#0082FC] text-sm sm:text-base leading-relaxed">
+          <p className="mt-3 text-[#0082FC] text-base sm:text-lg leading-relaxed font-normal">
             Take a look inside our manufacturing and yard operations. See how
             clean molds, sharp machining, and tested metallurgy produce
             consistent waterworks fittings ready for immediate flatbed delivery.
@@ -64,31 +64,31 @@ export const FoundryWalkthrough: React.FC = () => {
                 <div>
                   {/* Top Badge & Metric */}
                   <div className="flex items-center justify-between mb-4 pb-3 border-b-2 border-[#5FD4FD]/30">
-                    <span className="inline-flex items-center gap-1.5 px-2.5 py-1 rounded-none bg-white border border-[#5FD4FD] text-xs font-bold text-[#0082FC] shadow-sm">
+                    <span className="inline-flex items-center gap-1.5 px-3 py-1 rounded-none bg-white border-2 border-[#5FD4FD] text-sm font-bold text-[#0082FC] shadow-sm">
                       <Icon className="w-4 h-4 text-[#0082FC]" />
                       <span>{item.tagline}</span>
                     </span>
-                    <span className="text-xs font-bold text-[#0082FC] bg-white px-2.5 py-1 rounded-none border border-[#5FD4FD]">
+                    <span className="text-sm font-bold text-[#0082FC] bg-white px-3 py-1 rounded-none border-2 border-[#5FD4FD]">
                       {item.stat}
                     </span>
                   </div>
 
-                  <h3 className="text-xl font-bold text-[#0082FC] mb-3">
+                  <h3 className="text-2xl font-extrabold text-[#0082FC] mb-3">
                     {item.title}
                   </h3>
 
-                  <p className="text-xs sm:text-sm text-[#0082FC] leading-relaxed mb-4">
+                  <p className="text-base text-[#0082FC] leading-relaxed mb-4">
                     {item.description}
                   </p>
                 </div>
 
                 {/* Bottom Verified Spec Pill */}
-                <div className="mt-4 pt-4 border-t-2 border-[#5FD4FD]/30 flex items-center justify-between text-xs text-[#0082FC]">
-                  <span className="font-semibold text-[#0082FC] flex items-center gap-1.5 whitespace-nowrap">
+                <div className="mt-4 pt-4 border-t-2 border-[#5FD4FD]/30 flex items-center justify-between text-sm sm:text-base text-[#0082FC]">
+                  <span className="font-bold text-[#0082FC] flex items-center gap-2 whitespace-nowrap">
                     <CheckCircle2 className="w-4 h-4 text-[#5FD4FD] shrink-0" />
                     <span>Quality Benchmark:</span>
                   </span>
-                  <span className="font-bold text-[#0082FC] bg-white px-2 py-0.5 rounded-none border border-[#5FD4FD] whitespace-nowrap">
+                  <span className="font-bold text-[#0082FC] bg-white px-2.5 py-1 rounded-none border-2 border-[#5FD4FD] whitespace-nowrap">
                     {item.badge}
                   </span>
                 </div>
@@ -104,10 +104,10 @@ export const FoundryWalkthrough: React.FC = () => {
               <ShieldCheck className="w-6 h-6 text-[#0082FC]" />
             </div>
             <div>
-              <h4 className="text-base font-bold text-white">
+              <h4 className="text-lg font-bold text-white">
                 Certified Mill Test Reports (MTRs) for Every Heat
               </h4>
-              <p className="text-xs text-white/90 mt-1">
+              <p className="text-sm sm:text-base text-white/95 mt-1 leading-relaxed">
                 Chemical composition and tensile pull documentation are stored
                 under every stamped heat code. Available immediately for your
                 project inspection file.
@@ -117,7 +117,7 @@ export const FoundryWalkthrough: React.FC = () => {
 
           <a
             href="#quality-standards"
-            className="shrink-0 px-5 py-2.5 bg-white text-[#0082FC] hover:bg-[#5FD4FD] rounded-none text-xs font-bold transition-colors whitespace-nowrap shadow-sm"
+            className="shrink-0 px-6 py-3.5 bg-white text-[#0082FC] hover:bg-[#5FD4FD] rounded-none text-sm sm:text-base font-extrabold transition-colors whitespace-nowrap shadow-sm"
           >
             Review Quality Standards
           </a>

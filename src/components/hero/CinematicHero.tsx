@@ -67,9 +67,9 @@ export const CinematicHero: React.FC = () => {
       {/* Main Hero Content */}
       <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center flex flex-col items-center">
         {/* Top Tagline Pill */}
-        <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-none bg-white/15 border border-[#5FD4FD] shadow-lg mb-6 backdrop-blur-md">
+        <div className="inline-flex items-center gap-2 px-4 py-2 rounded-none bg-white/15 border border-[#5FD4FD] shadow-lg mb-6 backdrop-blur-md">
           <Droplets className="w-4 h-4 text-[#5FD4FD] shrink-0" />
-          <span className="text-xs sm:text-sm font-semibold tracking-wide text-white uppercase whitespace-nowrap">
+          <span className="text-sm sm:text-base font-bold tracking-wide text-white uppercase whitespace-nowrap">
             Domestic Waterworks Manufacturing &bull; Eastern &amp; Central Hubs
           </span>
         </div>
@@ -87,22 +87,22 @@ export const CinematicHero: React.FC = () => {
         </p>
 
         {/* Single-Line Trust Badges */}
-        <div className="w-full max-w-4xl flex flex-wrap items-center justify-center gap-2.5 sm:gap-3 mb-10">
-          <div className="px-3.5 py-1.5 rounded-none bg-white/10 border border-[#5FD4FD] text-white text-xs sm:text-sm font-semibold whitespace-nowrap inline-flex items-center gap-2 shadow-sm backdrop-blur-sm">
+        <div className="w-full max-w-4xl flex flex-wrap items-center justify-center gap-3 mb-10">
+          <div className="px-4 py-2 rounded-none bg-white/10 border border-[#5FD4FD] text-white text-sm sm:text-base font-bold whitespace-nowrap inline-flex items-center gap-2 shadow-sm backdrop-blur-sm">
             <ShieldCheck className="w-4 h-4 text-[#5FD4FD] shrink-0" />
             <span className="whitespace-nowrap">
               AWWA C153 &amp; C110 Compliant
             </span>
           </div>
 
-          <div className="px-3.5 py-1.5 rounded-none bg-white/10 border border-[#5FD4FD] text-white text-xs sm:text-sm font-semibold whitespace-nowrap inline-flex items-center gap-2 shadow-sm backdrop-blur-sm">
+          <div className="px-4 py-2 rounded-none bg-white/10 border border-[#5FD4FD] text-white text-sm sm:text-base font-bold whitespace-nowrap inline-flex items-center gap-2 shadow-sm backdrop-blur-sm">
             <CheckCircle2 className="w-4 h-4 text-[#5FD4FD] shrink-0" />
             <span className="whitespace-nowrap">
               NSF/ANSI 61 &amp; 372 Certified
             </span>
           </div>
 
-          <div className="px-3.5 py-1.5 rounded-none bg-white/10 border border-[#5FD4FD] text-white text-xs sm:text-sm font-semibold whitespace-nowrap inline-flex items-center gap-2 shadow-sm backdrop-blur-sm">
+          <div className="px-4 py-2 rounded-none bg-white/10 border border-[#5FD4FD] text-white text-sm sm:text-base font-bold whitespace-nowrap inline-flex items-center gap-2 shadow-sm backdrop-blur-sm">
             <Truck className="w-4 h-4 text-[#5FD4FD] shrink-0" />
             <span className="whitespace-nowrap">
               Fast Nationwide Yard Delivery
@@ -115,34 +115,34 @@ export const CinematicHero: React.FC = () => {
           {/* Button 1 (White with #0082FC text) */}
           <a
             href="#product-matrix"
-            className="w-full sm:w-auto inline-flex items-center justify-center gap-2 px-8 py-4 text-sm font-bold text-[#0082FC] bg-white hover:bg-[#5FD4FD] hover:text-[#0082FC] rounded-none shadow-xl transition-all transform hover:-translate-y-0.5 active:translate-y-0 whitespace-nowrap"
+            className="w-full sm:w-auto inline-flex items-center justify-center gap-2 px-8 py-4 text-base sm:text-lg font-extrabold text-[#0082FC] bg-white hover:bg-[#5FD4FD] hover:text-[#0082FC] rounded-none shadow-xl transition-all transform hover:-translate-y-0.5 active:translate-y-0 whitespace-nowrap"
           >
             <span>Browse Waterworks Catalog</span>
-            <ArrowRight className="w-4 h-4 text-[#0082FC]" />
+            <ArrowRight className="w-5 h-5 text-[#0082FC]" />
           </a>
 
           {/* Button 2 (Border outline with #5FD4FD text) */}
           <a
             href="#submittal-builder"
-            className="w-full sm:w-auto inline-flex items-center justify-center gap-2 px-8 py-4 text-sm font-bold text-[#5FD4FD] hover:text-[#0082FC] bg-[#0082FC] hover:bg-[#5FD4FD] border-2 border-[#5FD4FD] rounded-none shadow-lg transition-all transform hover:-translate-y-0.5 active:translate-y-0 whitespace-nowrap backdrop-blur-md"
+            className="w-full sm:w-auto inline-flex items-center justify-center gap-2 px-8 py-4 text-base sm:text-lg font-extrabold text-[#5FD4FD] hover:text-[#0082FC] bg-[#0082FC] hover:bg-[#5FD4FD] border-2 border-[#5FD4FD] rounded-none shadow-lg transition-all transform hover:-translate-y-0.5 active:translate-y-0 whitespace-nowrap backdrop-blur-md"
           >
-            <FileCheck2 className="w-4 h-4 text-[#5FD4FD] group-hover:text-[#0082FC]" />
+            <FileCheck2 className="w-5 h-5 text-[#5FD4FD] group-hover:text-[#0082FC]" />
             <span>Build Submittal Package</span>
           </a>
         </div>
 
         {/* Bottom Trust Indicators */}
-        <div className="mt-14 pt-6 border-t border-white/20 flex flex-wrap items-center justify-center gap-6 sm:gap-10 text-xs text-white font-medium">
+        <div className="mt-14 pt-6 border-t border-white/20 flex flex-wrap items-center justify-center gap-6 sm:gap-10 text-sm sm:text-base text-white font-semibold">
           <div className="flex items-center gap-2 whitespace-nowrap">
-            <span className="w-2 h-2 rounded-full bg-[#5FD4FD]" />
+            <span className="w-2.5 h-2.5 rounded-full bg-[#5FD4FD]" />
             <span>Quotes Valid for 30 Calendar Days</span>
           </div>
           <div className="flex items-center gap-2 whitespace-nowrap">
-            <span className="w-2 h-2 rounded-full bg-[#5FD4FD]" />
+            <span className="w-2.5 h-2.5 rounded-full bg-[#5FD4FD]" />
             <span>Traceable Mill Heat Number on Every Body</span>
           </div>
           <div className="flex items-center gap-2 whitespace-nowrap">
-            <span className="w-2 h-2 rounded-full bg-[#5FD4FD]" />
+            <span className="w-2.5 h-2.5 rounded-full bg-[#5FD4FD]" />
             <span>Dedicated Utility Dispatch Desks</span>
           </div>
         </div>

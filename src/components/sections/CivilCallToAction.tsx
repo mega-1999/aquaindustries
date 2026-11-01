@@ -47,10 +47,10 @@ export function CivilCallToAction({
             <div className="w-full max-w-md bg-white border-2 border-[#5FD4FD] p-6 shadow-2xl relative">
               {/* Technical Blueprint Badge */}
               <div className="flex items-center justify-between border-b border-[#0082FC] pb-3 mb-4">
-                <span className="text-[11px] font-mono uppercase tracking-widest text-[#0082FC] font-semibold whitespace-nowrap">
+                <span className="text-xs font-mono uppercase tracking-widest text-[#0082FC] font-bold whitespace-nowrap">
                   DWG SPEC: C153-MJ-B90
                 </span>
-                <span className="text-[10px] font-mono uppercase px-2 py-0.5 bg-[#0082FC] text-white font-bold whitespace-nowrap">
+                <span className="text-xs font-mono uppercase px-2.5 py-1 bg-[#0082FC] text-white font-bold whitespace-nowrap">
                   350 PSI RATED
                 </span>
               </div>
@@ -139,34 +139,34 @@ export function CivilCallToAction({
                 </svg>
 
                 {/* Sky blue dimension callout pill */}
-                <div className="absolute bottom-2 right-2 bg-[#0082FC] border border-[#5FD4FD] px-2 py-1 text-[10px] font-mono text-[#5FD4FD] whitespace-nowrap">
+                <div className="absolute bottom-2 right-2 bg-[#0082FC] border border-[#5FD4FD] px-2.5 py-1 text-xs font-mono text-[#5FD4FD] font-bold whitespace-nowrap">
                   GRADE 65-45-12 DUCTILE
                 </div>
               </div>
 
               {/* Technical Specifications Matrix */}
-              <div className="grid grid-cols-3 gap-2 pt-4 border-t border-[#0082FC] text-center">
-                <div className="bg-[#0082FC] p-2">
-                  <div className="text-[10px] font-mono text-[#5FD4FD] uppercase tracking-wider whitespace-nowrap">
+              <div className="grid grid-cols-3 gap-2.5 pt-4 border-t border-[#0082FC] text-center">
+                <div className="bg-[#0082FC] p-2.5">
+                  <div className="text-xs font-mono text-[#5FD4FD] uppercase tracking-wider font-bold whitespace-nowrap">
                     AWWA Standard
                   </div>
-                  <div className="text-xs font-bold text-white whitespace-nowrap">
+                  <div className="text-sm font-extrabold text-white whitespace-nowrap mt-0.5">
                     C153 / C111
                   </div>
                 </div>
-                <div className="bg-[#0082FC] p-2">
-                  <div className="text-[10px] font-mono text-[#5FD4FD] uppercase tracking-wider whitespace-nowrap">
+                <div className="bg-[#0082FC] p-2.5">
+                  <div className="text-xs font-mono text-[#5FD4FD] uppercase tracking-wider font-bold whitespace-nowrap">
                     Lining
                   </div>
-                  <div className="text-xs font-bold text-white whitespace-nowrap">
+                  <div className="text-sm font-extrabold text-white whitespace-nowrap mt-0.5">
                     Cement / Seal
                   </div>
                 </div>
-                <div className="bg-[#0082FC] p-2">
-                  <div className="text-[10px] font-mono text-[#5FD4FD] uppercase tracking-wider whitespace-nowrap">
+                <div className="bg-[#0082FC] p-2.5">
+                  <div className="text-xs font-mono text-[#5FD4FD] uppercase tracking-wider font-bold whitespace-nowrap">
                     Hydro Test
                   </div>
-                  <div className="text-xs font-bold text-white whitespace-nowrap">
+                  <div className="text-sm font-extrabold text-white whitespace-nowrap mt-0.5">
                     500 PSI Proof
                   </div>
                 </div>
@@ -176,9 +176,9 @@ export function CivilCallToAction({
 
           {/* Right Content: Title, Direct US Contractor Copy, Single-Line Action CTAs */}
           <div className="lg:col-span-7 space-y-6">
-            <div className="inline-flex items-center space-x-2 border border-[#5FD4FD] bg-white px-3 py-1">
-              <span className="w-2 h-2 bg-[#0082FC]"></span>
-              <span className="text-xs font-bold uppercase tracking-wider text-[#0082FC] whitespace-nowrap">
+            <div className="inline-flex items-center space-x-2 border-2 border-[#5FD4FD] bg-white px-3.5 py-1.5">
+              <span className="w-2.5 h-2.5 bg-[#0082FC]"></span>
+              <span className="text-sm font-bold uppercase tracking-wider text-[#0082FC] whitespace-nowrap">
                 Mastering Water Infrastructure
               </span>
             </div>
@@ -209,11 +209,11 @@ export function CivilCallToAction({
               <button
                 type="button"
                 onClick={scrollToMatrix}
-                className="inline-flex items-center justify-center bg-white text-[#0082FC] hover:bg-[#5FD4FD] hover:text-[#0082FC] font-bold text-sm px-6 py-3.5 border-2 border-white transition-colors duration-150 whitespace-nowrap"
+                className="inline-flex items-center justify-center bg-white text-[#0082FC] hover:bg-[#5FD4FD] hover:text-[#0082FC] font-extrabold text-base px-8 py-4 border-2 border-white transition-colors duration-150 whitespace-nowrap"
               >
-                <span>Browse Fittings & Castings</span>
+                <span>Browse Fittings &amp; Castings</span>
                 <svg
-                  className="w-4 h-4 ml-2"
+                  className="w-5 h-5 ml-2"
                   fill="none"
                   stroke="currentColor"
                   viewBox="0 0 24 24"
@@ -230,30 +230,30 @@ export function CivilCallToAction({
               <button
                 type="button"
                 onClick={scrollToQuote}
-                className="inline-flex items-center justify-center bg-[#0082FC] text-white hover:bg-white hover:text-[#0082FC] font-bold text-sm px-6 py-3.5 border-2 border-white transition-colors duration-150 whitespace-nowrap"
+                className="inline-flex items-center justify-center bg-[#0082FC] text-white hover:bg-white hover:text-[#0082FC] font-extrabold text-base px-8 py-4 border-2 border-white transition-colors duration-150 whitespace-nowrap"
               >
                 <span>Request Project Material Quote</span>
               </button>
             </div>
 
             {/* Bottom 3 Single-line Trust Markers */}
-            <div className="pt-4 border-t border-[#5FD4FD] grid grid-cols-1 sm:grid-cols-3 gap-4 text-xs font-mono">
+            <div className="pt-4 border-t border-[#5FD4FD] grid grid-cols-1 sm:grid-cols-3 gap-4 text-sm font-mono font-bold">
               <div className="flex items-center space-x-2">
-                <span className="w-1.5 h-1.5 bg-[#5FD4FD]"></span>
+                <span className="w-2 h-2 bg-[#5FD4FD]"></span>
                 <span className="whitespace-nowrap">
-                  AWWA C153 & C110 COMPLIANT
+                  AWWA C153 &amp; C110 COMPLIANT
                 </span>
               </div>
               <div className="flex items-center space-x-2">
-                <span className="w-1.5 h-1.5 bg-[#5FD4FD]"></span>
+                <span className="w-2 h-2 bg-[#5FD4FD]"></span>
                 <span className="whitespace-nowrap">
-                  NSF/ANSI 61 & 372 APPROVED
+                  NSF/ANSI 61 &amp; 372 APPROVED
                 </span>
               </div>
               <div className="flex items-center space-x-2">
-                <span className="w-1.5 h-1.5 bg-[#5FD4FD]"></span>
+                <span className="w-2 h-2 bg-[#5FD4FD]"></span>
                 <span className="whitespace-nowrap">
-                  AIS & BABA DOMESTIC ELIGIBLE
+                  AIS &amp; BABA DOMESTIC ELIGIBLE
                 </span>
               </div>
             </div>

@@ -200,10 +200,10 @@ export function EngineeringSubmittalLibrary({
               <div>
                 {/* Card Top Banner */}
                 <div className="bg-[#0082FC] text-white p-4 flex items-center justify-between border-b border-[#0082FC]">
-                  <span className="text-[11px] font-mono uppercase tracking-wider text-[#5FD4FD] font-bold whitespace-nowrap">
+                  <span className="text-xs font-mono uppercase tracking-wider text-[#5FD4FD] font-bold whitespace-nowrap">
                     {doc.category}
                   </span>
-                  <span className="text-[11px] font-mono font-bold bg-white text-[#0082FC] px-2 py-0.5 whitespace-nowrap">
+                  <span className="text-xs font-mono font-bold bg-white text-[#0082FC] px-2.5 py-1 whitespace-nowrap">
                     {doc.fileType} • {doc.fileSize}
                   </span>
                 </div>
@@ -211,7 +211,7 @@ export function EngineeringSubmittalLibrary({
                 {/* Card Body */}
                 <div className="p-6 space-y-4">
                   {/* Schematic Icon Preview Frame */}
-                  <div className="border border-[#0082FC] bg-white p-4 flex items-center justify-center">
+                  <div className="border-2 border-[#0082FC] bg-white p-4 flex items-center justify-center">
                     <svg
                       viewBox="0 0 100 70"
                       className="w-24 h-16 text-[#0082FC]"
@@ -269,15 +269,15 @@ export function EngineeringSubmittalLibrary({
                     </svg>
                   </div>
 
-                  <div className="text-xs font-mono font-bold text-[#0082FC] uppercase whitespace-nowrap">
+                  <div className="text-sm font-mono font-bold text-[#0082FC] uppercase whitespace-nowrap">
                     STANDARD: {doc.standard}
                   </div>
 
-                  <h3 className="text-lg font-bold text-[#0082FC] leading-snug">
+                  <h3 className="text-xl font-extrabold text-[#0082FC] leading-snug">
                     {doc.title}
                   </h3>
 
-                  <p className="text-sm text-[#0082FC] leading-relaxed">
+                  <p className="text-base text-[#0082FC] leading-relaxed">
                     {doc.description}
                   </p>
 
@@ -286,7 +286,7 @@ export function EngineeringSubmittalLibrary({
                     {doc.complianceTags.map((tag) => (
                       <span
                         key={tag}
-                        className="text-[10px] font-mono uppercase bg-white border border-[#0082FC] text-[#0082FC] px-2 py-0.5 whitespace-nowrap"
+                        className="text-xs font-mono uppercase bg-white border border-[#0082FC] text-[#0082FC] px-2.5 py-1 font-bold whitespace-nowrap"
                       >
                         {tag}
                       </span>
@@ -300,7 +300,7 @@ export function EngineeringSubmittalLibrary({
                 <button
                   type="button"
                   onClick={() => handleDownload(doc)}
-                  className="w-full inline-flex items-center justify-center bg-[#0082FC] text-white hover:bg-[#5FD4FD] hover:text-[#0082FC] font-bold text-xs uppercase tracking-wider py-3 px-4 border-2 border-[#0082FC] transition-colors duration-150 whitespace-nowrap"
+                  className="w-full inline-flex items-center justify-center bg-[#0082FC] text-white hover:bg-[#5FD4FD] hover:text-[#0082FC] font-extrabold text-sm sm:text-base uppercase tracking-wider py-3.5 px-4 border-2 border-[#0082FC] transition-colors duration-150 whitespace-nowrap"
                 >
                   <span>Download Spec Sheet ({doc.fileType})</span>
                   <svg
@@ -323,12 +323,12 @@ export function EngineeringSubmittalLibrary({
         </div>
 
         {/* Bottom Fast Access Bar */}
-        <div className="mt-12 p-6 border-2 border-[#0082FC] bg-[#0082FC] text-white flex flex-col md:flex-row items-center justify-between gap-4">
-          <div className="space-y-1 text-center md:text-left">
-            <div className="text-xs font-mono uppercase text-[#5FD4FD] tracking-wider font-bold whitespace-nowrap">
+        <div className="mt-12 p-6 sm:p-8 border-2 border-[#0082FC] bg-[#0082FC] text-white flex flex-col md:flex-row items-center justify-between gap-6">
+          <div className="space-y-1.5 text-center md:text-left">
+            <div className="text-sm font-mono uppercase text-[#5FD4FD] tracking-wider font-bold whitespace-nowrap">
               Need a Custom Engineered Submittal Package?
             </div>
-            <div className="text-base font-bold text-white">
+            <div className="text-lg font-bold text-white">
               We compile stamped submittal packages with combined mill test
               reports (MTR) within 24 hours.
             </div>
@@ -336,7 +336,7 @@ export function EngineeringSubmittalLibrary({
 
           <a
             href="#quote-builder"
-            className="inline-flex items-center justify-center bg-white text-[#0082FC] hover:bg-[#5FD4FD] hover:text-[#0082FC] font-bold text-xs uppercase tracking-wider py-3 px-6 border-2 border-white transition-colors duration-150 whitespace-nowrap"
+            className="inline-flex items-center justify-center bg-white text-[#0082FC] hover:bg-[#5FD4FD] hover:text-[#0082FC] font-extrabold text-sm sm:text-base uppercase tracking-wider py-4 px-8 border-2 border-white transition-colors duration-150 whitespace-nowrap shadow-md"
           >
             <span>Request Engineer Submittal Binder</span>
           </a>

@@ -39,17 +39,17 @@ export const YardSelectorModal: React.FC<YardSelectorModalProps> = ({
 
         {/* Modal Header */}
         <div className="flex items-center gap-3 mb-6 pb-4 border-b-2 border-[#5FD4FD]/30">
-          <div className="w-10 h-10 rounded-none bg-white text-[#0082FC] border-2 border-[#5FD4FD] flex items-center justify-center shrink-0">
-            <Truck className="w-5 h-5 text-[#0082FC]" />
+          <div className="w-12 h-12 rounded-none bg-white text-[#0082FC] border-2 border-[#5FD4FD] flex items-center justify-center shrink-0">
+            <Truck className="w-6 h-6 text-[#0082FC]" />
           </div>
           <div>
             <h3
               id="yard-modal-title"
-              className="text-lg font-bold text-[#0082FC] whitespace-nowrap"
+              className="text-xl sm:text-2xl font-black text-[#0082FC] whitespace-nowrap"
             >
               Aqua Industries Stocking Yards &amp; Rail Terminals
             </h3>
-            <p className="text-xs text-[#0082FC] font-medium">
+            <p className="text-xs sm:text-sm text-[#0082FC] font-medium mt-0.5">
               Select Your Designated Regional Hub for Accurate Jobsite Freight
             </p>
           </div>
@@ -70,44 +70,48 @@ export const YardSelectorModal: React.FC<YardSelectorModalProps> = ({
               >
                 <div>
                   <div className="flex items-center justify-between mb-2">
-                    <span className="text-xs font-bold text-[#0082FC] uppercase tracking-wider">
+                    <span className="text-xs sm:text-sm font-extrabold text-[#0082FC] uppercase tracking-wider">
                       {yard.city}, {yard.state}
                     </span>
-                    <span className="text-[10px] font-bold px-2 py-0.5 rounded-none bg-white text-[#0082FC] border border-[#5FD4FD] whitespace-nowrap">
+                    <span className="text-xs font-bold px-2.5 py-1 rounded-none bg-white text-[#0082FC] border border-[#5FD4FD] whitespace-nowrap">
                       {yard.stockStatus}
                     </span>
                   </div>
 
-                  <h4 className="text-base font-bold text-[#0082FC] mb-1">
+                  <h4 className="text-lg sm:text-xl font-black text-[#0082FC] mb-1">
                     {yard.name}
                   </h4>
-                  <p className="text-xs text-[#0082FC] mb-3">{yard.address}</p>
+                  <p className="text-xs sm:text-sm text-[#0082FC] mb-3">
+                    {yard.address}
+                  </p>
 
                   {/* Stock Metrics */}
-                  <div className="grid grid-cols-2 gap-2 text-[11px] bg-white p-3 rounded-none border-2 border-[#5FD4FD] mb-3 shadow-xs">
+                  <div className="grid grid-cols-2 gap-2 text-xs sm:text-sm bg-white p-3.5 rounded-none border-2 border-[#5FD4FD] mb-3 shadow-xs">
                     <div>
-                      <span className="text-[#0082FC] block">
+                      <span className="text-[#0082FC] text-xs font-bold block">
                         FITTINGS IN STOCK:
                       </span>
-                      <span className="text-[#0082FC] font-bold">
+                      <span className="text-[#0082FC] text-sm sm:text-base font-extrabold">
                         {yard.inventoryFittingsTons} Tons
                       </span>
                     </div>
                     <div>
-                      <span className="text-[#0082FC] block">RESTRAINTS:</span>
-                      <span className="text-[#0082FC] font-bold">
+                      <span className="text-[#0082FC] text-xs font-bold block">
+                        RESTRAINTS:
+                      </span>
+                      <span className="text-[#0082FC] text-sm sm:text-base font-extrabold">
                         {yard.inventoryRestraintsUnits.toLocaleString()} Units
                       </span>
                     </div>
                   </div>
 
-                  <div className="text-[11px] text-[#0082FC] space-y-1">
-                    <div className="flex items-center gap-1.5">
-                      <Truck className="w-3.5 h-3.5 text-[#0082FC] shrink-0" />
+                  <div className="text-xs sm:text-sm text-[#0082FC] space-y-1.5 font-medium">
+                    <div className="flex items-center gap-2">
+                      <Truck className="w-4 h-4 text-[#0082FC] shrink-0" />
                       <span>{yard.coverageRadius}</span>
                     </div>
-                    <div className="flex items-center gap-1.5">
-                      <PhoneCall className="w-3.5 h-3.5 text-[#0082FC] shrink-0" />
+                    <div className="flex items-center gap-2">
+                      <PhoneCall className="w-4 h-4 text-[#0082FC] shrink-0" />
                       <span>{yard.phone}</span>
                     </div>
                   </div>
@@ -121,7 +125,7 @@ export const YardSelectorModal: React.FC<YardSelectorModalProps> = ({
                       onSelectYard(yard);
                       onClose();
                     }}
-                    className={`w-full py-2 px-3 rounded-none text-xs font-bold transition-colors whitespace-nowrap border-2 ${
+                    className={`w-full py-2.5 px-4 rounded-none text-xs sm:text-sm font-extrabold transition-colors whitespace-nowrap border-2 ${
                       isSelected
                         ? "bg-[#0082FC] text-white border-[#0082FC] shadow-sm"
                         : "bg-white hover:bg-[#5FD4FD]/20 text-[#0082FC] border-[#5FD4FD]"
@@ -138,7 +142,7 @@ export const YardSelectorModal: React.FC<YardSelectorModalProps> = ({
         </div>
 
         {/* Footer Note */}
-        <div className="mt-6 pt-4 border-t-2 border-[#5FD4FD]/30 text-xs text-[#0082FC] text-center font-medium">
+        <div className="mt-6 pt-4 border-t-2 border-[#5FD4FD]/30 text-xs sm:text-sm text-[#0082FC] text-center font-medium leading-relaxed">
           Flatbed trucks depart all stocking hubs Monday through Friday at 06:00
           CST. Jobsite offloading remains the customer’s responsibility.
         </div>

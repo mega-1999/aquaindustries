@@ -36,14 +36,14 @@ export const PlainQualityStandards: React.FC = () => {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         {/* Section Header */}
         <div className="text-center max-w-3xl mx-auto mb-16">
-          <div className="inline-flex items-center gap-2 px-3 py-1 rounded-none bg-white border-2 border-[#5FD4FD] text-[#0082FC] text-xs font-semibold uppercase tracking-wider mb-3 shadow-sm">
-            <Award className="w-3.5 h-3.5 text-[#0082FC]" />
+          <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-none bg-white border-2 border-[#5FD4FD] text-[#0082FC] text-sm font-bold uppercase tracking-wider mb-3 shadow-sm">
+            <Award className="w-4 h-4 text-[#0082FC]" />
             <span className="whitespace-nowrap">Straightforward Testing</span>
           </div>
           <h2 className="text-2xl sm:text-4xl font-extrabold text-[#0082FC] tracking-tight leading-tight">
             Plain-English Quality Standards
           </h2>
-          <p className="mt-3 text-[#0082FC] text-sm sm:text-base leading-relaxed">
+          <p className="mt-3 text-[#0082FC] text-base sm:text-lg leading-relaxed font-normal">
             No jargon or confusing claims. Here is exactly how Aqua Industries
             verifies that every fitting leaving our plant performs as promised
             in the trench.
@@ -61,24 +61,24 @@ export const PlainQualityStandards: React.FC = () => {
               >
                 <div>
                   <div className="flex items-center justify-between mb-4">
-                    <span className="w-10 h-10 rounded-none bg-white text-[#0082FC] border-2 border-[#5FD4FD] flex items-center justify-center font-bold text-sm">
-                      <Icon className="w-5 h-5 text-[#0082FC]" />
+                    <span className="w-11 h-11 rounded-none bg-white text-[#0082FC] border-2 border-[#5FD4FD] flex items-center justify-center font-bold text-sm">
+                      <Icon className="w-6 h-6 text-[#0082FC]" />
                     </span>
-                    <span className="text-xs font-bold text-[#0082FC] bg-white px-2.5 py-1 rounded-none border border-[#5FD4FD] whitespace-nowrap">
+                    <span className="text-sm font-bold text-[#0082FC] bg-white px-3 py-1 rounded-none border-2 border-[#5FD4FD] whitespace-nowrap">
                       {item.standard}
                     </span>
                   </div>
 
-                  <h3 className="text-lg font-bold text-[#0082FC] mb-3">
+                  <h3 className="text-xl sm:text-2xl font-extrabold text-[#0082FC] mb-3">
                     {item.title}
                   </h3>
 
-                  <p className="text-xs sm:text-sm text-[#0082FC] leading-relaxed">
+                  <p className="text-base text-[#0082FC] leading-relaxed">
                     {item.details}
                   </p>
                 </div>
 
-                <div className="mt-6 pt-4 border-t-2 border-[#5FD4FD]/30 flex items-center gap-2 text-xs font-bold text-[#0082FC]">
+                <div className="mt-6 pt-4 border-t-2 border-[#5FD4FD]/30 flex items-center gap-2 text-sm sm:text-base font-bold text-[#0082FC]">
                   <CheckCircle2 className="w-4 h-4 text-[#5FD4FD] shrink-0" />
                   <span>Standard Foundry Checkpoint Passed</span>
                 </div>

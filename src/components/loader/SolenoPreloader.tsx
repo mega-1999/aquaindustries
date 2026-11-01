@@ -75,7 +75,7 @@ export const SolenoPreloader: React.FC = () => {
           Aqua <span className="text-[#5FD4FD]">Industries</span>
         </div>
 
-        <div className="text-[#5FD4FD] text-xs font-bold tracking-widest uppercase whitespace-nowrap mb-4">
+        <div className="text-[#5FD4FD] text-xs sm:text-sm font-extrabold tracking-widest uppercase whitespace-nowrap mb-4">
           Municipal Waterworks &bull; Domestic Foundries
         </div>
 

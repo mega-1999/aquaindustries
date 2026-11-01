@@ -86,16 +86,16 @@ export function DomesticStandards() {
               {CERTIFICATIONS.map((cert) => (
                 <div
                   key={cert.code}
-                  className="border-2 border-[#5FD4FD] bg-white text-[#0082FC] p-4 flex flex-col justify-between"
+                  className="border-2 border-[#5FD4FD] bg-white text-[#0082FC] p-4 sm:p-5 flex flex-col justify-between"
                 >
                   <div>
-                    <span className="text-[10px] font-mono uppercase bg-[#0082FC] text-white font-bold px-2 py-0.5 whitespace-nowrap">
+                    <span className="text-xs font-mono uppercase bg-[#0082FC] text-white font-bold px-2.5 py-1 whitespace-nowrap">
                       {cert.code}
                     </span>
-                    <h4 className="text-sm font-bold text-[#0082FC] mt-2 mb-1">
+                    <h4 className="text-base font-extrabold text-[#0082FC] mt-2.5 mb-1">
                       {cert.title}
                     </h4>
-                    <p className="text-xs text-[#0082FC] leading-relaxed font-normal">
+                    <p className="text-sm text-[#0082FC] leading-relaxed font-normal">
                       {cert.detail}
                     </p>
                   </div>
@@ -107,7 +107,7 @@ export function DomesticStandards() {
             <div className="pt-4">
               <a
                 href="#quote-form"
-                className="inline-flex items-center justify-center bg-white text-[#0082FC] hover:bg-[#5FD4FD] hover:text-[#0082FC] font-bold text-xs uppercase tracking-wider py-3.5 px-6 border-2 border-white transition-colors duration-150 whitespace-nowrap"
+                className="inline-flex items-center justify-center bg-white text-[#0082FC] hover:bg-[#5FD4FD] hover:text-[#0082FC] font-extrabold text-sm sm:text-base uppercase tracking-wider py-4 px-8 border-2 border-white transition-colors duration-150 whitespace-nowrap shadow-md"
               >
                 <span>Request Certified Mill Test Reports (MTR)</span>
                 <svg
@@ -129,17 +129,17 @@ export function DomesticStandards() {
 
           {/* Right Column: Physical Metallurgical Properties & Hydro Gauge Graphic */}
           <div className="lg:col-span-5 flex justify-center">
-            <div className="w-full max-w-md bg-white border-2 border-[#5FD4FD] p-6 text-[#0082FC] shadow-2xl">
+            <div className="w-full max-w-md bg-white border-2 border-[#5FD4FD] p-6 sm:p-7 text-[#0082FC] shadow-2xl">
               <div className="border-b border-[#0082FC] pb-3 mb-4 flex items-center justify-between">
                 <div>
-                  <span className="text-[10px] font-mono uppercase text-[#0082FC] font-bold tracking-wider whitespace-nowrap">
+                  <span className="text-xs font-mono uppercase text-[#0082FC] font-bold tracking-wider whitespace-nowrap">
                     METALLURGICAL TEST REPORT
                   </span>
-                  <div className="text-sm font-bold text-[#0082FC] whitespace-nowrap">
+                  <div className="text-base font-bold text-[#0082FC] whitespace-nowrap">
                     ASTM A536 Tensile Physicals
                   </div>
                 </div>
-                <span className="text-[10px] font-mono uppercase px-2 py-0.5 bg-[#0082FC] text-white font-bold whitespace-nowrap">
+                <span className="text-xs font-mono uppercase px-2.5 py-1 bg-[#0082FC] text-white font-bold whitespace-nowrap">
                   VERIFIED
                 </span>
               </div>
@@ -147,7 +147,7 @@ export function DomesticStandards() {
               {/* Physical Properties Bar Visualizers */}
               <div className="space-y-4 my-6">
                 <div>
-                  <div className="flex justify-between text-xs font-mono font-bold mb-1">
+                  <div className="flex justify-between text-sm font-mono font-bold mb-1">
                     <span className="text-[#0082FC] uppercase whitespace-nowrap">
                       Tensile Strength
                     </span>
@@ -161,7 +161,7 @@ export function DomesticStandards() {
                 </div>
 
                 <div>
-                  <div className="flex justify-between text-xs font-mono font-bold mb-1">
+                  <div className="flex justify-between text-sm font-mono font-bold mb-1">
                     <span className="text-[#0082FC] uppercase whitespace-nowrap">
                       Yield Strength
                     </span>
@@ -175,7 +175,7 @@ export function DomesticStandards() {
                 </div>
 
                 <div>
-                  <div className="flex justify-between text-xs font-mono font-bold mb-1">
+                  <div className="flex justify-between text-sm font-mono font-bold mb-1">
                     <span className="text-[#0082FC] uppercase whitespace-nowrap">
                       Elongation Ductility
                     </span>
@@ -189,7 +189,7 @@ export function DomesticStandards() {
                 </div>
 
                 <div>
-                  <div className="flex justify-between text-xs font-mono font-bold mb-1">
+                  <div className="flex justify-between text-sm font-mono font-bold mb-1">
                     <span className="text-[#0082FC] uppercase whitespace-nowrap">
                       Hydrostatic Burst Safety
                     </span>
@@ -206,14 +206,14 @@ export function DomesticStandards() {
               {/* Stamp of Quality Assurance */}
               <div className="border-t border-[#0082FC] pt-4 flex items-center justify-between text-xs font-mono">
                 <div className="space-y-0.5">
-                  <div className="text-[10px] text-[#0082FC] uppercase font-bold whitespace-nowrap">
+                  <div className="text-xs text-[#0082FC] uppercase font-bold whitespace-nowrap">
                     TRACEABLE HEAT NO.
                   </div>
-                  <div className="text-xs font-bold text-[#0082FC] whitespace-nowrap">
+                  <div className="text-sm font-bold text-[#0082FC] whitespace-nowrap">
                     AQ-2026-HT-8841B
                   </div>
                 </div>
-                <div className="px-2 py-1 bg-[#0082FC] text-white text-[10px] font-bold uppercase whitespace-nowrap">
+                <div className="px-2.5 py-1 bg-[#0082FC] text-white text-xs font-bold uppercase whitespace-nowrap">
                   100% HYDRO TESTED
                 </div>
               </div>
@@ -224,16 +224,16 @@ export function DomesticStandards() {
         {/* Industry Associations Ribbon from SIP Industries */}
         <div className="mt-14 pt-8 border-t border-[#5FD4FD]">
           <div className="text-center mb-4">
-            <span className="text-[11px] font-mono font-bold uppercase tracking-widest text-[#5FD4FD] whitespace-nowrap">
+            <span className="text-xs sm:text-sm font-mono font-bold uppercase tracking-widest text-[#5FD4FD] whitespace-nowrap">
               Approved &amp; Certified Across North American Waterworks
               Infrastructure Organizations
             </span>
           </div>
-          <div className="flex flex-wrap justify-center gap-2">
+          <div className="flex flex-wrap justify-center gap-2.5">
             {INDUSTRY_ASSOCIATIONS.map((assoc) => (
               <span
                 key={assoc}
-                className="px-3 py-1 bg-white text-[#0082FC] text-xs font-bold whitespace-nowrap border border-[#5FD4FD]"
+                className="px-3.5 py-1.5 bg-white text-[#0082FC] text-sm font-bold whitespace-nowrap border-2 border-[#5FD4FD]"
               >
                 {assoc}
               </span>

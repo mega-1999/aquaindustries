@@ -122,7 +122,7 @@ export function MunicipalCaseStudies() {
               >
                 <div>
                   <span
-                    className={`text-[10px] font-mono uppercase font-bold tracking-wider px-2 py-0.5 inline-block mb-2 whitespace-nowrap ${
+                    className={`text-xs font-mono uppercase font-bold tracking-wider px-2.5 py-1 inline-block mb-2 whitespace-nowrap ${
                       isSelected
                         ? "bg-white text-[#0082FC]"
                         : "bg-[#0082FC] text-white"
@@ -130,15 +130,15 @@ export function MunicipalCaseStudies() {
                   >
                     {item.sectorTag}
                   </span>
-                  <div className="text-xs font-mono mb-1 truncate">
+                  <div className="text-sm font-mono font-bold mb-1 truncate">
                     {item.diameterSpec}
                   </div>
-                  <h4 className="text-sm font-bold line-clamp-2 leading-snug">
+                  <h4 className="text-base font-extrabold line-clamp-2 leading-snug">
                     {item.projectTitle}
                   </h4>
                 </div>
                 <div
-                  className={`text-[11px] font-mono mt-3 pt-2 border-t flex items-center justify-between whitespace-nowrap ${
+                  className={`text-xs sm:text-sm font-mono font-bold mt-3 pt-2 border-t flex items-center justify-between whitespace-nowrap ${
                     isSelected
                       ? "border-white/40 text-[#5FD4FD]"
                       : "border-[#0082FC]/20 text-[#0082FC]"
@@ -157,8 +157,8 @@ export function MunicipalCaseStudies() {
           {/* Left Summary & Challenge Solved */}
           <div className="lg:col-span-8 p-6 sm:p-10 space-y-6">
             <div className="space-y-2">
-              <div className="text-xs font-mono font-bold uppercase text-[#0082FC] tracking-wider whitespace-nowrap">
-                LOCATION & AGENCY: {current.agencyLocation}
+              <div className="text-sm font-mono font-bold uppercase text-[#0082FC] tracking-wider whitespace-nowrap">
+                LOCATION &amp; AGENCY: {current.agencyLocation}
               </div>
               <h3 className="text-2xl sm:text-3xl font-black text-[#0082FC] leading-snug">
                 {current.projectTitle}
@@ -166,19 +166,19 @@ export function MunicipalCaseStudies() {
             </div>
 
             <div className="space-y-3">
-              <h4 className="text-xs font-mono font-bold uppercase tracking-wider text-[#0082FC]">
-                Project Scope & Infrastructure Overview:
+              <h4 className="text-sm font-mono font-bold uppercase tracking-wider text-[#0082FC]">
+                Project Scope &amp; Infrastructure Overview:
               </h4>
-              <p className="text-base text-[#0082FC] leading-relaxed">
+              <p className="text-base sm:text-lg text-[#0082FC] leading-relaxed">
                 {current.summary}
               </p>
             </div>
 
-            <div className="border-l-4 border-[#0082FC] bg-white pl-4 py-2 space-y-2">
-              <h4 className="text-xs font-mono font-bold uppercase tracking-wider text-[#0082FC]">
-                Engineering Challenge & Field Result:
+            <div className="border-l-4 border-[#0082FC] bg-white pl-4 py-2.5 space-y-2">
+              <h4 className="text-sm font-mono font-bold uppercase tracking-wider text-[#0082FC]">
+                Engineering Challenge &amp; Field Result:
               </h4>
-              <p className="text-sm text-[#0082FC] leading-relaxed">
+              <p className="text-base text-[#0082FC] leading-relaxed">
                 {current.challengeSolved}
               </p>
             </div>
@@ -187,14 +187,14 @@ export function MunicipalCaseStudies() {
             <div className="pt-4 flex flex-wrap gap-4 items-center">
               <a
                 href="#quote-builder"
-                className="inline-flex items-center justify-center bg-[#0082FC] text-white hover:bg-[#5FD4FD] hover:text-[#0082FC] font-bold text-xs uppercase tracking-wider py-3 px-6 border-2 border-[#0082FC] transition-colors duration-150 whitespace-nowrap"
+                className="inline-flex items-center justify-center bg-[#0082FC] text-white hover:bg-[#5FD4FD] hover:text-[#0082FC] font-extrabold text-sm sm:text-base uppercase tracking-wider py-4 px-6 border-2 border-[#0082FC] transition-colors duration-150 whitespace-nowrap shadow-md"
               >
                 <span>Request Pricing For Similar Project</span>
               </a>
 
               <a
                 href="#thrust-calculator"
-                className="inline-flex items-center justify-center bg-white text-[#0082FC] hover:bg-[#0082FC] hover:text-white font-bold text-xs uppercase tracking-wider py-3 px-6 border-2 border-[#0082FC] transition-colors duration-150 whitespace-nowrap"
+                className="inline-flex items-center justify-center bg-white text-[#0082FC] hover:bg-[#0082FC] hover:text-white font-extrabold text-sm sm:text-base uppercase tracking-wider py-4 px-6 border-2 border-[#0082FC] transition-colors duration-150 whitespace-nowrap"
               >
                 <span>Run Restraint Length Calculation</span>
               </a>
@@ -205,47 +205,47 @@ export function MunicipalCaseStudies() {
           <div className="lg:col-span-4 bg-[#0082FC] text-white p-6 sm:p-10 flex flex-col justify-between border-t-2 lg:border-t-0 lg:border-l-2 border-[#0082FC]">
             <div className="space-y-6">
               <div className="border-b border-[#5FD4FD] pb-3">
-                <span className="text-[10px] font-mono uppercase text-[#5FD4FD] tracking-wider font-bold whitespace-nowrap">
+                <span className="text-xs font-mono uppercase text-[#5FD4FD] tracking-wider font-bold whitespace-nowrap">
                   FIELD VERIFICATION DOSSIER
                 </span>
                 <div className="text-base font-bold text-white mt-1 whitespace-nowrap">
-                  Jobsite Metrics & Log
+                  Jobsite Metrics &amp; Log
                 </div>
               </div>
 
               <div className="space-y-4">
                 <div>
-                  <div className="text-[10px] font-mono uppercase text-[#5FD4FD] whitespace-nowrap">
+                  <div className="text-xs font-mono uppercase text-[#5FD4FD] font-bold whitespace-nowrap">
                     Nominal Diameters
                   </div>
-                  <div className="text-sm font-bold text-white mt-0.5">
+                  <div className="text-base font-bold text-white mt-0.5">
                     {current.diameterSpec}
                   </div>
                 </div>
 
                 <div>
-                  <div className="text-[10px] font-mono uppercase text-[#5FD4FD] whitespace-nowrap">
+                  <div className="text-xs font-mono uppercase text-[#5FD4FD] font-bold whitespace-nowrap">
                     Field Pressure Test
                   </div>
-                  <div className="text-sm font-bold text-white mt-0.5">
+                  <div className="text-base font-bold text-white mt-0.5">
                     {current.pressureTest}
                   </div>
                 </div>
 
                 <div>
-                  <div className="text-[10px] font-mono uppercase text-[#5FD4FD] whitespace-nowrap">
-                    Fittings & Components Supplied
+                  <div className="text-xs font-mono uppercase text-[#5FD4FD] font-bold whitespace-nowrap">
+                    Fittings &amp; Components Supplied
                   </div>
-                  <div className="text-sm font-bold text-white mt-0.5">
+                  <div className="text-base font-bold text-white mt-0.5">
                     {current.materialsSupplied}
                   </div>
                 </div>
 
                 <div>
-                  <div className="text-[10px] font-mono uppercase text-[#5FD4FD] whitespace-nowrap">
+                  <div className="text-xs font-mono uppercase text-[#5FD4FD] font-bold whitespace-nowrap">
                     Yard Freight Dispatch
                   </div>
-                  <div className="text-sm font-bold text-white mt-0.5">
+                  <div className="text-base font-bold text-white mt-0.5">
                     {current.freightTimeline}
                   </div>
                 </div>
@@ -253,7 +253,7 @@ export function MunicipalCaseStudies() {
             </div>
 
             <div className="pt-6 border-t border-[#5FD4FD] mt-6">
-              <div className="text-[10px] font-mono text-white/80">
+              <div className="text-xs font-mono text-white/90 font-bold">
                 CERTIFIED COMPLIANCE: AWWA C153 / C110 / C111 • NSF 61 • ASTM
                 A536
               </div>
