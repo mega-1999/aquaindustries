@@ -171,7 +171,12 @@ export const ProductCatalogMatrix: React.FC<ProductCatalogMatrixProps> = ({
                     </span>
                   </div>
 
-                  <div className="absolute top-3 right-3 z-20">
+                  <div className="absolute top-3 right-3 z-20 flex flex-col items-end gap-1.5">
+                    {product.imageUrl.startsWith("/images/our-images/") && (
+                      <span className="px-2.5 py-1 rounded-none bg-[#0082FC] text-white border border-[#5FD4FD] text-xs font-bold whitespace-nowrap shadow-sm">
+                        Verified Photo
+                      </span>
+                    )}
                     {product.aisCompliant && (
                       <span className="px-2.5 py-1 rounded-none bg-white text-[#0082FC] border-2 border-[#5FD4FD] text-xs font-bold whitespace-nowrap shadow-sm">
                         AIS Certified
