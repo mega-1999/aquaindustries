@@ -73,6 +73,19 @@
   animation: wave-float 8s ease-in-out infinite;
 }
 
+/* Soleno Preloader Logo Pulse Animation */
+@keyframes scaleAnimation {
+  0% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.08);
+  }
+  100% {
+    transform: scale(1);
+  }
+}
+
 /* Custom scrollbars restricted strictly to brand palette */
 ::-webkit-scrollbar {
   width: 7px;

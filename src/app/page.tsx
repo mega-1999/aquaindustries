@@ -6,6 +6,7 @@ import { ClearJobsitePolicies } from "../components/compliance/ClearJobsitePolic
 import { IndustrialFooter } from "../components/footer/IndustrialFooter";
 import { FoundryWalkthrough } from "../components/foundry/FoundryWalkthrough";
 import { CinematicHero } from "../components/hero/CinematicHero";
+import { SolenoPreloader } from "../components/loader/SolenoPreloader";
 import { CertifiedMetricsBar } from "../components/metrics/CertifiedMetricsBar";
 import { AccountRegistrationModal } from "../components/modals/AccountRegistrationModal";
 import { ClientPortalModal } from "../components/modals/ClientPortalModal";
@@ -70,6 +71,9 @@ export default function Home() {
 
   return (
     <div className="min-h-screen flex flex-col bg-white text-[#0082FC] selection:bg-[#5FD4FD] selection:text-[#0082FC]">
+      {/* Soleno-Style Preloader Animation */}
+      <SolenoPreloader />
+
       {/* Top Utility Ribbon */}
       <GlobalUtilityTicker
         onOpenYardModal={() => setYardModalOpen(true)}
