@@ -1,0 +1,495 @@
+"use client";
+
+import {
+  Building,
+  CheckCircle2,
+  FileCheck2,
+  Layers,
+  Mail,
+  MapPin,
+  Package,
+  Phone,
+  Send,
+  Trash2,
+  UploadCloud,
+  User,
+} from "lucide-react";
+import type React from "react";
+import { useState } from "react";
+import type { ProductItem } from "../../types";
+
+interface CommercialQuoteFormProps {
+  rfqItems: ProductItem[];
+  onRemoveItem: (id: string) => void;
+  onClearItems: () => void;
+}
+
+export const CommercialQuoteForm: React.FC<CommercialQuoteFormProps> = ({
+  rfqItems,
+  onRemoveItem,
+  onClearItems,
+}) => {
+  const [selectedCategory, setSelectedCategory] = useState<string>(
+    "Complete Job Package",
+  );
+  const [selectedSizes, setSelectedSizes] = useState<string[]>([
+    '6"',
+    '8"',
+    '12"',
+  ]);
+  const [estimatedQuantity, setEstimatedQuantity] =
+    useState<string>("10-25 Fittings");
+
+  // Form inputs
+  const [companyName, setCompanyName] = useState("");
+  const [contactName, setContactName] = useState("");
+  const [email, setEmail] = useState("");
+  const [phone, setPhone] = useState("");
+  const [deliveryLocation, setDeliveryLocation] = useState("Chicago, IL 60638");
+  const [uploadedFileName, setUploadedFileName] = useState<string | null>(null);
+  const [isSubmitted, setIsSubmitted] = useState(false);
+
+  const categories = [
+    "Waterworks Fittings",
+    "Restraints",
+    "Castings",
+    "Complete Job Package",
+  ];
+
+  const availableSizes = [
+    '4"',
+    '6"',
+    '8"',
+    '10"',
+    '12"',
+    '16"',
+    '20"',
+    '24"',
+    '30"',
+    '36"',
+    '48"',
+  ];
+
+  const toggleSize = (size: string) => {
+    setSelectedSizes((prev) =>
+      prev.includes(size) ? prev.filter((s) => s !== size) : [...prev, size],
+    );
+  };
+
+  const handleFileUpload = (e: React.ChangeEvent<HTMLInputElement>) => {
+    const file = e.target.files?.[0];
+    if (file) {
+      setUploadedFileName(file.name);
+    }
+  };
+
+  const handleSubmit = (e: React.FormEvent) => {
+    e.preventDefault();
+    setIsSubmitted(true);
+  };
+
+  return (
+    <section
+      id="quote-form"
+      aria-label="Commercial Quote Request"
+      className="py-20 lg:py-28 bg-white text-[#0082FC] border-t-2 border-[#5FD4FD]"
+    >
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        {/* Section Header */}
+        <div className="text-center max-w-3xl mx-auto mb-14">
+          <div className="inline-flex items-center gap-2 px-3 py-1 rounded-none bg-white border-2 border-[#5FD4FD] text-[#0082FC] text-xs font-semibold uppercase tracking-wider mb-3">
+            <FileCheck2 className="w-3.5 h-3.5 text-[#0082FC]" />
+            <span className="whitespace-nowrap">
+              Direct Factory-to-Contractor Pricing
+            </span>
+          </div>
+          <h2 className="text-2xl sm:text-4xl font-extrabold text-[#0082FC] tracking-tight leading-tight">
+            Commercial Quote Request Form
+          </h2>
+          <p className="mt-3 text-[#0082FC] text-sm sm:text-base leading-relaxed">
+            Fill in your job details, attach project material take-offs, and
+            receive straightforward pricing with verifiable shipping timelines
+            within 2 business hours.
+          </p>
+        </div>
+
+        {/* Main Grid */}
+        <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 items-start">
+          {/* Form Column (8 cols) */}
+          <div className="lg:col-span-8 bg-white border-2 border-[#5FD4FD] rounded-none p-6 sm:p-10 shadow-sm">
+            {isSubmitted ? (
+              <div className="py-12 text-center flex flex-col items-center">
+                <div className="w-16 h-16 rounded-none bg-white border-2 border-[#5FD4FD] text-[#0082FC] flex items-center justify-center mb-5">
+                  <CheckCircle2 className="w-8 h-8 text-[#5FD4FD]" />
+                </div>
+                <h3 className="text-2xl font-bold text-[#0082FC] mb-2">
+                  Quote Request Received
+                </h3>
+                <p className="text-sm text-[#0082FC] max-w-md mb-6 leading-relaxed">
+                  Thank you, <strong>{contactName || "Estimator"}</strong>. Your
+                  request for <strong>{companyName || "your company"}</strong>{" "}
+                  has been routed to our regional waterworks dispatch desk for{" "}
+                  <strong>{deliveryLocation}</strong>. A pricing sheet and
+                  transit schedule will be delivered to{" "}
+                  <strong>{email || "your inbox"}</strong> promptly.
+                </p>
+                <div className="p-4 bg-white border-2 border-[#5FD4FD] rounded-none text-xs text-[#0082FC] mb-6 font-bold">
+                  Reference Tracking Number:{" "}
+                  <span className="text-[#0082FC]">AQUA-RFQ-2026-8814</span>
+                </div>
+                <button
+                  type="button"
+                  onClick={() => setIsSubmitted(false)}
+                  className="px-6 py-2.5 bg-[#0082FC] hover:bg-[#5FD4FD] hover:text-[#0082FC] text-white text-xs font-bold rounded-none border-2 border-[#0082FC] transition-colors"
+                >
+                  Submit Another Quote Request
+                </button>
+              </div>
+            ) : (
+              <form onSubmit={handleSubmit} className="space-y-8">
+                {/* 1. Category Selection */}
+                <div>
+                  <div className="text-xs font-bold uppercase tracking-wider text-[#0082FC] mb-3 flex items-center gap-1.5">
+                    <Layers className="w-4 h-4 text-[#0082FC]" />
+                    <span>1. Select Product Category</span>
+                  </div>
+                  <div className="flex flex-wrap gap-2">
+                    {categories.map((cat) => (
+                      <button
+                        key={cat}
+                        type="button"
+                        onClick={() => setSelectedCategory(cat)}
+                        className={`px-4 py-2 rounded-none text-xs font-bold border-2 transition-all whitespace-nowrap ${
+                          selectedCategory === cat
+                            ? "bg-[#0082FC] text-white border-[#0082FC] shadow-sm"
+                            : "bg-white text-[#0082FC] border-[#5FD4FD] hover:bg-[#5FD4FD]/20"
+                        }`}
+                      >
+                        <span className="whitespace-nowrap">{cat}</span>
+                      </button>
+                    ))}
+                  </div>
+                </div>
+
+                {/* 2. Pipe Sizes & Total Quantities */}
+                <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+                  <div>
+                    <div className="block text-xs font-bold uppercase tracking-wider text-[#0082FC] mb-2">
+                      2. Pipe Sizes Needed
+                    </div>
+                    <div className="flex flex-wrap gap-1.5">
+                      {availableSizes.map((size) => {
+                        const isSelected = selectedSizes.includes(size);
+                        return (
+                          <button
+                            key={size}
+                            type="button"
+                            onClick={() => toggleSize(size)}
+                            className={`w-10 h-8 rounded-none text-xs font-bold border transition-all ${
+                              isSelected
+                                ? "bg-[#0082FC] text-white border-[#0082FC]"
+                                : "bg-white text-[#0082FC] border-[#5FD4FD] hover:bg-[#5FD4FD]/20"
+                            }`}
+                          >
+                            {size}
+                          </button>
+                        );
+                      })}
+                    </div>
+                  </div>
+
+                  <div>
+                    <label
+                      htmlFor="quote-quantity-select"
+                      className="block text-xs font-bold uppercase tracking-wider text-[#0082FC] mb-2"
+                    >
+                      Estimated Order Volume
+                    </label>
+                    <select
+                      id="quote-quantity-select"
+                      value={estimatedQuantity}
+                      onChange={(e) => setEstimatedQuantity(e.target.value)}
+                      className="w-full bg-white border-2 border-[#5FD4FD] text-[#0082FC] rounded-none px-3.5 py-2.5 text-xs font-bold focus:border-[#0082FC] focus:outline-none"
+                    >
+                      <option value="1-9 Fittings">
+                        1 to 9 Fittings (Quick Repair)
+                      </option>
+                      <option value="10-25 Fittings">
+                        10 to 25 Fittings (Subdivision Run)
+                      </option>
+                      <option value="Full Truckload">
+                        Full Truckload (Flatbed Job Delivery)
+                      </option>
+                      <option value="Stocking Order">
+                        Stocking Warehouse Order
+                      </option>
+                    </select>
+                  </div>
+                </div>
+
+                {/* 3. Drag-and-drop file upload */}
+                <div className="border-2 border-dashed border-[#5FD4FD] rounded-none p-6 text-center hover:border-[#0082FC] transition-colors bg-white">
+                  <input
+                    type="file"
+                    id="quote-spec-upload"
+                    accept=".pdf,.xlsx,.xls,.doc,.docx"
+                    onChange={handleFileUpload}
+                    className="hidden"
+                  />
+                  <label
+                    htmlFor="quote-spec-upload"
+                    className="cursor-pointer flex flex-col items-center justify-center"
+                  >
+                    <UploadCloud className="w-8 h-8 text-[#0082FC] mb-2" />
+                    <span className="text-xs font-bold text-[#0082FC] mb-1">
+                      {uploadedFileName ? (
+                        <span className="text-[#0082FC] font-bold">
+                          Attached: {uploadedFileName}
+                        </span>
+                      ) : (
+                        "Upload Project Plans or Material List (PDF, Excel, Word)"
+                      )}
+                    </span>
+                    <span className="text-[11px] text-[#0082FC]">
+                      Drag and drop your engineering take-off document or click
+                      to browse
+                    </span>
+                  </label>
+                </div>
+
+                {/* 4. Company & Jobsite Details */}
+                <div className="space-y-4 pt-4 border-t-2 border-[#5FD4FD]/30">
+                  <div className="text-xs font-bold uppercase tracking-wider text-[#0082FC] flex items-center gap-1.5">
+                    <Building className="w-4 h-4 text-[#0082FC]" />
+                    <span>3. Contractor &amp; Jobsite Destination</span>
+                  </div>
+
+                  <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                    <div>
+                      <label
+                        htmlFor="quote-company-name"
+                        className="block text-[11px] font-bold text-[#0082FC] mb-1"
+                      >
+                        Company / Entity Name *
+                      </label>
+                      <div className="relative">
+                        <Building className="w-3.5 h-3.5 text-[#0082FC] absolute left-3 top-3" />
+                        <input
+                          id="quote-company-name"
+                          type="text"
+                          required
+                          placeholder="e.g. Great Lakes Utility Contractors"
+                          value={companyName}
+                          onChange={(e) => setCompanyName(e.target.value)}
+                          className="w-full bg-white border-2 border-[#5FD4FD] text-[#0082FC] rounded-none pl-9 pr-3 py-2 text-xs font-bold focus:border-[#0082FC] focus:outline-none placeholder-[#0082FC]/40"
+                        />
+                      </div>
+                    </div>
+
+                    <div>
+                      <label
+                        htmlFor="quote-contact-name"
+                        className="block text-[11px] font-bold text-[#0082FC] mb-1"
+                      >
+                        Contact Person &amp; Title *
+                      </label>
+                      <div className="relative">
+                        <User className="w-3.5 h-3.5 text-[#0082FC] absolute left-3 top-3" />
+                        <input
+                          id="quote-contact-name"
+                          type="text"
+                          required
+                          placeholder="e.g. Dan Miller, Project Estimator"
+                          value={contactName}
+                          onChange={(e) => setContactName(e.target.value)}
+                          className="w-full bg-white border-2 border-[#5FD4FD] text-[#0082FC] rounded-none pl-9 pr-3 py-2 text-xs font-bold focus:border-[#0082FC] focus:outline-none placeholder-[#0082FC]/40"
+                        />
+                      </div>
+                    </div>
+
+                    <div>
+                      <label
+                        htmlFor="quote-email"
+                        className="block text-[11px] font-bold text-[#0082FC] mb-1"
+                      >
+                        Business Email (For Official Quote) *
+                      </label>
+                      <div className="relative">
+                        <Mail className="w-3.5 h-3.5 text-[#0082FC] absolute left-3 top-3" />
+                        <input
+                          id="quote-email"
+                          type="email"
+                          required
+                          placeholder="dmiller@contracting.com"
+                          value={email}
+                          onChange={(e) => setEmail(e.target.value)}
+                          className="w-full bg-white border-2 border-[#5FD4FD] text-[#0082FC] rounded-none pl-9 pr-3 py-2 text-xs font-bold focus:border-[#0082FC] focus:outline-none placeholder-[#0082FC]/40"
+                        />
+                      </div>
+                    </div>
+
+                    <div>
+                      <label
+                        htmlFor="quote-phone"
+                        className="block text-[11px] font-bold text-[#0082FC] mb-1"
+                      >
+                        Direct Phone *
+                      </label>
+                      <div className="relative">
+                        <Phone className="w-3.5 h-3.5 text-[#0082FC] absolute left-3 top-3" />
+                        <input
+                          id="quote-phone"
+                          type="tel"
+                          required
+                          placeholder="(555) 014-2900"
+                          value={phone}
+                          onChange={(e) => setPhone(e.target.value)}
+                          className="w-full bg-white border-2 border-[#5FD4FD] text-[#0082FC] rounded-none pl-9 pr-3 py-2 text-xs font-bold focus:border-[#0082FC] focus:outline-none placeholder-[#0082FC]/40"
+                        />
+                      </div>
+                    </div>
+
+                    <div className="sm:col-span-2">
+                      <label
+                        htmlFor="quote-destination"
+                        className="block text-[11px] font-bold text-[#0082FC] mb-1"
+                      >
+                        Delivery City, State &amp; Zip Code *
+                      </label>
+                      <div className="relative">
+                        <MapPin className="w-3.5 h-3.5 text-[#0082FC] absolute left-3 top-3" />
+                        <input
+                          id="quote-destination"
+                          type="text"
+                          required
+                          placeholder="e.g. Chicago, IL 60638 (Jobsite or Yard address)"
+                          value={deliveryLocation}
+                          onChange={(e) => setDeliveryLocation(e.target.value)}
+                          className="w-full bg-white border-2 border-[#5FD4FD] text-[#0082FC] rounded-none pl-9 pr-3 py-2 text-xs font-bold focus:border-[#0082FC] focus:outline-none placeholder-[#0082FC]/40"
+                        />
+                      </div>
+                    </div>
+                  </div>
+                </div>
+
+                {/* Submit Button: "Submit For Rapid Quote" (Solid #0082FC, whitespace-nowrap) */}
+                <div className="pt-2">
+                  <button
+                    type="submit"
+                    className="w-full py-4 px-8 bg-[#0082FC] hover:bg-[#5FD4FD] hover:text-[#0082FC] text-white font-extrabold rounded-none text-sm border-2 border-[#0082FC] shadow-lg transition-all transform hover:-translate-y-0.5 active:translate-y-0 whitespace-nowrap flex items-center justify-center gap-2"
+                  >
+                    <Send className="w-4 h-4 text-white group-hover:text-[#0082FC] shrink-0" />
+                    <span className="whitespace-nowrap">
+                      Submit For Rapid Quote
+                    </span>
+                  </button>
+                  <div className="flex items-center justify-center gap-3 text-[11px] text-[#0082FC] font-semibold mt-3">
+                    <span>Quotes valid 30 days</span>
+                    <span>&bull;</span>
+                    <span>Direct yard dispatch</span>
+                    <span>&bull;</span>
+                    <span>Standard freight insurance</span>
+                  </div>
+                </div>
+              </form>
+            )}
+          </div>
+
+          {/* Right Live Quote List / Cart (4 cols) */}
+          <div className="lg:col-span-4 bg-white border-2 border-[#5FD4FD] rounded-none p-6 sm:p-7 shadow-sm flex flex-col justify-between text-[#0082FC]">
+            <div>
+              <div className="flex items-center justify-between pb-4 border-b-2 border-[#5FD4FD]/30 mb-4">
+                <span className="text-xs font-bold uppercase tracking-wider text-[#0082FC] flex items-center gap-2">
+                  <Package className="w-4 h-4 text-[#0082FC]" />
+                  <span>Selected Quote Items</span>
+                </span>
+                {rfqItems.length > 0 && (
+                  <button
+                    type="button"
+                    onClick={onClearItems}
+                    className="text-[11px] text-[#0082FC] hover:underline font-bold"
+                  >
+                    Clear All
+                  </button>
+                )}
+              </div>
+
+              {rfqItems.length === 0 ? (
+                <div className="py-8 text-center bg-white rounded-none border-2 border-[#5FD4FD] p-4 mb-4">
+                  <Package className="w-8 h-8 text-[#5FD4FD] mx-auto mb-2" />
+                  <p className="text-xs text-[#0082FC] font-bold">
+                    No catalog items added yet.
+                  </p>
+                  <p className="text-[11px] text-[#0082FC] mt-1">
+                    Click &quot;Add to Quote List&quot; on any product above.
+                  </p>
+                </div>
+              ) : (
+                <div className="space-y-2 mb-4 max-h-60 overflow-y-auto pr-1">
+                  {rfqItems.map((item) => (
+                    <div
+                      key={item.id}
+                      className="bg-white border-2 border-[#5FD4FD] rounded-none p-3 flex items-start justify-between gap-2"
+                    >
+                      <div>
+                        <div className="font-bold text-xs text-[#0082FC] leading-tight">
+                          {item.name}
+                        </div>
+                        <div className="text-[10px] text-[#0082FC] font-semibold mt-0.5">
+                          {item.standard} &bull;{" "}
+                          {item.pressureRating.split(" ")[0]}
+                        </div>
+                      </div>
+                      <button
+                        type="button"
+                        onClick={() => onRemoveItem(item.id)}
+                        className="p-1 text-[#0082FC] hover:bg-[#5FD4FD]/20 rounded-none"
+                        title="Remove item"
+                      >
+                        <Trash2 className="w-3.5 h-3.5" />
+                      </button>
+                    </div>
+                  ))}
+                </div>
+              )}
+
+              {/* Order Parameters Summary */}
+              <div className="space-y-2 text-xs bg-white p-4 rounded-none border-2 border-[#5FD4FD] mb-4">
+                <div className="text-[11px] uppercase tracking-wider text-[#0082FC] font-bold">
+                  Order Summary:
+                </div>
+                <div className="flex justify-between border-b border-[#5FD4FD]/30 pb-1.5">
+                  <span className="text-[#0082FC]">Category:</span>
+                  <span className="text-[#0082FC] font-bold truncate max-w-[160px]">
+                    {selectedCategory}
+                  </span>
+                </div>
+                <div className="flex justify-between border-b border-[#5FD4FD]/30 pb-1.5">
+                  <span className="text-[#0082FC]">Selected Sizes:</span>
+                  <span className="text-[#0082FC] font-bold">
+                    {selectedSizes.join(", ")}
+                  </span>
+                </div>
+                <div className="flex justify-between">
+                  <span className="text-[#0082FC]">Volume:</span>
+                  <span className="text-[#0082FC] font-bold">
+                    {estimatedQuantity}
+                  </span>
+                </div>
+              </div>
+            </div>
+
+            <div className="pt-4 border-t-2 border-[#5FD4FD]/30">
+              <a
+                href="tel:18005552782"
+                className="block text-center py-2.5 px-3 bg-white hover:bg-[#5FD4FD]/20 text-[#0082FC] text-xs font-bold rounded-none border-2 border-[#0082FC] transition-colors whitespace-nowrap shadow-sm"
+              >
+                Call Aqua Dispatch: (800) 555-AQUA
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+  );
+};

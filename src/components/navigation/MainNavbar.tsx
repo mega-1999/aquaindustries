@@ -1,0 +1,862 @@
+"use client";
+
+import {
+  ArrowRight,
+  Calculator,
+  ChevronDown,
+  Droplets,
+  FileText,
+  Layers,
+  Lock,
+  Menu,
+  Shield,
+  Truck,
+  UserCheck,
+  Wrench,
+  X,
+} from "lucide-react";
+import type React from "react";
+import { useEffect, useState } from "react";
+
+interface MainNavbarProps {
+  onOpenLoginModal: () => void;
+  onOpenRegisterModal: () => void;
+  onOpenYardModal: () => void;
+  onSelectProductCategory?: (category: string) => void;
+}
+
+export const MainNavbar: React.FC<MainNavbarProps> = ({
+  onOpenLoginModal,
+  onOpenRegisterModal,
+  onOpenYardModal,
+  onSelectProductCategory,
+}) => {
+  const [activeMenu, setActiveMenu] = useState<string | null>(null);
+  const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
+  const [mobileAccordion, setMobileAccordion] = useState<string | null>(null);
+  const [isScrolled, setIsScrolled] = useState(false);
+
+  useEffect(() => {
+    const handleScroll = () => {
+      setIsScrolled(window.scrollY > 15);
+    };
+    window.addEventListener("scroll", handleScroll, { passive: true });
+    return () => window.removeEventListener("scroll", handleScroll);
+  }, []);
+
+  // Prevent background body scroll when mobile menu is open
+  useEffect(() => {
+    if (mobileMenuOpen) {
+      document.body.style.overflow = "hidden";
+    } else {
+      document.body.style.overflow = "";
+    }
+    return () => {
+      document.body.style.overflow = "";
+    };
+  }, [mobileMenuOpen]);
+
+  const handleNavClick = (href: string, categoryFilter?: string) => {
+    setActiveMenu(null);
+    setMobileMenuOpen(false);
+    if (categoryFilter && onSelectProductCategory) {
+      onSelectProductCategory(categoryFilter);
+    }
+  };
+
+  return (
+    <header
+      className={`sticky top-0 z-40 w-full transition-all duration-200 ${
+        isScrolled
+          ? "bg-white/98 backdrop-blur-md shadow-md border-b-2 border-[#5fd4fd] py-2.5"
+          : "bg-white border-b-2 border-[#0082fc]/20 py-3"
+      }`}
+    >
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div className="flex items-center justify-between gap-2 sm:gap-4">
+          {/* Brand Logo: Aqua Industries */}
+          <a
+            href="#"
+            className="flex items-center gap-2.5 shrink-0 group focus:outline-none focus-visible:ring-2 focus-visible:ring-[#0082fc] rounded-none p-1"
+          >
+            <div className="w-9 h-9 sm:w-10 sm:h-10 rounded-none bg-[#0082fc] flex items-center justify-center shadow-md shadow-[#0082fc]/30 group-hover:scale-105 transition-transform duration-200 relative overflow-hidden shrink-0 border border-[#5fd4fd]">
+              <Droplets className="w-5 h-5 sm:w-6 sm:h-6 text-white" />
+              <div className="absolute top-0 right-0 w-2.5 h-2.5 bg-[#5fd4fd] rounded-none blur-[1px]" />
+            </div>
+            <div className="flex flex-col">
+              <span className="font-extrabold text-[#0082fc] text-lg sm:text-xl tracking-tight leading-none whitespace-nowrap flex items-center gap-1 font-sans">
+                Aqua <span className="text-[#5fd4fd]">Industries</span>
+              </span>
+              <span className="text-[10px] text-[#0082fc] tracking-wider uppercase font-bold leading-tight whitespace-nowrap mt-0.5">
+                Waterworks &amp; Municipal Iron
+              </span>
+            </div>
+          </a>
+
+          {/* Desktop Navigation Links */}
+          <nav
+            aria-label="Main Navigation"
+            className="hidden xl:flex items-center gap-1 text-xs font-bold text-[#0082fc]"
+          >
+            {/* 1. Waterworks Fittings Mega Menu */}
+            <div
+              className="relative"
+              onMouseEnter={() => setActiveMenu("fittings")}
+              onMouseLeave={() => setActiveMenu(null)}
+            >
+              <button
+                type="button"
+                className={`inline-flex items-center gap-1 px-3 py-2 rounded-none transition-colors whitespace-nowrap ${
+                  activeMenu === "fittings"
+                    ? "text-white bg-[#0082fc]"
+                    : "text-[#0082fc] hover:bg-[#5fd4fd]/20"
+                }`}
+              >
+                <span className="whitespace-nowrap">Waterworks Fittings</span>
+                <ChevronDown
+                  className={`w-3.5 h-3.5 transition-transform duration-200 ${
+                    activeMenu === "fittings"
+                      ? "rotate-180 text-white"
+                      : "text-[#0082fc]"
+                  }`}
+                />
+              </button>
+
+              {activeMenu === "fittings" && (
+                <div className="absolute top-full left-0 w-[min(680px,calc(100vw-2.5rem))] pt-2 z-50">
+                  <div className="bg-white border-2 border-[#0082fc] rounded-none shadow-2xl p-5 text-[#0082fc]">
+                    <div className="grid grid-cols-12 gap-5">
+                      <div className="col-span-8 grid grid-cols-2 gap-2.5">
+                        <a
+                          href="#product-matrix"
+                          onClick={() =>
+                            handleNavClick("#product-matrix", "waterworks")
+                          }
+                          className="p-3 rounded-none hover:bg-[#0082fc] hover:text-white border border-[#5fd4fd] transition-all group block text-[#0082fc]"
+                        >
+                          <div className="font-extrabold text-xs mb-1 whitespace-nowrap group-hover:text-[#5fd4fd]">
+                            Compact Fittings (AWWA C153)
+                          </div>
+                          <p className="text-[11px] leading-relaxed group-hover:text-white">
+                            MJ bends, tees, and reducers. 350 PSI rated for
+                            3&quot; to 24&quot; lines.
+                          </p>
+                        </a>
+
+                        <a
+                          href="#product-matrix"
+                          onClick={() =>
+                            handleNavClick("#product-matrix", "waterworks")
+                          }
+                          className="p-3 rounded-none hover:bg-[#0082fc] hover:text-white border border-[#5fd4fd] transition-all group block text-[#0082fc]"
+                        >
+                          <div className="font-extrabold text-xs mb-1 whitespace-nowrap group-hover:text-[#5fd4fd]">
+                            Full Body Fittings (AWWA C110)
+                          </div>
+                          <p className="text-[11px] leading-relaxed group-hover:text-white">
+                            Heavy-section branch tees, crosses, and flanges with
+                            smooth hydraulic radii.
+                          </p>
+                        </a>
+
+                        <a
+                          href="#product-matrix"
+                          onClick={() =>
+                            handleNavClick("#product-matrix", "waterworks")
+                          }
+                          className="p-3 rounded-none hover:bg-[#0082fc] hover:text-white border border-[#5fd4fd] transition-all group block text-[#0082fc]"
+                        >
+                          <div className="font-extrabold text-xs mb-1 whitespace-nowrap group-hover:text-[#5fd4fd]">
+                            Flanged Pipe &amp; Fittings
+                          </div>
+                          <p className="text-[11px] leading-relaxed group-hover:text-white">
+                            Class 125 &amp; Class 250 flanged spools and
+                            reducers for stations.
+                          </p>
+                        </a>
+
+                        <a
+                          href="#product-matrix"
+                          onClick={() =>
+                            handleNavClick("#product-matrix", "waterworks")
+                          }
+                          className="p-3 rounded-none hover:bg-[#0082fc] hover:text-white border border-[#5fd4fd] transition-all group block text-[#0082fc]"
+                        >
+                          <div className="font-extrabold text-xs mb-1 whitespace-nowrap group-hover:text-[#5fd4fd]">
+                            Push-On Joint Fittings
+                          </div>
+                          <p className="text-[11px] leading-relaxed group-hover:text-white">
+                            Tyton-compatible push-on fittings for ductile iron
+                            water transmission runs.
+                          </p>
+                        </a>
+                      </div>
+
+                      <div className="col-span-4 bg-[#0082fc] text-white border-2 border-[#5fd4fd] rounded-none p-4 flex flex-col justify-between">
+                        <div>
+                          <span className="text-[10px] font-bold uppercase tracking-wider text-[#0082fc] bg-[#5fd4fd] px-2 py-0.5 rounded-none">
+                            Foundry Certified
+                          </span>
+                          <h4 className="font-extrabold text-white text-xs mt-2 mb-1">
+                            Grade 65-45-12 Ductile
+                          </h4>
+                          <p className="text-[11px] text-white/90 leading-relaxed">
+                            Poured from certified ductile iron and proof-tested
+                            to 500 PSI hydrostatic pressure.
+                          </p>
+                        </div>
+                        <a
+                          href="#product-matrix"
+                          onClick={() => handleNavClick("#product-matrix")}
+                          className="inline-flex items-center gap-1.5 text-xs font-bold text-[#5fd4fd] hover:text-white mt-3"
+                        >
+                          <span>Explore All Fittings</span>
+                          <ArrowRight className="w-3.5 h-3.5" />
+                        </a>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              )}
+            </div>
+
+            {/* 2. Restraints & Couplings Dropdown */}
+            <div
+              className="relative"
+              onMouseEnter={() => setActiveMenu("restraints")}
+              onMouseLeave={() => setActiveMenu(null)}
+            >
+              <button
+                type="button"
+                className={`inline-flex items-center gap-1 px-3 py-2 rounded-none transition-colors whitespace-nowrap ${
+                  activeMenu === "restraints"
+                    ? "text-white bg-[#0082fc]"
+                    : "text-[#0082fc] hover:bg-[#5fd4fd]/20"
+                }`}
+              >
+                <span className="whitespace-nowrap">
+                  Restraints &amp; Couplings
+                </span>
+                <ChevronDown
+                  className={`w-3.5 h-3.5 transition-transform duration-200 ${
+                    activeMenu === "restraints"
+                      ? "rotate-180 text-white"
+                      : "text-[#0082fc]"
+                  }`}
+                />
+              </button>
+
+              {activeMenu === "restraints" && (
+                <div className="absolute top-full left-0 w-72 max-w-[calc(100vw-2rem)] pt-2 z-50">
+                  <div className="bg-white border-2 border-[#0082fc] rounded-none shadow-2xl p-2.5 text-[#0082fc]">
+                    <a
+                      href="#product-matrix"
+                      onClick={() =>
+                        handleNavClick("#product-matrix", "restraints")
+                      }
+                      className="block p-2.5 rounded-none hover:bg-[#0082fc] hover:text-white transition-colors"
+                    >
+                      <div className="font-extrabold text-xs whitespace-nowrap">
+                        Wedge-Action Restraints
+                      </div>
+                      <div className="text-[11px]">
+                        Series 3000 glands for PVC and ductile iron mains.
+                      </div>
+                    </a>
+                    <a
+                      href="#product-matrix"
+                      onClick={() =>
+                        handleNavClick("#product-matrix", "restraints")
+                      }
+                      className="block p-2.5 rounded-none hover:bg-[#0082fc] hover:text-white transition-colors"
+                    >
+                      <div className="font-extrabold text-xs whitespace-nowrap">
+                        Split Harness Restraints
+                      </div>
+                      <div className="text-[11px]">
+                        Bell harness tie-rods for existing pipeline joints.
+                      </div>
+                    </a>
+                    <a
+                      href="#product-matrix"
+                      onClick={() =>
+                        handleNavClick("#product-matrix", "saddles")
+                      }
+                      className="block p-2.5 rounded-none hover:bg-[#0082fc] hover:text-white transition-colors"
+                    >
+                      <div className="font-extrabold text-xs whitespace-nowrap">
+                        Wide-Range Bolted Couplings
+                      </div>
+                      <div className="text-[11px]">
+                        Transition couplings spanning differing pipe O.D.s.
+                      </div>
+                    </a>
+                    <a
+                      href="#product-matrix"
+                      onClick={() =>
+                        handleNavClick("#product-matrix", "saddles")
+                      }
+                      className="block p-2.5 rounded-none hover:bg-[#0082fc] hover:text-white transition-colors"
+                    >
+                      <div className="font-extrabold text-xs whitespace-nowrap">
+                        Tapping Saddles &amp; Clamps
+                      </div>
+                      <div className="text-[11px]">
+                        Double-strap saddles and 304 stainless repair sleeves.
+                      </div>
+                    </a>
+                  </div>
+                </div>
+              )}
+            </div>
+
+            {/* 3. Municipal & Drainage Castings */}
+            <div
+              className="relative"
+              onMouseEnter={() => setActiveMenu("castings")}
+              onMouseLeave={() => setActiveMenu(null)}
+            >
+              <button
+                type="button"
+                className={`inline-flex items-center gap-1 px-3 py-2 rounded-none transition-colors whitespace-nowrap ${
+                  activeMenu === "castings"
+                    ? "text-white bg-[#0082fc]"
+                    : "text-[#0082fc] hover:bg-[#5fd4fd]/20"
+                }`}
+              >
+                <span className="whitespace-nowrap">
+                  Municipal &amp; Castings
+                </span>
+                <ChevronDown
+                  className={`w-3.5 h-3.5 transition-transform duration-200 ${
+                    activeMenu === "castings"
+                      ? "rotate-180 text-white"
+                      : "text-[#0082fc]"
+                  }`}
+                />
+              </button>
+
+              {activeMenu === "castings" && (
+                <div className="absolute top-full left-0 w-72 max-w-[calc(100vw-2rem)] pt-2 z-50">
+                  <div className="bg-white border-2 border-[#0082fc] rounded-none shadow-2xl p-2.5 text-[#0082fc]">
+                    <a
+                      href="#product-matrix"
+                      onClick={() =>
+                        handleNavClick("#product-matrix", "castings")
+                      }
+                      className="block p-2.5 rounded-none hover:bg-[#0082fc] hover:text-white transition-colors"
+                    >
+                      <div className="font-extrabold text-xs whitespace-nowrap">
+                        Traffic-Rated Manhole Lids
+                      </div>
+                      <div className="text-[11px]">
+                        AASHTO M306 40,000 lb proof-load frames and covers.
+                      </div>
+                    </a>
+                    <a
+                      href="#product-matrix"
+                      onClick={() =>
+                        handleNavClick("#product-matrix", "castings")
+                      }
+                      className="block p-2.5 rounded-none hover:bg-[#0082fc] hover:text-white transition-colors"
+                    >
+                      <div className="font-extrabold text-xs whitespace-nowrap">
+                        Curb Inlets &amp; Catch Basins
+                      </div>
+                      <div className="text-[11px]">
+                        Vane and bar storm drain grates for city streets.
+                      </div>
+                    </a>
+                    <a
+                      href="#product-matrix"
+                      onClick={() =>
+                        handleNavClick("#product-matrix", "castings")
+                      }
+                      className="block p-2.5 rounded-none hover:bg-[#0082fc] hover:text-white transition-colors"
+                    >
+                      <div className="font-extrabold text-xs whitespace-nowrap">
+                        Valve Boxes &amp; Meter Boxes
+                      </div>
+                      <div className="text-[11px]">
+                        Screw-type and slide-type adjustable cast iron boxes.
+                      </div>
+                    </a>
+                  </div>
+                </div>
+              )}
+            </div>
+
+            {/* 4. Engineering & Submittal Tools */}
+            <div
+              className="relative"
+              onMouseEnter={() => setActiveMenu("tools")}
+              onMouseLeave={() => setActiveMenu(null)}
+            >
+              <button
+                type="button"
+                className={`inline-flex items-center gap-1 px-3 py-2 rounded-none transition-colors whitespace-nowrap ${
+                  activeMenu === "tools"
+                    ? "text-white bg-[#0082fc]"
+                    : "text-[#0082fc] hover:bg-[#5fd4fd]/20"
+                }`}
+              >
+                <span className="whitespace-nowrap">Engineering Tools</span>
+                <ChevronDown
+                  className={`w-3.5 h-3.5 transition-transform duration-200 ${
+                    activeMenu === "tools"
+                      ? "rotate-180 text-white"
+                      : "text-[#0082fc]"
+                  }`}
+                />
+              </button>
+
+              {activeMenu === "tools" && (
+                <div className="absolute top-full right-0 w-80 max-w-[calc(100vw-2rem)] pt-2 z-50">
+                  <div className="bg-white border-2 border-[#0082fc] rounded-none shadow-2xl p-3 text-[#0082fc]">
+                    <a
+                      href="#thrust-calculator"
+                      onClick={() => handleNavClick("#thrust-calculator")}
+                      className="flex items-start gap-2.5 p-2.5 rounded-none hover:bg-[#0082fc] hover:text-white transition-colors group"
+                    >
+                      <Calculator className="w-4 h-4 text-[#0082fc] group-hover:text-white shrink-0 mt-0.5" />
+                      <div>
+                        <div className="font-extrabold text-xs mb-0.5 whitespace-nowrap flex items-center gap-1.5">
+                          Thrust Restraint Calculator
+                          <span className="px-1.5 py-0.2 rounded-none bg-[#5fd4fd] text-[#0082fc] text-[10px] font-bold whitespace-nowrap">
+                            Interactive
+                          </span>
+                        </div>
+                        <div className="text-[11px]">
+                          Calculate required restrained footage per AWWA C600.
+                        </div>
+                      </div>
+                    </a>
+
+                    <a
+                      href="#quote-form"
+                      onClick={() => handleNavClick("#quote-form")}
+                      className="flex items-start gap-2.5 p-2.5 rounded-none hover:bg-[#0082fc] hover:text-white transition-colors group"
+                    >
+                      <FileText className="w-4 h-4 text-[#0082fc] group-hover:text-white shrink-0 mt-0.5" />
+                      <div>
+                        <div className="font-extrabold text-xs mb-0.5 whitespace-nowrap">
+                          Submittal Package Builder
+                        </div>
+                        <div className="text-[11px]">
+                          Compile cut sheets, MTR records, and dimensional
+                          drawings.
+                        </div>
+                      </div>
+                    </a>
+
+                    <a
+                      href="#quality-standards"
+                      onClick={() => handleNavClick("#quality-standards")}
+                      className="flex items-start gap-2.5 p-2.5 rounded-none hover:bg-[#0082fc] hover:text-white transition-colors group"
+                    >
+                      <Shield className="w-4 h-4 text-[#0082fc] group-hover:text-white shrink-0 mt-0.5" />
+                      <div>
+                        <div className="font-extrabold text-xs mb-0.5 whitespace-nowrap">
+                          Linings &amp; Coating Specs
+                        </div>
+                        <div className="text-[11px]">
+                          AWWA C104 cement mortar &amp; C116 fusion-bonded
+                          epoxy.
+                        </div>
+                      </div>
+                    </a>
+                  </div>
+                </div>
+              )}
+            </div>
+
+            {/* 5. Yard Locations & Freight */}
+            <button
+              type="button"
+              onClick={onOpenYardModal}
+              className="px-3 py-2 rounded-none text-[#0082fc] hover:bg-[#5fd4fd]/20 transition-colors whitespace-nowrap font-bold inline-flex items-center gap-1.5"
+            >
+              <Truck className="w-4 h-4 text-[#0082fc] shrink-0" />
+              <span>Yard Locations</span>
+            </button>
+
+            {/* 6. About Aqua Industries */}
+            <a
+              href="#foundry-walkthrough"
+              onClick={() => handleNavClick("#foundry-walkthrough")}
+              className="px-3 py-2 rounded-none text-[#0082fc] hover:bg-[#5fd4fd]/20 transition-colors whitespace-nowrap font-bold"
+            >
+              Foundry &amp; Yard
+            </a>
+          </nav>
+
+          {/* Desktop Right Header Actions */}
+          <div className="hidden xl:flex items-center gap-2.5 shrink-0">
+            {/* Unified Client Portal & Register Button with Hover Dropdown */}
+            <div
+              className="relative"
+              onMouseEnter={() => setActiveMenu("portal")}
+              onMouseLeave={() => setActiveMenu(null)}
+            >
+              <button
+                type="button"
+                onClick={onOpenLoginModal}
+                className={`inline-flex items-center gap-1.5 px-3.5 py-2 text-xs font-bold transition-all whitespace-nowrap border-2 rounded-none shadow-xs ${
+                  activeMenu === "portal"
+                    ? "bg-[#0082fc] text-white border-[#0082fc]"
+                    : "bg-white text-[#0082fc] hover:bg-[#5fd4fd]/20 border-[#0082fc]"
+                }`}
+              >
+                <Lock className="w-3.5 h-3.5 shrink-0" />
+                <span className="whitespace-nowrap">Portal &amp; Register</span>
+                <ChevronDown
+                  className={`w-3 h-3 transition-transform duration-200 ${
+                    activeMenu === "portal"
+                      ? "rotate-180 text-white"
+                      : "text-[#0082fc]"
+                  }`}
+                />
+              </button>
+
+              {activeMenu === "portal" && (
+                <div className="absolute top-full right-0 w-80 max-w-[calc(100vw-2rem)] pt-2 z-50">
+                  <div className="bg-white border-2 border-[#0082fc] shadow-2xl p-2.5 text-[#0082fc] rounded-none">
+                    {/* Option 1: Client Portal Login */}
+                    <button
+                      type="button"
+                      onClick={() => {
+                        setActiveMenu(null);
+                        onOpenLoginModal();
+                      }}
+                      className="w-full text-left flex items-start gap-3 p-2.5 hover:bg-[#0082fc] hover:text-white transition-colors group rounded-none"
+                    >
+                      <div className="p-2 border border-[#5fd4fd] bg-white text-[#0082fc] shrink-0 group-hover:bg-white group-hover:text-[#0082fc]">
+                        <Lock className="w-4 h-4" />
+                      </div>
+                      <div className="flex-1 min-w-0">
+                        <div className="flex items-center justify-between gap-1 mb-0.5">
+                          <span className="font-extrabold text-xs whitespace-nowrap">
+                            Client Portal Sign-In
+                          </span>
+                          <span className="text-[10px] bg-[#5fd4fd] text-[#0082fc] px-1.5 py-0.2 font-bold whitespace-nowrap">
+                            Contractors
+                          </span>
+                        </div>
+                        <p className="text-[11px] leading-snug text-[#0082fc] group-hover:text-white">
+                          Access order records, certified MTR reports, and live
+                          wholesale pricing.
+                        </p>
+                      </div>
+                    </button>
+
+                    {/* Option 2: Register Account */}
+                    <button
+                      type="button"
+                      onClick={() => {
+                        setActiveMenu(null);
+                        onOpenRegisterModal();
+                      }}
+                      className="w-full text-left flex items-start gap-3 p-2.5 hover:bg-[#0082fc] hover:text-white transition-colors group rounded-none border-t border-[#5fd4fd]/30"
+                    >
+                      <div className="p-2 border border-[#5fd4fd] bg-white text-[#0082fc] shrink-0 group-hover:bg-white group-hover:text-[#0082fc]">
+                        <UserCheck className="w-4 h-4" />
+                      </div>
+                      <div className="flex-1 min-w-0">
+                        <div className="flex items-center justify-between gap-1 mb-0.5">
+                          <span className="font-extrabold text-xs whitespace-nowrap">
+                            Register Commercial Account
+                          </span>
+                          <span className="text-[10px] bg-white border border-[#5fd4fd] text-[#0082fc] px-1.5 py-0.2 font-bold whitespace-nowrap">
+                            New Account
+                          </span>
+                        </div>
+                        <p className="text-[11px] leading-snug text-[#0082fc] group-hover:text-white">
+                          Establish Net 30 wholesale credit and primary stocking
+                          yard allocation.
+                        </p>
+                      </div>
+                    </button>
+
+                    {/* Option 3: Track BOL Shipment */}
+                    <button
+                      type="button"
+                      onClick={() => {
+                        setActiveMenu(null);
+                        onOpenLoginModal();
+                      }}
+                      className="w-full text-left flex items-start gap-3 p-2.5 hover:bg-[#0082fc] hover:text-white transition-colors group rounded-none border-t border-[#5fd4fd]/30"
+                    >
+                      <div className="p-2 border border-[#5fd4fd] bg-white text-[#0082fc] shrink-0 group-hover:bg-white group-hover:text-[#0082fc]">
+                        <Truck className="w-4 h-4" />
+                      </div>
+                      <div className="flex-1 min-w-0">
+                        <div className="font-extrabold text-xs whitespace-nowrap mb-0.5">
+                          Track Flatbed Shipment (BOL #)
+                        </div>
+                        <p className="text-[11px] leading-snug text-[#0082fc] group-hover:text-white">
+                          Real-time dispatch, trailer staging, and driver
+                          arrival times.
+                        </p>
+                      </div>
+                    </button>
+                  </div>
+                </div>
+              )}
+            </div>
+
+            {/* Primary CTA: Request a Job Quote */}
+            <a
+              href="#quote-form"
+              className="inline-flex items-center gap-1.5 px-4 py-2 text-xs font-extrabold text-white bg-[#0082fc] hover:bg-[#5fd4fd] hover:text-[#0082fc] border-2 border-[#0082fc] rounded-none shadow-md shadow-[#0082fc]/30 transition-all transform hover:-translate-y-0.5 active:translate-y-0 whitespace-nowrap"
+            >
+              <FileText className="w-3.5 h-3.5 shrink-0" />
+              <span className="whitespace-nowrap">Request a Job Quote</span>
+            </a>
+          </div>
+
+          {/* Mobile & Tablet (< xl) Action Buttons & Hamburger */}
+          <div className="flex items-center gap-2 xl:hidden shrink-0">
+            <a
+              href="#quote-form"
+              className="inline-flex items-center gap-1 px-3 py-1.5 text-xs font-bold text-white bg-[#0082fc] hover:bg-[#5fd4fd] hover:text-[#0082fc] rounded-none shadow-sm whitespace-nowrap border border-[#0082fc]"
+            >
+              <span>Quote</span>
+            </a>
+
+            <button
+              type="button"
+              onClick={() => setMobileMenuOpen(true)}
+              className="p-2 text-[#0082fc] hover:bg-[#5fd4fd]/20 rounded-none border-2 border-[#0082fc] focus:outline-none focus:ring-2 focus:ring-[#5fd4fd]"
+              aria-label="Open Navigation Menu"
+            >
+              <Menu className="w-6 h-6" />
+            </button>
+          </div>
+        </div>
+      </div>
+
+      {/* Slide-Over Drawer Navigation from Right (Strict Palette) */}
+      {mobileMenuOpen && (
+        <div className="xl:hidden fixed inset-0 z-50 flex justify-end">
+          {/* Blue Tinted Backdrop (NO BLACK) */}
+          <button
+            type="button"
+            className="fixed inset-0 bg-[#0082fc]/80 backdrop-blur-xs transition-opacity w-full h-full border-0 cursor-default"
+            onClick={() => setMobileMenuOpen(false)}
+            aria-label="Close Navigation Backdrop"
+          />
+
+          {/* Drawer Slide Panel */}
+          <div className="relative w-full max-w-sm sm:max-w-md bg-white h-full shadow-2xl flex flex-col justify-between p-6 z-10 overflow-y-auto border-l-2 border-[#0082fc]">
+            <div className="space-y-4">
+              {/* Drawer Header */}
+              <div className="flex items-center justify-between pb-4 border-b-2 border-[#0082fc]/20">
+                <div className="flex items-center gap-2">
+                  <div className="w-8 h-8 rounded-none bg-[#0082fc] flex items-center justify-center text-white border border-[#5fd4fd]">
+                    <Droplets className="w-5 h-5" />
+                  </div>
+                  <span className="font-extrabold text-[#0082fc] text-base">
+                    Aqua <span className="text-[#5fd4fd]">Industries</span>
+                  </span>
+                </div>
+                <button
+                  type="button"
+                  onClick={() => setMobileMenuOpen(false)}
+                  className="p-1.5 rounded-none text-[#0082fc] hover:bg-[#5fd4fd]/20"
+                  aria-label="Close Navigation Menu"
+                >
+                  <X className="w-6 h-6" />
+                </button>
+              </div>
+
+              {/* Waterworks Fittings Accordion */}
+              <div className="border-b border-[#0082fc]/20 pb-2">
+                <button
+                  type="button"
+                  onClick={() =>
+                    setMobileAccordion(
+                      mobileAccordion === "fittings" ? null : "fittings",
+                    )
+                  }
+                  className="w-full flex items-center justify-between text-sm font-bold text-[#0082fc] py-2"
+                >
+                  <span className="whitespace-nowrap">Waterworks Fittings</span>
+                  <ChevronDown
+                    className={`w-4 h-4 text-[#0082fc] transition-transform ${
+                      mobileAccordion === "fittings"
+                        ? "rotate-180 text-[#5fd4fd]"
+                        : ""
+                    }`}
+                  />
+                </button>
+                {mobileAccordion === "fittings" && (
+                  <div className="mt-1 space-y-1.5 pl-3 pb-2 text-xs text-[#0082fc]">
+                    <a
+                      href="#product-matrix"
+                      onClick={() =>
+                        handleNavClick("#product-matrix", "waterworks")
+                      }
+                      className="block py-1 hover:text-[#5fd4fd] whitespace-nowrap font-medium"
+                    >
+                      • Compact Fittings (AWWA C153)
+                    </a>
+                    <a
+                      href="#product-matrix"
+                      onClick={() =>
+                        handleNavClick("#product-matrix", "waterworks")
+                      }
+                      className="block py-1 hover:text-[#5fd4fd] whitespace-nowrap font-medium"
+                    >
+                      • Full Body Mechanical Joint (AWWA C110)
+                    </a>
+                    <a
+                      href="#product-matrix"
+                      onClick={() =>
+                        handleNavClick("#product-matrix", "waterworks")
+                      }
+                      className="block py-1 hover:text-[#5fd4fd] whitespace-nowrap font-medium"
+                    >
+                      • Flanged Pipe &amp; Fittings
+                    </a>
+                  </div>
+                )}
+              </div>
+
+              {/* Restraints Accordion */}
+              <div className="border-b border-[#0082fc]/20 pb-2">
+                <button
+                  type="button"
+                  onClick={() =>
+                    setMobileAccordion(
+                      mobileAccordion === "restraints" ? null : "restraints",
+                    )
+                  }
+                  className="w-full flex items-center justify-between text-sm font-bold text-[#0082fc] py-2"
+                >
+                  <span className="whitespace-nowrap">
+                    Restraints &amp; Couplings
+                  </span>
+                  <ChevronDown
+                    className={`w-4 h-4 text-[#0082fc] transition-transform ${
+                      mobileAccordion === "restraints"
+                        ? "rotate-180 text-[#5fd4fd]"
+                        : ""
+                    }`}
+                  />
+                </button>
+                {mobileAccordion === "restraints" && (
+                  <div className="mt-1 space-y-1.5 pl-3 pb-2 text-xs text-[#0082fc]">
+                    <a
+                      href="#product-matrix"
+                      onClick={() =>
+                        handleNavClick("#product-matrix", "restraints")
+                      }
+                      className="block py-1 hover:text-[#5fd4fd] whitespace-nowrap font-medium"
+                    >
+                      • Wedge-Action Restraint Glands
+                    </a>
+                    <a
+                      href="#product-matrix"
+                      onClick={() =>
+                        handleNavClick("#product-matrix", "restraints")
+                      }
+                      className="block py-1 hover:text-[#5fd4fd] whitespace-nowrap font-medium"
+                    >
+                      • Bell Harness Restraint Assemblies
+                    </a>
+                    <a
+                      href="#product-matrix"
+                      onClick={() =>
+                        handleNavClick("#product-matrix", "saddles")
+                      }
+                      className="block py-1 hover:text-[#5fd4fd] whitespace-nowrap font-medium"
+                    >
+                      • Tapping Saddles &amp; Transition Couplings
+                    </a>
+                  </div>
+                )}
+              </div>
+
+              {/* Direct Links */}
+              <a
+                href="#thrust-calculator"
+                onClick={() => handleNavClick("#thrust-calculator")}
+                className="flex items-center gap-2 text-sm font-bold text-[#0082fc] py-2 border-b border-[#0082fc]/20"
+              >
+                <Calculator className="w-4 h-4 text-[#0082fc] shrink-0" />
+                <span className="whitespace-nowrap">Thrust Calculator</span>
+              </a>
+
+              <button
+                type="button"
+                onClick={() => {
+                  setMobileMenuOpen(false);
+                  onOpenYardModal();
+                }}
+                className="w-full flex items-center justify-between text-sm font-bold text-[#0082fc] py-2 border-b border-[#0082fc]/20"
+              >
+                <span className="flex items-center gap-2 whitespace-nowrap">
+                  <Truck className="w-4 h-4 text-[#0082fc] shrink-0" />
+                  <span>Stocking Yard Finder</span>
+                </span>
+                <span className="text-[11px] bg-[#5fd4fd]/20 text-[#0082fc] px-2 py-0.5 rounded-none font-bold border border-[#5fd4fd] whitespace-nowrap">
+                  4 Hubs
+                </span>
+              </button>
+
+              <a
+                href="#foundry-walkthrough"
+                onClick={() => handleNavClick("#foundry-walkthrough")}
+                className="block text-sm font-bold text-[#0082fc] py-2 border-b border-[#0082fc]/20 whitespace-nowrap"
+              >
+                Foundry &amp; Yard Walkthrough
+              </a>
+
+              <a
+                href="#quality-standards"
+                onClick={() => handleNavClick("#quality-standards")}
+                className="block text-sm font-bold text-[#0082fc] py-2 border-b border-[#0082fc]/20 whitespace-nowrap"
+              >
+                Quality Standards &amp; MTRs
+              </a>
+            </div>
+
+            {/* Mobile Footer Buttons */}
+            <div className="pt-6 space-y-3">
+              <a
+                href="#quote-form"
+                onClick={() => setMobileMenuOpen(false)}
+                className="w-full py-3 px-4 bg-[#0082fc] text-white font-extrabold rounded-none text-center shadow-md block whitespace-nowrap text-sm border-2 border-[#0082fc]"
+              >
+                Request a Job Quote
+              </a>
+
+              <div className="grid grid-cols-2 gap-2">
+                <button
+                  type="button"
+                  onClick={() => {
+                    setMobileMenuOpen(false);
+                    onOpenLoginModal();
+                  }}
+                  className="py-2.5 px-3 bg-white text-[#0082fc] font-bold rounded-none text-center text-xs whitespace-nowrap border-2 border-[#0082fc]"
+                >
+                  Client Portal
+                </button>
+                <button
+                  type="button"
+                  onClick={() => {
+                    setMobileMenuOpen(false);
+                    onOpenRegisterModal();
+                  }}
+                  className="py-2.5 px-3 bg-[#5fd4fd]/20 text-[#0082fc] font-bold rounded-none text-center text-xs whitespace-nowrap border-2 border-[#5fd4fd]"
+                >
+                  Register Account
+                </button>
+              </div>
+            </div>
+          </div>
+        </div>
+      )}
+    </header>
+  );
+};

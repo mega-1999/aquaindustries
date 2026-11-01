@@ -1,0 +1,152 @@
+"use client";
+
+import {
+  ArrowRight,
+  CheckCircle2,
+  Droplets,
+  FileCheck2,
+  ShieldCheck,
+  Truck,
+} from "lucide-react";
+import type React from "react";
+
+export const CinematicHero: React.FC = () => {
+  return (
+    <section
+      aria-label="Aqua Industries Waterworks Overview"
+      className="relative min-h-[85vh] flex items-center justify-center overflow-hidden bg-[#0082FC] text-white py-20 lg:py-28"
+    >
+      {/* Background Fluid Wave Watermarks and Subtle Hydro Geometric Motif */}
+      <div className="absolute inset-0 z-0 overflow-hidden pointer-events-none select-none">
+        {/* Soft Fluid Waves */}
+        <div className="absolute -top-24 -left-24 w-[500px] h-[500px] bg-[#5FD4FD]/20 rounded-none blur-3xl fluid-wave" />
+        <div className="absolute -bottom-32 -right-24 w-[600px] h-[600px] bg-white/10 rounded-none blur-3xl fluid-wave" />
+
+        {/* Technical Piping & Water Flow Schematic Overlay */}
+        <svg
+          aria-hidden="true"
+          className="absolute right-0 top-1/2 -translate-y-1/2 w-full max-w-4xl h-full opacity-10 text-white"
+          viewBox="0 0 800 600"
+          fill="none"
+          xmlns="http://www.w3.org/2000/svg"
+        >
+          <title>Aqua Industries Hydraulic Fitting Geometry</title>
+          {/* Hydraulic 90-degree MJ Bend Path */}
+          <path
+            d="M 150,120 L 450,120 C 600,120 680,200 680,350 L 680,550"
+            stroke="currentColor"
+            strokeWidth="36"
+            strokeLinecap="round"
+          />
+          <path
+            d="M 150,120 L 450,120 C 600,120 680,200 680,350 L 680,550"
+            stroke="#5FD4FD"
+            strokeWidth="6"
+            strokeDasharray="14 10"
+          />
+          {/* Flange Bolt Circles */}
+          <circle
+            cx="150"
+            cy="120"
+            r="44"
+            stroke="currentColor"
+            strokeWidth="10"
+          />
+          <circle
+            cx="680"
+            cy="550"
+            r="44"
+            stroke="currentColor"
+            strokeWidth="10"
+          />
+          <circle cx="150" cy="120" r="14" fill="#5FD4FD" />
+          <circle cx="680" cy="550" r="14" fill="#5FD4FD" />
+        </svg>
+      </div>
+
+      {/* Main Hero Content */}
+      <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center flex flex-col items-center">
+        {/* Top Tagline Pill */}
+        <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-none bg-white/15 border border-[#5FD4FD] shadow-lg mb-6 backdrop-blur-md">
+          <Droplets className="w-4 h-4 text-[#5FD4FD] shrink-0" />
+          <span className="text-xs sm:text-sm font-semibold tracking-wide text-white uppercase whitespace-nowrap">
+            Domestic Waterworks Manufacturing &bull; Eastern &amp; Central Hubs
+          </span>
+        </div>
+
+        {/* Primary Headline */}
+        <h1 className="text-3xl sm:text-5xl lg:text-6xl font-black text-white tracking-tight leading-[1.12] max-w-5xl mb-6 font-sans">
+          Ductile Iron Waterworks Fittings Built for American Infrastructure.
+        </h1>
+
+        {/* Grounded, Human US Copy */}
+        <p className="text-base sm:text-lg lg:text-xl text-white max-w-3xl leading-relaxed mb-8 font-normal">
+          Heavy-duty AWWA and NSF certified fittings, joint restraints, and
+          municipal castings. Built for real field conditions, verified by lab
+          testing, and backed by straightforward paperwork.
+        </p>
+
+        {/* Single-Line Trust Badges */}
+        <div className="w-full max-w-4xl flex flex-wrap items-center justify-center gap-2.5 sm:gap-3 mb-10">
+          <div className="px-3.5 py-1.5 rounded-none bg-white/10 border border-[#5FD4FD] text-white text-xs sm:text-sm font-semibold whitespace-nowrap inline-flex items-center gap-2 shadow-sm backdrop-blur-sm">
+            <ShieldCheck className="w-4 h-4 text-[#5FD4FD] shrink-0" />
+            <span className="whitespace-nowrap">
+              AWWA C153 &amp; C110 Compliant
+            </span>
+          </div>
+
+          <div className="px-3.5 py-1.5 rounded-none bg-white/10 border border-[#5FD4FD] text-white text-xs sm:text-sm font-semibold whitespace-nowrap inline-flex items-center gap-2 shadow-sm backdrop-blur-sm">
+            <CheckCircle2 className="w-4 h-4 text-[#5FD4FD] shrink-0" />
+            <span className="whitespace-nowrap">
+              NSF/ANSI 61 &amp; 372 Certified
+            </span>
+          </div>
+
+          <div className="px-3.5 py-1.5 rounded-none bg-white/10 border border-[#5FD4FD] text-white text-xs sm:text-sm font-semibold whitespace-nowrap inline-flex items-center gap-2 shadow-sm backdrop-blur-sm">
+            <Truck className="w-4 h-4 text-[#5FD4FD] shrink-0" />
+            <span className="whitespace-nowrap">
+              Fast Nationwide Yard Delivery
+            </span>
+          </div>
+        </div>
+
+        {/* Action Buttons */}
+        <div className="flex flex-col sm:flex-row items-center justify-center gap-4 w-full sm:w-auto">
+          {/* Button 1 (White with #0082FC text) */}
+          <a
+            href="#product-matrix"
+            className="w-full sm:w-auto inline-flex items-center justify-center gap-2 px-8 py-4 text-sm font-bold text-[#0082FC] bg-white hover:bg-[#5FD4FD] hover:text-[#0082FC] rounded-none shadow-xl transition-all transform hover:-translate-y-0.5 active:translate-y-0 whitespace-nowrap"
+          >
+            <span>Browse Waterworks Catalog</span>
+            <ArrowRight className="w-4 h-4 text-[#0082FC]" />
+          </a>
+
+          {/* Button 2 (Border outline with #5FD4FD text) */}
+          <a
+            href="#submittal-builder"
+            className="w-full sm:w-auto inline-flex items-center justify-center gap-2 px-8 py-4 text-sm font-bold text-[#5FD4FD] hover:text-[#0082FC] bg-[#0082FC] hover:bg-[#5FD4FD] border-2 border-[#5FD4FD] rounded-none shadow-lg transition-all transform hover:-translate-y-0.5 active:translate-y-0 whitespace-nowrap backdrop-blur-md"
+          >
+            <FileCheck2 className="w-4 h-4 text-[#5FD4FD] group-hover:text-[#0082FC]" />
+            <span>Build Submittal Package</span>
+          </a>
+        </div>
+
+        {/* Bottom Trust Indicators */}
+        <div className="mt-14 pt-6 border-t border-white/20 flex flex-wrap items-center justify-center gap-6 sm:gap-10 text-xs text-white font-medium">
+          <div className="flex items-center gap-2 whitespace-nowrap">
+            <span className="w-2 h-2 rounded-full bg-[#5FD4FD]" />
+            <span>Quotes Valid for 30 Calendar Days</span>
+          </div>
+          <div className="flex items-center gap-2 whitespace-nowrap">
+            <span className="w-2 h-2 rounded-full bg-[#5FD4FD]" />
+            <span>Traceable Mill Heat Number on Every Body</span>
+          </div>
+          <div className="flex items-center gap-2 whitespace-nowrap">
+            <span className="w-2 h-2 rounded-full bg-[#5FD4FD]" />
+            <span>Dedicated Utility Dispatch Desks</span>
+          </div>
+        </div>
+      </div>
+    </section>
+  );
+};
