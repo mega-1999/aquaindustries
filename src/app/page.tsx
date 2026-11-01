@@ -6,6 +6,7 @@ import { ClearJobsitePolicies } from "../components/compliance/ClearJobsitePolic
 import { IndustrialFooter } from "../components/footer/IndustrialFooter";
 import { FoundryWalkthrough } from "../components/foundry/FoundryWalkthrough";
 import { CinematicHero } from "../components/hero/CinematicHero";
+import { SolenoSamplingHero } from "../components/hero/SolenoSamplingHero";
 import { SolenoPreloader } from "../components/loader/SolenoPreloader";
 import { CertifiedMetricsBar } from "../components/metrics/CertifiedMetricsBar";
 import { AccountRegistrationModal } from "../components/modals/AccountRegistrationModal";
@@ -104,10 +105,13 @@ export default function Home() {
 
       {/* Main Single-Page Blueprint Following Soleno's Exact Structural Rhythm */}
       <main className="flex-1">
-        {/* Section 1: Hero Banner (Rich Aqua Blue #0082FC Background & Soleno Showcase) */}
+        {/* Section 1: Soleno Flagship Showcase - CONNECTING YOU TO THE FUTURE OF WATER MANAGEMENT */}
+        <SolenoSamplingHero />
+
+        {/* Section 2: American Infrastructure Ductile Iron Waterworks Hero Overview */}
         <CinematicHero />
 
-        {/* Section 2: Quick Metrics Ribbon (Crisp White Background) */}
+        {/* Section 3: Quick Metrics Ribbon (Crisp White Background) */}
         <CertifiedMetricsBar />
 
         {/* Section 3: Flagship Product Spotlight - Municipal Water Sampling Station */}
