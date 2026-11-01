@@ -73,6 +73,34 @@
   animation: wave-float 8s ease-in-out infinite;
 }
 
+/* Soleno Hero Geometric Rotating Ring & Product Pulse */
+@keyframes solenoRotate {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+.soleno-rotate-ring {
+  animation: solenoRotate 50s linear infinite;
+}
+
+@keyframes waterFloat {
+  0%,
+  100% {
+    transform: translateY(0px) scale(1);
+  }
+  50% {
+    transform: translateY(-8px) scale(1.03);
+  }
+}
+
+.soleno-product-float {
+  animation: waterFloat 5s ease-in-out infinite;
+}
+
 /* Soleno Preloader Logo Pulse Animation */
 @keyframes scaleAnimation {
   0% {

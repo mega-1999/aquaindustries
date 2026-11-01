@@ -15,6 +15,7 @@ import { YardSelectorModal } from "../components/modals/YardSelectorModal";
 import { GlobalUtilityTicker } from "../components/navigation/GlobalUtilityTicker";
 import { MainNavbar } from "../components/navigation/MainNavbar";
 import { ProductCatalogMatrix } from "../components/products/ProductCatalogMatrix";
+import { SamplingStationSpotlight } from "../components/products/SamplingStationSpotlight";
 import { CommercialQuoteForm } from "../components/rfq/CommercialQuoteForm";
 import { CivilCallToAction } from "../components/sections/CivilCallToAction";
 import { DomesticStandards } from "../components/sections/DomesticStandards";
@@ -103,13 +104,20 @@ export default function Home() {
 
       {/* Main Single-Page Blueprint Following Soleno's Exact Structural Rhythm */}
       <main className="flex-1">
-        {/* Section 1: Hero Banner (Rich Aqua Blue #0082FC Background) */}
+        {/* Section 1: Hero Banner (Rich Aqua Blue #0082FC Background & Soleno Showcase) */}
         <CinematicHero />
 
         {/* Section 2: Quick Metrics Ribbon (Crisp White Background) */}
         <CertifiedMetricsBar />
 
-        {/* Section 3: Civil Call to Action (Soleno call_to_action split pattern) */}
+        {/* Section 3: Flagship Product Spotlight - Municipal Water Sampling Station */}
+        <SamplingStationSpotlight
+          product={PRODUCTS_CATALOG[0]}
+          onAddToRfq={handleAddToRfq}
+          onPreviewSubmittal={(product) => setSubmittalModalProduct(product)}
+        />
+
+        {/* Section 4: Civil Call to Action (Soleno call_to_action split pattern) */}
         <CivilCallToAction
           onExploreCatalog={() => handleSelectProductCategory("all")}
           onRequestQuote={() => {

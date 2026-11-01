@@ -78,7 +78,42 @@ export const DISTRIBUTION_YARDS: YardLocation[] = [
 ];
 
 export const PRODUCTS_CATALOG: ProductItem[] = [
-  // 1. PRIMARY REAL PHOTOGRAPH PRODUCTS (FEATURED FIRST)
+  // 1. PRIMARY FLAGSHIP PRODUCTS (FEATURED FIRST)
+  {
+    id: "water-sampling-station",
+    name: "Municipal Water Sampling Station",
+    category: "accessories",
+    categoryLabel: "Flagship Products",
+    standard: "ANSI/NSF 61",
+    pressureRating: "300 PSI Working Pressure",
+    jointType: "Threaded & Companion",
+    diameterRange: '1" NPT Inlet • 3/4" Sample Bibb • 3-6 ft Bury Depth',
+    material:
+      "Heavy Ductile Iron Enclosure & Lead-Free Certified Brass Waterway",
+    coating:
+      "High-Visibility Thermal Powder Coat & Polyurethane Freeze Insulation",
+    description:
+      "Municipal water quality sampling station designed to provide dedicated, non-contaminated sampling points for chlorine residual, bacteriological testing, and EPA Lead & Copper Rule compliance directly from the water main.",
+    cadFile: "AQUA_SAMPLING_STATION.DWG",
+    submittalFile: "SUBMITTAL_WATER_SAMPLING_STATION.PDF",
+    specs: {
+      tensileStrength: "65,000 PSI Ductile Housing",
+      yieldStrength: "45,000 PSI Minimum",
+      elongation: "12% Minimum",
+      wallThicknessClass: "Schedule 80 Rigid Casing",
+      standardBoltCount: "Tamper-Proof Stainless Lock Fasteners",
+      torqueSpec: "Threaded NPT watermain tie-in",
+    },
+    keyFeatures: [
+      "Eliminates contamination risks from private residential customer plumbing",
+      "Sanitary all-brass and stainless waterway certified to NSF/ANSI 61 & 372",
+      "Thermal freeze-proof enclosure protects internal valve mechanism in freezing winters",
+      "Heavy-duty vandal-resistant lockable cover meets AWWA water security mandates",
+    ],
+    imageUrl: "/images/our-images/sampling-station.png",
+    aisCompliant: true,
+    buyAmericaReady: true,
+  },
   {
     id: "c153-compact-mj-fittings",
     name: "C153 Compact MJ Fittings",
