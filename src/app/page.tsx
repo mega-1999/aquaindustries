@@ -27,6 +27,7 @@ import { DomesticStandards } from "../components/sections/DomesticStandards";
 import { EngineeringSubmittalLibrary } from "../components/sections/EngineeringSubmittalLibrary";
 import { MasteringInfrastructureTabs } from "../components/sections/MasteringInfrastructureTabs";
 import { MunicipalCaseStudies } from "../components/sections/MunicipalCaseStudies";
+import { SolenoVideoShowcase } from "../components/sections/SolenoVideoShowcase";
 
 import { DISTRIBUTION_YARDS, PRODUCTS_CATALOG } from "../data/waterworks-data";
 import type { ProductItem, YardLocation } from "../types";
@@ -162,10 +163,16 @@ export default function Home() {
           onPreviewSubmittal={handlePreviewSubmittalDoc}
         />
 
-        {/* Section 7: Municipal Infrastructure Case Studies (Soleno related_project pattern) */}
+        {/* Section 7: Municipal Infrastructure Case Studies (Soleno related_project pattern - White #FFFFFF - Alternating) */}
         <MunicipalCaseStudies />
 
-        {/* Section 8: Interactive Thrust Restraint Calculator (Civil Engineering Field Tool) */}
+        {/* Section 8: Waterworks Video Demonstrations & Field Proofs (Soleno video pattern - Blue #0082FC - Alternating) */}
+        <SolenoVideoShowcase
+          onAddToRfq={handleAddToRfq}
+          onPreviewSubmittal={(product) => setSubmittalModalProduct(product)}
+        />
+
+        {/* Section 9: Interactive Thrust Restraint Calculator (Civil Engineering Field Tool - White #FFFFFF - Alternating) */}
         <EngineeringThrustCalculator />
 
         {/* Section 9: Real Foundry & Yard Walkthrough (Physical Process & Quality Control) */}

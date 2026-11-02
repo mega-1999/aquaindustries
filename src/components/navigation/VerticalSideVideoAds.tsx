@@ -72,19 +72,6 @@ const LEFT_VIDEO_ADS: VideoAdItem[] = [
       "Automated pressure chamber hydro-testing compact mechanical joint bends and tees beyond 2:1 safety factor thresholds.",
     product: PRODUCTS_CATALOG[3] || PRODUCTS_CATALOG[0],
   },
-  {
-    id: "ad-left-4",
-    side: "left",
-    badge: "POTABLE LINING",
-    title: "Centrifugal Mortar Lining",
-    standard: "AWWA C104 / ANSI A21.4",
-    duration: "0:40",
-    videoUrl: "https://soleno.com/wp-content/uploads/2024/12/bkg_water111.mp4",
-    posterUrl: "/images/products/Linings-Coatings.jpg",
-    description:
-      "High-speed rotating applicator coats internal waterway with double-thick cement mortar to prevent tuberculation and red water.",
-    product: PRODUCTS_CATALOG[25] || PRODUCTS_CATALOG[0],
-  },
 ];
 
 const RIGHT_VIDEO_ADS: VideoAdItem[] = [
@@ -105,7 +92,7 @@ const RIGHT_VIDEO_ADS: VideoAdItem[] = [
     id: "ad-right-2",
     side: "right",
     badge: "JOINT RESTRAINT",
-    title: "Cam-Action Wedge Restraint",
+    title: "Cam-Action Restraint",
     standard: "UL Listed & FM Approved",
     duration: "1:05",
     videoUrl: "https://soleno.com/wp-content/uploads/2024/12/bkg_water111.mp4",
@@ -118,27 +105,14 @@ const RIGHT_VIDEO_ADS: VideoAdItem[] = [
     id: "ad-right-3",
     side: "right",
     badge: "MUNICIPAL CASTING",
-    title: "Highway Vane Drainage Grate",
+    title: "Highway Vane Grate",
     standard: "AASHTO M306 Proof Load",
     duration: "0:48",
     videoUrl: "https://soleno.com/wp-content/uploads/2024/12/bkg_water111.mp4",
     posterUrl: "/images/our-images/trench-grates.png",
     description:
-      "Machined noise-dampening bearing seat under 40,000 lb proof load press. Eliminates street rattle and withstands dynamic interstate impacts.",
+      "Machined noise-dampening bearing seat under 40,000 lb proof load press. Eliminates street rattle and dynamic road impacts.",
     product: PRODUCTS_CATALOG[5] || PRODUCTS_CATALOG[1],
-  },
-  {
-    id: "ad-right-4",
-    side: "right",
-    badge: "FLATBED FREIGHT",
-    title: "Melville & FL Staging",
-    standard: "24-48 Hr Jobsite Drops",
-    duration: "0:38",
-    videoUrl: "https://soleno.com/wp-content/uploads/2024/12/bkg_water111.mp4",
-    posterUrl: "/images/our-images/curb_inlet_riser_heavy_iron.png",
-    description:
-      "Crane-strapped flatbeds dispatched directly from our Melville, NY foundry and Florida terminals to municipal utility job sites.",
-    product: PRODUCTS_CATALOG[4] || PRODUCTS_CATALOG[0],
   },
 ];
 
@@ -192,10 +166,10 @@ export const VerticalSideVideoAds: React.FC<VerticalSideVideoAdsProps> = ({
     return (
       <div
         key={ad.id}
-        className="w-52 xl:w-56 bg-white border-2 border-[#0082FC] shadow-xl text-[#0082FC] flex flex-col justify-between group transition-all duration-300 hover:border-[#5FD4FD] hover:-translate-y-1 relative"
+        className="w-48 xl:w-52 bg-white border-2 border-[#0082FC] shadow-xl text-[#0082FC] flex flex-col justify-between group transition-all duration-300 hover:border-[#5FD4FD] hover:-translate-y-1 relative"
       >
         {/* Top Video Preview Thumbnail Container */}
-        <div className="relative w-full h-28 bg-[#0082FC] overflow-hidden">
+        <div className="relative w-full h-24 bg-[#0082FC] overflow-hidden">
           {/* Looping Ambient Water Video */}
           <video
             src={ad.videoUrl}
