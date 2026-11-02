@@ -76,7 +76,7 @@ export const MainNavbar: React.FC<MainNavbarProps> = ({
         <div className="flex items-center justify-between gap-2 sm:gap-4">
           {/* Brand Logo: Aqua Industries */}
           <a
-            href="#"
+            href="/"
             className="flex items-center gap-2.5 shrink-0 group focus:outline-none focus-visible:ring-2 focus-visible:ring-[#0082fc] rounded-none p-1"
           >
             <div className="w-9 h-9 sm:w-10 sm:h-10 rounded-none bg-[#0082fc] flex items-center justify-center shadow-md shadow-[#0082fc]/30 group-hover:scale-105 transition-transform duration-200 relative overflow-hidden shrink-0 border border-[#5fd4fd]">
@@ -484,16 +484,24 @@ export const MainNavbar: React.FC<MainNavbarProps> = ({
             <button
               type="button"
               onClick={onOpenYardModal}
-              className="px-2.5 2xl:px-3 py-2 rounded-none text-[#0082fc] hover:bg-[#5fd4fd]/20 transition-colors whitespace-nowrap font-bold inline-flex items-center gap-1.5"
+              className="px-2.5 2xl:px-3 py-2 rounded-none text-[#0082fc] hover:bg-[#5fd4fd]/20 transition-colors whitespace-nowrap font-bold inline-flex items-center gap-1.5 cursor-pointer"
             >
               <Truck className="w-4 h-4 text-[#0082fc] shrink-0" />
               <span>Yards</span>
             </button>
 
-            {/* 6. About Aqua Industries */}
+            {/* 6. Projects & Case Studies (Soleno Projects Cloned Page) */}
             <a
-              href="#foundry-walkthrough"
-              onClick={() => handleNavClick("#foundry-walkthrough")}
+              href="/projects"
+              className="px-2.5 2xl:px-3 py-2 rounded-none text-[#0082fc] hover:bg-[#5fd4fd]/20 transition-colors whitespace-nowrap font-bold"
+            >
+              Projects
+            </a>
+
+            {/* 7. About Aqua Industries */}
+            <a
+              href="/#foundry-walkthrough"
+              onClick={() => handleNavClick("/#foundry-walkthrough")}
               className="px-2.5 2xl:px-3 py-2 rounded-none text-[#0082fc] hover:bg-[#5fd4fd]/20 transition-colors whitespace-nowrap font-bold"
             >
               Foundry
@@ -822,8 +830,16 @@ export const MainNavbar: React.FC<MainNavbarProps> = ({
               </button>
 
               <a
-                href="#foundry-walkthrough"
-                onClick={() => handleNavClick("#foundry-walkthrough")}
+                href="/projects"
+                onClick={() => setMobileMenuOpen(false)}
+                className="block text-sm sm:text-base font-bold text-[#0082fc] py-2.5 border-b border-[#0082fc]/20 whitespace-nowrap"
+              >
+                Our Projects &bull; Case Studies
+              </a>
+
+              <a
+                href="/#foundry-walkthrough"
+                onClick={() => handleNavClick("/#foundry-walkthrough")}
                 className="block text-sm sm:text-base font-bold text-[#0082fc] py-2.5 border-b border-[#0082fc]/20 whitespace-nowrap"
               >
                 Foundry &amp; Yard Walkthrough
