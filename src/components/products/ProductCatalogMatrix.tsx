@@ -178,78 +178,79 @@ export const ProductCatalogMatrix: React.FC<ProductCatalogMatrixProps> = ({
                 </div>
 
                 {/* Dedicated Product Image Canvas: 100% Contained, Zero Overflow, Generous Padding */}
-                <div className="relative w-full h-48 bg-white border-b-2 border-[#5FD4FD] flex items-center justify-center p-5 overflow-hidden">
+                <div className="relative w-full h-52 bg-white border-b-2 border-[#5FD4FD] flex items-center justify-center p-6 overflow-hidden">
                   <div className="w-full h-full flex items-center justify-center">
                     <img
                       src={product.imageUrl}
                       alt={product.name}
-                      className="max-h-full max-w-full w-auto h-auto object-contain transition-transform duration-300 group-hover:scale-105 block mx-auto select-none"
+                      className="max-h-full max-w-full w-auto h-auto object-contain transition-transform duration-300 group-hover:scale-105 block mx-auto select-none filter drop-shadow-md"
                     />
                   </div>
                 </div>
 
                 {/* Card Content */}
-                <div className="p-5 flex-1 flex flex-col justify-between">
+                <div className="p-5 sm:p-6 flex-1 flex flex-col justify-between">
                   <div>
-                    <div className="text-xs font-bold uppercase tracking-wider text-[#0082FC] mb-1 whitespace-nowrap truncate">
+                    <div className="text-xs font-bold uppercase tracking-wider text-[#0082FC]/80 mb-1 whitespace-nowrap truncate">
                       {product.jointType} &bull; {product.diameterRange}
                     </div>
-                    <h3 className="font-bold text-[#0082FC] text-base sm:text-lg leading-snug mb-1.5 transition-colors">
+                    <h3 className="font-black text-[#0082FC] text-base sm:text-lg uppercase leading-snug mb-2 transition-colors">
                       {product.name}
                     </h3>
-                    <p className="text-xs sm:text-sm text-[#0082FC]/90 leading-relaxed mb-3 line-clamp-3 font-normal">
+                    <p className="text-xs sm:text-sm text-[#0082FC]/90 leading-relaxed mb-3 line-clamp-2 font-normal">
                       {product.description}
                     </p>
 
-                    {/* Features list */}
-                    <div className="space-y-1.5 mb-4 border-t border-[#5FD4FD]/40 pt-2.5">
-                      {product.keyFeatures.slice(0, 2).map((feature) => (
-                        <div
-                          key={feature}
-                          className="flex items-start gap-1.5 text-xs text-[#0082FC] font-medium"
-                        >
-                          <span className="w-1.5 h-1.5 rounded-none bg-[#5FD4FD] shrink-0 mt-1" />
-                          <span className="leading-tight">{feature}</span>
-                        </div>
-                      ))}
+                    {/* Key Technical Parameters */}
+                    <div className="grid grid-cols-2 gap-2 py-2.5 my-3 border-y border-[#5FD4FD]/40 text-[11px] font-bold text-[#0082FC]">
+                      <div>
+                        <span className="text-[#0082FC]/70 uppercase block text-[10px]">
+                          Standard
+                        </span>
+                        <span className="truncate block">
+                          {product.standard}
+                        </span>
+                      </div>
+                      <div>
+                        <span className="text-[#0082FC]/70 uppercase block text-[10px]">
+                          Rating
+                        </span>
+                        <span className="truncate block">
+                          {product.pressureRating.split("/")[0].trim()}
+                        </span>
+                      </div>
                     </div>
                   </div>
 
-                  {/* Action Buttons: "Download Spec Sheet" | "Add to Quote List" */}
-                  <div className="pt-3 border-t border-[#5FD4FD]/40 space-y-2">
+                  {/* Action Buttons: "Cut Sheet" | "+ Quote" */}
+                  <div className="pt-2 flex flex-col sm:flex-row gap-2">
                     <button
                       type="button"
                       onClick={() => onPreviewSubmittal(product)}
-                      className="w-full inline-flex items-center justify-center gap-1.5 py-2.5 px-3 bg-white hover:bg-[#5FD4FD] text-[#0082FC] text-xs font-bold rounded-none border-2 border-[#0082FC] transition-colors whitespace-nowrap"
+                      className="flex-1 inline-flex items-center justify-center gap-1.5 py-2 px-3 bg-white hover:bg-[#0082FC] text-[#0082FC] hover:text-white text-xs font-bold uppercase tracking-wider rounded-none border-2 border-[#0082FC] transition-all whitespace-nowrap cursor-pointer"
                     >
-                      <FileText className="w-3.5 h-3.5 text-[#0082FC]" />
-                      <span className="whitespace-nowrap">
-                        Download Spec Sheet
-                      </span>
+                      <FileText className="w-3.5 h-3.5" />
+                      <span>Cut Sheet</span>
                     </button>
 
                     <button
                       type="button"
                       onClick={() => handleAddProduct(product)}
-                      className={`w-full inline-flex items-center justify-center gap-1.5 py-2.5 px-3 rounded-none text-xs font-bold transition-all whitespace-nowrap border-2 ${
+                      className={`flex-1 inline-flex items-center justify-center gap-1.5 py-2 px-3 rounded-none text-xs font-bold uppercase tracking-wider transition-all whitespace-nowrap border-2 cursor-pointer ${
                         isAdded
-                          ? "bg-[#5FD4FD] text-[#0082FC] border-[#5FD4FD]"
-                          : "bg-[#0082FC] hover:bg-[#5FD4FD] hover:text-[#0082FC] text-white border-[#0082FC] shadow-sm"
+                          ? "bg-[#5FD4FD] text-[#0082FC] border-[#0082FC]"
+                          : "bg-[#0082FC] hover:bg-[#5FD4FD] hover:text-[#0082FC] text-white border-[#0082FC] shadow-xs"
                       }`}
                     >
                       {isAdded ? (
                         <>
                           <Check className="w-3.5 h-3.5 stroke-[3]" />
-                          <span className="whitespace-nowrap">
-                            Added to Quote List
-                          </span>
+                          <span>Added</span>
                         </>
                       ) : (
                         <>
                           <Plus className="w-3.5 h-3.5 stroke-[2.5]" />
-                          <span className="whitespace-nowrap">
-                            Add to Quote List
-                          </span>
+                          <span>+ Quote</span>
                         </>
                       )}
                     </button>

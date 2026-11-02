@@ -180,6 +180,47 @@ export const SamplingStationSpotlight: React.FC<
               </div>
             )}
 
+            {/* Top Area Outside Image: Hotspot Inspection Callout Banner */}
+            {activeHotspot !== null && (
+              <div className="w-full bg-white border-2 border-[#5FD4FD] p-3.5 text-left shadow-xl text-[#0082FC] animate-in fade-in slide-in-from-top-2">
+                <div className="flex items-center justify-between gap-2 mb-1">
+                  <div className="flex items-center gap-2">
+                    <span className="w-6 h-6 bg-[#0082FC] text-white flex items-center justify-center font-black text-xs">
+                      {activeHotspot}
+                    </span>
+                    <span className="font-black text-xs sm:text-sm uppercase tracking-tight text-[#0082FC]">
+                      {
+                        STATION_HOTSPOTS.find((h) => h.id === activeHotspot)
+                          ?.title
+                      }
+                    </span>
+                  </div>
+                  <span className="text-[10px] bg-[#5FD4FD] text-[#0082FC] font-extrabold px-2 py-0.5 whitespace-nowrap">
+                    {
+                      STATION_HOTSPOTS.find((h) => h.id === activeHotspot)
+                        ?.badge
+                    }
+                  </span>
+                </div>
+                <p className="text-xs leading-relaxed text-[#0082FC]/90 font-medium">
+                  {STATION_HOTSPOTS.find((h) => h.id === activeHotspot)?.desc}
+                </p>
+                <div className="mt-2 flex items-center justify-between border-t border-[#0082FC]/15 pt-1.5">
+                  <span className="text-[10px] text-[#0082FC]/70 font-bold uppercase">
+                    Specification ID AQUA-WSS-2026 &bull; Point {activeHotspot}{" "}
+                    of 4
+                  </span>
+                  <button
+                    type="button"
+                    onClick={() => setActiveHotspot(null)}
+                    className="text-[11px] font-black text-[#0082FC] hover:text-[#5FD4FD] uppercase cursor-pointer"
+                  >
+                    ✕ Close Inspection
+                  </button>
+                </div>
+              </div>
+            )}
+
             <div className="bg-white border-4 border-[#5FD4FD] p-6 sm:p-10 shadow-2xl relative flex flex-col items-center justify-center text-[#0082FC] min-h-[440px] sm:min-h-[500px]">
               {/* Corner Serial & Standard Tag */}
               <div className="absolute top-4 left-4 z-10 flex flex-col gap-1">
