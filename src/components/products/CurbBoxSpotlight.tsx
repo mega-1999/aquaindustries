@@ -1,15 +1,21 @@
 "use client";
 
 import {
+  ArrowDown,
   Award,
   BoxSelect,
   CheckCircle2,
+  ChevronDown,
   Download,
   FileCheck2,
+  KeyRound,
+  Layers,
   PhoneCall,
+  RotateCw,
   Ruler,
   ShieldAlert,
   ShieldCheck,
+  Sliders,
 } from "lucide-react";
 import React, { useState } from "react";
 import type { ProductItem } from "../../types";
@@ -38,12 +44,26 @@ const CURB_BOX_IMAGES = [
   },
 ];
 
+const BURY_DEPTHS = [
+  { depth: 36, label: '36" (3.0 ft)', zone: "Southern / Standard" },
+  { depth: 48, label: '48" (4.0 ft)', zone: "Mid-Atlantic Frost" },
+  { depth: 60, label: '60" (5.0 ft)', zone: "Northern Freeze" },
+  { depth: 72, label: '72" (6.0 ft)', zone: "Deep Frost Grade" },
+];
+
 export const CurbBoxSpotlight: React.FC<CurbBoxSpotlightProps> = ({
   onAddToRfq,
   onPreviewSubmittal,
   product,
 }) => {
   const [activeImageIndex, setActiveImageIndex] = useState(0);
+  const [viewMode, setViewMode] = useState<"photo" | "schematic">("photo");
+  const [selectedDepth, setSelectedDepth] = useState(48);
+  const [valveTurnAngle, setValveTurnAngle] = useState(0);
+
+  const handleRotateKey = () => {
+    setValveTurnAngle((prev) => (prev + 90) % 360);
+  };
 
   return (
     <section
@@ -85,9 +105,36 @@ export const CurbBoxSpotlight: React.FC<CurbBoxSpotlightProps> = ({
 
         {/* 2-Column Balanced Engineering Grid */}
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-10 lg:gap-14 items-center">
-          {/* LEFT 6 COLUMNS: High-Resolution Visual Showcase & Variant Switcher */}
+          {/* LEFT 6 COLUMNS: Visual Showcase, Interactive Telescopic Render, and Selector */}
           <div className="lg:col-span-6 flex flex-col gap-6">
-            <div className="relative bg-white border-4 border-[#0082FC] p-8 sm:p-12 shadow-2xl flex flex-col items-center justify-center min-h-[440px] sm:min-h-[500px]">
+            {/* View Mode Toggle: Real Photo vs Telescopic Strata Render */}
+            <div className="flex items-center justify-between gap-2 border-2 border-[#0082FC] p-1 bg-white">
+              <button
+                type="button"
+                onClick={() => setViewMode("photo")}
+                className={`flex-1 py-1.5 px-3 text-xs font-black uppercase tracking-wider transition-all rounded-none cursor-pointer text-center ${
+                  viewMode === "photo"
+                    ? "bg-[#0082FC] text-white shadow-xs"
+                    : "text-[#0082FC] hover:bg-[#5FD4FD]/20"
+                }`}
+              >
+                Full Product Photographs
+              </button>
+              <button
+                type="button"
+                onClick={() => setViewMode("schematic")}
+                className={`flex-1 py-1.5 px-3 text-xs font-black uppercase tracking-wider transition-all rounded-none cursor-pointer flex items-center justify-center gap-1.5 ${
+                  viewMode === "schematic"
+                    ? "bg-[#0082FC] text-white shadow-xs"
+                    : "text-[#0082FC] hover:bg-[#5FD4FD]/20"
+                }`}
+              >
+                <Sliders className="w-3.5 h-3.5" />
+                <span>Telescopic Strata Render</span>
+              </button>
+            </div>
+
+            <div className="relative bg-white border-4 border-[#0082FC] p-6 sm:p-10 shadow-2xl flex flex-col items-center justify-center min-h-[440px] sm:min-h-[500px]">
               {/* Corner Waterworks Badge */}
               <div className="absolute top-4 left-4 z-10">
                 <span className="text-[11px] font-black uppercase tracking-widest text-[#0082FC] bg-[#5FD4FD]/20 px-2.5 py-1 border border-[#0082FC]">
@@ -102,50 +149,252 @@ export const CurbBoxSpotlight: React.FC<CurbBoxSpotlightProps> = ({
                 </span>
               </div>
 
-              {/* Main Active Image Display */}
-              <div className="relative w-full h-[320px] sm:h-[380px] flex items-center justify-center">
-                <img
-                  src={CURB_BOX_IMAGES[activeImageIndex].src}
-                  alt={CURB_BOX_IMAGES[activeImageIndex].label}
-                  className="max-h-full max-w-full object-contain filter drop-shadow-2xl transition-all duration-300"
-                />
-              </div>
+              {viewMode === "photo" ? (
+                <>
+                  {/* Main Active Image Display */}
+                  <div className="relative w-full h-[320px] sm:h-[380px] flex items-center justify-center py-4">
+                    <img
+                      src={CURB_BOX_IMAGES[activeImageIndex].src}
+                      alt={CURB_BOX_IMAGES[activeImageIndex].label}
+                      className="max-h-full max-w-full object-contain filter drop-shadow-2xl transition-all duration-300 group-hover:scale-105"
+                    />
+                  </div>
 
-              {/* Bottom Caption Pill */}
-              <div className="mt-4 text-center">
-                <p className="text-base sm:text-lg font-black uppercase text-[#0082FC] tracking-tight">
-                  {CURB_BOX_IMAGES[activeImageIndex].label}
-                </p>
-                <p className="text-xs sm:text-sm font-semibold text-[#0082FC]/80">
-                  {CURB_BOX_IMAGES[activeImageIndex].sublabel}
-                </p>
-              </div>
+                  {/* Bottom Caption Pill */}
+                  <div className="mt-4 text-center">
+                    <p className="text-base sm:text-lg font-black uppercase text-[#0082FC] tracking-tight">
+                      {CURB_BOX_IMAGES[activeImageIndex].label}
+                    </p>
+                    <p className="text-xs sm:text-sm font-semibold text-[#0082FC]/80">
+                      {CURB_BOX_IMAGES[activeImageIndex].sublabel}
+                    </p>
+                  </div>
+                </>
+              ) : (
+                /* Animated Telescopic Ground Strata Schematic Render */
+                <div className="w-full flex flex-col items-center justify-between h-[360px] sm:h-[400px] relative">
+                  {/* Depth Selector Pills */}
+                  <div className="w-full flex items-center justify-center gap-1.5 z-10 pt-4">
+                    {BURY_DEPTHS.map((bd) => (
+                      <button
+                        key={bd.depth}
+                        type="button"
+                        onClick={() => setSelectedDepth(bd.depth)}
+                        className={`px-2.5 py-1 text-[11px] font-black uppercase rounded-none border transition-all cursor-pointer ${
+                          selectedDepth === bd.depth
+                            ? "bg-[#0082FC] text-white border-[#0082FC] shadow-sm"
+                            : "bg-white text-[#0082FC] border-[#5FD4FD] hover:bg-[#5FD4FD]/20"
+                        }`}
+                      >
+                        {bd.label}
+                      </button>
+                    ))}
+                  </div>
+
+                  {/* Dynamic SVG Cross-Section Render */}
+                  <div className="relative w-full flex-1 flex items-center justify-center overflow-hidden my-2">
+                    <svg
+                      viewBox="0 0 320 300"
+                      className="w-full h-full max-h-[260px]"
+                      fill="none"
+                      aria-label="Telescopic Curb Box Cross-Section"
+                    >
+                      {/* Pavement Surface Line */}
+                      <line
+                        x1="20"
+                        y1="40"
+                        x2="300"
+                        y2="40"
+                        stroke="#0082FC"
+                        strokeWidth="3"
+                        strokeDasharray="4 2"
+                      />
+                      <text
+                        x="24"
+                        y="34"
+                        fill="#0082FC"
+                        fontSize="9"
+                        fontWeight="bold"
+                      >
+                        STREET GRADE (AASHTO H-20 40,000 LB LOAD)
+                      </text>
+
+                      {/* Frost Line Indicator */}
+                      <line
+                        x1="20"
+                        y1="140"
+                        x2="300"
+                        y2="140"
+                        stroke="#5FD4FD"
+                        strokeWidth="1.5"
+                        strokeDasharray="6 4"
+                      />
+                      <text
+                        x="24"
+                        y="134"
+                        fill="#0082FC"
+                        fontSize="9"
+                        fontWeight="bold"
+                      >
+                        MAX FROST PENETRATION LINE
+                      </text>
+
+                      {/* Lower Arch Base Casting (Fixed) */}
+                      <path
+                        d="M135 150 L135 240 L100 280 L130 280 L145 250 L175 250 L190 280 L220 280 L185 240 L185 150 Z"
+                        fill="#0082FC"
+                        opacity="0.15"
+                        stroke="#0082FC"
+                        strokeWidth="2"
+                      />
+
+                      {/* Water Service Line & Curb Stop Valve */}
+                      <line
+                        x1="40"
+                        y1="270"
+                        x2="280"
+                        y2="270"
+                        stroke="#5FD4FD"
+                        strokeWidth="8"
+                      />
+                      <rect
+                        x="145"
+                        y="260"
+                        width="30"
+                        height="20"
+                        fill="#0082FC"
+                        stroke="#5FD4FD"
+                        strokeWidth="2"
+                      />
+
+                      {/* Telescopic Upper Shaft (Sliding with dynamic height based on selectedDepth) */}
+                      <g
+                        style={{
+                          transform: `translateY(${
+                            selectedDepth === 36
+                              ? 30
+                              : selectedDepth === 48
+                                ? 15
+                                : selectedDepth === 60
+                                  ? 0
+                                  : -15
+                          }px)`,
+                          transition:
+                            "transform 0.6s cubic-bezier(0.4, 0, 0.2, 1)",
+                        }}
+                      >
+                        {/* Upper Tube */}
+                        <rect
+                          x="142"
+                          y="40"
+                          width="36"
+                          height="140"
+                          fill="#5FD4FD"
+                          fillOpacity="0.25"
+                          stroke="#0082FC"
+                          strokeWidth="2"
+                        />
+                        {/* Heavy Cast Lid with Pentagon Bolt */}
+                        <rect
+                          x="130"
+                          y="32"
+                          width="60"
+                          height="12"
+                          fill="#0082FC"
+                          stroke="#5FD4FD"
+                          strokeWidth="1.5"
+                        />
+                        <polygon
+                          points="160,34 165,37 163,42 157,42 155,37"
+                          fill="#FFFFFF"
+                          style={{
+                            transform: `rotate(${valveTurnAngle}deg)`,
+                            transformOrigin: "160px 38px",
+                            transition: "transform 0.4s ease",
+                          }}
+                        />
+                        {/* Telescopic Overlap Ring */}
+                        <line
+                          x1="138"
+                          y1="160"
+                          x2="182"
+                          y2="160"
+                          stroke="#0082FC"
+                          strokeWidth="3"
+                        />
+                      </g>
+
+                      {/* Depth Dimension Leader Lines */}
+                      <line
+                        x1="240"
+                        y1="40"
+                        x2="240"
+                        y2="270"
+                        stroke="#0082FC"
+                        strokeWidth="1"
+                      />
+                      <text
+                        x="246"
+                        y="155"
+                        fill="#0082FC"
+                        fontSize="11"
+                        fontWeight="black"
+                      >
+                        {selectedDepth}&quot; BURY
+                      </text>
+                    </svg>
+                  </div>
+
+                  {/* Interactive Pentagon Key Turn Simulator */}
+                  <div className="w-full flex items-center justify-between border-t border-[#0082FC]/20 pt-2 px-1">
+                    <div className="text-left text-xs font-bold text-[#0082FC]">
+                      <span>Valve State: </span>
+                      <strong className="text-[#0082FC]">
+                        {valveTurnAngle % 180 === 0
+                          ? "OPEN (FULL FLOW)"
+                          : "CLOSED (SHUT-OFF)"}
+                      </strong>
+                    </div>
+
+                    <button
+                      type="button"
+                      onClick={handleRotateKey}
+                      className="px-2.5 py-1 bg-[#0082FC] hover:bg-[#5FD4FD] text-white hover:text-[#0082FC] text-xs font-black uppercase tracking-wider flex items-center gap-1 transition-all rounded-none cursor-pointer"
+                    >
+                      <RotateCw className="w-3 h-3" />
+                      <span>Rotate Key 90°</span>
+                    </button>
+                  </div>
+                </div>
+              )}
             </div>
 
-            {/* Thumbnail Variant Selector */}
-            <div className="grid grid-cols-3 gap-3">
-              {CURB_BOX_IMAGES.map((img, idx) => (
-                <button
-                  type="button"
-                  key={img.label}
-                  onClick={() => setActiveImageIndex(idx)}
-                  className={`p-2 border-2 rounded-none transition-all text-left flex flex-col items-center justify-center bg-white ${
-                    activeImageIndex === idx
-                      ? "border-[#0082FC] bg-[#5FD4FD]/15 shadow-md"
-                      : "border-[#5FD4FD]/50 hover:border-[#0082FC]"
-                  }`}
-                >
-                  <img
-                    src={img.src}
-                    alt={img.label}
-                    className="h-16 w-auto object-contain mb-1"
-                  />
-                  <span className="text-[11px] sm:text-xs font-black uppercase text-[#0082FC] text-center line-clamp-1">
-                    {img.label}
-                  </span>
-                </button>
-              ))}
-            </div>
+            {/* Thumbnail Variant Selector (shown when in photo mode) */}
+            {viewMode === "photo" && (
+              <div className="grid grid-cols-3 gap-3">
+                {CURB_BOX_IMAGES.map((img, idx) => (
+                  <button
+                    type="button"
+                    key={img.label}
+                    onClick={() => setActiveImageIndex(idx)}
+                    className={`p-2 border-2 rounded-none transition-all text-left flex flex-col items-center justify-center bg-white cursor-pointer ${
+                      activeImageIndex === idx
+                        ? "border-[#0082FC] bg-[#5FD4FD]/15 shadow-md"
+                        : "border-[#5FD4FD]/50 hover:border-[#0082FC]"
+                    }`}
+                  >
+                    <img
+                      src={img.src}
+                      alt={img.label}
+                      className="h-16 w-auto object-contain mb-1"
+                    />
+                    <span className="text-[11px] sm:text-xs font-black uppercase text-[#0082FC] text-center line-clamp-1">
+                      {img.label}
+                    </span>
+                  </button>
+                ))}
+              </div>
+            )}
           </div>
 
           {/* RIGHT 6 COLUMNS: Technical Engineering Parameters & CTAs */}

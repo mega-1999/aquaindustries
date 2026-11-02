@@ -223,6 +223,70 @@ div#myLoader.class_100pourcent {
   }
 }
 
+/* Hydrodynamic water flow animation for sampling stations and pipe simulation */
+@keyframes hydroFlow {
+  0% {
+    stroke-dashoffset: 100;
+  }
+  100% {
+    stroke-dashoffset: 0;
+  }
+}
+
+.animate-hydro-flow {
+  stroke-dasharray: 8 6;
+  animation: hydroFlow 1.6s linear infinite;
+}
+
+.animate-hydro-flow-fast {
+  stroke-dasharray: 6 4;
+  animation: hydroFlow 0.8s linear infinite;
+}
+
+/* Pulsing radar waves for pressure testing */
+@keyframes radarPing {
+  0% {
+    transform: scale(0.92);
+    opacity: 0.9;
+  }
+  50% {
+    transform: scale(1.08);
+    opacity: 0.3;
+  }
+  100% {
+    transform: scale(0.92);
+    opacity: 0.9;
+  }
+}
+
+.animate-radar-ping {
+  animation: radarPing 3s ease-in-out infinite;
+}
+
+/* Water droplet dispensing cycle */
+@keyframes dropDispense {
+  0% {
+    transform: translateY(0) scale(0.8);
+    opacity: 0;
+  }
+  30% {
+    transform: translateY(4px) scale(1.1);
+    opacity: 1;
+  }
+  80% {
+    transform: translateY(22px) scale(0.9);
+    opacity: 0.8;
+  }
+  100% {
+    transform: translateY(30px) scale(0.2);
+    opacity: 0;
+  }
+}
+
+.animate-drop-dispense {
+  animation: dropDispense 2s cubic-bezier(0.4, 0, 0.6, 1) infinite;
+}
+
 /* Custom scrollbars restricted strictly to brand palette */
 ::-webkit-scrollbar {
   width: 7px;
