@@ -16,6 +16,7 @@ import { YardSelectorModal } from "../components/modals/YardSelectorModal";
 import { GlobalUtilityTicker } from "../components/navigation/GlobalUtilityTicker";
 import { MainNavbar } from "../components/navigation/MainNavbar";
 import { FloatingQuickActions } from "../components/navigation/FloatingQuickActions";
+import { VerticalSideVideoAds } from "../components/navigation/VerticalSideVideoAds";
 import { ProductCatalogMatrix } from "../components/products/ProductCatalogMatrix";
 import { CurbBoxSpotlight } from "../components/products/CurbBoxSpotlight";
 import { EngineeringInnovationSpotlight } from "../components/products/EngineeringInnovationSpotlight";
@@ -212,6 +213,12 @@ export default function Home() {
         product={submittalModalProduct}
         onClose={() => setSubmittalModalProduct(null)}
         onAddToRfq={handleAddToRfq}
+      />
+
+      {/* Left and Right Vertical Video Ads (Active in side gutters between Hero and Footer) */}
+      <VerticalSideVideoAds
+        onAddToRfq={handleAddToRfq}
+        onPreviewSubmittal={(product) => setSubmittalModalProduct(product)}
       />
 
       {/* Floating Quick Action Buttons: Call, Mail, YouTube, Top/Bottom */}
