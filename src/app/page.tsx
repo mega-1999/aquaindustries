@@ -15,9 +15,9 @@ import { ProductSubmittalModal } from "../components/modals/ProductSubmittalModa
 import { YardSelectorModal } from "../components/modals/YardSelectorModal";
 import { GlobalUtilityTicker } from "../components/navigation/GlobalUtilityTicker";
 import { MainNavbar } from "../components/navigation/MainNavbar";
+import { FloatingQuickActions } from "../components/navigation/FloatingQuickActions";
 import { ProductCatalogMatrix } from "../components/products/ProductCatalogMatrix";
 import { CurbBoxSpotlight } from "../components/products/CurbBoxSpotlight";
-import { SamplingStationSpotlight } from "../components/products/SamplingStationSpotlight";
 import { CommercialQuoteForm } from "../components/rfq/CommercialQuoteForm";
 import { CivilCallToAction } from "../components/sections/CivilCallToAction";
 import { DomesticStandards } from "../components/sections/DomesticStandards";
@@ -106,7 +106,7 @@ export default function Home() {
 
       {/* Main Single-Page Blueprint with Alternating Background Rhythm */}
       <main className="flex-1">
-        {/* Section 1: 1st Place - Soleno Flagship Showcase (Blue Background #0082FC) */}
+        {/* Section 1: 1st Place - Soleno Flagship Showcase (Sampling Station Hero - Blue #0082FC) */}
         <SolenoSamplingHero />
 
         {/* Section 2: 2nd Place - The Century Curb Box Showcase (White Background #FFFFFF - Alternating) */}
@@ -116,17 +116,10 @@ export default function Home() {
           onPreviewSubmittal={(product) => setSubmittalModalProduct(product)}
         />
 
-        {/* Section 3: 3rd Place - New Flagship Innovation Sampling Station (Blue Background #0082FC - Alternating) */}
-        <SamplingStationSpotlight
-          product={PRODUCTS_CATALOG[0]}
-          onAddToRfq={handleAddToRfq}
-          onPreviewSubmittal={(product) => setSubmittalModalProduct(product)}
-        />
+        {/* Section 3: 3rd Place - American Infrastructure Ductile Iron Waterworks Overview (Blue #0082FC - Alternating) */}
+        <CinematicHero variant="blue" />
 
-        {/* Section 4: American Infrastructure Ductile Iron Waterworks Overview (White Background #FFFFFF - Alternating) */}
-        <CinematicHero variant="white" />
-
-        {/* Section 5: Quick Metrics Ribbon */}
+        {/* Section 4: Quick Metrics Ribbon */}
         <CertifiedMetricsBar />
 
         {/* Section 4: Civil Call to Action (Soleno call_to_action split pattern) */}
@@ -205,6 +198,9 @@ export default function Home() {
         onClose={() => setSubmittalModalProduct(null)}
         onAddToRfq={handleAddToRfq}
       />
+
+      {/* Floating Quick Action Buttons: Call, Mail, YouTube, Top/Bottom */}
+      <FloatingQuickActions />
     </div>
   );
 }
