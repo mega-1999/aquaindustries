@@ -9,6 +9,7 @@ import {
   MapPin,
   Package,
   Phone,
+  PhoneCall,
   Send,
   Trash2,
   UploadCloud,
@@ -480,13 +481,28 @@ export const CommercialQuoteForm: React.FC<CommercialQuoteFormProps> = ({
               </div>
             </div>
 
-            <div className="pt-4 border-t-2 border-[#5FD4FD]/30">
-              <a
-                href="tel:+15162521111"
-                className="block text-center py-3.5 px-4 bg-white hover:bg-[#5FD4FD]/20 text-[#0082FC] text-sm sm:text-base font-extrabold rounded-none border-2 border-[#0082FC] transition-colors whitespace-nowrap shadow-sm"
-              >
-                Call New York Dispatch: +1 (516) 252-1111
-              </a>
+            {/* Urgent Jobsite Dispatch Call Card - 100% Contained, Zero Overflow */}
+            <div className="pt-4 border-t-2 border-[#5FD4FD]/30 mt-4">
+              <div className="bg-[#0082FC] text-white p-3.5 sm:p-4 border-2 border-[#5FD4FD] rounded-none shadow-md flex flex-col items-center text-center gap-1.5">
+                <div className="flex items-center justify-center gap-1.5 text-xs font-black uppercase tracking-wider text-[#5FD4FD]">
+                  <PhoneCall className="w-3.5 h-3.5 text-[#5FD4FD] shrink-0" />
+                  <span>New York Dispatch Desk</span>
+                </div>
+                <p className="text-[11px] text-white/90 leading-tight">
+                  Need rapid yard stock verification or same-day flatbed
+                  staging?
+                </p>
+                <a
+                  href="tel:+15162521111"
+                  className="mt-1.5 w-full py-2.5 px-3 bg-white hover:bg-[#5FD4FD] text-[#0082FC] font-black text-xs sm:text-sm uppercase tracking-wider border-2 border-white transition-all text-center flex items-center justify-center gap-2 shadow-xs cursor-pointer break-words"
+                >
+                  <Phone className="w-3.5 h-3.5 text-[#0082FC] shrink-0" />
+                  <span>Call Dispatch: +1 (516) 252-1111</span>
+                </a>
+                <span className="text-[10px] text-white/80 font-mono mt-0.5">
+                  Melville, NY HQ &bull; 24/7 Service Hotline
+                </span>
+              </div>
             </div>
           </div>
         </div>
