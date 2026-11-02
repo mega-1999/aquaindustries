@@ -24,12 +24,13 @@ export const SolenoFlagshipProducts: React.FC<SolenoFlagshipProductsProps> = ({
 }) => {
   const [addedIds, setAddedIds] = useState<Record<string, boolean>>({});
 
-  // Match the 3 genuine flagship products from the catalog
+  // Match the 3 genuine flagship products from the catalog with their exact photographs
   const flagshipItems = [
     {
-      product: PRODUCTS_CATALOG[0], // AWWA C153 Compact MJ Fittings
+      product: PRODUCTS_CATALOG[3], // C153 Compact MJ Fittings (id: c153-compact-mj-fittings)
       label: "C153 Compact MJ Fittings",
       sublabel: "AWWA C153 & C110 Ductile Iron",
+      image: "/images/our-images/MJ_Fittings.jpeg",
       summary:
         "High-strength ASTM A536 Grade 65-45-12 compact mechanical joint fittings. 350 PSI rated with double cement mortar lining per AWWA C104 for potable distribution.",
       specs: [
@@ -40,9 +41,10 @@ export const SolenoFlagshipProducts: React.FC<SolenoFlagshipProductsProps> = ({
       tag: "CORE DISTRIBUTION",
     },
     {
-      product: PRODUCTS_CATALOG[1], // The Century Curb Box
+      product: PRODUCTS_CATALOG[1], // The Century Curb Box (id: century-curb-box)
       label: "The Century Curb Box",
       sublabel: "AASHTO H-20 Heavy Highway Traffic",
+      image: "/images/our-images/curb-box-ultimate.png",
       summary:
         'The century-tested municipal standard. Telescopic 18" to 72" sliding frost-heave adjustment, heavy ASTM A48 Class 35B casting, and vandal-proof pentagon locking.',
       specs: [
@@ -53,9 +55,10 @@ export const SolenoFlagshipProducts: React.FC<SolenoFlagshipProductsProps> = ({
       tag: "HIGHWAY TRAFFIC",
     },
     {
-      product: PRODUCTS_CATALOG[2], // Series 3000 Cam-Action Restraint
+      product: PRODUCTS_CATALOG[2], // Series 3000 Cam Restraint (id: series-3000-wedge-restraint)
       label: "Series 3000 Cam Restraint",
       sublabel: "Concrete-Free Mechanical Joint Restraint",
+      image: "/images/products/Joint-Restraints.jpg",
       summary:
         "Eliminates concrete thrust blocks. Heat-treated ductile iron cam wedges bite radially into pipe proportionally to pressure surges. Factory torque-off breakaway hex heads.",
       specs: [
@@ -132,7 +135,7 @@ export const SolenoFlagshipProducts: React.FC<SolenoFlagshipProductsProps> = ({
                 {/* Centered Large High-Resolution Product Image */}
                 <div className="relative w-full h-56 sm:h-64 flex items-center justify-center p-4 overflow-hidden my-2">
                   <img
-                    src={item.product.imageUrl}
+                    src={item.image}
                     alt={item.label}
                     className="max-h-full max-w-full object-contain filter drop-shadow-xl transition-transform duration-500 group-hover:scale-105"
                   />
