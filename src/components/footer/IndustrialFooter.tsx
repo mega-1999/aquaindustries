@@ -2,7 +2,11 @@
 
 import {
   Award,
+  Building2,
+  ChevronRight,
+  Clock,
   Droplets,
+  ExternalLink,
   Layers,
   MapPin,
   PhoneCall,
@@ -23,295 +27,407 @@ export const IndustrialFooter: React.FC<IndustrialFooterProps> = ({
 }) => {
   return (
     <footer
-      aria-label="Aqua Industries Company Directory"
-      className="bg-[#0082FC] text-white border-t-4 border-[#5FD4FD] text-sm"
+      aria-label="Aqua Industries Company Directory and Waterworks Dispatch"
+      className="bg-[#0082FC] text-white border-t-4 border-[#5FD4FD] text-sm relative overflow-hidden"
     >
-      {/* Top Bar: Regional Warehouse Emergency Dispatch Line */}
-      <div className="bg-[#0082FC] border-b border-[#5FD4FD]/40 py-6">
+      {/* ========================================================
+          1. TOP BAR: EMERGENCY WATERMAIN DISPATCH HOTLINE
+      ======================================================== */}
+      <div className="bg-[#0082FC] border-b-2 border-[#5FD4FD]/40 py-6 sm:py-8">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="flex flex-col md:flex-row items-center justify-between gap-6">
-            <div className="flex items-center gap-3 text-center md:text-left">
-              <span className="p-3 rounded-none bg-white text-[#0082FC] shrink-0 shadow-md">
+          <div className="flex flex-col lg:flex-row items-start lg:items-center justify-between gap-6">
+            {/* Left: Hotline Identity */}
+            <div className="flex items-start sm:items-center gap-3.5 max-w-2xl">
+              <span className="p-3 bg-white text-[#0082FC] shrink-0 shadow-md border-2 border-[#5FD4FD]">
                 <PhoneCall className="w-6 h-6 animate-pulse text-[#0082FC]" />
               </span>
-              <div>
-                <div className="text-white font-extrabold text-base sm:text-lg whitespace-nowrap">
+              <div className="min-w-0">
+                <h3 className="text-white font-black text-base sm:text-lg tracking-tight uppercase leading-snug break-words">
                   Regional Warehouse Emergency Watermain Dispatch Line
-                </div>
-                <div className="text-white/90 text-xs sm:text-sm mt-0.5">
-                  Direct flatbed dispatch of MJ sleeves, repair clamps, and
-                  wedge restraint glands.
-                </div>
+                </h3>
+                <p className="text-white/90 text-xs sm:text-sm mt-1 leading-relaxed">
+                  24/7 direct flatbed dispatch of AWWA C153 compact fittings,
+                  repair sleeves, mechanical joint restraints, and service
+                  boxes.
+                </p>
               </div>
             </div>
 
-            <div className="flex flex-wrap items-center justify-center gap-3 shrink-0">
+            {/* Right: Hotline Actions */}
+            <div className="flex flex-col sm:flex-row items-stretch sm:items-center gap-3 w-full lg:w-auto shrink-0">
               <a
                 href="tel:+15162521111"
-                className="inline-flex items-center gap-2 px-6 py-3 rounded-none bg-white hover:bg-[#5FD4FD] text-[#0082FC] font-extrabold text-sm sm:text-base shadow-md transition-colors whitespace-nowrap"
+                className="inline-flex items-center justify-center gap-2.5 px-6 py-3.5 bg-white hover:bg-[#5FD4FD] text-[#0082FC] font-black text-sm uppercase tracking-wider shadow-lg transition-all text-center cursor-pointer"
               >
-                <PhoneCall className="w-4 h-4 text-[#0082FC]" />
-                <span className="whitespace-nowrap">
-                  DISPATCH HOTLINE: +1 (516) 252-1111
-                </span>
+                <PhoneCall className="w-4 h-4 text-[#0082FC] shrink-0" />
+                <span>+1 (516) 252-1111</span>
               </a>
 
               <button
                 type="button"
                 onClick={onOpenYardModal}
-                className="inline-flex items-center gap-2 px-5 py-3 rounded-none bg-[#0082FC] hover:bg-[#5FD4FD] hover:text-[#0082FC] text-white font-extrabold text-sm sm:text-base border-2 border-[#5FD4FD] transition-colors whitespace-nowrap"
+                className="inline-flex items-center justify-center gap-2 px-5 py-3.5 bg-[#0082FC] hover:bg-white text-white hover:text-[#0082FC] font-black text-sm uppercase tracking-wider border-2 border-[#5FD4FD] transition-all text-center cursor-pointer"
               >
-                <MapPin className="w-4 h-4 text-[#5FD4FD] group-hover:text-[#0082FC]" />
-                <span className="whitespace-nowrap">
-                  View All Foundries &amp; Yards
-                </span>
+                <MapPin className="w-4 h-4 text-[#5FD4FD] group-hover:text-[#0082FC] shrink-0" />
+                <span>View All Yards</span>
               </button>
             </div>
           </div>
         </div>
       </div>
 
-      {/* 4 Columns Directory */}
-      <div className="py-16 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-10">
-          {/* Column 1: Aqua Industries history & Certs */}
-          <div className="space-y-4">
+      {/* ========================================================
+          2. MAIN 4-COLUMN INDUSTRIAL DIRECTORY (PERFECTLY CONSTRAINED)
+      ======================================================== */}
+      <div className="py-12 sm:py-16 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-12 gap-8 lg:gap-8 items-start">
+          {/* ========================================================
+              COLUMN 1 (3.5 cols): FOUNDRY HQ & CREDENTIALS
+          ======================================================== */}
+          <div className="lg:col-span-3 min-w-0 space-y-4">
             <div className="flex items-center gap-2.5">
-              <div className="w-9 h-9 rounded-none bg-white flex items-center justify-center text-[#0082FC]">
-                <Droplets className="w-6 h-6 text-[#0082FC]" />
+              <div className="w-9 h-9 bg-white flex items-center justify-center text-[#0082FC] border border-[#5FD4FD] shrink-0">
+                <Droplets className="w-5 h-5 text-[#0082FC]" />
               </div>
-              <span className="font-extrabold text-white text-lg sm:text-xl tracking-tight">
+              <span className="font-black text-white text-lg tracking-tight uppercase">
                 Aqua Industries
               </span>
             </div>
 
-            <p className="text-sm sm:text-base text-white/90 leading-relaxed">
-              Manufacturer of ductile iron waterworks fittings, wedge
-              restraints, and municipal street castings. Serving American civil
-              contractors, city utilities, and wholesale supply houses.
+            <p className="text-xs sm:text-sm text-white/90 leading-relaxed break-words">
+              Primary domestic distributor and manufacturer of ASTM A536 ductile
+              iron waterworks fittings, Series 3000 wedge restraints, and AASHTO
+              H-20 municipal street castings.
             </p>
 
-            {/* Direct Address & Mobile */}
-            <div className="p-3 bg-white/10 border border-[#5FD4FD]/40 rounded-none space-y-1.5 text-xs sm:text-sm text-white">
+            {/* Direct Address & Mobile Box */}
+            <div className="p-3.5 bg-white/10 border-2 border-[#5FD4FD] rounded-none space-y-2 text-xs text-white">
               <div className="flex items-start gap-2">
                 <MapPin className="w-4 h-4 text-[#5FD4FD] shrink-0 mt-0.5" />
-                <div>
-                  <div className="font-extrabold text-white">
-                    New York Foundry (Corporate HQ)
+                <div className="min-w-0">
+                  <div className="font-black text-white uppercase tracking-wider">
+                    New York Foundry &amp; Logistics Hub
                   </div>
-                  <div className="text-white/90">
-                    105 Maxes Road, Melville, NY 11747, USA
+                  <div className="text-white/90 text-[11px] leading-snug mt-0.5 break-words">
+                    105 Maxess Road, Melville, NY 11747, USA
                   </div>
                 </div>
               </div>
-              <div className="flex items-center gap-2 pt-1 border-t border-[#5FD4FD]/20">
-                <PhoneCall className="w-4 h-4 text-[#5FD4FD] shrink-0" />
+
+              <div className="flex items-center gap-2 pt-2 border-t border-white/20">
+                <PhoneCall className="w-3.5 h-3.5 text-[#5FD4FD] shrink-0" />
                 <a
                   href="tel:+15162521111"
-                  className="font-extrabold text-white hover:text-[#5FD4FD] transition-colors"
+                  className="font-bold text-white hover:text-[#5FD4FD] transition-colors"
                 >
                   +1 (516) 252-1111
                 </a>
               </div>
             </div>
 
-            <div className="space-y-2 pt-2 border-t border-[#5FD4FD]/30 text-xs sm:text-sm text-white/90">
+            {/* Quality Certifications Strip */}
+            <div className="space-y-1.5 pt-2 border-t border-white/20 text-xs text-white/90">
               <div className="flex items-center gap-2">
-                <ShieldCheck className="w-4 h-4 text-[#5FD4FD] shrink-0" />
-                <span className="font-medium">
-                  ISO 9001:2015 Registered Facility
-                </span>
+                <ShieldCheck className="w-3.5 h-3.5 text-[#5FD4FD] shrink-0" />
+                <span className="font-semibold">ISO 9001:2015 Registered</span>
               </div>
               <div className="flex items-center gap-2">
-                <Award className="w-4 h-4 text-[#5FD4FD] shrink-0" />
-                <span className="font-medium">
-                  AWWA &amp; DIPRA Member Foundry
-                </span>
+                <Award className="w-3.5 h-3.5 text-[#5FD4FD] shrink-0" />
+                <span className="font-semibold">AWWA &amp; DIPRA Member</span>
               </div>
-              <div className="font-medium">
-                CAGE Code: 6AQ12 &bull; DUNS: 09-338-7102
+              <div className="text-[11px] font-mono text-white/80 pt-0.5">
+                CAGE: 6AQ12 &bull; DUNS: 09-338-7102
               </div>
             </div>
           </div>
 
-          {/* Column 2: Product lines */}
-          <div>
-            <h4 className="text-sm sm:text-base font-extrabold uppercase tracking-wider text-white mb-4 flex items-center gap-2">
-              <Layers className="w-4 h-4 text-[#5FD4FD]" />
+          {/* ========================================================
+              COLUMN 2 (3 cols): WATERWORKS PRODUCT LINES
+          ======================================================== */}
+          <div className="lg:col-span-3 min-w-0">
+            <h4 className="text-xs sm:text-sm font-black uppercase tracking-wider text-white mb-4 flex items-center gap-2 pb-2 border-b border-white/20">
+              <Layers className="w-4 h-4 text-[#5FD4FD] shrink-0" />
               <span>Product Lines</span>
             </h4>
-            <ul className="space-y-3 text-sm sm:text-base text-white/90">
+
+            <ul className="space-y-2.5 text-xs sm:text-sm text-white/90">
               <li>
                 <a
                   href="#product-matrix"
-                  className="hover:text-[#5FD4FD] transition-colors whitespace-nowrap block"
+                  className="hover:text-[#5FD4FD] transition-colors flex items-start gap-1.5 group"
                 >
-                  AWWA C153 Compact MJ Fittings (3&quot;–48&quot;)
+                  <ChevronRight className="w-3.5 h-3.5 text-[#5FD4FD] shrink-0 mt-0.5 group-hover:translate-x-0.5 transition-transform" />
+                  <span className="break-words leading-snug">
+                    AWWA C153 Compact MJ Fittings (3&quot;–48&quot;)
+                  </span>
                 </a>
               </li>
               <li>
                 <a
                   href="#product-matrix"
-                  className="hover:text-[#5FD4FD] transition-colors whitespace-nowrap block"
+                  className="hover:text-[#5FD4FD] transition-colors flex items-start gap-1.5 group"
                 >
-                  AWWA C110 Full Body Mechanical Joint Tees
+                  <ChevronRight className="w-3.5 h-3.5 text-[#5FD4FD] shrink-0 mt-0.5 group-hover:translate-x-0.5 transition-transform" />
+                  <span className="break-words leading-snug">
+                    AWWA C110 Full-Body Mechanical Joint Fittings
+                  </span>
                 </a>
               </li>
               <li>
                 <a
                   href="#product-matrix"
-                  className="hover:text-[#5FD4FD] transition-colors whitespace-nowrap block"
+                  className="hover:text-[#5FD4FD] transition-colors flex items-start gap-1.5 group"
                 >
-                  Series 3000 Wedge Restraints (PVC &amp; DI)
+                  <ChevronRight className="w-3.5 h-3.5 text-[#5FD4FD] shrink-0 mt-0.5 group-hover:translate-x-0.5 transition-transform" />
+                  <span className="break-words leading-snug">
+                    Series 3000 Cam-Action Restraints (DI &amp; PVC)
+                  </span>
                 </a>
               </li>
               <li>
                 <a
                   href="#product-matrix"
-                  className="hover:text-[#5FD4FD] transition-colors whitespace-nowrap block"
+                  className="hover:text-[#5FD4FD] transition-colors flex items-start gap-1.5 group"
                 >
-                  Series 4100 Push-On Bell Harnesses
+                  <ChevronRight className="w-3.5 h-3.5 text-[#5FD4FD] shrink-0 mt-0.5 group-hover:translate-x-0.5 transition-transform" />
+                  <span className="break-words leading-snug">
+                    Ultra-Lok 360° Serrated Restraints for C900
+                  </span>
                 </a>
               </li>
               <li>
                 <a
                   href="#product-matrix"
-                  className="hover:text-[#5FD4FD] transition-colors whitespace-nowrap block"
+                  className="hover:text-[#5FD4FD] transition-colors flex items-start gap-1.5 group"
                 >
-                  AASHTO M306 Highway-Rated Castings
+                  <ChevronRight className="w-3.5 h-3.5 text-[#5FD4FD] shrink-0 mt-0.5 group-hover:translate-x-0.5 transition-transform" />
+                  <span className="break-words leading-snug">
+                    The Century Telescopic Curb Service Box
+                  </span>
                 </a>
               </li>
               <li>
                 <a
                   href="#product-matrix"
-                  className="hover:text-[#5FD4FD] transition-colors whitespace-nowrap block"
+                  className="hover:text-[#5FD4FD] transition-colors flex items-start gap-1.5 group"
                 >
-                  Double-Strap Tapping Saddles
+                  <ChevronRight className="w-3.5 h-3.5 text-[#5FD4FD] shrink-0 mt-0.5 group-hover:translate-x-0.5 transition-transform" />
+                  <span className="break-words leading-snug">
+                    Municipal Freeze-Proof Sampling Stations
+                  </span>
                 </a>
               </li>
               <li>
                 <a
                   href="#product-matrix"
-                  className="hover:text-[#5FD4FD] transition-colors whitespace-nowrap block"
+                  className="hover:text-[#5FD4FD] transition-colors flex items-start gap-1.5 group"
                 >
-                  Wide-Range Bolted Couplings
+                  <ChevronRight className="w-3.5 h-3.5 text-[#5FD4FD] shrink-0 mt-0.5 group-hover:translate-x-0.5 transition-transform" />
+                  <span className="break-words leading-snug">
+                    AASHTO M306 Highway-Rated Castings
+                  </span>
                 </a>
               </li>
             </ul>
           </div>
 
-          {/* Column 3: Tech help & submittals */}
-          <div>
-            <h4 className="text-sm sm:text-base font-extrabold uppercase tracking-wider text-white mb-4 flex items-center gap-2">
-              <ShieldCheck className="w-4 h-4 text-[#5FD4FD]" />
+          {/* ========================================================
+              COLUMN 3 (2.5 cols): TECHNICAL & ENGINEERING HELP
+          ======================================================== */}
+          <div className="lg:col-span-2 min-w-0">
+            <h4 className="text-xs sm:text-sm font-black uppercase tracking-wider text-white mb-4 flex items-center gap-2 pb-2 border-b border-white/20">
+              <ShieldCheck className="w-4 h-4 text-[#5FD4FD] shrink-0" />
               <span>Technical Help</span>
             </h4>
-            <ul className="space-y-3 text-sm sm:text-base text-white/90">
+
+            <ul className="space-y-2.5 text-xs sm:text-sm text-white/90">
               <li>
                 <a
                   href="#thrust-calculator"
-                  className="hover:text-[#5FD4FD] transition-colors whitespace-nowrap block"
+                  className="hover:text-[#5FD4FD] transition-colors flex items-start gap-1.5 group"
                 >
-                  Thrust Length Calculator (AWWA C600)
+                  <ChevronRight className="w-3.5 h-3.5 text-[#5FD4FD] shrink-0 mt-0.5 group-hover:translate-x-0.5 transition-transform" />
+                  <span className="break-words leading-snug">
+                    Thrust Length Calculator
+                  </span>
                 </a>
               </li>
               <li>
                 <a
                   href="#quote-form"
-                  className="hover:text-[#5FD4FD] transition-colors whitespace-nowrap block"
+                  className="hover:text-[#5FD4FD] transition-colors flex items-start gap-1.5 group"
                 >
-                  Submittal Sheet Package Builder
+                  <ChevronRight className="w-3.5 h-3.5 text-[#5FD4FD] shrink-0 mt-0.5 group-hover:translate-x-0.5 transition-transform" />
+                  <span className="break-words leading-snug">
+                    Submittal Sheet Builder
+                  </span>
                 </a>
               </li>
               <li>
                 <a
-                  href="#quality-standards"
-                  className="hover:text-[#5FD4FD] transition-colors whitespace-nowrap block"
+                  href="/projects"
+                  className="hover:text-[#5FD4FD] transition-colors flex items-start gap-1.5 group"
                 >
-                  Cement Lining per AWWA C104
+                  <ChevronRight className="w-3.5 h-3.5 text-[#5FD4FD] shrink-0 mt-0.5 group-hover:translate-x-0.5 transition-transform" />
+                  <span className="break-words leading-snug">
+                    Municipal Case Studies
+                  </span>
                 </a>
               </li>
               <li>
                 <a
-                  href="#quality-standards"
-                  className="hover:text-[#5FD4FD] transition-colors whitespace-nowrap block"
+                  href="#domestic-standards"
+                  className="hover:text-[#5FD4FD] transition-colors flex items-start gap-1.5 group"
                 >
-                  Fusion-Bonded Epoxy per AWWA C116
+                  <ChevronRight className="w-3.5 h-3.5 text-[#5FD4FD] shrink-0 mt-0.5 group-hover:translate-x-0.5 transition-transform" />
+                  <span className="break-words leading-snug">
+                    AWWA C104 Cement Lining
+                  </span>
                 </a>
               </li>
               <li>
                 <a
-                  href="#quality-standards"
-                  className="hover:text-[#5FD4FD] transition-colors whitespace-nowrap block"
+                  href="#domestic-standards"
+                  className="hover:text-[#5FD4FD] transition-colors flex items-start gap-1.5 group"
                 >
-                  ASTM A536 Metallurgical Specifications
+                  <ChevronRight className="w-3.5 h-3.5 text-[#5FD4FD] shrink-0 mt-0.5 group-hover:translate-x-0.5 transition-transform" />
+                  <span className="break-words leading-snug">
+                    Arc-Zinc Thermal Spray
+                  </span>
                 </a>
               </li>
               <li>
                 <button
                   type="button"
                   onClick={onOpenLoginModal}
-                  className="hover:text-[#5FD4FD] transition-colors whitespace-nowrap text-left block"
+                  className="hover:text-[#5FD4FD] transition-colors flex items-start gap-1.5 group text-left cursor-pointer"
                 >
-                  Contractor Portal / MTR Archive
+                  <ChevronRight className="w-3.5 h-3.5 text-[#5FD4FD] shrink-0 mt-0.5 group-hover:translate-x-0.5 transition-transform" />
+                  <span className="break-words leading-snug">
+                    Contractor MTR Portal
+                  </span>
                 </button>
               </li>
             </ul>
           </div>
 
-          {/* Column 4: Stocking yard hours & shipping */}
-          <div>
-            <h4 className="text-sm sm:text-base font-extrabold uppercase tracking-wider text-white mb-4 flex items-center gap-2">
-              <Truck className="w-4 h-4 text-[#5FD4FD]" />
-              <span>Stocking Yards &amp; Hours</span>
-            </h4>
-            <div className="space-y-3.5 text-sm sm:text-base text-white/90">
-              {DISTRIBUTION_YARDS.map((yard) => (
-                <div
-                  key={yard.id}
-                  className="pb-2.5 border-b border-[#5FD4FD]/30 last:border-b-0"
-                >
-                  <div className="flex items-center justify-between">
-                    <span className="font-bold text-white whitespace-nowrap">
-                      {yard.city}, {yard.state} Yard
-                    </span>
-                    <span className="text-xs sm:text-sm text-[#5FD4FD] font-extrabold whitespace-nowrap">
-                      {yard.stockStatus}
-                    </span>
-                  </div>
-                  <div className="text-xs sm:text-sm text-white/80 mt-0.5">
-                    {yard.phone} &bull; M-F 06:00 to 17:00 CST
-                  </div>
-                </div>
-              ))}
+          {/* ========================================================
+              COLUMN 4 (4 cols): STOCKING YARDS SPEC TABLE (NO OVERFLOW)
+          ======================================================== */}
+          <div className="lg:col-span-4 min-w-0">
+            <div className="flex items-center justify-between pb-2 mb-4 border-b border-white/20">
+              <h4 className="text-xs sm:text-sm font-black uppercase tracking-wider text-white flex items-center gap-2">
+                <Truck className="w-4 h-4 text-[#5FD4FD] shrink-0" />
+                <span>Stocking Yards &amp; Hours</span>
+              </h4>
+              <button
+                type="button"
+                onClick={onOpenYardModal}
+                className="text-[11px] font-bold text-[#5FD4FD] hover:text-white uppercase transition-colors cursor-pointer"
+              >
+                Yard Map &rsaquo;
+              </button>
+            </div>
+
+            {/* Structured Table Container: Clean borders, table-fixed, zero overflow */}
+            <div className="border-2 border-[#5FD4FD] bg-white/10 overflow-hidden shadow-md">
+              <table className="w-full text-left text-xs border-collapse table-fixed">
+                <thead>
+                  <tr className="bg-white text-[#0082FC] border-b border-[#5FD4FD]">
+                    <th
+                      scope="col"
+                      className="p-2 font-black uppercase tracking-wider w-[58%]"
+                    >
+                      Regional Hub
+                    </th>
+                    <th
+                      scope="col"
+                      className="p-2 font-black uppercase tracking-wider text-right w-[42%]"
+                    >
+                      Inventory Status
+                    </th>
+                  </tr>
+                </thead>
+                <tbody className="divide-y divide-white/20">
+                  {DISTRIBUTION_YARDS.map((yard) => (
+                    <tr
+                      key={yard.id}
+                      className="hover:bg-white/10 transition-colors"
+                    >
+                      <td className="p-2.5 align-top">
+                        <div className="font-bold text-white text-xs leading-snug break-words">
+                          {yard.city}, {yard.state}
+                        </div>
+                        <div className="text-[11px] text-white/80 font-mono mt-0.5 break-words">
+                          {yard.phone}
+                        </div>
+                      </td>
+                      <td className="p-2.5 align-top text-right">
+                        <span className="inline-block bg-[#5FD4FD] text-[#0082FC] text-[10px] font-black uppercase px-2 py-0.5 shadow-xs">
+                          {yard.stockStatus}
+                        </span>
+                        <div className="text-[10px] text-white/80 mt-1 leading-tight break-words">
+                          {yard.transitHours.split(" ")[0]} Dispatch
+                        </div>
+                      </td>
+                    </tr>
+                  ))}
+                </tbody>
+              </table>
+
+              <div className="p-2 bg-white/5 border-t border-white/20 flex items-center justify-between text-[11px] text-white/80">
+                <span className="flex items-center gap-1">
+                  <Clock className="w-3 h-3 text-[#5FD4FD] shrink-0" />
+                  M-F 06:00 to 17:00 Local
+                </span>
+                <span className="font-mono text-[#5FD4FD]">
+                  Rail Spur Direct
+                </span>
+              </div>
             </div>
           </div>
         </div>
       </div>
 
-      {/* Bottom Bar: Legal copyright, terms, anti-theft scrap registry */}
-      <div className="border-t border-[#5FD4FD]/30 bg-[#0082FC] py-6 text-xs sm:text-sm text-white/90">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 space-y-3">
-          <div className="flex flex-col md:flex-row items-center justify-between gap-4 font-medium">
-            <div>&copy; 2026 Aqua Industries, Inc. All Rights Reserved.</div>
-            <div className="flex flex-wrap items-center gap-4 text-white/90">
-              <span className="whitespace-nowrap">ASTM A536 Certified</span>
-              <span>&bull;</span>
-              <span className="whitespace-nowrap">AWWA C153 &amp; C110</span>
-              <span>&bull;</span>
-              <span className="whitespace-nowrap">NSF/ANSI 61 &amp; 372</span>
-              <span>&bull;</span>
-              <span className="whitespace-nowrap">Terms of Sale</span>
+      {/* ========================================================
+          3. BOTTOM BAR: LEGAL COPYRIGHT & ANTI-THEFT SCRAP REGISTRY
+      ======================================================== */}
+      <div className="border-t-2 border-[#5FD4FD]/40 bg-[#0082FC] py-6 sm:py-8 text-xs text-white">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 space-y-4">
+          <div className="flex flex-col md:flex-row items-center justify-between gap-4">
+            <div className="font-semibold text-white/90 text-center md:text-left">
+              &copy; 2026 Aqua Industries, Inc. All Rights Reserved. Melville,
+              NY.
+            </div>
+
+            {/* Certifications Badges */}
+            <div className="flex flex-wrap items-center justify-center gap-2">
+              <span className="px-2.5 py-1 bg-white text-[#0082FC] font-extrabold text-[11px] uppercase tracking-wider border border-[#5FD4FD]">
+                ASTM A536 Certified
+              </span>
+              <span className="px-2.5 py-1 bg-white text-[#0082FC] font-extrabold text-[11px] uppercase tracking-wider border border-[#5FD4FD]">
+                AWWA C153 &amp; C110
+              </span>
+              <span className="px-2.5 py-1 bg-white text-[#0082FC] font-extrabold text-[11px] uppercase tracking-wider border border-[#5FD4FD]">
+                NSF/ANSI 61 &amp; 372
+              </span>
+              <span className="px-2.5 py-1 bg-white text-[#0082FC] font-extrabold text-[11px] uppercase tracking-wider border border-[#5FD4FD]">
+                100% AIS / BABA Ready
+              </span>
             </div>
           </div>
 
-          <p className="text-xs sm:text-sm text-white/80 leading-relaxed">
-            <strong>Anti-Theft Scrap Registry Notice:</strong> All municipal
-            frames, grates, and waterworks fittings carry deep-relief Aqua
-            Industries foundry trademarks and heat marks. The unauthorized sale,
-            transfer, or scrap processing of municipal utility castings is
-            strictly tracked and prohibited under state metal theft laws.
-          </p>
+          {/* Enclosed Anti-Theft Scrap Registry Notice Box */}
+          <div className="p-3.5 bg-white/10 border-2 border-[#5FD4FD]/40 text-[11px] text-white/90 leading-relaxed shadow-sm">
+            <strong className="text-white uppercase tracking-wider font-black">
+              Anti-Theft Scrap Registry Notice:{" "}
+            </strong>
+            All municipal frames, storm grates, and waterworks fittings carry
+            deep-relief Aqua Industries foundry trademarks, pattern numbers, and
+            permanent melt heat codes. Unauthorized sale, transport, or scrap
+            smelting of municipal utility infrastructure is actively prosecuted
+            under federal interstate commerce and state metal theft statutes.
+          </div>
         </div>
       </div>
     </footer>
