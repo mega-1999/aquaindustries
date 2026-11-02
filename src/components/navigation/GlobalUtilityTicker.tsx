@@ -65,9 +65,9 @@ export const GlobalUtilityTicker: React.FC<GlobalUtilityTickerProps> = ({
 
           {/* Center: Single-line badge */}
           <div className="hidden xl:flex items-center shrink-0">
-            <span className="inline-flex items-center gap-1.5 px-3 py-1 rounded-none bg-white/10 border border-[#5fd4fd] text-[#5fd4fd] font-bold text-xs whitespace-nowrap shadow-xs">
+            <span className="inline-flex items-center gap-1.5 px-3 py-1 rounded-none bg-white/10 border border-[#5fd4fd] text-white font-bold text-xs whitespace-nowrap shadow-xs">
               <ShieldCheck className="w-4 h-4 text-[#5fd4fd] shrink-0" />
-              AWWA Standards &amp; NSF/ANSI 61 Certified Material
+              <span>AWWA Standards &amp; NSF/ANSI 61 Certified Material</span>
             </span>
           </div>
 
