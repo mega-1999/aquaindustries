@@ -18,6 +18,7 @@ import { MainNavbar } from "../components/navigation/MainNavbar";
 import { FloatingQuickActions } from "../components/navigation/FloatingQuickActions";
 import { ProductCatalogMatrix } from "../components/products/ProductCatalogMatrix";
 import { CurbBoxSpotlight } from "../components/products/CurbBoxSpotlight";
+import { EngineeringInnovationSpotlight } from "../components/products/EngineeringInnovationSpotlight";
 import { CommercialQuoteForm } from "../components/rfq/CommercialQuoteForm";
 import { CivilCallToAction } from "../components/sections/CivilCallToAction";
 import { DomesticStandards } from "../components/sections/DomesticStandards";
@@ -116,10 +117,17 @@ export default function Home() {
           onPreviewSubmittal={(product) => setSubmittalModalProduct(product)}
         />
 
-        {/* Section 3: 3rd Place - American Infrastructure Ductile Iron Waterworks Overview (Blue #0082FC - Alternating) */}
-        <CinematicHero variant="blue" />
+        {/* Section 3: 3rd Place - Brand New Innovation Section (Series 3000 Cam-Action Restraint - Blue #0082FC - Alternating) */}
+        <EngineeringInnovationSpotlight
+          product={PRODUCTS_CATALOG[2]}
+          onAddToRfq={handleAddToRfq}
+          onPreviewSubmittal={(product) => setSubmittalModalProduct(product)}
+        />
 
-        {/* Section 4: Quick Metrics Ribbon */}
+        {/* Section 4: American Infrastructure Ductile Iron Waterworks Overview (White Background #FFFFFF - Alternating) */}
+        <CinematicHero variant="white" />
+
+        {/* Section 5: Quick Metrics Ribbon */}
         <CertifiedMetricsBar />
 
         {/* Section 4: Civil Call to Action (Soleno call_to_action split pattern) */}

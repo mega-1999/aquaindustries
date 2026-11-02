@@ -83,10 +83,10 @@ export const SolenoSamplingHero: React.FC = () => {
             {/* Action Buttons */}
             <div className="flex flex-col sm:flex-row items-stretch sm:items-center gap-3.5 pt-2">
               <a
-                href="#sampling-station-spotlight"
+                href="#curb-box-spotlight"
                 className="inline-flex items-center justify-center gap-2 px-6 py-3.5 text-sm sm:text-base font-bold text-[#0082FC] bg-white hover:bg-[#5FD4FD] hover:text-[#0082FC] rounded-none shadow-lg transition-all transform hover:-translate-y-0.5 active:translate-y-0 whitespace-nowrap"
               >
-                <span>Explore Sampling Station</span>
+                <span>Explore Curb Box &amp; Innovations</span>
                 <ArrowRight className="w-4 h-4 text-[#0082FC]" />
               </a>
 
