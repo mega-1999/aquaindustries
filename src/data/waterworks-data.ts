@@ -178,7 +178,7 @@ export const PRODUCTS_CATALOG: ProductItem[] = [
       "Allows 5 degrees of angular pipe deflection for seismic ground settling",
       "UL Listed and FM Approved for municipal and commercial fire mains",
     ],
-    imageUrl: "/images/our-images/MJ_Fittings.jpeg",
+    imageUrl: "/images/products/Joint-Restraints.jpg",
     aisCompliant: true,
     buyAmericaReady: true,
   },

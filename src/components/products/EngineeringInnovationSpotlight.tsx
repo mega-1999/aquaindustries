@@ -3,11 +3,16 @@
 import {
   Activity,
   ArrowRight,
+  Award,
   CheckCircle2,
+  ChevronRight,
+  Download,
   FileCheck2,
   Gauge,
   Layers,
   PhoneCall,
+  RotateCcw,
+  ShieldAlert,
   ShieldCheck,
   Sliders,
   Sparkles,
@@ -23,58 +28,331 @@ interface EngineeringInnovationSpotlightProps {
   product: ProductItem;
 }
 
-const INNOVATION_VARIANTS = [
+interface Hotspot {
+  id: number;
+  x: string;
+  y: string;
+  title: string;
+  badge: string;
+  desc: string;
+}
+
+interface InnovationProduct {
+  id: string;
+  name: string;
+  subtitle: string;
+  categoryLabel: string;
+  badge: string;
+  spec: string;
+  imageUrl: string;
+  summary: string;
+  standards: string;
+  metallurgy: string;
+  pressure: string;
+  coating: string;
+  pipeCompatibility: string;
+  submittalDoc: string;
+  features: string[];
+  hotspots: Hotspot[];
+}
+
+const INNOVATION_PRODUCTS: InnovationProduct[] = [
   {
-    id: "restraints",
-    label: "Series 3000 Cam-Action Restraint",
-    sublabel: "Concrete-Free Mechanical Joint Restraint",
-    src: "/images/our-images/MJ_Fittings.jpeg",
-    badge: "UL Listed / FM Approved",
+    id: "series-3000-restraint",
+    name: "Series 3000 Cam-Action MJ Restraint",
+    subtitle: "Self-Actuating Radial Cam Wedge Engineering",
+    categoryLabel: "Ductile Iron Pipeline Restraint",
+    badge: "UL Listed & FM Approved",
     spec: "350 PSI Working • 500 PSI Proof",
+    imageUrl: "/images/products/Joint-Restraints.jpg",
+    summary:
+      "The engineering breakthrough that eliminated concrete thrust blocks. Independent heat-treated ductile iron gripping wedges bite radially into the pipe wall proportionally as line pressure surges. Accommodates 5° joint deflection for ground settling without leaking.",
+    standards: "AWWA C111 / ASTM A536 Grade 65-45-12",
+    metallurgy: "High-Strength ASTM A536 Ductile Iron (AIS Compliant)",
+    pressure: "350 PSI Continuous Working Pressure (2:1 Safety Margin)",
+    coating: "Electrostatic Fusion-Bonded Blue Epoxy per AWWA C116",
+    pipeCompatibility: "Ductile Iron (Class 50-56) & AWWA C900 / C905 PVC",
+    submittalDoc: "SUBMITTAL_SERIES_3000_RESTRAINT.PDF",
+    features: [
+      "Dynamic cam leverage: wedges bite deeper under high-pressure water surges",
+      "Calibrated breakaway shear-head nuts eliminate torque wrench guesswork",
+      "Allows 5° angular joint deflection for seismic settling without stress",
+      "Eliminates 48-hour concrete thrust block pour and cure delays completely",
+    ],
+    hotspots: [
+      {
+        id: 1,
+        x: "28%",
+        y: "32%",
+        title: "Heat-Treated Cam Wedges",
+        badge: "55-60 HRC Hardened Teeth",
+        desc: "Precision-cast tool steel wedges with directional biting serrations. As hydraulic line pressure pushes the pipe, cam leverage forces wedges deeper into the pipe wall.",
+      },
+      {
+        id: 2,
+        x: "74%",
+        y: "28%",
+        title: "Breakaway Torque Shear Nuts",
+        badge: "65-90 Ft-Lbs Calibrated",
+        desc: "Double-hex shear nuts snap cleanly at predetermined factory torque, visually confirming proper installation without crushing thin pipe walls.",
+      },
+      {
+        id: 3,
+        x: "48%",
+        y: "68%",
+        title: "Grade 65-45-12 Ductile Gland",
+        badge: "65,000 PSI Tensile Strength",
+        desc: "High-ductility cast iron body with 12% elongation prevents catastrophic brittle cracking under heavy highway soil overburden and vehicular traffic.",
+      },
+      {
+        id: 4,
+        x: "78%",
+        y: "74%",
+        title: "5° Flex Deflection Pocket",
+        badge: "AWWA C111 MJ Seating",
+        desc: "Internal gland geometry allows up to 5° axial deflection per joint during installation and post-burial settlement while holding 350 PSI water tightness.",
+      },
+    ],
   },
   {
-    id: "ada-plates",
-    label: "Indestructible Cast Iron ADA Armor",
-    sublabel: "Non-Cracking Truncated Dome Tiles",
-    src: "/images/our-images/warning-plate.png",
-    badge: "AASHTO H-20 Traffic Rated",
-    spec: "50+ Year Snowplow Armor",
+    id: "ultra-lok-pvc-restraint",
+    name: "Ultra-Lok 360° Restraint for C900 PVC",
+    subtitle: "Full-Circumference Serrated Bell Restraint System",
+    categoryLabel: "PVC Pressure Pipe Engineering",
+    badge: "ASTM F1674 & UNI-B-13",
+    spec: "305 PSI (DR14) • 235 PSI (DR18)",
+    imageUrl: "/images/products/ULTRA-PVC-Restraints-Spotlight.jpg",
+    summary:
+      "Engineered specifically for PVC pressure mains to prevent pipe notch sensitivity. Continuous 360° contoured clamping rings distribute restraining force uniformly around the entire pipe circumference, preventing localized point-load wall deformation.",
+    standards: "ASTM F1674 / UNI-B-13 / AWWA C900",
+    metallurgy: "ASTM A536 Grade 65-45-12 Ductile Body & Low-Alloy Tie Rods",
+    pressure: "Full Pressure Rating of AWWA C900 PVC Pipe (DR14 / DR18 / DR25)",
+    coating: "Corrosion-Resistant Black Bituminous or Fusion-Bonded Epoxy",
+    pipeCompatibility: '4" to 24" AWWA C900 and C905 PVC Pressure Pipe',
+    submittalDoc: "SUBMITTAL_ULTRA_PVC_RESTRAINT.PDF",
+    features: [
+      "True 360° radial engagement prevents pipe ovality and localized stress cracks",
+      "Split-ring design enables fast, drop-over in-trench assembly on existing lines",
+      "Includes high-strength Cor-Blue fluoropolymer coated ductile tie rods",
+      "Exceeds AWWA C900 burst proof testing standards with 2:1 safety factor",
+    ],
+    hotspots: [
+      {
+        id: 1,
+        x: "34%",
+        y: "30%",
+        title: "360° Contoured Serrated Ring",
+        badge: "Zero Point-Load Stress",
+        desc: "Smoothly radiused internal serrations grip the PVC pipe exterior without puncturing the extrusion boundary, protecting against long-term fatigue cracking.",
+      },
+      {
+        id: 2,
+        x: "66%",
+        y: "24%",
+        title: "Fluoropolymer Coated Tie Rods",
+        badge: "Cor-Blue Corrosion Barrier",
+        desc: "Heavy-gauge low-alloy steel connecting rods transfer thrust across the PVC push-on bell joint with extreme resistance to aggressive soils.",
+      },
+      {
+        id: 3,
+        x: "50%",
+        y: "65%",
+        title: "Split-Collar Drop-In Clamp",
+        badge: "No Pipe Cutting Required",
+        desc: "Hinged two-piece ductile iron collars bolt together securely in cramped trenches, cutting contractor labor by more than 50% compared to harness sleeves.",
+      },
+      {
+        id: 4,
+        x: "74%",
+        y: "76%",
+        title: "Machined Bell-Stop Flange",
+        badge: "Integral Shoulder Lock",
+        desc: "Seats squarely behind the PVC bell socket contour, locking the bell and spigot securely together during thermal ground expansion and contraction.",
+      },
+    ],
   },
   {
-    id: "trench-grates",
-    label: "Heavy-Duty High-Inflow Vane Grates",
-    sublabel: "Bicycle-Safe Storm Drainage Systems",
-    src: "/images/our-images/trench-grates.png",
-    badge: "State DOT Approved",
-    spec: "AASHTO M306 Highway Cast Iron",
+    id: "arc-zinc-shield",
+    name: "Arc-Zinc Thermal Spray Metallized Shield",
+    subtitle: "Active Sacrificial Galvanic Barrier for Aggressive Soils",
+    categoryLabel: "Advanced Corrosion Technology",
+    badge: "ISO 8179-1 & AWWA C151 Annex A",
+    spec: "200 g/m² 99.99% Pure Molten Zinc",
+    imageUrl: "/images/products/Spotlight-ARC-ZINC.jpg",
+    summary:
+      "The pinnacle of ductile iron corrosion protection. High-velocity electric arc guns atomize 99.99% pure molten zinc directly onto red-hot annealed iron. Creates an active galvanic anode that chemically self-heals scratches in corrosive, low-resistivity soils.",
+    standards: "ISO 8179-1 / AWWA C151 Annex A / ASTM A536",
+    metallurgy:
+      "99.99% Pure Metallized Zinc + Grade 65-45-12 Ductile Substrate",
+    pressure: "Rated for 350 PSI Working Pressure Fittings & Spools",
+    coating:
+      "200 g/m² Pure Zinc Metallization + 80-Micron Synthetic Resin Seal",
+    pipeCompatibility:
+      "All AWWA C153 & C110 Ductile Iron Fittings and Watermains",
+    submittalDoc: "SUBMITTAL_ARC_ZINC_CORROSION_SHIELD.PDF",
+    features: [
+      "Active galvanic sacrificial barrier outlasts standard bituminous paint by decades",
+      "Self-healing mechanism: zinc oxidizes to form insoluble protective carbonates",
+      "High-bond adhesion exceeds 5 MPa, resisting severe transit and jobsite gouging",
+      "Meets the most rigorous EPA and state DOT mandates for acidic and coastal soils",
+    ],
+    hotspots: [
+      {
+        id: 1,
+        x: "30%",
+        y: "35%",
+        title: "Molten Zinc Thermal Deposit",
+        badge: "200 g/m² Pure Zinc",
+        desc: "Electric arc guns propel atomized molten zinc droplets at supersonic velocity, forming a dense, interlocking metallurgic crystalline matrix over the iron.",
+      },
+      {
+        id: 2,
+        x: "70%",
+        y: "30%",
+        title: "Self-Healing Sacrificial Layer",
+        badge: "Galvanic Anode Action",
+        desc: "If soil rocks scratch through to bare iron, surrounding zinc reacts with groundwater to precipitate zinc hydroxycarbonate, sealing the breach automatically.",
+      },
+      {
+        id: 3,
+        x: "50%",
+        y: "65%",
+        title: "Pore-Sealing Synthetic Topcoat",
+        badge: "80µm Polymeric Shield",
+        desc: "Specially formulated acrylic resin penetrates microscopic zinc pore voids, establishing an impermeable barrier against sulfides and acidic moisture.",
+      },
+      {
+        id: 4,
+        x: "24%",
+        y: "75%",
+        title: "Ductile Iron Interface",
+        badge: ">5 MPa Adhesion",
+        desc: "Direct metallurgical fusion with the ASTM A536 ductile iron substrate ensures zero peeling, flaking, or cathodic disbondment during burial.",
+      },
+    ],
+  },
+  {
+    id: "mj-swivel-adapter",
+    name: "Precision MJ x MJ Swivel Adapter",
+    subtitle: "360° Rotational Gland System for Fire Hydrants & Valves",
+    categoryLabel: "Valve & Hydrant Accessories",
+    badge: "AWWA C153 & ANSI A21.53",
+    spec: "350 PSI Working Pressure",
+    imageUrl: "/images/products/MJ-x-MJ-Adapter-Blue.jpg",
+    summary:
+      "Eliminates joint binding and misaligned fire hydrant ports. A precision-machined 360-degree rotating follower gland allows contractors to plumb and level hydrant nozzles and gate valves instantly without cutting, heating, or forcing buried pipe.",
+    standards: "AWWA C153 / ANSI A21.53 / ASTM A536",
+    metallurgy: "ASTM A536 Grade 65-45-12 High-Tensile Ductile Iron",
+    pressure: "350 PSI Continuous Working • Hydro-Tested to 500 PSI",
+    coating: "NSF 61 Certified High-Build Electrostatic Powder Coat",
+    pipeCompatibility: '4" to 12" Standard Mechanical Joint Watermain Outlets',
+    submittalDoc: "SUBMITTAL_MJ_SWIVEL_ADAPTER.PDF",
+    features: [
+      "360° continuous rotation allows rapid plumb alignment of hydrant nozzles",
+      "Eliminates crooked hydrant installations caused by trench grade variances",
+      "Factory-installed retaining ring locks components securely during transport",
+      "Double cement mortar lined or fusion epoxy lined for maximum hydraulic flow",
+    ],
+    hotspots: [
+      {
+        id: 1,
+        x: "32%",
+        y: "30%",
+        title: "360° Rotating Swivel Gland",
+        badge: "Zero-Strain Alignment",
+        desc: "Spins freely around the barrel shoulder until T-bolts are torqued down, allowing exact municipal orientation for hose nozzles and valve stems.",
+      },
+      {
+        id: 2,
+        x: "68%",
+        y: "32%",
+        title: "Machined Gasket Cavity",
+        badge: "AWWA C111 Standard Gasket",
+        desc: "Precision CNC-machined mechanical joint socket ensures leak-free compression of standard ductile iron MJ gaskets up to 350 PSI.",
+      },
+      {
+        id: 3,
+        x: "50%",
+        y: "65%",
+        title: "Compact Short-Bury Body",
+        badge: "Heavy Cast Section",
+        desc: "Minimized center-to-face dimensions reduce trench excavation footprint between the main line tee and auxiliary hydrant shutoff valve.",
+      },
+      {
+        id: 4,
+        x: "75%",
+        y: "72%",
+        title: "Fusion-Bonded Blue Epoxy",
+        badge: "NSF/ANSI 61 Lead-Free",
+        desc: "12-mil holiday-free epoxy coating provides full resistance to municipal potable water chlorine and eliminates iron tuberculation forever.",
+      },
+    ],
   },
 ];
 
 const PRESSURE_STEPS = [
-  { psi: 100, label: "100 PSI", bite: "0.8 mm", state: "Initial Seating" },
-  { psi: 250, label: "250 PSI", bite: "1.8 mm", state: "Operating Load" },
-  { psi: 350, label: "350 PSI", bite: "2.6 mm", state: "AWWA Working Max" },
-  { psi: 500, label: "500 PSI", bite: "3.5 mm", state: "Surge Proof Seal" },
+  {
+    psi: 100,
+    label: "100 PSI",
+    bite: "0.8 mm",
+    safety: "3.5x",
+    state: "Initial Seating",
+  },
+  {
+    psi: 250,
+    label: "250 PSI",
+    bite: "1.8 mm",
+    safety: "2.8x",
+    state: "Operating Load",
+  },
+  {
+    psi: 350,
+    label: "350 PSI",
+    bite: "2.6 mm",
+    safety: "2.2x",
+    state: "AWWA Working Max",
+  },
+  {
+    psi: 500,
+    label: "500 PSI",
+    bite: "3.5 mm",
+    safety: "1.8x",
+    state: "Surge Proof Seal",
+  },
 ];
 
 export const EngineeringInnovationSpotlight: React.FC<
   EngineeringInnovationSpotlightProps
 > = ({ onAddToRfq, onPreviewSubmittal, product }) => {
-  const [activeVariantIndex, setActiveVariantIndex] = useState(0);
-  const [viewMode, setViewMode] = useState<"photo" | "simulation">("photo");
+  const [selectedProductIndex, setSelectedProductIndex] = useState(0);
+  const [activeHotspot, setActiveHotspot] = useState<number | null>(null);
+  const [viewMode, setViewMode] = useState<"photo" | "simulation" | "torque">(
+    "photo",
+  );
   const [selectedPsi, setSelectedPsi] = useState(350);
+  const [torqueValue, setTorqueValue] = useState(85);
 
-  const activeVariant = INNOVATION_VARIANTS[activeVariantIndex];
+  const currentProduct = INNOVATION_PRODUCTS[selectedProductIndex];
+  const activeSpotData = currentProduct.hotspots.find(
+    (h) => h.id === activeHotspot,
+  );
   const currentStep =
     PRESSURE_STEPS.find((p) => p.psi === selectedPsi) || PRESSURE_STEPS[2];
+
+  const handleSelectProduct = (index: number) => {
+    setSelectedProductIndex(index);
+    setActiveHotspot(null);
+  };
+
+  const isTorqueSheared = torqueValue >= 75;
 
   return (
     <section
       id="innovation-spotlight"
-      aria-label="3rd Showcase: Groundbreaking Waterworks Innovation"
-      className="py-12 sm:py-16 bg-[#0082FC] text-white border-b-4 border-[#5FD4FD] relative overflow-hidden"
+      aria-label="3rd Showcase: Next-Gen Mechanical Joint Innovations"
+      className="py-14 sm:py-20 bg-[#0082FC] text-white border-b-4 border-[#5FD4FD] relative overflow-hidden"
     >
-      {/* Background Architectural Grid Overlay */}
+      {/* Background Architectural Grid Lines */}
       <div
         className="absolute inset-0 opacity-10 pointer-events-none"
         style={{
@@ -85,111 +363,278 @@ export const EngineeringInnovationSpotlight: React.FC<
       />
 
       <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        {/* Section Header with Best Waterworks Copywriting */}
-        <div className="max-w-3xl mb-8 sm:mb-12">
-          <div className="inline-flex items-center gap-2 px-3 py-1 bg-white text-[#0082FC] text-xs font-bold uppercase tracking-wider rounded-none mb-3 shadow-md border-2 border-[#5FD4FD]">
-            <Sparkles className="w-3.5 h-3.5 text-[#0082FC] shrink-0" />
-            <span>
-              3rd Product Showcase &bull; Next-Gen Mechanical Joint Engineering
-            </span>
+        {/* ========================================================
+            TOP SECTION HEADER
+        ======================================================== */}
+        <div className="flex flex-col md:flex-row md:items-end justify-between gap-6 mb-10 sm:mb-12 border-b-2 border-white/20 pb-8">
+          <div className="max-w-3xl">
+            <div className="inline-flex items-center gap-2 px-3.5 py-1.5 bg-white text-[#0082FC] text-xs font-bold uppercase tracking-wider rounded-none mb-4 shadow-md border-2 border-[#5FD4FD]">
+              <Sparkles className="w-4 h-4 text-[#0082FC] shrink-0" />
+              <span>
+                3rd Product Showcase &bull; Next-Gen Mechanical Joint
+                Engineering
+              </span>
+            </div>
+
+            <h2 className="text-2xl sm:text-4xl lg:text-5xl font-black uppercase tracking-tight text-white leading-[1.05] mb-3">
+              {currentProduct.name.split(" ")[0]}{" "}
+              <span className="text-[#5FD4FD]">
+                {currentProduct.name.split(" ").slice(1).join(" ")}
+              </span>
+            </h2>
+
+            <p className="text-sm sm:text-base text-white/95 font-normal leading-relaxed">
+              {currentProduct.summary}
+            </p>
           </div>
 
-          <h2 className="text-2xl sm:text-4xl lg:text-5xl font-black uppercase tracking-tight text-white leading-[1.05] mb-3">
-            Series 3000{" "}
-            <span className="text-[#5FD4FD]">Cam-Action Joint Restraint</span>
-          </h2>
-
-          <p className="text-sm sm:text-base text-white/95 font-normal leading-relaxed">
-            The engineering breakthrough that rendered bulky concrete thrust
-            blocks obsolete. Aqua Industries&apos; Series 3000 harnesses dynamic
-            cam leverage: heat-treated ductile iron gripping wedges bite
-            radially into the pipe wall proportionally as line pressure surges.
-            Eliminates trench over-excavation, cuts installation labor by 70%,
-            and absorbs ground seismic deflection while maintaining an
-            impenetrable 350 PSI pressure seal.
-          </p>
+          {/* Quick Action Badges */}
+          <div className="flex flex-wrap md:flex-col items-start md:items-end gap-2 shrink-0">
+            <span className="px-3 py-1 bg-white text-[#0082FC] text-xs font-black uppercase tracking-wider border-2 border-[#5FD4FD] shadow-sm">
+              {currentProduct.badge}
+            </span>
+            <span className="px-3 py-1 bg-[#5FD4FD] text-[#0082FC] text-xs font-bold uppercase tracking-wider">
+              {currentProduct.spec}
+            </span>
+            <span className="text-[11px] text-white/80 font-mono">
+              Melville, NY &amp; Dallas Hub Stock
+            </span>
+          </div>
         </div>
 
-        {/* 2-Column Balanced Engineering Grid */}
-        <div className="grid grid-cols-1 lg:grid-cols-12 gap-10 lg:gap-14 items-center">
-          {/* LEFT 6 COLUMNS: Visual Showcase, Dynamic Bite Simulator, and Variant Selector */}
-          <div className="lg:col-span-6 flex flex-col gap-6">
-            {/* View Mode Switcher */}
-            <div className="flex items-center justify-between gap-2 border-2 border-white/60 p-1 bg-[#0082FC]">
+        {/* ========================================================
+            INNOVATION PRODUCT TABS (4 REAL WATERWORKS INNOVATIONS)
+        ======================================================== */}
+        <div className="grid grid-cols-2 lg:grid-cols-4 gap-2 sm:gap-3 mb-8">
+          {INNOVATION_PRODUCTS.map((prod, idx) => {
+            const isSelected = selectedProductIndex === idx;
+            return (
+              <button
+                key={prod.id}
+                type="button"
+                onClick={() => handleSelectProduct(idx)}
+                className={`p-3 sm:p-4 text-left border-2 rounded-none transition-all flex flex-col justify-between cursor-pointer ${
+                  isSelected
+                    ? "bg-white text-[#0082FC] border-[#5FD4FD] shadow-lg ring-2 ring-white"
+                    : "bg-white/10 text-white border-white/30 hover:border-[#5FD4FD] hover:bg-white/20"
+                }`}
+              >
+                <div>
+                  <div className="flex items-center justify-between gap-1 mb-1.5">
+                    <span
+                      className={`text-[10px] font-black uppercase tracking-wider px-1.5 py-0.5 ${
+                        isSelected
+                          ? "bg-[#0082FC] text-white"
+                          : "bg-white/20 text-white"
+                      }`}
+                    >
+                      Innovation 0{idx + 1}
+                    </span>
+                    <span
+                      className={`text-[10px] font-bold ${
+                        isSelected ? "text-[#0082FC]" : "text-[#5FD4FD]"
+                      }`}
+                    >
+                      AWWA
+                    </span>
+                  </div>
+                  <h3
+                    className={`text-xs sm:text-sm font-black uppercase leading-snug line-clamp-2 ${
+                      isSelected ? "text-[#0082FC]" : "text-white"
+                    }`}
+                  >
+                    {prod.name}
+                  </h3>
+                </div>
+                <p
+                  className={`text-[11px] mt-2 font-medium line-clamp-1 ${
+                    isSelected ? "text-[#0082FC]/75" : "text-white/75"
+                  }`}
+                >
+                  {prod.subtitle}
+                </p>
+              </button>
+            );
+          })}
+        </div>
+
+        {/* ========================================================
+            MAIN 2-COLUMN BALANCED ENGINEERING WORKBENCH
+        ======================================================== */}
+        <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-12 items-start">
+          {/* ========================================================
+              LEFT 7 COLUMNS: INTERACTIVE VISUAL DISPLAY + HOTSPOTS
+          ======================================================== */}
+          <div className="lg:col-span-7 flex flex-col gap-4">
+            {/* View Mode Controller */}
+            <div className="flex items-center justify-between gap-1 border-2 border-white/60 p-1 bg-[#0082FC]">
               <button
                 type="button"
                 onClick={() => setViewMode("photo")}
-                className={`flex-1 py-1.5 px-3 text-xs font-black uppercase tracking-wider transition-all rounded-none cursor-pointer text-center ${
+                className={`flex-1 py-2 px-3 text-xs font-black uppercase tracking-wider transition-all rounded-none cursor-pointer flex items-center justify-center gap-1.5 ${
                   viewMode === "photo"
                     ? "bg-white text-[#0082FC] shadow-sm"
                     : "text-white hover:bg-white/10"
                 }`}
               >
-                Product Photographs
+                <Sparkles className="w-3.5 h-3.5" />
+                <span>Interactive Hotspots</span>
               </button>
+
               <button
                 type="button"
                 onClick={() => setViewMode("simulation")}
-                className={`flex-1 py-1.5 px-3 text-xs font-black uppercase tracking-wider transition-all rounded-none cursor-pointer flex items-center justify-center gap-1.5 ${
+                className={`flex-1 py-2 px-3 text-xs font-black uppercase tracking-wider transition-all rounded-none cursor-pointer flex items-center justify-center gap-1.5 ${
                   viewMode === "simulation"
                     ? "bg-white text-[#0082FC] shadow-sm"
                     : "text-white hover:bg-white/10"
                 }`}
               >
                 <Sliders className="w-3.5 h-3.5" />
-                <span>Dynamic Cam Grip Render</span>
+                <span>Pressure Bite Simulation</span>
+              </button>
+
+              <button
+                type="button"
+                onClick={() => setViewMode("torque")}
+                className={`flex-1 py-2 px-3 text-xs font-black uppercase tracking-wider transition-all rounded-none cursor-pointer flex items-center justify-center gap-1.5 ${
+                  viewMode === "torque"
+                    ? "bg-white text-[#0082FC] shadow-sm"
+                    : "text-white hover:bg-white/10"
+                }`}
+              >
+                <Wrench className="w-3.5 h-3.5" />
+                <span>Torque Shear Test</span>
               </button>
             </div>
 
-            <div className="relative bg-white border-4 border-[#5FD4FD] p-6 sm:p-10 shadow-2xl flex flex-col items-center justify-center min-h-[420px] sm:min-h-[480px] text-[#0082FC]">
+            {/* OUTSIDE TOP AREA FOR ACTIVE HOTSPOT INSPECTION DETAILS */}
+            {activeSpotData && viewMode === "photo" && (
+              <div
+                role="region"
+                aria-live="polite"
+                className="w-full bg-white text-[#0082FC] border-4 border-[#5FD4FD] p-4 shadow-xl animate-in fade-in slide-in-from-top duration-200"
+              >
+                <div className="flex items-start justify-between gap-4 mb-2">
+                  <div className="flex items-center gap-2">
+                    <span className="w-6 h-6 bg-[#0082FC] text-white text-xs font-black flex items-center justify-center shrink-0">
+                      {activeSpotData.id}
+                    </span>
+                    <h4 className="text-sm sm:text-base font-black uppercase text-[#0082FC]">
+                      {activeSpotData.title}
+                    </h4>
+                  </div>
+                  <span className="text-[11px] font-black uppercase bg-[#5FD4FD] text-[#0082FC] px-2.5 py-0.5 shrink-0">
+                    {activeSpotData.badge}
+                  </span>
+                </div>
+
+                <p className="text-xs sm:text-sm text-[#0082FC]/90 font-medium leading-relaxed mb-3">
+                  {activeSpotData.desc}
+                </p>
+
+                <div className="flex items-center justify-between border-t border-[#0082FC]/20 pt-2 text-xs">
+                  <span className="font-bold text-[#0082FC]/70 uppercase text-[10px]">
+                    Field Inspection Hotspot {activeSpotData.id} of{" "}
+                    {currentProduct.hotspots.length} &bull;{" "}
+                    {currentProduct.name}
+                  </span>
+                  <button
+                    type="button"
+                    onClick={() => setActiveHotspot(null)}
+                    className="font-black text-[#0082FC] hover:text-[#5FD4FD] uppercase cursor-pointer"
+                  >
+                    &times; Close Inspection
+                  </button>
+                </div>
+              </div>
+            )}
+
+            {/* MAIN VISUAL CANVAS */}
+            <div className="relative bg-white border-4 border-[#5FD4FD] p-6 sm:p-8 shadow-2xl flex flex-col items-center justify-center min-h-[420px] sm:min-h-[480px] text-[#0082FC] overflow-hidden">
               {/* Corner Waterworks Badge */}
-              <div className="absolute top-4 left-4 z-10">
-                <span className="text-[11px] font-black uppercase tracking-widest text-[#0082FC] bg-[#5FD4FD]/20 px-2.5 py-1 border border-[#0082FC]">
-                  {activeVariant.badge}
+              <div className="absolute top-4 left-4 z-20">
+                <span className="text-[10px] font-black uppercase tracking-widest text-[#0082FC] bg-[#5FD4FD]/30 px-2.5 py-1 border border-[#0082FC]">
+                  {currentProduct.categoryLabel}
                 </span>
               </div>
 
               {/* Top Right Spec Tag */}
-              <div className="absolute top-4 right-4 z-10 hidden sm:block">
+              <div className="absolute top-4 right-4 z-20 hidden sm:block">
                 <span className="text-[11px] font-extrabold uppercase tracking-wider text-[#0082FC] bg-white border border-[#0082FC] px-2 py-1 shadow-xs">
-                  {activeVariant.spec}
+                  {currentProduct.standards.split("/")[0].trim()}
                 </span>
               </div>
 
-              {viewMode === "photo" ? (
-                <>
-                  {/* Main Active Image Display */}
-                  <div className="relative w-full h-[280px] sm:h-[340px] flex items-center justify-center overflow-hidden py-4">
-                    <img
-                      src={activeVariant.src}
-                      alt={activeVariant.label}
-                      className="max-h-full max-w-full object-contain filter drop-shadow-xl transition-all duration-300 group-hover:scale-105"
-                    />
-                  </div>
+              {/* --------------------------------------------------------
+                  MODE A: PRODUCT PHOTOGRAPH + INTERACTIVE HOTSPOT DOTS
+              -------------------------------------------------------- */}
+              {viewMode === "photo" && (
+                <div className="relative w-full h-[340px] sm:h-[400px] flex items-center justify-center select-none">
+                  {/* Real Waterworks Innovation Image */}
+                  <img
+                    src={currentProduct.imageUrl}
+                    alt={currentProduct.name}
+                    className="max-h-full max-w-full object-contain filter drop-shadow-xl transition-all duration-300"
+                  />
 
-                  {/* Bottom Caption Pill */}
-                  <div className="mt-4 text-center">
-                    <p className="text-base sm:text-lg font-black uppercase text-[#0082FC] tracking-tight">
-                      {activeVariant.label}
-                    </p>
-                    <p className="text-xs sm:text-sm font-semibold text-[#0082FC]/80">
-                      {activeVariant.sublabel}
-                    </p>
-                  </div>
-                </>
-              ) : (
-                /* Dynamic Cam Wedge Mechanical Bite Simulation Render */
-                <div className="w-full flex flex-col items-center justify-between h-[360px] sm:h-[400px] relative">
-                  {/* Hydrostatic Pressure Simulator Selector */}
-                  <div className="w-full flex items-center justify-center gap-1.5 z-10 pt-4">
+                  {/* Hotspot Markers (Clickable Dots 1, 2, 3, 4) */}
+                  {currentProduct.hotspots.map((spot) => {
+                    const isActive = activeHotspot === spot.id;
+                    return (
+                      <div
+                        key={spot.id}
+                        className="absolute z-20"
+                        style={{ top: spot.y, left: spot.x }}
+                      >
+                        <button
+                          type="button"
+                          onClick={() =>
+                            setActiveHotspot(isActive ? null : spot.id)
+                          }
+                          aria-label={`Inspect ${spot.title}`}
+                          className="relative flex items-center justify-center cursor-pointer group"
+                        >
+                          {/* Pulsing Radar Ring */}
+                          <span className="absolute -inset-2 rounded-full border-2 border-[#0082FC] opacity-75 animate-ping" />
+
+                          {/* Numbered Hotspot Pill */}
+                          <span
+                            className={`relative w-8 h-8 rounded-none border-2 font-black text-xs flex items-center justify-center shadow-lg transition-transform duration-200 group-hover:scale-110 ${
+                              isActive
+                                ? "bg-[#0082FC] text-white border-white scale-110 ring-2 ring-[#5FD4FD]"
+                                : "bg-white text-[#0082FC] border-[#0082FC] hover:bg-[#5FD4FD]"
+                            }`}
+                          >
+                            {spot.id}
+                          </span>
+
+                          {/* Hover Tooltip Label */}
+                          <span className="absolute bottom-full mb-1 left-1/2 -translate-x-1/2 hidden group-hover:block whitespace-nowrap bg-[#0082FC] text-white text-[10px] font-black uppercase px-2 py-0.5 border border-[#5FD4FD] shadow-md z-30 pointer-events-none">
+                            {spot.title}
+                          </span>
+                        </button>
+                      </div>
+                    );
+                  })}
+                </div>
+              )}
+
+              {/* --------------------------------------------------------
+                  MODE B: HYDROSTATIC CAM PRESSURE BITE SIMULATOR
+              -------------------------------------------------------- */}
+              {viewMode === "simulation" && (
+                <div className="w-full flex flex-col items-center justify-between h-[360px] sm:h-[420px] relative py-2">
+                  {/* Pressure Steps Selector */}
+                  <div className="w-full flex flex-wrap items-center justify-center gap-2 pt-2 z-10">
                     {PRESSURE_STEPS.map((step) => (
                       <button
                         key={step.psi}
                         type="button"
                         onClick={() => setSelectedPsi(step.psi)}
-                        className={`px-2.5 py-1 text-[11px] font-black uppercase rounded-none border transition-all cursor-pointer ${
+                        className={`px-3 py-1.5 text-xs font-black uppercase rounded-none border transition-all cursor-pointer ${
                           selectedPsi === step.psi
-                            ? "bg-[#0082FC] text-white border-[#0082FC] shadow-sm"
+                            ? "bg-[#0082FC] text-white border-[#0082FC] shadow-md"
                             : "bg-white text-[#0082FC] border-[#5FD4FD] hover:bg-[#5FD4FD]/20"
                         }`}
                       >
@@ -198,30 +643,30 @@ export const EngineeringInnovationSpotlight: React.FC<
                     ))}
                   </div>
 
-                  {/* Interactive Cross-Section SVG Diagram of Cam Wedge Force Vectors */}
-                  <div className="relative w-full flex-1 flex items-center justify-center overflow-hidden my-2">
+                  {/* Interactive Cross-Section SVG Diagram */}
+                  <div className="relative w-full flex-1 flex items-center justify-center my-3">
                     <svg
-                      viewBox="0 0 340 260"
-                      className="w-full h-full max-h-[240px]"
+                      viewBox="0 0 360 220"
+                      className="w-full h-full max-h-[220px]"
                       fill="none"
                       aria-label="Cam Action Wedge Bite Cross-Section"
                     >
                       {/* Ductile Iron Pipe Outer Wall */}
                       <rect
                         x="30"
-                        y="90"
-                        width="280"
-                        height="80"
+                        y="80"
+                        width="300"
+                        height="70"
                         fill="#0082FC"
                         fillOpacity="0.08"
                         stroke="#0082FC"
                         strokeWidth="3"
                       />
                       <text
-                        x="100"
-                        y="135"
+                        x="105"
+                        y="120"
                         fill="#0082FC"
-                        fontSize="10"
+                        fontSize="11"
                         fontWeight="black"
                         letterSpacing="1"
                       >
@@ -231,24 +676,24 @@ export const EngineeringInnovationSpotlight: React.FC<
                       {/* Top Restraint Gland Body */}
                       <rect
                         x="70"
-                        y="45"
-                        width="200"
+                        y="35"
+                        width="220"
                         height="35"
                         fill="#0082FC"
                         stroke="#5FD4FD"
                         strokeWidth="2"
                       />
                       <text
-                        x="105"
-                        y="66"
+                        x="110"
+                        y="57"
                         fill="#FFFFFF"
-                        fontSize="9"
+                        fontSize="10"
                         fontWeight="bold"
                       >
-                        SERIES 3000 MJ GLAND
+                        SERIES 3000 MJ GLAND BODY
                       </text>
 
-                      {/* Left Cam Wedge */}
+                      {/* Left Cam Wedge with Dynamic Penetration */}
                       <g
                         style={{
                           transform: `translateY(${
@@ -265,25 +710,23 @@ export const EngineeringInnovationSpotlight: React.FC<
                         }}
                       >
                         <polygon
-                          points="90,75 115,75 110,95 95,95"
+                          points="95,65 125,65 120,85 100,85"
                           fill="#5FD4FD"
                           stroke="#0082FC"
                           strokeWidth="2"
                         />
-                        {/* Force Vector Downward Arrow */}
                         <line
-                          x1="102"
-                          y1="60"
-                          x2="102"
-                          y2="88"
+                          x1="110"
+                          y1="50"
+                          x2="110"
+                          y2="78"
                           stroke="#0082FC"
                           strokeWidth="2.5"
                           strokeDasharray="4 2"
-                          className="animate-hydro-flow-fast"
                         />
                       </g>
 
-                      {/* Right Cam Wedge */}
+                      {/* Right Cam Wedge with Dynamic Penetration */}
                       <g
                         style={{
                           transform: `translateY(${
@@ -300,47 +743,27 @@ export const EngineeringInnovationSpotlight: React.FC<
                         }}
                       >
                         <polygon
-                          points="225,75 250,75 245,95 230,95"
+                          points="235,65 265,65 260,85 240,85"
                           fill="#5FD4FD"
                           stroke="#0082FC"
                           strokeWidth="2"
                         />
-                        {/* Force Vector Downward Arrow */}
                         <line
-                          x1="237"
-                          y1="60"
-                          x2="237"
-                          y2="88"
+                          x1="250"
+                          y1="50"
+                          x2="250"
+                          y2="78"
                           stroke="#0082FC"
                           strokeWidth="2.5"
                           strokeDasharray="4 2"
-                          className="animate-hydro-flow-fast"
                         />
                       </g>
-
-                      {/* Breakaway Torque Screw Heads */}
-                      <circle
-                        cx="102"
-                        cy="35"
-                        r="8"
-                        fill="#FFFFFF"
-                        stroke="#0082FC"
-                        strokeWidth="2"
-                      />
-                      <circle
-                        cx="237"
-                        cy="35"
-                        r="8"
-                        fill="#FFFFFF"
-                        stroke="#0082FC"
-                        strokeWidth="2"
-                      />
 
                       {/* Bottom Gland Collar */}
                       <rect
                         x="70"
-                        y="180"
-                        width="200"
+                        y="160"
+                        width="220"
                         height="30"
                         fill="#0082FC"
                         stroke="#5FD4FD"
@@ -350,114 +773,189 @@ export const EngineeringInnovationSpotlight: React.FC<
                   </div>
 
                   {/* Telemetry Indicator Readout */}
-                  <div className="w-full flex items-center justify-between border-t border-[#0082FC]/20 pt-2 px-1 text-xs">
+                  <div className="w-full grid grid-cols-3 gap-2 border-t border-[#0082FC]/20 pt-3 text-xs">
                     <div className="text-left font-bold text-[#0082FC]">
-                      <span>Radial Bite: </span>
-                      <strong className="text-[#0082FC] font-black">
-                        {currentStep.bite} Penetration
+                      <span className="text-[10px] text-[#0082FC]/70 uppercase block">
+                        Radial Bite Depth
+                      </span>
+                      <strong className="text-sm font-black text-[#0082FC]">
+                        {currentStep.bite}
+                      </strong>
+                    </div>
+
+                    <div className="text-center font-bold text-[#0082FC]">
+                      <span className="text-[10px] text-[#0082FC]/70 uppercase block">
+                        Safety Margin
+                      </span>
+                      <strong className="text-sm font-black text-[#0082FC]">
+                        {currentStep.safety} Proof
                       </strong>
                     </div>
 
                     <div className="text-right font-bold text-[#0082FC]">
-                      <span className="bg-[#5FD4FD]/30 px-2 py-0.5 border border-[#0082FC]">
+                      <span className="text-[10px] text-[#0082FC]/70 uppercase block">
+                        Operating State
+                      </span>
+                      <span className="inline-block bg-[#5FD4FD]/30 px-2 py-0.5 border border-[#0082FC] font-extrabold text-[11px]">
                         {currentStep.state}
                       </span>
                     </div>
                   </div>
                 </div>
               )}
+
+              {/* --------------------------------------------------------
+                  MODE C: TORQUE BREAKAWAY SHEAR TEST
+              -------------------------------------------------------- */}
+              {viewMode === "torque" && (
+                <div className="w-full flex flex-col items-center justify-between h-[360px] sm:h-[420px] relative py-2">
+                  <div className="w-full text-center">
+                    <h4 className="text-sm font-black uppercase text-[#0082FC] mb-1">
+                      Calibrated Breakaway Bolt Demonstration
+                    </h4>
+                    <p className="text-xs text-[#0082FC]/80 max-w-md mx-auto">
+                      Drag the torque wrench slider to simulate bolt tightening.
+                      At 75-90 ft-lbs, the upper hex nut shears cleanly off to
+                      prevent pipe wall pinching.
+                    </p>
+                  </div>
+
+                  {/* Visual Bolt Shear Demonstration */}
+                  <div className="my-4 flex flex-col items-center justify-center">
+                    <div className="relative w-32 h-44 flex flex-col items-center justify-center">
+                      {/* Upper Breakaway Hex Nut */}
+                      <div
+                        className={`w-14 h-8 border-2 border-[#0082FC] font-black text-xs flex items-center justify-center transition-all duration-300 ${
+                          isTorqueSheared
+                            ? "translate-x-12 -translate-y-6 rotate-45 opacity-0 bg-red-100"
+                            : "bg-[#5FD4FD] text-[#0082FC]"
+                        }`}
+                      >
+                        {isTorqueSheared ? "SHEARED" : "TORQUE"}
+                      </div>
+
+                      {/* Shear Plane Neck */}
+                      <div className="w-5 h-3 bg-[#0082FC] border border-white" />
+
+                      {/* Secondary Permanent Inspection Nut */}
+                      <div className="w-16 h-10 bg-[#0082FC] text-white font-black text-xs flex items-center justify-center border-2 border-[#5FD4FD]">
+                        REMOVAL
+                      </div>
+
+                      {/* Threaded Stud into Gland Body */}
+                      <div className="w-6 h-16 bg-stripes-blue border border-[#0082FC]" />
+                    </div>
+
+                    <div className="mt-2 text-center">
+                      {isTorqueSheared ? (
+                        <span className="px-3 py-1 bg-[#0082FC] text-white text-xs font-black uppercase tracking-wider border-2 border-[#5FD4FD] shadow-md inline-flex items-center gap-1.5">
+                          <CheckCircle2 className="w-3.5 h-3.5 text-[#5FD4FD]" />
+                          Shear Achieved @ {torqueValue} Ft-Lbs &bull; Certified
+                        </span>
+                      ) : (
+                        <span className="px-3 py-1 bg-white text-[#0082FC] text-xs font-black uppercase tracking-wider border border-[#0082FC]">
+                          Current Torque: {torqueValue} Ft-Lbs (Required: 75-90)
+                        </span>
+                      )}
+                    </div>
+                  </div>
+
+                  {/* Interactive Range Slider */}
+                  <div className="w-full max-w-sm px-4">
+                    <div className="flex justify-between text-[11px] font-bold text-[#0082FC] mb-1">
+                      <span>0 Ft-Lbs (Loose)</span>
+                      <span>Target: 75-90 Ft-Lbs</span>
+                      <span>110 Ft-Lbs (Max)</span>
+                    </div>
+                    <input
+                      type="range"
+                      min="0"
+                      max="110"
+                      value={torqueValue}
+                      onChange={(e) => setTorqueValue(Number(e.target.value))}
+                      className="w-full accent-[#0082FC] cursor-pointer"
+                    />
+                  </div>
+                </div>
+              )}
             </div>
 
-            {/* Thumbnail Variant Selector (shown when in photo mode) */}
-            {viewMode === "photo" && (
-              <div className="grid grid-cols-3 gap-3">
-                {INNOVATION_VARIANTS.map((item, idx) => (
-                  <button
-                    type="button"
-                    key={item.id}
-                    onClick={() => setActiveVariantIndex(idx)}
-                    className={`p-2 border-2 rounded-none transition-all text-left flex flex-col items-center justify-center bg-white cursor-pointer ${
-                      activeVariantIndex === idx
-                        ? "border-white bg-[#5FD4FD]/30 shadow-md ring-2 ring-white"
-                        : "border-[#5FD4FD]/60 hover:border-white opacity-85 hover:opacity-100"
-                    }`}
-                  >
-                    <img
-                      src={item.src}
-                      alt={item.label}
-                      className="h-14 w-auto object-contain mb-1"
-                    />
-                    <span className="text-[11px] sm:text-xs font-black uppercase text-[#0082FC] text-center line-clamp-1">
-                      {item.label}
-                    </span>
-                  </button>
-                ))}
-              </div>
-            )}
+            {/* Instruction Banner */}
+            <div className="bg-white/10 border border-[#5FD4FD] p-2.5 flex items-center justify-between text-xs text-white">
+              <span className="font-semibold flex items-center gap-1.5">
+                <Sparkles className="w-3.5 h-3.5 text-[#5FD4FD]" />
+                Click numbered dots (1-4) on the active product to inspect
+                engineering specs.
+              </span>
+              <span className="text-[11px] font-mono text-[#5FD4FD]">
+                100% AIS / Buy America
+              </span>
+            </div>
           </div>
 
-          {/* RIGHT 6 COLUMNS: Technical Engineering Parameters & Spec Ledger */}
-          <div className="lg:col-span-6 space-y-6">
-            {/* 4 Feature Parameter Cards */}
-            <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
-              <div className="p-4 bg-white/10 border-2 border-[#5FD4FD] shadow-xs backdrop-blur-sm">
-                <div className="flex items-center gap-3 mb-2">
-                  <div className="w-8 h-8 bg-white text-[#0082FC] flex items-center justify-center shrink-0">
-                    <Zap className="w-4 h-4 text-[#0082FC]" />
+          {/* ========================================================
+              RIGHT 5 COLUMNS: TECHNICAL PARAMETERS & SUBMITTAL CTAS
+          ======================================================== */}
+          <div className="lg:col-span-5 space-y-6">
+            {/* 4 Feature Cards */}
+            <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
+              <div className="p-3.5 bg-white/10 border-2 border-[#5FD4FD] shadow-xs backdrop-blur-sm">
+                <div className="flex items-center gap-2 mb-1.5">
+                  <div className="w-7 h-7 bg-white text-[#0082FC] flex items-center justify-center shrink-0">
+                    <Zap className="w-3.5 h-3.5 text-[#0082FC]" />
                   </div>
-                  <h3 className="text-xs sm:text-sm font-black uppercase text-white">
-                    Dynamic Cam Gripping
-                  </h3>
+                  <h4 className="text-xs font-black uppercase text-white">
+                    Dynamic Grip
+                  </h4>
                 </div>
-                <p className="text-xs text-white/90 leading-snug">
-                  Independent heat-treated ductile iron wedges bite radially
-                  into the pipe proportionally as hydrostatic water pressure
-                  spikes.
+                <p className="text-[11px] text-white/90 leading-snug">
+                  Independent heat-treated wedges bite radially deeper as line
+                  pressure surges.
                 </p>
               </div>
 
-              <div className="p-4 bg-white/10 border-2 border-[#5FD4FD] shadow-xs backdrop-blur-sm">
-                <div className="flex items-center gap-3 mb-2">
-                  <div className="w-8 h-8 bg-white text-[#0082FC] flex items-center justify-center shrink-0">
-                    <Wrench className="w-4 h-4 text-[#0082FC]" />
+              <div className="p-3.5 bg-white/10 border-2 border-[#5FD4FD] shadow-xs backdrop-blur-sm">
+                <div className="flex items-center gap-2 mb-1.5">
+                  <div className="w-7 h-7 bg-white text-[#0082FC] flex items-center justify-center shrink-0">
+                    <Wrench className="w-3.5 h-3.5 text-[#0082FC]" />
                   </div>
-                  <h3 className="text-xs sm:text-sm font-black uppercase text-white">
-                    Torque-Off Shear Nuts
-                  </h3>
+                  <h4 className="text-xs font-black uppercase text-white">
+                    Torque Shear
+                  </h4>
                 </div>
-                <p className="text-xs text-white/90 leading-snug">
-                  Calibrated breakaway hex nuts snap off at exact factory
-                  torque, eliminating torque wrench guesswork and pipe crushing.
+                <p className="text-[11px] text-white/90 leading-snug">
+                  Breakaway hex nuts eliminate torque wrench guesswork and pipe
+                  crushing.
                 </p>
               </div>
 
-              <div className="p-4 bg-white/10 border-2 border-[#5FD4FD] shadow-xs backdrop-blur-sm">
-                <div className="flex items-center gap-3 mb-2">
-                  <div className="w-8 h-8 bg-white text-[#0082FC] flex items-center justify-center shrink-0">
-                    <Activity className="w-4 h-4 text-[#0082FC]" />
+              <div className="p-3.5 bg-white/10 border-2 border-[#5FD4FD] shadow-xs backdrop-blur-sm">
+                <div className="flex items-center gap-2 mb-1.5">
+                  <div className="w-7 h-7 bg-white text-[#0082FC] flex items-center justify-center shrink-0">
+                    <Activity className="w-3.5 h-3.5 text-[#0082FC]" />
                   </div>
-                  <h3 className="text-xs sm:text-sm font-black uppercase text-white">
-                    5&deg; Flex Deflection
-                  </h3>
+                  <h4 className="text-xs font-black uppercase text-white">
+                    5° Flex Deflection
+                  </h4>
                 </div>
-                <p className="text-xs text-white/90 leading-snug">
-                  Accommodates natural pipeline settlement and seismic ground
-                  movement without stressing fittings or compromising seals.
+                <p className="text-[11px] text-white/90 leading-snug">
+                  Accommodates seismic movement and trench settling without
+                  compromising seal.
                 </p>
               </div>
 
-              <div className="p-4 bg-white/10 border-2 border-[#5FD4FD] shadow-xs backdrop-blur-sm">
-                <div className="flex items-center gap-3 mb-2">
-                  <div className="w-8 h-8 bg-white text-[#0082FC] flex items-center justify-center shrink-0">
-                    <ShieldCheck className="w-4 h-4 text-[#0082FC]" />
+              <div className="p-3.5 bg-white/10 border-2 border-[#5FD4FD] shadow-xs backdrop-blur-sm">
+                <div className="flex items-center gap-2 mb-1.5">
+                  <div className="w-7 h-7 bg-white text-[#0082FC] flex items-center justify-center shrink-0">
+                    <ShieldCheck className="w-3.5 h-3.5 text-[#0082FC]" />
                   </div>
-                  <h3 className="text-xs sm:text-sm font-black uppercase text-white">
-                    UL &amp; FM Certified
-                  </h3>
+                  <h4 className="text-xs font-black uppercase text-white">
+                    UL &amp; FM Rated
+                  </h4>
                 </div>
-                <p className="text-xs text-white/90 leading-snug">
-                  Rated up to 350 PSI continuous service for municipal potable
-                  distribution and high-pressure dedicated fire mains.
+                <p className="text-[11px] text-white/90 leading-snug">
+                  Rated up to 350 PSI continuous service for potable and fire
+                  protection mains.
                 </p>
               </div>
             </div>
@@ -465,45 +963,57 @@ export const EngineeringInnovationSpotlight: React.FC<
             {/* Submittal Specification Ledger */}
             <div className="border-2 border-[#5FD4FD] bg-white/10 shadow-md backdrop-blur-sm">
               <div className="bg-white text-[#0082FC] px-4 py-2.5 flex items-center justify-between">
-                <span className="text-xs font-bold uppercase tracking-wider">
-                  Series 3000 Engineering Parameters
+                <span className="text-xs font-black uppercase tracking-wider">
+                  {currentProduct.name} Spec Ledger
                 </span>
-                <span className="text-xs font-semibold text-[#0082FC]">
-                  AWWA C111 / ASTM A536
+                <span className="text-xs font-mono font-bold text-[#0082FC]">
+                  {currentProduct.standards.split("/")[0].trim()}
                 </span>
               </div>
 
-              <div className="p-4 space-y-2.5 text-xs sm:text-sm text-white">
+              <div className="p-4 space-y-2.5 text-xs text-white">
                 <div className="flex justify-between border-b border-white/20 pb-2">
                   <span className="text-white/80 font-normal">
-                    Gland Metallurgy:
+                    Standards Compliance:
                   </span>
-                  <span className="text-white font-bold uppercase">
-                    Grade 65-45-12 Ductile Iron (ASTM A536)
+                  <span className="text-white font-bold text-right">
+                    {currentProduct.standards}
                   </span>
                 </div>
+
                 <div className="flex justify-between border-b border-white/20 pb-2">
                   <span className="text-white/80 font-normal">
-                    Pressure Rating:
+                    Metallurgy &amp; Material:
                   </span>
-                  <span className="text-[#5FD4FD] font-bold">
-                    350 PSI Working Pressure (2:1 Safety Factor)
+                  <span className="text-white font-bold text-right">
+                    {currentProduct.metallurgy}
                   </span>
                 </div>
+
                 <div className="flex justify-between border-b border-white/20 pb-2">
+                  <span className="text-white/80 font-normal">
+                    Continuous Pressure:
+                  </span>
+                  <span className="text-[#5FD4FD] font-bold text-right">
+                    {currentProduct.pressure}
+                  </span>
+                </div>
+
+                <div className="flex justify-between border-b border-white/20 pb-2">
+                  <span className="text-white/80 font-normal">
+                    Coating &amp; Lining:
+                  </span>
+                  <span className="text-white font-bold text-right">
+                    {currentProduct.coating}
+                  </span>
+                </div>
+
+                <div className="flex justify-between">
                   <span className="text-white/80 font-normal">
                     Pipe Compatibility:
                   </span>
-                  <span className="text-white font-bold">
-                    Ductile Iron (Class 50-56) &bull; C900 / C905 PVC
-                  </span>
-                </div>
-                <div className="flex justify-between">
-                  <span className="text-white/80 font-normal">
-                    Protective Finish:
-                  </span>
-                  <span className="text-white font-bold">
-                    Electrostatic Fusion-Bonded Epoxy / Bituminous
+                  <span className="text-white font-bold text-right">
+                    {currentProduct.pipeCompatibility}
                   </span>
                 </div>
               </div>
@@ -514,30 +1024,32 @@ export const EngineeringInnovationSpotlight: React.FC<
               <button
                 type="button"
                 onClick={() => onAddToRfq(product)}
-                className="inline-flex items-center justify-center gap-2 px-5 py-3 text-xs sm:text-sm font-bold text-[#0082FC] bg-white hover:bg-[#5FD4FD] rounded-none shadow-md transition-all uppercase tracking-wide cursor-pointer"
+                className="flex-1 inline-flex items-center justify-center gap-2 px-5 py-3 text-xs sm:text-sm font-bold text-[#0082FC] bg-white hover:bg-[#5FD4FD] rounded-none shadow-md transition-all uppercase tracking-wide cursor-pointer"
               >
                 <CheckCircle2 className="w-4 h-4 text-[#0082FC]" />
-                <span>Add Series 3000 to RFQ</span>
+                <span>Add {currentProduct.name.split(" ")[0]} to RFQ</span>
               </button>
 
               <button
                 type="button"
                 onClick={() => onPreviewSubmittal(product)}
-                className="inline-flex items-center justify-center gap-2 px-5 py-3 text-xs sm:text-sm font-bold text-[#5FD4FD] hover:text-[#0082FC] bg-[#0082FC] hover:bg-white border-2 border-[#5FD4FD] rounded-none shadow-xs transition-all uppercase tracking-wide cursor-pointer"
+                className="flex-1 inline-flex items-center justify-center gap-2 px-5 py-3 text-xs sm:text-sm font-bold text-[#5FD4FD] hover:text-[#0082FC] bg-[#0082FC] hover:bg-white border-2 border-[#5FD4FD] rounded-none shadow-xs transition-all uppercase tracking-wide cursor-pointer"
               >
                 <FileCheck2 className="w-4 h-4 text-[#5FD4FD] group-hover:text-[#0082FC]" />
-                <span>Download Restraint PDF</span>
+                <span>Download Submittal</span>
               </button>
             </div>
 
             {/* Quick Dispatch Strip */}
             <div className="pt-2 flex items-center justify-between border-t border-white/20 text-xs font-semibold text-white">
-              <span>Next-Day Flatbed Dispatch from Melville &amp; FL</span>
+              <span>
+                Next-Day Flatbed Dispatch &bull; Melville, NY &amp; FL
+              </span>
               <a
                 href="tel:+15162521111"
                 className="inline-flex items-center gap-1 hover:text-[#5FD4FD] transition-colors"
               >
-                <PhoneCall className="w-3 h-3 text-[#5FD4FD]" />
+                <PhoneCall className="w-3.5 h-3.5 text-[#5FD4FD]" />
                 <span>+1 (516) 252-1111</span>
               </a>
             </div>
