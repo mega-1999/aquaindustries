@@ -153,35 +153,43 @@ export const ProductCatalogMatrix: React.FC<ProductCatalogMatrixProps> = ({
                 key={product.id}
                 className="bg-white border-2 border-[#5FD4FD] rounded-none overflow-hidden shadow-sm hover:border-[#0082FC] transition-all duration-300 flex flex-col justify-between group hover:-translate-y-1"
               >
-                {/* Visual Header / Authentic Product Photograph */}
-                <div className="relative h-56 bg-white border-b-2 border-[#5FD4FD] flex items-center justify-center p-4 overflow-hidden">
-                  <img
-                    src={product.imageUrl}
-                    alt={product.name}
-                    className="max-h-full max-w-full object-contain transition-transform duration-300 group-hover:scale-105"
-                  />
-
-                  {/* Single-Line Badges on Top Corners */}
-                  <div className="absolute top-3 left-3 flex flex-col gap-1.5 z-20">
-                    <span className="px-3 py-1 rounded-none bg-white text-[#0082FC] border border-[#5FD4FD] text-xs font-bold whitespace-nowrap shadow-sm">
+                {/* Card Top Metadata Ribbon (Separated from image, never overlapping) */}
+                <div className="px-4 py-2 bg-white border-b border-[#5FD4FD]/40 flex items-center justify-between gap-2">
+                  <div className="flex items-center gap-1.5 flex-wrap min-w-0">
+                    <span className="px-2 py-0.5 rounded-none bg-white text-[#0082FC] border border-[#5FD4FD] text-[11px] font-bold whitespace-nowrap shadow-xs">
                       {product.standard}
                     </span>
-                    <span className="px-3 py-1 rounded-none bg-white text-[#0082FC] border border-[#5FD4FD] text-xs font-bold whitespace-nowrap shadow-sm">
-                      {product.pressureRating.split("(")[0].trim()}
-                    </span>
-                  </div>
-
-                  <div className="absolute top-3 right-3 z-20 flex flex-col items-end gap-1.5">
                     {product.imageUrl.startsWith("/images/our-images/") && (
-                      <span className="px-2.5 py-1 rounded-none bg-[#0082FC] text-white border border-[#5FD4FD] text-xs font-bold whitespace-nowrap shadow-sm">
+                      <span className="px-2 py-0.5 rounded-none bg-[#0082FC] text-white text-[10px] font-bold uppercase tracking-wider whitespace-nowrap">
                         Verified Photo
                       </span>
                     )}
                     {product.aisCompliant && (
-                      <span className="px-2.5 py-1 rounded-none bg-white text-[#0082FC] border-2 border-[#5FD4FD] text-xs font-bold whitespace-nowrap shadow-sm">
-                        AIS Certified
+                      <span className="px-1.5 py-0.5 rounded-none bg-white text-[#0082FC] border border-[#5FD4FD] text-[10px] font-bold whitespace-nowrap">
+                        AIS
                       </span>
                     )}
+                  </div>
+
+                  <div className="shrink-0">
+                    <span className="px-2 py-0.5 rounded-none bg-[#5FD4FD]/20 text-[#0082FC] border border-[#0082FC]/30 text-[10px] font-bold uppercase tracking-wider whitespace-nowrap">
+                      {product.pressureRating
+                        .split("/")[0]
+                        .split("(")[0]
+                        .trim()
+                        .slice(0, 18)}
+                    </span>
+                  </div>
+                </div>
+
+                {/* Dedicated Product Image Canvas: 100% Contained, Zero Overflow, Generous Padding */}
+                <div className="relative w-full h-48 bg-white border-b-2 border-[#5FD4FD] flex items-center justify-center p-5 overflow-hidden">
+                  <div className="w-full h-full flex items-center justify-center">
+                    <img
+                      src={product.imageUrl}
+                      alt={product.name}
+                      className="max-h-full max-w-full w-auto h-auto object-contain transition-transform duration-300 group-hover:scale-105 block mx-auto select-none"
+                    />
                   </div>
                 </div>
 
