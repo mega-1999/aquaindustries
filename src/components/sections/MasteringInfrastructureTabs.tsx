@@ -192,37 +192,40 @@ export function MasteringInfrastructureTabs() {
               </div>
             </div>
 
-            {/* 4 Technical Indicators Matrix */}
-            <div className="mt-6 pt-5 border-t-2 border-[#0082FC] grid grid-cols-2 sm:grid-cols-4 gap-2.5 text-center">
-              <div className="border-2 border-[#0082FC] p-2.5 bg-white">
-                <div className="text-[11px] font-mono uppercase text-[#0082FC] font-bold whitespace-nowrap">
+            {/* 4 Technical Indicators Matrix (No Overflow, Self-Wrapping Grid) */}
+            <div className="mt-6 pt-5 border-t-2 border-[#0082FC] grid grid-cols-2 md:grid-cols-4 gap-2.5 sm:gap-3 text-center">
+              <div className="border-2 border-[#0082FC] p-2.5 sm:p-3 bg-white flex flex-col justify-between min-h-[76px] shadow-xs">
+                <div className="text-[10px] sm:text-[11px] font-mono uppercase text-[#0082FC]/75 font-bold tracking-wider">
                   Standard
                 </div>
-                <div className="text-xs sm:text-sm font-bold text-[#0082FC] mt-0.5 whitespace-nowrap">
+                <div className="text-xs sm:text-[13px] font-extrabold text-[#0082FC] mt-1 leading-snug break-words">
                   {current.awwaStandard}
                 </div>
               </div>
-              <div className="border-2 border-[#0082FC] p-2.5 bg-white">
-                <div className="text-[11px] font-mono uppercase text-[#0082FC] font-bold whitespace-nowrap">
+
+              <div className="border-2 border-[#0082FC] p-2.5 sm:p-3 bg-white flex flex-col justify-between min-h-[76px] shadow-xs">
+                <div className="text-[10px] sm:text-[11px] font-mono uppercase text-[#0082FC]/75 font-bold tracking-wider">
                   Rating
                 </div>
-                <div className="text-xs sm:text-sm font-bold text-[#0082FC] mt-0.5 whitespace-nowrap">
+                <div className="text-xs sm:text-[13px] font-extrabold text-[#0082FC] mt-1 leading-snug break-words">
                   {current.pressureRating}
                 </div>
               </div>
-              <div className="border-2 border-[#0082FC] p-2.5 bg-white">
-                <div className="text-[11px] font-mono uppercase text-[#0082FC] font-bold whitespace-nowrap">
+
+              <div className="border-2 border-[#0082FC] p-2.5 sm:p-3 bg-white flex flex-col justify-between min-h-[76px] shadow-xs">
+                <div className="text-[10px] sm:text-[11px] font-mono uppercase text-[#0082FC]/75 font-bold tracking-wider">
                   Metallurgy
                 </div>
-                <div className="text-xs sm:text-sm font-bold text-[#0082FC] mt-0.5 whitespace-nowrap">
+                <div className="text-xs sm:text-[13px] font-extrabold text-[#0082FC] mt-1 leading-snug break-words">
                   {current.materialGrade}
                 </div>
               </div>
-              <div className="border-2 border-[#0082FC] p-2.5 bg-white">
-                <div className="text-[11px] font-mono uppercase text-[#0082FC] font-bold whitespace-nowrap">
+
+              <div className="border-2 border-[#0082FC] p-2.5 sm:p-3 bg-white flex flex-col justify-between min-h-[76px] shadow-xs">
+                <div className="text-[10px] sm:text-[11px] font-mono uppercase text-[#0082FC]/75 font-bold tracking-wider">
                   Lining
                 </div>
-                <div className="text-xs sm:text-sm font-bold text-[#0082FC] mt-0.5 whitespace-nowrap">
+                <div className="text-xs sm:text-[13px] font-extrabold text-[#0082FC] mt-1 leading-snug break-words">
                   {current.coatingSystem}
                 </div>
               </div>
