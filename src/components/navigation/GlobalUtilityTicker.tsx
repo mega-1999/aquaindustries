@@ -65,8 +65,8 @@ export const GlobalUtilityTicker: React.FC<GlobalUtilityTickerProps> = ({
 
           {/* Center: Single-line badge */}
           <div className="hidden xl:flex items-center shrink-0">
-            <span className="inline-flex items-center gap-1.5 px-3 py-1 rounded-none bg-white/10 border border-[#5fd4fd] text-white font-bold text-xs whitespace-nowrap shadow-xs">
-              <ShieldCheck className="w-4 h-4 text-[#5fd4fd] shrink-0" />
+            <span className="inline-flex items-center gap-1.5 px-3 py-1 rounded-none bg-white/10 border border-white text-white font-bold text-xs whitespace-nowrap shadow-xs">
+              <ShieldCheck className="w-4 h-4 text-white shrink-0" />
               <span>AWWA Standards &amp; NSF/ANSI 61 Certified Material</span>
             </span>
           </div>
@@ -78,32 +78,32 @@ export const GlobalUtilityTicker: React.FC<GlobalUtilityTickerProps> = ({
               className="inline-flex items-center gap-1.5 text-white hover:text-[#5fd4fd] transition-colors whitespace-nowrap font-bold"
               title="Speak with Aqua Industries New York Foundry dispatch"
             >
-              <PhoneCall className="w-3.5 h-3.5 text-[#5fd4fd] shrink-0" />
+              <PhoneCall className="w-3.5 h-3.5 text-white shrink-0" />
               <span className="whitespace-nowrap">
                 Dispatch: +1 (516) 252-1111
               </span>
             </a>
 
-            <div className="h-4 w-px bg-[#5fd4fd]/40 hidden sm:block" />
+            <div className="h-4 w-px bg-white/40 hidden sm:block" />
 
             <button
               type="button"
               onClick={onOpenYardModal}
-              className="inline-flex items-center gap-1.5 text-white hover:text-[#5fd4fd] transition-colors whitespace-nowrap font-bold bg-white/10 px-2.5 py-1 rounded-none border border-[#5fd4fd]/50"
+              className="inline-flex items-center gap-1.5 text-white hover:text-[#5fd4fd] transition-colors whitespace-nowrap font-bold bg-white/10 px-2.5 py-1 rounded-none border border-white/50"
             >
-              <MapPin className="w-3.5 h-3.5 text-[#5fd4fd] shrink-0" />
+              <MapPin className="w-3.5 h-3.5 text-white shrink-0" />
               <span className="whitespace-nowrap">
                 Yard: {selectedYardCity}
               </span>
             </button>
 
-            <div className="h-4 w-px bg-[#5fd4fd]/40 hidden md:block" />
+            <div className="h-4 w-px bg-white/40 hidden md:block" />
 
             <a
               href="#quote-form"
-              className="hidden md:inline-flex items-center gap-1.5 text-[#5fd4fd] hover:text-white transition-colors whitespace-nowrap font-bold"
+              className="hidden md:inline-flex items-center gap-1.5 text-white hover:text-[#5fd4fd] transition-colors whitespace-nowrap font-bold"
             >
-              <FileCheck2 className="w-3.5 h-3.5 shrink-0" />
+              <FileCheck2 className="w-3.5 h-3.5 text-white shrink-0" />
               <span className="whitespace-nowrap">Spec Sheet Portal</span>
             </a>
           </div>
