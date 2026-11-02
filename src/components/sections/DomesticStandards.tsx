@@ -58,8 +58,18 @@ const INDUSTRY_ASSOCIATIONS = [
 
 export function DomesticStandards() {
   return (
-    <section className="relative w-full bg-[#0082FC] text-white py-20 border-b border-[#0082FC]">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <section className="relative w-full bg-[#0082FC] text-white py-20 border-b border-[#0082FC] overflow-hidden">
+      {/* Ambient Looping Water Dynamics Background Video */}
+      <video
+        autoPlay
+        loop
+        muted
+        playsInline
+        className="absolute inset-0 w-full h-full object-cover opacity-20 mix-blend-screen pointer-events-none"
+        src="https://soleno.com/wp-content/uploads/2024/12/bkg_water111.mp4"
+      />
+
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
           {/* Left Column: Certifications Directory */}
           <div className="lg:col-span-7 space-y-6">

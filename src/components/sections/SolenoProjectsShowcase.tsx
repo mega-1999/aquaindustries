@@ -236,6 +236,16 @@ export const SolenoProjectsShowcase: React.FC<SolenoProjectsShowcaseProps> = ({
         aria-label="Featured Waterworks Project Spotlight"
         className="bg-[#0082FC] text-white py-14 sm:py-20 border-b-4 border-[#5FD4FD] relative overflow-hidden"
       >
+        {/* Ambient Looping Water Dynamics Background Video */}
+        <video
+          autoPlay
+          loop
+          muted
+          playsInline
+          className="absolute inset-0 w-full h-full object-cover opacity-25 mix-blend-screen pointer-events-none"
+          src="https://soleno.com/wp-content/uploads/2024/12/bkg_water111.mp4"
+        />
+
         {/* Background Architectural Grid Lines */}
         <div
           className="absolute inset-0 opacity-10 pointer-events-none"

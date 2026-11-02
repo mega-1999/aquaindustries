@@ -248,14 +248,24 @@ export const CurbBoxSpotlight: React.FC<CurbBoxSpotlightProps> = ({
                         strokeWidth="2"
                       />
 
-                      {/* Water Service Line & Curb Stop Valve */}
+                      {/* Potable Water Service Line with Animated Hydrodynamic Flow */}
+                      <line
+                        x1="40"
+                        y1="270"
+                        x2="280"
+                        y2="270"
+                        stroke="#0082FC"
+                        strokeWidth="10"
+                      />
                       <line
                         x1="40"
                         y1="270"
                         x2="280"
                         y2="270"
                         stroke="#5FD4FD"
-                        strokeWidth="8"
+                        strokeWidth="6"
+                        strokeDasharray="16 8"
+                        className="animate-hydro-flow-fast"
                       />
                       <rect
                         x="145"

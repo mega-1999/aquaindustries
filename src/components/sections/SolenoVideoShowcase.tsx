@@ -112,6 +112,16 @@ export const SolenoVideoShowcase: React.FC<SolenoVideoShowcaseProps> = ({
       aria-label="Waterworks Engineering Video Demonstrations"
       className="py-16 sm:py-24 bg-[#0082FC] text-white border-t-4 border-[#5FD4FD] border-b-4 border-[#5FD4FD] relative overflow-hidden"
     >
+      {/* Ambient Looping Water Dynamics Background Video */}
+      <video
+        autoPlay
+        loop
+        muted
+        playsInline
+        className="absolute inset-0 w-full h-full object-cover opacity-20 mix-blend-screen pointer-events-none"
+        src="https://soleno.com/wp-content/uploads/2024/12/bkg_water111.mp4"
+      />
+
       {/* Background Architectural Grid Lines */}
       <div
         className="absolute inset-0 opacity-10 pointer-events-none"

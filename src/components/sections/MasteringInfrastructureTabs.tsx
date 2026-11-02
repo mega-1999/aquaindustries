@@ -233,8 +233,18 @@ export function MasteringInfrastructureTabs() {
           </div>
 
           {/* Right Column: High-Contrast Technical Vector Schematic */}
-          <div className="lg:col-span-5 border-2 border-[#0082FC] bg-[#0082FC] text-white p-6 sm:p-8 flex flex-col justify-between">
-            <div>
+          <div className="lg:col-span-5 border-2 border-[#0082FC] bg-[#0082FC] text-white p-6 sm:p-8 flex flex-col justify-between relative overflow-hidden">
+            {/* Ambient Looping Water Dynamics Background Video */}
+            <video
+              autoPlay
+              loop
+              muted
+              playsInline
+              className="absolute inset-0 w-full h-full object-cover opacity-20 mix-blend-screen pointer-events-none"
+              src="https://soleno.com/wp-content/uploads/2024/12/bkg_water111.mp4"
+            />
+
+            <div className="relative z-10">
               {/* Schematic Header */}
               <div className="flex items-center justify-between border-b border-[#5FD4FD] pb-3 mb-6">
                 <div>
@@ -608,7 +618,7 @@ export function MasteringInfrastructureTabs() {
             </div>
 
             {/* Single-Line Action Button */}
-            <div className="pt-6 border-t border-[#5FD4FD]">
+            <div className="pt-6 border-t border-[#5FD4FD] relative z-10">
               <a
                 href="#quote-builder"
                 className="w-full inline-flex items-center justify-center bg-white text-[#0082FC] hover:bg-[#5FD4FD] hover:text-[#0082FC] font-bold text-sm px-6 py-3 border-2 border-white transition-colors duration-150 whitespace-nowrap"

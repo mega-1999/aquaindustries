@@ -32,6 +32,20 @@ export const CinematicHero: React.FC<CinematicHeroProps> = ({
     >
       {/* Background Fluid Wave Watermarks and Subtle Hydro Geometric Motif */}
       <div className="absolute inset-0 z-0 overflow-hidden pointer-events-none select-none">
+        {/* Ambient Looping Water Dynamics Background Video */}
+        <video
+          autoPlay
+          loop
+          muted
+          playsInline
+          className={`absolute inset-0 w-full h-full object-cover pointer-events-none ${
+            isBlue
+              ? "opacity-25 mix-blend-screen"
+              : "opacity-12 mix-blend-multiply"
+          }`}
+          src="https://soleno.com/wp-content/uploads/2024/12/bkg_water111.mp4"
+        />
+
         {/* Soft Fluid Waves */}
         <div
           className={`absolute -top-24 -left-24 w-[500px] h-[500px] rounded-none blur-3xl fluid-wave ${
