@@ -22,6 +22,7 @@ import {
   X,
 } from "lucide-react";
 import React, { useState } from "react";
+import { InfiniteWaterBackground } from "../common/InfiniteWaterBackground";
 import { PRODUCTS_CATALOG } from "../../data/waterworks-data";
 import type { ProductItem } from "../../types";
 
@@ -236,15 +237,8 @@ export const SolenoProjectsShowcase: React.FC<SolenoProjectsShowcaseProps> = ({
         aria-label="Featured Waterworks Project Spotlight"
         className="bg-[#0082FC] text-white py-14 sm:py-20 border-b-4 border-[#5FD4FD] relative overflow-hidden"
       >
-        {/* Ambient Looping Water Dynamics Background Video */}
-        <video
-          autoPlay
-          loop
-          muted
-          playsInline
-          className="absolute inset-0 w-full h-full object-cover opacity-25 mix-blend-screen pointer-events-none"
-          src="https://soleno.com/wp-content/uploads/2024/12/bkg_water111.mp4"
-        />
+        {/* Infinite Seamless Looping Water Background Animation */}
+        <InfiniteWaterBackground opacity="opacity-25" />
 
         {/* Background Architectural Grid Lines */}
         <div

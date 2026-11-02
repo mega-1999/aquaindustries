@@ -1,6 +1,7 @@
 "use client";
 
 import React, { useState } from "react";
+import { InfiniteWaterBackground } from "../common/InfiniteWaterBackground";
 
 interface SectorDetail {
   id: string;
@@ -234,15 +235,8 @@ export function MasteringInfrastructureTabs() {
 
           {/* Right Column: High-Contrast Technical Vector Schematic */}
           <div className="lg:col-span-5 border-2 border-[#0082FC] bg-[#0082FC] text-white p-6 sm:p-8 flex flex-col justify-between relative overflow-hidden">
-            {/* Ambient Looping Water Dynamics Background Video */}
-            <video
-              autoPlay
-              loop
-              muted
-              playsInline
-              className="absolute inset-0 w-full h-full object-cover opacity-20 mix-blend-screen pointer-events-none"
-              src="https://soleno.com/wp-content/uploads/2024/12/bkg_water111.mp4"
-            />
+            {/* Infinite Seamless Looping Water Background Animation */}
+            <InfiniteWaterBackground opacity="opacity-20" />
 
             <div className="relative z-10">
               {/* Schematic Header */}

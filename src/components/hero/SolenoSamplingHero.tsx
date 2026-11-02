@@ -22,6 +22,7 @@ import {
   Waves,
 } from "lucide-react";
 import React, { useState } from "react";
+import { InfiniteWaterBackground } from "../common/InfiniteWaterBackground";
 
 const HOTSPOTS = [
   {
@@ -72,15 +73,8 @@ export const SolenoSamplingHero: React.FC = () => {
     >
       {/* Background Fluid Wave Watermarks and Schematic Geometry */}
       <div className="absolute inset-0 z-0 overflow-hidden pointer-events-none select-none">
-        {/* Background Ambient Water Dynamics Video (Soleno Fluid Benchmark) */}
-        <video
-          autoPlay
-          loop
-          muted
-          playsInline
-          className="absolute inset-0 w-full h-full object-cover opacity-25 mix-blend-screen pointer-events-none"
-          src="https://soleno.com/wp-content/uploads/2024/12/bkg_water111.mp4"
-        />
+        {/* Infinite Seamless Looping Water Background Animation */}
+        <InfiniteWaterBackground opacity="opacity-25" />
 
         <div className="absolute -top-32 -left-32 w-[600px] h-[600px] bg-[#5FD4FD]/20 rounded-none blur-3xl fluid-wave" />
         <div className="absolute -bottom-40 -right-32 w-[700px] h-[700px] bg-white/10 rounded-none blur-3xl fluid-wave" />

@@ -19,6 +19,7 @@ import {
   ThermometerSnowflake,
 } from "lucide-react";
 import React, { useState } from "react";
+import { InfiniteWaterBackground } from "../common/InfiniteWaterBackground";
 import type { ProductItem } from "../../types";
 
 interface SamplingStationSpotlightProps {
@@ -77,6 +78,9 @@ export const SamplingStationSpotlight: React.FC<
       aria-label="New Innovation Municipal Water Sampling Station"
       className="py-12 sm:py-16 bg-[#0082FC] text-white border-b-4 border-[#5FD4FD] relative overflow-hidden"
     >
+      {/* Infinite Seamless Looping Water Background Animation */}
+      <InfiniteWaterBackground opacity="opacity-25" />
+
       {/* Background Architectural Grid Lines */}
       <div
         className="absolute inset-0 opacity-10 pointer-events-none"

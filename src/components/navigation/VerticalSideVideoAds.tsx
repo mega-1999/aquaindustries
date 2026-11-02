@@ -177,6 +177,11 @@ export const VerticalSideVideoAds: React.FC<VerticalSideVideoAdsProps> = ({
             loop
             muted
             playsInline
+            preload="auto"
+            onEnded={(e) => {
+              e.currentTarget.currentTime = 0;
+              e.currentTarget.play().catch(() => {});
+            }}
             className="w-full h-full object-cover opacity-60 group-hover:opacity-85 transition-opacity duration-300"
           />
 
@@ -420,7 +425,13 @@ export const VerticalSideVideoAds: React.FC<VerticalSideVideoAdsProps> = ({
                 src={activeVideoModal.videoUrl}
                 controls
                 autoPlay
+                loop
                 playsInline
+                preload="auto"
+                onEnded={(e) => {
+                  e.currentTarget.currentTime = 0;
+                  e.currentTarget.play().catch(() => {});
+                }}
                 className="w-full h-full object-cover"
               />
               <img

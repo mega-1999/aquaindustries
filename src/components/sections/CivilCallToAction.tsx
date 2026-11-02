@@ -1,6 +1,7 @@
 "use client";
 
 import React from "react";
+import { InfiniteWaterBackground } from "../common/InfiniteWaterBackground";
 
 interface CivilCallToActionProps {
   onExploreCatalog?: () => void;
@@ -31,15 +32,8 @@ export function CivilCallToAction({
 
   return (
     <section className="relative w-full border-b border-[#0082FC] bg-[#0082FC] text-white py-16 lg:py-24 overflow-hidden">
-      {/* Ambient Looping Water Dynamics Background Video */}
-      <video
-        autoPlay
-        loop
-        muted
-        playsInline
-        className="absolute inset-0 w-full h-full object-cover opacity-25 mix-blend-screen pointer-events-none"
-        src="https://soleno.com/wp-content/uploads/2024/12/bkg_water111.mp4"
-      />
+      {/* Infinite Seamless Looping Water Background Animation */}
+      <InfiniteWaterBackground opacity="opacity-25" />
 
       {/* Background hydraulic pattern */}
       <div

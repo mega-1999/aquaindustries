@@ -32,6 +32,7 @@ import { ProductSubmittalModal } from "../../components/modals/ProductSubmittalM
 import { YardSelectorModal } from "../../components/modals/YardSelectorModal";
 import { GlobalUtilityTicker } from "../../components/navigation/GlobalUtilityTicker";
 import { MainNavbar } from "../../components/navigation/MainNavbar";
+import { InfiniteWaterBackground } from "../../components/common/InfiniteWaterBackground";
 import {
   DISTRIBUTION_YARDS,
   PRODUCTS_CATALOG,
@@ -259,15 +260,8 @@ export default function ProjectsPage() {
           aria-label="Featured Waterworks Project Spotlight"
           className="bg-[#0082FC] text-white py-14 sm:py-20 border-b-4 border-[#5FD4FD] relative overflow-hidden"
         >
-          {/* Ambient Looping Water Dynamics Background Video */}
-          <video
-            autoPlay
-            loop
-            muted
-            playsInline
-            className="absolute inset-0 w-full h-full object-cover opacity-25 mix-blend-screen pointer-events-none"
-            src="https://soleno.com/wp-content/uploads/2024/12/bkg_water111.mp4"
-          />
+          {/* Infinite Seamless Looping Water Background Animation */}
+          <InfiniteWaterBackground opacity="opacity-25" />
 
           {/* Background Architectural Grid Lines */}
           <div

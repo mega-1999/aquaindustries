@@ -14,6 +14,7 @@ import {
   X,
 } from "lucide-react";
 import React, { useState } from "react";
+import { InfiniteWaterBackground } from "../common/InfiniteWaterBackground";
 import { PRODUCTS_CATALOG } from "../../data/waterworks-data";
 import type { ProductItem } from "../../types";
 
@@ -112,15 +113,8 @@ export const SolenoVideoShowcase: React.FC<SolenoVideoShowcaseProps> = ({
       aria-label="Waterworks Engineering Video Demonstrations"
       className="py-16 sm:py-24 bg-[#0082FC] text-white border-t-4 border-[#5FD4FD] border-b-4 border-[#5FD4FD] relative overflow-hidden"
     >
-      {/* Ambient Looping Water Dynamics Background Video */}
-      <video
-        autoPlay
-        loop
-        muted
-        playsInline
-        className="absolute inset-0 w-full h-full object-cover opacity-20 mix-blend-screen pointer-events-none"
-        src="https://soleno.com/wp-content/uploads/2024/12/bkg_water111.mp4"
-      />
+      {/* Infinite Seamless Looping Water Background Animation */}
+      <InfiniteWaterBackground opacity="opacity-20" />
 
       {/* Background Architectural Grid Lines */}
       <div
@@ -169,6 +163,11 @@ export const SolenoVideoShowcase: React.FC<SolenoVideoShowcaseProps> = ({
                     loop
                     muted
                     playsInline
+                    preload="auto"
+                    onEnded={(e) => {
+                      e.currentTarget.currentTime = 0;
+                      e.currentTarget.play().catch(() => {});
+                    }}
                     className="w-full h-full object-cover opacity-60 group-hover:opacity-80 transition-opacity duration-300"
                   />
 
@@ -294,7 +293,13 @@ export const SolenoVideoShowcase: React.FC<SolenoVideoShowcaseProps> = ({
                 src={activeVideo.videoUrl}
                 controls
                 autoPlay
+                loop
                 playsInline
+                preload="auto"
+                onEnded={(e) => {
+                  e.currentTarget.currentTime = 0;
+                  e.currentTarget.play().catch(() => {});
+                }}
                 className="w-full h-full object-cover"
               />
               <img

@@ -10,6 +10,7 @@ import {
   Truck,
 } from "lucide-react";
 import type React from "react";
+import { InfiniteWaterBackground } from "../common/InfiniteWaterBackground";
 
 interface CinematicHeroProps {
   variant?: "blue" | "white";
@@ -32,18 +33,10 @@ export const CinematicHero: React.FC<CinematicHeroProps> = ({
     >
       {/* Background Fluid Wave Watermarks and Subtle Hydro Geometric Motif */}
       <div className="absolute inset-0 z-0 overflow-hidden pointer-events-none select-none">
-        {/* Ambient Looping Water Dynamics Background Video */}
-        <video
-          autoPlay
-          loop
-          muted
-          playsInline
-          className={`absolute inset-0 w-full h-full object-cover pointer-events-none ${
-            isBlue
-              ? "opacity-25 mix-blend-screen"
-              : "opacity-12 mix-blend-multiply"
-          }`}
-          src="https://soleno.com/wp-content/uploads/2024/12/bkg_water111.mp4"
+        {/* Infinite Seamless Looping Water Background Animation */}
+        <InfiniteWaterBackground
+          opacity={isBlue ? "opacity-25" : "opacity-12"}
+          mixBlend={isBlue ? "mix-blend-screen" : "mix-blend-multiply"}
         />
 
         {/* Soft Fluid Waves */}
