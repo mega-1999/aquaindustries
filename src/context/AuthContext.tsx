@@ -387,6 +387,7 @@ export const AuthProvider: React.FC<{ children: React.ReactNode }> = ({
         currentUser,
         allUsers,
         pendingCount,
+        isInitialized,
         login,
         register,
         updatePassword,

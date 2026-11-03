@@ -22,30 +22,15 @@ import { DashboardLayout } from "../../components/dashboard/DashboardLayout";
 import { useAuth } from "../../context/AuthContext";
 
 export default function ProfilePage() {
-  const { currentUser, pendingCount, login } = useAuth();
+  const { currentUser, pendingCount } = useAuth();
 
   const [activeTab, setActiveTab] = useState<"overview" | "commercial" | "bol">(
     "overview",
   );
 
-  // Sign-in states if not logged in
-  const [loginEmail, setLoginEmail] = useState("");
-  const [loginPassword, setLoginPassword] = useState("");
-  const [showLoginPassword, setShowLoginPassword] = useState(false);
-  const [loginError, setLoginError] = useState<string | null>(null);
-
   // BOL lookup state
   const [bolSearch, setBolSearch] = useState("");
   const [bolResult, setBolResult] = useState<string | null>(null);
-
-  const handleLoginSubmit = (e: React.FormEvent) => {
-    e.preventDefault();
-    setLoginError(null);
-    const res = login(loginEmail, loginPassword);
-    if (!res.success) {
-      setLoginError(res.message);
-    }
-  };
 
   const handleTrackBol = (e: React.FormEvent) => {
     e.preventDefault();
@@ -62,10 +47,7 @@ export default function ProfilePage() {
       subtitle="Corporate Licensure, Wholesale Terms & Certified Mill Test Records"
     >
       <div className="max-w-5xl mx-auto space-y-6">
-        {currentUser ? (
-          /* ========================================================
-              LOGGED IN USER: FULL PROFILE CONTENT AREA
-          ======================================================== */
+        {currentUser && (
           <div className="space-y-6">
             {/* Navigation Tabs */}
             <div className="flex border-b-2 border-[#0082FC] bg-white px-2">
@@ -332,100 +314,6 @@ export default function ProfilePage() {
                 </div>
               </div>
             )}
-          </div>
-        ) : (
-          /* ========================================================
-              NOT LOGGED IN: SIGN IN VIEW
-          ======================================================== */
-          <div className="max-w-md mx-auto bg-white border-4 border-[#0082FC] p-6 sm:p-8 shadow-2xl">
-            <div className="flex items-center gap-3 mb-6 pb-4 border-b-2 border-[#5FD4FD]/40">
-              <div className="w-12 h-12 bg-[#0082FC] text-white border-2 border-[#5FD4FD] flex items-center justify-center shrink-0">
-                <Lock className="w-6 h-6 text-[#5FD4FD]" />
-              </div>
-              <div>
-                <h2 className="text-xl font-black text-[#0082FC] uppercase tracking-tight">
-                  Sign In to Profile
-                </h2>
-                <p className="text-xs text-[#0082FC]/80 font-medium">
-                  Enter commercial credentials to view your profile
-                </p>
-              </div>
-            </div>
-
-            {loginError && (
-              <div className="mb-4 p-3 bg-rose-50 border-2 border-rose-500 text-rose-900 text-xs font-bold flex items-center gap-2">
-                <AlertCircle className="w-4 h-4 text-rose-600 shrink-0" />
-                <span>{loginError}</span>
-              </div>
-            )}
-
-            <form onSubmit={handleLoginSubmit} className="space-y-4">
-              <div>
-                <label className="block text-xs font-bold text-[#0082FC] uppercase mb-1">
-                  Business Email Address
-                </label>
-                <input
-                  type="email"
-                  required
-                  placeholder="contractor@company.com"
-                  value={loginEmail}
-                  onChange={(e) => setLoginEmail(e.target.value)}
-                  className="w-full bg-white border-2 border-[#0082FC] px-3 py-2 text-xs font-bold text-[#0082FC] focus:outline-none focus:border-[#5FD4FD]"
-                />
-              </div>
-
-              <div>
-                <label className="block text-xs font-bold text-[#0082FC] uppercase mb-1">
-                  Password
-                </label>
-                <div className="relative">
-                  <input
-                    type={showLoginPassword ? "text" : "password"}
-                    required
-                    placeholder="••••••••••••"
-                    value={loginPassword}
-                    onChange={(e) => setLoginPassword(e.target.value)}
-                    className="w-full bg-white border-2 border-[#0082FC] pl-3 pr-10 py-2 text-xs font-bold text-[#0082FC] focus:outline-none focus:border-[#5FD4FD]"
-                  />
-                  <button
-                    type="button"
-                    onClick={() => setShowLoginPassword(!showLoginPassword)}
-                    className="absolute right-2.5 top-1/2 -translate-y-1/2 p-1 text-[#0082FC] hover:text-[#5FD4FD] transition-colors cursor-pointer"
-                    title={
-                      showLoginPassword ? "Hide password" : "Show password"
-                    }
-                    aria-label={
-                      showLoginPassword ? "Hide password" : "Show password"
-                    }
-                  >
-                    {showLoginPassword ? (
-                      <EyeOff className="w-4 h-4" />
-                    ) : (
-                      <Eye className="w-4 h-4" />
-                    )}
-                  </button>
-                </div>
-              </div>
-
-              <button
-                type="submit"
-                className="w-full py-3 px-4 bg-[#0082FC] hover:bg-[#5FD4FD] text-white hover:text-[#0082FC] font-black text-xs uppercase tracking-wider shadow-md transition-all cursor-pointer"
-              >
-                Access Commercial Profile
-              </button>
-            </form>
-
-            <div className="mt-6 pt-4 border-t border-[#0082FC]/20 text-center">
-              <span className="text-xs text-[#0082FC]/80 block mb-2">
-                Need a wholesale account?
-              </span>
-              <Link
-                href="/#quote-form"
-                className="text-xs font-black uppercase text-[#0082FC] underline hover:text-[#5FD4FD] cursor-pointer"
-              >
-                Register Commercial Account &rsaquo;
-              </Link>
-            </div>
           </div>
         )}
       </div>

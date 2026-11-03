@@ -34,6 +34,7 @@ export interface AuthContextType {
   currentUser: UserAccount | null;
   allUsers: UserAccount[];
   pendingCount: number;
+  isInitialized: boolean;
   login: (
     email: string,
     password?: string,

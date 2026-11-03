@@ -1,11 +1,14 @@
 "use client";
 
 import {
+  AlertCircle,
   ArrowLeft,
   Building,
   CheckCircle2,
   Droplets,
   ExternalLink,
+  Eye,
+  EyeOff,
   Globe,
   KeyRound,
   Lock,
@@ -13,6 +16,7 @@ import {
   Menu,
   Settings,
   Shield,
+  ShieldAlert,
   ShieldCheck,
   Truck,
   User,
@@ -36,8 +40,227 @@ export const DashboardLayout: React.FC<DashboardLayoutProps> = ({
   subtitle,
   children,
 }) => {
-  const { currentUser, pendingCount, logout } = useAuth();
+  const { currentUser, pendingCount, isInitialized, login, logout } = useAuth();
   const [mobileSidebarOpen, setMobileSidebarOpen] = useState(false);
+
+  // Authentication gate form state
+  const [gateEmail, setGateEmail] = useState("");
+  const [gatePassword, setGatePassword] = useState("");
+  const [showGatePassword, setShowGatePassword] = useState(false);
+  const [gateError, setGateError] = useState<string | null>(null);
+
+  const handleGateLogin = (e: React.FormEvent) => {
+    e.preventDefault();
+    setGateError(null);
+    const res = login(gateEmail, gatePassword);
+    if (!res.success) {
+      setGateError(res.message);
+    }
+  };
+
+  // 1. Initializing state
+  if (!isInitialized) {
+    return (
+      <div className="min-h-screen bg-slate-100 flex flex-col items-center justify-center p-6 text-[#0082FC]">
+        <div className="w-16 h-16 bg-[#0082FC] text-white border-2 border-[#5FD4FD] flex items-center justify-center shadow-lg animate-pulse mb-4">
+          <Droplets className="w-8 h-8 text-white" />
+        </div>
+        <div className="font-mono text-xs font-bold uppercase tracking-wider text-[#0082FC]">
+          Verifying Commercial Credentials...
+        </div>
+      </div>
+    );
+  }
+
+  // 2. Unauthenticated Gate: User NOT logged in
+  if (!currentUser) {
+    return (
+      <div className="min-h-screen bg-slate-100 flex flex-col text-[#0082FC]">
+        {/* Top Header */}
+        <header className="bg-[#0082FC] text-white px-6 py-4 border-b-4 border-[#5FD4FD] flex items-center justify-between">
+          <Link href="/" className="flex items-center gap-2.5">
+            <div className="w-8 h-8 bg-white text-[#0082FC] border border-[#5FD4FD] flex items-center justify-center">
+              <Droplets className="w-5 h-5 text-[#0082FC]" />
+            </div>
+            <span className="font-black text-sm uppercase tracking-tight">
+              Aqua <span className="text-[#5FD4FD]">Industries</span>
+            </span>
+          </Link>
+          <Link
+            href="/"
+            className="px-3.5 py-1.5 bg-white hover:bg-[#5FD4FD] text-[#0082FC] font-black text-xs uppercase tracking-wider transition-colors"
+          >
+            &larr; Return to Catalog
+          </Link>
+        </header>
+
+        {/* Center Auth Gate Card */}
+        <div className="flex-1 flex items-center justify-center p-4 sm:p-6">
+          <div className="max-w-md w-full bg-white border-4 border-[#0082FC] shadow-2xl p-6 sm:p-8 space-y-6">
+            <div className="text-center space-y-2">
+              <div className="w-14 h-14 bg-amber-50 text-amber-600 border-2 border-amber-500 mx-auto flex items-center justify-center">
+                <Lock className="w-7 h-7 text-amber-600" />
+              </div>
+              <div className="inline-block px-2.5 py-0.5 bg-amber-500 text-white text-[10px] font-black uppercase tracking-wider">
+                Restricted Workspace
+              </div>
+              <h2 className="text-xl sm:text-2xl font-black uppercase tracking-tight text-[#0082FC]">
+                Sign In Required
+              </h2>
+              <p className="text-xs text-[#0082FC]/80 font-medium leading-relaxed">
+                You must be logged in with an authorized account to access{" "}
+                <strong>{title}</strong>.
+              </p>
+            </div>
+
+            {gateError && (
+              <div className="p-3.5 bg-rose-50 border-2 border-rose-500 text-rose-900 text-xs font-bold flex items-start gap-2">
+                <AlertCircle className="w-4 h-4 text-rose-600 shrink-0 mt-0.5" />
+                <span>{gateError}</span>
+              </div>
+            )}
+
+            <form onSubmit={handleGateLogin} className="space-y-4">
+              <div>
+                <label className="block text-xs font-bold text-[#0082FC] uppercase mb-1">
+                  Business Email Address
+                </label>
+                <input
+                  type="email"
+                  required
+                  placeholder="name@company.com"
+                  value={gateEmail}
+                  onChange={(e) => setGateEmail(e.target.value)}
+                  className="w-full bg-white border-2 border-[#0082FC] px-3 py-2 text-xs font-bold text-[#0082FC] focus:outline-none focus:border-[#5FD4FD]"
+                />
+              </div>
+
+              <div>
+                <label className="block text-xs font-bold text-[#0082FC] uppercase mb-1">
+                  Account Password
+                </label>
+                <div className="relative">
+                  <input
+                    type={showGatePassword ? "text" : "password"}
+                    required
+                    placeholder="••••••••••••"
+                    value={gatePassword}
+                    onChange={(e) => setGatePassword(e.target.value)}
+                    className="w-full bg-white border-2 border-[#0082FC] pl-3 pr-10 py-2 text-xs font-bold text-[#0082FC] focus:outline-none focus:border-[#5FD4FD]"
+                  />
+                  <button
+                    type="button"
+                    onClick={() => setShowGatePassword(!showGatePassword)}
+                    className="absolute right-2.5 top-1/2 -translate-y-1/2 p-1 text-[#0082FC] hover:text-[#5FD4FD] transition-colors cursor-pointer"
+                    title={showGatePassword ? "Hide password" : "Show password"}
+                    aria-label={
+                      showGatePassword ? "Hide password" : "Show password"
+                    }
+                  >
+                    {showGatePassword ? (
+                      <EyeOff className="w-4 h-4" />
+                    ) : (
+                      <Eye className="w-4 h-4" />
+                    )}
+                  </button>
+                </div>
+              </div>
+
+              <button
+                type="submit"
+                className="w-full py-3 px-4 bg-[#0082FC] hover:bg-[#5FD4FD] text-white hover:text-[#0082FC] font-black text-xs uppercase tracking-wider shadow-md transition-all cursor-pointer"
+              >
+                Sign In to Unlock Dashboard
+              </button>
+            </form>
+
+            <div className="pt-4 border-t border-[#0082FC]/20 text-center space-y-2">
+              <span className="text-xs text-[#0082FC]/80 block">
+                Need an approved commercial waterworks account?
+              </span>
+              <div className="flex items-center justify-center gap-3">
+                <Link
+                  href="/#quote-form"
+                  className="text-xs font-black uppercase text-[#0082FC] hover:underline"
+                >
+                  Register Account &rsaquo;
+                </Link>
+                <span className="text-[#0082FC]/30">•</span>
+                <Link
+                  href="/"
+                  className="text-xs font-bold text-[#0082FC]/80 hover:underline"
+                >
+                  Return to Home
+                </Link>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    );
+  }
+
+  // 3. Super-Admin Gate: Non-admin trying to access /admin
+  const isSuperAdmin =
+    currentUser.role === "super-admin" ||
+    currentUser.email?.toLowerCase().includes("admin@");
+
+  if (activePage === "admin" && !isSuperAdmin) {
+    return (
+      <div className="min-h-screen bg-slate-100 flex flex-col text-[#0082FC]">
+        <header className="bg-[#0082FC] text-white px-6 py-4 border-b-4 border-[#5FD4FD] flex items-center justify-between">
+          <Link href="/" className="flex items-center gap-2.5">
+            <div className="w-8 h-8 bg-white text-[#0082FC] border border-[#5FD4FD] flex items-center justify-center">
+              <Droplets className="w-5 h-5 text-[#0082FC]" />
+            </div>
+            <span className="font-black text-sm uppercase tracking-tight">
+              Aqua <span className="text-[#5FD4FD]">Industries</span>
+            </span>
+          </Link>
+          <Link
+            href="/profile"
+            className="px-3.5 py-1.5 bg-white hover:bg-[#5FD4FD] text-[#0082FC] font-black text-xs uppercase tracking-wider transition-colors"
+          >
+            My Profile Dashboard &rsaquo;
+          </Link>
+        </header>
+
+        <div className="flex-1 flex items-center justify-center p-4 sm:p-6">
+          <div className="max-w-md w-full bg-white border-4 border-rose-600 shadow-2xl p-6 sm:p-8 space-y-6 text-center">
+            <div className="w-14 h-14 bg-rose-50 text-rose-600 border-2 border-rose-600 mx-auto flex items-center justify-center">
+              <ShieldAlert className="w-7 h-7 text-rose-600" />
+            </div>
+            <div className="inline-block px-2.5 py-0.5 bg-rose-600 text-white text-[10px] font-black uppercase tracking-wider">
+              Access Denied • 403 Forbidden
+            </div>
+            <h2 className="text-xl sm:text-2xl font-black uppercase tracking-tight text-rose-950">
+              Super-Admin Clearance Required
+            </h2>
+            <p className="text-xs text-rose-900/80 font-medium leading-relaxed">
+              Your account (<strong>{currentUser.email}</strong>) is
+              authenticated with <strong>{currentUser.accountType}</strong> tier
+              privileges. The Approvals Desk is strictly restricted to
+              authorized Super-Admin executive officers.
+            </p>
+            <div className="pt-2 flex flex-col gap-2">
+              <Link
+                href="/profile"
+                className="w-full py-2.5 px-4 bg-[#0082FC] hover:bg-[#5FD4FD] text-white hover:text-[#0082FC] font-black text-xs uppercase tracking-wider transition-colors"
+              >
+                Return to My Profile Dashboard &rsaquo;
+              </Link>
+              <Link
+                href="/"
+                className="w-full py-2.5 px-4 bg-white hover:bg-slate-100 text-[#0082FC] border border-[#0082FC] font-bold text-xs uppercase tracking-wider transition-colors"
+              >
+                Return to Public Catalog
+              </Link>
+            </div>
+          </div>
+        </div>
+      </div>
+    );
+  }
 
   return (
     <div className="min-h-screen bg-slate-100 flex flex-col lg:flex-row text-[#0082FC]">

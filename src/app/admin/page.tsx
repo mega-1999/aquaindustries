@@ -36,8 +36,6 @@ export default function SuperAdminPage() {
     rejectUser,
     deleteUser,
     logout,
-    quickLoginAsAdmin,
-    login,
   } = useAuth();
 
   const [activeTab, setActiveTab] = useState<
@@ -120,29 +118,19 @@ export default function SuperAdminPage() {
               </p>
             </div>
 
-            {/* Status and Action Card */}
-            <div className="flex flex-col sm:flex-row items-start sm:items-center gap-3 shrink-0">
-              {!isSuperAdmin ? (
-                <button
-                  type="button"
-                  onClick={quickLoginAsAdmin}
-                  className="px-5 py-3 bg-white hover:bg-[#5FD4FD] text-[#0082FC] font-black text-xs uppercase tracking-wider shadow-lg transition-all cursor-pointer"
-                >
-                  Authorize As Super-Admin
-                </button>
-              ) : (
-                <div className="bg-white/10 p-3 border border-[#5FD4FD] text-xs text-white flex items-center gap-3">
-                  <ShieldCheck className="w-5 h-5 text-[#5FD4FD]" />
-                  <div>
-                    <span className="font-bold block uppercase tracking-wider text-[11px]">
-                      Master Clearance Level 1
-                    </span>
-                    <span className="text-white/80 font-mono text-[10px]">
-                      {currentUser?.email}
-                    </span>
-                  </div>
+            {/* Clearance Level Status Card */}
+            <div className="flex items-center gap-3 shrink-0">
+              <div className="bg-white/10 p-3 border border-[#5FD4FD] text-xs text-white flex items-center gap-3">
+                <ShieldCheck className="w-5 h-5 text-[#5FD4FD]" />
+                <div>
+                  <span className="font-bold block uppercase tracking-wider text-[11px]">
+                    Master Clearance Level 1
+                  </span>
+                  <span className="text-white/80 font-mono text-[10px]">
+                    {currentUser?.email}
+                  </span>
                 </div>
-              )}
+              </div>
             </div>
           </div>
         </div>
