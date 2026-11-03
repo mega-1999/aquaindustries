@@ -68,28 +68,19 @@ export const AccountRegistrationModal: React.FC<
     if (e) e.preventDefault();
     setErrorMessage(null);
 
-    // Validation for Step 1
+    // Validation for Step 1: Business Info
     if (currentStep === 1) {
-      if (
-        !companyName.trim() ||
-        !fullName.trim() ||
-        !email.trim() ||
-        !password.trim()
-      ) {
+      if (!companyName.trim() || !fullName.trim()) {
         setErrorMessage(
-          "Please complete all required fields (Company, Contact, Email, Password).",
+          "Please enter your Company Name and Primary Authorized Contact Name.",
         );
-        return;
-      }
-      if (!email.includes("@") || !email.includes(".")) {
-        setErrorMessage("Please enter a valid business email address.");
         return;
       }
       setCurrentStep(2);
       return;
     }
 
-    // Validation for Step 2
+    // Validation for Step 2: Yard & Tax ID
     if (currentStep === 2) {
       if (!taxId.trim()) {
         setErrorMessage(
@@ -101,8 +92,23 @@ export const AccountRegistrationModal: React.FC<
       return;
     }
 
-    // Step 3: Final Submission
+    // Validation & Submission for Step 3: W-9 & Credentials
     if (currentStep === 3) {
+      if (!email.trim() || !password.trim()) {
+        setErrorMessage(
+          "Please complete all required fields: Business Email and Account Password.",
+        );
+        return;
+      }
+      if (!email.includes("@") || !email.includes(".")) {
+        setErrorMessage("Please enter a valid business email address.");
+        return;
+      }
+      if (password.trim().length < 6) {
+        setErrorMessage("Password must be at least 6 characters long.");
+        return;
+      }
+
       setIsSubmitting(true);
       const res = register({
         companyName,
