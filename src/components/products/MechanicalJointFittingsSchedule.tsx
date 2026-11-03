@@ -1005,10 +1005,13 @@ export const MechanicalJointFittingsSchedule: React.FC<
     );
   }, [activeFamily]);
 
-  // Currently focused subvariant: only returns an item if activeSubvariantId is specifically selected
+  // Currently focused subvariant
   const activeSubvariant = useMemo(() => {
-    if (!familySubvariants.length || !activeSubvariantId) return null;
-    return familySubvariants.find((v) => v.id === activeSubvariantId) || null;
+    if (!familySubvariants.length) return null;
+    return (
+      familySubvariants.find((v) => v.id === activeSubvariantId) ||
+      familySubvariants[0]
+    );
   }, [familySubvariants, activeSubvariantId]);
 
   // Search results across all 36 fittings
@@ -1028,7 +1031,10 @@ export const MechanicalJointFittingsSchedule: React.FC<
 
   const handleOpenFamily = (familyId: string, initialSubvariantId?: string) => {
     setSelectedFamilyId(familyId);
-    setActiveSubvariantId(initialSubvariantId || null);
+    const fam = FITTING_FAMILIES.find((f) => f.id === familyId);
+    setActiveSubvariantId(
+      initialSubvariantId || fam?.defaultSubvariantId || null,
+    );
     const element = document.getElementById("c153-fittings-schedule");
     if (element) {
       element.scrollIntoView({ behavior: "smooth" });
@@ -1630,37 +1636,6 @@ export const MechanicalJointFittingsSchedule: React.FC<
                       </button>
                     </div>
                   </div>
-                </div>
-              </div>
-            )}
-
-            {/* When no specific subvariant angle has been clicked yet */}
-            {!activeSubvariant && (
-              <div className="bg-white border-4 border-[#5FD4FD] p-8 sm:p-12 text-center shadow-lg">
-                <Compass className="w-12 h-12 text-[#0082FC] mx-auto mb-3" />
-                <h4 className="text-base sm:text-lg font-black uppercase tracking-tight text-[#0082FC]">
-                  Select an Option or Angle Above
-                </h4>
-                <p className="text-xs sm:text-sm text-[#0082FC]/80 max-w-md mx-auto mt-1 mb-6">
-                  Click any angle option above (such as 45°, 90°, or 22.5°) to
-                  display only that specific fitting&apos;s blueprint,
-                  specifications, and commercial quote options.
-                </p>
-                <div className="flex flex-wrap justify-center gap-2">
-                  {familySubvariants.map((v) => {
-                    const label =
-                      v.angle || v.name.split(" ")[2] || v.catNumber;
-                    return (
-                      <button
-                        key={v.id}
-                        type="button"
-                        onClick={() => setActiveSubvariantId(v.id)}
-                        className="px-4 py-2 bg-[#0082FC] hover:bg-[#5FD4FD] text-white hover:text-[#0082FC] text-xs font-black uppercase rounded-none border-2 border-[#0082FC] transition-all cursor-pointer shadow-xs"
-                      >
-                        {label} ({v.catNumber})
-                      </button>
-                    );
-                  })}
                 </div>
               </div>
             )}
