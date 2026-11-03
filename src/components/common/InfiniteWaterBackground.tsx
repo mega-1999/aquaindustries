@@ -28,7 +28,7 @@ export const InfiniteWaterBackground: React.FC<
   zIndex = "z-0",
 }) => {
   const containerRef = useRef<HTMLDivElement>(null);
-  const [isInView, setIsInView] = useState(false);
+  const [isInView, setIsInView] = useState(true);
 
   // Lazy Intersection Observer: Only activate heavier rendering when actually visible on screen
   useEffect(() => {

@@ -10,56 +10,51 @@ export const SolenoPreloader: React.FC = () => {
   const [isFinished, setIsFinished] = useState(false);
 
   useEffect(() => {
-    // Check if user already saw preloader in this session
-    try {
-      const alreadySeen = sessionStorage.getItem("aqua_preloader_seen_v1");
-      if (alreadySeen) {
-        setIsFinished(true);
-        return;
-      }
-    } catch {
-      // Fallback for private mode
-    }
-
     // Lock body scroll while loader is active
     document.body.style.overflow = "hidden";
 
-    const duration = 500; // Ultra-snappy 500ms count up
+    const duration = 850; // Smooth natural count up
     const startTime = performance.now();
+
+    let animFrame: number;
+    let finishTimer: NodeJS.Timeout;
 
     const updateProgress = (currentTime: number) => {
       const elapsed = currentTime - startTime;
       const progressRatio = Math.min(1, elapsed / duration);
 
-      // Smooth ease-out curve
-      const easedPercent = Math.min(
-        100,
-        Math.floor(100 * Math.sin(progressRatio * (Math.PI / 2))),
-      );
-      setProgress(easedPercent);
+      // Smooth ease-out cubic curve
+      const easedRatio = 1 - Math.pow(1 - progressRatio, 3);
+      const currentPercent = Math.min(100, Math.floor(100 * easedRatio));
+      setProgress(currentPercent);
 
       if (progressRatio < 1) {
-        requestAnimationFrame(updateProgress);
+        animFrame = requestAnimationFrame(updateProgress);
       } else {
-        // Trigger Soleno 100% circle iris wipe
+        setProgress(100);
+        // Trigger smooth circular iris aperture wipe
         setIs100Percent(true);
 
-        try {
-          sessionStorage.setItem("aqua_preloader_seen_v1", "true");
-        } catch {}
-
-        // After quick circle expansion completes, unmount and unlock scroll
-        setTimeout(() => {
+        // After iris circle finishes expanding across viewport, unmount and unlock scroll
+        finishTimer = setTimeout(() => {
           setIsFinished(true);
           document.body.style.overflow = "";
-        }, 500);
+        }, 800);
       }
     };
 
-    const animFrame = requestAnimationFrame(updateProgress);
+    animFrame = requestAnimationFrame(updateProgress);
+
+    // Fallback safety timeout to guarantee unmount and scroll restoration
+    const safetyTimer = setTimeout(() => {
+      setIsFinished(true);
+      document.body.style.overflow = "";
+    }, 2500);
 
     return () => {
       cancelAnimationFrame(animFrame);
+      clearTimeout(finishTimer);
+      clearTimeout(safetyTimer);
       document.body.style.overflow = "";
     };
   }, []);
@@ -69,15 +64,68 @@ export const SolenoPreloader: React.FC = () => {
   return (
     <div
       id="myLoader"
-      className={is100Percent ? "class_100pourcent" : ""}
+      className={`fixed inset-0 w-screen h-screen z-[99999] select-none flex items-center justify-center overflow-hidden transition-all duration-300 ${
+        is100Percent ? "pointer-events-none" : "pointer-events-auto"
+      }`}
       aria-hidden={is100Percent}
     >
-      {/* Soleno's Circular Iris Opening Aperture */}
-      <div className="invisible_scale" />
+      {/* Dynamic SVG Circular Aperture Iris Mask Reveal */}
+      <svg
+        className="absolute inset-0 w-full h-full pointer-events-none"
+        preserveAspectRatio="none"
+        xmlns="http://www.w3.org/2000/svg"
+      >
+        <title>Soleno Circular Iris Aperture Preloader</title>
+        <defs>
+          <mask id="solenoIrisMask">
+            {/* White canvas = solid blue background visible */}
+            <rect width="100%" height="100%" fill="white" />
+            {/* Expanding black circle = transparent hole revealing page underneath */}
+            <circle
+              cx="50%"
+              cy="50%"
+              r={is100Percent ? "150vmax" : "0px"}
+              fill="black"
+              style={{
+                transition: "r 0.8s cubic-bezier(0.77, 0, 0.175, 1)",
+              }}
+            />
+          </mask>
+        </defs>
 
-      {/* Central Logo & Numerical Percentage */}
-      <div className="logo_loader">
-        {/* Pulsing Emblem */}
+        {/* Solid #0082FC background masked with the circular aperture */}
+        <rect
+          width="100%"
+          height="100%"
+          fill="#0082FC"
+          mask="url(#solenoIrisMask)"
+        />
+
+        {/* Highlighting Iris Aperture Ring */}
+        <circle
+          cx="50%"
+          cy="50%"
+          r={is100Percent ? "150vmax" : "0px"}
+          fill="none"
+          stroke="#5FD4FD"
+          strokeWidth="6"
+          opacity={is100Percent ? 0.9 : 0}
+          style={{
+            transition:
+              "r 0.8s cubic-bezier(0.77, 0, 0.175, 1), opacity 0.3s ease",
+          }}
+        />
+      </svg>
+
+      {/* Central Brand Identity & Percentage Counter */}
+      <div
+        className={`relative z-10 flex flex-col items-center transition-all duration-400 ${
+          is100Percent
+            ? "opacity-0 scale-90 pointer-events-none"
+            : "opacity-100 scale-100"
+        }`}
+      >
+        {/* Pulsing Brand Emblem */}
         <div className="pulse-logo mb-5">
           <div className="w-20 h-20 sm:w-24 sm:h-24 bg-white border-2 border-[#5FD4FD] flex items-center justify-center shadow-2xl relative">
             <Droplets className="w-10 h-10 sm:w-12 sm:h-12 text-[#0082FC]" />
@@ -95,14 +143,25 @@ export const SolenoPreloader: React.FC = () => {
         </div>
 
         {/* Dynamic Percentage Counter */}
-        <div id="progress-text" aria-live="polite">
+        <div
+          id="progress-text"
+          className="text-white font-mono font-black text-4xl sm:text-5xl tracking-tighter"
+          aria-live="polite"
+        >
           {progress}%
         </div>
       </div>
 
-      {/* Thin Bottom Progress Tracker */}
-      <div className="fix_progress">
-        <div id="myBar" style={{ width: `${progress}%` }} />
+      {/* Bottom Horizontal Progress Tracker */}
+      <div
+        className={`fixed bottom-8 sm:bottom-12 left-6 sm:left-12 right-6 sm:right-12 h-1 bg-white/20 overflow-hidden transition-opacity duration-300 ${
+          is100Percent ? "opacity-0" : "opacity-100"
+        }`}
+      >
+        <div
+          className="h-full bg-[#5FD4FD] transition-all duration-100 ease-out"
+          style={{ width: `${progress}%` }}
+        />
       </div>
     </div>
   );
