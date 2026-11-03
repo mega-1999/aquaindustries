@@ -46,8 +46,12 @@ export interface AuthContextType {
   updatePassword: (
     currentPass: string,
     newPass: string,
+    bypassCurrentCheck?: boolean,
   ) => { success: boolean; message: string };
-  resetPassword: (email?: string) => {
+  resetPassword: (
+    email?: string,
+    customNewPassword?: string,
+  ) => {
     success: boolean;
     message: string;
     tempPass?: string;

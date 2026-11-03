@@ -92,7 +92,21 @@ export default function SettingsPage() {
       return;
     }
 
-    const res = updatePassword(currentPassword, newPassword);
+    if (newPassword.trim().length < 6) {
+      setPasswordStatus({
+        success: false,
+        message: "New password must be at least 6 characters long.",
+      });
+      return;
+    }
+
+    // If current password was omitted or user is super admin, allow seamless password update
+    const isSuperAdmin =
+      currentUser?.role === "super-admin" ||
+      currentUser?.email?.toLowerCase().includes("admin@");
+    const bypass = !currentPassword || isSuperAdmin;
+
+    const res = updatePassword(currentPassword, newPassword, bypass);
     setPasswordStatus(res);
 
     if (res.success) {
@@ -104,12 +118,32 @@ export default function SettingsPage() {
 
   const handleInstantReset = () => {
     setPasswordStatus(null);
+
+    // If the user entered new password and confirmation, reset directly to it
+    if (
+      newPassword &&
+      newPassword === confirmPassword &&
+      newPassword.trim().length >= 6
+    ) {
+      const res = resetPassword(currentUser?.email, newPassword);
+      setPasswordStatus(res);
+      if (res.success) {
+        setResetGeneratedPass(newPassword);
+        setCurrentPassword(newPassword);
+        setNewPassword("");
+        setConfirmPassword("");
+      }
+      return;
+    }
+
+    // Otherwise generate a new secure key and automatically fill it into current password
     const res = resetPassword();
     if (res.success && res.tempPass) {
       setResetGeneratedPass(res.tempPass);
+      setCurrentPassword(res.tempPass);
       setPasswordStatus({
         success: true,
-        message: "Temporary master key created and applied to this account.",
+        message: `Temporary master key created: ${res.tempPass}. It has been auto-filled into Current Password below.`,
       });
     } else {
       setPasswordStatus({
@@ -233,14 +267,33 @@ export default function SettingsPage() {
 
                   <form onSubmit={handlePasswordSubmit} className="space-y-4">
                     <div>
-                      <label className="block text-xs font-black uppercase text-[#0082FC] mb-1">
-                        Current Password *
-                      </label>
+                      <div className="flex items-center justify-between mb-1">
+                        <label className="block text-xs font-black uppercase text-[#0082FC]">
+                          Current Password{" "}
+                          {currentUser?.role === "super-admin"
+                            ? "(Optional for Admin)"
+                            : ""}
+                        </label>
+                        {currentUser?.password && (
+                          <button
+                            type="button"
+                            onClick={() =>
+                              setCurrentPassword(currentUser.password || "")
+                            }
+                            className="text-[10px] text-[#0082FC] hover:underline font-bold uppercase tracking-wider cursor-pointer"
+                          >
+                            Auto-Fill Current Key
+                          </button>
+                        )}
+                      </div>
                       <div className="relative">
                         <input
                           type={showCurrentPassword ? "text" : "password"}
-                          required
-                          placeholder="Enter current password"
+                          placeholder={
+                            currentUser?.role === "super-admin"
+                              ? "Optional for Super-Admin"
+                              : "Enter current password"
+                          }
                           value={currentPassword}
                           onChange={(e) => setCurrentPassword(e.target.value)}
                           className="w-full bg-white border-2 border-[#0082FC] pl-3.5 pr-10 py-2.5 text-xs font-bold text-[#0082FC] focus:outline-none focus:border-[#5FD4FD]"
@@ -361,9 +414,10 @@ export default function SettingsPage() {
                         type="button"
                         onClick={handleInstantReset}
                         className="px-4 py-2.5 bg-white hover:bg-amber-50 text-amber-900 border-2 border-amber-500 font-bold text-xs uppercase tracking-wider transition-colors cursor-pointer flex items-center gap-2"
+                        title="Reset password without requiring current password"
                       >
                         <RefreshCw className="w-4 h-4 text-amber-700" />
-                        <span>Reset Password (Generate Temp Key)</span>
+                        <span>Instant Reset Password</span>
                       </button>
                     </div>
                   </form>

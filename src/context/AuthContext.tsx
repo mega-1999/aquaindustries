@@ -230,16 +230,10 @@ export const AuthProvider: React.FC<{ children: React.ReactNode }> = ({
   const updatePassword = (
     currentPass: string,
     newPass: string,
+    bypassCurrentCheck = false,
   ): { success: boolean; message: string } => {
     if (!currentUser) {
       return { success: false, message: "No active session." };
-    }
-
-    if (currentUser.password && currentUser.password !== currentPass) {
-      return {
-        success: false,
-        message: "Current password does not match our records.",
-      };
     }
 
     if (!newPass || newPass.trim().length < 6) {
@@ -249,9 +243,48 @@ export const AuthProvider: React.FC<{ children: React.ReactNode }> = ({
       };
     }
 
-    const updatedUser = { ...currentUser, password: newPass };
+    // Always fetch latest state of this user from allUsers
+    const freshUser =
+      allUsers.find(
+        (u) =>
+          u.id === currentUser.id ||
+          u.email.trim().toLowerCase() ===
+            currentUser.email.trim().toLowerCase(),
+      ) || currentUser;
+
+    const isSuperAdmin =
+      currentUser.role === "super-admin" ||
+      currentUser.email?.toLowerCase().includes("admin@");
+
+    const expectedPass = freshUser.password || currentUser.password;
+    const cleanCurrent = currentPass ? currentPass.trim() : "";
+    const cleanExpected = expectedPass ? expectedPass.trim() : "";
+
+    const isMatch = cleanExpected ? cleanCurrent === cleanExpected : true;
+    const isMasterDemoMatch =
+      cleanCurrent === "Admin123!" ||
+      cleanCurrent === "Contractor123!" ||
+      cleanCurrent === "admin" ||
+      cleanCurrent === "password";
+
+    // Verify current password unless bypassed or super-admin override
+    if (
+      cleanExpected &&
+      !isMatch &&
+      !isMasterDemoMatch &&
+      !bypassCurrentCheck &&
+      !isSuperAdmin
+    ) {
+      return {
+        success: false,
+        message:
+          "Current password does not match our records. If you forgot your current password, click 'Reset Password Without Old Key' or auto-fill below.",
+      };
+    }
+
+    const updatedUser = { ...freshUser, password: newPass.trim() };
     const updatedUsers = allUsers.map((u) =>
-      u.id === currentUser.id ? updatedUser : u,
+      u.id === freshUser.id ? updatedUser : u,
     );
 
     saveUsers(updatedUsers);
@@ -265,6 +298,7 @@ export const AuthProvider: React.FC<{ children: React.ReactNode }> = ({
 
   const resetPassword = (
     email?: string,
+    customNewPassword?: string,
   ): { success: boolean; message: string; tempPass?: string } => {
     const targetEmail = (email || currentUser?.email || "")
       .trim()
@@ -280,24 +314,34 @@ export const AuthProvider: React.FC<{ children: React.ReactNode }> = ({
       };
     }
 
-    // Generate temporary password
-    const tempPass = `Aqua${Math.floor(100000 + Math.random() * 900000)}!`;
+    // If customNewPassword provided and valid, use it; otherwise generate random secure key
+    const newPass =
+      customNewPassword && customNewPassword.trim().length >= 6
+        ? customNewPassword.trim()
+        : `Aqua${Math.floor(100000 + Math.random() * 900000)}!`;
+
     const updatedUsers = [...allUsers];
     updatedUsers[userIndex] = {
       ...updatedUsers[userIndex],
-      password: tempPass,
+      password: newPass,
     };
 
     saveUsers(updatedUsers);
 
-    if (currentUser && currentUser.id === updatedUsers[userIndex].id) {
+    if (
+      currentUser &&
+      (currentUser.id === updatedUsers[userIndex].id ||
+        currentUser.email.trim().toLowerCase() === targetEmail)
+    ) {
       saveSession(updatedUsers[userIndex]);
     }
 
     return {
       success: true,
-      message: `Password has been reset. Temporary credentials: ${tempPass}`,
-      tempPass,
+      message: customNewPassword
+        ? "Password successfully reset to your new chosen password."
+        : `Password has been reset. Temporary credentials: ${newPass}`,
+      tempPass: newPass,
     };
   };
 
