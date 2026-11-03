@@ -43,6 +43,23 @@ export interface AuthContextType {
     message: string;
     user?: UserAccount;
   };
+  updatePassword: (
+    currentPass: string,
+    newPass: string,
+  ) => { success: boolean; message: string };
+  resetPassword: (email?: string) => {
+    success: boolean;
+    message: string;
+    tempPass?: string;
+  };
+  updateUserProfile: (
+    data: Partial<
+      Pick<
+        UserAccount,
+        "fullName" | "phone" | "companyName" | "assignedYard" | "taxIdOrLicense"
+      >
+    >,
+  ) => { success: boolean; message: string };
   approveUser: (userId: string) => void;
   rejectUser: (userId: string, reason?: string) => void;
   deleteUser: (userId: string) => void;

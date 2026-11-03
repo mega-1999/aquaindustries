@@ -226,6 +226,106 @@ export const AuthProvider: React.FC<{ children: React.ReactNode }> = ({
     }
   };
 
+  const updatePassword = (
+    currentPass: string,
+    newPass: string,
+  ): { success: boolean; message: string } => {
+    if (!currentUser) {
+      return { success: false, message: "No active session." };
+    }
+
+    if (currentUser.password && currentUser.password !== currentPass) {
+      return {
+        success: false,
+        message: "Current password does not match our records.",
+      };
+    }
+
+    if (!newPass || newPass.trim().length < 6) {
+      return {
+        success: false,
+        message: "New password must be at least 6 characters long.",
+      };
+    }
+
+    const updatedUser = { ...currentUser, password: newPass };
+    const updatedUsers = allUsers.map((u) =>
+      u.id === currentUser.id ? updatedUser : u,
+    );
+
+    saveUsers(updatedUsers);
+    saveSession(updatedUser);
+
+    return {
+      success: true,
+      message: "Password updated successfully. Saved to encrypted session.",
+    };
+  };
+
+  const resetPassword = (
+    email?: string,
+  ): { success: boolean; message: string; tempPass?: string } => {
+    const targetEmail = (email || currentUser?.email || "")
+      .trim()
+      .toLowerCase();
+    const userIndex = allUsers.findIndex(
+      (u) => u.email.trim().toLowerCase() === targetEmail,
+    );
+
+    if (userIndex === -1) {
+      return {
+        success: false,
+        message: "Account with this email was not found.",
+      };
+    }
+
+    // Generate temporary password
+    const tempPass = `Aqua${Math.floor(100000 + Math.random() * 900000)}!`;
+    const updatedUsers = [...allUsers];
+    updatedUsers[userIndex] = {
+      ...updatedUsers[userIndex],
+      password: tempPass,
+    };
+
+    saveUsers(updatedUsers);
+
+    if (currentUser && currentUser.id === updatedUsers[userIndex].id) {
+      saveSession(updatedUsers[userIndex]);
+    }
+
+    return {
+      success: true,
+      message: `Password has been reset. Temporary credentials: ${tempPass}`,
+      tempPass,
+    };
+  };
+
+  const updateUserProfile = (
+    data: Partial<
+      Pick<
+        UserAccount,
+        "fullName" | "phone" | "companyName" | "assignedYard" | "taxIdOrLicense"
+      >
+    >,
+  ): { success: boolean; message: string } => {
+    if (!currentUser) {
+      return { success: false, message: "No active session." };
+    }
+
+    const updatedUser = { ...currentUser, ...data };
+    const updatedUsers = allUsers.map((u) =>
+      u.id === currentUser.id ? updatedUser : u,
+    );
+
+    saveUsers(updatedUsers);
+    saveSession(updatedUser);
+
+    return {
+      success: true,
+      message: "Profile details updated successfully.",
+    };
+  };
+
   const logout = () => {
     saveSession(null);
   };
@@ -244,6 +344,9 @@ export const AuthProvider: React.FC<{ children: React.ReactNode }> = ({
         pendingCount,
         login,
         register,
+        updatePassword,
+        resetPassword,
+        updateUserProfile,
         approveUser,
         rejectUser,
         deleteUser,

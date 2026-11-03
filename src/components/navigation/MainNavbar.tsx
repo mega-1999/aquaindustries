@@ -11,9 +11,11 @@ import {
   Lock,
   LogOut,
   Menu,
+  Settings,
   Shield,
   ShieldCheck,
   Truck,
+  User,
   UserCheck,
   Wrench,
   X,
@@ -28,6 +30,8 @@ interface MainNavbarProps {
   onOpenRegisterModal: () => void;
   onOpenYardModal: () => void;
   onOpenSuperAdminModal?: () => void;
+  onOpenProfileModal?: () => void;
+  onOpenSettingsModal?: () => void;
   onSelectProductCategory?: (category: string) => void;
 }
 
@@ -36,6 +40,8 @@ export const MainNavbar: React.FC<MainNavbarProps> = ({
   onOpenRegisterModal,
   onOpenYardModal,
   onOpenSuperAdminModal,
+  onOpenProfileModal,
+  onOpenSettingsModal,
   onSelectProductCategory,
 }) => {
   const { currentUser, pendingCount, logout } = useAuth();
@@ -518,214 +524,113 @@ export const MainNavbar: React.FC<MainNavbarProps> = ({
 
           {/* Desktop Right Header Actions */}
           <div className="hidden xl:flex items-center gap-2.5 shrink-0">
-            {/* Super-Admin Quick Badge Button (When logged in as Admin or if Pending Approvals exist) */}
-            {currentUser?.role === "super-admin" && (
-              <button
-                type="button"
-                onClick={() => {
-                  if (onOpenSuperAdminModal) onOpenSuperAdminModal();
-                }}
-                className="inline-flex items-center gap-1.5 px-3 py-2 bg-amber-500 hover:bg-amber-600 text-[#0082FC] font-black text-xs uppercase tracking-wider rounded-none shadow-md transition-all cursor-pointer border-2 border-white"
+            {currentUser ? (
+              /* User Session Dropdown: ONLY Profile, Setting, Logout */
+              <div
+                className="relative"
+                onMouseEnter={() => setActiveMenu("user-menu")}
+                onMouseLeave={() => setActiveMenu(null)}
               >
-                <ShieldCheck className="w-4 h-4 text-[#0082FC] shrink-0" />
-                <span>Super-Admin</span>
-                {pendingCount > 0 && (
-                  <span className="px-1.5 py-0.2 bg-[#0082FC] text-white text-[10px] font-black">
-                    {pendingCount} PENDING
-                  </span>
-                )}
-              </button>
-            )}
-
-            {/* Unified Client Portal & Register Button with Hover Dropdown */}
-            <div
-              className="relative"
-              onMouseEnter={() => setActiveMenu("portal")}
-              onMouseLeave={() => setActiveMenu(null)}
-            >
-              <button
-                type="button"
-                onClick={onOpenLoginModal}
-                className={`inline-flex items-center gap-1.5 px-3 2xl:px-3.5 py-2 text-xs 2xl:text-sm font-bold transition-all whitespace-nowrap border-2 rounded-none shadow-xs cursor-pointer ${
-                  currentUser
-                    ? "bg-emerald-600 text-white border-emerald-600"
-                    : activeMenu === "portal"
+                <button
+                  type="button"
+                  onClick={() => {
+                    if (onOpenProfileModal) {
+                      onOpenProfileModal();
+                    }
+                  }}
+                  className={`inline-flex items-center gap-2 px-3 py-2 text-xs 2xl:text-sm font-black transition-all whitespace-nowrap border-2 rounded-none shadow-xs cursor-pointer ${
+                    activeMenu === "user-menu"
                       ? "bg-[#0082fc] text-white border-[#0082fc]"
                       : "bg-white text-[#0082fc] hover:bg-[#5fd4fd]/20 border-[#0082fc]"
-                }`}
-              >
-                <Lock className="w-3.5 h-3.5 shrink-0" />
-                <span className="whitespace-nowrap">
-                  {currentUser
-                    ? currentUser.role === "super-admin"
-                      ? "Admin Desk"
-                      : currentUser.fullName.split(" ")[0]
-                    : "Portal"}
-                </span>
-                <ChevronDown
-                  className={`w-3.5 h-3.5 transition-transform duration-200 ${
-                    activeMenu === "portal"
-                      ? "rotate-180 text-white"
-                      : currentUser
-                        ? "text-white"
-                        : "text-[#0082fc]"
                   }`}
-                />
-              </button>
+                  aria-label="User Account Menu"
+                >
+                  <div className="w-5 h-5 bg-[#0082fc] text-white flex items-center justify-center text-[10px] font-black border border-[#5fd4fd]">
+                    <User className="w-3.5 h-3.5" />
+                  </div>
+                  <span className="truncate max-w-[130px]">
+                    {currentUser.fullName.split(" ")[0]}
+                  </span>
+                  <ChevronDown
+                    className={`w-3.5 h-3.5 transition-transform duration-200 ${
+                      activeMenu === "user-menu" ? "rotate-180" : ""
+                    }`}
+                  />
+                </button>
 
-              {activeMenu === "portal" && (
-                <div className="absolute top-full right-0 w-84 max-w-[calc(100vw-2rem)] pt-2 z-50">
-                  <div className="bg-white border-2 border-[#0082fc] shadow-2xl p-3 text-[#0082fc] rounded-none">
-                    {/* Logged in User Header */}
-                    {currentUser && (
-                      <div className="p-2.5 bg-emerald-50 border border-emerald-500 mb-2">
-                        <span className="text-[10px] font-black uppercase text-emerald-800 tracking-wider block">
-                          Signed In Account
-                        </span>
-                        <div className="font-extrabold text-xs text-emerald-950 truncate">
+                {activeMenu === "user-menu" && (
+                  <div className="absolute top-full right-0 w-60 pt-2 z-50 animate-in fade-in slide-in-from-top-1 duration-150">
+                    <div className="bg-white border-2 border-[#0082fc] shadow-2xl p-1.5 text-[#0082fc] rounded-none">
+                      {/* User Identity Mini Chip */}
+                      <div className="px-3 py-2 border-b border-[#0082fc]/20 mb-1 bg-[#5FD4FD]/15">
+                        <div className="font-black text-xs text-[#0082fc] truncate">
+                          {currentUser.fullName}
+                        </div>
+                        <div className="text-[10px] text-[#0082fc]/80 font-bold uppercase truncate">
                           {currentUser.companyName}
                         </div>
-                        <div className="text-[11px] text-emerald-900 truncate font-mono">
-                          {currentUser.email}
-                        </div>
                       </div>
-                    )}
 
-                    {/* Super-Admin Approval Panel Option */}
-                    <button
-                      type="button"
-                      onClick={() => {
-                        setActiveMenu(null);
-                        if (onOpenSuperAdminModal) {
-                          onOpenSuperAdminModal();
-                        } else {
-                          window.location.href = "/admin";
-                        }
-                      }}
-                      className="w-full text-left flex items-start gap-3 p-2.5 hover:bg-[#0082fc] hover:text-white transition-colors group rounded-none mb-1 border-2 border-amber-400 bg-amber-50/50"
-                    >
-                      <div className="p-2 border border-amber-500 bg-amber-400 text-[#0082fc] shrink-0">
-                        <ShieldCheck className="w-4 h-4 text-[#0082FC]" />
-                      </div>
-                      <div className="flex-1 min-w-0">
-                        <div className="flex items-center justify-between gap-1 mb-0.5">
-                          <span className="font-black text-xs sm:text-sm text-[#0082fc] group-hover:text-white uppercase tracking-tight">
-                            Super-Admin Panel
-                          </span>
-                          {pendingCount > 0 && (
-                            <span className="text-[10px] bg-amber-500 text-white px-2 py-0.5 font-black whitespace-nowrap">
-                              {pendingCount} PENDING
-                            </span>
-                          )}
-                        </div>
-                        <p className="text-xs leading-snug text-[#0082fc] group-hover:text-white font-medium">
-                          Review, verify, and approve pending contractor
-                          registrations.
-                        </p>
-                      </div>
-                    </button>
-
-                    {/* Option 1: Client Portal Login / Dashboard */}
-                    <button
-                      type="button"
-                      onClick={() => {
-                        setActiveMenu(null);
-                        onOpenLoginModal();
-                      }}
-                      className="w-full text-left flex items-start gap-3 p-2.5 hover:bg-[#0082fc] hover:text-white transition-colors group rounded-none"
-                    >
-                      <div className="p-2 border border-[#5fd4fd] bg-white text-[#0082fc] shrink-0 group-hover:bg-white group-hover:text-[#0082fc]">
-                        <Lock className="w-4 h-4" />
-                      </div>
-                      <div className="flex-1 min-w-0">
-                        <div className="flex items-center justify-between gap-1 mb-0.5">
-                          <span className="font-extrabold text-sm whitespace-nowrap">
-                            {currentUser
-                              ? "Account Dashboard"
-                              : "Client Portal Sign-In"}
-                          </span>
-                          <span className="text-xs bg-[#5fd4fd] text-[#0082fc] px-2 py-0.5 font-bold whitespace-nowrap">
-                            Contractors
-                          </span>
-                        </div>
-                        <p className="text-xs sm:text-[13px] leading-snug text-[#0082fc] group-hover:text-white font-medium">
-                          Access order records, certified MTR reports, and live
-                          wholesale pricing.
-                        </p>
-                      </div>
-                    </button>
-
-                    {/* Option 2: Register Account */}
-                    {!currentUser && (
+                      {/* 1. Profile Option */}
                       <button
                         type="button"
                         onClick={() => {
                           setActiveMenu(null);
-                          onOpenRegisterModal();
+                          if (onOpenProfileModal) {
+                            onOpenProfileModal();
+                          }
                         }}
-                        className="w-full text-left flex items-start gap-3 p-2.5 hover:bg-[#0082fc] hover:text-white transition-colors group rounded-none border-t border-[#5fd4fd]/30"
+                        className="w-full text-left flex items-center gap-2.5 px-3 py-2.5 hover:bg-[#0082fc] hover:text-white transition-colors font-bold text-xs uppercase tracking-wider group cursor-pointer rounded-none"
                       >
-                        <div className="p-2 border border-[#5fd4fd] bg-white text-[#0082fc] shrink-0 group-hover:bg-white group-hover:text-[#0082fc]">
-                          <UserCheck className="w-4 h-4" />
-                        </div>
-                        <div className="flex-1 min-w-0">
-                          <div className="flex items-center justify-between gap-1 mb-0.5">
-                            <span className="font-extrabold text-sm whitespace-nowrap">
-                              Register Commercial Account
-                            </span>
-                            <span className="text-xs bg-white border border-[#5fd4fd] text-[#0082fc] px-2 py-0.5 font-bold whitespace-nowrap">
-                              New Account
-                            </span>
-                          </div>
-                          <p className="text-xs leading-snug text-[#0082fc] group-hover:text-white font-medium">
-                            Establish Net 30 wholesale credit and primary
-                            stocking yard allocation.
-                          </p>
-                        </div>
+                        <User className="w-4 h-4 text-[#0082fc] group-hover:text-white shrink-0" />
+                        <span>Profile</span>
                       </button>
-                    )}
 
-                    {/* Option 3: Track BOL Shipment */}
-                    <button
-                      type="button"
-                      onClick={() => {
-                        setActiveMenu(null);
-                        onOpenLoginModal();
-                      }}
-                      className="w-full text-left flex items-start gap-3 p-2.5 hover:bg-[#0082fc] hover:text-white transition-colors group rounded-none border-t border-[#5fd4fd]/30"
-                    >
-                      <div className="p-2 border border-[#5fd4fd] bg-white text-[#0082fc] shrink-0 group-hover:bg-white group-hover:text-[#0082fc]">
-                        <Truck className="w-4 h-4" />
-                      </div>
-                      <div className="flex-1 min-w-0">
-                        <div className="font-extrabold text-sm whitespace-nowrap mb-0.5">
-                          Track Flatbed Shipment (BOL #)
-                        </div>
-                        <p className="text-xs leading-snug text-[#0082fc] group-hover:text-white font-medium">
-                          Real-time dispatch, trailer staging, and driver
-                          arrival times.
-                        </p>
-                      </div>
-                    </button>
+                      {/* 2. Setting Option */}
+                      <button
+                        type="button"
+                        onClick={() => {
+                          setActiveMenu(null);
+                          if (onOpenSettingsModal) {
+                            onOpenSettingsModal();
+                          }
+                        }}
+                        className="w-full text-left flex items-center gap-2.5 px-3 py-2.5 hover:bg-[#0082fc] hover:text-white transition-colors font-bold text-xs uppercase tracking-wider group cursor-pointer rounded-none"
+                      >
+                        <Settings className="w-4 h-4 text-[#0082fc] group-hover:text-white shrink-0" />
+                        <span>Settings</span>
+                      </button>
 
-                    {/* Option 4: Logout (if logged in) */}
-                    {currentUser && (
+                      {/* Divider */}
+                      <div className="border-t border-[#0082fc]/20 my-1" />
+
+                      {/* 3. Logout Option */}
                       <button
                         type="button"
                         onClick={() => {
                           setActiveMenu(null);
                           logout();
                         }}
-                        className="w-full text-left flex items-center gap-2 p-2.5 text-rose-700 hover:bg-rose-50 transition-colors font-bold text-xs uppercase tracking-wider border-t border-[#5fd4fd]/30"
+                        className="w-full text-left flex items-center gap-2.5 px-3 py-2 text-rose-700 hover:bg-rose-50 transition-colors font-bold text-xs uppercase tracking-wider cursor-pointer rounded-none"
                       >
-                        <LogOut className="w-3.5 h-3.5" />
-                        <span>Sign Out of Session</span>
+                        <LogOut className="w-4 h-4 text-rose-600 shrink-0" />
+                        <span>Logout</span>
                       </button>
-                    )}
+                    </div>
                   </div>
-                </div>
-              )}
-            </div>
+                )}
+              </div>
+            ) : (
+              /* If Not Logged In: Client Portal Button */
+              <button
+                type="button"
+                onClick={onOpenLoginModal}
+                className="inline-flex items-center gap-1.5 px-3 2xl:px-3.5 py-2 text-xs 2xl:text-sm font-bold transition-all whitespace-nowrap border-2 border-[#0082fc] bg-white text-[#0082fc] hover:bg-[#5fd4fd]/20 rounded-none shadow-xs cursor-pointer"
+              >
+                <Lock className="w-3.5 h-3.5 shrink-0" />
+                <span className="whitespace-nowrap">Client Portal</span>
+              </button>
+            )}
 
             {/* Primary CTA: Request a Job Quote */}
             <a
@@ -961,23 +866,6 @@ export const MainNavbar: React.FC<MainNavbarProps> = ({
 
             {/* Mobile Footer Buttons */}
             <div className="pt-6 space-y-3">
-              {/* Super-Admin Button in Mobile Menu */}
-              <button
-                type="button"
-                onClick={() => {
-                  setMobileMenuOpen(false);
-                  if (onOpenSuperAdminModal) {
-                    onOpenSuperAdminModal();
-                  } else {
-                    window.location.href = "/admin";
-                  }
-                }}
-                className="w-full py-3 px-3 bg-amber-400 text-[#0082FC] font-black rounded-none text-center text-xs sm:text-sm uppercase tracking-wider flex items-center justify-center gap-2 border-2 border-[#0082FC] shadow-sm cursor-pointer"
-              >
-                <ShieldCheck className="w-4 h-4 text-[#0082FC]" />
-                <span>Super-Admin Panel ({pendingCount} Pending)</span>
-              </button>
-
               <a
                 href="#quote-form"
                 onClick={() => setMobileMenuOpen(false)}
@@ -986,28 +874,78 @@ export const MainNavbar: React.FC<MainNavbarProps> = ({
                 Request a Job Quote
               </a>
 
-              <div className="grid grid-cols-2 gap-2">
-                <button
-                  type="button"
-                  onClick={() => {
-                    setMobileMenuOpen(false);
-                    onOpenLoginModal();
-                  }}
-                  className="py-3 px-3 bg-white text-[#0082fc] font-bold rounded-none text-center text-xs sm:text-sm whitespace-nowrap border-2 border-[#0082fc]"
-                >
-                  Client Portal
-                </button>
-                <button
-                  type="button"
-                  onClick={() => {
-                    setMobileMenuOpen(false);
-                    onOpenRegisterModal();
-                  }}
-                  className="py-3 px-3 bg-[#5fd4fd]/20 text-[#0082fc] font-bold rounded-none text-center text-xs sm:text-sm whitespace-nowrap border-2 border-[#5fd4fd]"
-                >
-                  Register Account
-                </button>
-              </div>
+              {currentUser ? (
+                /* Mobile Logged-in Select Options: Profile, Settings, Logout */
+                <div className="space-y-2 pt-2 border-t-2 border-[#0082fc]/20">
+                  <div className="px-3 py-2 bg-[#5FD4FD]/15 border border-[#0082fc] mb-2">
+                    <span className="text-[10px] font-black uppercase text-[#0082fc]/70 block">
+                      Signed In
+                    </span>
+                    <strong className="text-xs text-[#0082fc] block truncate">
+                      {currentUser.fullName} ({currentUser.companyName})
+                    </strong>
+                  </div>
+
+                  <button
+                    type="button"
+                    onClick={() => {
+                      setMobileMenuOpen(false);
+                      if (onOpenProfileModal) onOpenProfileModal();
+                    }}
+                    className="w-full py-2.5 px-3 bg-[#0082fc] text-white font-black text-xs uppercase tracking-wider flex items-center justify-center gap-2 rounded-none cursor-pointer"
+                  >
+                    <User className="w-4 h-4" />
+                    <span>Profile Dashboard</span>
+                  </button>
+
+                  <button
+                    type="button"
+                    onClick={() => {
+                      setMobileMenuOpen(false);
+                      if (onOpenSettingsModal) onOpenSettingsModal();
+                    }}
+                    className="w-full py-2.5 px-3 bg-white text-[#0082fc] border-2 border-[#0082fc] font-black text-xs uppercase tracking-wider flex items-center justify-center gap-2 rounded-none cursor-pointer"
+                  >
+                    <Settings className="w-4 h-4" />
+                    <span>Settings</span>
+                  </button>
+
+                  <button
+                    type="button"
+                    onClick={() => {
+                      setMobileMenuOpen(false);
+                      logout();
+                    }}
+                    className="w-full py-2.5 px-3 bg-white text-rose-700 border-2 border-rose-500 font-black text-xs uppercase tracking-wider flex items-center justify-center gap-2 rounded-none cursor-pointer"
+                  >
+                    <LogOut className="w-4 h-4 text-rose-600" />
+                    <span>Logout</span>
+                  </button>
+                </div>
+              ) : (
+                <div className="grid grid-cols-2 gap-2">
+                  <button
+                    type="button"
+                    onClick={() => {
+                      setMobileMenuOpen(false);
+                      onOpenLoginModal();
+                    }}
+                    className="py-3 px-3 bg-white text-[#0082fc] font-bold rounded-none text-center text-xs sm:text-sm whitespace-nowrap border-2 border-[#0082fc]"
+                  >
+                    Client Portal
+                  </button>
+                  <button
+                    type="button"
+                    onClick={() => {
+                      setMobileMenuOpen(false);
+                      onOpenRegisterModal();
+                    }}
+                    className="py-3 px-3 bg-[#5fd4fd]/20 text-[#0082fc] font-bold rounded-none text-center text-xs sm:text-sm whitespace-nowrap border-2 border-[#5fd4fd]"
+                  >
+                    Register Account
+                  </button>
+                </div>
+              )}
             </div>
           </div>
         </div>
