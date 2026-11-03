@@ -70,4 +70,3 @@ export const INITIAL_USERS: UserAccount[] = [
     resaleUploaded: true,
   },
 ];
-

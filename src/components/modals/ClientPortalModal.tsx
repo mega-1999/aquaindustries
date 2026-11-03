@@ -19,7 +19,7 @@ import {
   UserCheck,
   X,
 } from "lucide-react";
-import React, { useState } from "react";
+import React, { useMemo, useState } from "react";
 import { useAuth } from "../../context/AuthContext";
 
 interface ClientPortalModalProps {
@@ -35,7 +35,7 @@ export const ClientPortalModal: React.FC<ClientPortalModalProps> = ({
   onOpenRegisterModal,
   onOpenSuperAdminModal,
 }) => {
-  const { currentUser, login, logout, quickLoginAsAdmin } = useAuth();
+  const { currentUser, allUsers, login, logout } = useAuth();
 
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
@@ -45,6 +45,20 @@ export const ClientPortalModal: React.FC<ClientPortalModalProps> = ({
   const [authError, setAuthError] = useState<string | null>(null);
   const [authSuccess, setAuthSuccess] = useState<string | null>(null);
   const [pendingUserAttempt, setPendingUserAttempt] = useState<boolean>(false);
+
+  // Live profile detection as user types their email
+  const detectedProfile = useMemo(() => {
+    const cleanEmail = email.trim().toLowerCase();
+    if (!cleanEmail) return null;
+    return (
+      allUsers.find((u) => u.email.trim().toLowerCase() === cleanEmail) || null
+    );
+  }, [email, allUsers]);
+
+  const isEmailFormatted = useMemo(() => {
+    const cleanEmail = email.trim().toLowerCase();
+    return cleanEmail.includes("@") && cleanEmail.split("@")[1]?.includes(".");
+  }, [email]);
 
   if (!isOpen) return null;
 
@@ -64,13 +78,6 @@ export const ClientPortalModal: React.FC<ClientPortalModalProps> = ({
         setPendingUserAttempt(true);
       }
     }
-  };
-
-  const handleFillDemo = (demoEmail: string, demoPass: string) => {
-    setEmail(demoEmail);
-    setPassword(demoPass);
-    setAuthError(null);
-    setPendingUserAttempt(false);
   };
 
   const handleBolLookup = () => {
@@ -309,48 +316,6 @@ export const ClientPortalModal: React.FC<ClientPortalModalProps> = ({
               </div>
             )}
 
-            {/* Quick Demo Credentials Bar */}
-            <div className="bg-[#0082FC]/10 p-2.5 border border-[#0082FC] text-xs">
-              <span className="font-bold text-[#0082FC] block mb-1 text-[11px] uppercase tracking-wider">
-                Quick Test Autofill Accounts:
-              </span>
-              <div className="flex flex-wrap gap-1.5">
-                <button
-                  type="button"
-                  onClick={() =>
-                    handleFillDemo("admin@aquaindustries.com", "Admin123!")
-                  }
-                  className="px-2 py-1 bg-white hover:bg-[#0082FC] text-[#0082FC] hover:text-white border border-[#0082FC] text-[10px] font-bold uppercase transition-colors"
-                >
-                  Super-Admin
-                </button>
-                <button
-                  type="button"
-                  onClick={() =>
-                    handleFillDemo(
-                      "contractor@northeastwater.com",
-                      "Contractor123!",
-                    )
-                  }
-                  className="px-2 py-1 bg-white hover:bg-[#0082FC] text-[#0082FC] hover:text-white border border-[#0082FC] text-[10px] font-bold uppercase transition-colors"
-                >
-                  Approved Contractor
-                </button>
-                <button
-                  type="button"
-                  onClick={() =>
-                    handleFillDemo(
-                      "pipeline@gulfcoastutility.com",
-                      "Utility123!",
-                    )
-                  }
-                  className="px-2 py-1 bg-amber-100 hover:bg-amber-500 text-amber-900 hover:text-white border border-amber-500 text-[10px] font-bold uppercase transition-colors"
-                >
-                  Pending Contractor
-                </button>
-              </div>
-            </div>
-
             {/* Email Field */}
             <div>
               <label
@@ -371,6 +336,177 @@ export const ClientPortalModal: React.FC<ClientPortalModalProps> = ({
                   className="w-full bg-white border-2 border-[#0082FC] pl-9 pr-3 py-2 text-xs sm:text-sm font-bold text-[#0082FC] focus:outline-none focus:border-[#5FD4FD]"
                 />
               </div>
+
+              {/* Live Profile Auto-Detection Card */}
+              {detectedProfile && (
+                <>
+                  {detectedProfile.role === "super-admin" && (
+                    <div className="mt-2.5 p-3.5 bg-[#0082FC] text-white border-2 border-[#5FD4FD] shadow-xs animate-in fade-in slide-in-from-top-1 duration-150">
+                      <div className="flex items-start gap-3">
+                        <div className="w-8 h-8 bg-white text-[#0082FC] border border-[#5FD4FD] flex items-center justify-center shrink-0">
+                          <ShieldCheck className="w-5 h-5 text-[#0082FC]" />
+                        </div>
+                        <div className="flex-1 min-w-0">
+                          <div className="flex items-center gap-2 flex-wrap">
+                            <span className="px-2 py-0.5 bg-[#5FD4FD] text-[#0082FC] text-[10px] font-black uppercase tracking-wider">
+                              Super-Admin Profile Detected
+                            </span>
+                            <span className="text-[11px] font-mono text-[#5FD4FD] font-bold">
+                              Level 1 Clearance
+                            </span>
+                          </div>
+                          <div className="text-xs font-black uppercase tracking-tight text-white mt-1">
+                            {detectedProfile.fullName} &bull;{" "}
+                            {detectedProfile.companyName}
+                          </div>
+                          <p className="text-[11px] text-white/90 font-medium mt-0.5">
+                            Master executive profile recognized. Enter password
+                            below to authenticate.
+                          </p>
+                        </div>
+                      </div>
+                    </div>
+                  )}
+
+                  {detectedProfile.role !== "super-admin" &&
+                    detectedProfile.status === "APPROVED" && (
+                      <div className="mt-2.5 p-3.5 bg-emerald-50 border-2 border-emerald-600 text-emerald-950 shadow-xs animate-in fade-in slide-in-from-top-1 duration-150">
+                        <div className="flex items-start gap-3">
+                          <div className="w-8 h-8 bg-emerald-600 text-white flex items-center justify-center shrink-0">
+                            <UserCheck className="w-5 h-5 text-white" />
+                          </div>
+                          <div className="flex-1 min-w-0">
+                            <div className="flex items-center gap-2 flex-wrap">
+                              <span className="px-2 py-0.5 bg-emerald-600 text-white text-[10px] font-black uppercase tracking-wider">
+                                Verified Contractor Profile Found
+                              </span>
+                              <span className="text-[11px] font-mono font-bold text-emerald-800">
+                                License: {detectedProfile.taxIdOrLicense}
+                              </span>
+                            </div>
+                            <div className="text-xs font-black uppercase tracking-tight text-emerald-950 mt-1">
+                              {detectedProfile.companyName} &bull;{" "}
+                              {detectedProfile.fullName}
+                            </div>
+                            <div className="text-[11px] text-emerald-900 font-medium mt-0.5 flex flex-wrap items-center gap-x-3 gap-y-1">
+                              <span>
+                                Type:{" "}
+                                <strong>{detectedProfile.accountType}</strong>
+                              </span>
+                              <span>
+                                Hub:{" "}
+                                <strong>
+                                  {detectedProfile.assignedYard
+                                    .replace("-", " ")
+                                    .toUpperCase()}
+                                </strong>
+                              </span>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    )}
+
+                  {detectedProfile.status === "PENDING_APPROVAL" && (
+                    <div className="mt-2.5 p-3.5 bg-amber-50 border-2 border-amber-500 text-amber-950 shadow-xs animate-in fade-in slide-in-from-top-1 duration-150">
+                      <div className="flex items-start gap-3">
+                        <div className="w-8 h-8 bg-amber-500 text-white flex items-center justify-center shrink-0">
+                          <Clock className="w-5 h-5 text-white" />
+                        </div>
+                        <div className="flex-1 min-w-0">
+                          <div className="flex items-center gap-2 flex-wrap">
+                            <span className="px-2 py-0.5 bg-amber-500 text-white text-[10px] font-black uppercase tracking-wider">
+                              Pending Super-Admin Approval
+                            </span>
+                            <span className="text-[11px] font-mono font-bold text-amber-900">
+                              Registered:{" "}
+                              {new Date(
+                                detectedProfile.createdAt,
+                              ).toLocaleDateString()}
+                            </span>
+                          </div>
+                          <div className="text-xs font-black uppercase tracking-tight text-amber-950 mt-1">
+                            {detectedProfile.companyName} &bull;{" "}
+                            {detectedProfile.fullName}
+                          </div>
+                          <p className="text-[11px] text-amber-900 font-medium mt-0.5">
+                            Registration received and indexed. Super-Admin
+                            approval is required prior to wholesale portal
+                            activation.
+                          </p>
+                          {onOpenSuperAdminModal && (
+                            <div className="mt-2 pt-2 border-t border-amber-300 flex items-center justify-between gap-2">
+                              <span className="text-[10px] text-amber-900 font-bold uppercase">
+                                Super-Admin Testing Mode?
+                              </span>
+                              <button
+                                type="button"
+                                onClick={() => {
+                                  onClose();
+                                  onOpenSuperAdminModal();
+                                }}
+                                className="px-2 py-1 bg-[#0082FC] hover:bg-[#5FD4FD] text-white hover:text-[#0082FC] font-black text-[10px] uppercase cursor-pointer"
+                              >
+                                Open Super-Admin Panel &rsaquo;
+                              </button>
+                            </div>
+                          )}
+                        </div>
+                      </div>
+                    </div>
+                  )}
+
+                  {detectedProfile.status === "REJECTED" && (
+                    <div className="mt-2.5 p-3.5 bg-rose-50 border-2 border-rose-500 text-rose-950 shadow-xs animate-in fade-in slide-in-from-top-1 duration-150">
+                      <div className="flex items-start gap-3">
+                        <div className="w-8 h-8 bg-rose-600 text-white flex items-center justify-center shrink-0">
+                          <AlertCircle className="w-5 h-5 text-white" />
+                        </div>
+                        <div className="flex-1 min-w-0">
+                          <div className="flex items-center gap-2">
+                            <span className="px-2 py-0.5 bg-rose-600 text-white text-[10px] font-black uppercase tracking-wider">
+                              Account Declined
+                            </span>
+                          </div>
+                          <div className="text-xs font-black uppercase tracking-tight text-rose-950 mt-1">
+                            {detectedProfile.companyName}
+                          </div>
+                          <p className="text-[11px] text-rose-900 font-medium mt-0.5">
+                            Status: Application not approved (
+                            {detectedProfile.rejectionReason ||
+                              "Verification failed"}
+                            ). Contact dispatch.
+                          </p>
+                        </div>
+                      </div>
+                    </div>
+                  )}
+                </>
+              )}
+
+              {/* Unregistered indicator if email format is complete but no profile matches */}
+              {!detectedProfile && isEmailFormatted && (
+                <div className="mt-2.5 p-3 bg-[#5FD4FD]/15 border border-[#0082FC] text-[#0082FC] text-xs flex flex-col sm:flex-row items-start sm:items-center justify-between gap-2 animate-in fade-in duration-150">
+                  <div className="flex items-center gap-2 min-w-0">
+                    <Building className="w-4 h-4 text-[#0082FC] shrink-0" />
+                    <span className="text-[11px] font-bold">
+                      No active profile found for this email address.
+                    </span>
+                  </div>
+                  {onOpenRegisterModal && (
+                    <button
+                      type="button"
+                      onClick={() => {
+                        onClose();
+                        onOpenRegisterModal();
+                      }}
+                      className="px-2.5 py-1 bg-[#0082FC] hover:bg-[#5FD4FD] text-white hover:text-[#0082FC] text-[10px] font-black uppercase tracking-wider shrink-0 cursor-pointer"
+                    >
+                      Register Company &rsaquo;
+                    </button>
+                  )}
+                </div>
+              )}
             </div>
 
             {/* Password Field */}
