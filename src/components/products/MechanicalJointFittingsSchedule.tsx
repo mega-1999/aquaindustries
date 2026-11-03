@@ -563,7 +563,7 @@ export const FITTINGS_SCHEDULE_DATA: FittingItemData[] = [
     name: "Swivel x Swivel Hydrant Adapters",
     catNumber: "Cat. SW-ADPT",
     category: "swivel-hydrant",
-    categoryLabel: "Swivel Hydrant Fittings",
+    categoryLabel: "Swivel Hydrant",
     sizeRange: '4" - 8"',
     pressureRating: "350 PSI Working Pressure",
     deflection: "360° Free Rotation",
@@ -578,7 +578,7 @@ export const FITTINGS_SCHEDULE_DATA: FittingItemData[] = [
     name: "Swivel x Swivel Hydrant Ell w/ 2 Glands",
     catNumber: "Cat. SW-ELL-2G",
     category: "swivel-hydrant",
-    categoryLabel: "Swivel Hydrant Fittings",
+    categoryLabel: "Swivel Hydrant",
     sizeRange: '6" & 8"',
     pressureRating: "350 PSI Working Pressure",
     deflection: "360° Rotational Positioning",
@@ -593,7 +593,7 @@ export const FITTINGS_SCHEDULE_DATA: FittingItemData[] = [
     name: "Swivel x Solid Hydrant Adapters",
     catNumber: "Cat. SW-SOLID",
     category: "swivel-hydrant",
-    categoryLabel: "Swivel Hydrant Fittings",
+    categoryLabel: "Swivel Hydrant",
     sizeRange: '4" - 8"',
     pressureRating: "350 PSI Working Pressure",
     deflection: "360° Swivel on Hydrant End",
@@ -608,7 +608,7 @@ export const FITTINGS_SCHEDULE_DATA: FittingItemData[] = [
     name: "Swivel Glands & Retainer Rings",
     catNumber: "Cat. SW-GLAND",
     category: "swivel-hydrant",
-    categoryLabel: "Swivel Hydrant Fittings",
+    categoryLabel: "Swivel Hydrant",
     sizeRange: '4" - 12"',
     pressureRating: "350 PSI Working Pressure",
     deflection: "Locking Ring Capture",
@@ -1043,12 +1043,12 @@ export const MechanicalJointFittingsSchedule: React.FC<
                 className="bg-white border-4 border-[#5FD4FD] rounded-none p-4 sm:p-5 flex flex-col justify-between shadow-lg hover:border-[#0082FC] transition-all duration-300 group hover:-translate-y-1 relative text-[#0082FC] h-full min-w-0 overflow-hidden"
               >
                 <div>
-                  {/* Top Bar: Cat Ref Code + Category Tag */}
-                  <div className="flex items-center justify-between mb-2.5 border-b-2 border-[#0082FC]/15 pb-2 min-h-[26px]">
-                    <span className="text-[10px] font-black uppercase tracking-wider bg-[#0082FC] text-white px-2 py-0.5 border border-[#0082FC]">
+                  {/* Top Bar: Cat Ref Code + Category Tag (100% Single Line, Never Wraps) */}
+                  <div className="flex items-center justify-between gap-1.5 mb-2 border-b-2 border-[#0082FC]/15 pb-2 min-h-[26px] flex-nowrap">
+                    <span className="text-[10px] font-black uppercase tracking-tight bg-[#0082FC] text-white px-2 py-0.5 border border-[#0082FC] shrink-0 whitespace-nowrap">
                       {fitting.catNumber}
                     </span>
-                    <span className="text-[10px] font-bold text-[#0082FC]/80 uppercase truncate">
+                    <span className="text-[10px] font-bold text-[#0082FC]/80 uppercase tracking-tight truncate text-right shrink min-w-0 whitespace-nowrap">
                       {fitting.categoryLabel}
                     </span>
                   </div>
@@ -1056,8 +1056,8 @@ export const MechanicalJointFittingsSchedule: React.FC<
                   {/* Fitting Image with Blueprint Fallback */}
                   <FittingCardImage fitting={fitting} />
 
-                  {/* Title & Joint Type */}
-                  <h3 className="text-sm sm:text-base font-black uppercase tracking-tight text-[#0082FC] leading-snug line-clamp-1 mt-2.5 mb-0.5">
+                  {/* Title & Joint Type (Slightly Smaller & 2-Line Visible) */}
+                  <h3 className="text-xs sm:text-[13px] font-black uppercase tracking-tight text-[#0082FC] leading-tight line-clamp-2 min-h-[34px] flex items-center mt-2 mb-0.5">
                     {fitting.name}
                   </h3>
 
