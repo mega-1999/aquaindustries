@@ -9,7 +9,6 @@ import {
   FileText,
   Layers,
   Lock,
-  LogOut,
   Menu,
   Settings,
   Shield,
@@ -40,7 +39,7 @@ export const MainNavbar: React.FC<MainNavbarProps> = ({
   onOpenSuperAdminModal,
   onSelectProductCategory,
 }) => {
-  const { currentUser, pendingCount, logout } = useAuth();
+  const { currentUser, pendingCount } = useAuth();
   const [activeMenu, setActiveMenu] = useState<string | null>(null);
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
   const [mobileAccordion, setMobileAccordion] = useState<string | null>(null);
@@ -525,7 +524,7 @@ export const MainNavbar: React.FC<MainNavbarProps> = ({
           {/* Desktop Right Header Actions */}
           <div className="hidden xl:flex items-center gap-2 shrink-0">
             {currentUser ? (
-              /* User Session Menu & Quick Logout */
+              /* User Session Menu */
               <div className="flex items-center gap-1.5">
                 <div
                   className="relative"
@@ -616,37 +615,10 @@ export const MainNavbar: React.FC<MainNavbarProps> = ({
                             </div>
                           </Link>
                         )}
-
-                        {/* Divider */}
-                        <div className="border-t border-[#0082fc]/20 my-1" />
-
-                        {/* 3. Logout Option with prominent Logout icon */}
-                        <button
-                          type="button"
-                          onClick={() => {
-                            setActiveMenu(null);
-                            logout();
-                          }}
-                          className="w-full text-left flex items-center gap-2.5 px-3 py-2 text-rose-700 hover:bg-rose-50 transition-colors font-bold text-xs uppercase tracking-wider cursor-pointer rounded-none"
-                        >
-                          <LogOut className="w-4 h-4 text-rose-600 shrink-0" />
-                          <span>Sign Out / Logout</span>
-                        </button>
                       </div>
                     </div>
                   )}
                 </div>
-
-                {/* Direct 1-Click Logout Icon Button */}
-                <button
-                  type="button"
-                  onClick={logout}
-                  className="p-2 bg-white text-rose-700 hover:bg-rose-50 border-2 border-rose-500 rounded-none shadow-xs transition-colors cursor-pointer"
-                  title="Sign Out of Session"
-                  aria-label="Logout"
-                >
-                  <LogOut className="w-4 h-4 text-rose-600" />
-                </button>
               </div>
             ) : (
               /* If Not Logged In: Client Portal Button */
@@ -903,7 +875,7 @@ export const MainNavbar: React.FC<MainNavbarProps> = ({
               </a>
 
               {currentUser ? (
-                /* Mobile Logged-in Select Options: Profile, Settings, Logout */
+                /* Mobile Logged-in Select Options: Profile, Settings */
                 <div className="space-y-2 pt-2 border-t-2 border-[#0082fc]/20">
                   <div className="px-3 py-2 bg-[#5FD4FD]/15 border border-[#0082fc] mb-2">
                     <span className="text-[10px] font-black uppercase text-[#0082fc]/70 block">
@@ -948,18 +920,6 @@ export const MainNavbar: React.FC<MainNavbarProps> = ({
                       <span>Approvals Desk ({pendingCount})</span>
                     </Link>
                   )}
-
-                  <button
-                    type="button"
-                    onClick={() => {
-                      setMobileMenuOpen(false);
-                      logout();
-                    }}
-                    className="w-full py-2.5 px-3 bg-white text-rose-700 border-2 border-rose-500 font-black text-xs uppercase tracking-wider flex items-center justify-center gap-2 rounded-none cursor-pointer"
-                  >
-                    <LogOut className="w-4 h-4 text-rose-600" />
-                    <span>Logout</span>
-                  </button>
                 </div>
               ) : (
                 <div className="grid grid-cols-2 gap-2">
