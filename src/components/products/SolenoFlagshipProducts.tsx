@@ -176,12 +176,12 @@ export const SolenoFlagshipProducts: React.FC<SolenoFlagshipProductsProps> = ({
                   </div>
                 </div>
 
-                {/* 100% Contained Action Buttons (Zero Horizontal Overflow) */}
-                <div className="w-full pt-3 border-t-2 border-[#0082FC]/15 mt-auto space-y-2">
+                {/* 100% Contained Single-Line Flex Action Buttons */}
+                <div className="w-full flex items-center gap-2 pt-3 border-t-2 border-[#0082FC]/15 mt-auto">
                   <button
                     type="button"
                     onClick={() => handleAdd(item.product)}
-                    className={`w-full py-2.5 px-3 text-xs font-black uppercase tracking-wider rounded-none transition-all flex items-center justify-center gap-1.5 cursor-pointer border-2 ${
+                    className={`flex-1 min-w-0 py-2.5 px-3 text-xs font-black uppercase tracking-wider rounded-none transition-all flex items-center justify-center gap-1.5 cursor-pointer border-2 ${
                       isAdded
                         ? "bg-[#5FD4FD] text-[#0082FC] border-[#0082FC]"
                         : "bg-[#0082FC] hover:bg-[#5FD4FD] text-white hover:text-[#0082FC] border-[#0082FC] shadow-sm"
@@ -189,17 +189,13 @@ export const SolenoFlagshipProducts: React.FC<SolenoFlagshipProductsProps> = ({
                   >
                     {isAdded ? (
                       <>
-                        <Check className="w-3.5 h-3.5 stroke-[3]" />
-                        <span className="whitespace-nowrap">
-                          Added to Quote
-                        </span>
+                        <Check className="w-3.5 h-3.5 stroke-[3] shrink-0" />
+                        <span className="truncate">Added to Quote</span>
                       </>
                     ) : (
                       <>
-                        <Plus className="w-3.5 h-3.5 stroke-[2.5]" />
-                        <span className="whitespace-nowrap">
-                          Add to Quote
-                        </span>
+                        <Plus className="w-3.5 h-3.5 stroke-[2.5] shrink-0" />
+                        <span className="truncate">Add to Quote</span>
                       </>
                     )}
                   </button>
@@ -207,9 +203,10 @@ export const SolenoFlagshipProducts: React.FC<SolenoFlagshipProductsProps> = ({
                   <button
                     type="button"
                     onClick={() => onPreviewSubmittal(item.product)}
-                    className="w-full py-2 px-3 bg-white hover:bg-[#0082FC] text-[#0082FC] hover:text-white text-xs font-bold uppercase tracking-wider rounded-none border-2 border-[#0082FC] transition-all flex items-center justify-center gap-1.5 cursor-pointer"
+                    title="Download Cut Sheet PDF"
+                    className="w-10 h-10 shrink-0 bg-white hover:bg-[#0082FC] text-[#0082FC] hover:text-white rounded-none border-2 border-[#0082FC] transition-all flex items-center justify-center cursor-pointer shadow-xs"
                   >
-                    <FileText className="w-3.5 h-3.5 shrink-0" />
+                    <FileText className="w-4 h-4 shrink-0" />
                   </button>
                 </div>
               </div>
