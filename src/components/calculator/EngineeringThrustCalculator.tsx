@@ -77,10 +77,10 @@ export const EngineeringThrustCalculator: React.FC = () => {
           </p>
         </div>
 
-        {/* Calculator Main Grid */}
-        <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 items-stretch">
-          {/* Left Inputs (7 Columns) */}
-          <div className="lg:col-span-7 bg-white border-2 border-[#5FD4FD] rounded-none p-6 sm:p-8 shadow-sm flex flex-col justify-between h-full">
+        {/* Calculator Main Grid - Balanced 1:1 Two-Column Architecture */}
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 items-stretch">
+          {/* Left Inputs Column (Balanced 50% Width) */}
+          <div className="bg-white border-2 border-[#5FD4FD] rounded-none p-6 sm:p-8 shadow-sm flex flex-col justify-between h-full">
             <div>
               {/* Synchronized Left Header matching Right Header Height */}
               <div className="flex items-center justify-between mb-6 pb-3 border-b-2 border-[#5FD4FD]/30 min-h-[42px]">
@@ -89,19 +89,20 @@ export const EngineeringThrustCalculator: React.FC = () => {
                   <span>Jobsite &amp; Trench Parameters</span>
                 </h3>
                 <span className="text-xs font-bold text-[#0082FC] bg-white px-2.5 py-1 rounded-none border border-[#5FD4FD] uppercase tracking-wider">
-                  Input Sizing
+                  AWWA Sizing Engine
                 </span>
               </div>
 
-              <div className="space-y-6">
-                {/* Pipe Size Selector */}
-                <div>
+              <div className="space-y-4">
+                {/* 1. Pipe Size & Geometry Selector */}
+                <div className="bg-white border-2 border-[#5FD4FD]/60 p-4 rounded-none">
                   <div className="flex items-center justify-between mb-2">
-                    <span className="text-sm font-bold uppercase tracking-wider text-[#0082FC]">
+                    <span className="text-xs sm:text-sm font-black uppercase tracking-wider text-[#0082FC]">
                       Pipe Size (Nominal Diameter)
                     </span>
-                    <span className="text-sm text-[#0082FC] font-bold bg-white border-2 border-[#5FD4FD] px-2.5 py-0.5 rounded-none">
-                      Actual O.D.: {result.pipeOd}&quot;
+                    <span className="text-xs font-bold text-[#0082FC] bg-white border border-[#5FD4FD] px-2 py-0.5 rounded-none">
+                      Actual O.D.: {result.pipeOd}&quot; &bull;{" "}
+                      {result.crossSectionArea} sq. in.
                     </span>
                   </div>
                   <div className="grid grid-cols-4 sm:grid-cols-6 gap-2">
@@ -111,9 +112,9 @@ export const EngineeringThrustCalculator: React.FC = () => {
                           key={diam}
                           type="button"
                           onClick={() => setPipeDiameter(diam)}
-                          className={`py-2.5 text-center text-sm font-bold rounded-none border-2 transition-all whitespace-nowrap cursor-pointer ${
+                          className={`py-2 text-center text-xs sm:text-sm font-bold rounded-none border-2 transition-all whitespace-nowrap cursor-pointer ${
                             pipeDiameter === diam
-                              ? "bg-[#0082FC] text-white border-[#0082FC] font-extrabold shadow-sm"
+                              ? "bg-[#0082FC] text-white border-[#0082FC] font-black shadow-sm"
                               : "bg-white text-[#0082FC] border-[#5FD4FD] hover:bg-[#5FD4FD]/20"
                           }`}
                         >
@@ -124,142 +125,164 @@ export const EngineeringThrustCalculator: React.FC = () => {
                   </div>
                 </div>
 
-                {/* Water Pressure & Fitting Type */}
-                <div className="grid grid-cols-1 sm:grid-cols-2 gap-5">
-                  {/* Water Pressure (PSI) */}
-                  <div>
-                    <div className="flex items-center justify-between mb-2">
-                      <label
-                        htmlFor="calc-pressure-slider"
-                        className="text-sm font-bold uppercase tracking-wider text-[#0082FC]"
-                      >
-                        Water Pressure (PSI)
-                      </label>
-                      <span className="text-sm font-bold text-[#0082FC] bg-white border-2 border-[#5FD4FD] px-2.5 py-0.5 rounded-none">
-                        {testPressure} PSI
-                      </span>
-                    </div>
-                    <input
-                      id="calc-pressure-slider"
-                      type="range"
-                      min="100"
-                      max="350"
-                      step="25"
-                      value={testPressure}
-                      onChange={(e) => setTestPressure(Number(e.target.value))}
-                      className="w-full h-2.5 bg-white border border-[#5FD4FD] rounded-none appearance-none cursor-pointer accent-[#0082FC]"
-                    />
-                    <div className="flex justify-between text-xs text-[#0082FC] mt-1.5 font-bold">
-                      <span>100 PSI</span>
-                      <span>150</span>
-                      <span>200</span>
-                      <span>250</span>
-                      <span>300</span>
-                      <span>350 PSI</span>
-                    </div>
-                  </div>
-
-                  {/* Fitting Type */}
-                  <div>
+                {/* 2. Water Pressure (PSI) with Quick Presets */}
+                <div className="bg-white border-2 border-[#5FD4FD]/60 p-4 rounded-none">
+                  <div className="flex items-center justify-between mb-2">
                     <label
-                      htmlFor="calc-fitting-select"
-                      className="block text-sm font-bold uppercase tracking-wider text-[#0082FC] mb-2"
+                      htmlFor="calc-pressure-slider"
+                      className="text-xs sm:text-sm font-black uppercase tracking-wider text-[#0082FC]"
                     >
-                      Fitting Type
+                      Working Water Pressure
                     </label>
-                    <select
-                      id="calc-fitting-select"
-                      value={fittingType}
-                      onChange={(e) =>
-                        setFittingType(
-                          e.target.value as CalculatorInputs["fittingType"],
-                        )
-                      }
-                      className="w-full bg-white border-2 border-[#5FD4FD] text-[#0082FC] rounded-none px-3.5 py-2.5 text-sm font-bold focus:border-[#0082FC] focus:outline-none"
-                    >
-                      <option value="90-bend">90° Bend</option>
-                      <option value="45-bend">45° Bend</option>
-                      <option value="22-bend">22.5° Bend</option>
-                      <option value="11-bend">11.25° Bend</option>
-                      <option value="tee">Branch Tee</option>
-                      <option value="dead-end">Dead End Plug</option>
-                    </select>
+                    <span className="text-sm font-black text-[#0082FC] bg-white border-2 border-[#5FD4FD] px-3 py-0.5 rounded-none">
+                      {testPressure} PSI
+                    </span>
+                  </div>
+                  <input
+                    id="calc-pressure-slider"
+                    type="range"
+                    min="100"
+                    max="350"
+                    step="25"
+                    value={testPressure}
+                    onChange={(e) => setTestPressure(Number(e.target.value))}
+                    className="w-full h-2.5 bg-white border border-[#5FD4FD] rounded-none appearance-none cursor-pointer accent-[#0082FC]"
+                  />
+                  {/* Quick-Select Municipal Pressure Presets */}
+                  <div className="flex items-center justify-between gap-1.5 mt-2.5 pt-2 border-t border-[#5FD4FD]/30">
+                    <span className="text-[10px] font-bold text-[#0082FC]/75 uppercase">
+                      Presets:
+                    </span>
+                    <div className="flex flex-wrap gap-1">
+                      {[150, 200, 250, 350].map((preset) => (
+                        <button
+                          key={preset}
+                          type="button"
+                          onClick={() => setTestPressure(preset)}
+                          className={`px-2 py-0.5 text-[10px] font-bold rounded-none border transition-colors cursor-pointer ${
+                            testPressure === preset
+                              ? "bg-[#0082FC] text-white border-[#0082FC]"
+                              : "bg-white text-[#0082FC] border-[#5FD4FD] hover:bg-[#5FD4FD]/20"
+                          }`}
+                        >
+                          {preset} PSI
+                        </button>
+                      ))}
+                    </div>
                   </div>
                 </div>
 
-                {/* Soil Type & Trench Bedding */}
-                <div className="grid grid-cols-1 sm:grid-cols-2 gap-5">
-                  {/* Soil Type */}
-                  <div>
+                {/* 3. Fitting Configuration & Deflection Angle */}
+                <div className="bg-white border-2 border-[#5FD4FD]/60 p-4 rounded-none">
+                  <div className="flex items-center justify-between mb-2">
                     <label
-                      htmlFor="calc-soil-select"
-                      className="block text-sm font-bold uppercase tracking-wider text-[#0082FC] mb-2"
+                      htmlFor="calc-fitting-select"
+                      className="text-xs sm:text-sm font-black uppercase tracking-wider text-[#0082FC]"
                     >
-                      Soil Type
+                      Fitting Geometry &amp; Deflection Angle
                     </label>
-                    <select
-                      id="calc-soil-select"
-                      value={soilType}
-                      onChange={(e) =>
-                        setSoilType(
-                          e.target.value as CalculatorInputs["soilType"],
-                        )
-                      }
-                      className="w-full bg-white border-2 border-[#5FD4FD] text-[#0082FC] rounded-none px-3.5 py-2.5 text-sm font-bold focus:border-[#0082FC] focus:outline-none"
-                    >
-                      <option value="sand">Coarse Sand / Compact Gravel</option>
-                      <option value="silt">Silt / Silty Clay</option>
-                      <option value="clay">
-                        Cohesive Wet Clay (Soft Soil)
-                      </option>
-                      <option value="hardpan">Hardpan / Dense Till</option>
-                    </select>
+                    <span className="text-[10px] font-bold text-[#0082FC] bg-[#5FD4FD]/20 px-2 py-0.5 uppercase">
+                      {fittingType === "90-bend"
+                        ? "Maximum Radial Thrust"
+                        : fittingType === "dead-end"
+                          ? "Dead End Direct Surge"
+                          : "Deflection Vector"}
+                    </span>
                   </div>
+                  <select
+                    id="calc-fitting-select"
+                    value={fittingType}
+                    onChange={(e) =>
+                      setFittingType(
+                        e.target.value as CalculatorInputs["fittingType"],
+                      )
+                    }
+                    className="w-full bg-white border-2 border-[#5FD4FD] text-[#0082FC] rounded-none px-3.5 py-2 text-xs sm:text-sm font-bold focus:border-[#0082FC] focus:outline-none"
+                  >
+                    <option value="90-bend">
+                      90° Elbow Bend (High Radial Load)
+                    </option>
+                    <option value="45-bend">45° Deflection Bend</option>
+                    <option value="22-bend">22.5° Deflection Bend</option>
+                    <option value="11-bend">11.25° Alignment Bend</option>
+                    <option value="tee">Branch Tee Header</option>
+                    <option value="dead-end">
+                      Dead End Terminal Plug / Cap
+                    </option>
+                  </select>
+                </div>
 
-                  {/* AWWA Trench Type */}
-                  <div>
-                    <label
-                      htmlFor="calc-trench-select"
-                      className="block text-sm font-bold uppercase tracking-wider text-[#0082FC] mb-2"
-                    >
-                      Trench Bedding (AWWA C150)
-                    </label>
-                    <select
-                      id="calc-trench-select"
-                      value={trenchType}
-                      onChange={(e) =>
-                        setTrenchType(
-                          Number(
-                            e.target.value,
-                          ) as CalculatorInputs["trenchType"],
-                        )
-                      }
-                      className="w-full bg-white border-2 border-[#5FD4FD] text-[#0082FC] rounded-none px-3.5 py-2.5 text-sm font-bold focus:border-[#0082FC] focus:outline-none"
-                    >
-                      <option value={1}>
-                        Type 1: Flat-bottom, loose backfill
-                      </option>
-                      <option value={2}>
-                        Type 2: Flat-bottom, lightly tamped
-                      </option>
-                      <option value={3}>
-                        Type 3: 4&quot; granular bed, lightly tamped
-                      </option>
-                      <option value={4}>
-                        Type 4: Granular bed to pipe centerline
-                      </option>
-                      <option value={5}>
-                        Type 5: Granular bed to top of pipe, compacted
-                      </option>
-                    </select>
+                {/* 4. Soil Type & AWWA C150 Trench Bedding */}
+                <div className="bg-white border-2 border-[#5FD4FD]/60 p-4 rounded-none">
+                  <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                    {/* Soil Mechanics */}
+                    <div>
+                      <label
+                        htmlFor="calc-soil-select"
+                        className="block text-xs font-black uppercase tracking-wider text-[#0082FC] mb-1.5"
+                      >
+                        Soil Condition
+                      </label>
+                      <select
+                        id="calc-soil-select"
+                        value={soilType}
+                        onChange={(e) =>
+                          setSoilType(
+                            e.target.value as CalculatorInputs["soilType"],
+                          )
+                        }
+                        className="w-full bg-white border-2 border-[#5FD4FD] text-[#0082FC] rounded-none px-2.5 py-2 text-xs font-bold focus:border-[#0082FC] focus:outline-none"
+                      >
+                        <option value="sand">
+                          Coarse Sand / Compact Gravel (Good)
+                        </option>
+                        <option value="silt">
+                          Silt / Silty Clay (Moderate)
+                        </option>
+                        <option value="clay">
+                          Cohesive Wet Clay (Soft Soil)
+                        </option>
+                        <option value="hardpan">
+                          Dense Hardpan / Glacial Till
+                        </option>
+                      </select>
+                    </div>
+
+                    {/* AWWA C150 Trench Bedding */}
+                    <div>
+                      <label
+                        htmlFor="calc-trench-select"
+                        className="block text-xs font-black uppercase tracking-wider text-[#0082FC] mb-1.5"
+                      >
+                        Trench Bedding (C150)
+                      </label>
+                      <select
+                        id="calc-trench-select"
+                        value={trenchType}
+                        onChange={(e) =>
+                          setTrenchType(
+                            Number(
+                              e.target.value,
+                            ) as CalculatorInputs["trenchType"],
+                          )
+                        }
+                        className="w-full bg-white border-2 border-[#5FD4FD] text-[#0082FC] rounded-none px-2.5 py-2 text-xs font-bold focus:border-[#0082FC] focus:outline-none"
+                      >
+                        <option value={1}>Type 1: Flat-bottom, loose</option>
+                        <option value={2}>Type 2: Lightly tamped</option>
+                        <option value={3}>Type 3: 4&quot; granular bed</option>
+                        <option value={4}>Type 4: Bed to centerline</option>
+                        <option value={5}>Type 5: Compacted to top</option>
+                      </select>
+                    </div>
                   </div>
                 </div>
               </div>
             </div>
 
             {/* Safety Factor Footer Strip - Synchronized height and border with right actions */}
-            <div className="pt-5 mt-6 border-t-2 border-[#5FD4FD]/30 flex flex-wrap items-center justify-between gap-3 min-h-[58px]">
-              <span className="text-sm text-[#0082FC] flex items-center gap-2 font-bold uppercase tracking-wider">
+            <div className="pt-5 mt-5 border-t-2 border-[#5FD4FD]/30 flex flex-wrap items-center justify-between gap-3 min-h-[58px]">
+              <span className="text-xs sm:text-sm text-[#0082FC] flex items-center gap-2 font-black uppercase tracking-wider">
                 <ShieldCheck className="w-5 h-5 text-[#5FD4FD]" />
                 <span>Safety Factor:</span>
               </span>
@@ -269,7 +292,7 @@ export const EngineeringThrustCalculator: React.FC = () => {
                     key={factor}
                     type="button"
                     onClick={() => setSafetyFactor(factor)}
-                    className={`px-4 py-2 text-sm rounded-none font-bold border-2 transition-colors cursor-pointer ${
+                    className={`px-3.5 py-1.5 text-xs font-black rounded-none border-2 transition-colors cursor-pointer uppercase tracking-wider ${
                       safetyFactor === factor
                         ? "bg-[#0082FC] text-white border-[#0082FC] shadow-sm"
                         : "bg-white text-[#0082FC] border-[#5FD4FD] hover:bg-[#5FD4FD]/20"
@@ -282,8 +305,8 @@ export const EngineeringThrustCalculator: React.FC = () => {
             </div>
           </div>
 
-          {/* Right Output Panel (5 Columns) */}
-          <div className="lg:col-span-5 bg-white border-2 border-[#5FD4FD] rounded-none p-6 sm:p-8 shadow-sm flex flex-col justify-between h-full">
+          {/* Right Output Panel (Balanced 50% Width) */}
+          <div className="bg-white border-2 border-[#5FD4FD] rounded-none p-6 sm:p-8 shadow-sm flex flex-col justify-between h-full">
             <div>
               {/* Synchronized Right Header matching Left Header Height */}
               <div className="flex items-center justify-between mb-6 pb-3 border-b-2 border-[#5FD4FD]/30 min-h-[42px]">
@@ -297,73 +320,111 @@ export const EngineeringThrustCalculator: React.FC = () => {
               </div>
 
               <div className="space-y-4">
-                {/* Restrained Pipe Footage Output */}
-                <div className="bg-white border-2 border-[#0082FC] rounded-none p-4 sm:p-5 shadow-sm">
-                  <div className="text-xs sm:text-sm font-bold uppercase text-[#0082FC] mb-1">
+                {/* 1. Restrained Pipe Footage Hero Card */}
+                <div className="bg-white border-2 border-[#0082FC] rounded-none p-5 shadow-sm">
+                  <div className="text-xs font-black uppercase text-[#0082FC] tracking-wider mb-1">
                     Recommended Restrained Pipe Length (Each Direction)
                   </div>
                   <div className="flex items-baseline gap-2">
-                    <span className="text-3xl sm:text-4xl font-extrabold text-[#0082FC]">
+                    <span className="text-4xl sm:text-5xl font-black text-[#0082FC] tracking-tight">
                       {result.restrainedLengthFt}
                     </span>
-                    <span className="text-base font-bold text-[#0082FC]">
+                    <span className="text-base font-extrabold text-[#0082FC] uppercase">
                       Linear Feet
                     </span>
                   </div>
-                  <div className="mt-2 inline-flex items-center gap-2 px-2.5 py-1 rounded-none bg-white border border-[#5FD4FD] text-xs sm:text-sm text-[#0082FC] font-semibold">
-                    <CheckCircle2 className="w-4 h-4 text-[#5FD4FD] shrink-0" />
-                    <span>
-                      Requires {result.numberOfJointsRestrained} Full Standard
-                      18-ft Pipe Lengths Restrained Upstream &amp; Downstream
-                    </span>
+
+                  {/* Visual Pipe Sticks Indicator */}
+                  <div className="mt-3 pt-3 border-t border-[#0082FC]/20">
+                    <div className="flex items-center justify-between text-[11px] font-bold text-[#0082FC] mb-1.5">
+                      <span>Restrained Joint Allocation:</span>
+                      <span className="bg-[#0082FC] text-white px-2 py-0.5 text-[10px] font-black uppercase">
+                        {result.numberOfJointsRestrained} Standard 18-FT Joints
+                      </span>
+                    </div>
+
+                    {/* Pipe Sticks Schematic Progress Graphic */}
+                    <div
+                      className="grid grid-cols-6 gap-1 my-2"
+                      aria-hidden="true"
+                    >
+                      {[1, 2, 3, 4, 5, 6].map((stickNum) => (
+                        <div
+                          key={`joint-stick-${stickNum}`}
+                          className={`h-2 border border-[#0082FC] ${
+                            stickNum <= result.numberOfJointsRestrained
+                              ? "bg-[#5FD4FD]"
+                              : "bg-[#0082FC]/10"
+                          }`}
+                          title={`Joint Stick ${stickNum}`}
+                        />
+                      ))}
+                    </div>
+
+                    <div className="inline-flex items-center gap-1.5 text-xs text-[#0082FC] font-semibold mt-1">
+                      <CheckCircle2 className="w-3.5 h-3.5 text-[#5FD4FD] shrink-0" />
+                      <span>
+                        Restrain minimum {result.numberOfJointsRestrained}{" "}
+                        joints upstream &amp; downstream from fitting
+                      </span>
+                    </div>
                   </div>
                 </div>
 
-                {/* Total Thrust Force */}
+                {/* 2. Total Hydrostatic Thrust Force */}
                 <div className="bg-white border-2 border-[#5FD4FD] rounded-none p-4 sm:p-5">
-                  <div className="text-xs sm:text-sm font-bold uppercase text-[#0082FC] mb-1">
+                  <div className="text-xs font-black uppercase text-[#0082FC] tracking-wider mb-1">
                     Resultant Hydrostatic Thrust Force (T)
                   </div>
                   <div className="flex items-baseline gap-3">
-                    <span className="text-2xl sm:text-3xl font-extrabold text-[#0082FC]">
+                    <span className="text-2xl sm:text-3xl font-black text-[#0082FC]">
                       {result.thrustForceLbf.toLocaleString()}
                     </span>
-                    <span className="text-xs sm:text-sm font-bold text-[#0082FC]">
+                    <span className="text-xs sm:text-sm font-extrabold text-[#0082FC] uppercase">
                       LBS FORCE ({result.thrustForceKn} kN)
                     </span>
                   </div>
-                  <div className="mt-1 text-xs text-[#0082FC] font-medium">
+                  <div className="mt-1.5 text-xs text-[#0082FC] font-medium leading-relaxed">
                     Calculated at {testPressure} PSI on {result.pipeOd}&quot;
-                    pipe O.D. with {safetyFactor}x safety factor.
+                    pipe O.D. with {safetyFactor}x design safety factor.
                   </div>
                 </div>
 
-                {/* Recommended Restraint Gland Model */}
+                {/* 3. Recommended Mechanical Restraint Gland */}
                 <div className="bg-white border-2 border-[#5FD4FD] rounded-none p-4">
-                  <div className="text-xs sm:text-sm font-bold uppercase text-[#0082FC] mb-1">
-                    Recommended Mechanical Restraint
+                  <div className="flex items-center justify-between mb-1">
+                    <span className="text-xs font-black uppercase text-[#0082FC] tracking-wider">
+                      Recommended Mechanical Restraint
+                    </span>
+                    <span className="text-[10px] font-black px-2 py-0.5 bg-[#0082FC] text-white">
+                      AWWA C111 / UL / FM
+                    </span>
                   </div>
-                  <div className="font-extrabold text-[#0082FC] text-base">
+                  <div className="font-black text-[#0082FC] text-base sm:text-lg">
                     {result.recommendedModel}
                   </div>
-                  <div className="text-xs sm:text-sm text-[#0082FC] font-semibold mt-0.5">
-                    Part Number: {result.recommendedModelCode}
+                  <div className="text-xs text-[#0082FC] font-bold mt-0.5">
+                    Catalog Part Number: {result.recommendedModelCode}
                   </div>
-                  <div className="mt-2 pt-1.5 border-t border-[#5FD4FD]/30 text-xs text-[#0082FC]">
-                    Actuating Wedges:{" "}
-                    <strong>{result.actuatingWedges} Grippers</strong> &bull;
-                    Bolt Torque: <strong>75 to 90 ft-lbs</strong>
+                  <div className="mt-2.5 pt-2 border-t border-[#5FD4FD]/30 flex flex-wrap items-center justify-between gap-2 text-xs text-[#0082FC]">
+                    <span>
+                      Actuating Wedges:{" "}
+                      <strong>{result.actuatingWedges} Grippers</strong>
+                    </span>
+                    <span>
+                      Bolt Torque: <strong>75 to 90 ft-lbs</strong>
+                    </span>
                   </div>
                 </div>
               </div>
             </div>
 
             {/* Action Buttons: "Save Calculation to PDF" - Synchronized height and border with left strip */}
-            <div className="pt-5 mt-6 border-t-2 border-[#5FD4FD]/30 flex flex-col sm:flex-row gap-3 min-h-[58px] items-center">
+            <div className="pt-5 mt-5 border-t-2 border-[#5FD4FD]/30 flex flex-col sm:flex-row gap-3 min-h-[58px] items-center">
               <button
                 type="button"
                 onClick={() => setShowExportModal(true)}
-                className="w-full flex-1 inline-flex items-center justify-center gap-2 py-2.5 px-5 bg-[#0082FC] hover:bg-[#5FD4FD] hover:text-[#0082FC] text-white font-extrabold rounded-none text-sm sm:text-base border-2 border-[#0082FC] shadow-md transition-all whitespace-nowrap cursor-pointer"
+                className="w-full flex-1 inline-flex items-center justify-center gap-2 py-2.5 px-5 bg-[#0082FC] hover:bg-[#5FD4FD] hover:text-[#0082FC] text-white font-black rounded-none text-xs sm:text-sm uppercase tracking-wider border-2 border-[#0082FC] shadow-md transition-all whitespace-nowrap cursor-pointer"
               >
                 <Download className="w-4 h-4 text-white" />
                 <span className="whitespace-nowrap">
@@ -374,7 +435,7 @@ export const EngineeringThrustCalculator: React.FC = () => {
               <button
                 type="button"
                 onClick={handlePrintSummary}
-                className="inline-flex items-center justify-center gap-2 py-2.5 px-5 bg-white hover:bg-[#5FD4FD]/20 text-[#0082FC] font-extrabold rounded-none text-sm sm:text-base border-2 border-[#5FD4FD] transition-colors whitespace-nowrap cursor-pointer"
+                className="inline-flex items-center justify-center gap-2 py-2.5 px-5 bg-white hover:bg-[#5FD4FD]/20 text-[#0082FC] font-black rounded-none text-xs sm:text-sm uppercase tracking-wider border-2 border-[#5FD4FD] transition-colors whitespace-nowrap cursor-pointer"
                 title="Print Submittal"
               >
                 <Printer className="w-4 h-4 text-[#0082FC]" />
