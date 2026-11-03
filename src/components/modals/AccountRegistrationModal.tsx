@@ -7,6 +7,8 @@ import {
   Building,
   CheckCircle2,
   Clock,
+  Eye,
+  EyeOff,
   FileCheck2,
   Lock,
   Mail,
@@ -42,6 +44,7 @@ export const AccountRegistrationModal: React.FC<
   const [fullName, setFullName] = useState("");
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
+  const [showPassword, setShowPassword] = useState(false);
   const [phone, setPhone] = useState("");
   const [accountType, setAccountType] = useState<
     | "Contractor"
@@ -493,13 +496,28 @@ export const AccountRegistrationModal: React.FC<
                     <Lock className="w-4 h-4 text-[#0082FC] absolute left-3 top-3" />
                     <input
                       id="reg-password"
-                      type="password"
+                      type={showPassword ? "text" : "password"}
                       required
                       placeholder="••••••••••••"
                       value={password}
                       onChange={(e) => setPassword(e.target.value)}
-                      className="w-full bg-white border-2 border-[#0082FC] pl-9 pr-3 py-2 text-xs sm:text-sm font-bold text-[#0082FC] focus:outline-none focus:border-[#5FD4FD]"
+                      className="w-full bg-white border-2 border-[#0082FC] pl-9 pr-10 py-2 text-xs sm:text-sm font-bold text-[#0082FC] focus:outline-none focus:border-[#5FD4FD]"
                     />
+                    <button
+                      type="button"
+                      onClick={() => setShowPassword(!showPassword)}
+                      className="absolute right-2.5 top-1/2 -translate-y-1/2 p-1 text-[#0082FC] hover:text-[#5FD4FD] transition-colors cursor-pointer"
+                      title={showPassword ? "Hide password" : "Show password"}
+                      aria-label={
+                        showPassword ? "Hide password" : "Show password"
+                      }
+                    >
+                      {showPassword ? (
+                        <EyeOff className="w-4 h-4" />
+                      ) : (
+                        <Eye className="w-4 h-4" />
+                      )}
+                    </button>
                   </div>
                 </div>
 

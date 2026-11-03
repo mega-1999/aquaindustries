@@ -4,6 +4,8 @@ import {
   AlertCircle,
   Bell,
   CheckCircle2,
+  Eye,
+  EyeOff,
   KeyRound,
   Lock,
   MapPin,
@@ -40,6 +42,10 @@ export default function SettingsPage() {
   const [currentPassword, setCurrentPassword] = useState("");
   const [newPassword, setNewPassword] = useState("");
   const [confirmPassword, setConfirmPassword] = useState("");
+  const [showCurrentPassword, setShowCurrentPassword] = useState(false);
+  const [showNewPassword, setShowNewPassword] = useState(false);
+  const [showConfirmPassword, setShowConfirmPassword] = useState(false);
+  const [showLoginPassword, setShowLoginPassword] = useState(false);
   const [passwordStatus, setPasswordStatus] = useState<{
     success?: boolean;
     message: string;
@@ -230,14 +236,39 @@ export default function SettingsPage() {
                       <label className="block text-xs font-black uppercase text-[#0082FC] mb-1">
                         Current Password *
                       </label>
-                      <input
-                        type="password"
-                        required
-                        placeholder="Enter current password"
-                        value={currentPassword}
-                        onChange={(e) => setCurrentPassword(e.target.value)}
-                        className="w-full bg-white border-2 border-[#0082FC] px-3.5 py-2.5 text-xs font-bold text-[#0082FC] focus:outline-none focus:border-[#5FD4FD]"
-                      />
+                      <div className="relative">
+                        <input
+                          type={showCurrentPassword ? "text" : "password"}
+                          required
+                          placeholder="Enter current password"
+                          value={currentPassword}
+                          onChange={(e) => setCurrentPassword(e.target.value)}
+                          className="w-full bg-white border-2 border-[#0082FC] pl-3.5 pr-10 py-2.5 text-xs font-bold text-[#0082FC] focus:outline-none focus:border-[#5FD4FD]"
+                        />
+                        <button
+                          type="button"
+                          onClick={() =>
+                            setShowCurrentPassword(!showCurrentPassword)
+                          }
+                          className="absolute right-2.5 top-1/2 -translate-y-1/2 p-1 text-[#0082FC] hover:text-[#5FD4FD] transition-colors cursor-pointer"
+                          title={
+                            showCurrentPassword
+                              ? "Hide password"
+                              : "Show password"
+                          }
+                          aria-label={
+                            showCurrentPassword
+                              ? "Hide password"
+                              : "Show password"
+                          }
+                        >
+                          {showCurrentPassword ? (
+                            <EyeOff className="w-4 h-4" />
+                          ) : (
+                            <Eye className="w-4 h-4" />
+                          )}
+                        </button>
+                      </div>
                     </div>
 
                     <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
@@ -245,28 +276,76 @@ export default function SettingsPage() {
                         <label className="block text-xs font-black uppercase text-[#0082FC] mb-1">
                           New Password *
                         </label>
-                        <input
-                          type="password"
-                          required
-                          placeholder="Min 6 characters"
-                          value={newPassword}
-                          onChange={(e) => setNewPassword(e.target.value)}
-                          className="w-full bg-white border-2 border-[#0082FC] px-3.5 py-2.5 text-xs font-bold text-[#0082FC] focus:outline-none focus:border-[#5FD4FD]"
-                        />
+                        <div className="relative">
+                          <input
+                            type={showNewPassword ? "text" : "password"}
+                            required
+                            placeholder="Min 6 characters"
+                            value={newPassword}
+                            onChange={(e) => setNewPassword(e.target.value)}
+                            className="w-full bg-white border-2 border-[#0082FC] pl-3.5 pr-10 py-2.5 text-xs font-bold text-[#0082FC] focus:outline-none focus:border-[#5FD4FD]"
+                          />
+                          <button
+                            type="button"
+                            onClick={() => setShowNewPassword(!showNewPassword)}
+                            className="absolute right-2.5 top-1/2 -translate-y-1/2 p-1 text-[#0082FC] hover:text-[#5FD4FD] transition-colors cursor-pointer"
+                            title={
+                              showNewPassword
+                                ? "Hide password"
+                                : "Show password"
+                            }
+                            aria-label={
+                              showNewPassword
+                                ? "Hide password"
+                                : "Show password"
+                            }
+                          >
+                            {showNewPassword ? (
+                              <EyeOff className="w-4 h-4" />
+                            ) : (
+                              <Eye className="w-4 h-4" />
+                            )}
+                          </button>
+                        </div>
                       </div>
 
                       <div>
                         <label className="block text-xs font-black uppercase text-[#0082FC] mb-1">
                           Confirm New Password *
                         </label>
-                        <input
-                          type="password"
-                          required
-                          placeholder="Re-type new password"
-                          value={confirmPassword}
-                          onChange={(e) => setConfirmPassword(e.target.value)}
-                          className="w-full bg-white border-2 border-[#0082FC] px-3.5 py-2.5 text-xs font-bold text-[#0082FC] focus:outline-none focus:border-[#5FD4FD]"
-                        />
+                        <div className="relative">
+                          <input
+                            type={showConfirmPassword ? "text" : "password"}
+                            required
+                            placeholder="Re-type new password"
+                            value={confirmPassword}
+                            onChange={(e) => setConfirmPassword(e.target.value)}
+                            className="w-full bg-white border-2 border-[#0082FC] pl-3.5 pr-10 py-2.5 text-xs font-bold text-[#0082FC] focus:outline-none focus:border-[#5FD4FD]"
+                          />
+                          <button
+                            type="button"
+                            onClick={() =>
+                              setShowConfirmPassword(!showConfirmPassword)
+                            }
+                            className="absolute right-2.5 top-1/2 -translate-y-1/2 p-1 text-[#0082FC] hover:text-[#5FD4FD] transition-colors cursor-pointer"
+                            title={
+                              showConfirmPassword
+                                ? "Hide password"
+                                : "Show password"
+                            }
+                            aria-label={
+                              showConfirmPassword
+                                ? "Hide password"
+                                : "Show password"
+                            }
+                          >
+                            {showConfirmPassword ? (
+                              <EyeOff className="w-4 h-4" />
+                            ) : (
+                              <Eye className="w-4 h-4" />
+                            )}
+                          </button>
+                        </div>
                       </div>
                     </div>
 
@@ -485,14 +564,33 @@ export default function SettingsPage() {
                 <label className="block text-xs font-bold text-[#0082FC] uppercase mb-1">
                   Password
                 </label>
-                <input
-                  type="password"
-                  required
-                  placeholder="••••••••••••"
-                  value={loginPassword}
-                  onChange={(e) => setLoginPassword(e.target.value)}
-                  className="w-full bg-white border-2 border-[#0082FC] px-3 py-2 text-xs font-bold text-[#0082FC] focus:outline-none focus:border-[#5FD4FD]"
-                />
+                <div className="relative">
+                  <input
+                    type={showLoginPassword ? "text" : "password"}
+                    required
+                    placeholder="••••••••••••"
+                    value={loginPassword}
+                    onChange={(e) => setLoginPassword(e.target.value)}
+                    className="w-full bg-white border-2 border-[#0082FC] pl-3 pr-10 py-2 text-xs font-bold text-[#0082FC] focus:outline-none focus:border-[#5FD4FD]"
+                  />
+                  <button
+                    type="button"
+                    onClick={() => setShowLoginPassword(!showLoginPassword)}
+                    className="absolute right-2.5 top-1/2 -translate-y-1/2 p-1 text-[#0082FC] hover:text-[#5FD4FD] transition-colors cursor-pointer"
+                    title={
+                      showLoginPassword ? "Hide password" : "Show password"
+                    }
+                    aria-label={
+                      showLoginPassword ? "Hide password" : "Show password"
+                    }
+                  >
+                    {showLoginPassword ? (
+                      <EyeOff className="w-4 h-4" />
+                    ) : (
+                      <Eye className="w-4 h-4" />
+                    )}
+                  </button>
+                </div>
               </div>
 
               <button
