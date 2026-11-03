@@ -25,17 +25,15 @@ import {
   X,
 } from "lucide-react";
 import React, { useState } from "react";
+import { InfiniteWaterBackground } from "../../components/common/InfiniteWaterBackground";
 import { IndustrialFooter } from "../../components/footer/IndustrialFooter";
 import { AccountRegistrationModal } from "../../components/modals/AccountRegistrationModal";
 import { ClientPortalModal } from "../../components/modals/ClientPortalModal";
 import { ProductSubmittalModal } from "../../components/modals/ProductSubmittalModal";
-import { ProfileDashboardModal } from "../../components/modals/ProfileDashboardModal";
-import { SettingsModal } from "../../components/modals/SettingsModal";
 import { SuperAdminApprovalModal } from "../../components/modals/SuperAdminApprovalModal";
 import { YardSelectorModal } from "../../components/modals/YardSelectorModal";
 import { GlobalUtilityTicker } from "../../components/navigation/GlobalUtilityTicker";
 import { MainNavbar } from "../../components/navigation/MainNavbar";
-import { InfiniteWaterBackground } from "../../components/common/InfiniteWaterBackground";
 import {
   DISTRIBUTION_YARDS,
   PRODUCTS_CATALOG,
@@ -227,8 +225,6 @@ export default function ProjectsPage() {
   const [loginModalOpen, setLoginModalOpen] = useState(false);
   const [registerModalOpen, setRegisterModalOpen] = useState(false);
   const [superAdminModalOpen, setSuperAdminModalOpen] = useState(false);
-  const [profileModalOpen, setProfileModalOpen] = useState(false);
-  const [settingsModalOpen, setSettingsModalOpen] = useState(false);
   const [yardModalOpen, setYardModalOpen] = useState(false);
   const [submittalModalProduct, setSubmittalModalProduct] =
     useState<ProductItem | null>(null);
@@ -257,8 +253,6 @@ export default function ProjectsPage() {
         onOpenRegisterModal={() => setRegisterModalOpen(true)}
         onOpenYardModal={() => setYardModalOpen(true)}
         onOpenSuperAdminModal={() => setSuperAdminModalOpen(true)}
-        onOpenProfileModal={() => setProfileModalOpen(true)}
-        onOpenSettingsModal={() => setSettingsModalOpen(true)}
       />
 
       <main className="flex-1">
@@ -674,28 +668,6 @@ export default function ProjectsPage() {
         onClose={() => setLoginModalOpen(false)}
         onOpenRegisterModal={() => setRegisterModalOpen(true)}
         onOpenSuperAdminModal={() => setSuperAdminModalOpen(true)}
-      />
-
-      <ProfileDashboardModal
-        isOpen={profileModalOpen}
-        onClose={() => setProfileModalOpen(false)}
-        onOpenSettings={() => {
-          setProfileModalOpen(false);
-          setSettingsModalOpen(true);
-        }}
-        onOpenSuperAdmin={() => {
-          setProfileModalOpen(false);
-          setSuperAdminModalOpen(true);
-        }}
-      />
-
-      <SettingsModal
-        isOpen={settingsModalOpen}
-        onClose={() => setSettingsModalOpen(false)}
-        onOpenProfile={() => {
-          setSettingsModalOpen(false);
-          setProfileModalOpen(true);
-        }}
       />
 
       <AccountRegistrationModal

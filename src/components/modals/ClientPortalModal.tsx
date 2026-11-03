@@ -19,7 +19,9 @@ import {
   UserCheck,
   X,
 } from "lucide-react";
-import React, { useMemo, useState } from "react";
+import Link from "next/link";
+import type React from "react";
+import { useMemo, useState } from "react";
 import { useAuth } from "../../context/AuthContext";
 
 interface ClientPortalModalProps {
@@ -183,19 +185,21 @@ export const ClientPortalModal: React.FC<ClientPortalModalProps> = ({
                   contractor registrations, verify licenses, and approve or
                   decline wholesale access.
                 </p>
-                <div className="flex gap-2">
-                  {onOpenSuperAdminModal && (
-                    <button
-                      type="button"
-                      onClick={() => {
-                        onClose();
-                        onOpenSuperAdminModal();
-                      }}
-                      className="w-full py-2.5 px-4 bg-white hover:bg-[#5FD4FD] text-[#0082FC] font-black text-xs uppercase tracking-wider shadow-md transition-all cursor-pointer text-center"
-                    >
-                      Open Contractor Approval Panel &rsaquo;
-                    </button>
-                  )}
+                <div className="grid sm:grid-cols-2 gap-2">
+                  <Link
+                    href="/admin"
+                    onClick={onClose}
+                    className="w-full py-2.5 px-3 bg-white hover:bg-[#5FD4FD] text-[#0082FC] font-black text-xs uppercase tracking-wider shadow-md transition-all cursor-pointer text-center block"
+                  >
+                    Approvals Desk &rsaquo;
+                  </Link>
+                  <Link
+                    href="/profile"
+                    onClick={onClose}
+                    className="w-full py-2.5 px-3 bg-[#5FD4FD] hover:bg-white text-[#0082FC] font-black text-xs uppercase tracking-wider shadow-md transition-all cursor-pointer text-center block"
+                  >
+                    Profile Dashboard &rsaquo;
+                  </Link>
                 </div>
               </div>
             ) : (
@@ -255,7 +259,14 @@ export const ClientPortalModal: React.FC<ClientPortalModalProps> = ({
               </div>
             )}
 
-            <div className="pt-2 flex justify-end">
+            <div className="pt-2 flex flex-col sm:flex-row items-stretch sm:items-center justify-between gap-2 border-t border-[#0082FC]/20">
+              <Link
+                href="/profile"
+                onClick={onClose}
+                className="px-4 py-2 bg-[#0082FC] hover:bg-[#5FD4FD] text-white hover:text-[#0082FC] font-black text-xs uppercase tracking-wider text-center transition-colors"
+              >
+                Go to Profile Dashboard &rsaquo;
+              </Link>
               <button
                 type="button"
                 onClick={onClose}

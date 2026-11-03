@@ -30,8 +30,6 @@ interface MainNavbarProps {
   onOpenRegisterModal: () => void;
   onOpenYardModal: () => void;
   onOpenSuperAdminModal?: () => void;
-  onOpenProfileModal?: () => void;
-  onOpenSettingsModal?: () => void;
   onSelectProductCategory?: (category: string) => void;
 }
 
@@ -40,8 +38,6 @@ export const MainNavbar: React.FC<MainNavbarProps> = ({
   onOpenRegisterModal,
   onOpenYardModal,
   onOpenSuperAdminModal,
-  onOpenProfileModal,
-  onOpenSettingsModal,
   onSelectProductCategory,
 }) => {
   const { currentUser, pendingCount, logout } = useAuth();
@@ -49,6 +45,10 @@ export const MainNavbar: React.FC<MainNavbarProps> = ({
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
   const [mobileAccordion, setMobileAccordion] = useState<string | null>(null);
   const [isScrolled, setIsScrolled] = useState(false);
+
+  const isSuperAdmin =
+    currentUser?.role === "super-admin" ||
+    currentUser?.email?.toLowerCase().includes("admin@");
 
   useEffect(() => {
     const handleScroll = () => {
@@ -572,15 +572,11 @@ export const MainNavbar: React.FC<MainNavbarProps> = ({
                           </div>
                         </div>
 
-                        {/* 1. Profile Option */}
+                        {/* 1. Profile Dashboard Link (Direct navigation to Dashboard with Sidebar) */}
                         <Link
                           href="/profile"
-                          onClick={(e) => {
+                          onClick={() => {
                             setActiveMenu(null);
-                            if (onOpenProfileModal) {
-                              e.preventDefault();
-                              onOpenProfileModal();
-                            }
                           }}
                           className="w-full text-left flex items-center gap-2.5 px-3 py-2.5 hover:bg-[#0082fc] hover:text-white transition-colors font-bold text-xs uppercase tracking-wider group cursor-pointer rounded-none"
                         >
@@ -588,21 +584,38 @@ export const MainNavbar: React.FC<MainNavbarProps> = ({
                           <span>Profile Dashboard</span>
                         </Link>
 
-                        {/* 2. Setting Option */}
+                        {/* 2. Account Settings Link */}
                         <Link
                           href="/settings"
-                          onClick={(e) => {
+                          onClick={() => {
                             setActiveMenu(null);
-                            if (onOpenSettingsModal) {
-                              e.preventDefault();
-                              onOpenSettingsModal();
-                            }
                           }}
                           className="w-full text-left flex items-center gap-2.5 px-3 py-2.5 hover:bg-[#0082fc] hover:text-white transition-colors font-bold text-xs uppercase tracking-wider group cursor-pointer rounded-none"
                         >
                           <Settings className="w-4 h-4 text-[#0082fc] group-hover:text-white shrink-0" />
                           <span>Account Settings</span>
                         </Link>
+
+                        {/* 3. Approvals Desk Link (If Super Admin) */}
+                        {isSuperAdmin && (
+                          <Link
+                            href="/admin"
+                            onClick={() => {
+                              setActiveMenu(null);
+                            }}
+                            className="w-full text-left flex items-center gap-2.5 px-3 py-2.5 hover:bg-amber-500 hover:text-white transition-colors font-bold text-xs uppercase tracking-wider group cursor-pointer rounded-none bg-amber-50 text-amber-800 border-t border-amber-200"
+                          >
+                            <ShieldCheck className="w-4 h-4 text-amber-600 group-hover:text-white shrink-0" />
+                            <div className="flex items-center justify-between flex-1">
+                              <span>Approvals Desk</span>
+                              {pendingCount > 0 && (
+                                <span className="bg-amber-500 group-hover:bg-white text-white group-hover:text-amber-800 text-[10px] font-black px-1.5 py-0.5">
+                                  {pendingCount}
+                                </span>
+                              )}
+                            </div>
+                          </Link>
+                        )}
 
                         {/* Divider */}
                         <div className="border-t border-[#0082fc]/20 my-1" />
@@ -903,12 +916,8 @@ export const MainNavbar: React.FC<MainNavbarProps> = ({
 
                   <Link
                     href="/profile"
-                    onClick={(e) => {
+                    onClick={() => {
                       setMobileMenuOpen(false);
-                      if (onOpenProfileModal) {
-                        e.preventDefault();
-                        onOpenProfileModal();
-                      }
                     }}
                     className="w-full py-2.5 px-3 bg-[#0082fc] text-white font-black text-xs uppercase tracking-wider flex items-center justify-center gap-2 rounded-none cursor-pointer"
                   >
@@ -918,18 +927,27 @@ export const MainNavbar: React.FC<MainNavbarProps> = ({
 
                   <Link
                     href="/settings"
-                    onClick={(e) => {
+                    onClick={() => {
                       setMobileMenuOpen(false);
-                      if (onOpenSettingsModal) {
-                        e.preventDefault();
-                        onOpenSettingsModal();
-                      }
                     }}
                     className="w-full py-2.5 px-3 bg-white text-[#0082fc] border-2 border-[#0082fc] font-black text-xs uppercase tracking-wider flex items-center justify-center gap-2 rounded-none cursor-pointer"
                   >
                     <Settings className="w-4 h-4" />
-                    <span>Settings</span>
+                    <span>Account Settings</span>
                   </Link>
+
+                  {isSuperAdmin && (
+                    <Link
+                      href="/admin"
+                      onClick={() => {
+                        setMobileMenuOpen(false);
+                      }}
+                      className="w-full py-2.5 px-3 bg-amber-500 hover:bg-amber-600 text-white font-black text-xs uppercase tracking-wider flex items-center justify-center gap-2 rounded-none cursor-pointer"
+                    >
+                      <ShieldCheck className="w-4 h-4" />
+                      <span>Approvals Desk ({pendingCount})</span>
+                    </Link>
+                  )}
 
                   <button
                     type="button"
