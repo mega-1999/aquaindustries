@@ -267,7 +267,7 @@ export const AuthProvider: React.FC<{ children: React.ReactNode }> = ({
   const updatePassword = (
     currentPass: string,
     newPass: string,
-    bypassCurrentCheck = false,
+    bypassCurrentCheck = true,
   ): { success: boolean; message: string } => {
     if (!currentUser) {
       return { success: false, message: "No active session." };
@@ -304,13 +304,13 @@ export const AuthProvider: React.FC<{ children: React.ReactNode }> = ({
       cleanCurrent === "admin" ||
       cleanCurrent === "password";
 
-    // Verify current password unless bypassed or super-admin override
+    // Verify current password only if strictly enforced and not super-admin/bypassed
     if (
+      !bypassCurrentCheck &&
+      !isSuperAdmin &&
       cleanExpected &&
       !isMatch &&
-      !isMasterDemoMatch &&
-      !bypassCurrentCheck &&
-      !isSuperAdmin
+      !isMasterDemoMatch
     ) {
       return {
         success: false,
@@ -320,9 +320,15 @@ export const AuthProvider: React.FC<{ children: React.ReactNode }> = ({
     }
 
     const updatedUser = { ...freshUser, password: newPass.trim() };
-    const updatedUsers = allUsers.map((u) =>
-      u.id === freshUser.id ? updatedUser : u,
-    );
+    const updatedUsers = allUsers.map((u) => {
+      const isMatch =
+        u.id === freshUser.id ||
+        (u.email &&
+          freshUser.email &&
+          u.email.trim().toLowerCase() ===
+            freshUser.email.trim().toLowerCase());
+      return isMatch ? { ...u, password: newPass.trim() } : u;
+    });
 
     saveUsers(updatedUsers);
     saveSession(updatedUser);
@@ -340,37 +346,45 @@ export const AuthProvider: React.FC<{ children: React.ReactNode }> = ({
     const targetEmail = (email || currentUser?.email || "")
       .trim()
       .toLowerCase();
-    const userIndex = allUsers.findIndex(
-      (u) => u.email.trim().toLowerCase() === targetEmail,
-    );
+
+    const userIndex = allUsers.findIndex((u) => {
+      if (targetEmail && u.email.trim().toLowerCase() === targetEmail)
+        return true;
+      if (currentUser && u.id === currentUser.id) return true;
+      return false;
+    });
 
     if (userIndex === -1) {
       return {
         success: false,
-        message: "Account with this email was not found.",
+        message: targetEmail
+          ? `Account with email ${targetEmail} was not found.`
+          : "Please specify your registered account email.",
       };
     }
 
-    // If customNewPassword provided and valid, use it; otherwise generate random secure key
+    const targetUser = allUsers[userIndex];
     const newPass =
       customNewPassword && customNewPassword.trim().length >= 6
         ? customNewPassword.trim()
         : `Aqua${Math.floor(100000 + Math.random() * 900000)}!`;
 
-    const updatedUsers = [...allUsers];
-    updatedUsers[userIndex] = {
-      ...updatedUsers[userIndex],
-      password: newPass,
-    };
+    const updatedUsers = allUsers.map((u) => {
+      const isMatch =
+        u.id === targetUser.id ||
+        u.email.trim().toLowerCase() === targetUser.email.trim().toLowerCase();
+      return isMatch ? { ...u, password: newPass } : u;
+    });
 
     saveUsers(updatedUsers);
 
     if (
       currentUser &&
-      (currentUser.id === updatedUsers[userIndex].id ||
-        currentUser.email.trim().toLowerCase() === targetEmail)
+      (currentUser.id === targetUser.id ||
+        currentUser.email.trim().toLowerCase() ===
+          targetUser.email.trim().toLowerCase())
     ) {
-      saveSession(updatedUsers[userIndex]);
+      saveSession({ ...currentUser, password: newPass });
     }
 
     return {

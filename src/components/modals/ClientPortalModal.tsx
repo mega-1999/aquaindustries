@@ -37,7 +37,7 @@ export const ClientPortalModal: React.FC<ClientPortalModalProps> = ({
   onClose,
   onOpenRegisterModal,
 }) => {
-  const { currentUser, allUsers, login, logout } = useAuth();
+  const { currentUser, allUsers, login, logout, resetPassword } = useAuth();
 
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
@@ -48,6 +48,13 @@ export const ClientPortalModal: React.FC<ClientPortalModalProps> = ({
   const [authError, setAuthError] = useState<string | null>(null);
   const [authSuccess, setAuthSuccess] = useState<string | null>(null);
   const [pendingUserAttempt, setPendingUserAttempt] = useState<boolean>(false);
+
+  // Self-service reset password states
+  const [showResetBox, setShowResetBox] = useState(false);
+  const [resetEmail, setResetEmail] = useState("");
+  const [resetNewPass, setResetNewPass] = useState("");
+  const [resetSuccessMsg, setResetSuccessMsg] = useState<string | null>(null);
+  const [resetErrorMsg, setResetErrorMsg] = useState<string | null>(null);
 
   // Live profile detection as user types their email
   const detectedProfile = useMemo(() => {
@@ -80,6 +87,35 @@ export const ClientPortalModal: React.FC<ClientPortalModalProps> = ({
       if (res.user?.status === "PENDING_APPROVAL") {
         setPendingUserAttempt(true);
       }
+    }
+  };
+
+  const handleResetSubmit = (e: React.FormEvent) => {
+    e.preventDefault();
+    setResetSuccessMsg(null);
+    setResetErrorMsg(null);
+
+    const targetEmail = (resetEmail || email).trim();
+    if (!targetEmail) {
+      setResetErrorMsg("Please enter your account email address.");
+      return;
+    }
+
+    if (!resetNewPass || resetNewPass.trim().length < 6) {
+      setResetErrorMsg("New password must be at least 6 characters long.");
+      return;
+    }
+
+    const res = resetPassword(targetEmail, resetNewPass);
+    if (res.success) {
+      setResetSuccessMsg(
+        "Password reset successfully! You can now log in below.",
+      );
+      setPassword(resetNewPass);
+      setEmail(targetEmail);
+      setTimeout(() => setShowResetBox(false), 2200);
+    } else {
+      setResetErrorMsg(res.message);
     }
   };
 
@@ -494,13 +530,71 @@ export const ClientPortalModal: React.FC<ClientPortalModalProps> = ({
                 >
                   Account Password *
                 </label>
-                <a
-                  href="tel:+15162521111"
-                  className="text-[11px] text-[#0082FC] hover:underline font-semibold"
+                <button
+                  type="button"
+                  onClick={() => {
+                    setShowResetBox(!showResetBox);
+                    setResetEmail(email);
+                  }}
+                  className="text-[11px] text-[#0082FC] hover:underline font-semibold cursor-pointer"
                 >
                   Need password reset?
-                </a>
+                </button>
               </div>
+
+              {/* Inline Self-Service Password Reset Panel */}
+              {showResetBox && (
+                <div className="mb-3 p-3.5 bg-[#0082FC]/5 border-2 border-[#0082FC] space-y-2.5 animate-in fade-in duration-150">
+                  <div className="flex items-center justify-between">
+                    <span className="text-xs font-black uppercase text-[#0082FC]">
+                      Instant Account Password Reset
+                    </span>
+                    <button
+                      type="button"
+                      onClick={() => setShowResetBox(false)}
+                      className="text-xs text-[#0082FC] hover:underline cursor-pointer"
+                    >
+                      Close
+                    </button>
+                  </div>
+
+                  {resetSuccessMsg && (
+                    <div className="p-2 bg-emerald-50 border border-emerald-600 text-emerald-900 text-xs font-bold">
+                      {resetSuccessMsg}
+                    </div>
+                  )}
+
+                  {resetErrorMsg && (
+                    <div className="p-2 bg-rose-50 border border-rose-500 text-rose-900 text-xs font-bold">
+                      {resetErrorMsg}
+                    </div>
+                  )}
+
+                  <div className="space-y-2">
+                    <input
+                      type="email"
+                      placeholder="Enter registered account email"
+                      value={resetEmail || email}
+                      onChange={(e) => setResetEmail(e.target.value)}
+                      className="w-full bg-white border border-[#0082FC] px-2.5 py-1.5 text-xs font-bold text-[#0082FC] focus:outline-none"
+                    />
+                    <input
+                      type="password"
+                      placeholder="Enter new password (min 6 characters)"
+                      value={resetNewPass}
+                      onChange={(e) => setResetNewPass(e.target.value)}
+                      className="w-full bg-white border border-[#0082FC] px-2.5 py-1.5 text-xs font-bold text-[#0082FC] focus:outline-none"
+                    />
+                    <button
+                      type="button"
+                      onClick={handleResetSubmit}
+                      className="w-full py-2 bg-[#0082FC] hover:bg-[#5FD4FD] text-white hover:text-[#0082FC] font-black text-xs uppercase tracking-wider transition-colors cursor-pointer"
+                    >
+                      Reset &amp; Save New Password
+                    </button>
+                  </div>
+                </div>
+              )}
               <div className="relative">
                 <Lock className="w-4 h-4 text-[#0082FC] absolute left-3 top-3" />
                 <input
@@ -534,7 +628,7 @@ export const ClientPortalModal: React.FC<ClientPortalModalProps> = ({
                 type="submit"
                 className="w-full py-3 px-4 bg-[#0082FC] hover:bg-[#5FD4FD] text-white hover:text-[#0082FC] font-black text-xs sm:text-sm uppercase tracking-wider rounded-none shadow-md transition-all cursor-pointer"
               >
-                Sign In to Commercial Portal
+                Sign In
               </button>
             </div>
 

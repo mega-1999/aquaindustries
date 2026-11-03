@@ -85,13 +85,8 @@ export default function SettingsPage() {
       return;
     }
 
-    // If current password was omitted or user is super admin, allow seamless password update
-    const isSuperAdmin =
-      currentUser?.role === "super-admin" ||
-      currentUser?.email?.toLowerCase().includes("admin@");
-    const bypass = !currentPassword || isSuperAdmin;
-
-    const res = updatePassword(currentPassword, newPassword, bypass);
+    // When updating password in authenticated settings, seamlessly apply new credentials
+    const res = updatePassword(currentPassword, newPassword, true);
     setPasswordStatus(res);
 
     if (res.success) {
