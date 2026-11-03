@@ -116,7 +116,10 @@ export const SolenoVideoShowcase: React.FC<SolenoVideoShowcaseProps> = ({
       className="py-16 sm:py-24 bg-[#0082FC] text-white border-t-4 border-[#5FD4FD] border-b-4 border-[#5FD4FD] relative overflow-hidden"
     >
       {/* Infinite Seamless Looping Water Background Animation */}
-      <InfiniteWaterBackground opacity="opacity-20" />
+      <InfiniteWaterBackground
+        opacity="opacity-45"
+        mixBlend="mix-blend-screen"
+      />
 
       {/* Background Architectural Grid Lines */}
       <div
@@ -126,6 +129,16 @@ export const SolenoVideoShowcase: React.FC<SolenoVideoShowcaseProps> = ({
             "linear-gradient(to right, #ffffff 1px, transparent 1px), linear-gradient(to bottom, #ffffff 1px, transparent 1px)",
           backgroundSize: "48px 48px",
         }}
+      />
+
+      {/* Floating Fluid Ambient Water Blobs */}
+      <div
+        className="absolute -top-24 -left-24 w-96 h-96 bg-[#5FD4FD]/20 blur-3xl pointer-events-none fluid-wave"
+        aria-hidden="true"
+      />
+      <div
+        className="absolute -bottom-24 -right-24 w-96 h-96 bg-white/10 blur-3xl pointer-events-none fluid-wave"
+        aria-hidden="true"
       />
 
       <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -139,6 +152,16 @@ export const SolenoVideoShowcase: React.FC<SolenoVideoShowcaseProps> = ({
           <h2 className="text-3xl sm:text-4xl lg:text-5xl font-black uppercase tracking-tight text-white leading-[1.05] mb-3">
             Waterworks <span className="text-[#5FD4FD]">Video Showcases</span>
           </h2>
+
+          {/* Animated Hydrodynamic Water Wave Stream Indicator */}
+          <div
+            className="flex items-center justify-center gap-2 my-3"
+            aria-hidden="true"
+          >
+            <span className="h-0.5 w-10 bg-white/40" />
+            <span className="h-1.5 w-24 bg-[#5FD4FD] animate-pulse" />
+            <span className="h-0.5 w-10 bg-white/40" />
+          </div>
 
           <p className="text-sm sm:text-base text-white/95 font-normal leading-relaxed">
             Watch real engineering demonstrations: laboratory watermain
@@ -159,33 +182,41 @@ export const SolenoVideoShowcase: React.FC<SolenoVideoShowcaseProps> = ({
                 onMouseLeave={() => setHoveredCardId(null)}
                 className="bg-white border-4 border-[#5FD4FD] rounded-none overflow-hidden flex flex-col justify-between shadow-2xl hover:border-white transition-all duration-300 group hover:-translate-y-1.5 relative text-[#0082FC]"
               >
-                {/* Top Video Preview Box */}
+                {/* Top Video Preview Box with Active Looping Water Stream */}
                 <div className="relative w-full h-44 sm:h-48 bg-[#0082FC] overflow-hidden flex items-center justify-center">
-                  {hoveredCardId === item.id ? (
-                    <video
-                      src={item.videoUrl}
-                      autoPlay
-                      loop
-                      muted
-                      playsInline
-                      preload="metadata"
-                      className="w-full h-full object-cover opacity-85 transition-opacity duration-300"
-                    />
-                  ) : (
-                    <div
-                      className="w-full h-full opacity-65 group-hover:opacity-85 transition-opacity duration-300 gpu-water-drift"
-                      style={{
-                        backgroundImage:
-                          "radial-gradient(ellipse at 30% 30%, rgba(95, 212, 253, 0.85) 0%, rgba(0, 130, 252, 0.95) 100%)",
-                      }}
-                    />
-                  )}
+                  {/* 1. Looping Water Video Flow - Active Continuous Animation */}
+                  <video
+                    src={item.videoUrl}
+                    autoPlay
+                    loop
+                    muted
+                    playsInline
+                    preload="auto"
+                    onCanPlay={(e) => {
+                      e.currentTarget.muted = true;
+                      e.currentTarget.play().catch(() => {});
+                    }}
+                    onEnded={(e) => {
+                      e.currentTarget.currentTime = 0;
+                      e.currentTarget.play().catch(() => {});
+                    }}
+                    className="absolute inset-0 w-full h-full object-cover opacity-75 group-hover:opacity-95 transition-opacity duration-300"
+                  />
 
-                  {/* Product Silhouette Overlay */}
+                  {/* 2. Hydrodynamic Fluid Caustic Accent Layer */}
+                  <div
+                    className="absolute inset-0 w-full h-full opacity-35 mix-blend-overlay gpu-water-drift pointer-events-none"
+                    style={{
+                      backgroundImage:
+                        "radial-gradient(ellipse at 30% 30%, rgba(95, 212, 253, 0.85) 0%, rgba(0, 130, 252, 0.95) 100%)",
+                    }}
+                  />
+
+                  {/* 3. Product Silhouette Overlay */}
                   <img
                     src={item.posterUrl}
                     alt={item.title}
-                    className="absolute inset-0 m-auto max-h-[75%] max-w-[75%] object-contain filter drop-shadow-xl pointer-events-none group-hover:scale-110 transition-transform duration-300"
+                    className="absolute inset-0 m-auto max-h-[75%] max-w-[75%] object-contain filter drop-shadow-xl pointer-events-none group-hover:scale-110 transition-transform duration-300 z-10"
                   />
 
                   {/* Top Badges */}

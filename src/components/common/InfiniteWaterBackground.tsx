@@ -44,6 +44,7 @@ export const InfiniteWaterBackground: React.FC<
         setIsInView(visible);
         if (videoRef.current) {
           if (visible) {
+            videoRef.current.muted = true;
             videoRef.current.play().catch(() => {});
           } else {
             videoRef.current.pause();
@@ -56,6 +57,14 @@ export const InfiniteWaterBackground: React.FC<
     observer.observe(el);
     return () => observer.disconnect();
   }, []);
+
+  // Ensure playback starts immediately when mounted into view
+  useEffect(() => {
+    if (isInView && videoRef.current) {
+      videoRef.current.muted = true;
+      videoRef.current.play().catch(() => {});
+    }
+  }, [isInView]);
 
   return (
     <div
@@ -72,18 +81,37 @@ export const InfiniteWaterBackground: React.FC<
         }}
       />
 
+      {/* Secondary Fluid Water Wave Caustics Layer */}
+      <div
+        className="absolute inset-0 w-full h-full gpu-water-layer-1 opacity-40 mix-blend-screen pointer-events-none"
+        style={{
+          backgroundImage:
+            "radial-gradient(circle at 45% 40%, rgba(95, 212, 253, 0.4) 0%, transparent 65%)",
+        }}
+      />
+
       {/* Hardware-Accelerated Looping Water Video - ONLY Decodes When In Viewport */}
       {isInView && (
         <video
-          ref={videoRef}
+          ref={(el) => {
+            videoRef.current = el;
+            if (el) {
+              el.muted = true;
+              el.play().catch(() => {});
+            }
+          }}
           src="https://soleno.com/wp-content/uploads/2024/12/bkg_water111.mp4"
           autoPlay
           loop
           muted
           playsInline
-          preload="metadata"
+          preload="auto"
           tabIndex={-1}
           className="absolute inset-0 w-full h-full object-cover"
+          onCanPlay={(e) => {
+            e.currentTarget.muted = true;
+            e.currentTarget.play().catch(() => {});
+          }}
           onEnded={(e) => {
             e.currentTarget.currentTime = 0;
             e.currentTarget.play().catch(() => {});

@@ -174,25 +174,33 @@ export const VerticalSideVideoAds: React.FC<VerticalSideVideoAdsProps> = ({
       >
         {/* Top Video Preview Thumbnail Container */}
         <div className="relative w-full h-24 bg-[#0082FC] overflow-hidden">
-          {hoveredCardId === ad.id ? (
-            <video
-              src={ad.videoUrl}
-              autoPlay
-              loop
-              muted
-              playsInline
-              preload="metadata"
-              className="w-full h-full object-cover opacity-85 transition-opacity duration-300"
-            />
-          ) : (
-            <div
-              className="w-full h-full opacity-65 group-hover:opacity-85 transition-opacity duration-300 gpu-water-drift"
-              style={{
-                backgroundImage:
-                  "radial-gradient(ellipse at 30% 30%, rgba(95, 212, 253, 0.8) 0%, rgba(0, 130, 252, 0.95) 100%)",
-              }}
-            />
-          )}
+          {/* Active Ambient Water Looping Video */}
+          <video
+            src={ad.videoUrl}
+            autoPlay
+            loop
+            muted
+            playsInline
+            preload="auto"
+            onCanPlay={(e) => {
+              e.currentTarget.muted = true;
+              e.currentTarget.play().catch(() => {});
+            }}
+            onEnded={(e) => {
+              e.currentTarget.currentTime = 0;
+              e.currentTarget.play().catch(() => {});
+            }}
+            className="absolute inset-0 w-full h-full object-cover opacity-75 group-hover:opacity-95 transition-opacity duration-300"
+          />
+
+          {/* Hydrodynamic Fluid Caustic Accent Layer */}
+          <div
+            className="absolute inset-0 w-full h-full opacity-35 mix-blend-overlay gpu-water-drift pointer-events-none"
+            style={{
+              backgroundImage:
+                "radial-gradient(ellipse at 30% 30%, rgba(95, 212, 253, 0.8) 0%, rgba(0, 130, 252, 0.95) 100%)",
+            }}
+          />
 
           {/* Product Silhouette Overlay */}
           <img
