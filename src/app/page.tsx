@@ -20,6 +20,7 @@ import { MainNavbar } from "../components/navigation/MainNavbar";
 import { VerticalSideVideoAds } from "../components/navigation/VerticalSideVideoAds";
 import { CurbBoxSpotlight } from "../components/products/CurbBoxSpotlight";
 import { EngineeringInnovationSpotlight } from "../components/products/EngineeringInnovationSpotlight";
+import { MechanicalJointFittingsSchedule } from "../components/products/MechanicalJointFittingsSchedule";
 import { ProductCatalogMatrix } from "../components/products/ProductCatalogMatrix";
 import { SolenoFlagshipProducts } from "../components/products/SolenoFlagshipProducts";
 import { CommercialQuoteForm } from "../components/rfq/CommercialQuoteForm";
@@ -148,13 +149,19 @@ export default function Home() {
         {/* Section 4: Civil Sector Interactive Tabs (Soleno mastering_water pattern) */}
         <MasteringInfrastructureTabs />
 
-        {/* Section 5: Flagship Engineered Products Showcase (Soleno other_drainage 3-card pattern - Blue #0082FC - Alternating) */}
+        {/* Section 5: Flagship Engineered Products Showcase (Soleno other_drainage 4-card pattern - Blue #0082FC - Alternating) */}
         <SolenoFlagshipProducts
           onAddToRfq={handleAddToRfq}
           onPreviewSubmittal={(product) => setSubmittalModalProduct(product)}
         />
 
-        {/* Section 6: Product Catalog Matrix (Soleno categorie pattern - White #FFFFFF - Alternating) */}
+        {/* Section 6: Complete 2" - 64" Ductile Iron Mechanical Joint Fittings Schedule (White #FFFFFF - Alternating) */}
+        <MechanicalJointFittingsSchedule
+          onAddToRfq={handleAddToRfq}
+          onPreviewSubmittal={(product) => setSubmittalModalProduct(product)}
+        />
+
+        {/* Section 7: Product Catalog Matrix (Soleno categorie pattern - White #FFFFFF - Alternating) */}
         <ProductCatalogMatrix
           onAddToRfq={handleAddToRfq}
           onPreviewSubmittal={(product) => setSubmittalModalProduct(product)}
