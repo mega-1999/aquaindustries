@@ -534,9 +534,9 @@ export const MainNavbar: React.FC<MainNavbarProps> = ({
                 <button
                   type="button"
                   onClick={() => {
-                    if (onOpenProfileModal) {
-                      onOpenProfileModal();
-                    }
+                    setActiveMenu(
+                      activeMenu === "user-menu" ? null : "user-menu",
+                    );
                   }}
                   className={`inline-flex items-center gap-2 px-3 py-2 text-xs 2xl:text-sm font-black transition-all whitespace-nowrap border-2 rounded-none shadow-xs cursor-pointer ${
                     activeMenu === "user-menu"
@@ -572,34 +572,36 @@ export const MainNavbar: React.FC<MainNavbarProps> = ({
                       </div>
 
                       {/* 1. Profile Option */}
-                      <button
-                        type="button"
-                        onClick={() => {
+                      <Link
+                        href="/profile"
+                        onClick={(e) => {
                           setActiveMenu(null);
                           if (onOpenProfileModal) {
+                            e.preventDefault();
                             onOpenProfileModal();
                           }
                         }}
                         className="w-full text-left flex items-center gap-2.5 px-3 py-2.5 hover:bg-[#0082fc] hover:text-white transition-colors font-bold text-xs uppercase tracking-wider group cursor-pointer rounded-none"
                       >
                         <User className="w-4 h-4 text-[#0082fc] group-hover:text-white shrink-0" />
-                        <span>Profile</span>
-                      </button>
+                        <span>Profile Dashboard</span>
+                      </Link>
 
                       {/* 2. Setting Option */}
-                      <button
-                        type="button"
-                        onClick={() => {
+                      <Link
+                        href="/settings"
+                        onClick={(e) => {
                           setActiveMenu(null);
                           if (onOpenSettingsModal) {
+                            e.preventDefault();
                             onOpenSettingsModal();
                           }
                         }}
                         className="w-full text-left flex items-center gap-2.5 px-3 py-2.5 hover:bg-[#0082fc] hover:text-white transition-colors font-bold text-xs uppercase tracking-wider group cursor-pointer rounded-none"
                       >
                         <Settings className="w-4 h-4 text-[#0082fc] group-hover:text-white shrink-0" />
-                        <span>Settings</span>
-                      </button>
+                        <span>Account Settings</span>
+                      </Link>
 
                       {/* Divider */}
                       <div className="border-t border-[#0082fc]/20 my-1" />
@@ -886,29 +888,35 @@ export const MainNavbar: React.FC<MainNavbarProps> = ({
                     </strong>
                   </div>
 
-                  <button
-                    type="button"
-                    onClick={() => {
+                  <Link
+                    href="/profile"
+                    onClick={(e) => {
                       setMobileMenuOpen(false);
-                      if (onOpenProfileModal) onOpenProfileModal();
+                      if (onOpenProfileModal) {
+                        e.preventDefault();
+                        onOpenProfileModal();
+                      }
                     }}
                     className="w-full py-2.5 px-3 bg-[#0082fc] text-white font-black text-xs uppercase tracking-wider flex items-center justify-center gap-2 rounded-none cursor-pointer"
                   >
                     <User className="w-4 h-4" />
                     <span>Profile Dashboard</span>
-                  </button>
+                  </Link>
 
-                  <button
-                    type="button"
-                    onClick={() => {
+                  <Link
+                    href="/settings"
+                    onClick={(e) => {
                       setMobileMenuOpen(false);
-                      if (onOpenSettingsModal) onOpenSettingsModal();
+                      if (onOpenSettingsModal) {
+                        e.preventDefault();
+                        onOpenSettingsModal();
+                      }
                     }}
                     className="w-full py-2.5 px-3 bg-white text-[#0082fc] border-2 border-[#0082fc] font-black text-xs uppercase tracking-wider flex items-center justify-center gap-2 rounded-none cursor-pointer"
                   >
                     <Settings className="w-4 h-4" />
                     <span>Settings</span>
-                  </button>
+                  </Link>
 
                   <button
                     type="button"
