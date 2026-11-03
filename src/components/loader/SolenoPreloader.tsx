@@ -10,17 +10,28 @@ export const SolenoPreloader: React.FC = () => {
   const [isFinished, setIsFinished] = useState(false);
 
   useEffect(() => {
+    // Check if user already saw preloader in this session
+    try {
+      const alreadySeen = sessionStorage.getItem("aqua_preloader_seen_v1");
+      if (alreadySeen) {
+        setIsFinished(true);
+        return;
+      }
+    } catch {
+      // Fallback for private mode
+    }
+
     // Lock body scroll while loader is active
     document.body.style.overflow = "hidden";
 
-    const duration = 1500; // 1.5s smooth count up
+    const duration = 500; // Ultra-snappy 500ms count up
     const startTime = performance.now();
 
     const updateProgress = (currentTime: number) => {
       const elapsed = currentTime - startTime;
       const progressRatio = Math.min(1, elapsed / duration);
 
-      // Smooth ease-out deceleration curve
+      // Smooth ease-out curve
       const easedPercent = Math.min(
         100,
         Math.floor(100 * Math.sin(progressRatio * (Math.PI / 2))),
@@ -33,11 +44,15 @@ export const SolenoPreloader: React.FC = () => {
         // Trigger Soleno 100% circle iris wipe
         setIs100Percent(true);
 
-        // After circle expansion transition completes (1.4s), unmount and unlock scroll
+        try {
+          sessionStorage.setItem("aqua_preloader_seen_v1", "true");
+        } catch {}
+
+        // After quick circle expansion completes, unmount and unlock scroll
         setTimeout(() => {
           setIsFinished(true);
           document.body.style.overflow = "";
-        }, 1350);
+        }, 500);
       }
     };
 
@@ -79,11 +94,13 @@ export const SolenoPreloader: React.FC = () => {
           Municipal Waterworks &bull; Domestic Foundries
         </div>
 
-        {/* Counter */}
-        <div id="progress-text">{progress}%</div>
+        {/* Dynamic Percentage Counter */}
+        <div id="progress-text" aria-live="polite">
+          {progress}%
+        </div>
       </div>
 
-      {/* Bottom Horizontal Progress Bar */}
+      {/* Thin Bottom Progress Tracker */}
       <div className="fix_progress">
         <div id="myBar" style={{ width: `${progress}%` }} />
       </div>

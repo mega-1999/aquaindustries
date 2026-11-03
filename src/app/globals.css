@@ -293,6 +293,67 @@ div#myLoader.class_100pourcent {
   height: 7px;
 }
 
+/* ========================================================
+   High-Performance GPU Water Dynamics Engine
+   Zero network overhead, 60fps hardware accelerated
+   ======================================================== */
+@keyframes waterCaustics1 {
+  0% {
+    transform: translate3d(0, 0, 0) scale(1);
+    opacity: 0.35;
+  }
+  50% {
+    transform: translate3d(-2%, -2%, 0) scale(1.04);
+    opacity: 0.55;
+  }
+  100% {
+    transform: translate3d(0, 0, 0) scale(1);
+    opacity: 0.35;
+  }
+}
+
+@keyframes waterCaustics2 {
+  0% {
+    transform: translate3d(0, 0, 0) rotate(0deg);
+    opacity: 0.3;
+  }
+  50% {
+    transform: translate3d(2%, 2%, 0) rotate(1deg);
+    opacity: 0.5;
+  }
+  100% {
+    transform: translate3d(0, 0, 0) rotate(0deg);
+    opacity: 0.3;
+  }
+}
+
+@keyframes waterFlowDrift {
+  0% {
+    background-position: 0% 0%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 0%;
+  }
+}
+
+.gpu-water-layer-1 {
+  animation: waterCaustics1 10s ease-in-out infinite;
+  will-change: transform, opacity;
+}
+
+.gpu-water-layer-2 {
+  animation: waterCaustics2 14s ease-in-out infinite reverse;
+  will-change: transform, opacity;
+}
+
+.gpu-water-drift {
+  animation: waterFlowDrift 16s ease-in-out infinite;
+  background-size: 200% 200%;
+}
+
 ::-webkit-scrollbar-track {
   background: #ffffff;
 }
