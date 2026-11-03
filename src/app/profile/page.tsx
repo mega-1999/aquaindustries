@@ -2,10 +2,12 @@
 
 import {
   AlertCircle,
+  ArrowRight,
   Building,
   CheckCircle2,
   Clock,
   Download,
+  Droplets,
   FileCheck2,
   Lock,
   LogOut,
@@ -25,8 +27,6 @@ import { IndustrialFooter } from "../../components/footer/IndustrialFooter";
 import { AccountRegistrationModal } from "../../components/modals/AccountRegistrationModal";
 import { ClientPortalModal } from "../../components/modals/ClientPortalModal";
 import { YardSelectorModal } from "../../components/modals/YardSelectorModal";
-import { GlobalUtilityTicker } from "../../components/navigation/GlobalUtilityTicker";
-import { MainNavbar } from "../../components/navigation/MainNavbar";
 import { useAuth } from "../../context/AuthContext";
 import { DISTRIBUTION_YARDS } from "../../data/waterworks-data";
 import type { YardLocation } from "../../types";
@@ -74,18 +74,59 @@ export default function ProfilePage() {
 
   return (
     <div className="min-h-screen flex flex-col bg-white text-[#0082FC] selection:bg-[#5FD4FD] selection:text-[#0082FC]">
-      {/* Top Utility Ribbon */}
-      <GlobalUtilityTicker
-        onOpenYardModal={() => setYardModalOpen(true)}
-        selectedYardCity={`${selectedYard.city}, ${selectedYard.state}`}
-      />
+      {/* Clean Dashboard Header (No duplicated marketing navbar) */}
+      <header className="bg-white border-b-2 border-[#0082FC] shadow-sm py-3 px-4 sm:px-6 lg:px-8 sticky top-0 z-40">
+        <div className="max-w-6xl mx-auto flex items-center justify-between gap-4">
+          <Link
+            href="/"
+            className="flex items-center gap-2.5 group cursor-pointer"
+            title="Return to Aqua Industries Home"
+          >
+            <div className="w-9 h-9 bg-[#0082FC] text-white border border-[#5FD4FD] flex items-center justify-center shrink-0">
+              <Droplets className="w-5 h-5 text-white" />
+            </div>
+            <div>
+              <span className="font-extrabold text-[#0082FC] text-base tracking-tight leading-none block">
+                Aqua <span className="text-[#5FD4FD]">Industries</span>
+              </span>
+              <span className="text-[10px] text-[#0082FC]/75 font-bold uppercase tracking-wider block">
+                Commercial Account Dashboard
+              </span>
+            </div>
+          </Link>
 
-      {/* Main Navigation Bar */}
-      <MainNavbar
-        onOpenLoginModal={() => setLoginModalOpen(true)}
-        onOpenRegisterModal={() => setRegisterModalOpen(true)}
-        onOpenYardModal={() => setYardModalOpen(true)}
-      />
+          {/* Quick Header Navigation */}
+          <div className="flex items-center gap-2 sm:gap-3">
+            <Link
+              href="/settings"
+              className="px-3 py-1.5 bg-white hover:bg-[#5FD4FD]/20 text-[#0082FC] border border-[#0082FC] text-xs font-bold uppercase tracking-wider transition-colors flex items-center gap-1.5"
+            >
+              <Settings className="w-3.5 h-3.5" />
+              <span className="hidden sm:inline">Settings</span>
+            </Link>
+
+            {currentUser && (
+              <button
+                type="button"
+                onClick={logout}
+                className="px-3 py-1.5 bg-white hover:bg-rose-50 text-rose-700 border border-rose-500 text-xs font-bold uppercase tracking-wider transition-colors flex items-center gap-1.5 cursor-pointer"
+                title="Sign Out of Session"
+              >
+                <LogOut className="w-3.5 h-3.5 text-rose-600" />
+                <span>Logout</span>
+              </button>
+            )}
+
+            <Link
+              href="/"
+              className="px-3.5 py-1.5 bg-[#0082FC] hover:bg-[#5FD4FD] text-white hover:text-[#0082FC] text-xs font-black uppercase tracking-wider transition-colors flex items-center gap-1 shadow-xs"
+            >
+              <span>Main Site</span>
+              <ArrowRight className="w-3.5 h-3.5" />
+            </Link>
+          </div>
+        </div>
+      </header>
 
       <main className="flex-1 py-10 sm:py-14 bg-slate-50 border-b-2 border-[#0082FC]/20">
         <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">

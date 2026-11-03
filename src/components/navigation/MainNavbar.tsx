@@ -523,104 +523,117 @@ export const MainNavbar: React.FC<MainNavbarProps> = ({
           </nav>
 
           {/* Desktop Right Header Actions */}
-          <div className="hidden xl:flex items-center gap-2.5 shrink-0">
+          <div className="hidden xl:flex items-center gap-2 shrink-0">
             {currentUser ? (
-              /* User Session Dropdown: ONLY Profile, Setting, Logout */
-              <div
-                className="relative"
-                onMouseEnter={() => setActiveMenu("user-menu")}
-                onMouseLeave={() => setActiveMenu(null)}
-              >
+              /* User Session Menu & Quick Logout */
+              <div className="flex items-center gap-1.5">
+                <div
+                  className="relative"
+                  onMouseEnter={() => setActiveMenu("user-menu")}
+                  onMouseLeave={() => setActiveMenu(null)}
+                >
+                  <button
+                    type="button"
+                    onClick={() => {
+                      setActiveMenu(
+                        activeMenu === "user-menu" ? null : "user-menu",
+                      );
+                    }}
+                    className={`inline-flex items-center gap-2 px-3 py-2 text-xs 2xl:text-sm font-black transition-all whitespace-nowrap border-2 rounded-none shadow-xs cursor-pointer ${
+                      activeMenu === "user-menu"
+                        ? "bg-[#0082fc] text-white border-[#0082fc]"
+                        : "bg-white text-[#0082fc] hover:bg-[#5fd4fd]/20 border-[#0082fc]"
+                    }`}
+                    aria-label="User Account Menu"
+                  >
+                    <div className="w-5 h-5 bg-[#0082fc] text-white flex items-center justify-center text-[10px] font-black border border-[#5fd4fd]">
+                      <User className="w-3.5 h-3.5" />
+                    </div>
+                    <span className="truncate max-w-[130px]">
+                      {currentUser.fullName.split(" ")[0]}
+                    </span>
+                    <ChevronDown
+                      className={`w-3.5 h-3.5 transition-transform duration-200 ${
+                        activeMenu === "user-menu" ? "rotate-180" : ""
+                      }`}
+                    />
+                  </button>
+
+                  {activeMenu === "user-menu" && (
+                    <div className="absolute top-full right-0 w-60 pt-2 z-50 animate-in fade-in slide-in-from-top-1 duration-150">
+                      <div className="bg-white border-2 border-[#0082fc] shadow-2xl p-1.5 text-[#0082fc] rounded-none">
+                        {/* User Identity Mini Chip */}
+                        <div className="px-3 py-2 border-b border-[#0082fc]/20 mb-1 bg-[#5FD4FD]/15">
+                          <div className="font-black text-xs text-[#0082fc] truncate">
+                            {currentUser.fullName}
+                          </div>
+                          <div className="text-[10px] text-[#0082fc]/80 font-bold uppercase truncate">
+                            {currentUser.companyName}
+                          </div>
+                        </div>
+
+                        {/* 1. Profile Option */}
+                        <Link
+                          href="/profile"
+                          onClick={(e) => {
+                            setActiveMenu(null);
+                            if (onOpenProfileModal) {
+                              e.preventDefault();
+                              onOpenProfileModal();
+                            }
+                          }}
+                          className="w-full text-left flex items-center gap-2.5 px-3 py-2.5 hover:bg-[#0082fc] hover:text-white transition-colors font-bold text-xs uppercase tracking-wider group cursor-pointer rounded-none"
+                        >
+                          <User className="w-4 h-4 text-[#0082fc] group-hover:text-white shrink-0" />
+                          <span>Profile Dashboard</span>
+                        </Link>
+
+                        {/* 2. Setting Option */}
+                        <Link
+                          href="/settings"
+                          onClick={(e) => {
+                            setActiveMenu(null);
+                            if (onOpenSettingsModal) {
+                              e.preventDefault();
+                              onOpenSettingsModal();
+                            }
+                          }}
+                          className="w-full text-left flex items-center gap-2.5 px-3 py-2.5 hover:bg-[#0082fc] hover:text-white transition-colors font-bold text-xs uppercase tracking-wider group cursor-pointer rounded-none"
+                        >
+                          <Settings className="w-4 h-4 text-[#0082fc] group-hover:text-white shrink-0" />
+                          <span>Account Settings</span>
+                        </Link>
+
+                        {/* Divider */}
+                        <div className="border-t border-[#0082fc]/20 my-1" />
+
+                        {/* 3. Logout Option with prominent Logout icon */}
+                        <button
+                          type="button"
+                          onClick={() => {
+                            setActiveMenu(null);
+                            logout();
+                          }}
+                          className="w-full text-left flex items-center gap-2.5 px-3 py-2 text-rose-700 hover:bg-rose-50 transition-colors font-bold text-xs uppercase tracking-wider cursor-pointer rounded-none"
+                        >
+                          <LogOut className="w-4 h-4 text-rose-600 shrink-0" />
+                          <span>Sign Out / Logout</span>
+                        </button>
+                      </div>
+                    </div>
+                  )}
+                </div>
+
+                {/* Direct 1-Click Logout Icon Button */}
                 <button
                   type="button"
-                  onClick={() => {
-                    setActiveMenu(
-                      activeMenu === "user-menu" ? null : "user-menu",
-                    );
-                  }}
-                  className={`inline-flex items-center gap-2 px-3 py-2 text-xs 2xl:text-sm font-black transition-all whitespace-nowrap border-2 rounded-none shadow-xs cursor-pointer ${
-                    activeMenu === "user-menu"
-                      ? "bg-[#0082fc] text-white border-[#0082fc]"
-                      : "bg-white text-[#0082fc] hover:bg-[#5fd4fd]/20 border-[#0082fc]"
-                  }`}
-                  aria-label="User Account Menu"
+                  onClick={logout}
+                  className="p-2 bg-white text-rose-700 hover:bg-rose-50 border-2 border-rose-500 rounded-none shadow-xs transition-colors cursor-pointer"
+                  title="Sign Out of Session"
+                  aria-label="Logout"
                 >
-                  <div className="w-5 h-5 bg-[#0082fc] text-white flex items-center justify-center text-[10px] font-black border border-[#5fd4fd]">
-                    <User className="w-3.5 h-3.5" />
-                  </div>
-                  <span className="truncate max-w-[130px]">
-                    {currentUser.fullName.split(" ")[0]}
-                  </span>
-                  <ChevronDown
-                    className={`w-3.5 h-3.5 transition-transform duration-200 ${
-                      activeMenu === "user-menu" ? "rotate-180" : ""
-                    }`}
-                  />
+                  <LogOut className="w-4 h-4 text-rose-600" />
                 </button>
-
-                {activeMenu === "user-menu" && (
-                  <div className="absolute top-full right-0 w-60 pt-2 z-50 animate-in fade-in slide-in-from-top-1 duration-150">
-                    <div className="bg-white border-2 border-[#0082fc] shadow-2xl p-1.5 text-[#0082fc] rounded-none">
-                      {/* User Identity Mini Chip */}
-                      <div className="px-3 py-2 border-b border-[#0082fc]/20 mb-1 bg-[#5FD4FD]/15">
-                        <div className="font-black text-xs text-[#0082fc] truncate">
-                          {currentUser.fullName}
-                        </div>
-                        <div className="text-[10px] text-[#0082fc]/80 font-bold uppercase truncate">
-                          {currentUser.companyName}
-                        </div>
-                      </div>
-
-                      {/* 1. Profile Option */}
-                      <Link
-                        href="/profile"
-                        onClick={(e) => {
-                          setActiveMenu(null);
-                          if (onOpenProfileModal) {
-                            e.preventDefault();
-                            onOpenProfileModal();
-                          }
-                        }}
-                        className="w-full text-left flex items-center gap-2.5 px-3 py-2.5 hover:bg-[#0082fc] hover:text-white transition-colors font-bold text-xs uppercase tracking-wider group cursor-pointer rounded-none"
-                      >
-                        <User className="w-4 h-4 text-[#0082fc] group-hover:text-white shrink-0" />
-                        <span>Profile Dashboard</span>
-                      </Link>
-
-                      {/* 2. Setting Option */}
-                      <Link
-                        href="/settings"
-                        onClick={(e) => {
-                          setActiveMenu(null);
-                          if (onOpenSettingsModal) {
-                            e.preventDefault();
-                            onOpenSettingsModal();
-                          }
-                        }}
-                        className="w-full text-left flex items-center gap-2.5 px-3 py-2.5 hover:bg-[#0082fc] hover:text-white transition-colors font-bold text-xs uppercase tracking-wider group cursor-pointer rounded-none"
-                      >
-                        <Settings className="w-4 h-4 text-[#0082fc] group-hover:text-white shrink-0" />
-                        <span>Account Settings</span>
-                      </Link>
-
-                      {/* Divider */}
-                      <div className="border-t border-[#0082fc]/20 my-1" />
-
-                      {/* 3. Logout Option */}
-                      <button
-                        type="button"
-                        onClick={() => {
-                          setActiveMenu(null);
-                          logout();
-                        }}
-                        className="w-full text-left flex items-center gap-2.5 px-3 py-2 text-rose-700 hover:bg-rose-50 transition-colors font-bold text-xs uppercase tracking-wider cursor-pointer rounded-none"
-                      >
-                        <LogOut className="w-4 h-4 text-rose-600 shrink-0" />
-                        <span>Logout</span>
-                      </button>
-                    </div>
-                  </div>
-                )}
               </div>
             ) : (
               /* If Not Logged In: Client Portal Button */

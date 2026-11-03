@@ -2,10 +2,12 @@
 
 import {
   AlertCircle,
+  ArrowRight,
   Building2,
   Check,
   CheckCircle2,
   Clock,
+  Droplets,
   ExternalLink,
   FileCheck2,
   Lock,
@@ -25,7 +27,6 @@ import {
 import Link from "next/link";
 import React, { useState } from "react";
 import { IndustrialFooter } from "../../components/footer/IndustrialFooter";
-import { MainNavbar } from "../../components/navigation/MainNavbar";
 import { useAuth } from "../../context/AuthContext";
 import type { UserAccount } from "../../types/auth";
 
@@ -99,11 +100,57 @@ export default function SuperAdminPage() {
 
   return (
     <div className="min-h-screen flex flex-col bg-white text-[#0082FC] font-sans">
-      <MainNavbar
-        onOpenLoginModal={() => {}}
-        onOpenRegisterModal={() => {}}
-        onOpenYardModal={() => {}}
-      />
+      {/* Clean Executive Top Bar (No duplicate marketing navbar) */}
+      <header className="bg-white border-b-2 border-[#0082FC] shadow-sm py-3 px-4 sm:px-6 lg:px-8 sticky top-0 z-40">
+        <div className="max-w-7xl mx-auto flex items-center justify-between gap-4">
+          <Link
+            href="/"
+            className="flex items-center gap-2.5 group cursor-pointer"
+            title="Return to Aqua Industries Home"
+          >
+            <div className="w-9 h-9 bg-[#0082FC] text-white border border-[#5FD4FD] flex items-center justify-center shrink-0">
+              <Droplets className="w-5 h-5 text-white" />
+            </div>
+            <div>
+              <span className="font-extrabold text-[#0082FC] text-base tracking-tight leading-none block">
+                Aqua <span className="text-[#5FD4FD]">Industries</span>
+              </span>
+              <span className="text-[10px] text-[#0082FC]/75 font-bold uppercase tracking-wider block">
+                Executive Super-Admin Portal
+              </span>
+            </div>
+          </Link>
+
+          {/* Quick Header Actions */}
+          <div className="flex items-center gap-2 sm:gap-3">
+            {isSuperAdmin && (
+              <span className="px-2.5 py-1 bg-amber-400 text-[#0082FC] font-black text-xs uppercase hidden sm:inline-block">
+                Level 1 Clearance
+              </span>
+            )}
+
+            {currentUser && (
+              <button
+                type="button"
+                onClick={logout}
+                className="px-3 py-1.5 bg-white hover:bg-rose-50 text-rose-700 border border-rose-500 text-xs font-bold uppercase tracking-wider transition-colors flex items-center gap-1.5 cursor-pointer"
+                title="Sign Out of Admin Session"
+              >
+                <LogOut className="w-3.5 h-3.5 text-rose-600" />
+                <span>Logout</span>
+              </button>
+            )}
+
+            <Link
+              href="/"
+              className="px-3.5 py-1.5 bg-[#0082FC] hover:bg-[#5FD4FD] text-white hover:text-[#0082FC] text-xs font-black uppercase tracking-wider transition-colors flex items-center gap-1 shadow-xs"
+            >
+              <span>Main Site</span>
+              <ArrowRight className="w-3.5 h-3.5" />
+            </Link>
+          </div>
+        </div>
+      </header>
 
       <main className="flex-1 py-10 sm:py-16">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
