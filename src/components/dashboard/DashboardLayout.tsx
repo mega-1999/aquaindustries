@@ -53,17 +53,6 @@ export const DashboardLayout: React.FC<DashboardLayoutProps> = ({
         </Link>
 
         <div className="flex items-center gap-2">
-          {currentUser && (
-            <button
-              type="button"
-              onClick={logout}
-              className="p-1.5 bg-rose-600 text-white border border-white text-xs font-bold"
-              title="Logout"
-            >
-              <LogOut className="w-4 h-4" />
-            </button>
-          )}
-
           <button
             type="button"
             onClick={() => setMobileSidebarOpen(!mobileSidebarOpen)}
@@ -317,18 +306,6 @@ export const DashboardLayout: React.FC<DashboardLayoutProps> = ({
               <span>Aqua Catalog</span>
               <ExternalLink className="w-3.5 h-3.5" />
             </Link>
-
-            {currentUser && (
-              <button
-                type="button"
-                onClick={logout}
-                className="px-3 py-1.5 bg-white hover:bg-rose-50 text-rose-700 border border-rose-500 text-xs font-black uppercase tracking-wider transition-colors flex items-center gap-1.5 cursor-pointer"
-                title="Logout"
-              >
-                <LogOut className="w-3.5 h-3.5 text-rose-600" />
-                <span>Logout</span>
-              </button>
-            )}
           </div>
         </header>
 
