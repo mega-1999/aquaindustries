@@ -158,13 +158,19 @@ export const SolenoVideoShowcase: React.FC<SolenoVideoShowcaseProps> = ({
               >
                 {/* Top Video Preview Box */}
                 <div className="relative w-full h-44 sm:h-48 bg-[#0082FC] overflow-hidden flex items-center justify-center">
-                  {/* Ambient Water Dynamic Background (GPU Accelerated, 0ms latency) */}
-                  <div
-                    className="w-full h-full opacity-65 group-hover:opacity-85 transition-opacity duration-300 gpu-water-drift"
-                    style={{
-                      backgroundImage:
-                        "radial-gradient(ellipse at 30% 30%, rgba(95, 212, 253, 0.85) 0%, rgba(0, 130, 252, 0.95) 100%)",
+                  {/* Ambient Looping Water Video Animation */}
+                  <video
+                    src={item.videoUrl}
+                    autoPlay
+                    loop
+                    muted
+                    playsInline
+                    preload="auto"
+                    onEnded={(e) => {
+                      e.currentTarget.currentTime = 0;
+                      e.currentTarget.play().catch(() => {});
                     }}
+                    className="w-full h-full object-cover opacity-60 group-hover:opacity-80 transition-opacity duration-300"
                   />
 
                   {/* Product Silhouette Overlay */}

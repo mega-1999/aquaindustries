@@ -171,13 +171,19 @@ export const VerticalSideVideoAds: React.FC<VerticalSideVideoAdsProps> = ({
       >
         {/* Top Video Preview Thumbnail Container */}
         <div className="relative w-full h-24 bg-[#0082FC] overflow-hidden">
-          {/* Looping Ambient Water Dynamic Background (GPU Accelerated, 0ms latency) */}
-          <div
-            className="w-full h-full opacity-60 group-hover:opacity-85 transition-opacity duration-300 gpu-water-drift"
-            style={{
-              backgroundImage:
-                "radial-gradient(ellipse at 30% 30%, rgba(95, 212, 253, 0.8) 0%, rgba(0, 130, 252, 0.95) 100%)",
+          {/* Looping Ambient Water Video Animation */}
+          <video
+            src={ad.videoUrl}
+            autoPlay
+            loop
+            muted
+            playsInline
+            preload="auto"
+            onEnded={(e) => {
+              e.currentTarget.currentTime = 0;
+              e.currentTarget.play().catch(() => {});
             }}
+            className="w-full h-full object-cover opacity-60 group-hover:opacity-85 transition-opacity duration-300"
           />
 
           {/* Product Silhouette Overlay */}
