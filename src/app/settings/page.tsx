@@ -2,30 +2,20 @@
 
 import {
   AlertCircle,
-  ArrowRight,
   Bell,
   CheckCircle2,
-  Droplets,
   KeyRound,
   Lock,
-  LogOut,
   MapPin,
   RefreshCw,
   Save,
-  Settings,
-  Shield,
   Truck,
   User,
 } from "lucide-react";
 import Link from "next/link";
 import React, { useState } from "react";
-import { IndustrialFooter } from "../../components/footer/IndustrialFooter";
-import { AccountRegistrationModal } from "../../components/modals/AccountRegistrationModal";
-import { ClientPortalModal } from "../../components/modals/ClientPortalModal";
-import { YardSelectorModal } from "../../components/modals/YardSelectorModal";
+import { DashboardLayout } from "../../components/dashboard/DashboardLayout";
 import { useAuth } from "../../context/AuthContext";
-import { DISTRIBUTION_YARDS } from "../../data/waterworks-data";
-import type { YardLocation } from "../../types";
 
 export default function SettingsPage() {
   const {
@@ -34,7 +24,6 @@ export default function SettingsPage() {
     resetPassword,
     updateUserProfile,
     login,
-    logout,
   } = useAuth();
 
   const [activeTab, setActiveTab] = useState<
@@ -73,14 +62,6 @@ export default function SettingsPage() {
   const [bolSmsAlerts, setBolSmsAlerts] = useState(true);
   const [mtrEmailAlerts, setMtrEmailAlerts] = useState(true);
   const [quoteUpdates, setQuoteUpdates] = useState(false);
-
-  // Modals
-  const [loginModalOpen, setLoginModalOpen] = useState(false);
-  const [registerModalOpen, setRegisterModalOpen] = useState(false);
-  const [yardModalOpen, setYardModalOpen] = useState(false);
-  const [selectedYard, setSelectedYard] = useState<YardLocation>(
-    DISTRIBUTION_YARDS[0],
-  );
 
   const handleLoginSubmit = (e: React.FormEvent) => {
     e.preventDefault();
@@ -148,504 +129,393 @@ export default function SettingsPage() {
   };
 
   return (
-    <div className="min-h-screen flex flex-col bg-white text-[#0082FC] selection:bg-[#5FD4FD] selection:text-[#0082FC]">
-      {/* Clean Dashboard Header (No duplicated marketing navbar) */}
-      <header className="bg-white border-b-2 border-[#0082FC] shadow-sm py-3 px-4 sm:px-6 lg:px-8 sticky top-0 z-40">
-        <div className="max-w-5xl mx-auto flex items-center justify-between gap-4">
-          <Link
-            href="/"
-            className="flex items-center gap-2.5 group cursor-pointer"
-            title="Return to Aqua Industries Home"
-          >
-            <div className="w-9 h-9 bg-[#0082FC] text-white border border-[#5FD4FD] flex items-center justify-center shrink-0">
-              <Droplets className="w-5 h-5 text-white" />
-            </div>
-            <div>
-              <span className="font-extrabold text-[#0082FC] text-base tracking-tight leading-none block">
-                Aqua <span className="text-[#5FD4FD]">Industries</span>
-              </span>
-              <span className="text-[10px] text-[#0082FC]/75 font-bold uppercase tracking-wider block">
-                Account Settings &amp; Security
-              </span>
-            </div>
-          </Link>
-
-          {/* Quick Header Navigation */}
-          <div className="flex items-center gap-2 sm:gap-3">
-            <Link
-              href="/profile"
-              className="px-3 py-1.5 bg-white hover:bg-[#5FD4FD]/20 text-[#0082FC] border border-[#0082FC] text-xs font-bold uppercase tracking-wider transition-colors flex items-center gap-1.5"
-            >
-              <User className="w-3.5 h-3.5" />
-              <span className="hidden sm:inline">Profile</span>
-            </Link>
-
-            {currentUser && (
+    <DashboardLayout
+      activePage="settings"
+      title="Account Settings &amp; Security"
+      subtitle="Password Management, Dispatch Staging Alerts &amp; Regional Hub"
+    >
+      <div className="max-w-4xl mx-auto space-y-6">
+        {currentUser ? (
+          /* ========================================================
+              LOGGED IN: FULL SETTINGS PANEL
+          ======================================================== */
+          <div className="space-y-6">
+            {/* Sub-tab Navigation */}
+            <div className="flex border-b-2 border-[#0082FC] bg-white px-2">
               <button
                 type="button"
-                onClick={logout}
-                className="px-3 py-1.5 bg-white hover:bg-rose-50 text-rose-700 border border-rose-500 text-xs font-bold uppercase tracking-wider transition-colors flex items-center gap-1.5 cursor-pointer"
-                title="Sign Out of Session"
+                onClick={() => setActiveTab("security")}
+                className={`py-3 px-4 sm:px-6 text-xs sm:text-sm font-black uppercase tracking-wider border-b-2 -mb-[2px] transition-colors cursor-pointer flex items-center gap-1.5 ${
+                  activeTab === "security"
+                    ? "border-[#0082FC] bg-[#0082FC] text-white"
+                    : "border-transparent text-[#0082FC] hover:bg-[#5FD4FD]/20"
+                }`}
               >
-                <LogOut className="w-3.5 h-3.5 text-rose-600" />
-                <span>Logout</span>
+                <KeyRound className="w-4 h-4" />
+                <span>Password &amp; Security</span>
               </button>
-            )}
+              <button
+                type="button"
+                onClick={() => setActiveTab("company")}
+                className={`py-3 px-4 sm:px-6 text-xs sm:text-sm font-black uppercase tracking-wider border-b-2 -mb-[2px] transition-colors cursor-pointer flex items-center gap-1.5 ${
+                  activeTab === "company"
+                    ? "border-[#0082FC] bg-[#0082FC] text-white"
+                    : "border-transparent text-[#0082FC] hover:bg-[#5FD4FD]/20"
+                }`}
+              >
+                <User className="w-4 h-4" />
+                <span>Contact &amp; Hub</span>
+              </button>
+              <button
+                type="button"
+                onClick={() => setActiveTab("notifications")}
+                className={`py-3 px-4 sm:px-6 text-xs sm:text-sm font-black uppercase tracking-wider border-b-2 -mb-[2px] transition-colors cursor-pointer flex items-center gap-1.5 ${
+                  activeTab === "notifications"
+                    ? "border-[#0082FC] bg-[#0082FC] text-white"
+                    : "border-transparent text-[#0082FC] hover:bg-[#5FD4FD]/20"
+                }`}
+              >
+                <Bell className="w-4 h-4" />
+                <span>Alerts &amp; Dispatch</span>
+              </button>
+            </div>
 
-            <Link
-              href="/"
-              className="px-3.5 py-1.5 bg-[#0082FC] hover:bg-[#5FD4FD] text-white hover:text-[#0082FC] text-xs font-black uppercase tracking-wider transition-colors flex items-center gap-1 shadow-xs"
-            >
-              <span>Main Site</span>
-              <ArrowRight className="w-3.5 h-3.5" />
-            </Link>
-          </div>
-        </div>
-      </header>
-
-      <main className="flex-1 py-10 sm:py-14 bg-slate-50 border-b-2 border-[#0082FC]/20">
-        <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
-          {currentUser ? (
-            /* ========================================================
-                LOGGED IN: FULL SETTINGS PANEL
-            ======================================================== */
-            <div className="space-y-6">
-              {/* Header Card */}
-              <div className="bg-[#0082FC] text-white p-6 sm:p-8 border-4 border-[#0082FC] shadow-xl flex flex-col sm:flex-row sm:items-center justify-between gap-4">
-                <div className="flex items-center gap-4">
-                  <div className="w-14 h-14 bg-white text-[#0082FC] border-2 border-[#5FD4FD] flex items-center justify-center shrink-0">
-                    <Settings className="w-8 h-8 text-[#0082FC]" />
-                  </div>
-                  <div>
-                    <h1 className="text-2xl sm:text-3xl font-black uppercase tracking-tight text-white">
-                      Account Settings
-                    </h1>
-                    <p className="text-xs sm:text-sm text-white/90 font-medium mt-0.5">
-                      Password Change, Master Reset &amp; Dispatch Preferences
-                    </p>
-                  </div>
-                </div>
-
-                <div className="flex items-center gap-2">
-                  <Link
-                    href="/profile"
-                    className="px-4 py-2 bg-white hover:bg-[#5FD4FD] text-[#0082FC] font-black text-xs uppercase tracking-wider transition-colors shadow-sm"
+            {/* Tab 1: Password & Security */}
+            {activeTab === "security" && (
+              <div className="bg-white border-2 border-[#0082FC] p-6 sm:p-8 space-y-6 shadow-md">
+                {passwordStatus && (
+                  <div
+                    className={`p-3.5 border-2 text-xs font-bold flex items-center gap-2 ${
+                      passwordStatus.success
+                        ? "bg-emerald-50 border-emerald-600 text-emerald-950"
+                        : "bg-rose-50 border-rose-500 text-rose-900"
+                    }`}
                   >
-                    View Profile &rsaquo;
-                  </Link>
-                  <button
-                    type="button"
-                    onClick={logout}
-                    className="px-4 py-2 bg-rose-600 hover:bg-rose-700 text-white font-black text-xs uppercase tracking-wider transition-colors cursor-pointer shadow-sm flex items-center gap-1.5"
-                  >
-                    <LogOut className="w-3.5 h-3.5" />
-                    <span>Logout</span>
-                  </button>
-                </div>
-              </div>
+                    {passwordStatus.success ? (
+                      <CheckCircle2 className="w-5 h-5 text-emerald-600 shrink-0" />
+                    ) : (
+                      <AlertCircle className="w-5 h-5 text-rose-600 shrink-0" />
+                    )}
+                    <span>{passwordStatus.message}</span>
+                  </div>
+                )}
 
-              {/* Sub-tab Navigation */}
-              <div className="flex border-b-2 border-[#0082FC] bg-white px-2">
-                <button
-                  type="button"
-                  onClick={() => setActiveTab("security")}
-                  className={`py-3 px-4 sm:px-6 text-xs sm:text-sm font-black uppercase tracking-wider border-b-2 -mb-[2px] transition-colors cursor-pointer flex items-center gap-1.5 ${
-                    activeTab === "security"
-                      ? "border-[#0082FC] bg-[#0082FC] text-white"
-                      : "border-transparent text-[#0082FC] hover:bg-[#5FD4FD]/20"
-                  }`}
-                >
-                  <KeyRound className="w-4 h-4" />
-                  <span>Password &amp; Security</span>
-                </button>
-                <button
-                  type="button"
-                  onClick={() => setActiveTab("company")}
-                  className={`py-3 px-4 sm:px-6 text-xs sm:text-sm font-black uppercase tracking-wider border-b-2 -mb-[2px] transition-colors cursor-pointer flex items-center gap-1.5 ${
-                    activeTab === "company"
-                      ? "border-[#0082FC] bg-[#0082FC] text-white"
-                      : "border-transparent text-[#0082FC] hover:bg-[#5FD4FD]/20"
-                  }`}
-                >
-                  <User className="w-4 h-4" />
-                  <span>Contact &amp; Hub</span>
-                </button>
-                <button
-                  type="button"
-                  onClick={() => setActiveTab("notifications")}
-                  className={`py-3 px-4 sm:px-6 text-xs sm:text-sm font-black uppercase tracking-wider border-b-2 -mb-[2px] transition-colors cursor-pointer flex items-center gap-1.5 ${
-                    activeTab === "notifications"
-                      ? "border-[#0082FC] bg-[#0082FC] text-white"
-                      : "border-transparent text-[#0082FC] hover:bg-[#5FD4FD]/20"
-                  }`}
-                >
-                  <Bell className="w-4 h-4" />
-                  <span>Alerts &amp; Dispatch</span>
-                </button>
-              </div>
-
-              {/* Tab 1: Password & Security */}
-              {activeTab === "security" && (
-                <div className="bg-white border-2 border-[#0082FC] p-6 sm:p-8 space-y-6 shadow-md">
-                  {passwordStatus && (
-                    <div
-                      className={`p-3.5 border-2 text-xs font-bold flex items-center gap-2 ${
-                        passwordStatus.success
-                          ? "bg-emerald-50 border-emerald-600 text-emerald-950"
-                          : "bg-rose-50 border-rose-500 text-rose-900"
-                      }`}
-                    >
-                      {passwordStatus.success ? (
-                        <CheckCircle2 className="w-5 h-5 text-emerald-600 shrink-0" />
-                      ) : (
-                        <AlertCircle className="w-5 h-5 text-rose-600 shrink-0" />
-                      )}
-                      <span>{passwordStatus.message}</span>
+                {resetGeneratedPass && (
+                  <div className="p-4 bg-amber-50 border-2 border-amber-500 text-amber-950 space-y-2">
+                    <span className="text-xs font-black uppercase text-amber-900 block">
+                      New Temporary Password Generated:
+                    </span>
+                    <div className="text-lg font-mono font-black text-[#0082FC] select-all bg-white px-3 py-1.5 border border-amber-400">
+                      {resetGeneratedPass}
                     </div>
-                  )}
+                    <span className="text-xs text-amber-900 block">
+                      Saved to your active encrypted browser session. You may
+                      use this password to sign in or update it below.
+                    </span>
+                  </div>
+                )}
 
-                  {resetGeneratedPass && (
-                    <div className="p-4 bg-amber-50 border-2 border-amber-500 text-amber-950 space-y-2">
-                      <span className="text-xs font-black uppercase text-amber-900 block">
-                        New Temporary Password Generated:
-                      </span>
-                      <div className="text-lg font-mono font-black text-[#0082FC] select-all bg-white px-3 py-1.5 border border-amber-400">
-                        {resetGeneratedPass}
-                      </div>
-                      <span className="text-xs text-amber-900 block">
-                        Saved to your active encrypted browser session. You may
-                        use this password to sign in or update it below.
-                      </span>
+                <div>
+                  <h3 className="text-base sm:text-lg font-black uppercase tracking-wide text-[#0082FC] mb-2">
+                    Change Account Password
+                  </h3>
+                  <p className="text-xs text-[#0082FC]/80 mb-4">
+                    Enter your current password and specify a new secure
+                    passphrase (minimum 6 characters).
+                  </p>
+
+                  <form onSubmit={handlePasswordSubmit} className="space-y-4">
+                    <div>
+                      <label className="block text-xs font-black uppercase text-[#0082FC] mb-1">
+                        Current Password *
+                      </label>
+                      <input
+                        type="password"
+                        required
+                        placeholder="Enter current password"
+                        value={currentPassword}
+                        onChange={(e) => setCurrentPassword(e.target.value)}
+                        className="w-full bg-white border-2 border-[#0082FC] px-3.5 py-2.5 text-xs font-bold text-[#0082FC] focus:outline-none focus:border-[#5FD4FD]"
+                      />
                     </div>
-                  )}
 
-                  <div>
-                    <h3 className="text-base sm:text-lg font-black uppercase tracking-wide text-[#0082FC] mb-2">
-                      Change Account Password
-                    </h3>
-                    <p className="text-xs text-[#0082FC]/80 mb-4">
-                      Enter your current password and specify a new secure
-                      passphrase (minimum 6 characters).
-                    </p>
-
-                    <form onSubmit={handlePasswordSubmit} className="space-y-4">
+                    <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
                       <div>
                         <label className="block text-xs font-black uppercase text-[#0082FC] mb-1">
-                          Current Password *
+                          New Password *
                         </label>
                         <input
                           type="password"
                           required
-                          placeholder="Enter current password"
-                          value={currentPassword}
-                          onChange={(e) => setCurrentPassword(e.target.value)}
-                          className="w-full bg-white border-2 border-[#0082FC] px-3.5 py-2.5 text-xs font-bold text-[#0082FC] focus:outline-none focus:border-[#5FD4FD]"
-                        />
-                      </div>
-
-                      <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
-                        <div>
-                          <label className="block text-xs font-black uppercase text-[#0082FC] mb-1">
-                            New Password *
-                          </label>
-                          <input
-                            type="password"
-                            required
-                            placeholder="Min 6 characters"
-                            value={newPassword}
-                            onChange={(e) => setNewPassword(e.target.value)}
-                            className="w-full bg-white border-2 border-[#0082FC] px-3.5 py-2.5 text-xs font-bold text-[#0082FC] focus:outline-none focus:border-[#5FD4FD]"
-                          />
-                        </div>
-
-                        <div>
-                          <label className="block text-xs font-black uppercase text-[#0082FC] mb-1">
-                            Confirm New Password *
-                          </label>
-                          <input
-                            type="password"
-                            required
-                            placeholder="Re-type new password"
-                            value={confirmPassword}
-                            onChange={(e) => setConfirmPassword(e.target.value)}
-                            className="w-full bg-white border-2 border-[#0082FC] px-3.5 py-2.5 text-xs font-bold text-[#0082FC] focus:outline-none focus:border-[#5FD4FD]"
-                          />
-                        </div>
-                      </div>
-
-                      <div className="pt-2 flex flex-wrap items-center justify-between gap-3">
-                        <button
-                          type="submit"
-                          className="px-6 py-3 bg-[#0082FC] hover:bg-[#5FD4FD] text-white hover:text-[#0082FC] font-black text-xs uppercase tracking-wider transition-colors shadow-md cursor-pointer"
-                        >
-                          Save New Password
-                        </button>
-
-                        <button
-                          type="button"
-                          onClick={handleInstantReset}
-                          className="px-4 py-2.5 bg-white hover:bg-amber-50 text-amber-900 border-2 border-amber-500 font-bold text-xs uppercase tracking-wider transition-colors cursor-pointer flex items-center gap-2"
-                        >
-                          <RefreshCw className="w-4 h-4 text-amber-700" />
-                          <span>Reset Password (Generate Temp Key)</span>
-                        </button>
-                      </div>
-                    </form>
-                  </div>
-                </div>
-              )}
-
-              {/* Tab 2: Contact Details & Yard */}
-              {activeTab === "company" && (
-                <div className="bg-white border-2 border-[#0082FC] p-6 sm:p-8 space-y-6 shadow-md">
-                  {profileStatus && (
-                    <div
-                      className={`p-3.5 border-2 text-xs font-bold flex items-center gap-2 ${
-                        profileStatus.success
-                          ? "bg-emerald-50 border-emerald-600 text-emerald-950"
-                          : "bg-rose-50 border-rose-500 text-rose-900"
-                      }`}
-                    >
-                      <CheckCircle2 className="w-5 h-5 text-emerald-600 shrink-0" />
-                      <span>{profileStatus.message}</span>
-                    </div>
-                  )}
-
-                  <form onSubmit={handleProfileSave} className="space-y-4">
-                    <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
-                      <div>
-                        <label className="block text-xs font-black uppercase text-[#0082FC] mb-1">
-                          Primary Contact Name
-                        </label>
-                        <input
-                          type="text"
-                          required
-                          value={fullName}
-                          onChange={(e) => setFullName(e.target.value)}
+                          placeholder="Min 6 characters"
+                          value={newPassword}
+                          onChange={(e) => setNewPassword(e.target.value)}
                           className="w-full bg-white border-2 border-[#0082FC] px-3.5 py-2.5 text-xs font-bold text-[#0082FC] focus:outline-none focus:border-[#5FD4FD]"
                         />
                       </div>
 
                       <div>
                         <label className="block text-xs font-black uppercase text-[#0082FC] mb-1">
-                          Direct Phone Number
+                          Confirm New Password *
                         </label>
                         <input
-                          type="text"
+                          type="password"
                           required
-                          value={phone}
-                          onChange={(e) => setPhone(e.target.value)}
-                          className="w-full bg-white border-2 border-[#0082FC] px-3.5 py-2.5 text-xs font-mono font-bold text-[#0082FC] focus:outline-none focus:border-[#5FD4FD]"
+                          placeholder="Re-type new password"
+                          value={confirmPassword}
+                          onChange={(e) => setConfirmPassword(e.target.value)}
+                          className="w-full bg-white border-2 border-[#0082FC] px-3.5 py-2.5 text-xs font-bold text-[#0082FC] focus:outline-none focus:border-[#5FD4FD]"
                         />
                       </div>
                     </div>
 
-                    <div>
-                      <label className="block text-xs font-black uppercase text-[#0082FC] mb-1">
-                        Primary Regional Logistics Hub
-                      </label>
-                      <select
-                        value={preferredYard}
-                        onChange={(e) => setPreferredYard(e.target.value)}
-                        className="w-full bg-white border-2 border-[#0082FC] px-3.5 py-2.5 text-xs font-bold text-[#0082FC] focus:outline-none focus:border-[#5FD4FD] rounded-none"
-                      >
-                        <option value="new-york-hub">
-                          Melville, NY Foundry Yard (Global Master Hub)
-                        </option>
-                        <option value="houston-yard">
-                          Houston, TX Rail-Served Depot
-                        </option>
-                        <option value="atlanta-depot">
-                          Atlanta, GA Southeast Transit Center
-                        </option>
-                        <option value="chicago-yard">
-                          Chicago, IL Midwest Staging Facility
-                        </option>
-                      </select>
-                    </div>
-
-                    <div className="pt-2 flex justify-end">
+                    <div className="pt-2 flex flex-wrap items-center justify-between gap-3">
                       <button
                         type="submit"
-                        className="px-6 py-3 bg-[#0082FC] hover:bg-[#5FD4FD] text-white hover:text-[#0082FC] font-black text-xs uppercase tracking-wider transition-colors shadow-md cursor-pointer flex items-center gap-2"
+                        className="px-6 py-3 bg-[#0082FC] hover:bg-[#5FD4FD] text-white hover:text-[#0082FC] font-black text-xs uppercase tracking-wider transition-colors shadow-md cursor-pointer"
                       >
-                        <Save className="w-4 h-4" />
-                        <span>Update Contact &amp; Hub</span>
+                        Save New Password
+                      </button>
+
+                      <button
+                        type="button"
+                        onClick={handleInstantReset}
+                        className="px-4 py-2.5 bg-white hover:bg-amber-50 text-amber-900 border-2 border-amber-500 font-bold text-xs uppercase tracking-wider transition-colors cursor-pointer flex items-center gap-2"
+                      >
+                        <RefreshCw className="w-4 h-4 text-amber-700" />
+                        <span>Reset Password (Generate Temp Key)</span>
                       </button>
                     </div>
                   </form>
                 </div>
-              )}
+              </div>
+            )}
 
-              {/* Tab 3: Notifications */}
-              {activeTab === "notifications" && (
-                <div className="bg-white border-2 border-[#0082FC] p-6 sm:p-8 space-y-6 shadow-md">
-                  <div className="space-y-4">
-                    <label className="flex items-start gap-3 p-3.5 bg-[#0082FC]/5 border border-[#0082FC] cursor-pointer">
-                      <input
-                        type="checkbox"
-                        checked={bolSmsAlerts}
-                        onChange={(e) => setBolSmsAlerts(e.target.checked)}
-                        className="mt-1 accent-[#0082FC] w-4 h-4"
-                      />
-                      <div>
-                        <strong className="text-xs sm:text-sm font-black text-[#0082FC] block">
-                          SMS Flatbed Staging &amp; Driver Departure Alerts
-                        </strong>
-                        <p className="text-xs text-[#0082FC]/80 mt-0.5">
-                          Receive instant automated text notifications when your
-                          flatbed leaves the loading bay.
-                        </p>
-                      </div>
-                    </label>
+            {/* Tab 2: Contact Details & Yard */}
+            {activeTab === "company" && (
+              <div className="bg-white border-2 border-[#0082FC] p-6 sm:p-8 space-y-6 shadow-md">
+                {profileStatus && (
+                  <div
+                    className={`p-3.5 border-2 text-xs font-bold flex items-center gap-2 ${
+                      profileStatus.success
+                        ? "bg-emerald-50 border-emerald-600 text-emerald-950"
+                        : "bg-rose-50 border-rose-500 text-rose-900"
+                    }`}
+                  >
+                    <CheckCircle2 className="w-5 h-5 text-emerald-600 shrink-0" />
+                    <span>{profileStatus.message}</span>
+                  </div>
+                )}
 
-                    <label className="flex items-start gap-3 p-3.5 bg-[#0082FC]/5 border border-[#0082FC] cursor-pointer">
+                <form onSubmit={handleProfileSave} className="space-y-4">
+                  <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                    <div>
+                      <label className="block text-xs font-black uppercase text-[#0082FC] mb-1">
+                        Primary Contact Name
+                      </label>
                       <input
-                        type="checkbox"
-                        checked={mtrEmailAlerts}
-                        onChange={(e) => setMtrEmailAlerts(e.target.checked)}
-                        className="mt-1 accent-[#0082FC] w-4 h-4"
+                        type="text"
+                        required
+                        value={fullName}
+                        onChange={(e) => setFullName(e.target.value)}
+                        className="w-full bg-white border-2 border-[#0082FC] px-3.5 py-2.5 text-xs font-bold text-[#0082FC] focus:outline-none focus:border-[#5FD4FD]"
                       />
-                      <div>
-                        <strong className="text-xs sm:text-sm font-black text-[#0082FC] block">
-                          Certified Mill Test Report (MTR) Auto-Delivery
-                        </strong>
-                        <p className="text-xs text-[#0082FC]/80 mt-0.5">
-                          Automatically generate and email signed ASTM A536
-                          chemical and tensile test submittals upon BOL
-                          creation.
-                        </p>
-                      </div>
-                    </label>
+                    </div>
 
-                    <label className="flex items-start gap-3 p-3.5 bg-[#0082FC]/5 border border-[#0082FC] cursor-pointer">
+                    <div>
+                      <label className="block text-xs font-black uppercase text-[#0082FC] mb-1">
+                        Direct Phone Number
+                      </label>
                       <input
-                        type="checkbox"
-                        checked={quoteUpdates}
-                        onChange={(e) => setQuoteUpdates(e.target.checked)}
-                        className="mt-1 accent-[#0082FC] w-4 h-4"
+                        type="text"
+                        required
+                        value={phone}
+                        onChange={(e) => setPhone(e.target.value)}
+                        className="w-full bg-white border-2 border-[#0082FC] px-3.5 py-2.5 text-xs font-mono font-bold text-[#0082FC] focus:outline-none focus:border-[#5FD4FD]"
                       />
-                      <div>
-                        <strong className="text-xs sm:text-sm font-black text-[#0082FC] block">
-                          Wholesale Price Lock &amp; Index Bulletins
-                        </strong>
-                        <p className="text-xs text-[#0082FC]/80 mt-0.5">
-                          Receive 48-hour advance notice prior to monthly
-                          ductile iron scrap index price adjustments.
-                        </p>
-                      </div>
-                    </label>
+                    </div>
                   </div>
 
-                  <div className="p-3.5 bg-emerald-50 border border-emerald-600 text-xs text-emerald-950 font-bold">
-                    ✓ Notification preferences are actively linked to your
-                    contact profile.
+                  <div>
+                    <label className="block text-xs font-black uppercase text-[#0082FC] mb-1">
+                      Primary Regional Logistics Hub
+                    </label>
+                    <select
+                      value={preferredYard}
+                      onChange={(e) => setPreferredYard(e.target.value)}
+                      className="w-full bg-white border-2 border-[#0082FC] px-3.5 py-2.5 text-xs font-bold text-[#0082FC] focus:outline-none focus:border-[#5FD4FD] rounded-none"
+                    >
+                      <option value="new-york-hub">
+                        Melville, NY Foundry Yard (Global Master Hub)
+                      </option>
+                      <option value="houston-yard">
+                        Houston, TX Rail-Served Depot
+                      </option>
+                      <option value="atlanta-depot">
+                        Atlanta, GA Southeast Transit Center
+                      </option>
+                      <option value="chicago-yard">
+                        Chicago, IL Midwest Staging Facility
+                      </option>
+                    </select>
                   </div>
+
+                  <div className="pt-2 flex justify-end">
+                    <button
+                      type="submit"
+                      className="px-6 py-3 bg-[#0082FC] hover:bg-[#5FD4FD] text-white hover:text-[#0082FC] font-black text-xs uppercase tracking-wider transition-colors shadow-md cursor-pointer flex items-center gap-2"
+                    >
+                      <Save className="w-4 h-4" />
+                      <span>Update Contact &amp; Hub</span>
+                    </button>
+                  </div>
+                </form>
+              </div>
+            )}
+
+            {/* Tab 3: Notifications */}
+            {activeTab === "notifications" && (
+              <div className="bg-white border-2 border-[#0082FC] p-6 sm:p-8 space-y-6 shadow-md">
+                <div className="space-y-4">
+                  <label className="flex items-start gap-3 p-3.5 bg-[#0082FC]/5 border border-[#0082FC] cursor-pointer">
+                    <input
+                      type="checkbox"
+                      checked={bolSmsAlerts}
+                      onChange={(e) => setBolSmsAlerts(e.target.checked)}
+                      className="mt-1 accent-[#0082FC] w-4 h-4"
+                    />
+                    <div>
+                      <strong className="text-xs sm:text-sm font-black text-[#0082FC] block">
+                        SMS Flatbed Staging &amp; Driver Departure Alerts
+                      </strong>
+                      <p className="text-xs text-[#0082FC]/80 mt-0.5">
+                        Receive instant automated text notifications when your
+                        flatbed leaves the loading bay.
+                      </p>
+                    </div>
+                  </label>
+
+                  <label className="flex items-start gap-3 p-3.5 bg-[#0082FC]/5 border border-[#0082FC] cursor-pointer">
+                    <input
+                      type="checkbox"
+                      checked={mtrEmailAlerts}
+                      onChange={(e) => setMtrEmailAlerts(e.target.checked)}
+                      className="mt-1 accent-[#0082FC] w-4 h-4"
+                    />
+                    <div>
+                      <strong className="text-xs sm:text-sm font-black text-[#0082FC] block">
+                        Certified Mill Test Report (MTR) Auto-Delivery
+                      </strong>
+                      <p className="text-xs text-[#0082FC]/80 mt-0.5">
+                        Automatically generate and email signed ASTM A536
+                        chemical and tensile test submittals upon BOL creation.
+                      </p>
+                    </div>
+                  </label>
+
+                  <label className="flex items-start gap-3 p-3.5 bg-[#0082FC]/5 border border-[#0082FC] cursor-pointer">
+                    <input
+                      type="checkbox"
+                      checked={quoteUpdates}
+                      onChange={(e) => setQuoteUpdates(e.target.checked)}
+                      className="mt-1 accent-[#0082FC] w-4 h-4"
+                    />
+                    <div>
+                      <strong className="text-xs sm:text-sm font-black text-[#0082FC] block">
+                        Wholesale Price Lock &amp; Index Bulletins
+                      </strong>
+                      <p className="text-xs text-[#0082FC]/80 mt-0.5">
+                        Receive 48-hour advance notice prior to monthly ductile
+                        iron scrap index price adjustments.
+                      </p>
+                    </div>
+                  </label>
                 </div>
-              )}
-            </div>
-          ) : (
-            /* ========================================================
-                NOT LOGGED IN: SIGN IN VIEW
-            ======================================================== */
-            <div className="max-w-md mx-auto bg-white border-4 border-[#0082FC] p-6 sm:p-8 shadow-2xl">
-              <div className="flex items-center gap-3 mb-6 pb-4 border-b-2 border-[#5FD4FD]/40">
-                <div className="w-12 h-12 bg-[#0082FC] text-white border-2 border-[#5FD4FD] flex items-center justify-center shrink-0">
-                  <Lock className="w-6 h-6 text-[#5FD4FD]" />
-                </div>
-                <div>
-                  <h2 className="text-xl font-black text-[#0082FC] uppercase tracking-tight">
-                    Sign In to Settings
-                  </h2>
-                  <p className="text-xs text-[#0082FC]/80 font-medium">
-                    Authenticate to manage passwords and dispatch preferences
-                  </p>
+
+                <div className="p-3.5 bg-emerald-50 border border-emerald-600 text-xs text-emerald-950 font-bold">
+                  ✓ Notification preferences are actively linked to your contact
+                  profile.
                 </div>
               </div>
-
-              {loginError && (
-                <div className="mb-4 p-3 bg-rose-50 border-2 border-rose-500 text-rose-900 text-xs font-bold flex items-center gap-2">
-                  <AlertCircle className="w-4 h-4 text-rose-600 shrink-0" />
-                  <span>{loginError}</span>
-                </div>
-              )}
-
-              <form onSubmit={handleLoginSubmit} className="space-y-4">
-                <div>
-                  <label className="block text-xs font-bold text-[#0082FC] uppercase mb-1">
-                    Business Email Address
-                  </label>
-                  <input
-                    type="email"
-                    required
-                    placeholder="contractor@company.com"
-                    value={loginEmail}
-                    onChange={(e) => setLoginEmail(e.target.value)}
-                    className="w-full bg-white border-2 border-[#0082FC] px-3 py-2 text-xs font-bold text-[#0082FC] focus:outline-none focus:border-[#5FD4FD]"
-                  />
-                </div>
-
-                <div>
-                  <label className="block text-xs font-bold text-[#0082FC] uppercase mb-1">
-                    Password
-                  </label>
-                  <input
-                    type="password"
-                    required
-                    placeholder="••••••••••••"
-                    value={loginPassword}
-                    onChange={(e) => setLoginPassword(e.target.value)}
-                    className="w-full bg-white border-2 border-[#0082FC] px-3 py-2 text-xs font-bold text-[#0082FC] focus:outline-none focus:border-[#5FD4FD]"
-                  />
-                </div>
-
-                <button
-                  type="submit"
-                  className="w-full py-3 px-4 bg-[#0082FC] hover:bg-[#5FD4FD] text-white hover:text-[#0082FC] font-black text-xs uppercase tracking-wider shadow-md transition-all cursor-pointer"
-                >
-                  Sign In to Manage Settings
-                </button>
-              </form>
-
-              <div className="mt-6 pt-4 border-t border-[#0082FC]/20 text-center">
-                <span className="text-xs text-[#0082FC]/80 block mb-2">
-                  Need a wholesale account?
-                </span>
-                <button
-                  type="button"
-                  onClick={() => setRegisterModalOpen(true)}
-                  className="text-xs font-black uppercase text-[#0082FC] underline hover:text-[#5FD4FD] cursor-pointer"
-                >
-                  Register Commercial Account &rsaquo;
-                </button>
+            )}
+          </div>
+        ) : (
+          /* ========================================================
+              NOT LOGGED IN: SIGN IN VIEW
+          ======================================================== */
+          <div className="max-w-md mx-auto bg-white border-4 border-[#0082FC] p-6 sm:p-8 shadow-2xl">
+            <div className="flex items-center gap-3 mb-6 pb-4 border-b-2 border-[#5FD4FD]/40">
+              <div className="w-12 h-12 bg-[#0082FC] text-white border-2 border-[#5FD4FD] flex items-center justify-center shrink-0">
+                <Lock className="w-6 h-6 text-[#5FD4FD]" />
+              </div>
+              <div>
+                <h2 className="text-xl font-black text-[#0082FC] uppercase tracking-tight">
+                  Sign In to Settings
+                </h2>
+                <p className="text-xs text-[#0082FC]/80 font-medium">
+                  Authenticate to manage passwords and dispatch preferences
+                </p>
               </div>
             </div>
-          )}
-        </div>
-      </main>
 
-      <IndustrialFooter
-        onOpenYardModal={() => setYardModalOpen(true)}
-        onOpenLoginModal={() => setLoginModalOpen(true)}
-      />
+            {loginError && (
+              <div className="mb-4 p-3 bg-rose-50 border-2 border-rose-500 text-rose-900 text-xs font-bold flex items-center gap-2">
+                <AlertCircle className="w-4 h-4 text-rose-600 shrink-0" />
+                <span>{loginError}</span>
+              </div>
+            )}
 
-      <ClientPortalModal
-        isOpen={loginModalOpen}
-        onClose={() => setLoginModalOpen(false)}
-        onOpenRegisterModal={() => setRegisterModalOpen(true)}
-      />
+            <form onSubmit={handleLoginSubmit} className="space-y-4">
+              <div>
+                <label className="block text-xs font-bold text-[#0082FC] uppercase mb-1">
+                  Business Email Address
+                </label>
+                <input
+                  type="email"
+                  required
+                  placeholder="contractor@company.com"
+                  value={loginEmail}
+                  onChange={(e) => setLoginEmail(e.target.value)}
+                  className="w-full bg-white border-2 border-[#0082FC] px-3 py-2 text-xs font-bold text-[#0082FC] focus:outline-none focus:border-[#5FD4FD]"
+                />
+              </div>
 
-      <AccountRegistrationModal
-        isOpen={registerModalOpen}
-        onClose={() => setRegisterModalOpen(false)}
-      />
+              <div>
+                <label className="block text-xs font-bold text-[#0082FC] uppercase mb-1">
+                  Password
+                </label>
+                <input
+                  type="password"
+                  required
+                  placeholder="••••••••••••"
+                  value={loginPassword}
+                  onChange={(e) => setLoginPassword(e.target.value)}
+                  className="w-full bg-white border-2 border-[#0082FC] px-3 py-2 text-xs font-bold text-[#0082FC] focus:outline-none focus:border-[#5FD4FD]"
+                />
+              </div>
 
-      <YardSelectorModal
-        isOpen={yardModalOpen}
-        onClose={() => setYardModalOpen(false)}
-        selectedYardId={selectedYard.id}
-        onSelectYard={(yard) => setSelectedYard(yard)}
-      />
-    </div>
+              <button
+                type="submit"
+                className="w-full py-3 px-4 bg-[#0082FC] hover:bg-[#5FD4FD] text-white hover:text-[#0082FC] font-black text-xs uppercase tracking-wider shadow-md transition-all cursor-pointer"
+              >
+                Sign In to Manage Settings
+              </button>
+            </form>
+
+            <div className="mt-6 pt-4 border-t border-[#0082FC]/20 text-center">
+              <span className="text-xs text-[#0082FC]/80 block mb-2">
+                Need a wholesale account?
+              </span>
+              <Link
+                href="/#quote-form"
+                className="text-xs font-black uppercase text-[#0082FC] underline hover:text-[#5FD4FD] cursor-pointer"
+              >
+                Register Commercial Account &rsaquo;
+              </Link>
+            </div>
+          </div>
+        )}
+      </div>
+    </DashboardLayout>
   );
 }
