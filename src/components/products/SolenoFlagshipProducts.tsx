@@ -127,7 +127,7 @@ export const SolenoFlagshipProducts: React.FC<SolenoFlagshipProductsProps> = ({
             return (
               <div
                 key={item.product.id}
-                className="bg-white border-4 border-[#5FD4FD] rounded-none p-5 flex flex-col justify-between shadow-2xl hover:border-white transition-all duration-300 group hover:-translate-y-1 relative text-[#0082FC] h-full"
+                className="bg-white border-4 border-[#5FD4FD] rounded-none p-4 sm:p-5 flex flex-col justify-between shadow-2xl hover:border-white transition-all duration-300 group hover:-translate-y-1 relative text-[#0082FC] h-full min-w-0 overflow-hidden"
               >
                 <div>
                   {/* Top Category Tag */}
@@ -167,7 +167,7 @@ export const SolenoFlagshipProducts: React.FC<SolenoFlagshipProductsProps> = ({
                     {item.specs.map((spec) => (
                       <span
                         key={spec}
-                        className="inline-flex items-center gap-1 text-[10px] font-bold text-[#0082FC] bg-[#5FD4FD]/15 border border-[#5FD4FD] px-2 py-0.5 rounded-none"
+                        className="inline-flex items-center gap-1 text-[10px] font-bold text-[#0082FC] bg-[#5FD4FD]/15 border border-[#5FD4FD] px-2 py-0.5 rounded-none max-w-full"
                       >
                         <CheckCircle2 className="w-3 h-3 text-[#0082FC] shrink-0" />
                         <span className="truncate">{spec}</span>
@@ -176,12 +176,12 @@ export const SolenoFlagshipProducts: React.FC<SolenoFlagshipProductsProps> = ({
                   </div>
                 </div>
 
-                {/* Dual Action Row Side-by-Side (Height-Saving) */}
-                <div className="flex items-center gap-2 pt-3 border-t-2 border-[#0082FC]/15 mt-auto">
+                {/* 100% Contained Action Buttons (Zero Horizontal Overflow) */}
+                <div className="w-full pt-3 border-t-2 border-[#0082FC]/15 mt-auto space-y-2">
                   <button
                     type="button"
                     onClick={() => handleAdd(item.product)}
-                    className={`flex-1 py-2.5 px-2 text-xs font-black uppercase tracking-wider rounded-none transition-all flex items-center justify-center gap-1.5 cursor-pointer border-2 ${
+                    className={`w-full py-2.5 px-3 text-xs font-black uppercase tracking-wider rounded-none transition-all flex items-center justify-center gap-1.5 cursor-pointer border-2 ${
                       isAdded
                         ? "bg-[#5FD4FD] text-[#0082FC] border-[#0082FC]"
                         : "bg-[#0082FC] hover:bg-[#5FD4FD] text-white hover:text-[#0082FC] border-[#0082FC] shadow-sm"
@@ -190,12 +190,16 @@ export const SolenoFlagshipProducts: React.FC<SolenoFlagshipProductsProps> = ({
                     {isAdded ? (
                       <>
                         <Check className="w-3.5 h-3.5 stroke-[3]" />
-                        <span className="truncate">Added</span>
+                        <span className="whitespace-nowrap">
+                          Added to Quote
+                        </span>
                       </>
                     ) : (
                       <>
                         <Plus className="w-3.5 h-3.5 stroke-[2.5]" />
-                        <span className="truncate">Add to Quote</span>
+                        <span className="whitespace-nowrap">
+                          Add to Quote
+                        </span>
                       </>
                     )}
                   </button>
@@ -203,11 +207,9 @@ export const SolenoFlagshipProducts: React.FC<SolenoFlagshipProductsProps> = ({
                   <button
                     type="button"
                     onClick={() => onPreviewSubmittal(item.product)}
-                    title="Download Cut Sheet PDF"
-                    className="py-2.5 px-3 bg-white hover:bg-[#0082FC] text-[#0082FC] hover:text-white text-xs font-bold uppercase tracking-wider rounded-none border-2 border-[#0082FC] transition-all flex items-center justify-center gap-1 cursor-pointer shrink-0"
+                    className="w-full py-2 px-3 bg-white hover:bg-[#0082FC] text-[#0082FC] hover:text-white text-xs font-bold uppercase tracking-wider rounded-none border-2 border-[#0082FC] transition-all flex items-center justify-center gap-1.5 cursor-pointer"
                   >
-                    <FileText className="w-3.5 h-3.5" />
-                    <span className="hidden xl:inline">Cut Sheet</span>
+                    <FileText className="w-3.5 h-3.5 shrink-0" />
                   </button>
                 </div>
               </div>
