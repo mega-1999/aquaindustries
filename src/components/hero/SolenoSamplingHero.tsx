@@ -21,7 +21,8 @@ import {
   Truck,
   Waves,
 } from "lucide-react";
-import React, { useState } from "react";
+import type React from "react";
+import { useState } from "react";
 import { InfiniteWaterBackground } from "../common/InfiniteWaterBackground";
 
 const HOTSPOTS = [

@@ -9,7 +9,8 @@ import {
   Plus,
   ShieldCheck,
 } from "lucide-react";
-import React, { useState } from "react";
+import type React from "react";
+import { useState } from "react";
 import { PRODUCTS_CATALOG } from "../../data/waterworks-data";
 import type { ProductItem } from "../../types";
 

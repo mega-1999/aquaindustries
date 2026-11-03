@@ -18,9 +18,10 @@ import {
   Sliders,
   ThermometerSnowflake,
 } from "lucide-react";
-import React, { useState } from "react";
-import { InfiniteWaterBackground } from "../common/InfiniteWaterBackground";
+import type React from "react";
+import { useState } from "react";
 import type { ProductItem } from "../../types";
+import { InfiniteWaterBackground } from "../common/InfiniteWaterBackground";
 
 interface SamplingStationSpotlightProps {
   onAddToRfq: (product: ProductItem) => void;

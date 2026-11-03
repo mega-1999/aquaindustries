@@ -15,7 +15,8 @@ import {
   User,
   X,
 } from "lucide-react";
-import React, { useState } from "react";
+import type React from "react";
+import { useState } from "react";
 import { useAuth } from "../../context/AuthContext";
 
 interface SettingsModalProps {

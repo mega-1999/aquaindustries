@@ -13,7 +13,8 @@ import {
   User,
 } from "lucide-react";
 import Link from "next/link";
-import React, { useState } from "react";
+import type React from "react";
+import { useState } from "react";
 import { DashboardLayout } from "../../components/dashboard/DashboardLayout";
 import { useAuth } from "../../context/AuthContext";
 

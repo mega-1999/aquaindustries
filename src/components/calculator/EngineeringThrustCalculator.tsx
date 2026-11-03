@@ -14,8 +14,8 @@ import type React from "react";
 import { useMemo, useState } from "react";
 import {
   type CalculatorInputs,
-  type ThrustResult,
   calculateThrustRestraint,
+  type ThrustResult,
 } from "../../lib/thrust-calculator";
 
 export const EngineeringThrustCalculator: React.FC = () => {

@@ -8,7 +8,8 @@ import {
   Mail,
   PhoneCall,
 } from "lucide-react";
-import React, { useEffect, useState } from "react";
+import type React from "react";
+import { useEffect, useState } from "react";
 
 export const FloatingQuickActions: React.FC = () => {
   const [scrolledPastThreshold, setScrolledPastThreshold] = useState(false);

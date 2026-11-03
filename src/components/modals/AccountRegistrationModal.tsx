@@ -19,7 +19,8 @@ import {
   UserCheck,
   X,
 } from "lucide-react";
-import React, { useState } from "react";
+import type React from "react";
+import { useState } from "react";
 import { useAuth } from "../../context/AuthContext";
 import { DISTRIBUTION_YARDS } from "../../data/waterworks-data";
 
