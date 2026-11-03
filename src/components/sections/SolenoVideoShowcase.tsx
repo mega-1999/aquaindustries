@@ -100,6 +100,7 @@ export const SolenoVideoShowcase: React.FC<SolenoVideoShowcaseProps> = ({
     null,
   );
   const [addedIds, setAddedIds] = useState<Record<string, boolean>>({});
+  const [hoveredCardId, setHoveredCardId] = useState<string | null>(null);
 
   const handleAdd = (product: ProductItem) => {
     onAddToRfq(product);
@@ -154,24 +155,31 @@ export const SolenoVideoShowcase: React.FC<SolenoVideoShowcaseProps> = ({
             return (
               <div
                 key={item.id}
+                onMouseEnter={() => setHoveredCardId(item.id)}
+                onMouseLeave={() => setHoveredCardId(null)}
                 className="bg-white border-4 border-[#5FD4FD] rounded-none overflow-hidden flex flex-col justify-between shadow-2xl hover:border-white transition-all duration-300 group hover:-translate-y-1.5 relative text-[#0082FC]"
               >
                 {/* Top Video Preview Box */}
                 <div className="relative w-full h-44 sm:h-48 bg-[#0082FC] overflow-hidden flex items-center justify-center">
-                  {/* Ambient Looping Water Video Animation */}
-                  <video
-                    src={item.videoUrl}
-                    autoPlay
-                    loop
-                    muted
-                    playsInline
-                    preload="auto"
-                    onEnded={(e) => {
-                      e.currentTarget.currentTime = 0;
-                      e.currentTarget.play().catch(() => {});
-                    }}
-                    className="w-full h-full object-cover opacity-60 group-hover:opacity-80 transition-opacity duration-300"
-                  />
+                  {hoveredCardId === item.id ? (
+                    <video
+                      src={item.videoUrl}
+                      autoPlay
+                      loop
+                      muted
+                      playsInline
+                      preload="metadata"
+                      className="w-full h-full object-cover opacity-85 transition-opacity duration-300"
+                    />
+                  ) : (
+                    <div
+                      className="w-full h-full opacity-65 group-hover:opacity-85 transition-opacity duration-300 gpu-water-drift"
+                      style={{
+                        backgroundImage:
+                          "radial-gradient(ellipse at 30% 30%, rgba(95, 212, 253, 0.85) 0%, rgba(0, 130, 252, 0.95) 100%)",
+                      }}
+                    />
+                  )}
 
                   {/* Product Silhouette Overlay */}
                   <img

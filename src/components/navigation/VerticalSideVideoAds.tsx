@@ -131,6 +131,7 @@ export const VerticalSideVideoAds: React.FC<VerticalSideVideoAdsProps> = ({
     null,
   );
   const [addedIds, setAddedIds] = useState<Record<string, boolean>>({});
+  const [hoveredCardId, setHoveredCardId] = useState<string | null>(null);
   const [leftDrawerOpen, setLeftDrawerOpen] = useState(false);
   const [rightDrawerOpen, setRightDrawerOpen] = useState(false);
 
@@ -167,24 +168,31 @@ export const VerticalSideVideoAds: React.FC<VerticalSideVideoAdsProps> = ({
     return (
       <div
         key={ad.id}
+        onMouseEnter={() => setHoveredCardId(ad.id)}
+        onMouseLeave={() => setHoveredCardId(null)}
         className="w-48 xl:w-52 bg-white border-2 border-[#0082FC] shadow-xl text-[#0082FC] flex flex-col justify-between group transition-all duration-300 hover:border-[#5FD4FD] hover:-translate-y-1 relative"
       >
         {/* Top Video Preview Thumbnail Container */}
         <div className="relative w-full h-24 bg-[#0082FC] overflow-hidden">
-          {/* Looping Ambient Water Video Animation */}
-          <video
-            src={ad.videoUrl}
-            autoPlay
-            loop
-            muted
-            playsInline
-            preload="auto"
-            onEnded={(e) => {
-              e.currentTarget.currentTime = 0;
-              e.currentTarget.play().catch(() => {});
-            }}
-            className="w-full h-full object-cover opacity-60 group-hover:opacity-85 transition-opacity duration-300"
-          />
+          {hoveredCardId === ad.id ? (
+            <video
+              src={ad.videoUrl}
+              autoPlay
+              loop
+              muted
+              playsInline
+              preload="metadata"
+              className="w-full h-full object-cover opacity-85 transition-opacity duration-300"
+            />
+          ) : (
+            <div
+              className="w-full h-full opacity-65 group-hover:opacity-85 transition-opacity duration-300 gpu-water-drift"
+              style={{
+                backgroundImage:
+                  "radial-gradient(ellipse at 30% 30%, rgba(95, 212, 253, 0.8) 0%, rgba(0, 130, 252, 0.95) 100%)",
+              }}
+            />
+          )}
 
           {/* Product Silhouette Overlay */}
           <img

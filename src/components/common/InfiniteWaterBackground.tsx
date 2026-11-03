@@ -1,7 +1,7 @@
 "use client";
 
 import type React from "react";
-import { useEffect, useRef } from "react";
+import { useEffect, useRef, useState } from "react";
 
 interface InfiniteWaterBackgroundProps {
   className?: string;
@@ -15,9 +15,9 @@ interface InfiniteWaterBackgroundProps {
 }
 
 /**
- * High-performance, seamless infinite-looping water dynamics background video.
- * Plays the authentic Soleno water flow animation across all sections.
- * Enforces hardware-accelerated continuous looping playback across all browsers.
+ * Ultra-high-performance virtualized water dynamics background.
+ * Uses IntersectionObserver so the authentic Soleno water video only decodes
+ * when visible in the viewport. Prevents multi-video browser freezing and GPU stalling.
  */
 export const InfiniteWaterBackground: React.FC<
   InfiniteWaterBackgroundProps
@@ -27,54 +27,43 @@ export const InfiniteWaterBackground: React.FC<
   mixBlend = "mix-blend-screen",
   zIndex = "z-0",
 }) => {
+  const containerRef = useRef<HTMLDivElement>(null);
   const videoRef = useRef<HTMLVideoElement>(null);
+  const [isInView, setIsInView] = useState(false);
 
   useEffect(() => {
-    const video = videoRef.current;
-    if (!video) return;
+    const el = containerRef.current;
+    if (!el || typeof IntersectionObserver === "undefined") {
+      setIsInView(true);
+      return;
+    }
 
-    // Explicitly guarantee muted on DOM element for browser autoplay policies
-    video.muted = true;
-    video.defaultMuted = true;
+    const observer = new IntersectionObserver(
+      ([entry]) => {
+        const visible = entry.isIntersecting;
+        setIsInView(visible);
+        if (videoRef.current) {
+          if (visible) {
+            videoRef.current.play().catch(() => {});
+          } else {
+            videoRef.current.pause();
+          }
+        }
+      },
+      { rootMargin: "150px" },
+    );
 
-    const playVideo = () => {
-      const promise = video.play();
-      if (promise !== undefined) {
-        promise.catch(() => {
-          // Retry playback if autoplay restrictions occur
-          video.muted = true;
-          video.play().catch(() => {});
-        });
-      }
-    };
-
-    playVideo();
-
-    // Infinite loop enforcement listeners
-    const handleEnded = () => {
-      video.currentTime = 0;
-      playVideo();
-    };
-
-    const handlePause = () => {
-      playVideo();
-    };
-
-    video.addEventListener("ended", handleEnded);
-    video.addEventListener("pause", handlePause);
-
-    return () => {
-      video.removeEventListener("ended", handleEnded);
-      video.removeEventListener("pause", handlePause);
-    };
+    observer.observe(el);
+    return () => observer.disconnect();
   }, []);
 
   return (
     <div
+      ref={containerRef}
       aria-hidden="true"
       className={`${className} ${opacity} ${mixBlend} ${zIndex}`}
     >
-      {/* Fallback fluid gradient background */}
+      {/* Base Hydrodynamic Fluid Gradient Drift Layer */}
       <div
         className="absolute inset-0 w-full h-full gpu-water-drift"
         style={{
@@ -83,22 +72,24 @@ export const InfiniteWaterBackground: React.FC<
         }}
       />
 
-      {/* Authentic Soleno Water Flow Animation Video */}
-      <video
-        ref={videoRef}
-        src="https://soleno.com/wp-content/uploads/2024/12/bkg_water111.mp4"
-        autoPlay
-        loop
-        muted
-        playsInline
-        preload="auto"
-        tabIndex={-1}
-        className="absolute inset-0 w-full h-full object-cover"
-        onEnded={(e) => {
-          e.currentTarget.currentTime = 0;
-          e.currentTarget.play().catch(() => {});
-        }}
-      />
+      {/* Hardware-Accelerated Looping Water Video - ONLY Decodes When In Viewport */}
+      {isInView && (
+        <video
+          ref={videoRef}
+          src="https://soleno.com/wp-content/uploads/2024/12/bkg_water111.mp4"
+          autoPlay
+          loop
+          muted
+          playsInline
+          preload="metadata"
+          tabIndex={-1}
+          className="absolute inset-0 w-full h-full object-cover"
+          onEnded={(e) => {
+            e.currentTarget.currentTime = 0;
+            e.currentTarget.play().catch(() => {});
+          }}
+        />
+      )}
 
       {/* Subtle Caustic Shimmer Surface Grid */}
       <div
