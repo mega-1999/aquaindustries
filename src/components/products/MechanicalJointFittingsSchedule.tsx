@@ -1005,13 +1005,10 @@ export const MechanicalJointFittingsSchedule: React.FC<
     );
   }, [activeFamily]);
 
-  // Currently focused subvariant
+  // Currently focused subvariant: only returns an item if activeSubvariantId is specifically selected
   const activeSubvariant = useMemo(() => {
-    if (!familySubvariants.length) return null;
-    return (
-      familySubvariants.find((v) => v.id === activeSubvariantId) ||
-      familySubvariants[0]
-    );
+    if (!familySubvariants.length || !activeSubvariantId) return null;
+    return familySubvariants.find((v) => v.id === activeSubvariantId) || null;
   }, [familySubvariants, activeSubvariantId]);
 
   // Search results across all 36 fittings
@@ -1031,10 +1028,7 @@ export const MechanicalJointFittingsSchedule: React.FC<
 
   const handleOpenFamily = (familyId: string, initialSubvariantId?: string) => {
     setSelectedFamilyId(familyId);
-    const fam = FITTING_FAMILIES.find((f) => f.id === familyId);
-    setActiveSubvariantId(
-      initialSubvariantId || fam?.defaultSubvariantId || null,
-    );
+    setActiveSubvariantId(initialSubvariantId || null);
     const element = document.getElementById("c153-fittings-schedule");
     if (element) {
       element.scrollIntoView({ behavior: "smooth" });
@@ -1640,84 +1634,36 @@ export const MechanicalJointFittingsSchedule: React.FC<
               </div>
             )}
 
-            {/* Quick Grid Comparison of All Subvariants in This Family */}
-            <div className="pt-6">
-              <div className="flex items-center justify-between mb-4 border-b-2 border-[#5FD4FD]/30 pb-2">
-                <h4 className="text-sm font-black uppercase tracking-tight text-[#0082FC]">
-                  All {familySubvariants.length} {activeFamily.title}{" "}
-                  Subvariants
+            {/* When no specific subvariant angle has been clicked yet */}
+            {!activeSubvariant && (
+              <div className="bg-white border-4 border-[#5FD4FD] p-8 sm:p-12 text-center shadow-lg">
+                <Compass className="w-12 h-12 text-[#0082FC] mx-auto mb-3" />
+                <h4 className="text-base sm:text-lg font-black uppercase tracking-tight text-[#0082FC]">
+                  Select an Option or Angle Above
                 </h4>
-                <span className="text-[11px] font-bold text-[#0082FC]/75 uppercase">
-                  Click any card to select
-                </span>
-              </div>
-
-              <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 items-stretch">
-                {familySubvariants.map((fitting) => {
-                  const isSelected = activeSubvariant?.id === fitting.id;
-                  const isAdded = addedIds[fitting.id];
-                  return (
-                    // biome-ignore lint/a11y/useSemanticElements: card contains nested button
-                    <div
-                      key={fitting.id}
-                      role="button"
-                      tabIndex={0}
-                      onClick={() => setActiveSubvariantId(fitting.id)}
-                      onKeyDown={(e) => {
-                        if (e.key === "Enter" || e.key === " ") {
-                          e.preventDefault();
-                          setActiveSubvariantId(fitting.id);
-                        }
-                      }}
-                      className={`bg-white border-4 rounded-none p-4 flex flex-col justify-between shadow-sm transition-all duration-200 cursor-pointer text-[#0082FC] text-left ${
-                        isSelected
-                          ? "border-[#0082FC] ring-2 ring-[#0082FC] shadow-lg"
-                          : "border-[#5FD4FD] hover:border-[#0082FC]"
-                      }`}
-                    >
-                      <div>
-                        <div className="flex items-center justify-between mb-1.5 pb-1.5 border-b border-[#0082FC]/15">
-                          <span className="text-[9px] font-black uppercase bg-[#0082FC] text-white px-1.5 py-0.2">
-                            {fitting.catNumber}
-                          </span>
-                          <span className="text-[10px] font-bold text-[#0082FC]">
-                            {fitting.angle || "SUBVARIANT"}
-                          </span>
-                        </div>
-
-                        <div className="h-24 flex items-center justify-center my-1 bg-gradient-to-b from-[#5FD4FD]/10 to-transparent border border-[#5FD4FD]/20">
-                          <FittingCardImage fitting={fitting} />
-                        </div>
-
-                        <h5 className="text-xs font-black uppercase leading-tight line-clamp-1 mt-2">
-                          {fitting.name}
-                        </h5>
-
-                        <p className="text-[10px] text-[#0082FC]/80 line-clamp-1 mt-0.5 mb-2">
-                          {fitting.sizeRange} &bull;{" "}
-                          {fitting.pressureRating.split(" ")[0]} PSI
-                        </p>
-                      </div>
-
+                <p className="text-xs sm:text-sm text-[#0082FC]/80 max-w-md mx-auto mt-1 mb-6">
+                  Click any angle option above (such as 45°, 90°, or 22.5°) to
+                  display only that specific fitting&apos;s blueprint,
+                  specifications, and commercial quote options.
+                </p>
+                <div className="flex flex-wrap justify-center gap-2">
+                  {familySubvariants.map((v) => {
+                    const label =
+                      v.angle || v.name.split(" ")[2] || v.catNumber;
+                    return (
                       <button
+                        key={v.id}
                         type="button"
-                        onClick={(e) => {
-                          e.stopPropagation();
-                          handleAddFitting(fitting);
-                        }}
-                        className={`w-full py-1.5 px-2 text-[11px] font-black uppercase tracking-wider rounded-none border transition-all flex items-center justify-center gap-1 cursor-pointer mt-auto ${
-                          isAdded
-                            ? "bg-[#5FD4FD] text-[#0082FC] border-[#0082FC]"
-                            : "bg-[#0082FC] hover:bg-[#5FD4FD] text-white hover:text-[#0082FC] border-[#0082FC]"
-                        }`}
+                        onClick={() => setActiveSubvariantId(v.id)}
+                        className="px-4 py-2 bg-[#0082FC] hover:bg-[#5FD4FD] text-white hover:text-[#0082FC] text-xs font-black uppercase rounded-none border-2 border-[#0082FC] transition-all cursor-pointer shadow-xs"
                       >
-                        {isAdded ? "Added" : "+ Add to Quote"}
+                        {label} ({v.catNumber})
                       </button>
-                    </div>
-                  );
-                })}
+                    );
+                  })}
+                </div>
               </div>
-            </div>
+            )}
           </div>
         ) : (
           /* VIEW 3: CLEAN CATEGORY FRONT VIEW (SHOW ONLY CATEGORIES IN FRONT) */
