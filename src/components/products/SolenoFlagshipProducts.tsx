@@ -1,14 +1,6 @@
 "use client";
 
-import {
-  ArrowRight,
-  Check,
-  CheckCircle2,
-  FileText,
-  Layers,
-  Plus,
-  ShieldCheck,
-} from "lucide-react";
+import { Check, CheckCircle2, FileText, Layers, Plus } from "lucide-react";
 import type React from "react";
 import { useState } from "react";
 import { PRODUCTS_CATALOG } from "../../data/waterworks-data";
@@ -25,8 +17,22 @@ export const SolenoFlagshipProducts: React.FC<SolenoFlagshipProductsProps> = ({
 }) => {
   const [addedIds, setAddedIds] = useState<Record<string, boolean>>({});
 
-  // Match the 3 genuine flagship products from the catalog with their exact photographs
+  // Match the genuine flagship products from the catalog with their exact photographs
   const flagshipItems = [
+    {
+      product: PRODUCTS_CATALOG[0], // Municipal Water Sampling Station (id: water-sampling-station)
+      label: "Municipal Sampling Station",
+      sublabel: "ANSI/NSF 61 Sanitary Potable Compliance",
+      image: "/images/our-images/sampling-station.png",
+      summary:
+        "Dedicated non-contaminated water testing point for EPA Lead & Copper Rule compliance. All-brass sanitary waterway, freeze-proof thermal core, and lockable security shroud.",
+      specs: [
+        '1" NPT Mainline Inlet',
+        "300 PSI Working Pressure",
+        "-20°F Thermal Frost Jacket",
+      ],
+      tag: "EPA COMPLIANCE",
+    },
     {
       product: PRODUCTS_CATALOG[3], // C153 Compact MJ Fittings (id: c153-compact-mj-fittings)
       label: "C153 Compact MJ Fittings",
@@ -114,17 +120,17 @@ export const SolenoFlagshipProducts: React.FC<SolenoFlagshipProductsProps> = ({
           </p>
         </div>
 
-        {/* 3-Column Soleno-Style Card Showcase Grid */}
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+        {/* 4-Column Flagship Card Showcase Grid */}
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 lg:gap-6 xl:gap-8 items-stretch">
           {flagshipItems.map((item) => {
             const isAdded = addedIds[item.product.id];
             return (
               <div
                 key={item.product.id}
-                className="bg-white border-4 border-[#5FD4FD] rounded-none p-6 sm:p-8 flex flex-col justify-between shadow-2xl hover:border-white transition-all duration-300 group hover:-translate-y-1.5 relative text-[#0082FC]"
+                className="bg-white border-4 border-[#5FD4FD] rounded-none p-5 sm:p-6 flex flex-col justify-between shadow-2xl hover:border-white transition-all duration-300 group hover:-translate-y-1.5 relative text-[#0082FC] h-full"
               >
                 {/* Top Category Tag */}
-                <div className="flex items-center justify-between mb-4 border-b-2 border-[#0082FC]/15 pb-3">
+                <div className="flex items-center justify-between mb-4 border-b-2 border-[#0082FC]/15 pb-3 min-h-[32px]">
                   <span className="text-[11px] font-black uppercase tracking-wider bg-[#5FD4FD]/20 text-[#0082FC] px-2.5 py-0.5 border border-[#0082FC]">
                     {item.tag}
                   </span>
@@ -134,7 +140,7 @@ export const SolenoFlagshipProducts: React.FC<SolenoFlagshipProductsProps> = ({
                 </div>
 
                 {/* Centered Large High-Resolution Product Image */}
-                <div className="relative w-full h-56 sm:h-64 flex items-center justify-center p-4 overflow-hidden my-2">
+                <div className="relative w-full h-48 sm:h-52 flex items-center justify-center p-3 overflow-hidden my-2 bg-gradient-to-b from-[#5FD4FD]/10 to-transparent border border-[#5FD4FD]/20">
                   <img
                     src={item.image}
                     alt={item.label}
@@ -145,15 +151,15 @@ export const SolenoFlagshipProducts: React.FC<SolenoFlagshipProductsProps> = ({
                 {/* Content Block */}
                 <div className="mt-4 flex-1 flex flex-col justify-between">
                   <div>
-                    <h3 className="text-xl sm:text-2xl font-black uppercase tracking-tight text-[#0082FC] group-hover:text-[#0082FC] leading-tight mb-1">
+                    <h3 className="text-lg sm:text-xl font-black uppercase tracking-tight text-[#0082FC] group-hover:text-[#0082FC] leading-tight mb-1 min-h-[52px] flex items-center">
                       {item.label}
                     </h3>
 
-                    <p className="text-xs font-bold text-[#0082FC]/75 uppercase tracking-wider mb-3">
+                    <p className="text-[11px] font-bold text-[#0082FC]/75 uppercase tracking-wider mb-2.5 min-h-[32px] flex items-center">
                       {item.sublabel}
                     </p>
 
-                    <p className="text-xs sm:text-sm text-[#0082FC]/90 font-normal leading-relaxed mb-4">
+                    <p className="text-xs text-[#0082FC]/90 font-normal leading-relaxed mb-4 min-h-[64px] flex items-start">
                       {item.summary}
                     </p>
 
@@ -165,14 +171,14 @@ export const SolenoFlagshipProducts: React.FC<SolenoFlagshipProductsProps> = ({
                           className="flex items-center gap-2 text-xs font-bold text-[#0082FC]"
                         >
                           <CheckCircle2 className="w-3.5 h-3.5 text-[#0082FC] shrink-0" />
-                          <span>{spec}</span>
+                          <span className="truncate">{spec}</span>
                         </div>
                       ))}
                     </div>
                   </div>
 
                   {/* Dual Action Buttons */}
-                  <div className="space-y-2 pt-2 border-t-2 border-[#0082FC]/15">
+                  <div className="space-y-2 pt-3 border-t-2 border-[#0082FC]/15 mt-auto">
                     <button
                       type="button"
                       onClick={() => handleAdd(item.product)}
