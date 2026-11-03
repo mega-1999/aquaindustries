@@ -260,117 +260,128 @@ export const FoundryWalkthrough: React.FC = () => {
           </div>
 
           {/* Main 2-Column Split: Facility Switcher (Left) & Interactive Map Stage (Right) */}
-          <div className="grid grid-cols-1 lg:grid-cols-12 gap-6 lg:gap-8 mb-8">
+          <div className="grid grid-cols-1 lg:grid-cols-12 gap-6 lg:gap-8 items-stretch mb-8">
             {/* Left Column: 4 Regional Hub Selectors (5 cols) */}
-            <div className="lg:col-span-5 flex flex-col gap-3">
-              <span className="text-xs font-black uppercase text-[#0082FC] tracking-wider mb-1 flex items-center gap-2">
-                <MapPin className="w-3.5 h-3.5 text-[#0082FC]" />
-                Select Facility Hub for Live Yard Dossier:
-              </span>
+            <div className="lg:col-span-5 flex flex-col h-full">
+              {/* Synchronized Left Header Bar matching Right Map Controls */}
+              <div className="bg-[#0082FC] text-white px-3.5 py-2.5 min-h-[48px] flex items-center justify-between border-2 border-[#0082FC]">
+                <div className="flex items-center gap-2 text-xs font-black uppercase tracking-wider">
+                  <MapPin className="w-3.5 h-3.5 text-[#5FD4FD]" />
+                  <span>Regional Stocking Hubs</span>
+                </div>
+                <span className="text-[10px] font-bold bg-white text-[#0082FC] px-2 py-0.5 uppercase tracking-wider border border-white">
+                  4 Active Yards
+                </span>
+              </div>
 
-              {DISTRIBUTION_YARDS.map((yard) => {
-                const isSelected = selectedYardId === yard.id;
-                const ext =
-                  YARD_EXTENDED_INFO[yard.id] ||
-                  YARD_EXTENDED_INFO["new-york-foundry"];
+              {/* 4 Cards Container - Flex-1 stretches to match right column height perfectly */}
+              <div className="flex-1 flex flex-col justify-between gap-2.5 mt-2.5">
+                {DISTRIBUTION_YARDS.map((yard) => {
+                  const isSelected = selectedYardId === yard.id;
+                  const ext =
+                    YARD_EXTENDED_INFO[yard.id] ||
+                    YARD_EXTENDED_INFO["new-york-foundry"];
 
-                return (
-                  <button
-                    key={yard.id}
-                    type="button"
-                    onClick={() => setSelectedYardId(yard.id)}
-                    className={`text-left p-4 rounded-none border-2 transition-all cursor-pointer relative flex flex-col justify-between ${
-                      isSelected
-                        ? "bg-[#0082FC] text-white border-[#0082FC] shadow-lg -translate-y-0.5"
-                        : "bg-white text-[#0082FC] border-[#5FD4FD] hover:border-[#0082FC] hover:bg-[#5FD4FD]/10"
-                    }`}
-                  >
-                    {/* Top Row: City & State + Classification Tag */}
-                    <div className="flex items-center justify-between gap-2 mb-1.5">
-                      <div className="flex items-center gap-1.5">
+                  return (
+                    <button
+                      key={yard.id}
+                      type="button"
+                      onClick={() => setSelectedYardId(yard.id)}
+                      className={`text-left p-3.5 rounded-none border-2 transition-all cursor-pointer relative flex-1 flex flex-col justify-between ${
+                        isSelected
+                          ? "bg-[#0082FC] text-white border-[#0082FC] shadow-lg"
+                          : "bg-white text-[#0082FC] border-[#5FD4FD] hover:border-[#0082FC] hover:bg-[#5FD4FD]/10"
+                      }`}
+                    >
+                      {/* Top Row: City & State + Classification Tag */}
+                      <div className="flex items-center justify-between gap-2 mb-1">
+                        <div className="flex items-center gap-1.5">
+                          <span
+                            className={`w-2 h-2 ${
+                              isSelected
+                                ? "bg-[#5FD4FD] animate-ping"
+                                : "bg-[#0082FC]"
+                            }`}
+                          />
+                          <span
+                            className={`font-black text-sm uppercase tracking-tight ${
+                              isSelected ? "text-white" : "text-[#0082FC]"
+                            }`}
+                          >
+                            {yard.city}, {yard.state}
+                          </span>
+                        </div>
+
                         <span
-                          className={`w-2 h-2 ${
+                          className={`text-[10px] font-black px-2 py-0.5 border ${
                             isSelected
-                              ? "bg-[#5FD4FD] animate-ping"
-                              : "bg-[#0082FC]"
-                          }`}
-                        />
-                        <span
-                          className={`font-black text-sm uppercase tracking-tight ${
-                            isSelected ? "text-white" : "text-[#0082FC]"
+                              ? "bg-white text-[#0082FC] border-white"
+                              : "bg-white text-[#0082FC] border-[#5FD4FD]"
                           }`}
                         >
-                          {yard.city}, {yard.state}
+                          {yard.id === "new-york-foundry"
+                            ? "FOUNDRY & HQ"
+                            : yard.id === "florida-operations"
+                              ? "SOUTHEAST HUB"
+                              : yard.id === "chicago-hub"
+                                ? "MIDWEST HUB"
+                                : "SOUTHERN HUB"}
                         </span>
                       </div>
 
-                      <span
-                        className={`text-[10px] font-black px-2 py-0.5 border ${
+                      {/* Facility Name & Brief Role */}
+                      <div>
+                        <h4
+                          className={`font-black text-sm sm:text-base uppercase leading-tight mb-0.5 ${
+                            isSelected ? "text-[#5FD4FD]" : "text-[#0082FC]"
+                          }`}
+                        >
+                          {yard.name}
+                        </h4>
+
+                        <p
+                          className={`text-[11px] sm:text-xs line-clamp-1 ${
+                            isSelected ? "text-white/90" : "text-[#0082FC]/80"
+                          }`}
+                        >
+                          {ext.role}
+                        </p>
+                      </div>
+
+                      {/* Bottom Quick Specs Strip */}
+                      <div
+                        className={`pt-1.5 mt-1 border-t flex items-center justify-between text-[11px] font-bold ${
                           isSelected
-                            ? "bg-white text-[#0082FC] border-white"
-                            : "bg-white text-[#0082FC] border-[#5FD4FD]"
+                            ? "border-white/20 text-white/95"
+                            : "border-[#5FD4FD]/30 text-[#0082FC]"
                         }`}
                       >
-                        {yard.id === "new-york-foundry"
-                          ? "FOUNDRY & HQ"
-                          : yard.id === "florida-operations"
-                            ? "SOUTHEAST HUB"
-                            : yard.id === "chicago-hub"
-                              ? "MIDWEST HUB"
-                              : "SOUTHERN HUB"}
-                      </span>
-                    </div>
+                        <span className="flex items-center gap-1">
+                          <Truck className="w-3.5 h-3.5 shrink-0" />
+                          <span>{yard.inventoryFittingsTons} Tons</span>
+                        </span>
 
-                    {/* Facility Name & Brief Role */}
-                    <h4
-                      className={`font-black text-base uppercase leading-tight mb-1 ${
-                        isSelected ? "text-[#5FD4FD]" : "text-[#0082FC]"
-                      }`}
-                    >
-                      {yard.name}
-                    </h4>
+                        <span className="flex items-center gap-1">
+                          <Train className="w-3.5 h-3.5 shrink-0" />
+                          <span>Rail Siding</span>
+                        </span>
 
-                    <p
-                      className={`text-xs line-clamp-1 mb-3 ${
-                        isSelected ? "text-white/90" : "text-[#0082FC]/80"
-                      }`}
-                    >
-                      {ext.role}
-                    </p>
-
-                    {/* Bottom Quick Specs Strip */}
-                    <div
-                      className={`pt-2 border-t flex items-center justify-between text-[11px] font-bold ${
-                        isSelected
-                          ? "border-white/20 text-white/95"
-                          : "border-[#5FD4FD]/30 text-[#0082FC]"
-                      }`}
-                    >
-                      <span className="flex items-center gap-1">
-                        <Truck className="w-3.5 h-3.5 shrink-0" />
-                        <span>{yard.inventoryFittingsTons} Tons Staged</span>
-                      </span>
-
-                      <span className="flex items-center gap-1">
-                        <Train className="w-3.5 h-3.5 shrink-0" />
-                        <span>Rail Connected</span>
-                      </span>
-
-                      <ChevronRight
-                        className={`w-4 h-4 transition-transform ${
-                          isSelected ? "translate-x-1 text-[#5FD4FD]" : ""
-                        }`}
-                      />
-                    </div>
-                  </button>
-                );
-              })}
+                        <ChevronRight
+                          className={`w-4 h-4 transition-transform ${
+                            isSelected ? "translate-x-1 text-[#5FD4FD]" : ""
+                          }`}
+                        />
+                      </div>
+                    </button>
+                  );
+                })}
+              </div>
             </div>
 
             {/* Right Column: Dynamic Interactive Map & Satellite Viewport (7 cols) */}
-            <div className="lg:col-span-7 flex flex-col">
-              {/* Map Viewport Controls Bar */}
-              <div className="bg-[#0082FC] text-white p-3 flex flex-wrap items-center justify-between gap-3 border-2 border-[#0082FC]">
+            <div className="lg:col-span-7 flex flex-col h-full">
+              {/* Map Viewport Controls Bar - matches left header min-h-[48px] */}
+              <div className="bg-[#0082FC] text-white px-3.5 py-2.5 min-h-[48px] flex flex-wrap items-center justify-between gap-3 border-2 border-[#0082FC]">
                 {/* View Mode Toggle: Blueprint Network vs Satellite Embed */}
                 <div className="flex items-center gap-1 bg-white/10 p-0.5 border border-white/20">
                   <button
@@ -382,7 +393,7 @@ export const FoundryWalkthrough: React.FC = () => {
                         : "text-white hover:bg-white/20"
                     }`}
                   >
-                    🗺️ Freight Network Corridors
+                    🗺️ Freight Network
                   </button>
                   <button
                     type="button"
@@ -393,7 +404,7 @@ export const FoundryWalkthrough: React.FC = () => {
                         : "text-white hover:bg-white/20"
                     }`}
                   >
-                    📍 Live Satellite &amp; Street Map
+                    📍 Satellite Map
                   </button>
                 </div>
 
@@ -417,8 +428,8 @@ export const FoundryWalkthrough: React.FC = () => {
                 </div>
               </div>
 
-              {/* Map Canvas Frame */}
-              <div className="relative w-full h-[360px] sm:h-[420px] bg-[#0082FC]/5 border-2 border-[#0082FC] border-t-0 overflow-hidden flex items-center justify-center">
+              {/* Map Canvas Frame - mt-2.5 matches left cards mt-2.5, flex-1 ensures bottom alignment matches 4th card */}
+              <div className="relative w-full flex-1 min-h-[380px] mt-2.5 bg-[#0082FC]/5 border-2 border-[#0082FC] overflow-hidden flex flex-col items-center justify-center">
                 {/* CORNER RETICLES FOR INDUSTRIAL HUD FEEL */}
                 <div className="absolute top-2 left-2 w-3 h-3 border-t-2 border-l-2 border-[#0082FC] pointer-events-none z-20" />
                 <div className="absolute top-2 right-2 w-3 h-3 border-t-2 border-r-2 border-[#0082FC] pointer-events-none z-20" />
@@ -439,7 +450,7 @@ export const FoundryWalkthrough: React.FC = () => {
                     />
 
                     {/* Top Status Strip */}
-                    <div className="relative z-10 flex items-center justify-between text-white text-[10px] sm:text-xs font-bold uppercase tracking-wider">
+                    <div className="relative z-10 flex items-center justify-between text-white text-[10px] sm:text-xs font-bold uppercase tracking-wider mb-2">
                       <span className="flex items-center gap-1.5 bg-white/20 px-2 py-0.5 border border-white/30">
                         <span className="w-2 h-2 rounded-full bg-[#5FD4FD] animate-ping" />
                         <span>US Intermodal Corridor Map</span>
@@ -450,10 +461,10 @@ export const FoundryWalkthrough: React.FC = () => {
                     </div>
 
                     {/* SVG Map Canvas: Continental Coastlines & Supply Corridors */}
-                    <div className="relative w-full h-full max-h-[310px]">
+                    <div className="relative w-full flex-1 flex items-center justify-center my-auto min-h-[260px]">
                       <svg
                         viewBox="0 0 800 480"
-                        className="w-full h-full drop-shadow-xl"
+                        className="w-full h-full max-h-[380px] drop-shadow-xl"
                         fill="none"
                         aria-hidden="true"
                       >
