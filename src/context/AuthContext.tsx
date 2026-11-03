@@ -17,23 +17,33 @@ export const AuthProvider: React.FC<{ children: React.ReactNode }> = ({
   const [currentUser, setCurrentUser] = useState<UserAccount | null>(null);
   const [isInitialized, setIsInitialized] = useState(false);
 
-  // Load persisted state from localStorage on mount
+  // Load persisted state from localStorage on mount & auto-merge initial pending applications
   useEffect(() => {
     try {
       const storedUsers = localStorage.getItem(USERS_STORAGE_KEY);
       if (storedUsers) {
         const parsed = JSON.parse(storedUsers);
         if (Array.isArray(parsed) && parsed.length > 0) {
-          // Merge with initial admin if missing
-          const hasAdmin = parsed.some((u) => u.role === "super-admin");
-          if (!hasAdmin) {
-            setAllUsers([INITIAL_USERS[0], ...parsed]);
-          } else {
-            setAllUsers(parsed);
-          }
+          // Merge parsed users with initial mock users so pending requests are always available
+          const existingEmails = new Set(
+            parsed.map((u: UserAccount) => u.email.trim().toLowerCase()),
+          );
+          const missingInitial = INITIAL_USERS.filter(
+            (iu) => !existingEmails.has(iu.email.trim().toLowerCase()),
+          );
+          const merged = [...parsed, ...missingInitial];
+          setAllUsers(merged);
+          localStorage.setItem(USERS_STORAGE_KEY, JSON.stringify(merged));
+        } else {
+          setAllUsers(INITIAL_USERS);
+          localStorage.setItem(
+            USERS_STORAGE_KEY,
+            JSON.stringify(INITIAL_USERS),
+          );
         }
       } else {
         localStorage.setItem(USERS_STORAGE_KEY, JSON.stringify(INITIAL_USERS));
+        setAllUsers(INITIAL_USERS);
       }
 
       const storedSession = localStorage.getItem(SESSION_STORAGE_KEY);
@@ -46,6 +56,33 @@ export const AuthProvider: React.FC<{ children: React.ReactNode }> = ({
     } finally {
       setIsInitialized(true);
     }
+  }, []);
+
+  // Listen for storage changes across tabs (e.g. user registers on home page, admin views on /admin)
+  useEffect(() => {
+    const handleStorageChange = (e: StorageEvent) => {
+      if (e.key === USERS_STORAGE_KEY && e.newValue) {
+        try {
+          const parsed = JSON.parse(e.newValue);
+          if (Array.isArray(parsed)) {
+            setAllUsers(parsed);
+          }
+        } catch (err) {
+          console.error("Storage event parse error:", err);
+        }
+      }
+      if (e.key === SESSION_STORAGE_KEY) {
+        try {
+          const parsed = e.newValue ? JSON.parse(e.newValue) : null;
+          setCurrentUser(parsed);
+        } catch (err) {
+          console.error("Session event parse error:", err);
+        }
+      }
+    };
+
+    window.addEventListener("storage", handleStorageChange);
+    return () => window.removeEventListener("storage", handleStorageChange);
   }, []);
 
   // Save changes to localStorage
@@ -375,6 +412,10 @@ export const AuthProvider: React.FC<{ children: React.ReactNode }> = ({
     saveSession(null);
   };
 
+  const resetToDefaultUsers = () => {
+    saveUsers(INITIAL_USERS);
+  };
+
   const quickLoginAsAdmin = () => {
     const admin =
       allUsers.find((u) => u.role === "super-admin") || INITIAL_USERS[0];
@@ -396,6 +437,7 @@ export const AuthProvider: React.FC<{ children: React.ReactNode }> = ({
         approveUser,
         rejectUser,
         deleteUser,
+        resetToDefaultUsers,
         logout,
         quickLoginAsAdmin,
       }}

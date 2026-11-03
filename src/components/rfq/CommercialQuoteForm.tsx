@@ -88,6 +88,30 @@ export const CommercialQuoteForm: React.FC<CommercialQuoteFormProps> = ({
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
     setIsSubmitted(true);
+    try {
+      const stored = localStorage.getItem("aqua_industries_rfq_requests_v1");
+      const existingRfq = stored ? JSON.parse(stored) : [];
+      const newRfq = {
+        id: `RFQ-${Date.now().toString().slice(-6)}`,
+        companyName: companyName || "Commercial Contractor",
+        contactName: contactName || "Authorized Estimator",
+        email: email || "estimator@company.com",
+        phone: phone || "+1 (516) 252-1111",
+        projectType: selectedCategory || "Complete Job Package",
+        deliveryLocation: deliveryLocation || "Melville, NY",
+        targetDeliveryDate: estimatedQuantity || "Standard Dispatch",
+        taxExempt: false,
+        notes: `Sizes: ${selectedSizes.join(", ") || "All Standard"}${uploadedFileName ? ` • Upload: ${uploadedFileName}` : ""}`,
+        itemsCount: rfqItems.length,
+        createdAt: new Date().toISOString(),
+      };
+      localStorage.setItem(
+        "aqua_industries_rfq_requests_v1",
+        JSON.stringify([newRfq, ...existingRfq]),
+      );
+    } catch (err) {
+      console.warn("Failed to save RFQ to storage:", err);
+    }
   };
 
   return (

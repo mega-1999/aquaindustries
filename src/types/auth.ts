@@ -68,6 +68,7 @@ export interface AuthContextType {
   approveUser: (userId: string) => void;
   rejectUser: (userId: string, reason?: string) => void;
   deleteUser: (userId: string) => void;
+  resetToDefaultUsers: () => void;
   logout: () => void;
   quickLoginAsAdmin: () => void;
 }

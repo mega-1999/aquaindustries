@@ -8,10 +8,12 @@ import {
   Clock,
   ExternalLink,
   FileCheck2,
+  FileText,
   Lock,
   Mail,
   MapPin,
   Phone,
+  RefreshCw,
   Search,
   ShieldAlert,
   ShieldCheck,
@@ -22,10 +24,25 @@ import {
   XCircle,
 } from "lucide-react";
 import Link from "next/link";
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import { DashboardLayout } from "../../components/dashboard/DashboardLayout";
 import { useAuth } from "../../context/AuthContext";
 import type { UserAccount } from "../../types/auth";
+
+interface RfqItemRecord {
+  id: string;
+  companyName: string;
+  contactName: string;
+  email: string;
+  phone: string;
+  projectType: string;
+  deliveryLocation: string;
+  targetDeliveryDate: string;
+  taxExempt: boolean;
+  notes?: string;
+  itemsCount: number;
+  createdAt: string;
+}
 
 export default function SuperAdminPage() {
   const {
@@ -35,16 +52,72 @@ export default function SuperAdminPage() {
     approveUser,
     rejectUser,
     deleteUser,
+    resetToDefaultUsers,
     logout,
   } = useAuth();
 
   const [activeTab, setActiveTab] = useState<
-    "pending" | "approved" | "rejected" | "all"
+    "pending" | "approved" | "rejected" | "all" | "quotes"
   >("pending");
   const [searchQuery, setSearchQuery] = useState("");
   const [feedbackMessage, setFeedbackMessage] = useState<string | null>(null);
   const [rejectingUserId, setRejectingUserId] = useState<string | null>(null);
   const [rejectReason, setRejectReason] = useState("");
+  const [rfqRequests, setRfqRequests] = useState<RfqItemRecord[]>([]);
+
+  // Load RFQ Quote Requests from localStorage or populate initial samples
+  useEffect(() => {
+    try {
+      const stored = localStorage.getItem("aqua_industries_rfq_requests_v1");
+      if (stored) {
+        const parsed = JSON.parse(stored);
+        if (Array.isArray(parsed) && parsed.length > 0) {
+          setRfqRequests(parsed);
+          return;
+        }
+      }
+
+      const initialRfq: RfqItemRecord[] = [
+        {
+          id: "RFQ-948102",
+          companyName: "Empire State Waterworks LLC",
+          contactName: "Michael Chang",
+          email: "m.chang@empirewaterworks.com",
+          phone: "+1 (516) 555-0144",
+          projectType: "Potable Water Transmission",
+          deliveryLocation: "Hempstead, Long Island, NY",
+          targetDeliveryDate: "Within 7 Days",
+          taxExempt: true,
+          notes:
+            "Need 24 Tons AWWA C110 Ductile Iron MJ Bends & Tees with certified MTRs for municipal tie-in.",
+          itemsCount: 4,
+          createdAt: "2026-03-02T14:20:00Z",
+        },
+        {
+          id: "RFQ-552091",
+          companyName: "Bayou Utility Contracting",
+          contactName: "David Bergeron",
+          email: "takeoffs@bayouutility.com",
+          phone: "+1 (504) 555-8832",
+          projectType: "Civil Stormwater Drainage",
+          deliveryLocation: "New Orleans, LA",
+          targetDeliveryDate: "Within 14 Days",
+          taxExempt: false,
+          notes:
+            "Quote 36-inch MJ mechanical joint sleeves and wedge restraint harnesses for storm pump station tie-in.",
+          itemsCount: 2,
+          createdAt: "2026-03-03T09:15:00Z",
+        },
+      ];
+      localStorage.setItem(
+        "aqua_industries_rfq_requests_v1",
+        JSON.stringify(initialRfq),
+      );
+      setRfqRequests(initialRfq);
+    } catch (e) {
+      console.warn("Failed to load RFQ requests:", e);
+    }
+  }, []);
 
   const showFeedback = (msg: string) => {
     setFeedbackMessage(msg);
@@ -60,12 +133,28 @@ export default function SuperAdminPage() {
     if (activeTab === "rejected" && u.status !== "REJECTED") return false;
 
     if (searchQuery.trim()) {
-      const q = searchQuery.toLowerCase();
+      const q = searchQuery.toLowerCase().trim();
       return (
-        u.companyName.toLowerCase().includes(q) ||
-        u.fullName.toLowerCase().includes(q) ||
-        u.email.toLowerCase().includes(q) ||
-        u.taxIdOrLicense.toLowerCase().includes(q)
+        (u.companyName || "").toLowerCase().includes(q) ||
+        (u.fullName || "").toLowerCase().includes(q) ||
+        (u.email || "").toLowerCase().includes(q) ||
+        (u.taxIdOrLicense || "").toLowerCase().includes(q) ||
+        (u.accountType || "").toLowerCase().includes(q) ||
+        (u.assignedYard || "").toLowerCase().includes(q)
+      );
+    }
+    return true;
+  });
+
+  const filteredRfq = rfqRequests.filter((rfq) => {
+    if (searchQuery.trim()) {
+      const q = searchQuery.toLowerCase().trim();
+      return (
+        rfq.companyName.toLowerCase().includes(q) ||
+        rfq.contactName.toLowerCase().includes(q) ||
+        rfq.email.toLowerCase().includes(q) ||
+        rfq.deliveryLocation.toLowerCase().includes(q) ||
+        rfq.id.toLowerCase().includes(q)
       );
     }
     return true;
@@ -118,8 +207,8 @@ export default function SuperAdminPage() {
               </p>
             </div>
 
-            {/* Clearance Level Status Card */}
-            <div className="flex items-center gap-3 shrink-0">
+            {/* Clearance Level Status Card & Sync Button */}
+            <div className="flex flex-col sm:flex-row items-start sm:items-center gap-3 shrink-0">
               <div className="bg-white/10 p-3 border border-[#5FD4FD] text-xs text-white flex items-center gap-3">
                 <ShieldCheck className="w-5 h-5 text-[#5FD4FD]" />
                 <div>
@@ -131,6 +220,21 @@ export default function SuperAdminPage() {
                   </span>
                 </div>
               </div>
+
+              <button
+                type="button"
+                onClick={() => {
+                  resetToDefaultUsers();
+                  showFeedback(
+                    "All demo contractor applications reloaded and synchronized!",
+                  );
+                }}
+                className="px-3.5 py-3 bg-white hover:bg-[#5FD4FD] text-[#0082FC] font-black text-xs uppercase tracking-wider transition-colors cursor-pointer flex items-center gap-1.5 shadow-md shrink-0"
+                title="Reload initial demo applications including Mega Foundries"
+              >
+                <RefreshCw className="w-3.5 h-3.5" />
+                <span>Reload Demo Requests</span>
+              </button>
             </div>
           </div>
         </div>
@@ -145,7 +249,7 @@ export default function SuperAdminPage() {
             <button
               type="button"
               onClick={() => setFeedbackMessage(null)}
-              className="text-white hover:text-[#5FD4FD] font-black uppercase text-xs"
+              className="text-white hover:text-[#5FD4FD] font-black uppercase text-xs cursor-pointer"
             >
               Dismiss
             </button>
@@ -153,7 +257,7 @@ export default function SuperAdminPage() {
         )}
 
         {/* Stats Metrics Grid */}
-        <div className="grid grid-cols-2 md:grid-cols-4 gap-4 mb-8">
+        <div className="grid grid-cols-2 lg:grid-cols-5 gap-4 mb-8">
           <div className="p-4 bg-white border-2 border-[#0082FC] shadow-sm">
             <span className="text-xs font-bold uppercase tracking-wider text-[#0082FC]/70 block">
               Total Registrations
@@ -190,7 +294,7 @@ export default function SuperAdminPage() {
           <div className="p-4 bg-rose-50 border-2 border-rose-500 shadow-sm">
             <div className="flex items-center justify-between">
               <span className="text-xs font-bold uppercase tracking-wider text-rose-800 block">
-                Rejected Applications
+                Rejected
               </span>
               <XCircle className="w-4 h-4 text-rose-600" />
             </div>
@@ -198,11 +302,23 @@ export default function SuperAdminPage() {
               {rejectedCount}
             </strong>
           </div>
+
+          <div className="p-4 bg-[#0082FC]/10 border-2 border-[#0082FC] shadow-sm col-span-2 lg:col-span-1">
+            <div className="flex items-center justify-between">
+              <span className="text-xs font-bold uppercase tracking-wider text-[#0082FC] block">
+                Quote Takeoffs
+              </span>
+              <FileText className="w-4 h-4 text-[#0082FC]" />
+            </div>
+            <strong className="text-2xl font-black text-[#0082FC]">
+              {rfqRequests.length}
+            </strong>
+          </div>
         </div>
 
         {/* Search & Tabs */}
-        <div className="flex flex-col sm:flex-row items-stretch sm:items-center justify-between gap-4 mb-6">
-          <div className="flex bg-[#0082FC]/10 border-2 border-[#0082FC] p-1 gap-1">
+        <div className="flex flex-col md:flex-row items-stretch md:items-center justify-between gap-4 mb-6">
+          <div className="flex flex-wrap bg-[#0082FC]/10 border-2 border-[#0082FC] p-1 gap-1">
             <button
               type="button"
               onClick={() => setActiveTab("pending")}
@@ -255,247 +371,353 @@ export default function SuperAdminPage() {
             >
               All Users ({allUsers.length})
             </button>
+
+            <button
+              type="button"
+              onClick={() => setActiveTab("quotes")}
+              className={`py-2 px-4 text-xs font-black uppercase tracking-wider transition-all rounded-none cursor-pointer flex items-center gap-1.5 ${
+                activeTab === "quotes"
+                  ? "bg-[#0082FC] text-white shadow-xs"
+                  : "text-[#0082FC] hover:bg-[#5FD4FD]/30"
+              }`}
+            >
+              <span>Quote Requests</span>
+              <span className="w-5 h-5 bg-[#5FD4FD] text-[#0082FC] rounded-none text-[10px] font-black flex items-center justify-center">
+                {rfqRequests.length}
+              </span>
+            </button>
           </div>
 
-          <div className="relative w-full sm:w-72">
+          <div className="relative w-full md:w-72">
             <Search className="w-4 h-4 text-[#0082FC] absolute left-3 top-3 pointer-events-none" />
             <input
               type="text"
               placeholder="Search company, contact, email..."
               value={searchQuery}
               onChange={(e) => setSearchQuery(e.target.value)}
-              className="w-full bg-white border-2 border-[#0082FC] pl-9 pr-3 py-2 text-xs text-[#0082FC] font-bold placeholder-[#0082FC]/50 focus:outline-none"
+              className="w-full bg-white border-2 border-[#0082FC] pl-9 pr-3 py-2 text-xs text-[#0082FC] font-bold placeholder-[#0082FC]/50 focus:outline-none focus:border-[#5FD4FD]"
             />
           </div>
         </div>
 
-        {/* User Cards Grid */}
-        <div className="space-y-4">
-          {filteredUsers.length === 0 ? (
-            <div className="p-12 text-center border-2 border-[#0082FC] bg-white text-[#0082FC]">
-              <Users className="w-12 h-12 text-[#5FD4FD] mx-auto mb-3" />
-              <h3 className="font-black text-base uppercase">
-                No Registrations in this View
-              </h3>
-              <p className="text-xs text-[#0082FC]/80 mt-1">
-                Try switching tabs or resetting the search filter.
-              </p>
-            </div>
-          ) : (
-            filteredUsers.map((user) => {
-              const isUserAdmin = user.role === "super-admin";
-              const isPending = user.status === "PENDING_APPROVAL";
-              const isApproved = user.status === "APPROVED";
-              const isRejected = user.status === "REJECTED";
-
-              return (
+        {/* Tab Content: RFQ Quotes View */}
+        {activeTab === "quotes" ? (
+          <div className="space-y-4">
+            {filteredRfq.length === 0 ? (
+              <div className="p-12 text-center border-2 border-[#0082FC] bg-white text-[#0082FC]">
+                <FileText className="w-12 h-12 text-[#5FD4FD] mx-auto mb-3" />
+                <h3 className="font-black text-base uppercase">
+                  No Commercial Quote Requests Found
+                </h3>
+                <p className="text-xs text-[#0082FC]/80 mt-1">
+                  Quote requests submitted through the quote builder will appear
+                  here.
+                </p>
+              </div>
+            ) : (
+              filteredRfq.map((rfq) => (
                 <div
-                  key={user.id}
-                  className={`border-2 p-5 transition-all shadow-sm ${
-                    isPending
-                      ? "bg-amber-50/60 border-amber-500"
-                      : isRejected
-                        ? "bg-rose-50/40 border-rose-400"
-                        : "bg-white border-[#0082FC]"
-                  }`}
+                  key={rfq.id}
+                  className="border-2 border-[#0082FC] bg-white p-5 shadow-sm space-y-3"
                 >
-                  <div className="flex flex-col lg:flex-row lg:items-center justify-between gap-5">
-                    <div className="space-y-2 flex-1 min-w-0">
-                      <div className="flex flex-wrap items-center gap-2">
-                        <h3 className="text-base sm:text-lg font-black text-[#0082FC] uppercase">
-                          {user.companyName}
+                  <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-3 pb-3 border-b border-[#0082FC]/20">
+                    <div>
+                      <div className="flex items-center gap-2">
+                        <span className="px-2 py-0.5 bg-[#0082FC] text-white text-[10px] font-mono font-bold">
+                          {rfq.id}
+                        </span>
+                        <h3 className="text-base font-black text-[#0082FC] uppercase">
+                          {rfq.companyName}
                         </h3>
-
-                        {isUserAdmin && (
-                          <span className="px-2.5 py-0.5 bg-[#0082FC] text-white text-xs font-black uppercase">
-                            Super-Admin
+                        {rfq.taxExempt && (
+                          <span className="px-2 py-0.5 bg-emerald-600 text-white text-[9px] font-black uppercase">
+                            Tax Exempt Certificate
                           </span>
                         )}
+                      </div>
+                      <div className="text-xs text-[#0082FC]/80 mt-1">
+                        Primary Estimator: <strong>{rfq.contactName}</strong>{" "}
+                        &bull; <span className="font-mono">{rfq.email}</span>{" "}
+                        &bull; {rfq.phone}
+                      </div>
+                    </div>
 
-                        {isPending && (
-                          <span className="px-2.5 py-0.5 bg-amber-500 text-white text-xs font-black uppercase flex items-center gap-1 shadow-xs">
-                            <Clock className="w-3.5 h-3.5" />
-                            Pending Approval
+                    <div className="text-right">
+                      <span className="text-[10px] font-bold uppercase text-[#0082FC]/70 block">
+                        Received Date
+                      </span>
+                      <strong className="text-xs font-mono text-[#0082FC]">
+                        {new Date(rfq.createdAt).toLocaleDateString()}
+                      </strong>
+                    </div>
+                  </div>
+
+                  <div className="grid grid-cols-1 sm:grid-cols-3 gap-3 text-xs text-[#0082FC]">
+                    <div className="p-2.5 bg-[#0082FC]/5 border border-[#0082FC]/20">
+                      <span className="text-[10px] font-bold uppercase text-[#0082FC]/70 block">
+                        Project Sector
+                      </span>
+                      <strong>{rfq.projectType}</strong>
+                    </div>
+                    <div className="p-2.5 bg-[#0082FC]/5 border border-[#0082FC]/20">
+                      <span className="text-[10px] font-bold uppercase text-[#0082FC]/70 block">
+                        Jobsite Destination
+                      </span>
+                      <strong>{rfq.deliveryLocation}</strong>
+                    </div>
+                    <div className="p-2.5 bg-[#0082FC]/5 border border-[#0082FC]/20">
+                      <span className="text-[10px] font-bold uppercase text-[#0082FC]/70 block">
+                        Target Delivery
+                      </span>
+                      <strong>{rfq.targetDeliveryDate}</strong>
+                    </div>
+                  </div>
+
+                  {rfq.notes && (
+                    <div className="p-3 bg-slate-50 border border-slate-300 text-xs text-[#0082FC]">
+                      <strong className="block text-[10px] uppercase font-bold text-[#0082FC]/70 mb-1">
+                        Takeoff &amp; Specification Notes:
+                      </strong>
+                      <p className="leading-relaxed">{rfq.notes}</p>
+                    </div>
+                  )}
+                </div>
+              ))
+            )}
+          </div>
+        ) : (
+          /* Tab Content: Contractor Applications View */
+          <div className="space-y-4">
+            {filteredUsers.length === 0 ? (
+              <div className="p-12 text-center border-2 border-[#0082FC] bg-white text-[#0082FC]">
+                <Users className="w-12 h-12 text-[#5FD4FD] mx-auto mb-3" />
+                <h3 className="font-black text-base uppercase">
+                  No Registrations in this View
+                </h3>
+                <p className="text-xs text-[#0082FC]/80 mt-1">
+                  Try switching tabs or resetting the search filter.
+                </p>
+              </div>
+            ) : (
+              filteredUsers.map((user) => {
+                const isUserAdmin = user.role === "super-admin";
+                const isPending = user.status === "PENDING_APPROVAL";
+                const isApproved = user.status === "APPROVED";
+                const isRejected = user.status === "REJECTED";
+
+                return (
+                  <div
+                    key={user.id}
+                    className={`border-2 p-5 transition-all shadow-sm ${
+                      isPending
+                        ? "bg-amber-50/60 border-amber-500"
+                        : isRejected
+                          ? "bg-rose-50/40 border-rose-400"
+                          : "bg-white border-[#0082FC]"
+                    }`}
+                  >
+                    <div className="flex flex-col lg:flex-row lg:items-center justify-between gap-5">
+                      <div className="space-y-2 flex-1 min-w-0">
+                        <div className="flex flex-wrap items-center gap-2">
+                          <h3 className="text-base sm:text-lg font-black text-[#0082FC] uppercase">
+                            {user.companyName}
+                          </h3>
+
+                          {isUserAdmin && (
+                            <span className="px-2.5 py-0.5 bg-[#0082FC] text-white text-xs font-black uppercase">
+                              Super-Admin
+                            </span>
+                          )}
+
+                          {isPending && (
+                            <span className="px-2.5 py-0.5 bg-amber-500 text-white text-xs font-black uppercase flex items-center gap-1 shadow-xs">
+                              <Clock className="w-3.5 h-3.5" />
+                              Pending Approval
+                            </span>
+                          )}
+
+                          {isApproved && !isUserAdmin && (
+                            <span className="px-2.5 py-0.5 bg-emerald-600 text-white text-xs font-black uppercase flex items-center gap-1 shadow-xs">
+                              <Check className="w-3.5 h-3.5" />
+                              Approved Account
+                            </span>
+                          )}
+
+                          {isRejected && (
+                            <span className="px-2.5 py-0.5 bg-rose-600 text-white text-xs font-black uppercase flex items-center gap-1 shadow-xs">
+                              <X className="w-3.5 h-3.5" />
+                              Rejected
+                            </span>
+                          )}
+
+                          <span className="text-xs font-bold text-[#0082FC] bg-white border border-[#0082FC] px-2 py-0.5">
+                            {user.accountType}
                           </span>
-                        )}
+                        </div>
 
-                        {isApproved && !isUserAdmin && (
-                          <span className="px-2.5 py-0.5 bg-emerald-600 text-white text-xs font-black uppercase flex items-center gap-1 shadow-xs">
-                            <Check className="w-3.5 h-3.5" />
-                            Approved Account
+                        {/* Metadata Rows */}
+                        <div className="grid grid-cols-1 sm:grid-cols-3 gap-2 text-xs text-[#0082FC]">
+                          <div className="flex items-center gap-1.5">
+                            <UserCheck className="w-3.5 h-3.5 text-[#0082FC] shrink-0" />
+                            <span>
+                              Contact: <strong>{user.fullName}</strong>
+                            </span>
+                          </div>
+                          <div className="flex items-center gap-1.5">
+                            <Mail className="w-3.5 h-3.5 text-[#0082FC] shrink-0" />
+                            <span>
+                              Email:{" "}
+                              <strong className="font-mono">
+                                {user.email}
+                              </strong>
+                            </span>
+                          </div>
+                          <div className="flex items-center gap-1.5">
+                            <Phone className="w-3.5 h-3.5 text-[#0082FC] shrink-0" />
+                            <span>
+                              Phone: <strong>{user.phone}</strong>
+                            </span>
+                          </div>
+                        </div>
+
+                        {/* Compliance & Audit Line */}
+                        <div className="flex flex-wrap items-center gap-3 text-xs text-[#0082FC]/80 pt-1">
+                          <span>
+                            Tax ID / License:{" "}
+                            <strong className="font-mono text-[#0082FC]">
+                              {user.taxIdOrLicense}
+                            </strong>
                           </span>
-                        )}
-
-                        {isRejected && (
-                          <span className="px-2.5 py-0.5 bg-rose-600 text-white text-xs font-black uppercase flex items-center gap-1 shadow-xs">
-                            <X className="w-3.5 h-3.5" />
-                            Rejected
+                          <span>&bull;</span>
+                          <span>
+                            Primary Yard:{" "}
+                            <strong className="uppercase text-[#0082FC]">
+                              {(user.assignedYard || "").replace("-", " ")}
+                            </strong>
                           </span>
-                        )}
+                          <span>&bull;</span>
+                          <span>
+                            W-9 Form:{" "}
+                            <strong
+                              className={
+                                user.w9Uploaded
+                                  ? "text-emerald-700"
+                                  : "text-amber-700"
+                              }
+                            >
+                              {user.w9Uploaded
+                                ? "Verified Upload ✓"
+                                : "Missing / Pending"}
+                            </strong>
+                          </span>
+                          <span>&bull;</span>
+                          <span>
+                            Registered:{" "}
+                            <strong>
+                              {new Date(user.createdAt).toLocaleDateString()}
+                            </strong>
+                          </span>
+                        </div>
 
-                        <span className="text-xs font-bold text-[#0082FC] bg-white border border-[#0082FC] px-2 py-0.5">
-                          {user.accountType}
-                        </span>
+                        {user.rejectionReason && (
+                          <div className="text-xs text-rose-700 font-bold bg-white p-2 border border-rose-300">
+                            Rejection Reason: {user.rejectionReason}
+                          </div>
+                        )}
                       </div>
 
-                      {/* Metadata Rows */}
-                      <div className="grid grid-cols-1 sm:grid-cols-3 gap-2 text-xs text-[#0082FC]">
-                        <div className="flex items-center gap-1.5">
-                          <UserCheck className="w-3.5 h-3.5 text-[#0082FC] shrink-0" />
-                          <span>
-                            Contact: <strong>{user.fullName}</strong>
-                          </span>
-                        </div>
-                        <div className="flex items-center gap-1.5">
-                          <Mail className="w-3.5 h-3.5 text-[#0082FC] shrink-0" />
-                          <span>
-                            Email:{" "}
-                            <strong className="font-mono">{user.email}</strong>
-                          </span>
-                        </div>
-                        <div className="flex items-center gap-1.5">
-                          <Phone className="w-3.5 h-3.5 text-[#0082FC] shrink-0" />
-                          <span>
-                            Phone: <strong>{user.phone}</strong>
-                          </span>
-                        </div>
-                      </div>
+                      {/* Action Triggers */}
+                      {!isUserAdmin && (
+                        <div className="flex flex-wrap sm:flex-nowrap items-center gap-2 shrink-0 pt-3 lg:pt-0 border-t lg:border-t-0 border-[#0082FC]/20">
+                          {!isApproved && (
+                            <button
+                              type="button"
+                              onClick={() => handleApprove(user)}
+                              className="px-4 py-2.5 bg-emerald-600 hover:bg-emerald-700 text-white font-black text-xs uppercase tracking-wider rounded-none shadow-md transition-colors cursor-pointer flex items-center gap-1.5"
+                            >
+                              <Check className="w-4 h-4" />
+                              <span>Authorize Access</span>
+                            </button>
+                          )}
 
-                      {/* Compliance & Audit Line */}
-                      <div className="flex flex-wrap items-center gap-3 text-xs text-[#0082FC]/80 pt-1">
-                        <span>
-                          Tax ID / License:{" "}
-                          <strong className="font-mono text-[#0082FC]">
-                            {user.taxIdOrLicense}
-                          </strong>
-                        </span>
-                        <span>&bull;</span>
-                        <span>
-                          Primary Yard:{" "}
-                          <strong className="uppercase text-[#0082FC]">
-                            {user.assignedYard.replace("-", " ")}
-                          </strong>
-                        </span>
-                        <span>&bull;</span>
-                        <span>
-                          W-9 Form:{" "}
-                          <strong
-                            className={
-                              user.w9Uploaded
-                                ? "text-emerald-700"
-                                : "text-amber-700"
-                            }
+                          {!isRejected && (
+                            <button
+                              type="button"
+                              onClick={() => setRejectingUserId(user.id)}
+                              className="px-4 py-2.5 bg-white hover:bg-rose-50 text-rose-700 border-2 border-rose-600 font-black text-xs uppercase tracking-wider rounded-none transition-colors cursor-pointer flex items-center gap-1.5"
+                            >
+                              <X className="w-4 h-4" />
+                              <span>Reject</span>
+                            </button>
+                          )}
+
+                          <button
+                            type="button"
+                            onClick={() => {
+                              if (
+                                confirm(
+                                  `Permanently remove ${user.companyName}?`,
+                                )
+                              ) {
+                                deleteUser(user.id);
+                                showFeedback(`Removed ${user.companyName}.`);
+                              }
+                            }}
+                            className="p-2.5 text-[#0082FC]/60 hover:text-rose-700 hover:bg-rose-100 transition-colors cursor-pointer"
+                            title="Delete User Record"
                           >
-                            {user.w9Uploaded
-                              ? "Verified Upload ✓"
-                              : "Missing / Pending"}
-                          </strong>
-                        </span>
-                        <span>&bull;</span>
-                        <span>
-                          Registered:{" "}
-                          <strong>
-                            {new Date(user.createdAt).toLocaleDateString()}
-                          </strong>
-                        </span>
-                      </div>
-
-                      {user.rejectionReason && (
-                        <div className="text-xs text-rose-700 font-bold bg-white p-2 border border-rose-300">
-                          Rejection Reason: {user.rejectionReason}
+                            <Trash2 className="w-4 h-4" />
+                          </button>
                         </div>
                       )}
                     </div>
 
-                    {/* Action Triggers */}
-                    {!isUserAdmin && (
-                      <div className="flex flex-wrap sm:flex-nowrap items-center gap-2 shrink-0 pt-3 lg:pt-0 border-t lg:border-t-0 border-[#0082FC]/20">
-                        {!isApproved && (
+                    {/* Reject Dialog */}
+                    {rejectingUserId === user.id && (
+                      <div className="mt-4 p-4 bg-white border-2 border-rose-600 space-y-2">
+                        <div className="flex items-center justify-between text-xs font-black text-rose-700 uppercase">
+                          <span>
+                            Enter Rejection Reason for {user.companyName}:
+                          </span>
                           <button
                             type="button"
-                            onClick={() => handleApprove(user)}
-                            className="px-4 py-2.5 bg-emerald-600 hover:bg-emerald-700 text-white font-black text-xs uppercase tracking-wider rounded-none shadow-md transition-colors cursor-pointer flex items-center gap-1.5"
+                            onClick={() => setRejectingUserId(null)}
+                            className="text-[#0082FC] hover:underline cursor-pointer"
                           >
-                            <Check className="w-4 h-4" />
-                            <span>Authorize Access</span>
+                            Cancel
                           </button>
-                        )}
-
-                        {!isRejected && (
+                        </div>
+                        <input
+                          type="text"
+                          value={rejectReason}
+                          onChange={(e) => setRejectReason(e.target.value)}
+                          placeholder="e.g. Unverified tax ID / Missing state contractor license"
+                          className="w-full bg-white border border-rose-400 p-2.5 text-xs text-[#0082FC] font-semibold focus:outline-none"
+                        />
+                        <div className="flex justify-end gap-2 pt-1">
                           <button
                             type="button"
-                            onClick={() => setRejectingUserId(user.id)}
-                            className="px-4 py-2.5 bg-white hover:bg-rose-50 text-rose-700 border-2 border-rose-600 font-black text-xs uppercase tracking-wider rounded-none transition-colors cursor-pointer flex items-center gap-1.5"
+                            onClick={() => setRejectingUserId(null)}
+                            className="px-3 py-1.5 text-xs font-bold text-[#0082FC] border border-[#0082FC] cursor-pointer"
                           >
-                            <X className="w-4 h-4" />
-                            <span>Reject</span>
+                            Cancel
                           </button>
-                        )}
-
-                        <button
-                          type="button"
-                          onClick={() => {
-                            if (
-                              confirm(`Permanently remove ${user.companyName}?`)
-                            ) {
-                              deleteUser(user.id);
-                              showFeedback(`Removed ${user.companyName}.`);
-                            }
-                          }}
-                          className="p-2.5 text-[#0082FC]/60 hover:text-rose-700 hover:bg-rose-100 transition-colors"
-                          title="Delete User Record"
-                        >
-                          <Trash2 className="w-4 h-4" />
-                        </button>
+                          <button
+                            type="button"
+                            onClick={() => handleConfirmReject(user.id)}
+                            className="px-4 py-1.5 text-xs font-black bg-rose-600 hover:bg-rose-700 text-white uppercase shadow-sm cursor-pointer"
+                          >
+                            Confirm Rejection
+                          </button>
+                        </div>
                       </div>
                     )}
                   </div>
-
-                  {/* Reject Dialog */}
-                  {rejectingUserId === user.id && (
-                    <div className="mt-4 p-4 bg-white border-2 border-rose-600 space-y-2">
-                      <div className="flex items-center justify-between text-xs font-black text-rose-700 uppercase">
-                        <span>
-                          Enter Rejection Reason for {user.companyName}:
-                        </span>
-                        <button
-                          type="button"
-                          onClick={() => setRejectingUserId(null)}
-                          className="text-[#0082FC] hover:underline"
-                        >
-                          Cancel
-                        </button>
-                      </div>
-                      <input
-                        type="text"
-                        value={rejectReason}
-                        onChange={(e) => setRejectReason(e.target.value)}
-                        placeholder="e.g. Unverified tax ID / Missing state contractor license"
-                        className="w-full bg-white border border-rose-400 p-2.5 text-xs text-[#0082FC] font-semibold focus:outline-none"
-                      />
-                      <div className="flex justify-end gap-2 pt-1">
-                        <button
-                          type="button"
-                          onClick={() => setRejectingUserId(null)}
-                          className="px-3 py-1.5 text-xs font-bold text-[#0082FC] border border-[#0082FC]"
-                        >
-                          Cancel
-                        </button>
-                        <button
-                          type="button"
-                          onClick={() => handleConfirmReject(user.id)}
-                          className="px-4 py-1.5 text-xs font-black bg-rose-600 hover:bg-rose-700 text-white uppercase shadow-sm"
-                        >
-                          Confirm Rejection
-                        </button>
-                      </div>
-                    </div>
-                  )}
-                </div>
-              );
-            })
-          )}
-        </div>
+                );
+              })
+            )}
+          </div>
+        )}
       </div>
     </DashboardLayout>
   );
