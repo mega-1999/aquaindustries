@@ -1,13 +1,6 @@
 "use client";
 
-import {
-  Download,
-  FileText,
-  Layers,
-  Printer,
-  ShieldCheck,
-  X,
-} from "lucide-react";
+import { Download, Layers, Printer, ShieldCheck, X } from "lucide-react";
 import type React from "react";
 import type { ProductItem } from "../../types";
 
@@ -148,6 +141,97 @@ export const ProductSubmittalModal: React.FC<ProductSubmittalModalProps> = ({
               </span>
             </div>
           </div>
+
+          {/* Official 2" - 64" Ductile Iron Compact Fittings General Specifications */}
+          {product.standard === "AWWA C153" && (
+            <div className="bg-white rounded-none border-2 border-[#0082FC] p-5">
+              <h4 className="text-sm sm:text-base font-extrabold uppercase tracking-wider text-[#0082FC] mb-3 flex items-center justify-between">
+                <span>
+                  General Specifications (2&quot; - 64&quot; Compact Fittings)
+                </span>
+                <span className="text-[10px] font-mono bg-[#5FD4FD]/20 border border-[#0082FC] px-2 py-0.5">
+                  ANSI/AWWA C153
+                </span>
+              </h4>
+              <div className="grid grid-cols-1 sm:grid-cols-2 gap-2.5 text-xs text-[#0082FC]">
+                <div className="p-2 border border-[#5FD4FD]/40 bg-[#5FD4FD]/10">
+                  <strong className="block text-[#0082FC]">MATERIAL:</strong>
+                  <span>Ductile Iron per ASTM A536</span>
+                </div>
+                <div className="p-2 border border-[#5FD4FD]/40 bg-[#5FD4FD]/10">
+                  <strong className="block text-[#0082FC]">PRESSURE:</strong>
+                  <span>
+                    350 PSI rating for 2&quot; - 24&quot;, 250 PSI for 30&quot;
+                    - 48&quot;, 150 PSI for 54&quot; - 64&quot;
+                  </span>
+                </div>
+                <div className="p-2 border border-[#5FD4FD]/40 bg-[#5FD4FD]/10">
+                  <strong className="block text-[#0082FC]">TESTING:</strong>
+                  <span>
+                    In accordance with ANSI/AWWA C153/A21.53, ANSI/AWWA
+                    C111/A21.11, UL and FM requirements
+                  </span>
+                </div>
+                <div className="p-2 border border-[#5FD4FD]/40 bg-[#5FD4FD]/10">
+                  <strong className="block text-[#0082FC]">
+                    LAYING LENGTH:
+                  </strong>
+                  <span>
+                    ANSI/AWWA C153/A21.53 (or catalog H2O design as noted)
+                  </span>
+                </div>
+                <div className="p-2 border border-[#5FD4FD]/40 bg-[#5FD4FD]/10">
+                  <strong className="block text-[#0082FC]">DEFLECTION:</strong>
+                  <span>
+                    2&quot;-4&quot;=8° | 6&quot;=7° | 8&quot;-12&quot;=5° |
+                    14&quot;-16&quot;=3½° | 18&quot;-24&quot;=3° |
+                    30&quot;-64&quot;=2°
+                  </span>
+                </div>
+                <div className="p-2 border border-[#5FD4FD]/40 bg-[#5FD4FD]/10">
+                  <strong className="block text-[#0082FC]">
+                    CEMENT LINING:
+                  </strong>
+                  <span>
+                    ANSI/AWWA C104/A21.4 -- 2&quot;-3&quot; single,
+                    4&quot;-64&quot; double thickness
+                  </span>
+                </div>
+                <div className="p-2 border border-[#5FD4FD]/40 bg-[#5FD4FD]/10">
+                  <strong className="block text-[#0082FC]">COATING:</strong>
+                  <span>
+                    Asphaltic seal coat inside and out in accordance with
+                    ANSI/AWWA C104 &amp; C153
+                  </span>
+                </div>
+                <div className="p-2 border border-[#5FD4FD]/40 bg-[#5FD4FD]/10">
+                  <strong className="block text-[#0082FC]">
+                    FLANGES &amp; HARDWARE:
+                  </strong>
+                  <span>
+                    Flanged ends match ANSI B16.1 class 125 &bull; SBR gaskets
+                    &bull; Low alloy steel T-bolts
+                  </span>
+                </div>
+                <div className="p-2 border border-[#5FD4FD]/40 bg-[#5FD4FD]/10">
+                  <strong className="block text-[#0082FC]">APPROVALS:</strong>
+                  <span>
+                    3&quot;-12&quot; UL/ULC Listed &bull; 2&quot;+ UL/ANSI/NSF
+                    61 &amp; 372 &bull; 3&quot;-16&quot; FM APPROVED
+                  </span>
+                </div>
+                <div className="p-2 border border-[#5FD4FD]/40 bg-[#5FD4FD]/10">
+                  <strong className="block text-[#0082FC]">
+                    INSTALLATION:
+                  </strong>
+                  <span>
+                    Per ANSI/AWWA C600 &amp; C111 using DIP (C150/C151) and PVC
+                    pipe (C900)
+                  </span>
+                </div>
+              </div>
+            </div>
+          )}
 
           {/* Bolt & Installation Torque Specs */}
           <div className="bg-white rounded-none border-2 border-[#5FD4FD] p-5">
