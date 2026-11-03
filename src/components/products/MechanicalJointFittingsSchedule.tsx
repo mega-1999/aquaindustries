@@ -45,6 +45,7 @@ export interface FittingItemData {
   fittingType: "bend" | "tee" | "cross" | "reducer" | "sleeve" | "swivel";
   angle?: string;
   standards: string;
+  imageUrl?: string;
 }
 
 export const FITTINGS_SCHEDULE_DATA: FittingItemData[] = [
@@ -619,6 +620,57 @@ export const FITTINGS_SCHEDULE_DATA: FittingItemData[] = [
   },
 ];
 
+const FittingCardImage: React.FC<{ fitting: FittingItemData }> = ({
+  fitting,
+}) => {
+  const [imgError, setImgError] = useState(false);
+  const src = fitting.imageUrl || `/images/fittings/${fitting.id}.png`;
+
+  return (
+    <div className="relative w-full h-32 sm:h-36 flex items-center justify-center p-3 overflow-hidden my-1 bg-gradient-to-b from-[#5FD4FD]/10 to-transparent border border-[#5FD4FD]/25">
+      {!imgError ? (
+        <img
+          src={src}
+          alt={fitting.name}
+          className="max-h-full max-w-full object-contain filter drop-shadow-md transition-transform duration-500 group-hover:scale-105"
+          onError={() => setImgError(true)}
+        />
+      ) : (
+        <div className="flex flex-col items-center justify-center text-center">
+          <div className="w-16 h-16 rounded-none border-2 border-dashed border-[#0082FC] bg-white flex items-center justify-center shadow-inner group-hover:scale-105 transition-transform duration-300">
+            {fitting.fittingType === "bend" && (
+              <Compass className="w-8 h-8 text-[#0082FC]" />
+            )}
+            {fitting.fittingType === "tee" && (
+              <Layers className="w-8 h-8 text-[#0082FC]" />
+            )}
+            {fitting.fittingType === "cross" && (
+              <Plus className="w-8 h-8 text-[#0082FC] stroke-[2.5]" />
+            )}
+            {fitting.fittingType === "reducer" && (
+              <Filter className="w-8 h-8 text-[#0082FC]" />
+            )}
+            {fitting.fittingType === "sleeve" && (
+              <Wrench className="w-8 h-8 text-[#0082FC]" />
+            )}
+            {fitting.fittingType === "swivel" && (
+              <Activity className="w-8 h-8 text-[#0082FC]" />
+            )}
+          </div>
+          <span className="text-[10px] font-mono font-bold text-[#0082FC] mt-1.5 uppercase">
+            {fitting.sizeRange} &bull; {fitting.angle || "C153 COMPACT"}
+          </span>
+        </div>
+      )}
+
+      {/* Stock Status Badge */}
+      <span className="absolute bottom-1.5 right-1.5 text-[9px] font-bold bg-[#5FD4FD]/20 text-[#0082FC] px-1.5 py-0.2 border border-[#5FD4FD]">
+        Foundry Stock
+      </span>
+    </div>
+  );
+};
+
 export const MechanicalJointFittingsSchedule: React.FC<
   MechanicalJointFittingsScheduleProps
 > = ({ onAddToRfq, onPreviewSubmittal }) => {
@@ -716,7 +768,7 @@ export const MechanicalJointFittingsSchedule: React.FC<
         "Double-thickness cement mortar lining per ANSI/AWWA C104/A21.4",
         "UL/ULC Listed & FM Approved for fire lines and municipal mains",
       ],
-      imageUrl: "/images/our-images/MJ_Fittings.jpeg",
+      imageUrl: fitting.imageUrl || `/images/fittings/${fitting.id}.png`,
       aisCompliant: true,
       buyAmericaReady: true,
     };
@@ -758,7 +810,7 @@ export const MechanicalJointFittingsSchedule: React.FC<
         "Double-thickness cement mortar lining per ANSI/AWWA C104/A21.4",
         "UL/ULC Listed & FM Approved for fire lines and municipal mains",
       ],
-      imageUrl: "/images/our-images/MJ_Fittings.jpeg",
+      imageUrl: fitting.imageUrl || `/images/fittings/${fitting.id}.png`,
       aisCompliant: true,
       buyAmericaReady: true,
     };
@@ -1001,41 +1053,8 @@ export const MechanicalJointFittingsSchedule: React.FC<
                     </span>
                   </div>
 
-                  {/* Fitting Schematic / Visual Blueprint Container */}
-                  <div className="relative w-full h-32 sm:h-36 flex items-center justify-center p-3 overflow-hidden my-1 bg-gradient-to-b from-[#5FD4FD]/10 to-transparent border border-[#5FD4FD]/25">
-                    {/* Architectural Blueprint Icon Representation */}
-                    <div className="flex flex-col items-center justify-center text-center">
-                      <div className="w-16 h-16 rounded-none border-2 border-dashed border-[#0082FC] bg-white flex items-center justify-center shadow-inner group-hover:scale-105 transition-transform duration-300">
-                        {fitting.fittingType === "bend" && (
-                          <Compass className="w-8 h-8 text-[#0082FC]" />
-                        )}
-                        {fitting.fittingType === "tee" && (
-                          <Layers className="w-8 h-8 text-[#0082FC]" />
-                        )}
-                        {fitting.fittingType === "cross" && (
-                          <Plus className="w-8 h-8 text-[#0082FC] stroke-[2.5]" />
-                        )}
-                        {fitting.fittingType === "reducer" && (
-                          <Filter className="w-8 h-8 text-[#0082FC]" />
-                        )}
-                        {fitting.fittingType === "sleeve" && (
-                          <Wrench className="w-8 h-8 text-[#0082FC]" />
-                        )}
-                        {fitting.fittingType === "swivel" && (
-                          <Activity className="w-8 h-8 text-[#0082FC]" />
-                        )}
-                      </div>
-                      <span className="text-[10px] font-mono font-bold text-[#0082FC] mt-1.5 uppercase">
-                        {fitting.sizeRange} &bull;{" "}
-                        {fitting.angle || "C153 COMPACT"}
-                      </span>
-                    </div>
-
-                    {/* Stock Status Badge */}
-                    <span className="absolute bottom-1.5 right-1.5 text-[9px] font-bold bg-[#5FD4FD]/20 text-[#0082FC] px-1.5 py-0.2 border border-[#5FD4FD]">
-                      Foundry Stock
-                    </span>
-                  </div>
+                  {/* Fitting Image with Blueprint Fallback */}
+                  <FittingCardImage fitting={fitting} />
 
                   {/* Title & Joint Type */}
                   <h3 className="text-sm sm:text-base font-black uppercase tracking-tight text-[#0082FC] leading-snug line-clamp-1 mt-2.5 mb-0.5">
