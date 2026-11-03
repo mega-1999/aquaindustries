@@ -1421,12 +1421,12 @@ export const MechanicalJointFittingsSchedule: React.FC<
           /* VIEW 2: DEDICATED SUBVARIANT SELECTION VIEW (WHEN CATEGORY IS CLICKED) */
           <div className="space-y-8 animate-in fade-in duration-300">
             {/* Top Navigation & Breadcrumbs */}
-            <div className="flex flex-wrap items-center justify-between gap-4 border-b-2 border-[#5FD4FD] pb-4">
+            <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-4 border-b-2 border-[#0082FC] pb-4">
               <div className="flex flex-wrap items-center gap-2">
                 <button
                   type="button"
                   onClick={handleBackToFamilies}
-                  className="inline-flex items-center gap-2 px-3.5 py-2 bg-white hover:bg-[#0082FC] text-[#0082FC] hover:text-white border-2 border-[#0082FC] text-xs font-black uppercase tracking-wider rounded-none transition-all shadow-sm cursor-pointer"
+                  className="inline-flex items-center gap-2 px-4 py-2 bg-white hover:bg-[#0082FC] text-[#0082FC] hover:text-white border-2 border-[#0082FC] text-xs font-black uppercase tracking-wider rounded-none transition-all shadow-sm cursor-pointer"
                 >
                   <ArrowLeft className="w-4 h-4 shrink-0" />
                   <span>&larr; Back to All Categories</span>
@@ -1446,37 +1446,25 @@ export const MechanicalJointFittingsSchedule: React.FC<
                 </button>
               </div>
 
-              {/* Family Quick Switcher Tabs */}
-              <div className="flex flex-wrap items-center gap-1.5">
-                {FITTING_FAMILIES.map((fam) => (
-                  <button
-                    key={fam.id}
-                    type="button"
-                    onClick={() => handleOpenFamily(fam.id)}
-                    className={`px-2.5 py-1 text-[11px] font-bold uppercase tracking-wider rounded-none border transition-all cursor-pointer ${
-                      fam.id === selectedFamilyId
-                        ? "bg-[#0082FC] text-white border-[#0082FC]"
-                        : "bg-white text-[#0082FC] border-[#5FD4FD] hover:bg-[#5FD4FD]/20"
-                    }`}
-                  >
-                    {fam.shortName}
-                  </button>
-                ))}
+              <div className="text-left sm:text-right">
+                <span className="text-[10px] font-black uppercase tracking-wider bg-[#5FD4FD]/20 text-[#0082FC] px-2 py-0.5 border border-[#0082FC]">
+                  {activeFamily.tag}
+                </span>
+                <h3 className="text-base sm:text-lg font-black uppercase tracking-tight text-[#0082FC] mt-0.5">
+                  {activeFamily.title}
+                </h3>
               </div>
             </div>
 
             {/* Subvariant Angle / Option Selector Bar */}
-            <div className="bg-[#5FD4FD]/15 border-2 border-[#5FD4FD] p-4 sm:p-5 rounded-none">
-              <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-3 mb-3">
-                <div className="text-xs sm:text-sm font-black uppercase tracking-wider text-[#0082FC] flex items-center gap-2">
-                  <Compass className="w-4 h-4 text-[#0082FC] shrink-0" />
-                  <span>
-                    {activeFamily.subvariantTypeLabel}: Click to view
-                    specifications
-                  </span>
+            <div className="bg-white border-2 border-[#5FD4FD] p-3 sm:p-4 rounded-none">
+              <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-2 mb-2.5">
+                <div className="text-xs font-black uppercase tracking-wider text-[#0082FC] flex items-center gap-2">
+                  <Compass className="w-3.5 h-3.5 text-[#0082FC] shrink-0" />
+                  <span>{activeFamily.subvariantTypeLabel}:</span>
                 </div>
-                <span className="text-[11px] font-bold text-[#0082FC]/75 uppercase">
-                  {familySubvariants.length} Subvariants Available
+                <span className="text-[10px] font-bold text-[#0082FC]/70 uppercase tracking-wider">
+                  {familySubvariants.length} Options Available
                 </span>
               </div>
 
@@ -1493,10 +1481,10 @@ export const MechanicalJointFittingsSchedule: React.FC<
                       key={variant.id}
                       type="button"
                       onClick={() => setActiveSubvariantId(variant.id)}
-                      className={`px-3.5 py-2 text-xs font-black uppercase tracking-wider rounded-none border-2 transition-all flex items-center gap-1.5 cursor-pointer shadow-xs ${
+                      className={`px-3 py-1.5 text-xs font-black uppercase tracking-wider rounded-none border-2 transition-all flex items-center gap-1.5 cursor-pointer ${
                         isActive
-                          ? "bg-[#0082FC] text-white border-[#0082FC] shadow-md scale-102"
-                          : "bg-white text-[#0082FC] border-[#5FD4FD] hover:border-[#0082FC] hover:bg-white"
+                          ? "bg-[#0082FC] text-white border-[#0082FC] shadow-sm"
+                          : "bg-white text-[#0082FC] border-[#5FD4FD] hover:border-[#0082FC] hover:bg-[#5FD4FD]/10"
                       }`}
                     >
                       {isActive && (
@@ -1504,10 +1492,10 @@ export const MechanicalJointFittingsSchedule: React.FC<
                       )}
                       <span>{displayAngle}</span>
                       <span
-                        className={`text-[10px] font-mono px-1.5 py-0.2 border ${
+                        className={`text-[9px] font-mono px-1 py-0.2 border ${
                           isActive
                             ? "bg-white/20 border-white text-white"
-                            : "bg-[#5FD4FD]/20 border-[#5FD4FD] text-[#0082FC]"
+                            : "bg-[#5FD4FD]/15 border-[#5FD4FD] text-[#0082FC]"
                         }`}
                       >
                         {variant.catNumber}
