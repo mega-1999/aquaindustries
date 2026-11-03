@@ -3,6 +3,7 @@
 import {
   Building,
   CheckCircle2,
+  Clock,
   FileCheck2,
   Layers,
   Mail,
@@ -11,7 +12,9 @@ import {
   Phone,
   PhoneCall,
   Send,
+  ShieldCheck,
   Trash2,
+  Truck,
   UploadCloud,
   User,
 } from "lucide-react";
@@ -140,11 +143,22 @@ export const CommercialQuoteForm: React.FC<CommercialQuoteFormProps> = ({
         </div>
 
         {/* Main Grid */}
-        <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 items-start">
+        <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 items-stretch">
           {/* Form Column (8 cols) */}
-          <div className="lg:col-span-8 bg-white border-2 border-[#5FD4FD] rounded-none p-6 sm:p-10 shadow-sm">
+          <div className="lg:col-span-8 bg-white border-2 border-[#5FD4FD] rounded-none p-6 sm:p-8 shadow-sm flex flex-col justify-between h-full">
+            {/* Synchronized Top Header */}
+            <div className="flex flex-wrap items-center justify-between gap-3 pb-4 border-b-2 border-[#5FD4FD]/30 mb-6 min-h-[46px]">
+              <div className="flex items-center gap-2 text-sm sm:text-base font-extrabold uppercase tracking-tight text-[#0082FC]">
+                <FileCheck2 className="w-5 h-5 text-[#0082FC] shrink-0" />
+                <span>Project Material Take-Off &amp; Sizing Specs</span>
+              </div>
+              <span className="text-xs font-bold text-[#0082FC] bg-[#5FD4FD]/20 border border-[#5FD4FD] px-2.5 py-1 uppercase tracking-wider">
+                Direct Foundry Pricing
+              </span>
+            </div>
+
             {isSubmitted ? (
-              <div className="py-12 text-center flex flex-col items-center">
+              <div className="my-auto py-12 text-center flex flex-col items-center">
                 <div className="w-16 h-16 rounded-none bg-white border-2 border-[#5FD4FD] text-[#0082FC] flex items-center justify-center mb-5">
                   <CheckCircle2 className="w-8 h-8 text-[#5FD4FD]" />
                 </div>
@@ -166,13 +180,16 @@ export const CommercialQuoteForm: React.FC<CommercialQuoteFormProps> = ({
                 <button
                   type="button"
                   onClick={() => setIsSubmitted(false)}
-                  className="px-6 py-2.5 bg-[#0082FC] hover:bg-[#5FD4FD] hover:text-[#0082FC] text-white text-xs font-bold rounded-none border-2 border-[#0082FC] transition-colors"
+                  className="px-6 py-2.5 bg-[#0082FC] hover:bg-[#5FD4FD] hover:text-[#0082FC] text-white text-xs font-bold rounded-none border-2 border-[#0082FC] transition-colors cursor-pointer"
                 >
                   Submit Another Quote Request
                 </button>
               </div>
             ) : (
-              <form onSubmit={handleSubmit} className="space-y-8">
+              <form
+                onSubmit={handleSubmit}
+                className="flex-1 flex flex-col justify-between space-y-7"
+              >
                 {/* 1. Category Selection */}
                 <div>
                   <div className="text-sm sm:text-base font-bold uppercase tracking-wider text-[#0082FC] mb-3 flex items-center gap-2">
@@ -185,7 +202,7 @@ export const CommercialQuoteForm: React.FC<CommercialQuoteFormProps> = ({
                         key={cat}
                         type="button"
                         onClick={() => setSelectedCategory(cat)}
-                        className={`px-4 py-2.5 rounded-none text-sm font-bold border-2 transition-all whitespace-nowrap ${
+                        className={`px-4 py-2.5 rounded-none text-sm font-bold border-2 transition-all whitespace-nowrap cursor-pointer ${
                           selectedCategory === cat
                             ? "bg-[#0082FC] text-white border-[#0082FC] shadow-sm"
                             : "bg-white text-[#0082FC] border-[#5FD4FD] hover:bg-[#5FD4FD]/20"
@@ -211,7 +228,7 @@ export const CommercialQuoteForm: React.FC<CommercialQuoteFormProps> = ({
                             key={size}
                             type="button"
                             onClick={() => toggleSize(size)}
-                            className={`w-12 h-10 rounded-none text-sm font-bold border-2 transition-all ${
+                            className={`w-12 h-10 rounded-none text-sm font-bold border-2 transition-all cursor-pointer ${
                               isSelected
                                 ? "bg-[#0082FC] text-white border-[#0082FC]"
                                 : "bg-white text-[#0082FC] border-[#5FD4FD] hover:bg-[#5FD4FD]/20"
@@ -398,18 +415,18 @@ export const CommercialQuoteForm: React.FC<CommercialQuoteFormProps> = ({
                   </div>
                 </div>
 
-                {/* Submit Button: "Submit For Rapid Quote" (Solid #0082FC, whitespace-nowrap) */}
-                <div className="pt-2">
+                {/* Submit Button & Assurance Strip */}
+                <div className="pt-4 border-t-2 border-[#5FD4FD]/30 mt-auto">
                   <button
                     type="submit"
-                    className="w-full py-4 px-8 bg-[#0082FC] hover:bg-[#5FD4FD] hover:text-[#0082FC] text-white font-extrabold rounded-none text-base border-2 border-[#0082FC] shadow-lg transition-all transform hover:-translate-y-0.5 active:translate-y-0 whitespace-nowrap flex items-center justify-center gap-2"
+                    className="w-full py-4 px-8 bg-[#0082FC] hover:bg-[#5FD4FD] hover:text-[#0082FC] text-white font-extrabold rounded-none text-base border-2 border-[#0082FC] shadow-lg transition-all transform hover:-translate-y-0.5 active:translate-y-0 whitespace-nowrap flex items-center justify-center gap-2 cursor-pointer"
                   >
                     <Send className="w-5 h-5 text-white group-hover:text-[#0082FC] shrink-0" />
                     <span className="whitespace-nowrap">
                       Submit For Rapid Quote
                     </span>
                   </button>
-                  <div className="flex items-center justify-center gap-3 text-xs sm:text-sm text-[#0082FC] font-semibold mt-3">
+                  <div className="flex flex-wrap items-center justify-center gap-3 text-xs sm:text-sm text-[#0082FC] font-semibold mt-3">
                     <span>Quotes valid 30 days</span>
                     <span>&bull;</span>
                     <span>Direct yard dispatch</span>
@@ -422,26 +439,37 @@ export const CommercialQuoteForm: React.FC<CommercialQuoteFormProps> = ({
           </div>
 
           {/* Right Live Quote List / Cart (4 cols) */}
-          <div className="lg:col-span-4 bg-white border-2 border-[#5FD4FD] rounded-none p-6 sm:p-7 shadow-sm flex flex-col justify-between text-[#0082FC]">
-            <div>
-              <div className="flex items-center justify-between pb-4 border-b-2 border-[#5FD4FD]/30 mb-4">
-                <span className="text-xs font-bold uppercase tracking-wider text-[#0082FC] flex items-center gap-2">
-                  <Package className="w-4 h-4 text-[#0082FC]" />
+          <div className="lg:col-span-4 bg-white border-2 border-[#5FD4FD] rounded-none p-6 sm:p-8 shadow-sm flex flex-col justify-between h-full text-[#0082FC]">
+            <div className="flex-1 flex flex-col">
+              {/* Synchronized Top Header */}
+              <div className="flex items-center justify-between pb-4 border-b-2 border-[#5FD4FD]/30 mb-6 min-h-[46px]">
+                <div className="flex items-center gap-2 text-sm sm:text-base font-extrabold uppercase tracking-tight text-[#0082FC]">
+                  <Package className="w-5 h-5 text-[#0082FC] shrink-0" />
                   <span>Selected Quote Items</span>
-                </span>
-                {rfqItems.length > 0 && (
+                  {rfqItems.length > 0 && (
+                    <span className="ml-1 bg-[#0082FC] text-white text-[11px] font-bold px-2 py-0.5 rounded-none">
+                      {rfqItems.length}
+                    </span>
+                  )}
+                </div>
+                {rfqItems.length > 0 ? (
                   <button
                     type="button"
                     onClick={onClearItems}
-                    className="text-xs text-[#0082FC] hover:underline font-bold"
+                    className="text-xs text-[#0082FC] hover:text-[#5FD4FD] font-bold uppercase tracking-wider underline cursor-pointer"
                   >
                     Clear All
                   </button>
+                ) : (
+                  <span className="text-[11px] font-bold text-[#0082FC]/70 uppercase tracking-wider">
+                    Live Staging
+                  </span>
                 )}
               </div>
 
+              {/* Items List or Empty Staging Box */}
               {rfqItems.length === 0 ? (
-                <div className="py-8 text-center bg-white rounded-none border-2 border-[#5FD4FD] p-4 mb-4">
+                <div className="py-6 text-center bg-white rounded-none border-2 border-[#5FD4FD] p-4 mb-4">
                   <Package className="w-8 h-8 text-[#5FD4FD] mx-auto mb-2" />
                   <p className="text-sm text-[#0082FC] font-bold">
                     No catalog items added yet.
@@ -451,7 +479,7 @@ export const CommercialQuoteForm: React.FC<CommercialQuoteFormProps> = ({
                   </p>
                 </div>
               ) : (
-                <div className="space-y-2.5 mb-4 max-h-60 overflow-y-auto pr-1">
+                <div className="space-y-2.5 mb-4 max-h-56 overflow-y-auto pr-1">
                   {rfqItems.map((item) => (
                     <div
                       key={item.id}
@@ -469,7 +497,7 @@ export const CommercialQuoteForm: React.FC<CommercialQuoteFormProps> = ({
                       <button
                         type="button"
                         onClick={() => onRemoveItem(item.id)}
-                        className="p-1.5 text-[#0082FC] hover:bg-[#5FD4FD]/20 rounded-none"
+                        className="p-1.5 text-[#0082FC] hover:bg-[#5FD4FD]/20 rounded-none cursor-pointer"
                         title="Remove item"
                       >
                         <Trash2 className="w-4 h-4" />
@@ -481,12 +509,15 @@ export const CommercialQuoteForm: React.FC<CommercialQuoteFormProps> = ({
 
               {/* Order Parameters Summary */}
               <div className="space-y-2 text-sm bg-white p-4 rounded-none border-2 border-[#5FD4FD] mb-4">
-                <div className="text-xs sm:text-sm uppercase tracking-wider text-[#0082FC] font-bold">
-                  Order Summary:
+                <div className="text-xs sm:text-sm uppercase tracking-wider text-[#0082FC] font-bold flex items-center justify-between">
+                  <span>Order Summary</span>
+                  <span className="text-[10px] bg-[#5FD4FD]/20 border border-[#5FD4FD] px-2 py-0.5">
+                    Live Params
+                  </span>
                 </div>
                 <div className="flex justify-between border-b border-[#5FD4FD]/30 pb-2">
                   <span className="text-[#0082FC]">Category:</span>
-                  <span className="text-[#0082FC] font-bold truncate max-w-[160px]">
+                  <span className="text-[#0082FC] font-bold truncate max-w-[170px]">
                     {selectedCategory}
                   </span>
                 </div>
@@ -503,10 +534,34 @@ export const CommercialQuoteForm: React.FC<CommercialQuoteFormProps> = ({
                   </span>
                 </div>
               </div>
+
+              {/* Foundry Logistics & SLA Assurance Box to balance vertical height */}
+              <div className="space-y-2.5 bg-white border-2 border-[#5FD4FD] p-3.5 sm:p-4 rounded-none mb-4 flex-1 flex flex-col justify-center">
+                <div className="text-xs font-bold uppercase tracking-wider text-[#0082FC] flex items-center gap-1.5">
+                  <ShieldCheck className="w-4 h-4 text-[#0082FC]" />
+                  <span>Foundry Fulfillment Guarantees</span>
+                </div>
+                <div className="space-y-2 text-xs text-[#0082FC]">
+                  <div className="flex items-start gap-2">
+                    <Clock className="w-3.5 h-3.5 text-[#0082FC] shrink-0 mt-0.5" />
+                    <span>
+                      <strong>2-Hour Response:</strong> Sizing takeoff verified
+                      by dedicated waterworks engineers.
+                    </span>
+                  </div>
+                  <div className="flex items-start gap-2">
+                    <Truck className="w-3.5 h-3.5 text-[#0082FC] shrink-0 mt-0.5" />
+                    <span>
+                      <strong>Direct Freight:</strong> Flatbed or LTL dispatch
+                      directly to jobsite or municipal yard.
+                    </span>
+                  </div>
+                </div>
+              </div>
             </div>
 
-            {/* Urgent Jobsite Dispatch Call Card - 100% Contained, Zero Overflow */}
-            <div className="pt-4 border-t-2 border-[#5FD4FD]/30 mt-4">
+            {/* Urgent Jobsite Dispatch Call Card - 100% Contained, Zero Overflow, matching bottom alignment */}
+            <div className="pt-4 border-t-2 border-[#5FD4FD]/30 mt-auto">
               <div className="bg-[#0082FC] text-white p-3.5 sm:p-4 border-2 border-[#5FD4FD] rounded-none shadow-md flex flex-col items-center text-center gap-1.5">
                 <div className="flex items-center justify-center gap-1.5 text-xs font-black uppercase tracking-wider text-[#5FD4FD]">
                   <PhoneCall className="w-3.5 h-3.5 text-[#5FD4FD] shrink-0" />
