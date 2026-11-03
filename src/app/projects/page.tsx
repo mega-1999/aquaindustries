@@ -29,6 +29,7 @@ import { IndustrialFooter } from "../../components/footer/IndustrialFooter";
 import { AccountRegistrationModal } from "../../components/modals/AccountRegistrationModal";
 import { ClientPortalModal } from "../../components/modals/ClientPortalModal";
 import { ProductSubmittalModal } from "../../components/modals/ProductSubmittalModal";
+import { SuperAdminApprovalModal } from "../../components/modals/SuperAdminApprovalModal";
 import { YardSelectorModal } from "../../components/modals/YardSelectorModal";
 import { GlobalUtilityTicker } from "../../components/navigation/GlobalUtilityTicker";
 import { MainNavbar } from "../../components/navigation/MainNavbar";
@@ -223,6 +224,7 @@ export default function ProjectsPage() {
     useState<ProjectCase | null>(null);
   const [loginModalOpen, setLoginModalOpen] = useState(false);
   const [registerModalOpen, setRegisterModalOpen] = useState(false);
+  const [superAdminModalOpen, setSuperAdminModalOpen] = useState(false);
   const [yardModalOpen, setYardModalOpen] = useState(false);
   const [submittalModalProduct, setSubmittalModalProduct] =
     useState<ProductItem | null>(null);
@@ -250,6 +252,7 @@ export default function ProjectsPage() {
         onOpenLoginModal={() => setLoginModalOpen(true)}
         onOpenRegisterModal={() => setRegisterModalOpen(true)}
         onOpenYardModal={() => setYardModalOpen(true)}
+        onOpenSuperAdminModal={() => setSuperAdminModalOpen(true)}
       />
 
       <main className="flex-1">
@@ -663,11 +666,23 @@ export default function ProjectsPage() {
       <ClientPortalModal
         isOpen={loginModalOpen}
         onClose={() => setLoginModalOpen(false)}
+        onOpenRegisterModal={() => setRegisterModalOpen(true)}
+        onOpenSuperAdminModal={() => setSuperAdminModalOpen(true)}
       />
 
       <AccountRegistrationModal
         isOpen={registerModalOpen}
         onClose={() => setRegisterModalOpen(false)}
+        onOpenSuperAdmin={() => setSuperAdminModalOpen(true)}
+      />
+
+      <SuperAdminApprovalModal
+        isOpen={superAdminModalOpen}
+        onClose={() => setSuperAdminModalOpen(false)}
+        onOpenContractorLogin={() => {
+          setSuperAdminModalOpen(false);
+          setLoginModalOpen(true);
+        }}
       />
 
       <YardSelectorModal

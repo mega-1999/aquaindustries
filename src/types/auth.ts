@@ -1,0 +1,51 @@
+export type UserRole =
+  | "super-admin"
+  | "contractor"
+  | "supplyhouse"
+  | "municipal";
+
+export type AccountStatus = "PENDING_APPROVAL" | "APPROVED" | "REJECTED";
+
+export interface UserAccount {
+  id: string;
+  email: string;
+  password?: string;
+  fullName: string;
+  companyName: string;
+  phone: string;
+  role: UserRole;
+  accountType:
+    | "Contractor"
+    | "Supply House Partner"
+    | "Municipal Utility"
+    | "Engineering Specifier";
+  taxIdOrLicense: string;
+  assignedYard: string;
+  status: AccountStatus;
+  createdAt: string;
+  approvedAt?: string;
+  approvedBy?: string;
+  rejectionReason?: string;
+  w9Uploaded: boolean;
+  resaleUploaded: boolean;
+}
+
+export interface AuthContextType {
+  currentUser: UserAccount | null;
+  allUsers: UserAccount[];
+  pendingCount: number;
+  login: (
+    email: string,
+    password?: string,
+  ) => { success: boolean; message: string; user?: UserAccount };
+  register: (data: Omit<UserAccount, "id" | "status" | "createdAt">) => {
+    success: boolean;
+    message: string;
+    user?: UserAccount;
+  };
+  approveUser: (userId: string) => void;
+  rejectUser: (userId: string, reason?: string) => void;
+  deleteUser: (userId: string) => void;
+  logout: () => void;
+  quickLoginAsAdmin: () => void;
+}

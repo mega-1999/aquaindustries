@@ -4,24 +4,30 @@ import {
   ArrowRight,
   Calculator,
   ChevronDown,
+  Clock,
   Droplets,
   FileText,
   Layers,
   Lock,
+  LogOut,
   Menu,
   Shield,
+  ShieldCheck,
   Truck,
   UserCheck,
   Wrench,
   X,
 } from "lucide-react";
+import Link from "next/link";
 import type React from "react";
 import { useEffect, useState } from "react";
+import { useAuth } from "../../context/AuthContext";
 
 interface MainNavbarProps {
   onOpenLoginModal: () => void;
   onOpenRegisterModal: () => void;
   onOpenYardModal: () => void;
+  onOpenSuperAdminModal?: () => void;
   onSelectProductCategory?: (category: string) => void;
 }
 
@@ -29,8 +35,10 @@ export const MainNavbar: React.FC<MainNavbarProps> = ({
   onOpenLoginModal,
   onOpenRegisterModal,
   onOpenYardModal,
+  onOpenSuperAdminModal,
   onSelectProductCategory,
 }) => {
+  const { currentUser, pendingCount, logout } = useAuth();
   const [activeMenu, setActiveMenu] = useState<string | null>(null);
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
   const [mobileAccordion, setMobileAccordion] = useState<string | null>(null);
@@ -510,6 +518,25 @@ export const MainNavbar: React.FC<MainNavbarProps> = ({
 
           {/* Desktop Right Header Actions */}
           <div className="hidden xl:flex items-center gap-2.5 shrink-0">
+            {/* Super-Admin Quick Badge Button (When logged in as Admin or if Pending Approvals exist) */}
+            {currentUser?.role === "super-admin" && (
+              <button
+                type="button"
+                onClick={() => {
+                  if (onOpenSuperAdminModal) onOpenSuperAdminModal();
+                }}
+                className="inline-flex items-center gap-1.5 px-3 py-2 bg-amber-500 hover:bg-amber-600 text-[#0082FC] font-black text-xs uppercase tracking-wider rounded-none shadow-md transition-all cursor-pointer border-2 border-white"
+              >
+                <ShieldCheck className="w-4 h-4 text-[#0082FC] shrink-0" />
+                <span>Super-Admin</span>
+                {pendingCount > 0 && (
+                  <span className="px-1.5 py-0.2 bg-[#0082FC] text-white text-[10px] font-black">
+                    {pendingCount} PENDING
+                  </span>
+                )}
+              </button>
+            )}
+
             {/* Unified Client Portal & Register Button with Hover Dropdown */}
             <div
               className="relative"
@@ -519,19 +546,29 @@ export const MainNavbar: React.FC<MainNavbarProps> = ({
               <button
                 type="button"
                 onClick={onOpenLoginModal}
-                className={`inline-flex items-center gap-1.5 px-3 2xl:px-3.5 py-2 text-xs 2xl:text-sm font-bold transition-all whitespace-nowrap border-2 rounded-none shadow-xs ${
-                  activeMenu === "portal"
-                    ? "bg-[#0082fc] text-white border-[#0082fc]"
-                    : "bg-white text-[#0082fc] hover:bg-[#5fd4fd]/20 border-[#0082fc]"
+                className={`inline-flex items-center gap-1.5 px-3 2xl:px-3.5 py-2 text-xs 2xl:text-sm font-bold transition-all whitespace-nowrap border-2 rounded-none shadow-xs cursor-pointer ${
+                  currentUser
+                    ? "bg-emerald-600 text-white border-emerald-600"
+                    : activeMenu === "portal"
+                      ? "bg-[#0082fc] text-white border-[#0082fc]"
+                      : "bg-white text-[#0082fc] hover:bg-[#5fd4fd]/20 border-[#0082fc]"
                 }`}
               >
                 <Lock className="w-3.5 h-3.5 shrink-0" />
-                <span className="whitespace-nowrap">Portal</span>
+                <span className="whitespace-nowrap">
+                  {currentUser
+                    ? currentUser.role === "super-admin"
+                      ? "Admin Desk"
+                      : currentUser.fullName.split(" ")[0]
+                    : "Portal"}
+                </span>
                 <ChevronDown
                   className={`w-3.5 h-3.5 transition-transform duration-200 ${
                     activeMenu === "portal"
                       ? "rotate-180 text-white"
-                      : "text-[#0082fc]"
+                      : currentUser
+                        ? "text-white"
+                        : "text-[#0082fc]"
                   }`}
                 />
               </button>
@@ -539,7 +576,56 @@ export const MainNavbar: React.FC<MainNavbarProps> = ({
               {activeMenu === "portal" && (
                 <div className="absolute top-full right-0 w-84 max-w-[calc(100vw-2rem)] pt-2 z-50">
                   <div className="bg-white border-2 border-[#0082fc] shadow-2xl p-3 text-[#0082fc] rounded-none">
-                    {/* Option 1: Client Portal Login */}
+                    {/* Logged in User Header */}
+                    {currentUser && (
+                      <div className="p-2.5 bg-emerald-50 border border-emerald-500 mb-2">
+                        <span className="text-[10px] font-black uppercase text-emerald-800 tracking-wider block">
+                          Signed In Account
+                        </span>
+                        <div className="font-extrabold text-xs text-emerald-950 truncate">
+                          {currentUser.companyName}
+                        </div>
+                        <div className="text-[11px] text-emerald-900 truncate font-mono">
+                          {currentUser.email}
+                        </div>
+                      </div>
+                    )}
+
+                    {/* Super-Admin Approval Panel Option */}
+                    <button
+                      type="button"
+                      onClick={() => {
+                        setActiveMenu(null);
+                        if (onOpenSuperAdminModal) {
+                          onOpenSuperAdminModal();
+                        } else {
+                          window.location.href = "/admin";
+                        }
+                      }}
+                      className="w-full text-left flex items-start gap-3 p-2.5 hover:bg-[#0082fc] hover:text-white transition-colors group rounded-none mb-1 border-2 border-amber-400 bg-amber-50/50"
+                    >
+                      <div className="p-2 border border-amber-500 bg-amber-400 text-[#0082fc] shrink-0">
+                        <ShieldCheck className="w-4 h-4 text-[#0082FC]" />
+                      </div>
+                      <div className="flex-1 min-w-0">
+                        <div className="flex items-center justify-between gap-1 mb-0.5">
+                          <span className="font-black text-xs sm:text-sm text-[#0082fc] group-hover:text-white uppercase tracking-tight">
+                            Super-Admin Panel
+                          </span>
+                          {pendingCount > 0 && (
+                            <span className="text-[10px] bg-amber-500 text-white px-2 py-0.5 font-black whitespace-nowrap">
+                              {pendingCount} PENDING
+                            </span>
+                          )}
+                        </div>
+                        <p className="text-xs leading-snug text-[#0082fc] group-hover:text-white font-medium">
+                          Review, verify, and approve pending contractor
+                          registrations.
+                        </p>
+                      </div>
+                    </button>
+
+                    {/* Option 1: Client Portal Login / Dashboard */}
                     <button
                       type="button"
                       onClick={() => {
@@ -554,7 +640,9 @@ export const MainNavbar: React.FC<MainNavbarProps> = ({
                       <div className="flex-1 min-w-0">
                         <div className="flex items-center justify-between gap-1 mb-0.5">
                           <span className="font-extrabold text-sm whitespace-nowrap">
-                            Client Portal Sign-In
+                            {currentUser
+                              ? "Account Dashboard"
+                              : "Client Portal Sign-In"}
                           </span>
                           <span className="text-xs bg-[#5fd4fd] text-[#0082fc] px-2 py-0.5 font-bold whitespace-nowrap">
                             Contractors
@@ -568,32 +656,34 @@ export const MainNavbar: React.FC<MainNavbarProps> = ({
                     </button>
 
                     {/* Option 2: Register Account */}
-                    <button
-                      type="button"
-                      onClick={() => {
-                        setActiveMenu(null);
-                        onOpenRegisterModal();
-                      }}
-                      className="w-full text-left flex items-start gap-3 p-2.5 hover:bg-[#0082fc] hover:text-white transition-colors group rounded-none border-t border-[#5fd4fd]/30"
-                    >
-                      <div className="p-2 border border-[#5fd4fd] bg-white text-[#0082fc] shrink-0 group-hover:bg-white group-hover:text-[#0082fc]">
-                        <UserCheck className="w-4 h-4" />
-                      </div>
-                      <div className="flex-1 min-w-0">
-                        <div className="flex items-center justify-between gap-1 mb-0.5">
-                          <span className="font-extrabold text-sm whitespace-nowrap">
-                            Register Commercial Account
-                          </span>
-                          <span className="text-xs bg-white border border-[#5fd4fd] text-[#0082fc] px-2 py-0.5 font-bold whitespace-nowrap">
-                            New Account
-                          </span>
+                    {!currentUser && (
+                      <button
+                        type="button"
+                        onClick={() => {
+                          setActiveMenu(null);
+                          onOpenRegisterModal();
+                        }}
+                        className="w-full text-left flex items-start gap-3 p-2.5 hover:bg-[#0082fc] hover:text-white transition-colors group rounded-none border-t border-[#5fd4fd]/30"
+                      >
+                        <div className="p-2 border border-[#5fd4fd] bg-white text-[#0082fc] shrink-0 group-hover:bg-white group-hover:text-[#0082fc]">
+                          <UserCheck className="w-4 h-4" />
                         </div>
-                        <p className="text-xs leading-snug text-[#0082fc] group-hover:text-white font-medium">
-                          Establish Net 30 wholesale credit and primary stocking
-                          yard allocation.
-                        </p>
-                      </div>
-                    </button>
+                        <div className="flex-1 min-w-0">
+                          <div className="flex items-center justify-between gap-1 mb-0.5">
+                            <span className="font-extrabold text-sm whitespace-nowrap">
+                              Register Commercial Account
+                            </span>
+                            <span className="text-xs bg-white border border-[#5fd4fd] text-[#0082fc] px-2 py-0.5 font-bold whitespace-nowrap">
+                              New Account
+                            </span>
+                          </div>
+                          <p className="text-xs leading-snug text-[#0082fc] group-hover:text-white font-medium">
+                            Establish Net 30 wholesale credit and primary
+                            stocking yard allocation.
+                          </p>
+                        </div>
+                      </button>
+                    )}
 
                     {/* Option 3: Track BOL Shipment */}
                     <button
@@ -617,6 +707,21 @@ export const MainNavbar: React.FC<MainNavbarProps> = ({
                         </p>
                       </div>
                     </button>
+
+                    {/* Option 4: Logout (if logged in) */}
+                    {currentUser && (
+                      <button
+                        type="button"
+                        onClick={() => {
+                          setActiveMenu(null);
+                          logout();
+                        }}
+                        className="w-full text-left flex items-center gap-2 p-2.5 text-rose-700 hover:bg-rose-50 transition-colors font-bold text-xs uppercase tracking-wider border-t border-[#5fd4fd]/30"
+                      >
+                        <LogOut className="w-3.5 h-3.5" />
+                        <span>Sign Out of Session</span>
+                      </button>
+                    )}
                   </div>
                 </div>
               )}
@@ -856,6 +961,23 @@ export const MainNavbar: React.FC<MainNavbarProps> = ({
 
             {/* Mobile Footer Buttons */}
             <div className="pt-6 space-y-3">
+              {/* Super-Admin Button in Mobile Menu */}
+              <button
+                type="button"
+                onClick={() => {
+                  setMobileMenuOpen(false);
+                  if (onOpenSuperAdminModal) {
+                    onOpenSuperAdminModal();
+                  } else {
+                    window.location.href = "/admin";
+                  }
+                }}
+                className="w-full py-3 px-3 bg-amber-400 text-[#0082FC] font-black rounded-none text-center text-xs sm:text-sm uppercase tracking-wider flex items-center justify-center gap-2 border-2 border-[#0082FC] shadow-sm cursor-pointer"
+              >
+                <ShieldCheck className="w-4 h-4 text-[#0082FC]" />
+                <span>Super-Admin Panel ({pendingCount} Pending)</span>
+              </button>
+
               <a
                 href="#quote-form"
                 onClick={() => setMobileMenuOpen(false)}
