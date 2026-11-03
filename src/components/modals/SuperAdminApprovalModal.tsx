@@ -58,6 +58,42 @@ export const SuperAdminApprovalModal: React.FC<
 
   if (!isOpen) return null;
 
+  if (!currentUser || currentUser.role !== "super-admin") {
+    return (
+      <div
+        role="dialog"
+        aria-modal="true"
+        aria-labelledby="superadmin-restricted-title"
+        className="fixed inset-0 z-50 flex items-center justify-center p-3 sm:p-4 bg-[#0082FC]/80 backdrop-blur-sm"
+      >
+        <div className="bg-white border-4 border-[#0082FC] rounded-none max-w-md w-full p-6 sm:p-8 shadow-2xl text-[#0082FC] text-center space-y-4">
+          <div className="w-14 h-14 bg-[#0082FC] text-white border-2 border-[#5FD4FD] flex items-center justify-center mx-auto shadow-md">
+            <Lock className="w-7 h-7 text-[#5FD4FD]" />
+          </div>
+          <h3
+            id="superadmin-restricted-title"
+            className="text-lg sm:text-xl font-black uppercase tracking-tight text-[#0082FC]"
+          >
+            Super-Admin Access Restricted
+          </h3>
+          <p className="text-xs text-[#0082FC]/80 leading-relaxed">
+            The Contractor Approval Desk is strictly restricted to authorized
+            Aqua Industries Super-Administrators. Only master administrators
+            have permission to review, approve, or reject contractor
+            registrations.
+          </p>
+          <button
+            type="button"
+            onClick={onClose}
+            className="w-full py-3 px-4 bg-[#0082FC] hover:bg-[#5FD4FD] text-white hover:text-[#0082FC] font-black text-xs uppercase tracking-wider transition-all cursor-pointer shadow-md"
+          >
+            Close Window
+          </button>
+        </div>
+      </div>
+    );
+  }
+
   const showFeedback = (msg: string) => {
     setFeedbackMessage(msg);
     setTimeout(() => setFeedbackMessage(null), 3000);

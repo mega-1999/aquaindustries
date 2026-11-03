@@ -29,12 +29,11 @@ import { DISTRIBUTION_YARDS } from "../../data/waterworks-data";
 interface AccountRegistrationModalProps {
   isOpen: boolean;
   onClose: () => void;
-  onOpenSuperAdmin?: () => void;
 }
 
 export const AccountRegistrationModal: React.FC<
   AccountRegistrationModalProps
-> = ({ isOpen, onClose, onOpenSuperAdmin }) => {
+> = ({ isOpen, onClose }) => {
   const { register } = useAuth();
 
   const [currentStep, setCurrentStep] = useState<number>(1);
@@ -254,33 +253,23 @@ export const AccountRegistrationModal: React.FC<
 
             <div className="p-3 bg-[#0082FC]/10 border border-[#0082FC] text-[11px] text-[#0082FC] leading-relaxed">
               <strong className="block font-black uppercase text-[#0082FC] mb-0.5">
-                Next Steps for Full Account Activation:
+                Pending Administrator Authorization:
               </strong>
-              Per municipal compliance rules, a Super-Admin must verify your
-              business license and W-9 before portal login is authorized. Once
-              authorized, you can sign in to view live stock and submit orders.
+              Per municipal compliance rules, all new commercial accounts
+              require verification of business license and W-9 by a Super-Admin
+              before portal login is enabled. Once authorized by an
+              administrator, you will be able to sign in to view live stock and
+              submit orders.
             </div>
 
             {/* Action Buttons */}
             <div className="flex flex-col sm:flex-row items-center gap-3 pt-2">
-              {onOpenSuperAdmin && (
-                <button
-                  type="button"
-                  onClick={() => {
-                    handleResetAndClose();
-                    onOpenSuperAdmin();
-                  }}
-                  className="w-full sm:flex-1 py-3 px-4 bg-[#0082FC] hover:bg-[#5FD4FD] text-white hover:text-[#0082FC] font-black text-xs uppercase tracking-wider shadow-md transition-all cursor-pointer text-center"
-                >
-                  Open Super-Admin Panel (Approve Now) &rsaquo;
-                </button>
-              )}
               <button
                 type="button"
                 onClick={handleResetAndClose}
-                className="w-full sm:w-auto py-3 px-6 bg-white hover:bg-[#5FD4FD]/20 text-[#0082FC] border-2 border-[#0082FC] font-bold text-xs uppercase cursor-pointer text-center"
+                className="w-full py-3 px-6 bg-[#0082FC] hover:bg-[#5FD4FD] text-white hover:text-[#0082FC] font-black text-xs uppercase tracking-wider shadow-md transition-all cursor-pointer text-center"
               >
-                Close
+                Done / Close Application Window
               </button>
             </div>
           </div>

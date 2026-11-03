@@ -30,14 +30,12 @@ interface ClientPortalModalProps {
   isOpen: boolean;
   onClose: () => void;
   onOpenRegisterModal?: () => void;
-  onOpenSuperAdminModal?: () => void;
 }
 
 export const ClientPortalModal: React.FC<ClientPortalModalProps> = ({
   isOpen,
   onClose,
   onOpenRegisterModal,
-  onOpenSuperAdminModal,
 }) => {
   const { currentUser, allUsers, login, logout } = useAuth();
 
@@ -308,25 +306,6 @@ export const ClientPortalModal: React.FC<ClientPortalModalProps> = ({
                   )}
                   <span className="font-bold">{authError}</span>
                 </div>
-
-                {/* If the account is pending, offer instant test Super-Admin switcher */}
-                {pendingUserAttempt && onOpenSuperAdminModal && (
-                  <div className="pt-2 border-t border-amber-300 flex items-center justify-between gap-2">
-                    <span className="text-[11px] text-amber-900">
-                      Want to test approval workflow right now?
-                    </span>
-                    <button
-                      type="button"
-                      onClick={() => {
-                        onClose();
-                        onOpenSuperAdminModal();
-                      }}
-                      className="px-2.5 py-1 bg-[#0082FC] hover:bg-[#5FD4FD] text-white hover:text-[#0082FC] font-black text-[10px] uppercase tracking-wider rounded-none shrink-0 cursor-pointer"
-                    >
-                      Open Admin Panel to Approve &rsaquo;
-                    </button>
-                  </div>
-                )}
               </div>
             )}
 
@@ -448,23 +427,6 @@ export const ClientPortalModal: React.FC<ClientPortalModalProps> = ({
                             approval is required prior to wholesale portal
                             activation.
                           </p>
-                          {onOpenSuperAdminModal && (
-                            <div className="mt-2 pt-2 border-t border-amber-300 flex items-center justify-between gap-2">
-                              <span className="text-[10px] text-amber-900 font-bold uppercase">
-                                Super-Admin Testing Mode?
-                              </span>
-                              <button
-                                type="button"
-                                onClick={() => {
-                                  onClose();
-                                  onOpenSuperAdminModal();
-                                }}
-                                className="px-2 py-1 bg-[#0082FC] hover:bg-[#5FD4FD] text-white hover:text-[#0082FC] font-black text-[10px] uppercase cursor-pointer"
-                              >
-                                Open Super-Admin Panel &rsaquo;
-                              </button>
-                            </div>
-                          )}
                         </div>
                       </div>
                     </div>

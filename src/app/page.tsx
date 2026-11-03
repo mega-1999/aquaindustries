@@ -209,13 +209,11 @@ export default function Home() {
         isOpen={loginModalOpen}
         onClose={() => setLoginModalOpen(false)}
         onOpenRegisterModal={() => setRegisterModalOpen(true)}
-        onOpenSuperAdminModal={() => setSuperAdminModalOpen(true)}
       />
 
       <AccountRegistrationModal
         isOpen={registerModalOpen}
         onClose={() => setRegisterModalOpen(false)}
-        onOpenSuperAdmin={() => setSuperAdminModalOpen(true)}
       />
 
       <SuperAdminApprovalModal
