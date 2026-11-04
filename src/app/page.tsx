@@ -18,10 +18,8 @@ import { FloatingQuickActions } from "../components/navigation/FloatingQuickActi
 import { GlobalUtilityTicker } from "../components/navigation/GlobalUtilityTicker";
 import { MainNavbar } from "../components/navigation/MainNavbar";
 import { VerticalSideVideoAds } from "../components/navigation/VerticalSideVideoAds";
-import { CatchBasinTrapsSpotlight } from "../components/products/CatchBasinTrapsSpotlight";
 import { CulvertPipeGratesSpotlight } from "../components/products/CulvertPipeGratesSpotlight";
 import { CurbBoxSpotlight } from "../components/products/CurbBoxSpotlight";
-import { DownspoutSpoutsSpotlight } from "../components/products/DownspoutSpoutsSpotlight";
 import { EngineeringInnovationSpotlight } from "../components/products/EngineeringInnovationSpotlight";
 import { MechanicalJointFittingsSchedule } from "../components/products/MechanicalJointFittingsSchedule";
 import { ProductCatalogMatrix } from "../components/products/ProductCatalogMatrix";
@@ -165,29 +163,29 @@ export default function Home() {
           onPreviewSubmittal={(product) => setSubmittalModalProduct(product)}
         />
 
-        {/* Section 7: Catch Basin Traps Showcase - Gas, Siphon & Oil Baffle Traps (Blue #0082FC - Alternating) */}
-        <CatchBasinTrapsSpotlight
-          onAddToRfq={handleAddToRfq}
-          onPreviewSubmittal={(product) => setSubmittalModalProduct(product)}
-        />
-
-        {/* Section 8: Culvert Pipe Grates Showcase - Hinged Bar Grates & Safety Slopes (White #FFFFFF - Alternating) */}
-        <CulvertPipeGratesSpotlight
-          onAddToRfq={handleAddToRfq}
-          onPreviewSubmittal={(product) => setSubmittalModalProduct(product)}
-        />
-
-        {/* Section 9: Stormwater Detention Basin Trash Racks Showcase - Anti-Vortex Pyramids (Blue #0082FC - Alternating) */}
+        {/* Section 7: Stormwater Detention Basin Trash Racks Showcase - Anti-Vortex Pyramids (Blue #0082FC - Alternating) */}
         <StormwaterTrashRacksSpotlight
           onAddToRfq={handleAddToRfq}
           onPreviewSubmittal={(product) => setSubmittalModalProduct(product)}
         />
 
-        {/* Section 10: Cast Iron Downspout Boots & Spouts Showcase - Facade Protection (White #FFFFFF - Alternating) */}
+        {/* Section 8: Culvert Safety Pipe Grates Showcase - Hinged Bar Grates & Safety Slopes (White #FFFFFF - Alternating) */}
+        <CulvertPipeGratesSpotlight
+          onAddToRfq={handleAddToRfq}
+          onPreviewSubmittal={(product) => setSubmittalModalProduct(product)}
+        />
+
+        {/* Temporarily Commented Out for Now: Catch Basin Traps & Downspout Spouts */}
+        {/*
+        <CatchBasinTrapsSpotlight
+          onAddToRfq={handleAddToRfq}
+          onPreviewSubmittal={(product) => setSubmittalModalProduct(product)}
+        />
         <DownspoutSpoutsSpotlight
           onAddToRfq={handleAddToRfq}
           onPreviewSubmittal={(product) => setSubmittalModalProduct(product)}
         />
+        */}
 
         {/* Section 11: Product Catalog Matrix (Soleno categorie pattern - White #FFFFFF - Alternating) */}
         <ProductCatalogMatrix

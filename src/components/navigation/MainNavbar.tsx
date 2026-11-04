@@ -365,18 +365,19 @@ export const MainNavbar: React.FC<MainNavbarProps> = ({
                       </div>
                     </a>
                     <a
-                      href="#catch-basin-traps"
-                      onClick={() => handleNavClick("#catch-basin-traps")}
+                      href="#trash-racks"
+                      onClick={() => handleNavClick("#trash-racks")}
                       className="block p-2.5 rounded-none hover:bg-[#0082fc] hover:text-white transition-colors group bg-[#5FD4FD]/10 border-l-2 border-[#0082fc]"
                     >
                       <div className="font-extrabold text-sm leading-tight flex items-center justify-between">
-                        <span>Catch Basin Traps</span>
+                        <span>Detention Basin Trash Racks</span>
                         <span className="text-[9px] bg-[#0082fc] group-hover:bg-white text-white group-hover:text-[#0082fc] px-1.5 py-0.2 font-mono font-black">
-                          SIMULATOR
+                          FEATURED
                         </span>
                       </div>
                       <div className="text-xs text-[#0082fc] group-hover:text-white mt-1 font-medium leading-relaxed">
-                        Siphon gas &amp; floatable debris hoods with rodding cleanout plugs.
+                        360° pyramidal anti-vortex risers &amp; inclined
+                        self-cleaning screens.
                       </div>
                     </a>
                     <a
@@ -385,43 +386,14 @@ export const MainNavbar: React.FC<MainNavbarProps> = ({
                       className="block p-2.5 rounded-none hover:bg-[#0082fc] hover:text-white transition-colors group border-l-2 border-[#5FD4FD] pl-3"
                     >
                       <div className="font-extrabold text-sm leading-tight flex items-center justify-between">
-                        <span>Culvert Pipe Grates</span>
+                        <span>Culvert Safety Pipe Grates</span>
                         <span className="text-[9px] bg-[#0082fc] group-hover:bg-white text-white group-hover:text-[#0082fc] px-1.5 py-0.2 font-mono font-black">
-                          TRAVERSABLE
+                          SIMULATOR
                         </span>
                       </div>
                       <div className="text-xs text-[#0082fc] group-hover:text-white mt-1 font-medium leading-relaxed">
-                        Hinged cleanout end grates &amp; 4:1 highway traversable safety slopes.
-                      </div>
-                    </a>
-                    <a
-                      href="#trash-racks"
-                      onClick={() => handleNavClick("#trash-racks")}
-                      className="block p-2.5 rounded-none hover:bg-[#0082fc] hover:text-white transition-colors group border-l-2 border-[#5FD4FD] pl-3"
-                    >
-                      <div className="font-extrabold text-sm leading-tight flex items-center justify-between">
-                        <span>Detention Trash Racks</span>
-                        <span className="text-[9px] bg-[#0082fc] group-hover:bg-white text-white group-hover:text-[#0082fc] px-1.5 py-0.2 font-mono font-black">
-                          ANTI-VORTEX
-                        </span>
-                      </div>
-                      <div className="text-xs text-[#0082fc] group-hover:text-white mt-1 font-medium leading-relaxed">
-                        360° pyramidal anti-vortex risers &amp; inclined self-cleaning screens.
-                      </div>
-                    </a>
-                    <a
-                      href="#spouts-boots"
-                      onClick={() => handleNavClick("#spouts-boots")}
-                      className="block p-2.5 rounded-none hover:bg-[#0082fc] hover:text-white transition-colors group border-l-2 border-[#5FD4FD] pl-3"
-                    >
-                      <div className="font-extrabold text-sm leading-tight flex items-center justify-between">
-                        <span>Downspout Boots &amp; Spouts</span>
-                        <span className="text-[9px] bg-[#0082fc] group-hover:bg-white text-white group-hover:text-[#0082fc] px-1.5 py-0.2 font-mono font-black">
-                          IMPACT PROOF
-                        </span>
-                      </div>
-                      <div className="text-xs text-[#0082fc] group-hover:text-white mt-1 font-medium leading-relaxed">
-                        Cast iron conductor boots, parapet scuppers &amp; bridge deck drain nozzles.
+                        Hinged cleanout end grates &amp; 4:1 highway traversable
+                        safety slopes.
                       </div>
                     </a>
                     <a
@@ -722,293 +694,291 @@ export const MainNavbar: React.FC<MainNavbarProps> = ({
           </div>
         </div>
       </div>
+      mobileMenuOpen && (
+      <div className="xl:hidden fixed inset-0 z-50 flex justify-end">
+        {/* Blue Tinted Backdrop (NO BLACK) */}
+        <button
+          type="button"
+          className="fixed inset-0 bg-[#0082fc]/80 backdrop-blur-xs transition-opacity w-full h-full border-0 cursor-default"
+          onClick={() => setMobileMenuOpen(false)}
+          aria-label="Close Navigation Backdrop"
+        />
 
-      {/* Slide-Over Drawer Navigation from Right (Strict Palette) */}
-      {mobileMenuOpen && (
-        <div className="xl:hidden fixed inset-0 z-50 flex justify-end">
-          {/* Blue Tinted Backdrop (NO BLACK) */}
-          <button
-            type="button"
-            className="fixed inset-0 bg-[#0082fc]/80 backdrop-blur-xs transition-opacity w-full h-full border-0 cursor-default"
-            onClick={() => setMobileMenuOpen(false)}
-            aria-label="Close Navigation Backdrop"
-          />
-
-          {/* Drawer Slide Panel */}
-          <div className="relative w-full max-w-sm sm:max-w-md bg-white h-full shadow-2xl flex flex-col justify-between p-6 z-10 overflow-y-auto border-l-2 border-[#0082fc]">
-            <div className="space-y-4">
-              {/* Drawer Header */}
-              <div className="flex items-center justify-between pb-4 border-b-2 border-[#0082fc]/20">
-                <div className="flex items-center gap-2">
-                  <div className="w-8 h-8 rounded-none bg-[#0082fc] flex items-center justify-center text-white border border-[#5fd4fd]">
-                    <Droplets className="w-5 h-5" />
-                  </div>
-                  <span className="font-extrabold text-[#0082fc] text-base">
-                    Aqua <span className="text-[#5fd4fd]">Industries</span>
-                  </span>
+        {/* Drawer Slide Panel */}
+        <div className="relative w-full max-w-sm sm:max-w-md bg-white h-full shadow-2xl flex flex-col justify-between p-6 z-10 overflow-y-auto border-l-2 border-[#0082fc]">
+          <div className="space-y-4">
+            {/* Drawer Header */}
+            <div className="flex items-center justify-between pb-4 border-b-2 border-[#0082fc]/20">
+              <div className="flex items-center gap-2">
+                <div className="w-8 h-8 rounded-none bg-[#0082fc] flex items-center justify-center text-white border border-[#5fd4fd]">
+                  <Droplets className="w-5 h-5" />
                 </div>
-                <button
-                  type="button"
-                  onClick={() => setMobileMenuOpen(false)}
-                  className="p-1.5 rounded-none text-[#0082fc] hover:bg-[#5fd4fd]/20"
-                  aria-label="Close Navigation Menu"
-                >
-                  <X className="w-6 h-6" />
-                </button>
+                <span className="font-extrabold text-[#0082fc] text-base">
+                  Aqua <span className="text-[#5fd4fd]">Industries</span>
+                </span>
               </div>
-
-              {/* Waterworks Fittings Accordion */}
-              <div className="border-b border-[#0082fc]/20 pb-2">
-                <button
-                  type="button"
-                  onClick={() =>
-                    setMobileAccordion(
-                      mobileAccordion === "fittings" ? null : "fittings",
-                    )
-                  }
-                  className="w-full flex items-center justify-between text-sm font-bold text-[#0082fc] py-2"
-                >
-                  <span className="whitespace-nowrap">Waterworks Fittings</span>
-                  <ChevronDown
-                    className={`w-4 h-4 text-[#0082fc] transition-transform ${
-                      mobileAccordion === "fittings"
-                        ? "rotate-180 text-[#5fd4fd]"
-                        : ""
-                    }`}
-                  />
-                </button>
-                {mobileAccordion === "fittings" && (
-                  <div className="mt-1 space-y-1.5 pl-3 pb-2 text-sm text-[#0082fc]">
-                    <a
-                      href="#product-matrix"
-                      onClick={() =>
-                        handleNavClick("#product-matrix", "fittings")
-                      }
-                      className="block py-1 hover:text-[#5fd4fd] whitespace-nowrap font-medium"
-                    >
-                      • C153 Compact MJ Fittings
-                    </a>
-                    <a
-                      href="#product-matrix"
-                      onClick={() =>
-                        handleNavClick("#product-matrix", "fittings")
-                      }
-                      className="block py-1 hover:text-[#5fd4fd] whitespace-nowrap font-medium"
-                    >
-                      • C110 Full Body MJ Fittings
-                    </a>
-                    <a
-                      href="#product-matrix"
-                      onClick={() =>
-                        handleNavClick("#product-matrix", "fittings")
-                      }
-                      className="block py-1 hover:text-[#5fd4fd] whitespace-nowrap font-medium"
-                    >
-                      • C110 Flange Fittings
-                    </a>
-                    <a
-                      href="#product-matrix"
-                      onClick={() =>
-                        handleNavClick("#product-matrix", "fittings")
-                      }
-                      className="block py-1 hover:text-[#5fd4fd] whitespace-nowrap font-medium"
-                    >
-                      • C153 Push-On Fittings
-                    </a>
-                  </div>
-                )}
-              </div>
-
-              {/* Restraints Accordion */}
-              <div className="border-b border-[#0082fc]/20 pb-2">
-                <button
-                  type="button"
-                  onClick={() =>
-                    setMobileAccordion(
-                      mobileAccordion === "restraints" ? null : "restraints",
-                    )
-                  }
-                  className="w-full flex items-center justify-between text-sm sm:text-base font-bold text-[#0082fc] py-2"
-                >
-                  <span className="whitespace-nowrap">Joint Restraints</span>
-                  <ChevronDown
-                    className={`w-4 h-4 text-[#0082fc] transition-transform ${
-                      mobileAccordion === "restraints"
-                        ? "rotate-180 text-[#5fd4fd]"
-                        : ""
-                    }`}
-                  />
-                </button>
-                {mobileAccordion === "restraints" && (
-                  <div className="mt-1 space-y-1.5 pl-3 pb-2 text-sm text-[#0082fc]">
-                    <a
-                      href="#product-matrix"
-                      onClick={() =>
-                        handleNavClick("#product-matrix", "restraints")
-                      }
-                      className="block py-1 hover:text-[#5fd4fd] whitespace-nowrap font-medium"
-                    >
-                      • ULTRA PVC Restraints
-                    </a>
-                    <a
-                      href="#product-matrix"
-                      onClick={() =>
-                        handleNavClick("#product-matrix", "restraints")
-                      }
-                      className="block py-1 hover:text-[#5fd4fd] whitespace-nowrap font-medium"
-                    >
-                      • Series 3000 Wedge-Action Restraint Glands
-                    </a>
-                    <a
-                      href="#product-matrix"
-                      onClick={() =>
-                        handleNavClick("#product-matrix", "restraints")
-                      }
-                      className="block py-1 hover:text-[#5fd4fd] whitespace-nowrap font-medium"
-                    >
-                      • Series 1500 &amp; 1900 Harnesses
-                    </a>
-                  </div>
-                )}
-              </div>
-
-              {/* Direct Links */}
-              <a
-                href="#thrust-calculator"
-                onClick={() => handleNavClick("#thrust-calculator")}
-                className="flex items-center gap-2 text-sm sm:text-base font-bold text-[#0082fc] py-2.5 border-b border-[#0082fc]/20"
-              >
-                <Calculator className="w-4 h-4 text-[#0082fc] shrink-0" />
-                <span className="whitespace-nowrap">Thrust Calculator</span>
-              </a>
-
               <button
                 type="button"
-                onClick={() => {
-                  setMobileMenuOpen(false);
-                  onOpenYardModal();
-                }}
-                className="w-full flex items-center justify-between text-sm sm:text-base font-bold text-[#0082fc] py-2.5 border-b border-[#0082fc]/20"
-              >
-                <span className="flex items-center gap-2 whitespace-nowrap">
-                  <Truck className="w-4 h-4 text-[#0082fc] shrink-0" />
-                  <span>Stocking Yard Finder</span>
-                </span>
-                <span className="text-xs bg-[#5fd4fd]/20 text-[#0082fc] px-2 py-0.5 rounded-none font-bold border border-[#5fd4fd] whitespace-nowrap">
-                  4 Hubs
-                </span>
-              </button>
-
-              <a
-                href="/projects"
                 onClick={() => setMobileMenuOpen(false)}
-                className="block text-sm sm:text-base font-bold text-[#0082fc] py-2.5 border-b border-[#0082fc]/20 whitespace-nowrap"
+                className="p-1.5 rounded-none text-[#0082fc] hover:bg-[#5fd4fd]/20"
+                aria-label="Close Navigation Menu"
               >
-                Our Projects &bull; Case Studies
-              </a>
-
-              <a
-                href="/#foundry-walkthrough"
-                onClick={() => handleNavClick("/#foundry-walkthrough")}
-                className="block text-sm sm:text-base font-bold text-[#0082fc] py-2.5 border-b border-[#0082fc]/20 whitespace-nowrap"
-              >
-                Foundry &amp; Yard Walkthrough
-              </a>
-
-              <a
-                href="#quality-standards"
-                onClick={() => handleNavClick("#quality-standards")}
-                className="block text-sm sm:text-base font-bold text-[#0082fc] py-2.5 border-b border-[#0082fc]/20 whitespace-nowrap"
-              >
-                Quality Standards &amp; MTRs
-              </a>
+                <X className="w-6 h-6" />
+              </button>
             </div>
 
-            {/* Mobile Footer Buttons */}
-            <div className="pt-6 space-y-3">
-              <a
-                href="#quote-form"
-                onClick={() => setMobileMenuOpen(false)}
-                className="w-full py-3.5 px-4 bg-[#0082fc] text-white font-extrabold rounded-none text-center shadow-md block whitespace-nowrap text-sm sm:text-base border-2 border-[#0082fc]"
+            {/* Waterworks Fittings Accordion */}
+            <div className="border-b border-[#0082fc]/20 pb-2">
+              <button
+                type="button"
+                onClick={() =>
+                  setMobileAccordion(
+                    mobileAccordion === "fittings" ? null : "fittings",
+                  )
+                }
+                className="w-full flex items-center justify-between text-sm font-bold text-[#0082fc] py-2"
               >
-                Request a Job Quote
-              </a>
-
-              {currentUser ? (
-                /* Mobile Logged-in Select Options: Profile, Settings */
-                <div className="space-y-2 pt-2 border-t-2 border-[#0082fc]/20">
-                  <div className="px-3 py-2 bg-[#5FD4FD]/15 border border-[#0082fc] mb-2">
-                    <span className="text-[10px] font-black uppercase text-[#0082fc]/70 block">
-                      Signed In
-                    </span>
-                    <strong className="text-xs text-[#0082fc] block truncate">
-                      {currentUser.fullName} ({currentUser.companyName})
-                    </strong>
-                  </div>
-
-                  <Link
-                    href="/profile"
-                    onClick={() => {
-                      setMobileMenuOpen(false);
-                    }}
-                    className="w-full py-2.5 px-3 bg-[#0082fc] text-white font-black text-xs uppercase tracking-wider flex items-center justify-center gap-2 rounded-none cursor-pointer"
+                <span className="whitespace-nowrap">Waterworks Fittings</span>
+                <ChevronDown
+                  className={`w-4 h-4 text-[#0082fc] transition-transform ${
+                    mobileAccordion === "fittings"
+                      ? "rotate-180 text-[#5fd4fd]"
+                      : ""
+                  }`}
+                />
+              </button>
+              {mobileAccordion === "fittings" && (
+                <div className="mt-1 space-y-1.5 pl-3 pb-2 text-sm text-[#0082fc]">
+                  <a
+                    href="#product-matrix"
+                    onClick={() =>
+                      handleNavClick("#product-matrix", "fittings")
+                    }
+                    className="block py-1 hover:text-[#5fd4fd] whitespace-nowrap font-medium"
                   >
-                    <User className="w-4 h-4" />
-                    <span>Profile Dashboard</span>
-                  </Link>
-
-                  <Link
-                    href="/settings"
-                    onClick={() => {
-                      setMobileMenuOpen(false);
-                    }}
-                    className="w-full py-2.5 px-3 bg-white text-[#0082fc] border-2 border-[#0082fc] font-black text-xs uppercase tracking-wider flex items-center justify-center gap-2 rounded-none cursor-pointer"
+                    • C153 Compact MJ Fittings
+                  </a>
+                  <a
+                    href="#product-matrix"
+                    onClick={() =>
+                      handleNavClick("#product-matrix", "fittings")
+                    }
+                    className="block py-1 hover:text-[#5fd4fd] whitespace-nowrap font-medium"
                   >
-                    <Settings className="w-4 h-4" />
-                    <span>Account Settings</span>
-                  </Link>
-
-                  {isSuperAdmin && (
-                    <Link
-                      href="/admin"
-                      onClick={() => {
-                        setMobileMenuOpen(false);
-                      }}
-                      className="w-full py-2.5 px-3 bg-amber-500 hover:bg-amber-600 text-white font-black text-xs uppercase tracking-wider flex items-center justify-center gap-2 rounded-none cursor-pointer"
-                    >
-                      <ShieldCheck className="w-4 h-4" />
-                      <span>Approvals Desk ({pendingCount})</span>
-                    </Link>
-                  )}
-                </div>
-              ) : (
-                <div className="grid grid-cols-2 gap-2">
-                  <button
-                    type="button"
-                    onClick={() => {
-                      setMobileMenuOpen(false);
-                      onOpenLoginModal();
-                    }}
-                    className="py-3 px-3 bg-white text-[#0082fc] font-bold rounded-none text-center text-xs sm:text-sm whitespace-nowrap border-2 border-[#0082fc]"
+                    • C110 Full Body MJ Fittings
+                  </a>
+                  <a
+                    href="#product-matrix"
+                    onClick={() =>
+                      handleNavClick("#product-matrix", "fittings")
+                    }
+                    className="block py-1 hover:text-[#5fd4fd] whitespace-nowrap font-medium"
                   >
-                    Client Portal
-                  </button>
-                  <button
-                    type="button"
-                    onClick={() => {
-                      setMobileMenuOpen(false);
-                      onOpenRegisterModal();
-                    }}
-                    className="py-3 px-3 bg-[#5fd4fd]/20 text-[#0082fc] font-bold rounded-none text-center text-xs sm:text-sm whitespace-nowrap border-2 border-[#5fd4fd]"
+                    • C110 Flange Fittings
+                  </a>
+                  <a
+                    href="#product-matrix"
+                    onClick={() =>
+                      handleNavClick("#product-matrix", "fittings")
+                    }
+                    className="block py-1 hover:text-[#5fd4fd] whitespace-nowrap font-medium"
                   >
-                    Register Account
-                  </button>
+                    • C153 Push-On Fittings
+                  </a>
                 </div>
               )}
             </div>
+
+            {/* Restraints Accordion */}
+            <div className="border-b border-[#0082fc]/20 pb-2">
+              <button
+                type="button"
+                onClick={() =>
+                  setMobileAccordion(
+                    mobileAccordion === "restraints" ? null : "restraints",
+                  )
+                }
+                className="w-full flex items-center justify-between text-sm sm:text-base font-bold text-[#0082fc] py-2"
+              >
+                <span className="whitespace-nowrap">Joint Restraints</span>
+                <ChevronDown
+                  className={`w-4 h-4 text-[#0082fc] transition-transform ${
+                    mobileAccordion === "restraints"
+                      ? "rotate-180 text-[#5fd4fd]"
+                      : ""
+                  }`}
+                />
+              </button>
+              {mobileAccordion === "restraints" && (
+                <div className="mt-1 space-y-1.5 pl-3 pb-2 text-sm text-[#0082fc]">
+                  <a
+                    href="#product-matrix"
+                    onClick={() =>
+                      handleNavClick("#product-matrix", "restraints")
+                    }
+                    className="block py-1 hover:text-[#5fd4fd] whitespace-nowrap font-medium"
+                  >
+                    • ULTRA PVC Restraints
+                  </a>
+                  <a
+                    href="#product-matrix"
+                    onClick={() =>
+                      handleNavClick("#product-matrix", "restraints")
+                    }
+                    className="block py-1 hover:text-[#5fd4fd] whitespace-nowrap font-medium"
+                  >
+                    • Series 3000 Wedge-Action Restraint Glands
+                  </a>
+                  <a
+                    href="#product-matrix"
+                    onClick={() =>
+                      handleNavClick("#product-matrix", "restraints")
+                    }
+                    className="block py-1 hover:text-[#5fd4fd] whitespace-nowrap font-medium"
+                  >
+                    • Series 1500 &amp; 1900 Harnesses
+                  </a>
+                </div>
+              )}
+            </div>
+
+            {/* Direct Links */}
+            <a
+              href="#thrust-calculator"
+              onClick={() => handleNavClick("#thrust-calculator")}
+              className="flex items-center gap-2 text-sm sm:text-base font-bold text-[#0082fc] py-2.5 border-b border-[#0082fc]/20"
+            >
+              <Calculator className="w-4 h-4 text-[#0082fc] shrink-0" />
+              <span className="whitespace-nowrap">Thrust Calculator</span>
+            </a>
+
+            <button
+              type="button"
+              onClick={() => {
+                setMobileMenuOpen(false);
+                onOpenYardModal();
+              }}
+              className="w-full flex items-center justify-between text-sm sm:text-base font-bold text-[#0082fc] py-2.5 border-b border-[#0082fc]/20"
+            >
+              <span className="flex items-center gap-2 whitespace-nowrap">
+                <Truck className="w-4 h-4 text-[#0082fc] shrink-0" />
+                <span>Stocking Yard Finder</span>
+              </span>
+              <span className="text-xs bg-[#5fd4fd]/20 text-[#0082fc] px-2 py-0.5 rounded-none font-bold border border-[#5fd4fd] whitespace-nowrap">
+                4 Hubs
+              </span>
+            </button>
+
+            <a
+              href="/projects"
+              onClick={() => setMobileMenuOpen(false)}
+              className="block text-sm sm:text-base font-bold text-[#0082fc] py-2.5 border-b border-[#0082fc]/20 whitespace-nowrap"
+            >
+              Our Projects &bull; Case Studies
+            </a>
+
+            <a
+              href="/#foundry-walkthrough"
+              onClick={() => handleNavClick("/#foundry-walkthrough")}
+              className="block text-sm sm:text-base font-bold text-[#0082fc] py-2.5 border-b border-[#0082fc]/20 whitespace-nowrap"
+            >
+              Foundry &amp; Yard Walkthrough
+            </a>
+
+            <a
+              href="#quality-standards"
+              onClick={() => handleNavClick("#quality-standards")}
+              className="block text-sm sm:text-base font-bold text-[#0082fc] py-2.5 border-b border-[#0082fc]/20 whitespace-nowrap"
+            >
+              Quality Standards &amp; MTRs
+            </a>
+          </div>
+
+          {/* Mobile Footer Buttons */}
+          <div className="pt-6 space-y-3">
+            <a
+              href="#quote-form"
+              onClick={() => setMobileMenuOpen(false)}
+              className="w-full py-3.5 px-4 bg-[#0082fc] text-white font-extrabold rounded-none text-center shadow-md block whitespace-nowrap text-sm sm:text-base border-2 border-[#0082fc]"
+            >
+              Request a Job Quote
+            </a>
+
+            {currentUser ? (
+              /* Mobile Logged-in Select Options: Profile, Settings */
+              <div className="space-y-2 pt-2 border-t-2 border-[#0082fc]/20">
+                <div className="px-3 py-2 bg-[#5FD4FD]/15 border border-[#0082fc] mb-2">
+                  <span className="text-[10px] font-black uppercase text-[#0082fc]/70 block">
+                    Signed In
+                  </span>
+                  <strong className="text-xs text-[#0082fc] block truncate">
+                    {currentUser.fullName} ({currentUser.companyName})
+                  </strong>
+                </div>
+
+                <Link
+                  href="/profile"
+                  onClick={() => {
+                    setMobileMenuOpen(false);
+                  }}
+                  className="w-full py-2.5 px-3 bg-[#0082fc] text-white font-black text-xs uppercase tracking-wider flex items-center justify-center gap-2 rounded-none cursor-pointer"
+                >
+                  <User className="w-4 h-4" />
+                  <span>Profile Dashboard</span>
+                </Link>
+
+                <Link
+                  href="/settings"
+                  onClick={() => {
+                    setMobileMenuOpen(false);
+                  }}
+                  className="w-full py-2.5 px-3 bg-white text-[#0082fc] border-2 border-[#0082fc] font-black text-xs uppercase tracking-wider flex items-center justify-center gap-2 rounded-none cursor-pointer"
+                >
+                  <Settings className="w-4 h-4" />
+                  <span>Account Settings</span>
+                </Link>
+
+                {isSuperAdmin && (
+                  <Link
+                    href="/admin"
+                    onClick={() => {
+                      setMobileMenuOpen(false);
+                    }}
+                    className="w-full py-2.5 px-3 bg-amber-500 hover:bg-amber-600 text-white font-black text-xs uppercase tracking-wider flex items-center justify-center gap-2 rounded-none cursor-pointer"
+                  >
+                    <ShieldCheck className="w-4 h-4" />
+                    <span>Approvals Desk ({pendingCount})</span>
+                  </Link>
+                )}
+              </div>
+            ) : (
+              <div className="grid grid-cols-2 gap-2">
+                <button
+                  type="button"
+                  onClick={() => {
+                    setMobileMenuOpen(false);
+                    onOpenLoginModal();
+                  }}
+                  className="py-3 px-3 bg-white text-[#0082fc] font-bold rounded-none text-center text-xs sm:text-sm whitespace-nowrap border-2 border-[#0082fc]"
+                >
+                  Client Portal
+                </button>
+                <button
+                  type="button"
+                  onClick={() => {
+                    setMobileMenuOpen(false);
+                    onOpenRegisterModal();
+                  }}
+                  className="py-3 px-3 bg-[#5fd4fd]/20 text-[#0082fc] font-bold rounded-none text-center text-xs sm:text-sm whitespace-nowrap border-2 border-[#5fd4fd]"
+                >
+                  Register Account
+                </button>
+              </div>
+            )}
           </div>
         </div>
-      )}
+      </div>
+      );
     </header>
   );
 };
