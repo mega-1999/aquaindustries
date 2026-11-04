@@ -41,3 +41,4 @@ def generate_ico():
 
 if __name__ == "__main__":
     generate_ico()
+
