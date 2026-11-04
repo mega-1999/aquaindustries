@@ -365,6 +365,21 @@ export const MainNavbar: React.FC<MainNavbarProps> = ({
                       </div>
                     </a>
                     <a
+                      href="#drainage-specialties"
+                      onClick={() => handleNavClick("#drainage-specialties")}
+                      className="block p-2.5 rounded-none hover:bg-[#0082fc] hover:text-white transition-colors group bg-[#5FD4FD]/10 border-l-2 border-[#0082fc]"
+                    >
+                      <div className="font-extrabold text-sm leading-tight flex items-center justify-between">
+                        <span>Drainage Specialties (Traps &amp; Grates)</span>
+                        <span className="text-[9px] bg-[#0082fc] group-hover:bg-white text-white group-hover:text-[#0082fc] px-1.5 py-0.2 font-mono font-black">
+                          FEATURED
+                        </span>
+                      </div>
+                      <div className="text-xs text-[#0082fc] group-hover:text-white mt-1 font-medium leading-relaxed">
+                        Catch basin traps, culvert pipe grates, detention trash racks &amp; downspout spouts.
+                      </div>
+                    </a>
+                    <a
                       href="#product-matrix"
                       onClick={() =>
                         handleNavClick("#product-matrix", "municipal-castings")

@@ -19,6 +19,7 @@ import { GlobalUtilityTicker } from "../components/navigation/GlobalUtilityTicke
 import { MainNavbar } from "../components/navigation/MainNavbar";
 import { VerticalSideVideoAds } from "../components/navigation/VerticalSideVideoAds";
 import { CurbBoxSpotlight } from "../components/products/CurbBoxSpotlight";
+import { DrainageSpecialtiesSection } from "../components/products/DrainageSpecialtiesSection";
 import { EngineeringInnovationSpotlight } from "../components/products/EngineeringInnovationSpotlight";
 import { MechanicalJointFittingsSchedule } from "../components/products/MechanicalJointFittingsSchedule";
 import { ProductCatalogMatrix } from "../components/products/ProductCatalogMatrix";
@@ -161,7 +162,13 @@ export default function Home() {
           onPreviewSubmittal={(product) => setSubmittalModalProduct(product)}
         />
 
-        {/* Section 7: Product Catalog Matrix (Soleno categorie pattern - White #FFFFFF - Alternating) */}
+        {/* Section 7: Stormwater Drainage Specialties - Catch Basin Traps, Pipe Grates, Trash Racks & Spouts (Blue #0082FC - Alternating) */}
+        <DrainageSpecialtiesSection
+          onAddToRfq={handleAddToRfq}
+          onPreviewSubmittal={(product) => setSubmittalModalProduct(product)}
+        />
+
+        {/* Section 8: Product Catalog Matrix (Soleno categorie pattern - White #FFFFFF - Alternating) */}
         <ProductCatalogMatrix
           onAddToRfq={handleAddToRfq}
           onPreviewSubmittal={(product) => setSubmittalModalProduct(product)}
