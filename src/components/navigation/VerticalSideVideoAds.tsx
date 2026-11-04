@@ -1,6 +1,14 @@
 "use client";
 
-import { Check, Play, Plus, X } from "lucide-react";
+import {
+  Check,
+  ChevronLeft,
+  ChevronRight,
+  Minimize2,
+  Play,
+  Plus,
+  X,
+} from "lucide-react";
 import type React from "react";
 import { useEffect, useState } from "react";
 import { PRODUCTS_CATALOG } from "../../data/waterworks-data";
@@ -119,6 +127,8 @@ export const VerticalSideVideoAds: React.FC<VerticalSideVideoAdsProps> = ({
   const [addedIds, setAddedIds] = useState<Record<string, boolean>>({});
   const [leftDrawerOpen, setLeftDrawerOpen] = useState(false);
   const [rightDrawerOpen, setRightDrawerOpen] = useState(false);
+  const [leftMinimized, setLeftMinimized] = useState(false);
+  const [rightMinimized, setRightMinimized] = useState(false);
 
   // Monitor scroll: show only between Hero section and Footer
   useEffect(() => {
@@ -127,7 +137,7 @@ export const VerticalSideVideoAds: React.FC<VerticalSideVideoAdsProps> = ({
       const windowHeight = window.innerHeight;
       const fullHeight = document.documentElement.scrollHeight;
 
-      // Show after scrolling past hero (~600px), hide before reaching footer (~700px from bottom)
+      // Show after scrolling past hero (~580px), hide before reaching footer (~650px from bottom)
       const pastHero = scrollY > 580;
       const beforeFooter = scrollY + windowHeight < fullHeight - 650;
 
@@ -153,10 +163,10 @@ export const VerticalSideVideoAds: React.FC<VerticalSideVideoAdsProps> = ({
     return (
       <div
         key={ad.id}
-        className="w-36 min-[1500px]:w-44 min-[1680px]:w-48 xl:w-52 bg-white border-2 border-[#0082FC] shadow-xl text-[#0082FC] flex flex-col justify-between group transition-all duration-300 hover:border-[#5FD4FD] hover:-translate-y-1 relative"
+        className="w-36 min-[1720px]:w-40 min-[1900px]:w-44 bg-white border-2 border-[#0082FC] shadow-lg text-[#0082FC] flex flex-col justify-between group transition-all duration-300 hover:border-[#5FD4FD] hover:-translate-y-0.5 relative shrink-0"
       >
         {/* Top Video Preview Thumbnail Container */}
-        <div className="relative w-full h-20 min-[1500px]:h-24 bg-[#0082FC] overflow-hidden">
+        <div className="relative w-full h-18 min-[1720px]:h-22 bg-[#0082FC] overflow-hidden">
           {/* Active Ambient Water Looping Video */}
           <video
             src={ad.videoUrl}
@@ -189,15 +199,15 @@ export const VerticalSideVideoAds: React.FC<VerticalSideVideoAdsProps> = ({
           <img
             src={ad.posterUrl}
             alt={ad.title}
-            className="absolute inset-0 m-auto max-h-[75%] max-w-[75%] object-contain filter drop-shadow-lg pointer-events-none group-hover:scale-110 transition-transform duration-300"
+            className="absolute inset-0 m-auto max-h-[75%] max-w-[75%] object-contain filter drop-shadow-lg pointer-events-none group-hover:scale-105 transition-transform duration-300"
           />
 
           {/* Top Pill: AD & Duration */}
-          <div className="absolute top-1.5 left-1.5 right-1.5 flex items-center justify-between z-10">
-            <span className="px-1.5 py-0.5 bg-[#0082FC] text-white text-[9px] font-black uppercase tracking-wider border border-[#5FD4FD]">
+          <div className="absolute top-1 left-1 right-1 flex items-center justify-between z-10">
+            <span className="px-1 py-0.2 bg-[#0082FC] text-white text-[8px] font-black uppercase tracking-wider border border-[#5FD4FD]">
               {ad.badge}
             </span>
-            <span className="px-1.5 py-0.5 bg-white/90 text-[#0082FC] text-[9px] font-bold">
+            <span className="px-1 py-0.2 bg-white/90 text-[#0082FC] text-[8px] font-bold">
               {ad.duration}
             </span>
           </div>
@@ -206,45 +216,45 @@ export const VerticalSideVideoAds: React.FC<VerticalSideVideoAdsProps> = ({
           <button
             type="button"
             onClick={() => setActiveVideoModal(ad)}
-            className="absolute inset-0 m-auto w-9 h-9 bg-white/90 hover:bg-[#5FD4FD] text-[#0082FC] flex items-center justify-center border border-[#0082FC] shadow-md transition-transform hover:scale-110 cursor-pointer z-20"
+            className="absolute inset-0 m-auto w-8 h-8 bg-white/90 hover:bg-[#5FD4FD] text-[#0082FC] flex items-center justify-center border border-[#0082FC] shadow-md transition-transform hover:scale-110 cursor-pointer z-20"
             title={`Watch ${ad.title} video`}
             aria-label={`Watch ${ad.title} video`}
           >
-            <Play className="w-4 h-4 fill-[#0082FC] ml-0.5" />
+            <Play className="w-3.5 h-3.5 fill-[#0082FC] ml-0.5" />
           </button>
         </div>
 
         {/* Card Content Strip */}
-        <div className="p-2.5 flex-1 flex flex-col justify-between">
+        <div className="p-2 flex-1 flex flex-col justify-between">
           <div>
-            <div className="flex items-center gap-1 text-[10px] font-bold text-[#0082FC]/75 uppercase truncate mb-0.5">
+            <div className="flex items-center gap-1 text-[9px] font-bold text-[#0082FC]/75 uppercase truncate mb-0.5">
               <span>{ad.standard}</span>
             </div>
 
-            <h4 className="font-black text-xs uppercase tracking-tight text-[#0082FC] leading-tight line-clamp-1">
+            <h4 className="font-black text-[11px] uppercase tracking-tight text-[#0082FC] leading-tight line-clamp-1">
               {ad.title}
             </h4>
 
-            <p className="text-[11px] text-[#0082FC]/85 leading-snug line-clamp-2 mt-1">
+            <p className="text-[10px] text-[#0082FC]/80 leading-tight line-clamp-1 min-[1720px]:line-clamp-2 mt-0.5">
               {ad.description}
             </p>
           </div>
 
           {/* Action CTAs */}
-          <div className="mt-2 pt-2 border-t border-[#0082FC]/20 flex items-center gap-1.5">
+          <div className="mt-1.5 pt-1.5 border-t border-[#0082FC]/20 flex items-center gap-1">
             <button
               type="button"
               onClick={() => setActiveVideoModal(ad)}
-              className="flex-1 py-1 px-1.5 bg-white hover:bg-[#0082FC] text-[#0082FC] hover:text-white border border-[#0082FC] text-[10px] font-black uppercase tracking-wider transition-colors flex items-center justify-center gap-1 cursor-pointer"
+              className="flex-1 py-0.5 px-1 bg-white hover:bg-[#0082FC] text-[#0082FC] hover:text-white border border-[#0082FC] text-[9px] font-black uppercase tracking-wider transition-colors flex items-center justify-center gap-0.5 cursor-pointer"
             >
-              <Play className="w-2.5 h-2.5" />
+              <Play className="w-2 h-2" />
               <span>Watch</span>
             </button>
 
             <button
               type="button"
               onClick={() => handleAddProduct(ad.product)}
-              className={`py-1 px-2 border border-[#0082FC] text-[10px] font-black uppercase tracking-wider transition-all cursor-pointer flex items-center justify-center ${
+              className={`py-0.5 px-1.5 border border-[#0082FC] text-[9px] font-black uppercase tracking-wider transition-all cursor-pointer flex items-center justify-center ${
                 isAdded
                   ? "bg-[#5FD4FD] text-[#0082FC]"
                   : "bg-[#0082FC] text-white hover:bg-[#5FD4FD] hover:text-[#0082FC]"
@@ -252,9 +262,9 @@ export const VerticalSideVideoAds: React.FC<VerticalSideVideoAdsProps> = ({
               title="Add to Quote"
             >
               {isAdded ? (
-                <Check className="w-3 h-3 stroke-[3]" />
+                <Check className="w-2.5 h-2.5 stroke-[3]" />
               ) : (
-                <Plus className="w-3 h-3 stroke-[2.5]" />
+                <Plus className="w-2.5 h-2.5 stroke-[2.5]" />
               )}
             </button>
           </div>
@@ -265,68 +275,106 @@ export const VerticalSideVideoAds: React.FC<VerticalSideVideoAdsProps> = ({
 
   return (
     <>
-      {/* 1. LEFT SIDE VERTICAL VIDEO ADS COLUMN (Fixed in left gutter) */}
-      <aside
-        aria-label="Left Side Product Video Ads"
-        className={`fixed top-24 left-3 z-30 transition-all duration-300 select-none ${
-          isVisible ? "opacity-100" : "opacity-0 pointer-events-none"
-        } hidden min-[1360px]:flex flex-col gap-3.5`}
-      >
-        <div className="bg-[#0082FC] text-white text-[10px] font-black uppercase tracking-widest px-2.5 py-1 border-2 border-[#5FD4FD] text-center shadow-md">
-          <span>Waterworks Reels &bull; Left</span>
-        </div>
+      {/* 1. LEFT SIDE VERTICAL VIDEO ADS COLUMN (Safely positioned below navbar at top-[128px] with max-height scroll) */}
+      {!leftMinimized && (
+        <aside
+          aria-label="Left Side Product Video Ads"
+          className={`fixed top-[128px] left-2.5 z-30 transition-all duration-300 select-none ${
+            isVisible ? "opacity-100" : "opacity-0 pointer-events-none"
+          } hidden min-[1600px]:flex flex-col gap-2.5 max-h-[calc(100vh-148px)] overflow-y-auto overflow-x-hidden [scrollbar-width:none] [-ms-overflow-style:none] [&::-webkit-scrollbar]:hidden`}
+        >
+          <div className="bg-[#0082FC] text-white text-[9px] font-black uppercase tracking-wider px-2 py-1 border-2 border-[#5FD4FD] flex items-center justify-between shadow-md">
+            <span>Waterworks Reels</span>
+            <button
+              type="button"
+              onClick={() => setLeftMinimized(true)}
+              title="Minimize to side tab"
+              className="hover:text-[#5FD4FD] p-0.5 cursor-pointer ml-1"
+            >
+              <Minimize2 className="w-2.5 h-2.5" />
+            </button>
+          </div>
 
-        {LEFT_VIDEO_ADS.map(renderVideoCard)}
-      </aside>
+          {LEFT_VIDEO_ADS.map(renderVideoCard)}
+        </aside>
+      )}
 
-      {/* 2. RIGHT SIDE VERTICAL VIDEO ADS COLUMN (Fixed in right gutter) */}
-      <aside
-        aria-label="Right Side Product Video Ads"
-        className={`fixed top-24 right-3 z-30 transition-all duration-300 select-none ${
-          isVisible ? "opacity-100" : "opacity-0 pointer-events-none"
-        } hidden min-[1360px]:flex flex-col gap-3.5`}
-      >
-        <div className="bg-[#0082FC] text-white text-[10px] font-black uppercase tracking-widest px-2.5 py-1 border-2 border-[#5FD4FD] text-center shadow-md">
-          <span>Quality Proof Reels &bull; Right</span>
-        </div>
+      {/* 2. RIGHT SIDE VERTICAL VIDEO ADS COLUMN (Safely positioned below navbar at top-[128px] with max-height scroll) */}
+      {!rightMinimized && (
+        <aside
+          aria-label="Right Side Product Video Ads"
+          className={`fixed top-[128px] right-2.5 z-30 transition-all duration-300 select-none ${
+            isVisible ? "opacity-100" : "opacity-0 pointer-events-none"
+          } hidden min-[1600px]:flex flex-col gap-2.5 max-h-[calc(100vh-148px)] overflow-y-auto overflow-x-hidden [scrollbar-width:none] [-ms-overflow-style:none] [&::-webkit-scrollbar]:hidden`}
+        >
+          <div className="bg-[#0082FC] text-white text-[9px] font-black uppercase tracking-wider px-2 py-1 border-2 border-[#5FD4FD] flex items-center justify-between shadow-md">
+            <span>Quality Reels</span>
+            <button
+              type="button"
+              onClick={() => setRightMinimized(true)}
+              title="Minimize to side tab"
+              className="hover:text-[#5FD4FD] p-0.5 cursor-pointer ml-1"
+            >
+              <Minimize2 className="w-2.5 h-2.5" />
+            </button>
+          </div>
 
-        {RIGHT_VIDEO_ADS.map(renderVideoCard)}
-      </aside>
+          {RIGHT_VIDEO_ADS.map(renderVideoCard)}
+        </aside>
+      )}
 
-      {/* 3. RESPONSIVE FLOATING EDGE PILLS (For screens < 1360px where gutters are narrower) */}
+      {/* 3. RESPONSIVE FLOATING EDGE PILLS (Always active when screen < 1600px OR when user minimized columns) */}
       <div
-        className={`fixed left-0 top-1/2 -translate-y-1/2 z-30 min-[1360px]:hidden transition-all duration-300 ${
+        className={`fixed left-0 top-1/2 -translate-y-1/2 z-30 transition-all duration-300 ${
           isVisible ? "opacity-100" : "opacity-0 pointer-events-none"
-        }`}
+        } ${leftMinimized ? "flex" : "min-[1600px]:hidden"}`}
       >
         <button
           type="button"
-          onClick={() => setLeftDrawerOpen(true)}
-          className="bg-[#0082FC] hover:bg-[#5FD4FD] text-white hover:text-[#0082FC] border-y-2 border-r-2 border-white px-2 py-3 text-[10px] font-black uppercase tracking-widest vertical-writing-lr shadow-2xl flex items-center gap-1 cursor-pointer transition-all [writing-mode:vertical-lr]"
-          title="Open Left Video Ads"
+          onClick={() => {
+            if (leftMinimized) {
+              setLeftMinimized(false);
+            } else {
+              setLeftDrawerOpen(true);
+            }
+          }}
+          className="bg-[#0082FC] hover:bg-[#5FD4FD] text-white hover:text-[#0082FC] border-y-2 border-r-2 border-white px-1.5 py-3 text-[9px] font-black uppercase tracking-widest shadow-2xl flex items-center gap-1 cursor-pointer transition-all [writing-mode:vertical-lr]"
+          title="Open Left Video Reels"
         >
-          <Play className="w-3 h-3 fill-current rotate-90" />
-          <span>Left Video Ads (4)</span>
+          <Play className="w-2.5 h-2.5 fill-current rotate-90" />
+          <span>Waterworks Reels (3)</span>
+          {leftMinimized && (
+            <ChevronRight className="w-2.5 h-2.5 rotate-90 mt-1" />
+          )}
         </button>
       </div>
 
       <div
-        className={`fixed right-0 top-1/2 -translate-y-1/2 z-30 min-[1360px]:hidden transition-all duration-300 ${
+        className={`fixed right-0 top-1/2 -translate-y-1/2 z-30 transition-all duration-300 ${
           isVisible ? "opacity-100" : "opacity-0 pointer-events-none"
-        }`}
+        } ${rightMinimized ? "flex" : "min-[1600px]:hidden"}`}
       >
         <button
           type="button"
-          onClick={() => setRightDrawerOpen(true)}
-          className="bg-[#0082FC] hover:bg-[#5FD4FD] text-white hover:text-[#0082FC] border-y-2 border-l-2 border-white px-2 py-3 text-[10px] font-black uppercase tracking-widest vertical-writing-rl shadow-2xl flex items-center gap-1 cursor-pointer transition-all [writing-mode:vertical-rl]"
-          title="Open Right Video Ads"
+          onClick={() => {
+            if (rightMinimized) {
+              setRightMinimized(false);
+            } else {
+              setRightDrawerOpen(true);
+            }
+          }}
+          className="bg-[#0082FC] hover:bg-[#5FD4FD] text-white hover:text-[#0082FC] border-y-2 border-l-2 border-white px-1.5 py-3 text-[9px] font-black uppercase tracking-widest shadow-2xl flex items-center gap-1 cursor-pointer transition-all [writing-mode:vertical-rl]"
+          title="Open Right Quality Reels"
         >
-          <Play className="w-3 h-3 fill-current -rotate-90" />
-          <span>Right Video Ads (4)</span>
+          <Play className="w-2.5 h-2.5 fill-current -rotate-90" />
+          <span>Quality Proof Reels (3)</span>
+          {rightMinimized && (
+            <ChevronLeft className="w-2.5 h-2.5 -rotate-90 mt-1" />
+          )}
         </button>
       </div>
 
-      {/* 4. SLIDE-OVER DRAWER FOR LEFT VIDEO ADS (Responsive) */}
+      {/* 4. SLIDE-OVER DRAWER FOR LEFT VIDEO ADS (Responsive for all screen sizes) */}
       {leftDrawerOpen && (
         <div className="fixed inset-0 z-50 flex">
           <button
@@ -335,21 +383,21 @@ export const VerticalSideVideoAds: React.FC<VerticalSideVideoAdsProps> = ({
             onClick={() => setLeftDrawerOpen(false)}
             aria-label="Close Left Video Ads"
           />
-          <div className="relative w-72 max-w-[85vw] bg-white h-full shadow-2xl border-r-4 border-[#0082FC] z-10 p-4 flex flex-col justify-between overflow-y-auto">
+          <div className="relative w-64 max-w-[85vw] bg-white h-full shadow-2xl border-r-4 border-[#0082FC] z-10 p-3.5 flex flex-col justify-between overflow-y-auto">
             <div>
-              <div className="flex items-center justify-between pb-3 mb-4 border-b-2 border-[#0082FC]">
-                <span className="font-black text-sm uppercase text-[#0082FC]">
-                  Left Video Ads &bull; Waterworks
+              <div className="flex items-center justify-between pb-2.5 mb-3 border-b-2 border-[#0082FC]">
+                <span className="font-black text-xs uppercase text-[#0082FC]">
+                  Waterworks Reels &bull; Left
                 </span>
                 <button
                   type="button"
                   onClick={() => setLeftDrawerOpen(false)}
                   className="p-1 text-[#0082FC] hover:bg-[#5FD4FD]/30 cursor-pointer"
                 >
-                  <X className="w-5 h-5" />
+                  <X className="w-4 h-4" />
                 </button>
               </div>
-              <div className="flex flex-col gap-4">
+              <div className="flex flex-col gap-3">
                 {LEFT_VIDEO_ADS.map(renderVideoCard)}
               </div>
             </div>
@@ -357,7 +405,7 @@ export const VerticalSideVideoAds: React.FC<VerticalSideVideoAdsProps> = ({
         </div>
       )}
 
-      {/* 5. SLIDE-OVER DRAWER FOR RIGHT VIDEO ADS (Responsive) */}
+      {/* 5. SLIDE-OVER DRAWER FOR RIGHT VIDEO ADS (Responsive for all screen sizes) */}
       {rightDrawerOpen && (
         <div className="fixed inset-0 z-50 flex justify-end">
           <button
@@ -366,21 +414,21 @@ export const VerticalSideVideoAds: React.FC<VerticalSideVideoAdsProps> = ({
             onClick={() => setRightDrawerOpen(false)}
             aria-label="Close Right Video Ads"
           />
-          <div className="relative w-72 max-w-[85vw] bg-white h-full shadow-2xl border-l-4 border-[#0082FC] z-10 p-4 flex flex-col justify-between overflow-y-auto">
+          <div className="relative w-64 max-w-[85vw] bg-white h-full shadow-2xl border-l-4 border-[#0082FC] z-10 p-3.5 flex flex-col justify-between overflow-y-auto">
             <div>
-              <div className="flex items-center justify-between pb-3 mb-4 border-b-2 border-[#0082FC]">
-                <span className="font-black text-sm uppercase text-[#0082FC]">
-                  Right Video Ads &bull; Quality
+              <div className="flex items-center justify-between pb-2.5 mb-3 border-b-2 border-[#0082FC]">
+                <span className="font-black text-xs uppercase text-[#0082FC]">
+                  Quality Reels &bull; Right
                 </span>
                 <button
                   type="button"
                   onClick={() => setRightDrawerOpen(false)}
                   className="p-1 text-[#0082FC] hover:bg-[#5FD4FD]/30 cursor-pointer"
                 >
-                  <X className="w-5 h-5" />
+                  <X className="w-4 h-4" />
                 </button>
               </div>
-              <div className="flex flex-col gap-4">
+              <div className="flex flex-col gap-3">
                 {RIGHT_VIDEO_ADS.map(renderVideoCard)}
               </div>
             </div>
