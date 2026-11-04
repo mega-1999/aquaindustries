@@ -365,18 +365,63 @@ export const MainNavbar: React.FC<MainNavbarProps> = ({
                       </div>
                     </a>
                     <a
-                      href="#drainage-specialties"
-                      onClick={() => handleNavClick("#drainage-specialties")}
+                      href="#catch-basin-traps"
+                      onClick={() => handleNavClick("#catch-basin-traps")}
                       className="block p-2.5 rounded-none hover:bg-[#0082fc] hover:text-white transition-colors group bg-[#5FD4FD]/10 border-l-2 border-[#0082fc]"
                     >
                       <div className="font-extrabold text-sm leading-tight flex items-center justify-between">
-                        <span>Drainage Specialties (Traps &amp; Grates)</span>
+                        <span>Catch Basin Traps</span>
                         <span className="text-[9px] bg-[#0082fc] group-hover:bg-white text-white group-hover:text-[#0082fc] px-1.5 py-0.2 font-mono font-black">
-                          FEATURED
+                          SIMULATOR
                         </span>
                       </div>
                       <div className="text-xs text-[#0082fc] group-hover:text-white mt-1 font-medium leading-relaxed">
-                        Catch basin traps, culvert pipe grates, detention trash racks &amp; downspout spouts.
+                        Siphon gas &amp; floatable debris hoods with rodding cleanout plugs.
+                      </div>
+                    </a>
+                    <a
+                      href="#pipe-grates"
+                      onClick={() => handleNavClick("#pipe-grates")}
+                      className="block p-2.5 rounded-none hover:bg-[#0082fc] hover:text-white transition-colors group border-l-2 border-[#5FD4FD] pl-3"
+                    >
+                      <div className="font-extrabold text-sm leading-tight flex items-center justify-between">
+                        <span>Culvert Pipe Grates</span>
+                        <span className="text-[9px] bg-[#0082fc] group-hover:bg-white text-white group-hover:text-[#0082fc] px-1.5 py-0.2 font-mono font-black">
+                          TRAVERSABLE
+                        </span>
+                      </div>
+                      <div className="text-xs text-[#0082fc] group-hover:text-white mt-1 font-medium leading-relaxed">
+                        Hinged cleanout end grates &amp; 4:1 highway traversable safety slopes.
+                      </div>
+                    </a>
+                    <a
+                      href="#trash-racks"
+                      onClick={() => handleNavClick("#trash-racks")}
+                      className="block p-2.5 rounded-none hover:bg-[#0082fc] hover:text-white transition-colors group border-l-2 border-[#5FD4FD] pl-3"
+                    >
+                      <div className="font-extrabold text-sm leading-tight flex items-center justify-between">
+                        <span>Detention Trash Racks</span>
+                        <span className="text-[9px] bg-[#0082fc] group-hover:bg-white text-white group-hover:text-[#0082fc] px-1.5 py-0.2 font-mono font-black">
+                          ANTI-VORTEX
+                        </span>
+                      </div>
+                      <div className="text-xs text-[#0082fc] group-hover:text-white mt-1 font-medium leading-relaxed">
+                        360° pyramidal anti-vortex risers &amp; inclined self-cleaning screens.
+                      </div>
+                    </a>
+                    <a
+                      href="#spouts-boots"
+                      onClick={() => handleNavClick("#spouts-boots")}
+                      className="block p-2.5 rounded-none hover:bg-[#0082fc] hover:text-white transition-colors group border-l-2 border-[#5FD4FD] pl-3"
+                    >
+                      <div className="font-extrabold text-sm leading-tight flex items-center justify-between">
+                        <span>Downspout Boots &amp; Spouts</span>
+                        <span className="text-[9px] bg-[#0082fc] group-hover:bg-white text-white group-hover:text-[#0082fc] px-1.5 py-0.2 font-mono font-black">
+                          IMPACT PROOF
+                        </span>
+                      </div>
+                      <div className="text-xs text-[#0082fc] group-hover:text-white mt-1 font-medium leading-relaxed">
+                        Cast iron conductor boots, parapet scuppers &amp; bridge deck drain nozzles.
                       </div>
                     </a>
                     <a

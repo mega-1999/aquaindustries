@@ -18,12 +18,15 @@ import { FloatingQuickActions } from "../components/navigation/FloatingQuickActi
 import { GlobalUtilityTicker } from "../components/navigation/GlobalUtilityTicker";
 import { MainNavbar } from "../components/navigation/MainNavbar";
 import { VerticalSideVideoAds } from "../components/navigation/VerticalSideVideoAds";
+import { CatchBasinTrapsSpotlight } from "../components/products/CatchBasinTrapsSpotlight";
+import { CulvertPipeGratesSpotlight } from "../components/products/CulvertPipeGratesSpotlight";
 import { CurbBoxSpotlight } from "../components/products/CurbBoxSpotlight";
-import { DrainageSpecialtiesSection } from "../components/products/DrainageSpecialtiesSection";
+import { DownspoutSpoutsSpotlight } from "../components/products/DownspoutSpoutsSpotlight";
 import { EngineeringInnovationSpotlight } from "../components/products/EngineeringInnovationSpotlight";
 import { MechanicalJointFittingsSchedule } from "../components/products/MechanicalJointFittingsSchedule";
 import { ProductCatalogMatrix } from "../components/products/ProductCatalogMatrix";
 import { SolenoFlagshipProducts } from "../components/products/SolenoFlagshipProducts";
+import { StormwaterTrashRacksSpotlight } from "../components/products/StormwaterTrashRacksSpotlight";
 import { CommercialQuoteForm } from "../components/rfq/CommercialQuoteForm";
 import { CivilCallToAction } from "../components/sections/CivilCallToAction";
 import { DomesticStandards } from "../components/sections/DomesticStandards";
@@ -162,13 +165,31 @@ export default function Home() {
           onPreviewSubmittal={(product) => setSubmittalModalProduct(product)}
         />
 
-        {/* Section 7: Stormwater Drainage Specialties - Catch Basin Traps, Pipe Grates, Trash Racks & Spouts (Blue #0082FC - Alternating) */}
-        <DrainageSpecialtiesSection
+        {/* Section 7: Catch Basin Traps Showcase - Gas, Siphon & Oil Baffle Traps (Blue #0082FC - Alternating) */}
+        <CatchBasinTrapsSpotlight
           onAddToRfq={handleAddToRfq}
           onPreviewSubmittal={(product) => setSubmittalModalProduct(product)}
         />
 
-        {/* Section 8: Product Catalog Matrix (Soleno categorie pattern - White #FFFFFF - Alternating) */}
+        {/* Section 8: Culvert Pipe Grates Showcase - Hinged Bar Grates & Safety Slopes (White #FFFFFF - Alternating) */}
+        <CulvertPipeGratesSpotlight
+          onAddToRfq={handleAddToRfq}
+          onPreviewSubmittal={(product) => setSubmittalModalProduct(product)}
+        />
+
+        {/* Section 9: Stormwater Detention Basin Trash Racks Showcase - Anti-Vortex Pyramids (Blue #0082FC - Alternating) */}
+        <StormwaterTrashRacksSpotlight
+          onAddToRfq={handleAddToRfq}
+          onPreviewSubmittal={(product) => setSubmittalModalProduct(product)}
+        />
+
+        {/* Section 10: Cast Iron Downspout Boots & Spouts Showcase - Facade Protection (White #FFFFFF - Alternating) */}
+        <DownspoutSpoutsSpotlight
+          onAddToRfq={handleAddToRfq}
+          onPreviewSubmittal={(product) => setSubmittalModalProduct(product)}
+        />
+
+        {/* Section 11: Product Catalog Matrix (Soleno categorie pattern - White #FFFFFF - Alternating) */}
         <ProductCatalogMatrix
           onAddToRfq={handleAddToRfq}
           onPreviewSubmittal={(product) => setSubmittalModalProduct(product)}
