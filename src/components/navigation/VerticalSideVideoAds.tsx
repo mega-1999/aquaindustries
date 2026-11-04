@@ -1,20 +1,6 @@
 "use client";
 
-import {
-  Check,
-  ChevronLeft,
-  ChevronRight,
-  ExternalLink,
-  Eye,
-  FileText,
-  Maximize2,
-  Play,
-  Plus,
-  ShieldCheck,
-  Volume2,
-  VolumeX,
-  X,
-} from "lucide-react";
+import { Check, Play, Plus, X } from "lucide-react";
 import type React from "react";
 import { useEffect, useState } from "react";
 import { PRODUCTS_CATALOG } from "../../data/waterworks-data";
@@ -131,7 +117,6 @@ export const VerticalSideVideoAds: React.FC<VerticalSideVideoAdsProps> = ({
     null,
   );
   const [addedIds, setAddedIds] = useState<Record<string, boolean>>({});
-  const [hoveredCardId, setHoveredCardId] = useState<string | null>(null);
   const [leftDrawerOpen, setLeftDrawerOpen] = useState(false);
   const [rightDrawerOpen, setRightDrawerOpen] = useState(false);
 
@@ -168,12 +153,10 @@ export const VerticalSideVideoAds: React.FC<VerticalSideVideoAdsProps> = ({
     return (
       <div
         key={ad.id}
-        onMouseEnter={() => setHoveredCardId(ad.id)}
-        onMouseLeave={() => setHoveredCardId(null)}
-        className="w-48 xl:w-52 bg-white border-2 border-[#0082FC] shadow-xl text-[#0082FC] flex flex-col justify-between group transition-all duration-300 hover:border-[#5FD4FD] hover:-translate-y-1 relative"
+        className="w-36 min-[1500px]:w-44 min-[1680px]:w-48 xl:w-52 bg-white border-2 border-[#0082FC] shadow-xl text-[#0082FC] flex flex-col justify-between group transition-all duration-300 hover:border-[#5FD4FD] hover:-translate-y-1 relative"
       >
         {/* Top Video Preview Thumbnail Container */}
-        <div className="relative w-full h-24 bg-[#0082FC] overflow-hidden">
+        <div className="relative w-full h-20 min-[1500px]:h-24 bg-[#0082FC] overflow-hidden">
           {/* Active Ambient Water Looping Video */}
           <video
             src={ad.videoUrl}
@@ -287,7 +270,7 @@ export const VerticalSideVideoAds: React.FC<VerticalSideVideoAdsProps> = ({
         aria-label="Left Side Product Video Ads"
         className={`fixed top-24 left-3 z-30 transition-all duration-300 select-none ${
           isVisible ? "opacity-100" : "opacity-0 pointer-events-none"
-        } hidden min-[1680px]:flex flex-col gap-3.5`}
+        } hidden min-[1360px]:flex flex-col gap-3.5`}
       >
         <div className="bg-[#0082FC] text-white text-[10px] font-black uppercase tracking-widest px-2.5 py-1 border-2 border-[#5FD4FD] text-center shadow-md">
           <span>Waterworks Reels &bull; Left</span>
@@ -301,7 +284,7 @@ export const VerticalSideVideoAds: React.FC<VerticalSideVideoAdsProps> = ({
         aria-label="Right Side Product Video Ads"
         className={`fixed top-24 right-3 z-30 transition-all duration-300 select-none ${
           isVisible ? "opacity-100" : "opacity-0 pointer-events-none"
-        } hidden min-[1680px]:flex flex-col gap-3.5`}
+        } hidden min-[1360px]:flex flex-col gap-3.5`}
       >
         <div className="bg-[#0082FC] text-white text-[10px] font-black uppercase tracking-widest px-2.5 py-1 border-2 border-[#5FD4FD] text-center shadow-md">
           <span>Quality Proof Reels &bull; Right</span>
@@ -310,9 +293,9 @@ export const VerticalSideVideoAds: React.FC<VerticalSideVideoAdsProps> = ({
         {RIGHT_VIDEO_ADS.map(renderVideoCard)}
       </aside>
 
-      {/* 3. RESPONSIVE FLOATING EDGE PILLS (For screens < 1680px where gutters are narrower) */}
+      {/* 3. RESPONSIVE FLOATING EDGE PILLS (For screens < 1360px where gutters are narrower) */}
       <div
-        className={`fixed left-0 top-1/2 -translate-y-1/2 z-30 min-[1680px]:hidden transition-all duration-300 ${
+        className={`fixed left-0 top-1/2 -translate-y-1/2 z-30 min-[1360px]:hidden transition-all duration-300 ${
           isVisible ? "opacity-100" : "opacity-0 pointer-events-none"
         }`}
       >
@@ -328,7 +311,7 @@ export const VerticalSideVideoAds: React.FC<VerticalSideVideoAdsProps> = ({
       </div>
 
       <div
-        className={`fixed right-0 top-1/2 -translate-y-1/2 z-30 min-[1680px]:hidden transition-all duration-300 ${
+        className={`fixed right-0 top-1/2 -translate-y-1/2 z-30 min-[1360px]:hidden transition-all duration-300 ${
           isVisible ? "opacity-100" : "opacity-0 pointer-events-none"
         }`}
       >
