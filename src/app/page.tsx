@@ -18,7 +18,9 @@ import { FloatingQuickActions } from "../components/navigation/FloatingQuickActi
 import { GlobalUtilityTicker } from "../components/navigation/GlobalUtilityTicker";
 import { MainNavbar } from "../components/navigation/MainNavbar";
 import { VerticalSideVideoAds } from "../components/navigation/VerticalSideVideoAds";
+import { CatchBasinTrapsSpotlight } from "../components/products/CatchBasinTrapsSpotlight";
 import { CulvertPipeGratesSpotlight } from "../components/products/CulvertPipeGratesSpotlight";
+import { DownspoutSpoutsSpotlight } from "../components/products/DownspoutSpoutsSpotlight";
 import { CurbBoxSpotlight } from "../components/products/CurbBoxSpotlight";
 import { EngineeringInnovationSpotlight } from "../components/products/EngineeringInnovationSpotlight";
 import { MechanicalJointFittingsSchedule } from "../components/products/MechanicalJointFittingsSchedule";
@@ -175,17 +177,17 @@ export default function Home() {
           onPreviewSubmittal={(product) => setSubmittalModalProduct(product)}
         />
 
-        {/* Temporarily Commented Out for Now: Catch Basin Traps & Downspout Spouts */}
-        {/*
+        {/* Section 9: Cast Iron Catch Basin Traps Showcase (Blue #0082FC - Alternating) */}
         <CatchBasinTrapsSpotlight
           onAddToRfq={handleAddToRfq}
           onPreviewSubmittal={(product) => setSubmittalModalProduct(product)}
         />
+
+        {/* Section 10: Cast Iron Architectural Downspout Boots & Spouts (White #FFFFFF - Alternating) */}
         <DownspoutSpoutsSpotlight
           onAddToRfq={handleAddToRfq}
           onPreviewSubmittal={(product) => setSubmittalModalProduct(product)}
         />
-        */}
 
         {/* Section 11: Product Catalog Matrix (Soleno categorie pattern - White #FFFFFF - Alternating) */}
         <ProductCatalogMatrix
