@@ -2,11 +2,9 @@
 
 import {
   Award,
-  Building2,
   ChevronRight,
   Clock,
   Droplets,
-  ExternalLink,
   Layers,
   MapPin,
   PhoneCall,
@@ -26,10 +24,7 @@ export const IndustrialFooter: React.FC<IndustrialFooterProps> = ({
   onOpenLoginModal,
 }) => {
   return (
-    <footer
-      aria-label="Aqua Industries Company Directory and Waterworks Dispatch"
-      className="bg-[#0082FC] text-white border-t-4 border-[#5FD4FD] text-sm relative overflow-hidden"
-    >
+    <footer className="bg-[#0082FC] text-white border-t-4 border-[#5FD4FD] text-sm relative overflow-hidden">
       {/* ========================================================
           1. TOP BAR: EMERGENCY WATERMAIN DISPATCH HOTLINE
       ======================================================== */}
@@ -385,6 +380,43 @@ export const IndustrialFooter: React.FC<IndustrialFooterProps> = ({
                 </span>
               </div>
             </div>
+          </div>
+        </div>
+      </div>
+
+      {/* ========================================================
+          THIN SWAN PANORAMIC VIDEO FOOTER RIBBON
+      ======================================================== */}
+      <div className="relative w-full h-28 sm:h-36 md:h-44 overflow-hidden border-t-2 border-b-2 border-[#5FD4FD] bg-[#0082FC]">
+        <video
+          autoPlay
+          loop
+          muted
+          playsInline
+          preload="auto"
+          className="w-full h-full object-cover object-center filter brightness-95"
+        >
+          <source src="/videos/swan_vidoe.mp4" type="video/mp4" />
+        </video>
+
+        {/* Ambient Gradient Overlay for Contrast & Visual Polish */}
+        <div className="absolute inset-0 bg-gradient-to-r from-[#0082FC]/75 via-transparent to-[#0082FC]/75 pointer-events-none" />
+        <div className="absolute inset-0 bg-[#0082FC]/15 pointer-events-none" />
+
+        {/* Floating Architectural Ribbon Badges */}
+        <div className="absolute inset-0 flex items-center justify-between px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto pointer-events-none">
+          <div className="flex items-center gap-2.5 bg-[#0082FC]/85 backdrop-blur-xs px-3.5 py-1.5 border border-[#5FD4FD]/70 shadow-md">
+            <Droplets className="w-3.5 h-3.5 text-[#5FD4FD] shrink-0" />
+            <span className="text-[10px] sm:text-xs font-black uppercase tracking-wider text-white">
+              Sustaining America&apos;s Clean Waterways
+            </span>
+          </div>
+
+          <div className="hidden sm:flex items-center gap-2 bg-[#0082FC]/85 backdrop-blur-xs px-3.5 py-1.5 border border-[#5FD4FD]/70 shadow-md">
+            <span className="w-2 h-2 bg-[#5FD4FD] rounded-none animate-pulse shrink-0" />
+            <span className="text-[10px] sm:text-[11px] font-mono font-bold uppercase tracking-wider text-white/95">
+              Ecological Water Infrastructure &bull; 100% Recycled Iron
+            </span>
           </div>
         </div>
       </div>
