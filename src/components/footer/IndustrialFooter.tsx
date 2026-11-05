@@ -387,7 +387,7 @@ export const IndustrialFooter: React.FC<IndustrialFooterProps> = ({
       {/* ========================================================
           THIN SWAN PANORAMIC VIDEO FOOTER RIBBON
       ======================================================== */}
-      <div className="relative w-full h-28 sm:h-36 md:h-44 overflow-hidden border-t-2 border-b-2 border-[#5FD4FD] bg-[#0082FC]">
+      <div className="relative w-full h-40 sm:h-52 md:h-64 lg:h-72 overflow-hidden border-t-2 border-b-2 border-[#5FD4FD] bg-[#0082FC]">
         <video
           autoPlay
           loop
