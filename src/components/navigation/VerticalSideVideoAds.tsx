@@ -391,11 +391,11 @@ export const VerticalSideVideoAds: React.FC<VerticalSideVideoAdsProps> = ({
       </aside>
 
       {/* 2. RIGHT SIDE VERTICAL VIDEO ADS COLUMN:
-          - Fixed in the upper area (top-[116px]) safely above bottom floating action icons.
+          - Fixed directly on the upper side of the floating quick action icons (bottom-[260px]).
           - Contains the 3 cards. */}
       <aside
         aria-label="Right Side Product Video Ads"
-        className="fixed top-[116px] right-2 min-[1720px]:right-3 min-[1900px]:right-4 z-30 hidden min-[1600px]:flex flex-col gap-[10px] select-none shadow-xl"
+        className="fixed bottom-[260px] right-3 min-[1720px]:right-4 min-[1900px]:right-5 z-40 hidden min-[1600px]:flex flex-col gap-[8px] select-none shadow-xl"
       >
         {/* Header Bar */}
         <div className="bg-[#0074f0] text-white text-[9px] font-black uppercase tracking-wider px-2 py-1.5 border-2 border-[#0082FC] flex items-center justify-between shadow-md mb-0.5">
