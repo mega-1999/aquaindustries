@@ -5,8 +5,31 @@ const nextConfig: NextConfig = {
   experimental: {
     agentFeedback: true,
   },
-  cacheComponents: true,
-  partialPrefetching: true,
+  // Dynamic build ID guarantees Vercel CDN and browser caches are completely busted on every deploy
+  generateBuildId: async () => {
+    return `aqua-deploy-${Date.now()}`;
+  },
+  async headers() {
+    return [
+      {
+        source: "/:path*",
+        headers: [
+          {
+            key: "Cache-Control",
+            value: "no-cache, no-store, must-revalidate",
+          },
+          {
+            key: "Pragma",
+            value: "no-cache",
+          },
+          {
+            key: "Expires",
+            value: "0",
+          },
+        ],
+      },
+    ];
+  },
   reactCompiler: true,
   turbopack: {
     rules: {
