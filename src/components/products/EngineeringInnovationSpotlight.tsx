@@ -350,7 +350,7 @@ export const EngineeringInnovationSpotlight: React.FC<
   return (
     <section
       id="innovation-spotlight"
-      aria-label="3rd Showcase: Next-Gen Mechanical Joint Innovations"
+      aria-label="4th Showcase: Next-Gen Mechanical Joint Innovations"
       className="py-14 sm:py-20 bg-[#0082FC] text-white border-b-4 border-[#5FD4FD] relative overflow-hidden"
     >
       {/* Background Architectural Grid Lines */}
@@ -372,8 +372,7 @@ export const EngineeringInnovationSpotlight: React.FC<
             <div className="inline-flex items-center gap-2 px-3.5 py-1.5 bg-white text-[#0082FC] text-xs font-bold uppercase tracking-wider rounded-none mb-4 shadow-md border-2 border-[#5FD4FD]">
               <Sparkles className="w-4 h-4 text-[#0082FC] shrink-0" />
               <span>
-                3rd Product Showcase &bull; Next-Gen Mechanical Joint
-                Engineering
+                4th Product Showcase &bull; Mechanical Joint Engineering
               </span>
             </div>
 

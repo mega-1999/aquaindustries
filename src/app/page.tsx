@@ -20,10 +20,11 @@ import { MainNavbar } from "../components/navigation/MainNavbar";
 import { VerticalSideVideoAds } from "../components/navigation/VerticalSideVideoAds";
 import { CatchBasinTrapsSpotlight } from "../components/products/CatchBasinTrapsSpotlight";
 import { CulvertPipeGratesSpotlight } from "../components/products/CulvertPipeGratesSpotlight";
-import { DownspoutSpoutsSpotlight } from "../components/products/DownspoutSpoutsSpotlight";
 import { CurbBoxSpotlight } from "../components/products/CurbBoxSpotlight";
-import { EngineeringInnovationSpotlight } from "../components/products/EngineeringInnovationSpotlight";
+import { DownspoutSpoutsSpotlight } from "../components/products/DownspoutSpoutsSpotlight";
 import { MechanicalJointFittingsSchedule } from "../components/products/MechanicalJointFittingsSchedule";
+import { EngineeringInnovationSpotlight } from "../components/products/EngineeringInnovationSpotlight";
+import { OurNewInnovations } from "../components/products/OurNewInnovations";
 import { ProductCatalogMatrix } from "../components/products/ProductCatalogMatrix";
 import { SolenoFlagshipProducts } from "../components/products/SolenoFlagshipProducts";
 import { StormwaterTrashRacksSpotlight } from "../components/products/StormwaterTrashRacksSpotlight";
@@ -121,14 +122,20 @@ export default function Home() {
         {/* Section 1: 1st Place - Soleno Flagship Showcase (Sampling Station Hero - Blue #0082FC) */}
         <SolenoSamplingHero />
 
-        {/* Section 2: 2nd Place - The Century Curb Box Showcase (White Background #FFFFFF - Alternating) */}
+        {/* Section 2: 2nd Place - Bison Curb Box Showcase (White Background #FFFFFF - Alternating) */}
         <CurbBoxSpotlight
           product={PRODUCTS_CATALOG[1]}
           onAddToRfq={handleAddToRfq}
           onPreviewSubmittal={(product) => setSubmittalModalProduct(product)}
         />
 
-        {/* Section 3: 3rd Place - Brand New Innovation Section (Series 3000 Cam-Action Restraint - Blue #0082FC - Alternating) */}
+        {/* Section 3: 3rd Place - Our New Innovations Showcase (Blue Background #0082FC - Alternating) */}
+        <OurNewInnovations
+          onAddToRfq={handleAddToRfq}
+          onPreviewSubmittal={(product) => setSubmittalModalProduct(product)}
+        />
+
+        {/* Section 4: 4th Place - Mechanical Joint Engineering: Series 3000 Cam-Action MJ Restraint */}
         <EngineeringInnovationSpotlight
           product={PRODUCTS_CATALOG[2]}
           onAddToRfq={handleAddToRfq}

@@ -116,7 +116,7 @@ export const PRODUCTS_CATALOG: ProductItem[] = [
   },
   {
     id: "century-curb-box",
-    name: "Century Heavy-Duty Curb Service Box",
+    name: "Bison Heavy-Duty Curb Service Box",
     category: "valve-meter-boxes",
     categoryLabel: "Curb & Valve Boxes",
     standard: "ASTM A48",
@@ -129,8 +129,8 @@ export const PRODUCTS_CATALOG: ProductItem[] = [
     coating: "Heavy Asphaltic Bituminous Dip per AWWA Specifications",
     description:
       "The American waterworks industry standard for over a century. Arch-pattern and Minneapolis-pattern telescopic curb boxes providing secure street-level access to underground curb stop valves.",
-    cadFile: "AQUA_CENTURY_CURB_BOX.DWG",
-    submittalFile: "SUBMITTAL_CENTURY_CURB_BOX.PDF",
+    cadFile: "AQUA_BISON_CURB_BOX.DWG",
+    submittalFile: "SUBMITTAL_BISON_CURB_BOX.PDF",
     specs: {
       tensileStrength: "35,000 PSI Minimum (Class 35B Gray Iron)",
       yieldStrength: "Rigid Non-Deflecting Wall Profile",

@@ -30,17 +30,17 @@ interface CurbBoxSpotlightProps {
 const CURB_BOX_IMAGES = [
   {
     src: "/images/our-images/curb-box-ultimate.png",
-    label: "Ultimate Heavy Curb Box",
+    label: "Bison Heavy-Duty Curb Box",
     sublabel: "Telescopic Arch Pattern",
   },
   {
     src: "/images/our-images/curb-box-buffalo.png",
-    label: "Buffalo Style Service Box",
+    label: "Bison Buffalo-Style Service Box",
     sublabel: "Heavy-Wall Highway Pattern",
   },
   {
     src: "/images/our-images/curb-box-arch-full.png",
-    label: "Arch Base Straddle Fitting",
+    label: "Bison Arch Base Straddle Fitting",
     sublabel: "Cast Footing for Curb Stop",
   },
 ];
@@ -69,7 +69,7 @@ export const CurbBoxSpotlight: React.FC<CurbBoxSpotlightProps> = ({
   return (
     <section
       id="curb-box-spotlight"
-      aria-label="2nd Showcase: The Century Curb Box"
+      aria-label="2nd Showcase: Bison Curb Box"
       className="py-12 sm:py-16 bg-white text-[#0082FC] border-b-4 border-[#0082FC] relative overflow-hidden"
     >
       {/* Background Architectural Grid Lines */}
@@ -88,19 +88,19 @@ export const CurbBoxSpotlight: React.FC<CurbBoxSpotlightProps> = ({
           <div className="inline-flex items-center gap-2 px-3 py-1 bg-[#0082FC] text-white text-xs font-bold uppercase tracking-wider rounded-none mb-3 shadow-xs">
             <Award className="w-3.5 h-3.5 text-[#5FD4FD] shrink-0" />
             <span>
-              2nd Product Showcase &bull; 100+ Years Industry Standard
+              2nd Product Showcase &bull; Municipal Benchmark
             </span>
           </div>
 
           <h2 className="text-2xl sm:text-4xl lg:text-5xl font-black uppercase tracking-tight text-[#0082FC] leading-[1.05] mb-3">
-            The Century <span className="text-[#5FD4FD]">Curb Service Box</span>
+            BISON <span className="text-[#5FD4FD]">CURB SERVICE BOX</span>
           </h2>
 
           <p className="text-sm sm:text-base text-[#0082FC]/90 font-normal leading-relaxed">
-            The proven American municipal benchmark for over a century. Provides
-            secure street-level shut-off access to underground service lines,
-            engineered with telescopic frost-heave protection, heavy AASHTO H-20
-            traffic casting, and tamper-resistant brass pentagon locking.
+            The proven American municipal waterworks benchmark. Provides secure
+            street-level shut-off access to underground service lines, engineered
+            with telescopic frost-heave protection, heavy AASHTO H-20 traffic
+            casting, and tamper-resistant brass pentagon locking.
           </p>
         </div>
 
@@ -418,7 +418,7 @@ export const CurbBoxSpotlight: React.FC<CurbBoxSpotlightProps> = ({
                     <ShieldCheck className="w-5 h-5 text-[#5FD4FD]" />
                   </div>
                   <h3 className="text-sm sm:text-base font-black uppercase text-[#0082FC]">
-                    Centennial Cast Durability
+                    Bison Cast Durability
                   </h3>
                 </div>
                 <p className="text-xs sm:text-sm text-[#0082FC]/85 font-medium leading-snug">
@@ -478,7 +478,7 @@ export const CurbBoxSpotlight: React.FC<CurbBoxSpotlightProps> = ({
             <div className="bg-white border-2 border-[#0082FC] shadow-sm">
               <div className="bg-[#0082FC] text-white px-5 py-3 flex items-center justify-between">
                 <span className="text-xs sm:text-sm font-black uppercase tracking-wider">
-                  Curb Box Technical Matrix
+                  Bison Curb Box Technical Matrix
                 </span>
                 <span className="text-xs font-bold text-[#5FD4FD]">
                   Melville, NY Foundry Spec
@@ -529,7 +529,7 @@ export const CurbBoxSpotlight: React.FC<CurbBoxSpotlightProps> = ({
                 className="inline-flex items-center justify-center gap-2 px-5 py-3 text-xs sm:text-sm font-bold text-white bg-[#0082FC] hover:bg-[#5FD4FD] hover:text-[#0082FC] rounded-none shadow-sm transition-all uppercase tracking-wide cursor-pointer"
               >
                 <CheckCircle2 className="w-4 h-4" />
-                <span>Add Curb Box to RFQ</span>
+                <span>Add Bison Curb Box to RFQ</span>
               </button>
 
               <button

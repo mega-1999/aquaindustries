@@ -694,7 +694,7 @@ export const MainNavbar: React.FC<MainNavbarProps> = ({
           </div>
         </div>
       </div>
-      mobileMenuOpen && (
+      {mobileMenuOpen && (
       <div className="xl:hidden fixed inset-0 z-50 flex justify-end">
         {/* Blue Tinted Backdrop (NO BLACK) */}
         <button
@@ -978,7 +978,7 @@ export const MainNavbar: React.FC<MainNavbarProps> = ({
           </div>
         </div>
       </div>
-      );
+      )}
     </header>
   );
 };

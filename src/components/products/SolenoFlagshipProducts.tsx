@@ -49,7 +49,7 @@ export const SolenoFlagshipProducts: React.FC<SolenoFlagshipProductsProps> = ({
     },
     {
       product: PRODUCTS_CATALOG[1], // The Century Curb Box (id: century-curb-box)
-      label: "The Century Curb Box",
+      label: "Bison Curb Box",
       sublabel: "AASHTO H-20 Heavy Highway Traffic",
       image: "/images/our-images/curb-box-ultimate.png",
       summary:
