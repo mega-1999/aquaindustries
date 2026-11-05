@@ -87,24 +87,17 @@ export const MainNavbar: React.FC<MainNavbarProps> = ({
     >
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex items-center justify-between gap-2 sm:gap-4">
-          {/* Brand Logo: Aqua Industries */}
+          {/* Brand Logo: Aqua Industries (Centered by itself, Large, No text) */}
           <a
             href="/"
-            className="flex items-center gap-2 sm:gap-2.5 shrink-0 group focus:outline-none focus-visible:ring-2 focus-visible:ring-[#0082fc] rounded-none p-1"
+            className="flex items-center justify-center shrink-0 group focus:outline-none focus-visible:ring-2 focus-visible:ring-[#0082fc] rounded-none p-1"
+            title="Aqua Industries"
           >
             <img
               src="/images/AI_Waterdrop.png"
-              alt="Aqua Industries Logo"
-              className="h-8 sm:h-10 w-auto object-contain group-hover:scale-105 transition-transform duration-200 shrink-0"
+              alt="Aqua Industries"
+              className="h-11 sm:h-13 lg:h-16 w-auto object-contain group-hover:scale-105 transition-transform duration-200 shrink-0"
             />
-            <div className="flex flex-col">
-              <span className="font-extrabold text-[#0082fc] text-lg sm:text-xl tracking-tight leading-none whitespace-nowrap flex items-center gap-1 font-sans">
-                Aqua <span className="text-[#5fd4fd]">Industries</span>
-              </span>
-              <span className="text-xs text-[#0082fc] tracking-wider uppercase font-bold leading-tight whitespace-nowrap mt-0.5">
-                Waterworks &amp; Municipal Iron
-              </span>
-            </div>
           </a>
 
           {/* Desktop Navigation Links */}
@@ -710,16 +703,18 @@ export const MainNavbar: React.FC<MainNavbarProps> = ({
           <div className="space-y-4">
             {/* Drawer Header */}
             <div className="flex items-center justify-between pb-4 border-b-2 border-[#0082fc]/20">
-              <div className="flex items-center gap-2">
+              <Link
+                href="/"
+                onClick={() => setMobileMenuOpen(false)}
+                className="flex items-center justify-center shrink-0"
+                title="Aqua Industries"
+              >
                 <img
                   src="/images/AI_Waterdrop.png"
-                  alt="Aqua Industries Logo"
-                  className="h-8 w-auto object-contain shrink-0"
+                  alt="Aqua Industries"
+                  className="h-10 w-auto object-contain shrink-0"
                 />
-                <span className="font-extrabold text-[#0082fc] text-base">
-                  Aqua <span className="text-[#5fd4fd]">Industries</span>
-                </span>
-              </div>
+              </Link>
               <button
                 type="button"
                 onClick={() => setMobileMenuOpen(false)}
