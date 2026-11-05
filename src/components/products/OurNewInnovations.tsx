@@ -4,10 +4,7 @@ import {
   ArrowRight,
   Check,
   CheckCircle2,
-  Eye,
   FileCheck2,
-  FileText,
-  Grid3X3,
   PhoneCall,
   Plus,
   ShieldCheck,
@@ -300,7 +297,6 @@ export const OurNewInnovations: React.FC<OurNewInnovationsProps> = ({
   const [selectedIndex, setSelectedIndex] = useState(0);
   const [activeHotspot, setActiveHotspot] = useState<number | null>(null);
   const [viewMode, setViewMode] = useState<"photo" | "blueprint">("photo");
-  const [layoutMode, setLayoutMode] = useState<"cards" | "workbench">("cards");
   const [addedIds, setAddedIds] = useState<Record<string, boolean>>({});
 
   const currentItem = INNOVATIONS[selectedIndex];
@@ -349,12 +345,6 @@ export const OurNewInnovations: React.FC<OurNewInnovationsProps> = ({
     }, 2200);
   };
 
-  const handleInspect = (idx: number) => {
-    setSelectedIndex(idx);
-    setActiveHotspot(null);
-    setLayoutMode("workbench");
-  };
-
   return (
     <section
       id="our-new-innovations"
@@ -373,7 +363,7 @@ export const OurNewInnovations: React.FC<OurNewInnovationsProps> = ({
 
       <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         {/* ========================================================
-            TOP SECTION HEADER & VIEW SWITCHER
+            TOP SECTION HEADER
         ======================================================== */}
         <div className="flex flex-col lg:flex-row lg:items-end justify-between gap-6 mb-8 sm:mb-10 border-b-2 border-white/20 pb-6">
           <div className="max-w-3xl">
@@ -394,572 +384,420 @@ export const OurNewInnovations: React.FC<OurNewInnovationsProps> = ({
             </p>
           </div>
 
-          {/* View Mode Toggle: 4-Card Horizontal Matrix vs CAD Hotspot Workbench */}
           <div className="flex items-center gap-2 self-start lg:self-end">
-            <button
-              type="button"
-              onClick={() => setLayoutMode("cards")}
-              className={`px-4 py-2 text-xs font-black uppercase tracking-wider rounded-none border-2 transition-all flex items-center gap-2 cursor-pointer ${
-                layoutMode === "cards"
-                  ? "bg-white text-[#0082FC] border-[#5FD4FD] shadow-lg"
-                  : "bg-white/10 text-white border-white/40 hover:bg-white/20 hover:border-white"
-              }`}
-            >
-              <Grid3X3 className="w-4 h-4" />
-              <span>Horizontal 4-Card Grid</span>
-            </button>
-
-            <button
-              type="button"
-              onClick={() => setLayoutMode("workbench")}
-              className={`px-4 py-2 text-xs font-black uppercase tracking-wider rounded-none border-2 transition-all flex items-center gap-2 cursor-pointer ${
-                layoutMode === "workbench"
-                  ? "bg-white text-[#0082FC] border-[#5FD4FD] shadow-lg"
-                  : "bg-white/10 text-white border-white/40 hover:bg-white/20 hover:border-white"
-              }`}
-            >
-              <Sliders className="w-4 h-4" />
+            <div className="px-3.5 py-2 bg-white/10 border-2 border-white/30 text-white text-xs font-bold uppercase tracking-wider flex items-center gap-2 backdrop-blur-sm shadow-sm">
+              <Sliders className="w-4 h-4 text-[#5FD4FD]" />
               <span>CAD Hotspot Inspector</span>
-            </button>
+            </div>
           </div>
         </div>
 
         {/* ========================================================
-            LAYOUT 1: PERFECTLY MATCHED HORIZONTAL 4-CARD MATRIX
+            HORIZONTAL TAB SELECTOR (NO 4-CARD SECTION)
         ======================================================== */}
-        {layoutMode === "cards" && (
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 items-stretch">
-            {INNOVATIONS.map((item, idx) => {
-              const isAdded = !!addedIds[item.id];
-              return (
-                <div
-                  key={item.id}
-                  className="bg-white border-4 border-[#5FD4FD] rounded-none p-5 flex flex-col justify-between shadow-2xl hover:border-white transition-all duration-300 group hover:-translate-y-1 relative text-[#0082FC] h-full min-w-0 overflow-hidden"
-                >
-                  <div>
-                    {/* Top Horizontal Header Bar */}
-                    <div className="flex items-center justify-between mb-3 border-b-2 border-[#0082FC]/15 pb-2.5 min-h-[32px]">
-                      <span className="text-[10px] font-black uppercase tracking-wider bg-[#0082FC] text-white px-2 py-0.5 border border-[#0082FC]">
-                        Innovation {item.number}
-                      </span>
-                      <span className="text-[10px] font-extrabold uppercase bg-[#5FD4FD]/30 text-[#0082FC] px-2 py-0.5 border border-[#0082FC]/30">
-                        {item.badge}
-                      </span>
-                    </div>
-
-                    {/* Centered High-Resolution Product Image with Equal Height */}
-                    <div className="relative w-full h-44 sm:h-48 flex items-center justify-center p-3 my-2 bg-gradient-to-b from-[#5FD4FD]/10 to-transparent border border-[#5FD4FD]/20 overflow-hidden">
-                      <img
-                        src={item.imageUrl}
-                        alt={item.name}
-                        className="max-h-full max-w-full object-contain filter drop-shadow-xl transition-transform duration-500 group-hover:scale-105"
-                      />
-                      <span className="absolute bottom-1 right-1 text-[9px] font-black uppercase tracking-wider bg-[#0082FC] text-white px-1.5 py-0.5 shadow-xs">
-                        4 Hotspots
-                      </span>
-                    </div>
-
-                    {/* Uniform Height Title Block */}
-                    <div className="min-h-[48px] flex items-center my-2">
-                      <h3 className="text-sm sm:text-base font-black uppercase tracking-tight text-[#0082FC] leading-snug line-clamp-2">
-                        {item.name}
-                      </h3>
-                    </div>
-
-                    {/* Subtitle Line */}
-                    <p className="text-[11px] font-bold text-[#0082FC]/75 uppercase tracking-wider mb-2 truncate">
-                      {item.subtitle}
-                    </p>
-
-                    {/* Summary Description - Matched Height Clamp */}
-                    <p className="text-xs text-[#0082FC]/90 font-medium leading-relaxed line-clamp-2 mb-3 min-h-[36px]">
-                      {item.summary}
-                    </p>
-
-                    {/* Horizontal Technical Spec Chips */}
-                    <div className="space-y-1.5 mb-4 border-t border-[#0082FC]/10 pt-2.5">
-                      <div className="flex items-center justify-between text-[11px] font-bold bg-[#5FD4FD]/15 border border-[#5FD4FD]/40 px-2 py-1">
-                        <span className="text-[#0082FC]/80 font-normal">
-                          Spec:
-                        </span>
-                        <span className="text-[#0082FC] font-extrabold truncate ml-1">
-                          {item.spec}
-                        </span>
-                      </div>
-                      <div className="flex items-center justify-between text-[11px] font-bold bg-[#5FD4FD]/15 border border-[#5FD4FD]/40 px-2 py-1">
-                        <span className="text-[#0082FC]/80 font-normal">
-                          Standard:
-                        </span>
-                        <span className="text-[#0082FC] font-extrabold truncate ml-1">
-                          {item.standards.split("•")[0]}
-                        </span>
-                      </div>
-                      <div className="flex items-center justify-between text-[11px] font-bold bg-[#5FD4FD]/15 border border-[#5FD4FD]/40 px-2 py-1">
-                        <span className="text-[#0082FC]/80 font-normal">
-                          Domestic:
-                        </span>
-                        <span className="text-[#0082FC] font-extrabold">
-                          100% AIS Certified
-                        </span>
-                      </div>
-                    </div>
-                  </div>
-
-                  {/* Actions Aligned to Bottom */}
-                  <div className="w-full flex flex-col gap-2 pt-3 border-t-2 border-[#0082FC]/15 mt-auto">
-                    <button
-                      type="button"
-                      onClick={() => handleAdd(item)}
-                      className={`w-full py-2.5 px-3 text-xs font-black uppercase tracking-wider rounded-none transition-all flex items-center justify-center gap-1.5 cursor-pointer border-2 ${
-                        isAdded
-                          ? "bg-[#5FD4FD] text-[#0082FC] border-[#0082FC]"
-                          : "bg-[#0082FC] hover:bg-[#5FD4FD] text-white hover:text-[#0082FC] border-[#0082FC] shadow-sm"
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-2.5 mb-8 bg-white/10 p-2 border-2 border-white/30 backdrop-blur-md">
+          {INNOVATIONS.map((item, idx) => {
+            const isSelected = selectedIndex === idx;
+            return (
+              <button
+                key={item.id}
+                type="button"
+                onClick={() => {
+                  setSelectedIndex(idx);
+                  setActiveHotspot(null);
+                }}
+                className={`p-3 text-left transition-all rounded-none cursor-pointer border-2 flex items-center justify-between gap-2.5 ${
+                  isSelected
+                    ? "bg-white text-[#0082FC] border-[#5FD4FD] shadow-xl ring-2 ring-white"
+                    : "bg-white/5 text-white border-white/20 hover:border-[#5FD4FD] hover:bg-white/15"
+                }`}
+              >
+                <div className="flex items-center gap-2.5 min-w-0">
+                  <span
+                    className={`text-[10px] font-black uppercase px-1.5 py-0.5 shrink-0 ${
+                      isSelected
+                        ? "bg-[#0082FC] text-white"
+                        : "bg-white/20 text-white"
+                    }`}
+                  >
+                    {item.number}
+                  </span>
+                  <div className="truncate">
+                    <span
+                      className={`block text-xs font-black uppercase leading-tight truncate ${
+                        isSelected ? "text-[#0082FC]" : "text-white"
                       }`}
                     >
-                      {isAdded ? (
-                        <>
-                          <Check className="w-4 h-4 stroke-[3] shrink-0" />
-                          <span>Added to RFQ</span>
-                        </>
-                      ) : (
-                        <>
-                          <Plus className="w-4 h-4 stroke-[2.5] shrink-0" />
-                          <span>+ Add to Quote</span>
-                        </>
-                      )}
-                    </button>
-
-                    <div className="flex items-center gap-2">
-                      <button
-                        type="button"
-                        onClick={() => handleInspect(idx)}
-                        className="flex-1 py-2 px-2 text-[11px] font-bold uppercase tracking-wider bg-white hover:bg-[#5FD4FD]/20 text-[#0082FC] border border-[#0082FC] transition-all flex items-center justify-center gap-1 cursor-pointer"
-                        title="Open CAD Hotspots & Blueprint"
-                      >
-                        <Eye className="w-3.5 h-3.5 text-[#0082FC]" />
-                        <span>Inspect CAD</span>
-                      </button>
-
-                      <button
-                        type="button"
-                        onClick={() =>
-                          onPreviewSubmittal(findCatalogProduct(item))
-                        }
-                        className="flex-1 py-2 px-2 text-[11px] font-bold uppercase tracking-wider bg-white hover:bg-[#0082FC] text-[#0082FC] hover:text-white border border-[#0082FC] transition-all flex items-center justify-center gap-1 cursor-pointer shadow-xs"
-                        title="Download Engineering Submittal PDF"
-                      >
-                        <FileText className="w-3.5 h-3.5" />
-                        <span>Cut Sheet</span>
-                      </button>
-                    </div>
+                      {item.name}
+                    </span>
+                    <span
+                      className={`block text-[10px] font-bold truncate ${
+                        isSelected ? "text-[#0082FC]/75" : "text-[#5FD4FD]"
+                      }`}
+                    >
+                      {item.badge}
+                    </span>
                   </div>
                 </div>
-              );
-            })}
-          </div>
-        )}
+
+                <span
+                  className={`text-[10px] font-black shrink-0 ${
+                    isSelected ? "text-[#0082FC]" : "text-white/40"
+                  }`}
+                >
+                  {isSelected ? "● ACTIVE" : "SELECT →"}
+                </span>
+              </button>
+            );
+          })}
+        </div>
 
         {/* ========================================================
-            LAYOUT 2: SYMMETRICAL TOP-ALIGNED CAD WORKBENCH
+            CAD HOTSPOT WORKBENCH & ENGINEERING LABORATORY
         ======================================================== */}
-        {layoutMode === "workbench" && (
-          <div className="space-y-6">
-            {/* 4 Synchronized Equal-Height Selector Tabs */}
-            <div className="grid grid-cols-2 lg:grid-cols-4 gap-3 items-stretch">
-              {INNOVATIONS.map((item, idx) => {
-                const isSelected = selectedIndex === idx;
-                return (
-                  <button
-                    key={item.id}
-                    type="button"
-                    onClick={() => {
-                      setSelectedIndex(idx);
-                      setActiveHotspot(null);
-                    }}
-                    className={`p-3.5 sm:p-4 text-left border-2 rounded-none transition-all flex flex-col justify-between min-h-[92px] cursor-pointer ${
-                      isSelected
-                        ? "bg-white text-[#0082FC] border-[#5FD4FD] shadow-xl ring-2 ring-white"
-                        : "bg-white/10 text-white border-white/30 hover:border-[#5FD4FD] hover:bg-white/20"
-                    }`}
-                  >
-                    <div>
-                      <div className="flex items-center justify-between gap-1 mb-1.5">
-                        <span
-                          className={`text-[10px] font-black uppercase tracking-wider px-1.5 py-0.5 ${
-                            isSelected
-                              ? "bg-[#0082FC] text-white"
-                              : "bg-white/20 text-white"
-                          }`}
-                        >
-                          Innovation {item.number}
-                        </span>
-                        <span
-                          className={`text-[10px] font-bold ${
-                            isSelected ? "text-[#0082FC]" : "text-[#5FD4FD]"
-                          }`}
-                        >
-                          {item.badge}
-                        </span>
-                      </div>
-                      <h3
-                        className={`text-xs sm:text-sm font-black uppercase leading-snug line-clamp-2 ${
-                          isSelected ? "text-[#0082FC]" : "text-white"
-                        }`}
-                      >
-                        {item.name}
-                      </h3>
-                    </div>
+        <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 items-start">
+          {/* LEFT 6 COLUMNS: Visual Display & Hotspot Inspection */}
+          <div className="lg:col-span-6 flex flex-col gap-4">
+            {/* View Mode Switcher */}
+            <div className="flex items-center justify-between gap-2 border-2 border-white/60 p-1 bg-[#0082FC]">
+              <button
+                type="button"
+                onClick={() => setViewMode("photo")}
+                className={`flex-1 py-1.5 px-3 text-xs font-black uppercase tracking-wider transition-all rounded-none cursor-pointer text-center ${
+                  viewMode === "photo"
+                    ? "bg-white text-[#0082FC] shadow-sm"
+                    : "text-white hover:bg-white/10"
+                }`}
+              >
+                Real Casting Photograph
+              </button>
 
-                    <div className="mt-2 pt-2 border-t border-current/15 flex items-center justify-between text-[11px] font-bold">
-                      <span className="text-[10px] truncate">{item.spec}</span>
-                      <span className="text-[10px] shrink-0 ml-1">
-                        {isSelected ? "● ACTIVE" : "SELECT →"}
-                      </span>
-                    </div>
-                  </button>
-                );
-              })}
+              <button
+                type="button"
+                onClick={() => setViewMode("blueprint")}
+                className={`flex-1 py-1.5 px-3 text-xs font-black uppercase tracking-wider transition-all rounded-none cursor-pointer flex items-center justify-center gap-1.5 ${
+                  viewMode === "blueprint"
+                    ? "bg-white text-[#0082FC] shadow-sm"
+                    : "text-white hover:bg-white/10"
+                }`}
+              >
+                <Sliders className="w-3.5 h-3.5" />
+                <span>Structural CAD Blueprint</span>
+              </button>
             </div>
 
-            {/* 2-Column Balanced Engineering Laboratory with items-start Top Alignment */}
-            <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 items-start">
-              {/* LEFT 6 COLUMNS: Visual Display & Hotspot Inspection */}
-              <div className="lg:col-span-6 flex flex-col gap-4">
-                {/* View Mode Switcher */}
-                <div className="flex items-center justify-between gap-2 border-2 border-white/60 p-1 bg-[#0082FC]">
-                  <button
-                    type="button"
-                    onClick={() => setViewMode("photo")}
-                    className={`flex-1 py-1.5 px-3 text-xs font-black uppercase tracking-wider transition-all rounded-none cursor-pointer text-center ${
-                      viewMode === "photo"
-                        ? "bg-white text-[#0082FC] shadow-sm"
-                        : "text-white hover:bg-white/10"
-                    }`}
-                  >
-                    Real Casting Photograph
-                  </button>
-
-                  <button
-                    type="button"
-                    onClick={() => setViewMode("blueprint")}
-                    className={`flex-1 py-1.5 px-3 text-xs font-black uppercase tracking-wider transition-all rounded-none cursor-pointer flex items-center justify-center gap-1.5 ${
-                      viewMode === "blueprint"
-                        ? "bg-white text-[#0082FC] shadow-sm"
-                        : "text-white hover:bg-white/10"
-                    }`}
-                  >
-                    <Sliders className="w-3.5 h-3.5" />
-                    <span>Structural CAD Blueprint</span>
-                  </button>
-                </div>
-
-                {/* Hotspot Inspection Detail Callout (when pin is active) */}
-                {activeHotspot !== null && activeSpotData && (
-                  <div className="w-full bg-white border-2 border-[#5FD4FD] p-3.5 text-left shadow-xl text-[#0082FC] animate-in fade-in slide-in-from-top-2">
-                    <div className="flex items-center justify-between gap-2 mb-1">
-                      <div className="flex items-center gap-2">
-                        <span className="w-6 h-6 bg-[#0082FC] text-white flex items-center justify-center font-black text-xs">
-                          {activeHotspot}
-                        </span>
-                        <span className="font-black text-xs sm:text-sm uppercase tracking-tight text-[#0082FC]">
-                          {activeSpotData.title}
-                        </span>
-                      </div>
-                      <span className="text-[10px] bg-[#5FD4FD] text-[#0082FC] font-extrabold px-2 py-0.5 whitespace-nowrap">
-                        {activeSpotData.badge}
-                      </span>
-                    </div>
-                    <p className="text-xs leading-relaxed text-[#0082FC]/90 font-medium">
-                      {activeSpotData.desc}
-                    </p>
-                    <div className="mt-2 flex items-center justify-between border-t border-[#0082FC]/15 pt-1.5">
-                      <span className="text-[10px] text-[#0082FC]/70 font-bold uppercase">
-                        Feature Spec &bull; Hotspot {activeHotspot} of 4
-                      </span>
-                      <button
-                        type="button"
-                        onClick={() => setActiveHotspot(null)}
-                        className="text-[11px] font-black text-[#0082FC] hover:text-[#5FD4FD] uppercase cursor-pointer"
-                      >
-                        ✕ Close Detail
-                      </button>
-                    </div>
-                  </div>
-                )}
-
-                {/* Visual Container Card */}
-                <div className="bg-white border-4 border-[#5FD4FD] p-6 sm:p-8 shadow-2xl relative flex flex-col items-center justify-center text-[#0082FC] min-h-[420px]">
-                  {/* Corner Specification Tag */}
-                  <div className="absolute top-4 left-4 z-10 flex flex-col gap-0.5">
-                    <span className="text-[10px] font-bold text-[#0082FC]/80 uppercase tracking-wider">
-                      Innovation #{currentItem.number}
+            {/* Hotspot Inspection Detail Callout (when pin is active) */}
+            {activeHotspot !== null && activeSpotData && (
+              <div className="w-full bg-white border-2 border-[#5FD4FD] p-3.5 text-left shadow-xl text-[#0082FC] animate-in fade-in slide-in-from-top-2">
+                <div className="flex items-center justify-between gap-2 mb-1">
+                  <div className="flex items-center gap-2">
+                    <span className="w-6 h-6 bg-[#0082FC] text-white flex items-center justify-center font-black text-xs">
+                      {activeHotspot}
                     </span>
-                    <span className="text-xs sm:text-sm font-black text-[#0082FC] uppercase">
-                      {currentItem.categoryLabel}
+                    <span className="font-black text-xs sm:text-sm uppercase tracking-tight text-[#0082FC]">
+                      {activeSpotData.title}
                     </span>
                   </div>
-
-                  <div className="absolute top-4 right-4 z-10">
-                    <span className="px-2.5 py-0.5 bg-white text-[#0082FC] border border-[#0082FC] text-[10px] sm:text-xs font-extrabold uppercase tracking-wider shadow-xs">
-                      {currentItem.badge}
-                    </span>
-                  </div>
-
-                  {viewMode === "photo" ? (
-                    <>
-                      {/* High-Resolution Real Product Photograph */}
-                      <div className="h-68 sm:h-80 w-full flex items-center justify-center py-2 overflow-hidden relative">
-                        <img
-                          src={currentItem.imageUrl}
-                          alt={currentItem.name}
-                          className="max-h-full max-w-full object-contain filter drop-shadow-xl transition-transform duration-300 hover:scale-105"
-                        />
-
-                        {/* Interactive Hotspot Inspection Pins */}
-                        {currentItem.hotspots.map((spot) => (
-                          <button
-                            key={spot.id}
-                            type="button"
-                            onClick={() =>
-                              setActiveHotspot(
-                                activeHotspot === spot.id ? null : spot.id,
-                              )
-                            }
-                            style={{ left: spot.x, top: spot.y }}
-                            className={`absolute z-30 w-7 h-7 -translate-x-1/2 -translate-y-1/2 rounded-none border-2 flex items-center justify-center font-black text-xs shadow-xl transition-all hover:scale-125 cursor-pointer ${
-                              activeHotspot === spot.id
-                                ? "bg-[#0082FC] text-white border-white scale-125 ring-4 ring-[#5FD4FD]"
-                                : "bg-white text-[#0082FC] border-[#0082FC] hover:bg-[#5FD4FD]/30"
-                            }`}
-                            title={spot.title}
-                            aria-label={spot.title}
-                          >
-                            <span>{spot.id}</span>
-                          </button>
-                        ))}
-                      </div>
-
-                      {/* Bottom Caption Strip */}
-                      <div className="w-full mt-3 pt-3 border-t border-[#0082FC]/20 flex flex-wrap items-center justify-between gap-2 text-xs font-bold text-[#0082FC]">
-                        <span className="flex items-center gap-1.5">
-                          <CheckCircle2 className="w-4 h-4 text-[#0082FC]" />
-                          ASTM A48 Class 35B Heavy Casting
-                        </span>
-                        <span className="flex items-center gap-1.5">
-                          <ShieldCheck className="w-4 h-4 text-[#0082FC]" />
-                          AASHTO H-20 Highway Proof
-                        </span>
-                      </div>
-                    </>
-                  ) : (
-                    /* Structural CAD Blueprint Schematic View */
-                    <div className="w-full flex flex-col items-center justify-between h-[340px] relative p-2">
-                      <div className="relative w-full flex-1 flex items-center justify-center overflow-hidden">
-                        <svg
-                          viewBox="0 0 320 220"
-                          className="w-full h-full max-h-[220px]"
-                          fill="none"
-                          aria-label="Structural Engineering Schematic"
-                        >
-                          <rect
-                            x="40"
-                            y="40"
-                            width="240"
-                            height="140"
-                            stroke="#0082FC"
-                            strokeWidth="2"
-                            strokeDasharray="4 2"
-                            fill="#0082FC"
-                            fillOpacity="0.05"
-                          />
-                          <circle
-                            cx="160"
-                            cy="110"
-                            r="60"
-                            stroke="#5FD4FD"
-                            strokeWidth="1.5"
-                            strokeDasharray="6 3"
-                          />
-                          <circle
-                            cx="160"
-                            cy="110"
-                            r="35"
-                            stroke="#0082FC"
-                            strokeWidth="2"
-                          />
-                          <line
-                            x1="160"
-                            y1="10"
-                            x2="160"
-                            y2="50"
-                            stroke="#0082FC"
-                            strokeWidth="3"
-                          />
-                          <line
-                            x1="80"
-                            y1="10"
-                            x2="80"
-                            y2="50"
-                            stroke="#0082FC"
-                            strokeWidth="2"
-                          />
-                          <line
-                            x1="240"
-                            y1="10"
-                            x2="240"
-                            y2="50"
-                            stroke="#0082FC"
-                            strokeWidth="2"
-                          />
-                          <text
-                            x="160"
-                            y="115"
-                            textAnchor="middle"
-                            fill="#0082FC"
-                            fontSize="10"
-                            fontWeight="bold"
-                          >
-                            40,000 LB LOAD PATH
-                          </text>
-                          <text
-                            x="160"
-                            y="170"
-                            textAnchor="middle"
-                            fill="#0082FC"
-                            fontSize="9"
-                            fontWeight="bold"
-                          >
-                            AASHTO H-20 VERIFIED
-                          </text>
-                        </svg>
-                      </div>
-
-                      <div className="w-full flex items-center justify-between border-t border-[#0082FC]/20 pt-2 text-xs font-bold text-[#0082FC]">
-                        <span>Metallurgy: {currentItem.metallurgy}</span>
-                        <span className="bg-[#5FD4FD]/30 px-2 py-0.5 border border-[#0082FC]">
-                          AASHTO M306 Proof
-                        </span>
-                      </div>
-                    </div>
-                  )}
-                </div>
-
-                <p className="text-center text-xs text-white/80">
-                  ✓ Click Hotspots 1-4 on the casting to inspect engineering
-                  features
-                </p>
-              </div>
-
-              {/* RIGHT 6 COLUMNS: Technical Specifications & Action CTAs */}
-              <div className="lg:col-span-6 space-y-4">
-                {/* Innovation Header Callout */}
-                <div className="p-4 bg-white/10 border-2 border-[#5FD4FD] shadow-xs backdrop-blur-sm">
-                  <span className="text-[10px] font-black uppercase text-[#5FD4FD] tracking-wider block mb-1">
-                    Engineering Advancement
+                  <span className="text-[10px] bg-[#5FD4FD] text-[#0082FC] font-extrabold px-2 py-0.5 whitespace-nowrap">
+                    {activeSpotData.badge}
                   </span>
-                  <h3 className="text-lg sm:text-xl font-black uppercase text-white mb-2 leading-tight">
-                    {currentItem.name}
-                  </h3>
-                  <p className="text-xs sm:text-sm text-white/95 leading-relaxed font-normal">
-                    {currentItem.summary}
-                  </p>
                 </div>
-
-                {/* Key Engineering Features Grid */}
-                <div className="grid grid-cols-1 sm:grid-cols-2 gap-2.5">
-                  {currentItem.features.map((feat) => (
-                    <div
-                      key={feat}
-                      className="p-3 bg-white/10 border border-[#5FD4FD]/60 flex items-start gap-2 shadow-xs backdrop-blur-sm"
-                    >
-                      <CheckCircle2 className="w-4 h-4 text-[#5FD4FD] shrink-0 mt-0.5" />
-                      <span className="text-xs font-medium text-white/95 leading-snug">
-                        {feat}
-                      </span>
-                    </div>
-                  ))}
-                </div>
-
-                {/* Technical Submittal Matrix */}
-                <div className="border-2 border-[#5FD4FD] bg-white/10 shadow-md backdrop-blur-sm">
-                  <div className="px-4 py-2 bg-white text-[#0082FC] flex justify-between items-center">
-                    <span className="text-xs font-bold uppercase tracking-wider">
-                      Engineering Submittal Specifications
-                    </span>
-                    <span className="text-xs font-semibold text-[#0082FC]">
-                      {currentItem.standards.split("•")[0]}
-                    </span>
-                  </div>
-                  <div className="p-3.5 space-y-2 text-xs sm:text-sm text-white">
-                    <div className="flex justify-between border-b border-white/20 pb-1.5">
-                      <span className="text-white/80 font-normal">
-                        Metallurgy:
-                      </span>
-                      <span className="text-white font-bold uppercase text-right">
-                        {currentItem.metallurgy}
-                      </span>
-                    </div>
-                    <div className="flex justify-between border-b border-white/20 pb-1.5">
-                      <span className="text-white/80 font-normal">
-                        Traffic Load Proof:
-                      </span>
-                      <span className="text-white font-bold text-right">
-                        {currentItem.loadRating}
-                      </span>
-                    </div>
-                    <div className="flex justify-between border-b border-white/20 pb-1.5">
-                      <span className="text-white/80 font-normal">
-                        Applicable Standards:
-                      </span>
-                      <span className="text-white font-bold text-right">
-                        {currentItem.standards}
-                      </span>
-                    </div>
-                    <div className="flex justify-between border-b border-white/20 pb-1.5">
-                      <span className="text-white/80 font-normal">
-                        Surface Protection:
-                      </span>
-                      <span className="text-white font-bold text-right">
-                        {currentItem.coating}
-                      </span>
-                    </div>
-                    <div className="flex justify-between">
-                      <span className="text-white/80 font-normal">
-                        Domestic Compliance:
-                      </span>
-                      <span className="text-[#5FD4FD] font-bold text-right">
-                        100% AIS / Buy America Certified
-                      </span>
-                    </div>
-                  </div>
-                </div>
-
-                {/* Action CTAs */}
-                <div className="flex flex-col sm:flex-row gap-3 pt-1">
+                <p className="text-xs leading-relaxed text-[#0082FC]/90 font-medium">
+                  {activeSpotData.desc}
+                </p>
+                <div className="mt-2 flex items-center justify-between border-t border-[#0082FC]/15 pt-1.5">
+                  <span className="text-[10px] text-[#0082FC]/70 font-bold uppercase">
+                    Feature Spec &bull; Hotspot {activeHotspot} of 4
+                  </span>
                   <button
                     type="button"
-                    onClick={() => handleAdd(currentItem)}
-                    className="flex-1 px-5 py-3.5 bg-white hover:bg-[#5FD4FD] text-[#0082FC] font-bold text-xs sm:text-sm rounded-none shadow-md transition-all whitespace-nowrap text-center uppercase tracking-wide cursor-pointer flex items-center justify-center gap-2"
+                    onClick={() => setActiveHotspot(null)}
+                    className="text-[11px] font-black text-[#0082FC] hover:text-[#5FD4FD] uppercase cursor-pointer"
                   >
-                    <span>+ Add {currentItem.name.split(" ")[0]} to Quote</span>
-                    <ArrowRight className="w-4 h-4 text-[#0082FC]" />
-                  </button>
-
-                  <button
-                    type="button"
-                    onClick={() =>
-                      onPreviewSubmittal(findCatalogProduct(currentItem))
-                    }
-                    className="flex-1 px-5 py-3.5 bg-[#0082FC] hover:bg-white text-[#5FD4FD] hover:text-[#0082FC] font-bold text-xs sm:text-sm rounded-none border-2 border-[#5FD4FD] transition-all whitespace-nowrap text-center inline-flex items-center justify-center gap-2 uppercase tracking-wide cursor-pointer"
-                  >
-                    <FileCheck2 className="w-4 h-4 text-[#5FD4FD] group-hover:text-[#0082FC]" />
-                    <span>Download Submittal PDF</span>
+                    ✕ Close Detail
                   </button>
                 </div>
               </div>
+            )}
+
+            {/* Visual Container Card */}
+            <div className="bg-white border-4 border-[#5FD4FD] p-6 sm:p-8 shadow-2xl relative flex flex-col items-center justify-center text-[#0082FC] min-h-[420px]">
+              {/* Corner Specification Tag */}
+              <div className="absolute top-4 left-4 z-10 flex flex-col gap-0.5">
+                <span className="text-[10px] font-bold text-[#0082FC]/80 uppercase tracking-wider">
+                  Innovation #{currentItem.number}
+                </span>
+                <span className="text-xs sm:text-sm font-black text-[#0082FC] uppercase">
+                  {currentItem.categoryLabel}
+                </span>
+              </div>
+
+              <div className="absolute top-4 right-4 z-10">
+                <span className="px-2.5 py-0.5 bg-white text-[#0082FC] border border-[#0082FC] text-[10px] sm:text-xs font-extrabold uppercase tracking-wider shadow-xs">
+                  {currentItem.badge}
+                </span>
+              </div>
+
+              {viewMode === "photo" ? (
+                <>
+                  {/* High-Resolution Real Product Photograph */}
+                  <div className="h-68 sm:h-80 w-full flex items-center justify-center py-2 overflow-hidden relative">
+                    <img
+                      src={currentItem.imageUrl}
+                      alt={currentItem.name}
+                      className="max-h-full max-w-full object-contain filter drop-shadow-xl transition-transform duration-300 hover:scale-105"
+                    />
+
+                    {/* Interactive Hotspot Inspection Pins */}
+                    {currentItem.hotspots.map((spot) => (
+                      <button
+                        key={spot.id}
+                        type="button"
+                        onClick={() =>
+                          setActiveHotspot(
+                            activeHotspot === spot.id ? null : spot.id,
+                          )
+                        }
+                        style={{ left: spot.x, top: spot.y }}
+                        className={`absolute z-30 w-7 h-7 -translate-x-1/2 -translate-y-1/2 rounded-none border-2 flex items-center justify-center font-black text-xs shadow-xl transition-all hover:scale-125 cursor-pointer ${
+                          activeHotspot === spot.id
+                            ? "bg-[#0082FC] text-white border-white scale-125 ring-4 ring-[#5FD4FD]"
+                            : "bg-white text-[#0082FC] border-[#0082FC] hover:bg-[#5FD4FD]/30"
+                        }`}
+                        title={spot.title}
+                        aria-label={spot.title}
+                      >
+                        <span>{spot.id}</span>
+                      </button>
+                    ))}
+                  </div>
+
+                  {/* Bottom Caption Strip */}
+                  <div className="w-full mt-3 pt-3 border-t border-[#0082FC]/20 flex flex-wrap items-center justify-between gap-2 text-xs font-bold text-[#0082FC]">
+                    <span className="flex items-center gap-1.5">
+                      <CheckCircle2 className="w-4 h-4 text-[#0082FC]" />
+                      ASTM A48 Class 35B Heavy Casting
+                    </span>
+                    <span className="flex items-center gap-1.5">
+                      <ShieldCheck className="w-4 h-4 text-[#0082FC]" />
+                      AASHTO H-20 Highway Proof
+                    </span>
+                  </div>
+                </>
+              ) : (
+                /* Structural CAD Blueprint Schematic View */
+                <div className="w-full flex flex-col items-center justify-between h-[340px] relative p-2">
+                  <div className="relative w-full flex-1 flex items-center justify-center overflow-hidden">
+                    <svg
+                      viewBox="0 0 320 220"
+                      className="w-full h-full max-h-[220px]"
+                      fill="none"
+                      aria-label="Structural Engineering Schematic"
+                    >
+                      <rect
+                        x="40"
+                        y="40"
+                        width="240"
+                        height="140"
+                        stroke="#0082FC"
+                        strokeWidth="2"
+                        strokeDasharray="4 2"
+                        fill="#0082FC"
+                        fillOpacity="0.05"
+                      />
+                      <circle
+                        cx="160"
+                        cy="110"
+                        r="60"
+                        stroke="#5FD4FD"
+                        strokeWidth="1.5"
+                        strokeDasharray="6 3"
+                      />
+                      <circle
+                        cx="160"
+                        cy="110"
+                        r="35"
+                        stroke="#0082FC"
+                        strokeWidth="2"
+                      />
+                      <line
+                        x1="160"
+                        y1="10"
+                        x2="160"
+                        y2="50"
+                        stroke="#0082FC"
+                        strokeWidth="3"
+                      />
+                      <line
+                        x1="80"
+                        y1="10"
+                        x2="80"
+                        y2="50"
+                        stroke="#0082FC"
+                        strokeWidth="2"
+                      />
+                      <line
+                        x1="240"
+                        y1="10"
+                        x2="240"
+                        y2="50"
+                        stroke="#0082FC"
+                        strokeWidth="2"
+                      />
+                      <text
+                        x="160"
+                        y="115"
+                        textAnchor="middle"
+                        fill="#0082FC"
+                        fontSize="10"
+                        fontWeight="bold"
+                      >
+                        40,000 LB LOAD PATH
+                      </text>
+                      <text
+                        x="160"
+                        y="170"
+                        textAnchor="middle"
+                        fill="#0082FC"
+                        fontSize="9"
+                        fontWeight="bold"
+                      >
+                        AASHTO H-20 VERIFIED
+                      </text>
+                    </svg>
+                  </div>
+
+                  <div className="w-full flex items-center justify-between border-t border-[#0082FC]/20 pt-2 text-xs font-bold text-[#0082FC]">
+                    <span>Metallurgy: {currentItem.metallurgy}</span>
+                    <span className="bg-[#5FD4FD]/30 px-2 py-0.5 border border-[#0082FC]">
+                      AASHTO M306 Proof
+                    </span>
+                  </div>
+                </div>
+              )}
+            </div>
+
+            <p className="text-center text-xs text-white/80">
+              ✓ Click Hotspots 1-4 on the casting to inspect engineering
+              features
+            </p>
+          </div>
+
+          {/* RIGHT 6 COLUMNS: Technical Specifications & Action CTAs */}
+          <div className="lg:col-span-6 space-y-4">
+            {/* Innovation Header Callout */}
+            <div className="p-4 bg-white/10 border-2 border-[#5FD4FD] shadow-xs backdrop-blur-sm">
+              <span className="text-[10px] font-black uppercase text-[#5FD4FD] tracking-wider block mb-1">
+                Engineering Advancement
+              </span>
+              <h3 className="text-lg sm:text-xl font-black uppercase text-white mb-2 leading-tight">
+                {currentItem.name}
+              </h3>
+              <p className="text-xs sm:text-sm text-white/95 leading-relaxed font-normal">
+                {currentItem.summary}
+              </p>
+            </div>
+
+            {/* Key Engineering Features Grid */}
+            <div className="grid grid-cols-1 sm:grid-cols-2 gap-2.5">
+              {currentItem.features.map((feat) => (
+                <div
+                  key={feat}
+                  className="p-3 bg-white/10 border border-[#5FD4FD]/60 flex items-start gap-2 shadow-xs backdrop-blur-sm"
+                >
+                  <CheckCircle2 className="w-4 h-4 text-[#5FD4FD] shrink-0 mt-0.5" />
+                  <span className="text-xs font-medium text-white/95 leading-snug">
+                    {feat}
+                  </span>
+                </div>
+              ))}
+            </div>
+
+            {/* Technical Submittal Matrix */}
+            <div className="border-2 border-[#5FD4FD] bg-white/10 shadow-md backdrop-blur-sm">
+              <div className="px-4 py-2 bg-white text-[#0082FC] flex justify-between items-center">
+                <span className="text-xs font-bold uppercase tracking-wider">
+                  Engineering Submittal Specifications
+                </span>
+                <span className="text-xs font-semibold text-[#0082FC]">
+                  {currentItem.standards.split("•")[0]}
+                </span>
+              </div>
+              <div className="p-3.5 space-y-2 text-xs sm:text-sm text-white">
+                <div className="flex justify-between border-b border-white/20 pb-1.5">
+                  <span className="text-white/80 font-normal">Metallurgy:</span>
+                  <span className="text-white font-bold uppercase text-right">
+                    {currentItem.metallurgy}
+                  </span>
+                </div>
+                <div className="flex justify-between border-b border-white/20 pb-1.5">
+                  <span className="text-white/80 font-normal">
+                    Traffic Load Proof:
+                  </span>
+                  <span className="text-white font-bold text-right">
+                    {currentItem.loadRating}
+                  </span>
+                </div>
+                <div className="flex justify-between border-b border-white/20 pb-1.5">
+                  <span className="text-white/80 font-normal">
+                    Applicable Standards:
+                  </span>
+                  <span className="text-white font-bold text-right">
+                    {currentItem.standards}
+                  </span>
+                </div>
+                <div className="flex justify-between border-b border-white/20 pb-1.5">
+                  <span className="text-white/80 font-normal">
+                    Surface Protection:
+                  </span>
+                  <span className="text-white font-bold text-right">
+                    {currentItem.coating}
+                  </span>
+                </div>
+                <div className="flex justify-between">
+                  <span className="text-white/80 font-normal">
+                    Domestic Compliance:
+                  </span>
+                  <span className="text-[#5FD4FD] font-bold text-right">
+                    100% AIS / Buy America Certified
+                  </span>
+                </div>
+              </div>
+            </div>
+
+            {/* Action CTAs */}
+            <div className="flex flex-col sm:flex-row gap-3 pt-1">
+              <button
+                type="button"
+                onClick={() => handleAdd(currentItem)}
+                className="flex-1 px-5 py-3.5 bg-white hover:bg-[#5FD4FD] text-[#0082FC] font-bold text-xs sm:text-sm rounded-none shadow-md transition-all whitespace-nowrap text-center uppercase tracking-wide cursor-pointer flex items-center justify-center gap-2"
+              >
+                {addedIds[currentItem.id] ? (
+                  <>
+                    <Check className="w-4 h-4 text-[#0082FC] stroke-[3]" />
+                    <span>Added to RFQ Quote</span>
+                  </>
+                ) : (
+                  <>
+                    <Plus className="w-4 h-4 text-[#0082FC] stroke-[2.5]" />
+                    <span>+ Add {currentItem.name.split(" ")[0]} to Quote</span>
+                  </>
+                )}
+              </button>
+
+              <button
+                type="button"
+                onClick={() =>
+                  onPreviewSubmittal(findCatalogProduct(currentItem))
+                }
+                className="flex-1 px-5 py-3.5 bg-[#0082FC] hover:bg-white text-[#5FD4FD] hover:text-[#0082FC] font-bold text-xs sm:text-sm rounded-none border-2 border-[#5FD4FD] transition-all whitespace-nowrap text-center inline-flex items-center justify-center gap-2 uppercase tracking-wide cursor-pointer"
+              >
+                <FileCheck2 className="w-4 h-4 text-[#5FD4FD] group-hover:text-[#0082FC]" />
+                <span>Download Submittal PDF</span>
+              </button>
             </div>
           </div>
-        )}
+        </div>
 
         {/* Bottom Trust Indicators & Direct Hotline */}
         <div className="mt-10 pt-6 border-t border-white/20 flex flex-col md:flex-row items-center justify-between gap-4 text-xs sm:text-sm text-white font-normal">
