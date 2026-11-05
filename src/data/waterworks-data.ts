@@ -128,7 +128,7 @@ export const PRODUCTS_CATALOG: ProductItem[] = [
       "High-Tensile Gray Iron (ASTM A48 Class 35B) / Ductile Iron (ASTM A536)",
     coating: "Heavy Asphaltic Bituminous Dip per AWWA Specifications",
     description:
-      "The American waterworks industry standard for over a century. Arch-pattern and Minneapolis-pattern telescopic curb boxes providing secure street-level access to underground curb stop valves.",
+      "The American waterworks industry standard for over a century. Arch-pattern and Minneapolis-pattern curb boxes providing secure street-level access to underground curb stop valves.",
     cadFile: "AQUA_BISON_CURB_BOX.DWG",
     submittalFile: "SUBMITTAL_BISON_CURB_BOX.PDF",
     specs: {
@@ -142,7 +142,7 @@ export const PRODUCTS_CATALOG: ProductItem[] = [
     keyFeatures: [
       'Arch pattern securely straddles 3/4" through 2" municipal curb stop valves',
       "Vandal-resistant recessed pentagon brass bolt locks lid securely against unauthorized tampering",
-      "Telescopic sliding and screw-style upper shafts prevent frost-heave and pavement settling damage",
+      "Heavy-duty AASHTO H-20 casting absorbs traffic loads and protects curb stop valve integrity",
       "Cast with high-contrast 'WATER' lettering for rapid municipal emergency location",
     ],
     imageUrl: "/images/our-images/curb-box-ultimate.png",
@@ -1372,7 +1372,8 @@ export const PRODUCTS_CATALOG: ProductItem[] = [
       yieldStrength: "45,000 PSI Minimum (Ductile)",
       elongation: "12% Minimum Elongation",
       wallThicknessClass: 'Heavy 3/8" to 1/2" Cast Iron Shell',
-      standardBoltCount: "Cleanout Cap with Brass Screw Plug or Stainless Bolts",
+      standardBoltCount:
+        "Cleanout Cap with Brass Screw Plug or Stainless Bolts",
       torqueSpec: "Wall Anchor Lug Fasteners",
     },
     keyFeatures: [

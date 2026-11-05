@@ -24,17 +24,17 @@ export const IndustrialFooter: React.FC<IndustrialFooterProps> = ({
   onOpenLoginModal,
 }) => {
   return (
-    <footer className="bg-[#0082FC] text-white border-t-4 border-[#5FD4FD] text-sm relative overflow-hidden">
+    <footer className="bg-[#0074f0] text-white border-t-4 border-[#0082FC] text-sm relative overflow-hidden">
       {/* ========================================================
           1. TOP BAR: EMERGENCY WATERMAIN DISPATCH HOTLINE
       ======================================================== */}
-      <div className="bg-[#0082FC] border-b-2 border-[#5FD4FD]/40 py-6 sm:py-8">
+      <div className="bg-[#0074f0] border-b-2 border-[#0082FC]/40 py-6 sm:py-8">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="flex flex-col lg:flex-row items-start lg:items-center justify-between gap-6">
             {/* Left: Hotline Identity */}
             <div className="flex items-start sm:items-center gap-3.5 max-w-2xl">
-              <span className="p-3 bg-white text-[#0082FC] shrink-0 shadow-md border-2 border-[#5FD4FD]">
-                <PhoneCall className="w-6 h-6 animate-pulse text-[#0082FC]" />
+              <span className="p-3 bg-white text-[#0074f0] shrink-0 shadow-md border-2 border-[#0082FC]">
+                <PhoneCall className="w-6 h-6 animate-pulse text-[#0074f0]" />
               </span>
               <div className="min-w-0">
                 <h3 className="text-white font-black text-base sm:text-lg tracking-tight uppercase leading-snug break-words">
@@ -52,18 +52,18 @@ export const IndustrialFooter: React.FC<IndustrialFooterProps> = ({
             <div className="flex flex-col sm:flex-row items-stretch sm:items-center gap-3 w-full lg:w-auto shrink-0">
               <a
                 href="tel:+15162521111"
-                className="inline-flex items-center justify-center gap-2.5 px-6 py-3.5 bg-white hover:bg-[#5FD4FD] text-[#0082FC] font-black text-sm uppercase tracking-wider shadow-lg transition-all text-center cursor-pointer"
+                className="inline-flex items-center justify-center gap-2.5 px-6 py-3.5 bg-white hover:bg-[#0082FC] text-[#0074f0] font-black text-sm uppercase tracking-wider shadow-lg transition-all text-center cursor-pointer"
               >
-                <PhoneCall className="w-4 h-4 text-[#0082FC] shrink-0" />
+                <PhoneCall className="w-4 h-4 text-[#0074f0] shrink-0" />
                 <span>+1 (516) 252-1111</span>
               </a>
 
               <button
                 type="button"
                 onClick={onOpenYardModal}
-                className="inline-flex items-center justify-center gap-2 px-5 py-3.5 bg-[#0082FC] hover:bg-white text-white hover:text-[#0082FC] font-black text-sm uppercase tracking-wider border-2 border-[#5FD4FD] transition-all text-center cursor-pointer"
+                className="inline-flex items-center justify-center gap-2 px-5 py-3.5 bg-[#0074f0] hover:bg-white text-white hover:text-[#0074f0] font-black text-sm uppercase tracking-wider border-2 border-[#0082FC] transition-all text-center cursor-pointer"
               >
-                <MapPin className="w-4 h-4 text-[#5FD4FD] group-hover:text-[#0082FC] shrink-0" />
+                <MapPin className="w-4 h-4 text-[#0082FC] group-hover:text-[#0074f0] shrink-0" />
                 <span>View All Yards</span>
               </button>
             </div>
@@ -81,8 +81,8 @@ export const IndustrialFooter: React.FC<IndustrialFooterProps> = ({
           ======================================================== */}
           <div className="lg:col-span-3 min-w-0 space-y-4">
             <div className="flex items-center gap-2.5">
-              <div className="w-9 h-9 bg-white flex items-center justify-center text-[#0082FC] border border-[#5FD4FD] shrink-0">
-                <Droplets className="w-5 h-5 text-[#0082FC]" />
+              <div className="w-9 h-9 bg-white flex items-center justify-center text-[#0074f0] border border-[#0082FC] shrink-0">
+                <Droplets className="w-5 h-5 text-[#0074f0]" />
               </div>
               <span className="font-black text-white text-lg tracking-tight uppercase">
                 Aqua Industries
@@ -96,9 +96,9 @@ export const IndustrialFooter: React.FC<IndustrialFooterProps> = ({
             </p>
 
             {/* Direct Address & Mobile Box */}
-            <div className="p-3.5 bg-white/10 border-2 border-[#5FD4FD] rounded-none space-y-2 text-xs text-white">
+            <div className="p-3.5 bg-white/10 border-2 border-[#0082FC] rounded-none space-y-2 text-xs text-white">
               <div className="flex items-start gap-2">
-                <MapPin className="w-4 h-4 text-[#5FD4FD] shrink-0 mt-0.5" />
+                <MapPin className="w-4 h-4 text-[#0082FC] shrink-0 mt-0.5" />
                 <div className="min-w-0">
                   <div className="font-black text-white uppercase tracking-wider">
                     New York Foundry &amp; Logistics Hub
@@ -110,10 +110,10 @@ export const IndustrialFooter: React.FC<IndustrialFooterProps> = ({
               </div>
 
               <div className="flex items-center gap-2 pt-2 border-t border-white/20">
-                <PhoneCall className="w-3.5 h-3.5 text-[#5FD4FD] shrink-0" />
+                <PhoneCall className="w-3.5 h-3.5 text-[#0082FC] shrink-0" />
                 <a
                   href="tel:+15162521111"
-                  className="font-bold text-white hover:text-[#5FD4FD] transition-colors"
+                  className="font-bold text-white hover:text-[#0082FC] transition-colors"
                 >
                   +1 (516) 252-1111
                 </a>
@@ -123,11 +123,11 @@ export const IndustrialFooter: React.FC<IndustrialFooterProps> = ({
             {/* Quality Certifications Strip */}
             <div className="space-y-1.5 pt-2 border-t border-white/20 text-xs text-white/90">
               <div className="flex items-center gap-2">
-                <ShieldCheck className="w-3.5 h-3.5 text-[#5FD4FD] shrink-0" />
+                <ShieldCheck className="w-3.5 h-3.5 text-[#0082FC] shrink-0" />
                 <span className="font-semibold">ISO 9001:2015 Registered</span>
               </div>
               <div className="flex items-center gap-2">
-                <Award className="w-3.5 h-3.5 text-[#5FD4FD] shrink-0" />
+                <Award className="w-3.5 h-3.5 text-[#0082FC] shrink-0" />
                 <span className="font-semibold">AWWA &amp; DIPRA Member</span>
               </div>
               <div className="text-[11px] font-mono text-white/80 pt-0.5">
@@ -141,7 +141,7 @@ export const IndustrialFooter: React.FC<IndustrialFooterProps> = ({
           ======================================================== */}
           <div className="lg:col-span-3 min-w-0">
             <h4 className="text-xs sm:text-sm font-black uppercase tracking-wider text-white mb-4 flex items-center gap-2 pb-2 border-b border-white/20">
-              <Layers className="w-4 h-4 text-[#5FD4FD] shrink-0" />
+              <Layers className="w-4 h-4 text-[#0082FC] shrink-0" />
               <span>Product Lines</span>
             </h4>
 
@@ -149,9 +149,9 @@ export const IndustrialFooter: React.FC<IndustrialFooterProps> = ({
               <li>
                 <a
                   href="#product-matrix"
-                  className="hover:text-[#5FD4FD] transition-colors flex items-start gap-1.5 group"
+                  className="hover:text-[#0082FC] transition-colors flex items-start gap-1.5 group"
                 >
-                  <ChevronRight className="w-3.5 h-3.5 text-[#5FD4FD] shrink-0 mt-0.5 group-hover:translate-x-0.5 transition-transform" />
+                  <ChevronRight className="w-3.5 h-3.5 text-[#0082FC] shrink-0 mt-0.5 group-hover:translate-x-0.5 transition-transform" />
                   <span className="break-words leading-snug">
                     AWWA C153 Compact MJ Fittings (3&quot;–48&quot;)
                   </span>
@@ -160,9 +160,9 @@ export const IndustrialFooter: React.FC<IndustrialFooterProps> = ({
               <li>
                 <a
                   href="#product-matrix"
-                  className="hover:text-[#5FD4FD] transition-colors flex items-start gap-1.5 group"
+                  className="hover:text-[#0082FC] transition-colors flex items-start gap-1.5 group"
                 >
-                  <ChevronRight className="w-3.5 h-3.5 text-[#5FD4FD] shrink-0 mt-0.5 group-hover:translate-x-0.5 transition-transform" />
+                  <ChevronRight className="w-3.5 h-3.5 text-[#0082FC] shrink-0 mt-0.5 group-hover:translate-x-0.5 transition-transform" />
                   <span className="break-words leading-snug">
                     AWWA C110 Full-Body Mechanical Joint Fittings
                   </span>
@@ -171,9 +171,9 @@ export const IndustrialFooter: React.FC<IndustrialFooterProps> = ({
               <li>
                 <a
                   href="#product-matrix"
-                  className="hover:text-[#5FD4FD] transition-colors flex items-start gap-1.5 group"
+                  className="hover:text-[#0082FC] transition-colors flex items-start gap-1.5 group"
                 >
-                  <ChevronRight className="w-3.5 h-3.5 text-[#5FD4FD] shrink-0 mt-0.5 group-hover:translate-x-0.5 transition-transform" />
+                  <ChevronRight className="w-3.5 h-3.5 text-[#0082FC] shrink-0 mt-0.5 group-hover:translate-x-0.5 transition-transform" />
                   <span className="break-words leading-snug">
                     Series 3000 Cam-Action Restraints (DI &amp; PVC)
                   </span>
@@ -182,9 +182,9 @@ export const IndustrialFooter: React.FC<IndustrialFooterProps> = ({
               <li>
                 <a
                   href="#product-matrix"
-                  className="hover:text-[#5FD4FD] transition-colors flex items-start gap-1.5 group"
+                  className="hover:text-[#0082FC] transition-colors flex items-start gap-1.5 group"
                 >
-                  <ChevronRight className="w-3.5 h-3.5 text-[#5FD4FD] shrink-0 mt-0.5 group-hover:translate-x-0.5 transition-transform" />
+                  <ChevronRight className="w-3.5 h-3.5 text-[#0082FC] shrink-0 mt-0.5 group-hover:translate-x-0.5 transition-transform" />
                   <span className="break-words leading-snug">
                     Ultra-Lok 360° Serrated Restraints for C900
                   </span>
@@ -193,20 +193,20 @@ export const IndustrialFooter: React.FC<IndustrialFooterProps> = ({
               <li>
                 <a
                   href="#product-matrix"
-                  className="hover:text-[#5FD4FD] transition-colors flex items-start gap-1.5 group"
+                  className="hover:text-[#0082FC] transition-colors flex items-start gap-1.5 group"
                 >
-                  <ChevronRight className="w-3.5 h-3.5 text-[#5FD4FD] shrink-0 mt-0.5 group-hover:translate-x-0.5 transition-transform" />
+                  <ChevronRight className="w-3.5 h-3.5 text-[#0082FC] shrink-0 mt-0.5 group-hover:translate-x-0.5 transition-transform" />
                   <span className="break-words leading-snug">
-                    The Century Telescopic Curb Service Box
+                    The Century Curb Service Box
                   </span>
                 </a>
               </li>
               <li>
                 <a
                   href="#product-matrix"
-                  className="hover:text-[#5FD4FD] transition-colors flex items-start gap-1.5 group"
+                  className="hover:text-[#0082FC] transition-colors flex items-start gap-1.5 group"
                 >
-                  <ChevronRight className="w-3.5 h-3.5 text-[#5FD4FD] shrink-0 mt-0.5 group-hover:translate-x-0.5 transition-transform" />
+                  <ChevronRight className="w-3.5 h-3.5 text-[#0082FC] shrink-0 mt-0.5 group-hover:translate-x-0.5 transition-transform" />
                   <span className="break-words leading-snug">
                     Municipal Freeze-Proof Sampling Stations
                   </span>
@@ -215,9 +215,9 @@ export const IndustrialFooter: React.FC<IndustrialFooterProps> = ({
               <li>
                 <a
                   href="#product-matrix"
-                  className="hover:text-[#5FD4FD] transition-colors flex items-start gap-1.5 group"
+                  className="hover:text-[#0082FC] transition-colors flex items-start gap-1.5 group"
                 >
-                  <ChevronRight className="w-3.5 h-3.5 text-[#5FD4FD] shrink-0 mt-0.5 group-hover:translate-x-0.5 transition-transform" />
+                  <ChevronRight className="w-3.5 h-3.5 text-[#0082FC] shrink-0 mt-0.5 group-hover:translate-x-0.5 transition-transform" />
                   <span className="break-words leading-snug">
                     AASHTO M306 Highway-Rated Castings
                   </span>
@@ -231,7 +231,7 @@ export const IndustrialFooter: React.FC<IndustrialFooterProps> = ({
           ======================================================== */}
           <div className="lg:col-span-2 min-w-0">
             <h4 className="text-xs sm:text-sm font-black uppercase tracking-wider text-white mb-4 flex items-center gap-2 pb-2 border-b border-white/20">
-              <ShieldCheck className="w-4 h-4 text-[#5FD4FD] shrink-0" />
+              <ShieldCheck className="w-4 h-4 text-[#0082FC] shrink-0" />
               <span>Technical Help</span>
             </h4>
 
@@ -239,9 +239,9 @@ export const IndustrialFooter: React.FC<IndustrialFooterProps> = ({
               <li>
                 <a
                   href="#thrust-calculator"
-                  className="hover:text-[#5FD4FD] transition-colors flex items-start gap-1.5 group"
+                  className="hover:text-[#0082FC] transition-colors flex items-start gap-1.5 group"
                 >
-                  <ChevronRight className="w-3.5 h-3.5 text-[#5FD4FD] shrink-0 mt-0.5 group-hover:translate-x-0.5 transition-transform" />
+                  <ChevronRight className="w-3.5 h-3.5 text-[#0082FC] shrink-0 mt-0.5 group-hover:translate-x-0.5 transition-transform" />
                   <span className="break-words leading-snug">
                     Thrust Length Calculator
                   </span>
@@ -250,9 +250,9 @@ export const IndustrialFooter: React.FC<IndustrialFooterProps> = ({
               <li>
                 <a
                   href="#quote-form"
-                  className="hover:text-[#5FD4FD] transition-colors flex items-start gap-1.5 group"
+                  className="hover:text-[#0082FC] transition-colors flex items-start gap-1.5 group"
                 >
-                  <ChevronRight className="w-3.5 h-3.5 text-[#5FD4FD] shrink-0 mt-0.5 group-hover:translate-x-0.5 transition-transform" />
+                  <ChevronRight className="w-3.5 h-3.5 text-[#0082FC] shrink-0 mt-0.5 group-hover:translate-x-0.5 transition-transform" />
                   <span className="break-words leading-snug">
                     Submittal Sheet Builder
                   </span>
@@ -261,9 +261,9 @@ export const IndustrialFooter: React.FC<IndustrialFooterProps> = ({
               <li>
                 <a
                   href="/projects"
-                  className="hover:text-[#5FD4FD] transition-colors flex items-start gap-1.5 group"
+                  className="hover:text-[#0082FC] transition-colors flex items-start gap-1.5 group"
                 >
-                  <ChevronRight className="w-3.5 h-3.5 text-[#5FD4FD] shrink-0 mt-0.5 group-hover:translate-x-0.5 transition-transform" />
+                  <ChevronRight className="w-3.5 h-3.5 text-[#0082FC] shrink-0 mt-0.5 group-hover:translate-x-0.5 transition-transform" />
                   <span className="break-words leading-snug">
                     Municipal Case Studies
                   </span>
@@ -272,9 +272,9 @@ export const IndustrialFooter: React.FC<IndustrialFooterProps> = ({
               <li>
                 <a
                   href="#domestic-standards"
-                  className="hover:text-[#5FD4FD] transition-colors flex items-start gap-1.5 group"
+                  className="hover:text-[#0082FC] transition-colors flex items-start gap-1.5 group"
                 >
-                  <ChevronRight className="w-3.5 h-3.5 text-[#5FD4FD] shrink-0 mt-0.5 group-hover:translate-x-0.5 transition-transform" />
+                  <ChevronRight className="w-3.5 h-3.5 text-[#0082FC] shrink-0 mt-0.5 group-hover:translate-x-0.5 transition-transform" />
                   <span className="break-words leading-snug">
                     AWWA C104 Cement Lining
                   </span>
@@ -283,9 +283,9 @@ export const IndustrialFooter: React.FC<IndustrialFooterProps> = ({
               <li>
                 <a
                   href="#domestic-standards"
-                  className="hover:text-[#5FD4FD] transition-colors flex items-start gap-1.5 group"
+                  className="hover:text-[#0082FC] transition-colors flex items-start gap-1.5 group"
                 >
-                  <ChevronRight className="w-3.5 h-3.5 text-[#5FD4FD] shrink-0 mt-0.5 group-hover:translate-x-0.5 transition-transform" />
+                  <ChevronRight className="w-3.5 h-3.5 text-[#0082FC] shrink-0 mt-0.5 group-hover:translate-x-0.5 transition-transform" />
                   <span className="break-words leading-snug">
                     Arc-Zinc Thermal Spray
                   </span>
@@ -295,9 +295,9 @@ export const IndustrialFooter: React.FC<IndustrialFooterProps> = ({
                 <button
                   type="button"
                   onClick={onOpenLoginModal}
-                  className="hover:text-[#5FD4FD] transition-colors flex items-start gap-1.5 group text-left cursor-pointer"
+                  className="hover:text-[#0082FC] transition-colors flex items-start gap-1.5 group text-left cursor-pointer"
                 >
-                  <ChevronRight className="w-3.5 h-3.5 text-[#5FD4FD] shrink-0 mt-0.5 group-hover:translate-x-0.5 transition-transform" />
+                  <ChevronRight className="w-3.5 h-3.5 text-[#0082FC] shrink-0 mt-0.5 group-hover:translate-x-0.5 transition-transform" />
                   <span className="break-words leading-snug">
                     Contractor MTR Portal
                   </span>
@@ -312,23 +312,23 @@ export const IndustrialFooter: React.FC<IndustrialFooterProps> = ({
           <div className="lg:col-span-4 min-w-0">
             <div className="flex items-center justify-between pb-2 mb-4 border-b border-white/20">
               <h4 className="text-xs sm:text-sm font-black uppercase tracking-wider text-white flex items-center gap-2">
-                <Truck className="w-4 h-4 text-[#5FD4FD] shrink-0" />
+                <Truck className="w-4 h-4 text-[#0082FC] shrink-0" />
                 <span>Stocking Yards &amp; Hours</span>
               </h4>
               <button
                 type="button"
                 onClick={onOpenYardModal}
-                className="text-[11px] font-bold text-[#5FD4FD] hover:text-white uppercase transition-colors cursor-pointer"
+                className="text-[11px] font-bold text-[#0082FC] hover:text-white uppercase transition-colors cursor-pointer"
               >
                 Yard Map &rsaquo;
               </button>
             </div>
 
             {/* Structured Table Container: Clean borders, table-fixed, zero overflow */}
-            <div className="border-2 border-[#5FD4FD] bg-white/10 overflow-hidden shadow-md">
+            <div className="border-2 border-[#0082FC] bg-white/10 overflow-hidden shadow-md">
               <table className="w-full text-left text-xs border-collapse table-fixed">
                 <thead>
-                  <tr className="bg-white text-[#0082FC] border-b border-[#5FD4FD]">
+                  <tr className="bg-white text-[#0074f0] border-b border-[#0082FC]">
                     <th
                       scope="col"
                       className="p-2 font-black uppercase tracking-wider w-[58%]"
@@ -358,7 +358,7 @@ export const IndustrialFooter: React.FC<IndustrialFooterProps> = ({
                         </div>
                       </td>
                       <td className="p-2.5 align-top text-right">
-                        <span className="inline-block bg-[#5FD4FD] text-[#0082FC] text-[10px] font-black uppercase px-2 py-0.5 shadow-xs">
+                        <span className="inline-block bg-[#0082FC] text-[#0074f0] text-[10px] font-black uppercase px-2 py-0.5 shadow-xs">
                           {yard.stockStatus}
                         </span>
                         <div className="text-[10px] text-white/80 mt-1 leading-tight break-words">
@@ -372,10 +372,10 @@ export const IndustrialFooter: React.FC<IndustrialFooterProps> = ({
 
               <div className="p-2 bg-white/5 border-t border-white/20 flex items-center justify-between text-[11px] text-white/80">
                 <span className="flex items-center gap-1">
-                  <Clock className="w-3 h-3 text-[#5FD4FD] shrink-0" />
+                  <Clock className="w-3 h-3 text-[#0082FC] shrink-0" />
                   M-F 06:00 to 17:00 Local
                 </span>
-                <span className="font-mono text-[#5FD4FD]">
+                <span className="font-mono text-[#0082FC]">
                   Rail Spur Direct
                 </span>
               </div>
@@ -387,7 +387,7 @@ export const IndustrialFooter: React.FC<IndustrialFooterProps> = ({
       {/* ========================================================
           THIN SWAN PANORAMIC VIDEO FOOTER RIBBON
       ======================================================== */}
-      <div className="relative w-full h-40 sm:h-52 md:h-64 lg:h-72 overflow-hidden border-t-2 border-b-2 border-[#5FD4FD] bg-[#0082FC]">
+      <div className="relative w-full h-40 sm:h-52 md:h-64 lg:h-72 overflow-hidden border-t-2 border-b-2 border-[#0082FC] bg-[#0074f0]">
         <video
           autoPlay
           loop
@@ -400,20 +400,20 @@ export const IndustrialFooter: React.FC<IndustrialFooterProps> = ({
         </video>
 
         {/* Ambient Gradient Overlay for Contrast & Visual Polish */}
-        <div className="absolute inset-0 bg-gradient-to-r from-[#0082FC]/75 via-transparent to-[#0082FC]/75 pointer-events-none" />
-        <div className="absolute inset-0 bg-[#0082FC]/15 pointer-events-none" />
+        <div className="absolute inset-0 bg-gradient-to-r from-[#0074f0]/75 via-transparent to-[#0074f0]/75 pointer-events-none" />
+        <div className="absolute inset-0 bg-[#0074f0]/15 pointer-events-none" />
 
         {/* Floating Architectural Ribbon Badges */}
         <div className="absolute inset-0 flex items-center justify-between px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto pointer-events-none">
-          <div className="flex items-center gap-2.5 bg-[#0082FC]/85 backdrop-blur-xs px-3.5 py-1.5 border border-[#5FD4FD]/70 shadow-md">
-            <Droplets className="w-3.5 h-3.5 text-[#5FD4FD] shrink-0" />
+          <div className="flex items-center gap-2.5 bg-[#0074f0]/85 backdrop-blur-xs px-3.5 py-1.5 border border-[#0082FC]/70 shadow-md">
+            <Droplets className="w-3.5 h-3.5 text-[#0082FC] shrink-0" />
             <span className="text-[10px] sm:text-xs font-black uppercase tracking-wider text-white">
               Sustaining America&apos;s Clean Waterways
             </span>
           </div>
 
-          <div className="hidden sm:flex items-center gap-2 bg-[#0082FC]/85 backdrop-blur-xs px-3.5 py-1.5 border border-[#5FD4FD]/70 shadow-md">
-            <span className="w-2 h-2 bg-[#5FD4FD] rounded-none animate-pulse shrink-0" />
+          <div className="hidden sm:flex items-center gap-2 bg-[#0074f0]/85 backdrop-blur-xs px-3.5 py-1.5 border border-[#0082FC]/70 shadow-md">
+            <span className="w-2 h-2 bg-[#0082FC] rounded-none animate-pulse shrink-0" />
             <span className="text-[10px] sm:text-[11px] font-mono font-bold uppercase tracking-wider text-white/95">
               Ecological Water Infrastructure &bull; 100% Recycled Iron
             </span>
@@ -424,7 +424,7 @@ export const IndustrialFooter: React.FC<IndustrialFooterProps> = ({
       {/* ========================================================
           3. BOTTOM BAR: LEGAL COPYRIGHT & ANTI-THEFT SCRAP REGISTRY
       ======================================================== */}
-      <div className="border-t-2 border-[#5FD4FD]/40 bg-[#0082FC] py-6 sm:py-8 text-xs text-white">
+      <div className="border-t-2 border-[#0082FC]/40 bg-[#0074f0] py-6 sm:py-8 text-xs text-white">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 space-y-4">
           <div className="flex flex-col md:flex-row items-center justify-between gap-4">
             <div className="font-semibold text-white/90 text-center md:text-left">
@@ -434,23 +434,23 @@ export const IndustrialFooter: React.FC<IndustrialFooterProps> = ({
 
             {/* Certifications Badges */}
             <div className="flex flex-wrap items-center justify-center gap-2">
-              <span className="px-2.5 py-1 bg-white text-[#0082FC] font-extrabold text-[11px] uppercase tracking-wider border border-[#5FD4FD]">
+              <span className="px-2.5 py-1 bg-white text-[#0074f0] font-extrabold text-[11px] uppercase tracking-wider border border-[#0082FC]">
                 ASTM A536 Certified
               </span>
-              <span className="px-2.5 py-1 bg-white text-[#0082FC] font-extrabold text-[11px] uppercase tracking-wider border border-[#5FD4FD]">
+              <span className="px-2.5 py-1 bg-white text-[#0074f0] font-extrabold text-[11px] uppercase tracking-wider border border-[#0082FC]">
                 AWWA C153 &amp; C110
               </span>
-              <span className="px-2.5 py-1 bg-white text-[#0082FC] font-extrabold text-[11px] uppercase tracking-wider border border-[#5FD4FD]">
+              <span className="px-2.5 py-1 bg-white text-[#0074f0] font-extrabold text-[11px] uppercase tracking-wider border border-[#0082FC]">
                 NSF/ANSI 61 &amp; 372
               </span>
-              <span className="px-2.5 py-1 bg-white text-[#0082FC] font-extrabold text-[11px] uppercase tracking-wider border border-[#5FD4FD]">
+              <span className="px-2.5 py-1 bg-white text-[#0074f0] font-extrabold text-[11px] uppercase tracking-wider border border-[#0082FC]">
                 100% AIS / BABA Ready
               </span>
             </div>
           </div>
 
           {/* Enclosed Anti-Theft Scrap Registry Notice Box */}
-          <div className="p-3.5 bg-white/10 border-2 border-[#5FD4FD]/40 text-[11px] text-white/90 leading-relaxed shadow-sm">
+          <div className="p-3.5 bg-white/10 border-2 border-[#0082FC]/40 text-[11px] text-white/90 leading-relaxed shadow-sm">
             <strong className="text-white uppercase tracking-wider font-black">
               Anti-Theft Scrap Registry Notice:{" "}
             </strong>
