@@ -55,7 +55,7 @@ const HOTSPOTS = [
 export const SolenoSamplingHero: React.FC = () => {
   const [activeMode, setActiveMode] = useState<
     "flow" | "thermal" | "pressure" | "video"
-  >("flow");
+  >("video");
   const [isSimulating, _setIsSimulating] = useState(true);
   const [activeHotspot, setActiveHotspot] = useState<number | null>(null);
   const [livePsi, setLivePsi] = useState<number>(300);
@@ -194,57 +194,61 @@ export const SolenoSamplingHero: React.FC = () => {
                 </div>
               </div>
             ) : (
-              <div className="w-full max-w-[420px] mb-3 flex items-center justify-between gap-1 bg-white/10 p-1 border border-[#5FD4FD] backdrop-blur-md">
-                <button
-                  type="button"
-                  onClick={() => setActiveMode("flow")}
-                  className={`flex-1 py-1 px-2 text-[11px] font-black uppercase tracking-wider transition-all flex items-center justify-center gap-1 rounded-none ${
-                    activeMode === "flow"
-                      ? "bg-white text-[#0082FC] shadow-sm"
-                      : "text-white hover:bg-white/10"
-                  }`}
-                >
-                  <Droplets className="w-3.5 h-3.5" />
-                  <span>Active Flow</span>
-                </button>
-
-                <button
-                  type="button"
-                  onClick={() => setActiveMode("thermal")}
-                  className={`flex-1 py-1 px-2 text-[11px] font-black uppercase tracking-wider transition-all flex items-center justify-center gap-1 rounded-none ${
-                    activeMode === "thermal"
-                      ? "bg-white text-[#0082FC] shadow-sm"
-                      : "text-white hover:bg-white/10"
-                  }`}
-                >
-                  <ThermometerSnowflake className="w-3.5 h-3.5" />
-                  <span>Frost -20°F</span>
-                </button>
-
-                <button
-                  type="button"
-                  onClick={() => setActiveMode("pressure")}
-                  className={`flex-1 py-1 px-2 text-[11px] font-black uppercase tracking-wider transition-all flex items-center justify-center gap-1 rounded-none ${
-                    activeMode === "pressure"
-                      ? "bg-white text-[#0082FC] shadow-sm"
-                      : "text-white hover:bg-white/10"
-                  }`}
-                >
-                  <Gauge className="w-3.5 h-3.5" />
-                  <span>{livePsi} PSI Live</span>
-                </button>
-
+              <div className="w-full max-w-[560px] sm:max-w-[580px] mb-4 flex items-center justify-between gap-1 sm:gap-1.5 bg-white/10 p-1 border-2 border-[#5FD4FD] backdrop-blur-md overflow-x-auto no-scrollbar">
+                {/* 1. Field Video FIRST */}
                 <button
                   type="button"
                   onClick={() => setActiveMode("video")}
-                  className={`flex-1 py-1 px-2 text-[11px] font-black uppercase tracking-wider transition-all flex items-center justify-center gap-1 rounded-none ${
+                  className={`flex-1 py-1.5 px-2 sm:px-2.5 text-[11px] sm:text-xs font-black uppercase tracking-wider transition-all flex items-center justify-center gap-1.5 rounded-none whitespace-nowrap flex-nowrap shrink-0 ${
                     activeMode === "video"
                       ? "bg-white text-[#0082FC] shadow-sm"
                       : "text-white hover:bg-white/10"
                   }`}
                 >
-                  <Play className="w-3 h-3 fill-current" />
-                  <span>Field Video</span>
+                  <Play className="w-3 h-3 fill-current shrink-0" />
+                  <span className="whitespace-nowrap">Field Video</span>
+                </button>
+
+                {/* 2. Active Flow */}
+                <button
+                  type="button"
+                  onClick={() => setActiveMode("flow")}
+                  className={`flex-1 py-1.5 px-2 sm:px-2.5 text-[11px] sm:text-xs font-black uppercase tracking-wider transition-all flex items-center justify-center gap-1.5 rounded-none whitespace-nowrap flex-nowrap shrink-0 ${
+                    activeMode === "flow"
+                      ? "bg-white text-[#0082FC] shadow-sm"
+                      : "text-white hover:bg-white/10"
+                  }`}
+                >
+                  <Droplets className="w-3.5 h-3.5 shrink-0" />
+                  <span className="whitespace-nowrap">Active Flow</span>
+                </button>
+
+                {/* 3. Frost -20°F */}
+                <button
+                  type="button"
+                  onClick={() => setActiveMode("thermal")}
+                  className={`flex-1 py-1.5 px-2 sm:px-2.5 text-[11px] sm:text-xs font-black uppercase tracking-wider transition-all flex items-center justify-center gap-1.5 rounded-none whitespace-nowrap flex-nowrap shrink-0 ${
+                    activeMode === "thermal"
+                      ? "bg-white text-[#0082FC] shadow-sm"
+                      : "text-white hover:bg-white/10"
+                  }`}
+                >
+                  <ThermometerSnowflake className="w-3.5 h-3.5 shrink-0" />
+                  <span className="whitespace-nowrap">Frost -20°F</span>
+                </button>
+
+                {/* 4. 301 PSI Live */}
+                <button
+                  type="button"
+                  onClick={() => setActiveMode("pressure")}
+                  className={`flex-1 py-1.5 px-2 sm:px-2.5 text-[11px] sm:text-xs font-black uppercase tracking-wider transition-all flex items-center justify-center gap-1.5 rounded-none whitespace-nowrap flex-nowrap shrink-0 ${
+                    activeMode === "pressure"
+                      ? "bg-white text-[#0082FC] shadow-sm"
+                      : "text-white hover:bg-white/10"
+                  }`}
+                >
+                  <Gauge className="w-3.5 h-3.5 shrink-0" />
+                  <span className="whitespace-nowrap">{livePsi} PSI Live</span>
                 </button>
               </div>
             )}
@@ -274,9 +278,9 @@ export const SolenoSamplingHero: React.FC = () => {
               )}
 
               {/* Soleno Circular Vessel Container */}
-              <div className="relative w-[280px] h-[280px] sm:w-[380px] sm:h-[380px] xl:w-[420px] xl:h-[420px] rounded-full bg-white border-4 border-[#5FD4FD] shadow-2xl flex items-center justify-center overflow-hidden p-6">
+              <div className="relative w-[280px] h-[280px] sm:w-[380px] sm:h-[380px] xl:w-[420px] xl:h-[420px] rounded-full bg-white border-4 border-[#5FD4FD] shadow-2xl flex items-center justify-center overflow-hidden p-3 sm:p-5">
                 {activeMode === "video" ? (
-                  <div className="absolute inset-0 w-full h-full bg-black z-20 overflow-hidden flex items-center justify-center">
+                  <div className="relative w-full h-full bg-white flex items-center justify-center overflow-hidden">
                     <video
                       src="/videos/sampling-stations.mp4"
                       autoPlay
@@ -284,22 +288,11 @@ export const SolenoSamplingHero: React.FC = () => {
                       muted
                       playsInline
                       preload="auto"
-                      className="w-full h-full object-cover"
+                      className="w-full h-full object-contain filter drop-shadow-xl z-10"
                     />
-                    <div className="absolute inset-0 bg-gradient-to-t from-[#0082FC]/80 via-transparent to-black/40 pointer-events-none" />
-                    <div className="absolute top-4 left-4 z-30 flex items-center gap-2 bg-[#0082FC]/90 px-2.5 py-1 border border-[#5FD4FD] shadow-md">
-                      <span className="w-2 h-2 bg-red-500 rounded-full animate-ping" />
-                      <span className="text-[10px] font-black uppercase tracking-wider text-white">
-                        LIVE DEMO
-                      </span>
-                    </div>
-                    <div className="absolute bottom-4 inset-x-4 z-30 flex items-center justify-between text-white pointer-events-none px-2">
-                      <span className="text-[10px] font-bold uppercase tracking-wider bg-black/60 px-2 py-0.5 border border-white/20">
-                        Sanitary Flow Test
-                      </span>
-                      <span className="text-[10px] font-mono text-[#5FD4FD] font-bold">
-                        {livePsi} PSI PROOF
-                      </span>
+                    <div className="absolute top-2 left-1/2 -translate-x-1/2 z-20 flex items-center gap-1.5 bg-[#0082FC] text-white px-2.5 py-0.5 text-[9px] sm:text-[10px] font-black uppercase tracking-wider shadow border border-[#5FD4FD]">
+                      <span className="w-1.5 h-1.5 bg-red-500 rounded-full animate-ping" />
+                      <span>LIVE FIELD DEMO</span>
                     </div>
                   </div>
                 ) : (
@@ -351,11 +344,11 @@ export const SolenoSamplingHero: React.FC = () => {
                     {/* Floating Wave Texture */}
                     <div className="absolute -bottom-10 inset-x-0 h-32 bg-[#5FD4FD]/20 rounded-full blur-xl pointer-events-none" />
 
-                    {/* Central Flagship Product: Water Sampling Station */}
+                    {/* Central Flagship Product: Water Sampling Station (100% visible inside circle) */}
                     <img
                       src="/images/our-images/sampling-station.png"
                       alt="Aqua Industries Municipal Water Sampling Station Flagship"
-                      className="relative z-10 max-h-[82%] max-w-[82%] object-contain soleno-product-float drop-shadow-2xl"
+                      className="relative z-10 max-h-[92%] max-w-[92%] object-contain soleno-product-float drop-shadow-2xl"
                     />
 
                     {/* Interactive Hotspot Inspection Pins */}
@@ -380,21 +373,6 @@ export const SolenoSamplingHero: React.FC = () => {
                         <span>{spot.id}</span>
                       </button>
                     ))}
-
-                    {/* Soleno-Style Badge: Municipal Sampling Station / Industry Leader */}
-                    <div className="absolute inset-x-0 bottom-4 text-center z-20 px-3">
-                      <div className="inline-block bg-[#0082FC] border-2 border-[#5FD4FD] px-4 py-1.5 shadow-2xl">
-                        <span className="block text-[10px] sm:text-xs font-black text-[#5FD4FD] uppercase tracking-wider">
-                          Flagship Innovation
-                        </span>
-                        <h2 className="text-xs sm:text-sm font-black text-white uppercase tracking-tight leading-tight">
-                          Sampling Station
-                        </h2>
-                        <span className="block text-[10px] font-bold text-white/95">
-                          American Industry Leader
-                        </span>
-                      </div>
-                    </div>
                   </>
                 )}
               </div>
@@ -418,16 +396,33 @@ export const SolenoSamplingHero: React.FC = () => {
               <div className="absolute -top-3 left-4 bg-white border-2 border-[#0082FC] px-2.5 py-1 text-[11px] font-bold text-[#0082FC] shadow-sm z-20 hidden sm:flex items-center gap-1.5 whitespace-nowrap">
                 <span className="w-2 h-2 bg-[#0082FC] animate-ping" />
                 <span>
-                  {activeMode === "flow"
-                    ? "Flow: 4.2 GPM • Cl₂: 1.25 mg/L"
-                    : activeMode === "thermal"
-                      ? "Thermal: -20°F R-14 Core"
-                      : "Pressure: 300 PSI Hydrostatic"}
+                  {activeMode === "video"
+                    ? "Field Video: Real Installation Live"
+                    : activeMode === "flow"
+                      ? "Flow: 4.2 GPM • Cl₂: 1.25 mg/L"
+                      : activeMode === "thermal"
+                        ? "Thermal: -20°F R-14 Core"
+                        : "Pressure: 300 PSI Hydrostatic"}
                 </span>
               </div>
 
               <div className="absolute top-12 -right-4 bg-white border-2 border-[#5FD4FD] px-2.5 py-1 text-[11px] font-bold text-[#0082FC] shadow-sm z-20 hidden sm:block whitespace-nowrap">
                 ✓ Click Pins 1-4 to Inspect
+              </div>
+            </div>
+
+            {/* Soleno-Style Badge: Municipal Sampling Station / Industry Leader positioned outside below the circle */}
+            <div className="mt-4 text-center z-20">
+              <div className="inline-block bg-[#0082FC] border-2 border-[#5FD4FD] px-5 py-2 shadow-2xl">
+                <span className="block text-[10px] sm:text-xs font-black text-[#5FD4FD] uppercase tracking-wider">
+                  Flagship Innovation
+                </span>
+                <h2 className="text-xs sm:text-sm font-black text-white uppercase tracking-tight leading-tight">
+                  Sampling Station
+                </h2>
+                <span className="block text-[10px] font-bold text-white/95">
+                  American Industry Leader
+                </span>
               </div>
             </div>
           </div>
