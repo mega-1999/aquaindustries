@@ -194,7 +194,7 @@ export const VerticalSideVideoAds: React.FC<VerticalSideVideoAdsProps> = ({
   onAddToRfq,
   onPreviewSubmittal,
 }) => {
-  const [isVisible, setIsVisible] = useState(false);
+  const [isVisible, setIsVisible] = useState(true);
   const [activeVideoModal, setActiveVideoModal] = useState<VideoAdItem | null>(
     null,
   );
@@ -202,18 +202,22 @@ export const VerticalSideVideoAds: React.FC<VerticalSideVideoAdsProps> = ({
   const [leftDrawerOpen, setLeftDrawerOpen] = useState(false);
   const [leftMinimized, setLeftMinimized] = useState(false);
 
-  // Monitor scroll: show only between Hero section and Footer
+  // Monitor scroll: visible across Hero and all sections, cleanly avoids Navbar (top) and Footer (bottom)
   useEffect(() => {
     const handleScroll = () => {
-      const scrollY = window.scrollY;
-      const windowHeight = window.innerHeight;
-      const fullHeight = document.documentElement.scrollHeight;
-
-      // Show after scrolling past hero (~580px), hide before reaching footer (~650px from bottom)
-      const pastHero = scrollY > 580;
-      const beforeFooter = scrollY + windowHeight < fullHeight - 650;
-
-      setIsVisible(pastHero && beforeFooter);
+      const footerEl = document.querySelector("footer");
+      if (footerEl) {
+        const footerRect = footerEl.getBoundingClientRect();
+        // Hide smoothly when footer enters near the bottom of viewport
+        const beforeFooter = footerRect.top > 160;
+        setIsVisible(beforeFooter);
+      } else {
+        const scrollY = window.scrollY;
+        const windowHeight = window.innerHeight;
+        const fullHeight = document.documentElement.scrollHeight;
+        const beforeFooter = scrollY + windowHeight < fullHeight - 500;
+        setIsVisible(beforeFooter);
+      }
     };
 
     window.addEventListener("scroll", handleScroll, { passive: true });
