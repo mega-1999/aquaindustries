@@ -81,8 +81,12 @@ export const IndustrialFooter: React.FC<IndustrialFooterProps> = ({
           ======================================================== */}
           <div className="lg:col-span-3 min-w-0 space-y-4">
             <div className="flex items-center gap-2.5">
-              <div className="w-9 h-9 bg-white flex items-center justify-center text-[#0074f0] border border-[#0082FC] shrink-0">
-                <Droplets className="w-5 h-5 text-[#0074f0]" />
+              <div className="h-9 px-1.5 bg-white flex items-center justify-center border border-[#5FD4FD] shrink-0 shadow-sm">
+                <img
+                  src="/images/AI_Waterdrop.png"
+                  alt="Aqua Industries Logo"
+                  className="h-7 w-auto object-contain"
+                />
               </div>
               <span className="font-black text-white text-lg tracking-tight uppercase">
                 Aqua Industries

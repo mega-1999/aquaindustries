@@ -90,12 +90,13 @@ export const MainNavbar: React.FC<MainNavbarProps> = ({
           {/* Brand Logo: Aqua Industries */}
           <a
             href="/"
-            className="flex items-center gap-2.5 shrink-0 group focus:outline-none focus-visible:ring-2 focus-visible:ring-[#0082fc] rounded-none p-1"
+            className="flex items-center gap-2 sm:gap-2.5 shrink-0 group focus:outline-none focus-visible:ring-2 focus-visible:ring-[#0082fc] rounded-none p-1"
           >
-            <div className="w-9 h-9 sm:w-10 sm:h-10 rounded-none bg-[#0082fc] flex items-center justify-center shadow-md shadow-[#0082fc]/30 group-hover:scale-105 transition-transform duration-200 relative overflow-hidden shrink-0 border border-[#5fd4fd]">
-              <Droplets className="w-5 h-5 sm:w-6 sm:h-6 text-white" />
-              <div className="absolute top-0 right-0 w-2.5 h-2.5 bg-[#5fd4fd] rounded-none blur-[1px]" />
-            </div>
+            <img
+              src="/images/AI_Waterdrop.png"
+              alt="Aqua Industries Logo"
+              className="h-8 sm:h-10 w-auto object-contain group-hover:scale-105 transition-transform duration-200 shrink-0"
+            />
             <div className="flex flex-col">
               <span className="font-extrabold text-[#0082fc] text-lg sm:text-xl tracking-tight leading-none whitespace-nowrap flex items-center gap-1 font-sans">
                 Aqua <span className="text-[#5fd4fd]">Industries</span>
@@ -710,9 +711,11 @@ export const MainNavbar: React.FC<MainNavbarProps> = ({
             {/* Drawer Header */}
             <div className="flex items-center justify-between pb-4 border-b-2 border-[#0082fc]/20">
               <div className="flex items-center gap-2">
-                <div className="w-8 h-8 rounded-none bg-[#0082fc] flex items-center justify-center text-white border border-[#5fd4fd]">
-                  <Droplets className="w-5 h-5" />
-                </div>
+                <img
+                  src="/images/AI_Waterdrop.png"
+                  alt="Aqua Industries Logo"
+                  className="h-8 w-auto object-contain shrink-0"
+                />
                 <span className="font-extrabold text-[#0082fc] text-base">
                   Aqua <span className="text-[#5fd4fd]">Industries</span>
                 </span>

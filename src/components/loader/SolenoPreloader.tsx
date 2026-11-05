@@ -127,9 +127,12 @@ export const SolenoPreloader: React.FC = () => {
       >
         {/* Pulsing Brand Emblem */}
         <div className="pulse-logo mb-5">
-          <div className="w-20 h-20 sm:w-24 sm:h-24 bg-white border-2 border-[#5FD4FD] flex items-center justify-center shadow-2xl relative">
-            <Droplets className="w-10 h-10 sm:w-12 sm:h-12 text-[#0082FC]" />
-            <div className="absolute top-1 right-1 w-3 h-3 bg-[#5FD4FD]" />
+          <div className="w-24 h-24 sm:w-28 sm:h-28 bg-white border-2 border-[#5FD4FD] flex items-center justify-center shadow-2xl relative p-3">
+            <img
+              src="/images/AI_Waterdrop.png"
+              alt="Aqua Industries"
+              className="w-full h-full object-contain filter drop-shadow-sm"
+            />
           </div>
         </div>
 

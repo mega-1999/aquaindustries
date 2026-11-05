@@ -62,8 +62,12 @@ export const DashboardLayout: React.FC<DashboardLayoutProps> = ({
   if (!isInitialized) {
     return (
       <div className="min-h-screen bg-slate-100 flex flex-col items-center justify-center p-6 text-[#0082FC]">
-        <div className="w-16 h-16 bg-[#0082FC] text-white border-2 border-[#5FD4FD] flex items-center justify-center shadow-lg animate-pulse mb-4">
-          <Droplets className="w-8 h-8 text-white" />
+        <div className="h-16 px-3 bg-white border-2 border-[#5FD4FD] flex items-center justify-center shadow-lg animate-pulse mb-4">
+          <img
+            src="/images/AI_Waterdrop.png"
+            alt="Aqua Industries"
+            className="h-12 w-auto object-contain"
+          />
         </div>
         <div className="font-mono text-xs font-bold uppercase tracking-wider text-[#0082FC]">
           Verifying Commercial Credentials...
@@ -79,8 +83,12 @@ export const DashboardLayout: React.FC<DashboardLayoutProps> = ({
         {/* Top Header */}
         <header className="bg-[#0082FC] text-white px-6 py-4 border-b-4 border-[#5FD4FD] flex items-center justify-between">
           <Link href="/" className="flex items-center gap-2.5">
-            <div className="w-8 h-8 bg-white text-[#0082FC] border border-[#5FD4FD] flex items-center justify-center">
-              <Droplets className="w-5 h-5 text-[#0082FC]" />
+            <div className="h-8 px-1.5 bg-white border border-[#5FD4FD] flex items-center justify-center">
+              <img
+                src="/images/AI_Waterdrop.png"
+                alt="Aqua Industries"
+                className="h-6 w-auto object-contain"
+              />
             </div>
             <span className="font-black text-sm uppercase tracking-tight">
               Aqua <span className="text-[#5FD4FD]">Industries</span>
@@ -210,8 +218,12 @@ export const DashboardLayout: React.FC<DashboardLayoutProps> = ({
       <div className="min-h-screen bg-slate-100 flex flex-col text-[#0082FC]">
         <header className="bg-[#0082FC] text-white px-6 py-4 border-b-4 border-[#5FD4FD] flex items-center justify-between">
           <Link href="/" className="flex items-center gap-2.5">
-            <div className="w-8 h-8 bg-white text-[#0082FC] border border-[#5FD4FD] flex items-center justify-center">
-              <Droplets className="w-5 h-5 text-[#0082FC]" />
+            <div className="h-8 px-1.5 bg-white border border-[#5FD4FD] flex items-center justify-center">
+              <img
+                src="/images/AI_Waterdrop.png"
+                alt="Aqua Industries"
+                className="h-6 w-auto object-contain"
+              />
             </div>
             <span className="font-black text-sm uppercase tracking-tight">
               Aqua <span className="text-[#5FD4FD]">Industries</span>
@@ -322,8 +334,12 @@ export const DashboardLayout: React.FC<DashboardLayoutProps> = ({
             className="flex items-center gap-3 group focus:outline-none"
             title="Return to Aqua Industries Home"
           >
-            <div className="w-10 h-10 bg-[#0082FC] text-white border-2 border-[#5FD4FD] flex items-center justify-center shrink-0 shadow-md group-hover:scale-105 transition-transform">
-              <Droplets className="w-6 h-6 text-white" />
+            <div className="h-10 px-1.5 bg-white border-2 border-[#5FD4FD] flex items-center justify-center shrink-0 shadow-md group-hover:scale-105 transition-transform">
+              <img
+                src="/images/AI_Waterdrop.png"
+                alt="Aqua Industries"
+                className="h-7 w-auto object-contain"
+              />
             </div>
             <div>
               <div className="font-extrabold text-[#0082FC] text-lg tracking-tight leading-none">
