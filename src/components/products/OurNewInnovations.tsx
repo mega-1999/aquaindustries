@@ -365,14 +365,14 @@ export const OurNewInnovations: React.FC<OurNewInnovationsProps> = ({
         {/* ========================================================
             TOP SECTION HEADER
         ======================================================== */}
-        <div className="flex flex-col lg:flex-row lg:items-end justify-between gap-6 mb-8 sm:mb-10 border-b-2 border-white/20 pb-6">
+        <div className="flex flex-col lg:flex-row lg:items-end justify-between gap-6 mb-6 sm:mb-8 border-b-2 border-white/20 pb-5">
           <div className="max-w-3xl">
             <div className="inline-flex items-center gap-2 px-3 py-1 bg-white text-[#0082FC] text-xs font-bold uppercase tracking-wider rounded-none mb-3 shadow-md border-2 border-[#5FD4FD]">
               <Sparkles className="w-3.5 h-3.5 text-[#0082FC] shrink-0" />
               <span>3rd Product Showcase &bull; Authentic Foundry Tooling</span>
             </div>
 
-            <h2 className="text-2xl sm:text-4xl lg:text-5xl font-black uppercase tracking-tight text-white leading-[1.05] mb-3">
+            <h2 className="text-2xl sm:text-4xl lg:text-5xl font-black uppercase tracking-tight text-white leading-[1.05] mb-2">
               OUR NEW <span className="text-[#5FD4FD]">INNOVATIONS</span>
             </h2>
 
@@ -385,7 +385,7 @@ export const OurNewInnovations: React.FC<OurNewInnovationsProps> = ({
           </div>
 
           <div className="flex items-center gap-2 self-start lg:self-end">
-            <div className="px-3.5 py-2 bg-white/10 border-2 border-white/30 text-white text-xs font-bold uppercase tracking-wider flex items-center gap-2 backdrop-blur-sm shadow-sm">
+            <div className="px-3.5 py-2 bg-white/10 border-2 border-white/30 text-white text-xs font-bold uppercase tracking-wider flex items-center gap-2 backdrop-blur-sm shadow-sm whitespace-nowrap">
               <Sliders className="w-4 h-4 text-[#5FD4FD]" />
               <span>CAD Hotspot Inspector</span>
             </div>
@@ -393,9 +393,9 @@ export const OurNewInnovations: React.FC<OurNewInnovationsProps> = ({
         </div>
 
         {/* ========================================================
-            HORIZONTAL TAB SELECTOR (NO 4-CARD SECTION)
+            1. HORIZONTAL 4-ITEM SELECTOR BAR (STRICTLY IN ONE LINE)
         ======================================================== */}
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-2.5 mb-8 bg-white/10 p-2 border-2 border-white/30 backdrop-blur-md">
+        <div className="w-full mb-6 bg-white/10 p-1.5 border-2 border-[#5FD4FD] backdrop-blur-md flex items-center justify-between gap-1.5 sm:gap-2 overflow-x-auto no-scrollbar">
           {INNOVATIONS.map((item, idx) => {
             const isSelected = selectedIndex === idx;
             return (
@@ -406,46 +406,34 @@ export const OurNewInnovations: React.FC<OurNewInnovationsProps> = ({
                   setSelectedIndex(idx);
                   setActiveHotspot(null);
                 }}
-                className={`p-3 text-left transition-all rounded-none cursor-pointer border-2 flex items-center justify-between gap-2.5 ${
+                className={`flex-1 py-2 sm:py-2.5 px-2 sm:px-3 text-center transition-all rounded-none cursor-pointer border-2 whitespace-nowrap flex-nowrap shrink-0 flex items-center justify-center gap-1.5 sm:gap-2 ${
                   isSelected
-                    ? "bg-white text-[#0082FC] border-[#5FD4FD] shadow-xl ring-2 ring-white"
-                    : "bg-white/5 text-white border-white/20 hover:border-[#5FD4FD] hover:bg-white/15"
+                    ? "bg-white text-[#0082FC] border-white shadow-lg"
+                    : "bg-transparent text-white border-transparent hover:bg-white/10 hover:border-white/30"
                 }`}
               >
-                <div className="flex items-center gap-2.5 min-w-0">
-                  <span
-                    className={`text-[10px] font-black uppercase px-1.5 py-0.5 shrink-0 ${
-                      isSelected
-                        ? "bg-[#0082FC] text-white"
-                        : "bg-white/20 text-white"
-                    }`}
-                  >
-                    {item.number}
-                  </span>
-                  <div className="truncate">
-                    <span
-                      className={`block text-xs font-black uppercase leading-tight truncate ${
-                        isSelected ? "text-[#0082FC]" : "text-white"
-                      }`}
-                    >
-                      {item.name}
-                    </span>
-                    <span
-                      className={`block text-[10px] font-bold truncate ${
-                        isSelected ? "text-[#0082FC]/75" : "text-[#5FD4FD]"
-                      }`}
-                    >
-                      {item.badge}
-                    </span>
-                  </div>
-                </div>
-
                 <span
-                  className={`text-[10px] font-black shrink-0 ${
-                    isSelected ? "text-[#0082FC]" : "text-white/40"
+                  className={`text-[10px] font-black uppercase px-1.5 py-0.5 shrink-0 ${
+                    isSelected
+                      ? "bg-[#0082FC] text-white"
+                      : "bg-white/20 text-white"
                   }`}
                 >
-                  {isSelected ? "● ACTIVE" : "SELECT →"}
+                  {item.number}
+                </span>
+                <span className="text-xs sm:text-sm font-black uppercase tracking-wider truncate">
+                  {item.name
+                    .replace("Cast Iron ", "")
+                    .replace("Multi-Tier ", "")}
+                </span>
+                <span
+                  className={`text-[9px] font-bold uppercase px-1.5 py-0.5 hidden md:inline-block shrink-0 ${
+                    isSelected
+                      ? "bg-[#0082FC]/10 text-[#0082FC]"
+                      : "bg-white/10 text-[#5FD4FD]"
+                  }`}
+                >
+                  {item.badge}
                 </span>
               </button>
             );
@@ -453,13 +441,44 @@ export const OurNewInnovations: React.FC<OurNewInnovationsProps> = ({
         </div>
 
         {/* ========================================================
-            CAD HOTSPOT WORKBENCH & ENGINEERING LABORATORY
+            2. UNIFIED HORIZONTAL INNOVATION HEADER RIBBON
         ======================================================== */}
-        <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 items-start">
-          {/* LEFT 6 COLUMNS: Visual Display & Hotspot Inspection */}
-          <div className="lg:col-span-6 flex flex-col gap-4">
-            {/* View Mode Switcher */}
-            <div className="flex items-center justify-between gap-2 border-2 border-white/60 p-1 bg-[#0082FC]">
+        <div className="mb-6 p-4 sm:p-5 bg-white/10 border-2 border-[#5FD4FD] backdrop-blur-md flex flex-col md:flex-row md:items-center justify-between gap-4">
+          <div className="min-w-0">
+            <div className="flex items-center gap-2 mb-1.5">
+              <span className="text-[10px] font-black uppercase tracking-wider bg-[#5FD4FD] text-[#0082FC] px-2 py-0.5">
+                Innovation #{currentItem.number}
+              </span>
+              <span className="text-[11px] font-bold text-white/90 uppercase tracking-wide">
+                {currentItem.categoryLabel}
+              </span>
+            </div>
+            <h3 className="text-xl sm:text-2xl lg:text-3xl font-black uppercase text-white tracking-tight leading-tight">
+              {currentItem.name}
+            </h3>
+            <p className="text-xs sm:text-sm text-white/90 mt-1 max-w-3xl leading-relaxed">
+              {currentItem.summary}
+            </p>
+          </div>
+
+          <div className="flex items-center gap-2 shrink-0 self-start md:self-center">
+            <span className="px-3 py-1.5 bg-white text-[#0082FC] text-xs font-black uppercase tracking-wider border-2 border-[#5FD4FD] shadow-sm">
+              {currentItem.badge}
+            </span>
+            <span className="px-3 py-1.5 bg-[#0082FC] text-white text-xs font-black uppercase tracking-wider border-2 border-[#5FD4FD]">
+              {currentItem.spec}
+            </span>
+          </div>
+        </div>
+
+        {/* ========================================================
+            3. HORIZONTALLY BALANCED 2-COLUMN ENGINEERING LABORATORY
+        ======================================================== */}
+        <div className="grid grid-cols-1 lg:grid-cols-12 gap-6 lg:gap-8 items-stretch">
+          {/* LEFT COLUMN: Visual & Hotspot Inspector (6 cols) */}
+          <div className="lg:col-span-6 flex flex-col justify-between h-full bg-white border-4 border-[#5FD4FD] p-5 sm:p-6 shadow-2xl relative text-[#0082FC]">
+            {/* Top Bar inside Left Card: View Mode Switcher */}
+            <div className="flex items-center justify-between gap-2 border-2 border-[#0082FC] p-1 bg-[#0082FC] mb-4">
               <button
                 type="button"
                 onClick={() => setViewMode("photo")}
@@ -488,105 +507,74 @@ export const OurNewInnovations: React.FC<OurNewInnovationsProps> = ({
 
             {/* Hotspot Inspection Detail Callout (when pin is active) */}
             {activeHotspot !== null && activeSpotData && (
-              <div className="w-full bg-white border-2 border-[#5FD4FD] p-3.5 text-left shadow-xl text-[#0082FC] animate-in fade-in slide-in-from-top-2">
+              <div className="w-full bg-[#0082FC] border-2 border-[#5FD4FD] p-3 text-left shadow-lg text-white mb-3 animate-in fade-in slide-in-from-top-1">
                 <div className="flex items-center justify-between gap-2 mb-1">
                   <div className="flex items-center gap-2">
-                    <span className="w-6 h-6 bg-[#0082FC] text-white flex items-center justify-center font-black text-xs">
+                    <span className="w-5 h-5 bg-white text-[#0082FC] flex items-center justify-center font-black text-xs">
                       {activeHotspot}
                     </span>
-                    <span className="font-black text-xs sm:text-sm uppercase tracking-tight text-[#0082FC]">
+                    <span className="font-black text-xs sm:text-sm uppercase tracking-tight text-white">
                       {activeSpotData.title}
                     </span>
                   </div>
-                  <span className="text-[10px] bg-[#5FD4FD] text-[#0082FC] font-extrabold px-2 py-0.5 whitespace-nowrap">
+                  <span className="text-[10px] bg-[#5FD4FD] text-[#0082FC] font-black px-2 py-0.5 whitespace-nowrap">
                     {activeSpotData.badge}
                   </span>
                 </div>
-                <p className="text-xs leading-relaxed text-[#0082FC]/90 font-medium">
+                <p className="text-xs leading-relaxed text-white/90 font-medium">
                   {activeSpotData.desc}
                 </p>
-                <div className="mt-2 flex items-center justify-between border-t border-[#0082FC]/15 pt-1.5">
-                  <span className="text-[10px] text-[#0082FC]/70 font-bold uppercase">
-                    Feature Spec &bull; Hotspot {activeHotspot} of 4
+                <div className="mt-2 flex items-center justify-between border-t border-white/20 pt-1.5">
+                  <span className="text-[10px] text-white/70 font-bold uppercase">
+                    Feature Point {activeHotspot} of 4
                   </span>
                   <button
                     type="button"
                     onClick={() => setActiveHotspot(null)}
-                    className="text-[11px] font-black text-[#0082FC] hover:text-[#5FD4FD] uppercase cursor-pointer"
+                    className="text-[11px] font-black text-[#5FD4FD] hover:text-white uppercase cursor-pointer"
                   >
-                    ✕ Close Detail
+                    ✕ Close
                   </button>
                 </div>
               </div>
             )}
 
-            {/* Visual Container Card */}
-            <div className="bg-white border-4 border-[#5FD4FD] p-6 sm:p-8 shadow-2xl relative flex flex-col items-center justify-center text-[#0082FC] min-h-[420px]">
-              {/* Corner Specification Tag */}
-              <div className="absolute top-4 left-4 z-10 flex flex-col gap-0.5">
-                <span className="text-[10px] font-bold text-[#0082FC]/80 uppercase tracking-wider">
-                  Innovation #{currentItem.number}
-                </span>
-                <span className="text-xs sm:text-sm font-black text-[#0082FC] uppercase">
-                  {currentItem.categoryLabel}
-                </span>
-              </div>
-
-              <div className="absolute top-4 right-4 z-10">
-                <span className="px-2.5 py-0.5 bg-white text-[#0082FC] border border-[#0082FC] text-[10px] sm:text-xs font-extrabold uppercase tracking-wider shadow-xs">
-                  {currentItem.badge}
-                </span>
-              </div>
-
+            {/* Display Area: Photo or Blueprint */}
+            <div className="relative w-full flex-1 min-h-[300px] sm:min-h-[340px] flex items-center justify-center p-2 overflow-hidden">
               {viewMode === "photo" ? (
                 <>
-                  {/* High-Resolution Real Product Photograph */}
-                  <div className="h-68 sm:h-80 w-full flex items-center justify-center py-2 overflow-hidden relative">
-                    <img
-                      src={currentItem.imageUrl}
-                      alt={currentItem.name}
-                      className="max-h-full max-w-full object-contain filter drop-shadow-xl transition-transform duration-300 hover:scale-105"
-                    />
+                  <img
+                    src={currentItem.imageUrl}
+                    alt={currentItem.name}
+                    className="max-h-[290px] sm:max-h-[320px] max-w-full object-contain filter drop-shadow-xl transition-transform duration-300 hover:scale-105"
+                  />
 
-                    {/* Interactive Hotspot Inspection Pins */}
-                    {currentItem.hotspots.map((spot) => (
-                      <button
-                        key={spot.id}
-                        type="button"
-                        onClick={() =>
-                          setActiveHotspot(
-                            activeHotspot === spot.id ? null : spot.id,
-                          )
-                        }
-                        style={{ left: spot.x, top: spot.y }}
-                        className={`absolute z-30 w-7 h-7 -translate-x-1/2 -translate-y-1/2 rounded-none border-2 flex items-center justify-center font-black text-xs shadow-xl transition-all hover:scale-125 cursor-pointer ${
-                          activeHotspot === spot.id
-                            ? "bg-[#0082FC] text-white border-white scale-125 ring-4 ring-[#5FD4FD]"
-                            : "bg-white text-[#0082FC] border-[#0082FC] hover:bg-[#5FD4FD]/30"
-                        }`}
-                        title={spot.title}
-                        aria-label={spot.title}
-                      >
-                        <span>{spot.id}</span>
-                      </button>
-                    ))}
-                  </div>
-
-                  {/* Bottom Caption Strip */}
-                  <div className="w-full mt-3 pt-3 border-t border-[#0082FC]/20 flex flex-wrap items-center justify-between gap-2 text-xs font-bold text-[#0082FC]">
-                    <span className="flex items-center gap-1.5">
-                      <CheckCircle2 className="w-4 h-4 text-[#0082FC]" />
-                      ASTM A48 Class 35B Heavy Casting
-                    </span>
-                    <span className="flex items-center gap-1.5">
-                      <ShieldCheck className="w-4 h-4 text-[#0082FC]" />
-                      AASHTO H-20 Highway Proof
-                    </span>
-                  </div>
+                  {/* Interactive Hotspot Inspection Pins */}
+                  {currentItem.hotspots.map((spot) => (
+                    <button
+                      key={spot.id}
+                      type="button"
+                      onClick={() =>
+                        setActiveHotspot(
+                          activeHotspot === spot.id ? null : spot.id,
+                        )
+                      }
+                      style={{ left: spot.x, top: spot.y }}
+                      className={`absolute z-30 w-7 h-7 -translate-x-1/2 -translate-y-1/2 rounded-none border-2 flex items-center justify-center font-black text-xs shadow-xl transition-all hover:scale-125 cursor-pointer ${
+                        activeHotspot === spot.id
+                          ? "bg-[#0082FC] text-white border-white scale-125 ring-4 ring-[#5FD4FD]"
+                          : "bg-white text-[#0082FC] border-[#0082FC] hover:bg-[#5FD4FD]/30"
+                      }`}
+                      title={spot.title}
+                      aria-label={spot.title}
+                    >
+                      <span>{spot.id}</span>
+                    </button>
+                  ))}
                 </>
               ) : (
                 /* Structural CAD Blueprint Schematic View */
-                <div className="w-full flex flex-col items-center justify-between h-[340px] relative p-2">
+                <div className="w-full flex flex-col items-center justify-between h-[300px] relative p-2">
                   <div className="relative w-full flex-1 flex items-center justify-center overflow-hidden">
                     <svg
                       viewBox="0 0 320 220"
@@ -677,27 +665,21 @@ export const OurNewInnovations: React.FC<OurNewInnovationsProps> = ({
               )}
             </div>
 
-            <p className="text-center text-xs text-white/80">
-              ✓ Click Hotspots 1-4 on the casting to inspect engineering
-              features
-            </p>
+            {/* Bottom Strip of Left Card */}
+            <div className="w-full mt-3 pt-3 border-t border-[#0082FC]/20 flex flex-wrap items-center justify-between gap-2 text-xs font-bold text-[#0082FC]">
+              <span className="flex items-center gap-1.5">
+                <CheckCircle2 className="w-4 h-4 text-[#0082FC]" />
+                ASTM A48 Class 35B Heavy Casting
+              </span>
+              <span className="flex items-center gap-1.5">
+                <ShieldCheck className="w-4 h-4 text-[#0082FC]" />
+                AASHTO H-20 Highway Proof
+              </span>
+            </div>
           </div>
 
-          {/* RIGHT 6 COLUMNS: Technical Specifications & Action CTAs */}
-          <div className="lg:col-span-6 space-y-4">
-            {/* Innovation Header Callout */}
-            <div className="p-4 bg-white/10 border-2 border-[#5FD4FD] shadow-xs backdrop-blur-sm">
-              <span className="text-[10px] font-black uppercase text-[#5FD4FD] tracking-wider block mb-1">
-                Engineering Advancement
-              </span>
-              <h3 className="text-lg sm:text-xl font-black uppercase text-white mb-2 leading-tight">
-                {currentItem.name}
-              </h3>
-              <p className="text-xs sm:text-sm text-white/95 leading-relaxed font-normal">
-                {currentItem.summary}
-              </p>
-            </div>
-
+          {/* RIGHT COLUMN: Specifications & Action Suite (6 cols) */}
+          <div className="lg:col-span-6 flex flex-col justify-between h-full gap-4">
             {/* Key Engineering Features Grid */}
             <div className="grid grid-cols-1 sm:grid-cols-2 gap-2.5">
               {currentItem.features.map((feat) => (
@@ -714,7 +696,7 @@ export const OurNewInnovations: React.FC<OurNewInnovationsProps> = ({
             </div>
 
             {/* Technical Submittal Matrix */}
-            <div className="border-2 border-[#5FD4FD] bg-white/10 shadow-md backdrop-blur-sm">
+            <div className="border-2 border-[#5FD4FD] bg-white/10 shadow-md backdrop-blur-sm flex-1 flex flex-col justify-between">
               <div className="px-4 py-2 bg-white text-[#0082FC] flex justify-between items-center">
                 <span className="text-xs font-bold uppercase tracking-wider">
                   Engineering Submittal Specifications
@@ -765,7 +747,7 @@ export const OurNewInnovations: React.FC<OurNewInnovationsProps> = ({
               </div>
             </div>
 
-            {/* Action CTAs */}
+            {/* Action CTAs aligned with bottom of left card */}
             <div className="flex flex-col sm:flex-row gap-3 pt-1">
               <button
                 type="button"
