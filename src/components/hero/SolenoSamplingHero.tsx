@@ -160,62 +160,62 @@ export const SolenoSamplingHero: React.FC = () => {
 
           {/* RIGHT COLUMN: Soleno Circular Showcase Complex with Interactive Physics Render & Hotspots */}
           <div className="lg:col-span-5 flex flex-col items-center justify-center relative pt-6 lg:pt-0">
-            {/* Mode Switcher Bar (Always Visible - No Layout Displacement) */}
-            <div className="w-full max-w-[560px] sm:max-w-[580px] mb-4 flex items-center justify-between gap-1 sm:gap-1.5 bg-white/10 p-1 border-2 border-[#5FD4FD] backdrop-blur-md overflow-x-auto no-scrollbar">
+            {/* Mode Switcher Bar - Fixed 4-Column Grid (NO SCROLLBAR, Single Line) */}
+            <div className="w-full max-w-[480px] xl:max-w-[490px] mb-4 grid grid-cols-4 gap-1 sm:gap-1.5 bg-white/10 p-1 border-2 border-[#5FD4FD] backdrop-blur-md">
               {/* 1. Field Video FIRST */}
               <button
                 type="button"
                 onClick={() => setActiveMode("video")}
-                className={`flex-1 py-1.5 px-2 sm:px-2.5 text-[11px] sm:text-xs font-black uppercase tracking-wider transition-all flex items-center justify-center gap-1.5 rounded-none whitespace-nowrap flex-nowrap shrink-0 ${
+                className={`py-1.5 px-1 sm:px-2 text-[10px] sm:text-[11px] xl:text-xs font-black uppercase tracking-tight sm:tracking-wider transition-all flex items-center justify-center gap-1 sm:gap-1.5 rounded-none whitespace-nowrap min-w-0 ${
                   activeMode === "video"
                     ? "bg-white text-[#0082FC] shadow-sm"
                     : "text-white hover:bg-white/10"
                 }`}
               >
                 <Play className="w-3 h-3 fill-current shrink-0" />
-                <span className="whitespace-nowrap">Field Video</span>
+                <span className="truncate">Field Video</span>
               </button>
 
               {/* 2. Active Flow */}
               <button
                 type="button"
                 onClick={() => setActiveMode("flow")}
-                className={`flex-1 py-1.5 px-2 sm:px-2.5 text-[11px] sm:text-xs font-black uppercase tracking-wider transition-all flex items-center justify-center gap-1.5 rounded-none whitespace-nowrap flex-nowrap shrink-0 ${
+                className={`py-1.5 px-1 sm:px-2 text-[10px] sm:text-[11px] xl:text-xs font-black uppercase tracking-tight sm:tracking-wider transition-all flex items-center justify-center gap-1 sm:gap-1.5 rounded-none whitespace-nowrap min-w-0 ${
                   activeMode === "flow"
                     ? "bg-white text-[#0082FC] shadow-sm"
                     : "text-white hover:bg-white/10"
                 }`}
               >
-                <Droplets className="w-3.5 h-3.5 shrink-0" />
-                <span className="whitespace-nowrap">Active Flow</span>
+                <Droplets className="w-3 h-3 sm:w-3.5 sm:h-3.5 shrink-0" />
+                <span className="truncate">Active Flow</span>
               </button>
 
               {/* 3. Frost -20°F */}
               <button
                 type="button"
                 onClick={() => setActiveMode("thermal")}
-                className={`flex-1 py-1.5 px-2 sm:px-2.5 text-[11px] sm:text-xs font-black uppercase tracking-wider transition-all flex items-center justify-center gap-1.5 rounded-none whitespace-nowrap flex-nowrap shrink-0 ${
+                className={`py-1.5 px-1 sm:px-2 text-[10px] sm:text-[11px] xl:text-xs font-black uppercase tracking-tight sm:tracking-wider transition-all flex items-center justify-center gap-1 sm:gap-1.5 rounded-none whitespace-nowrap min-w-0 ${
                   activeMode === "thermal"
                     ? "bg-white text-[#0082FC] shadow-sm"
                     : "text-white hover:bg-white/10"
                 }`}
               >
-                <ThermometerSnowflake className="w-3.5 h-3.5 shrink-0" />
-                <span className="whitespace-nowrap">Frost -20°F</span>
+                <ThermometerSnowflake className="w-3 h-3 sm:w-3.5 sm:h-3.5 shrink-0" />
+                <span className="truncate">Frost -20°F</span>
               </button>
 
               {/* 4. 301 PSI Live */}
               <button
                 type="button"
                 onClick={() => setActiveMode("pressure")}
-                className={`flex-1 py-1.5 px-2 sm:px-2.5 text-[11px] sm:text-xs font-black uppercase tracking-wider transition-all flex items-center justify-center gap-1.5 rounded-none whitespace-nowrap flex-nowrap shrink-0 ${
+                className={`py-1.5 px-1 sm:px-2 text-[10px] sm:text-[11px] xl:text-xs font-black uppercase tracking-tight sm:tracking-wider transition-all flex items-center justify-center gap-1 sm:gap-1.5 rounded-none whitespace-nowrap min-w-0 ${
                   activeMode === "pressure"
                     ? "bg-white text-[#0082FC] shadow-sm"
                     : "text-white hover:bg-white/10"
                 }`}
               >
-                <Gauge className="w-3.5 h-3.5 shrink-0" />
-                <span className="whitespace-nowrap">{livePsi} PSI Live</span>
+                <Gauge className="w-3 h-3 sm:w-3.5 sm:h-3.5 shrink-0" />
+                <span className="truncate">{livePsi} PSI Live</span>
               </button>
             </div>
 

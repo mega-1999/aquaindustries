@@ -393,9 +393,9 @@ export const OurNewInnovations: React.FC<OurNewInnovationsProps> = ({
         </div>
 
         {/* ========================================================
-            1. HORIZONTAL 4-ITEM SELECTOR BAR (STRICTLY IN ONE LINE)
+            1. HORIZONTAL 4-ITEM SELECTOR BAR (NO SCROLLBAR, Grid)
         ======================================================== */}
-        <div className="w-full mb-6 bg-white/10 p-1.5 border-2 border-[#5FD4FD] backdrop-blur-md flex items-center justify-between gap-1.5 sm:gap-2 overflow-x-auto no-scrollbar">
+        <div className="w-full mb-6 bg-white/10 p-1.5 border-2 border-[#5FD4FD] backdrop-blur-md grid grid-cols-2 md:grid-cols-4 gap-1.5 sm:gap-2">
           {INNOVATIONS.map((item, idx) => {
             const isSelected = selectedIndex === idx;
             return (
