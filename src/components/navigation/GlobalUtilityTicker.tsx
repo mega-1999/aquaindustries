@@ -1,7 +1,14 @@
 "use client";
 
-import { FileCheck2, MapPin, PhoneCall, ShieldCheck } from "lucide-react";
+import {
+  Activity,
+  FileCheck2,
+  MapPin,
+  PhoneCall,
+  ShieldCheck,
+} from "lucide-react";
 import type React from "react";
+import { useEffect, useState } from "react";
 
 interface GlobalUtilityTickerProps {
   onOpenYardModal: () => void;
@@ -12,6 +19,26 @@ export const GlobalUtilityTicker: React.FC<GlobalUtilityTickerProps> = ({
   onOpenYardModal,
   selectedYardCity = "Chicago, IL",
 }) => {
+  const [currentTime, setCurrentTime] = useState<string>("");
+
+  useEffect(() => {
+    const updateTime = () => {
+      const now = new Date();
+      setCurrentTime(
+        `${now.toLocaleTimeString("en-US", {
+          timeZone: "America/New_York",
+          hour: "2-digit",
+          minute: "2-digit",
+          second: "2-digit",
+          hour12: true,
+        })} EST`,
+      );
+    };
+    updateTime();
+    const timer = setInterval(updateTime, 1000);
+    return () => clearInterval(timer);
+  }, []);
+
   return (
     <aside
       aria-label="Live municipal specifications and quick actions"
@@ -21,24 +48,39 @@ export const GlobalUtilityTicker: React.FC<GlobalUtilityTickerProps> = ({
         <div className="flex items-center justify-between h-11 gap-4 overflow-hidden">
           {/* Left: Direct Mill & Stocking Yard Availability */}
           <div className="flex-1 flex items-center min-w-0 overflow-hidden pr-3">
-            <div className="flex items-center gap-1.5 shrink-0 bg-white text-[#0082fc] font-bold px-2.5 py-1 rounded-none text-xs whitespace-nowrap mr-3 shadow-xs">
-              <span className="w-2 h-2 rounded-none bg-[#5fd4fd] animate-ping" />
-              <span className="whitespace-nowrap font-extrabold">
-                YARD FEED
+            <div className="flex items-center gap-1.5 shrink-0 bg-white text-[#0082fc] font-bold px-2 py-0.5 sm:px-2.5 sm:py-1 rounded-none text-xs whitespace-nowrap mr-2.5 shadow-xs">
+              <span className="w-2 h-2 rounded-none bg-[#0082fc] animate-ping" />
+              <span className="whitespace-nowrap font-extrabold uppercase">
+                LIVE FEED
               </span>
             </div>
 
+            {currentTime && (
+              <span className="hidden md:inline-block font-mono text-[11px] font-bold text-[#5fd4fd] bg-black/20 px-2 py-0.5 border border-[#5fd4fd]/30 mr-3 shrink-0">
+                {currentTime}
+              </span>
+            )}
+
             <div className="relative overflow-hidden w-full whitespace-nowrap">
               <div className="animate-ticker inline-flex items-center gap-8 text-xs sm:text-sm text-white font-semibold">
-                <span className="whitespace-nowrap text-white">
-                  Direct Mill &amp; Stocking Yard Availability:{" "}
+                <span className="whitespace-nowrap text-white flex items-center gap-1.5">
+                  <Activity className="w-3.5 h-3.5 text-[#5fd4fd]" />
+                  <span>Foundry Melt Heat #8492-B:</span>
                   <strong className="text-[#5fd4fd] font-extrabold">
-                    Eastern &amp; Central Hubs
+                    ASTM A536 65-45-12 Verified
                   </strong>
                 </span>
                 <span className="text-[#5fd4fd]">•</span>
                 <span className="whitespace-nowrap text-white">
-                  AWWA C153 Compact MJ Fittings: In Stock for Immediate Dispatch
+                  Flatbed Dispatch Queue:{" "}
+                  <strong className="text-[#5fd4fd] font-extrabold">
+                    14 Loads In-Transit Today
+                  </strong>
+                </span>
+                <span className="text-[#5fd4fd]">•</span>
+                <span className="whitespace-nowrap text-white">
+                  AWWA C153 Compact Fittings: In Stock for Immediate Jobsite
+                  Delivery
                 </span>
                 <span className="text-[#5fd4fd]">•</span>
                 <span className="whitespace-nowrap text-white">
@@ -46,18 +88,8 @@ export const GlobalUtilityTicker: React.FC<GlobalUtilityTickerProps> = ({
                 </span>
                 <span className="text-[#5fd4fd]">•</span>
                 <span className="whitespace-nowrap text-white">
-                  Grade 65-45-12 Ductile Iron: 65,000 PSI Minimum Tensile
-                </span>
-                <span className="text-[#5fd4fd]">•</span>
-                <span className="whitespace-nowrap text-white">
-                  Direct Mill &amp; Stocking Yard Availability:{" "}
-                  <strong className="text-[#5fd4fd] font-extrabold">
-                    Eastern &amp; Central Hubs
-                  </strong>
-                </span>
-                <span className="text-[#5fd4fd]">•</span>
-                <span className="whitespace-nowrap text-white">
-                  AWWA C153 Compact MJ Fittings: In Stock for Immediate Dispatch
+                  Hydrostatic Testing Rig: 350 PSI Continuous Working Pressure
+                  Proof
                 </span>
               </div>
             </div>

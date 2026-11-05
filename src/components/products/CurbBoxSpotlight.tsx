@@ -263,10 +263,11 @@ export const CurbBoxSpotlight: React.FC<CurbBoxSpotlightProps> = ({
                         y1="270"
                         x2="280"
                         y2="270"
-                        stroke="#5FD4FD"
+                        stroke={valveTurnAngle % 180 === 0 ? "#5FD4FD" : "#0082FC"}
                         strokeWidth="6"
-                        strokeDasharray="16 8"
-                        className="animate-hydro-flow-fast"
+                        strokeDasharray={valveTurnAngle % 180 === 0 ? "16 8" : "none"}
+                        strokeOpacity={valveTurnAngle % 180 === 0 ? 1 : 0.3}
+                        className={valveTurnAngle % 180 === 0 ? "animate-hydro-flow-fast" : ""}
                       />
                       <rect
                         x="145"
@@ -358,19 +359,20 @@ export const CurbBoxSpotlight: React.FC<CurbBoxSpotlightProps> = ({
 
                   {/* Interactive Pentagon Key Turn Simulator */}
                   <div className="w-full flex items-center justify-between border-t border-[#0082FC]/20 pt-2 px-1">
-                    <div className="text-left text-xs font-bold text-[#0082FC]">
+                    <div className="text-left text-xs font-bold text-[#0082FC] flex items-center gap-1.5">
+                      <span className={`w-2 h-2 rounded-full ${valveTurnAngle % 180 === 0 ? "bg-emerald-500 animate-ping" : "bg-amber-500"}`} />
                       <span>Valve State: </span>
-                      <strong className="text-[#0082FC]">
+                      <strong className={valveTurnAngle % 180 === 0 ? "text-[#0082FC]" : "text-amber-700"}>
                         {valveTurnAngle % 180 === 0
-                          ? "OPEN (FULL FLOW)"
-                          : "CLOSED (SHUT-OFF)"}
+                          ? "OPEN (55 GPM POTABLE FLOW)"
+                          : "ISOLATED (0 GPM SHUT-OFF)"}
                       </strong>
                     </div>
 
                     <button
                       type="button"
                       onClick={handleRotateKey}
-                      className="px-2.5 py-1 bg-[#0082FC] hover:bg-[#5FD4FD] text-white hover:text-[#0082FC] text-xs font-black uppercase tracking-wider flex items-center gap-1 transition-all rounded-none cursor-pointer"
+                      className="px-2.5 py-1 bg-[#0082FC] hover:bg-[#5FD4FD] text-white hover:text-[#0082FC] text-xs font-black uppercase tracking-wider flex items-center gap-1 transition-all rounded-none cursor-pointer shadow-xs"
                     >
                       <RotateCw className="w-3 h-3" />
                       <span>Rotate Key 90°</span>

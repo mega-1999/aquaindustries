@@ -576,7 +576,7 @@ export const CommercialQuoteForm: React.FC<CommercialQuoteFormProps> = ({
                   className="mt-1.5 w-full py-2.5 px-3 bg-white hover:bg-[#5FD4FD] text-[#0082FC] font-black text-xs sm:text-sm uppercase tracking-wider border-2 border-white transition-all text-center flex items-center justify-center gap-2 shadow-xs cursor-pointer break-words"
                 >
                   <Phone className="w-3.5 h-3.5 text-[#0082FC] shrink-0" />
-                  <span>Call Dispatch: +1 (516) 252-1111</span>
+                  <span>Call: +1 (516) 252-1111</span>
                 </a>
                 <span className="text-[10px] text-white/80 font-mono mt-0.5">
                   Melville, NY HQ &bull; 24/7 Service Hotline

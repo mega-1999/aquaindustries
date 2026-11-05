@@ -1,28 +1,20 @@
 "use client";
 
 import {
-  Activity,
   ArrowRight,
   CheckCircle2,
   Droplets,
-  Eye,
   FileCheck2,
-  Flame,
   FlaskConical,
   Gauge,
-  Info,
-  Lock,
   PhoneCall,
   Play,
-  RotateCcw,
-  ShieldAlert,
   ShieldCheck,
   ThermometerSnowflake,
   Truck,
-  Waves,
 } from "lucide-react";
 import type React from "react";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { InfiniteWaterBackground } from "../common/InfiniteWaterBackground";
 
 const HOTSPOTS = [
@@ -61,11 +53,19 @@ const HOTSPOTS = [
 ];
 
 export const SolenoSamplingHero: React.FC = () => {
-  const [activeMode, setActiveMode] = useState<"flow" | "thermal" | "pressure">(
-    "flow",
-  );
-  const [isSimulating, setIsSimulating] = useState(true);
+  const [activeMode, setActiveMode] = useState<
+    "flow" | "thermal" | "pressure" | "video"
+  >("flow");
+  const [isSimulating, _setIsSimulating] = useState(true);
   const [activeHotspot, setActiveHotspot] = useState<number | null>(null);
+  const [livePsi, setLivePsi] = useState<number>(300);
+
+  useEffect(() => {
+    const timer = setInterval(() => {
+      setLivePsi(297 + Math.floor(Math.random() * 7));
+    }, 2400);
+    return () => clearInterval(timer);
+  }, []);
 
   return (
     <section
@@ -231,7 +231,20 @@ export const SolenoSamplingHero: React.FC = () => {
                   }`}
                 >
                   <Gauge className="w-3.5 h-3.5" />
-                  <span>300 PSI Test</span>
+                  <span>{livePsi} PSI Live</span>
+                </button>
+
+                <button
+                  type="button"
+                  onClick={() => setActiveMode("video")}
+                  className={`flex-1 py-1 px-2 text-[11px] font-black uppercase tracking-wider transition-all flex items-center justify-center gap-1 rounded-none ${
+                    activeMode === "video"
+                      ? "bg-white text-[#0082FC] shadow-sm"
+                      : "text-white hover:bg-white/10"
+                  }`}
+                >
+                  <Play className="w-3 h-3 fill-current" />
+                  <span>Field Video</span>
                 </button>
               </div>
             )}
@@ -262,97 +275,128 @@ export const SolenoSamplingHero: React.FC = () => {
 
               {/* Soleno Circular Vessel Container */}
               <div className="relative w-[280px] h-[280px] sm:w-[380px] sm:h-[380px] xl:w-[420px] xl:h-[420px] rounded-full bg-white border-4 border-[#5FD4FD] shadow-2xl flex items-center justify-center overflow-hidden p-6">
-                {/* Radial Water Glow Background */}
-                <div
-                  className={`absolute inset-0 transition-opacity duration-700 ${
-                    activeMode === "thermal"
-                      ? "bg-radial from-[#5FD4FD]/40 via-white to-white"
-                      : activeMode === "pressure"
-                        ? "bg-radial from-[#0082FC]/20 via-white to-white"
-                        : "bg-radial from-[#5FD4FD]/30 via-white to-white"
-                  }`}
-                />
-
-                {/* Animated Hydrodynamic SVG Water Flow Circuit */}
-                {isSimulating && (
-                  <svg
-                    className="absolute inset-0 w-full h-full pointer-events-none z-10"
-                    viewBox="0 0 400 400"
-                    fill="none"
-                    aria-hidden="true"
-                  >
-                    {/* Subterranean Supply Line to Bibb */}
-                    <path
-                      d="M200 380 L200 240 Q200 170 140 170 L110 170"
-                      stroke="#5FD4FD"
-                      strokeWidth="5"
-                      strokeLinecap="square"
-                      className="animate-hydro-flow"
+                {activeMode === "video" ? (
+                  <div className="absolute inset-0 w-full h-full bg-black z-20 overflow-hidden flex items-center justify-center">
+                    <video
+                      src="/videos/sampling-stations.mp4"
+                      autoPlay
+                      loop
+                      muted
+                      playsInline
+                      preload="auto"
+                      className="w-full h-full object-cover"
                     />
-                    <path
-                      d="M200 380 L200 240 Q200 170 260 170 L280 170"
-                      stroke="#0082FC"
-                      strokeWidth="2.5"
-                      strokeLinecap="square"
-                      className="animate-hydro-flow-fast"
+                    <div className="absolute inset-0 bg-gradient-to-t from-[#0082FC]/80 via-transparent to-black/40 pointer-events-none" />
+                    <div className="absolute top-4 left-4 z-30 flex items-center gap-2 bg-[#0082FC]/90 px-2.5 py-1 border border-[#5FD4FD] shadow-md">
+                      <span className="w-2 h-2 bg-red-500 rounded-full animate-ping" />
+                      <span className="text-[10px] font-black uppercase tracking-wider text-white">
+                        LIVE DEMO
+                      </span>
+                    </div>
+                    <div className="absolute bottom-4 inset-x-4 z-30 flex items-center justify-between text-white pointer-events-none px-2">
+                      <span className="text-[10px] font-bold uppercase tracking-wider bg-black/60 px-2 py-0.5 border border-white/20">
+                        Sanitary Flow Test
+                      </span>
+                      <span className="text-[10px] font-mono text-[#5FD4FD] font-bold">
+                        {livePsi} PSI PROOF
+                      </span>
+                    </div>
+                  </div>
+                ) : (
+                  <>
+                    {/* Radial Water Glow Background */}
+                    <div
+                      className={`absolute inset-0 transition-opacity duration-700 ${
+                        activeMode === "thermal"
+                          ? "bg-radial from-[#5FD4FD]/40 via-white to-white"
+                          : activeMode === "pressure"
+                            ? "bg-radial from-[#0082FC]/20 via-white to-white"
+                            : "bg-radial from-[#5FD4FD]/30 via-white to-white"
+                      }`}
                     />
-                  </svg>
+
+                    {/* Animated Hydrodynamic SVG Water Flow Circuit */}
+                    {isSimulating && (
+                      <svg
+                        className="absolute inset-0 w-full h-full pointer-events-none z-10"
+                        viewBox="0 0 400 400"
+                        fill="none"
+                        aria-hidden="true"
+                      >
+                        {/* Subterranean Supply Line to Bibb */}
+                        <path
+                          d="M200 380 L200 240 Q200 170 140 170 L110 170"
+                          stroke="#5FD4FD"
+                          strokeWidth="5"
+                          strokeLinecap="square"
+                          className="animate-hydro-flow"
+                        />
+                        <path
+                          d="M200 380 L200 240 Q200 170 260 170 L280 170"
+                          stroke="#0082FC"
+                          strokeWidth="2.5"
+                          strokeLinecap="square"
+                          className="animate-hydro-flow-fast"
+                        />
+                      </svg>
+                    )}
+
+                    {/* Animated Droplet Dispense from Sample Bibb */}
+                    {isSimulating && activeMode === "flow" && (
+                      <div className="absolute top-[38%] left-[26%] z-20 pointer-events-none">
+                        <span className="block w-2.5 h-3.5 bg-[#0082FC] border border-[#5FD4FD] rounded-none animate-drop-dispense" />
+                      </div>
+                    )}
+
+                    {/* Floating Wave Texture */}
+                    <div className="absolute -bottom-10 inset-x-0 h-32 bg-[#5FD4FD]/20 rounded-full blur-xl pointer-events-none" />
+
+                    {/* Central Flagship Product: Water Sampling Station */}
+                    <img
+                      src="/images/our-images/sampling-station.png"
+                      alt="Aqua Industries Municipal Water Sampling Station Flagship"
+                      className="relative z-10 max-h-[82%] max-w-[82%] object-contain soleno-product-float drop-shadow-2xl"
+                    />
+
+                    {/* Interactive Hotspot Inspection Pins */}
+                    {HOTSPOTS.map((spot) => (
+                      <button
+                        key={spot.id}
+                        type="button"
+                        onClick={() =>
+                          setActiveHotspot(
+                            activeHotspot === spot.id ? null : spot.id,
+                          )
+                        }
+                        style={{ left: spot.x, top: spot.y }}
+                        className={`absolute z-30 w-7 h-7 -translate-x-1/2 -translate-y-1/2 rounded-none border-2 flex items-center justify-center font-black text-xs shadow-xl transition-all hover:scale-125 cursor-pointer ${
+                          activeHotspot === spot.id
+                            ? "bg-[#0082FC] text-white border-white scale-125 ring-4 ring-[#5FD4FD]"
+                            : "bg-white text-[#0082FC] border-[#0082FC] hover:bg-[#5FD4FD]/30"
+                        }`}
+                        title={spot.title}
+                        aria-label={spot.title}
+                      >
+                        <span>{spot.id}</span>
+                      </button>
+                    ))}
+
+                    {/* Soleno-Style Badge: Municipal Sampling Station / Industry Leader */}
+                    <div className="absolute inset-x-0 bottom-4 text-center z-20 px-3">
+                      <div className="inline-block bg-[#0082FC] border-2 border-[#5FD4FD] px-4 py-1.5 shadow-2xl">
+                        <span className="block text-[10px] sm:text-xs font-black text-[#5FD4FD] uppercase tracking-wider">
+                          Flagship Innovation
+                        </span>
+                        <h2 className="text-xs sm:text-sm font-black text-white uppercase tracking-tight leading-tight">
+                          Sampling Station
+                        </h2>
+                        <span className="block text-[10px] font-bold text-white/95">
+                          American Industry Leader
+                        </span>
+                      </div>
+                    </div>
+                  </>
                 )}
-
-                {/* Animated Droplet Dispense from Sample Bibb */}
-                {isSimulating && activeMode === "flow" && (
-                  <div className="absolute top-[38%] left-[26%] z-20 pointer-events-none">
-                    <span className="block w-2.5 h-3.5 bg-[#0082FC] border border-[#5FD4FD] rounded-none animate-drop-dispense" />
-                  </div>
-                )}
-
-                {/* Floating Wave Texture */}
-                <div className="absolute -bottom-10 inset-x-0 h-32 bg-[#5FD4FD]/20 rounded-full blur-xl pointer-events-none" />
-
-                {/* Central Flagship Product: Water Sampling Station */}
-                <img
-                  src="/images/our-images/sampling-station.png"
-                  alt="Aqua Industries Municipal Water Sampling Station Flagship"
-                  className="relative z-10 max-h-[82%] max-w-[82%] object-contain soleno-product-float drop-shadow-2xl"
-                />
-
-                {/* Interactive Hotspot Inspection Pins */}
-                {HOTSPOTS.map((spot) => (
-                  <button
-                    key={spot.id}
-                    type="button"
-                    onClick={() =>
-                      setActiveHotspot(
-                        activeHotspot === spot.id ? null : spot.id,
-                      )
-                    }
-                    style={{ left: spot.x, top: spot.y }}
-                    className={`absolute z-30 w-7 h-7 -translate-x-1/2 -translate-y-1/2 rounded-none border-2 flex items-center justify-center font-black text-xs shadow-xl transition-all hover:scale-125 cursor-pointer ${
-                      activeHotspot === spot.id
-                        ? "bg-[#0082FC] text-white border-white scale-125 ring-4 ring-[#5FD4FD]"
-                        : "bg-white text-[#0082FC] border-[#0082FC] hover:bg-[#5FD4FD]/30"
-                    }`}
-                    title={spot.title}
-                    aria-label={spot.title}
-                  >
-                    <span>{spot.id}</span>
-                  </button>
-                ))}
-
-                {/* Soleno-Style Badge: Municipal Sampling Station / Industry Leader */}
-                <div className="absolute inset-x-0 bottom-4 text-center z-20 px-3">
-                  <div className="inline-block bg-[#0082FC] border-2 border-[#5FD4FD] px-4 py-1.5 shadow-2xl">
-                    <span className="block text-[10px] sm:text-xs font-black text-[#5FD4FD] uppercase tracking-wider">
-                      Flagship Innovation
-                    </span>
-                    <h2 className="text-xs sm:text-sm font-black text-white uppercase tracking-tight leading-tight">
-                      Sampling Station
-                    </h2>
-                    <span className="block text-[10px] font-bold text-white/95">
-                      American Industry Leader
-                    </span>
-                  </div>
-                </div>
               </div>
 
               {/* Soleno Circular Floating Interactive CTA Button */}
