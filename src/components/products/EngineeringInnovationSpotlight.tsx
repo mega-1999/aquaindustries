@@ -508,50 +508,59 @@ export const EngineeringInnovationSpotlight: React.FC<
               </button>
             </div>
 
-            {/* OUTSIDE TOP AREA FOR ACTIVE HOTSPOT INSPECTION DETAILS */}
-            {activeSpotData && viewMode === "photo" && (
-              <div
-                role="region"
-                aria-live="polite"
-                className="w-full bg-white text-[#0082FC] border-4 border-[#5FD4FD] p-4 shadow-xl animate-in fade-in slide-in-from-top duration-200"
-              >
-                <div className="flex items-start justify-between gap-4 mb-2">
-                  <div className="flex items-center gap-2">
-                    <span className="w-6 h-6 bg-[#0082FC] text-white text-xs font-black flex items-center justify-center shrink-0">
-                      {activeSpotData.id}
-                    </span>
-                    <h4 className="text-sm sm:text-base font-black uppercase text-[#0082FC]">
-                      {activeSpotData.title}
-                    </h4>
-                  </div>
-                  <span className="text-[11px] font-black uppercase bg-[#5FD4FD] text-[#0082FC] px-2.5 py-0.5 shrink-0">
-                    {activeSpotData.badge}
-                  </span>
-                </div>
-
-                <p className="text-xs sm:text-sm text-[#0082FC]/90 font-medium leading-relaxed mb-3">
-                  {activeSpotData.desc}
-                </p>
-
-                <div className="flex items-center justify-between border-t border-[#0082FC]/20 pt-2 text-xs">
-                  <span className="font-bold text-[#0082FC]/70 uppercase text-[10px]">
-                    Field Inspection Hotspot {activeSpotData.id} of{" "}
-                    {currentProduct.hotspots.length} &bull;{" "}
-                    {currentProduct.name}
-                  </span>
-                  <button
-                    type="button"
-                    onClick={() => setActiveHotspot(null)}
-                    className="font-black text-[#0082FC] hover:text-[#5FD4FD] uppercase cursor-pointer"
-                  >
-                    &times; Close Inspection
-                  </button>
-                </div>
-              </div>
-            )}
-
             {/* MAIN VISUAL CANVAS */}
             <div className="relative bg-white border-4 border-[#5FD4FD] p-6 sm:p-8 shadow-2xl flex flex-col items-center justify-center min-h-[420px] sm:min-h-[480px] text-[#0082FC] overflow-hidden">
+              {/* Floating Upper Hotspot Detail Popup (Zero Layout Displacement) */}
+              {activeSpotData && viewMode === "photo" && (
+                <div
+                  role="region"
+                  aria-live="polite"
+                  className="absolute inset-x-4 sm:inset-x-6 top-14 z-30 bg-white text-[#0082FC] border-4 border-[#5FD4FD] p-4 shadow-2xl animate-in fade-in zoom-in-95 duration-200 backdrop-blur-md"
+                >
+                  <div className="flex items-start justify-between gap-4 mb-2">
+                    <div className="flex items-center gap-2">
+                      <span className="w-6 h-6 bg-[#0082FC] text-white text-xs font-black flex items-center justify-center shrink-0">
+                        {activeSpotData.id}
+                      </span>
+                      <h4 className="text-sm sm:text-base font-black uppercase text-[#0082FC]">
+                        {activeSpotData.title}
+                      </h4>
+                    </div>
+                    <div className="flex items-center gap-2">
+                      <span className="text-[11px] font-black uppercase bg-[#5FD4FD] text-[#0082FC] px-2.5 py-0.5 shrink-0">
+                        {activeSpotData.badge}
+                      </span>
+                      <button
+                        type="button"
+                        onClick={() => setActiveHotspot(null)}
+                        className="w-6 h-6 bg-[#0082FC]/10 hover:bg-[#0082FC] text-[#0082FC] hover:text-white flex items-center justify-center font-bold text-xs transition-colors cursor-pointer"
+                        title="Close Popup"
+                      >
+                        ✕
+                      </button>
+                    </div>
+                  </div>
+
+                  <p className="text-xs sm:text-sm text-[#0082FC]/90 font-medium leading-relaxed mb-3">
+                    {activeSpotData.desc}
+                  </p>
+
+                  <div className="flex items-center justify-between border-t border-[#0082FC]/20 pt-2 text-xs">
+                    <span className="font-bold text-[#0082FC]/70 uppercase text-[10px]">
+                      Field Inspection Hotspot {activeSpotData.id} of{" "}
+                      {currentProduct.hotspots.length} &bull;{" "}
+                      {currentProduct.name}
+                    </span>
+                    <button
+                      type="button"
+                      onClick={() => setActiveHotspot(null)}
+                      className="font-black text-[#0082FC] hover:text-[#5FD4FD] uppercase cursor-pointer"
+                    >
+                      &times; Close Inspection
+                    </button>
+                  </div>
+                </div>
+              )}
               {/* Corner Waterworks Badge */}
               <div className="absolute top-4 left-4 z-20">
                 <span className="text-[10px] font-black uppercase tracking-widest text-[#0082FC] bg-[#5FD4FD]/30 px-2.5 py-1 border border-[#0082FC]">

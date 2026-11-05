@@ -160,101 +160,111 @@ export const SolenoSamplingHero: React.FC = () => {
 
           {/* RIGHT COLUMN: Soleno Circular Showcase Complex with Interactive Physics Render & Hotspots */}
           <div className="lg:col-span-5 flex flex-col items-center justify-center relative pt-6 lg:pt-0">
-            {/* Top Area Outside Image: Hotspot Detail Callout or Mode Switcher */}
-            {activeHotspot !== null ? (
-              <div className="w-full max-w-[440px] mb-3 bg-white border-2 border-[#5FD4FD] p-3 text-left shadow-2xl text-[#0082FC] animate-in fade-in slide-in-from-top-2">
-                <div className="flex items-center justify-between gap-2 mb-1">
-                  <div className="flex items-center gap-2">
-                    <span className="w-6 h-6 bg-[#0082FC] text-white flex items-center justify-center font-black text-xs">
-                      {activeHotspot}
-                    </span>
-                    <span className="font-black text-xs sm:text-sm uppercase tracking-tight text-[#0082FC]">
-                      {HOTSPOTS.find((h) => h.id === activeHotspot)?.title}
-                    </span>
-                  </div>
-                  <span className="text-[10px] bg-[#5FD4FD] text-[#0082FC] font-extrabold px-2 py-0.5 whitespace-nowrap">
-                    {HOTSPOTS.find((h) => h.id === activeHotspot)?.badge}
-                  </span>
-                </div>
-                <p className="text-xs leading-relaxed text-[#0082FC]/90 font-medium">
-                  {HOTSPOTS.find((h) => h.id === activeHotspot)?.desc}
-                </p>
-                <div className="mt-2 flex items-center justify-between border-t border-[#0082FC]/15 pt-1.5">
-                  <span className="text-[10px] text-[#0082FC]/70 font-bold uppercase">
-                    Specification ID AQUA-WSS-2026 &bull; Point {activeHotspot}{" "}
-                    of 4
-                  </span>
-                  <button
-                    type="button"
-                    onClick={() => setActiveHotspot(null)}
-                    className="text-[11px] font-black text-[#0082FC] hover:text-[#5FD4FD] uppercase cursor-pointer"
-                  >
-                    ✕ Close Inspection
-                  </button>
-                </div>
-              </div>
-            ) : (
-              <div className="w-full max-w-[560px] sm:max-w-[580px] mb-4 flex items-center justify-between gap-1 sm:gap-1.5 bg-white/10 p-1 border-2 border-[#5FD4FD] backdrop-blur-md overflow-x-auto no-scrollbar">
-                {/* 1. Field Video FIRST */}
-                <button
-                  type="button"
-                  onClick={() => setActiveMode("video")}
-                  className={`flex-1 py-1.5 px-2 sm:px-2.5 text-[11px] sm:text-xs font-black uppercase tracking-wider transition-all flex items-center justify-center gap-1.5 rounded-none whitespace-nowrap flex-nowrap shrink-0 ${
-                    activeMode === "video"
-                      ? "bg-white text-[#0082FC] shadow-sm"
-                      : "text-white hover:bg-white/10"
-                  }`}
-                >
-                  <Play className="w-3 h-3 fill-current shrink-0" />
-                  <span className="whitespace-nowrap">Field Video</span>
-                </button>
+            {/* Mode Switcher Bar (Always Visible - No Layout Displacement) */}
+            <div className="w-full max-w-[560px] sm:max-w-[580px] mb-4 flex items-center justify-between gap-1 sm:gap-1.5 bg-white/10 p-1 border-2 border-[#5FD4FD] backdrop-blur-md overflow-x-auto no-scrollbar">
+              {/* 1. Field Video FIRST */}
+              <button
+                type="button"
+                onClick={() => setActiveMode("video")}
+                className={`flex-1 py-1.5 px-2 sm:px-2.5 text-[11px] sm:text-xs font-black uppercase tracking-wider transition-all flex items-center justify-center gap-1.5 rounded-none whitespace-nowrap flex-nowrap shrink-0 ${
+                  activeMode === "video"
+                    ? "bg-white text-[#0082FC] shadow-sm"
+                    : "text-white hover:bg-white/10"
+                }`}
+              >
+                <Play className="w-3 h-3 fill-current shrink-0" />
+                <span className="whitespace-nowrap">Field Video</span>
+              </button>
 
-                {/* 2. Active Flow */}
-                <button
-                  type="button"
-                  onClick={() => setActiveMode("flow")}
-                  className={`flex-1 py-1.5 px-2 sm:px-2.5 text-[11px] sm:text-xs font-black uppercase tracking-wider transition-all flex items-center justify-center gap-1.5 rounded-none whitespace-nowrap flex-nowrap shrink-0 ${
-                    activeMode === "flow"
-                      ? "bg-white text-[#0082FC] shadow-sm"
-                      : "text-white hover:bg-white/10"
-                  }`}
-                >
-                  <Droplets className="w-3.5 h-3.5 shrink-0" />
-                  <span className="whitespace-nowrap">Active Flow</span>
-                </button>
+              {/* 2. Active Flow */}
+              <button
+                type="button"
+                onClick={() => setActiveMode("flow")}
+                className={`flex-1 py-1.5 px-2 sm:px-2.5 text-[11px] sm:text-xs font-black uppercase tracking-wider transition-all flex items-center justify-center gap-1.5 rounded-none whitespace-nowrap flex-nowrap shrink-0 ${
+                  activeMode === "flow"
+                    ? "bg-white text-[#0082FC] shadow-sm"
+                    : "text-white hover:bg-white/10"
+                }`}
+              >
+                <Droplets className="w-3.5 h-3.5 shrink-0" />
+                <span className="whitespace-nowrap">Active Flow</span>
+              </button>
 
-                {/* 3. Frost -20°F */}
-                <button
-                  type="button"
-                  onClick={() => setActiveMode("thermal")}
-                  className={`flex-1 py-1.5 px-2 sm:px-2.5 text-[11px] sm:text-xs font-black uppercase tracking-wider transition-all flex items-center justify-center gap-1.5 rounded-none whitespace-nowrap flex-nowrap shrink-0 ${
-                    activeMode === "thermal"
-                      ? "bg-white text-[#0082FC] shadow-sm"
-                      : "text-white hover:bg-white/10"
-                  }`}
-                >
-                  <ThermometerSnowflake className="w-3.5 h-3.5 shrink-0" />
-                  <span className="whitespace-nowrap">Frost -20°F</span>
-                </button>
+              {/* 3. Frost -20°F */}
+              <button
+                type="button"
+                onClick={() => setActiveMode("thermal")}
+                className={`flex-1 py-1.5 px-2 sm:px-2.5 text-[11px] sm:text-xs font-black uppercase tracking-wider transition-all flex items-center justify-center gap-1.5 rounded-none whitespace-nowrap flex-nowrap shrink-0 ${
+                  activeMode === "thermal"
+                    ? "bg-white text-[#0082FC] shadow-sm"
+                    : "text-white hover:bg-white/10"
+                }`}
+              >
+                <ThermometerSnowflake className="w-3.5 h-3.5 shrink-0" />
+                <span className="whitespace-nowrap">Frost -20°F</span>
+              </button>
 
-                {/* 4. 301 PSI Live */}
-                <button
-                  type="button"
-                  onClick={() => setActiveMode("pressure")}
-                  className={`flex-1 py-1.5 px-2 sm:px-2.5 text-[11px] sm:text-xs font-black uppercase tracking-wider transition-all flex items-center justify-center gap-1.5 rounded-none whitespace-nowrap flex-nowrap shrink-0 ${
-                    activeMode === "pressure"
-                      ? "bg-white text-[#0082FC] shadow-sm"
-                      : "text-white hover:bg-white/10"
-                  }`}
-                >
-                  <Gauge className="w-3.5 h-3.5 shrink-0" />
-                  <span className="whitespace-nowrap">{livePsi} PSI Live</span>
-                </button>
-              </div>
-            )}
+              {/* 4. 301 PSI Live */}
+              <button
+                type="button"
+                onClick={() => setActiveMode("pressure")}
+                className={`flex-1 py-1.5 px-2 sm:px-2.5 text-[11px] sm:text-xs font-black uppercase tracking-wider transition-all flex items-center justify-center gap-1.5 rounded-none whitespace-nowrap flex-nowrap shrink-0 ${
+                  activeMode === "pressure"
+                    ? "bg-white text-[#0082FC] shadow-sm"
+                    : "text-white hover:bg-white/10"
+                }`}
+              >
+                <Gauge className="w-3.5 h-3.5 shrink-0" />
+                <span className="whitespace-nowrap">{livePsi} PSI Live</span>
+              </button>
+            </div>
 
             {/* Concentric Soleno Geometric Rotating Ring */}
             <div className="relative w-[340px] h-[340px] sm:w-[440px] sm:h-[440px] xl:w-[490px] xl:h-[490px] flex items-center justify-center">
+              {/* Floating Upper Hotspot Detail Popup (Zero Layout Displacement) */}
+              {activeHotspot !== null && (
+                <div className="absolute top-6 sm:top-10 inset-x-2 sm:inset-x-8 z-40 bg-white border-2 border-[#5FD4FD] p-4 text-left shadow-2xl text-[#0082FC] backdrop-blur-md animate-in fade-in zoom-in-95 duration-200">
+                  <div className="flex items-center justify-between gap-2 mb-1.5">
+                    <div className="flex items-center gap-2">
+                      <span className="w-6 h-6 bg-[#0082FC] text-white flex items-center justify-center font-black text-xs shadow-xs">
+                        {activeHotspot}
+                      </span>
+                      <span className="font-black text-xs sm:text-sm uppercase tracking-tight text-[#0082FC]">
+                        {HOTSPOTS.find((h) => h.id === activeHotspot)?.title}
+                      </span>
+                    </div>
+                    <div className="flex items-center gap-2">
+                      <span className="text-[10px] bg-[#5FD4FD] text-[#0082FC] font-extrabold px-2 py-0.5 whitespace-nowrap shadow-xs">
+                        {HOTSPOTS.find((h) => h.id === activeHotspot)?.badge}
+                      </span>
+                      <button
+                        type="button"
+                        onClick={() => setActiveHotspot(null)}
+                        className="w-6 h-6 bg-[#0082FC]/10 hover:bg-[#0082FC] text-[#0082FC] hover:text-white flex items-center justify-center font-bold text-xs transition-colors cursor-pointer"
+                        title="Close Popup"
+                      >
+                        ✕
+                      </button>
+                    </div>
+                  </div>
+                  <p className="text-xs leading-relaxed text-[#0082FC]/90 font-medium mb-2">
+                    {HOTSPOTS.find((h) => h.id === activeHotspot)?.desc}
+                  </p>
+                  <div className="flex items-center justify-between border-t border-[#0082FC]/15 pt-1.5 text-[10px] text-[#0082FC]/70 font-bold uppercase">
+                    <span>
+                      Specification ID AQUA-WSS-2026 &bull; Point{" "}
+                      {activeHotspot} of 4
+                    </span>
+                    <button
+                      type="button"
+                      onClick={() => setActiveHotspot(null)}
+                      className="underline text-[#0082FC] hover:text-[#5FD4FD] cursor-pointer"
+                    >
+                      Dismiss
+                    </button>
+                  </div>
+                </div>
+              )}
               {/* Outer Rotating Dashed Ring */}
               <div
                 className="absolute inset-0 rounded-full border-2 border-dashed border-[#5FD4FD]/60 soleno-rotate-ring pointer-events-none"

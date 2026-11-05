@@ -505,35 +505,43 @@ export const OurNewInnovations: React.FC<OurNewInnovationsProps> = ({
               </button>
             </div>
 
-            {/* Hotspot Inspection Detail Callout (when pin is active) */}
+            {/* Floating Upper Detail Popup (Absolute Overlay - Zero Layout Displacement) */}
             {activeHotspot !== null && activeSpotData && (
-              <div className="w-full bg-[#0082FC] border-2 border-[#5FD4FD] p-3 text-left shadow-lg text-white mb-3 animate-in fade-in slide-in-from-top-1">
-                <div className="flex items-center justify-between gap-2 mb-1">
+              <div className="absolute inset-x-4 sm:inset-x-6 top-16 z-30 bg-[#0082FC]/95 border-2 border-[#5FD4FD] p-4 text-left shadow-2xl text-white backdrop-blur-md animate-in fade-in zoom-in-95 duration-200">
+                <div className="flex items-center justify-between gap-3 mb-2">
                   <div className="flex items-center gap-2">
-                    <span className="w-5 h-5 bg-white text-[#0082FC] flex items-center justify-center font-black text-xs">
+                    <span className="w-6 h-6 bg-white text-[#0082FC] flex items-center justify-center font-black text-xs shadow-sm">
                       {activeHotspot}
                     </span>
                     <span className="font-black text-xs sm:text-sm uppercase tracking-tight text-white">
                       {activeSpotData.title}
                     </span>
                   </div>
-                  <span className="text-[10px] bg-[#5FD4FD] text-[#0082FC] font-black px-2 py-0.5 whitespace-nowrap">
-                    {activeSpotData.badge}
-                  </span>
+                  <div className="flex items-center gap-2">
+                    <span className="text-[10px] bg-[#5FD4FD] text-[#0082FC] font-black px-2 py-0.5 whitespace-nowrap shadow-xs">
+                      {activeSpotData.badge}
+                    </span>
+                    <button
+                      type="button"
+                      onClick={() => setActiveHotspot(null)}
+                      className="w-6 h-6 bg-white/20 hover:bg-white text-white hover:text-[#0082FC] flex items-center justify-center font-bold text-xs transition-colors cursor-pointer"
+                      title="Close Popup"
+                    >
+                      ✕
+                    </button>
+                  </div>
                 </div>
-                <p className="text-xs leading-relaxed text-white/90 font-medium">
+                <p className="text-xs leading-relaxed text-white/95 font-medium mb-2.5">
                   {activeSpotData.desc}
                 </p>
-                <div className="mt-2 flex items-center justify-between border-t border-white/20 pt-1.5">
-                  <span className="text-[10px] text-white/70 font-bold uppercase">
-                    Feature Point {activeHotspot} of 4
-                  </span>
+                <div className="flex items-center justify-between border-t border-white/20 pt-2 text-[10px] text-[#5FD4FD] font-bold uppercase">
+                  <span>Feature Point {activeHotspot} of 4</span>
                   <button
                     type="button"
                     onClick={() => setActiveHotspot(null)}
-                    className="text-[11px] font-black text-[#5FD4FD] hover:text-white uppercase cursor-pointer"
+                    className="underline hover:text-white cursor-pointer"
                   >
-                    ✕ Close
+                    Dismiss
                   </button>
                 </div>
               </div>
