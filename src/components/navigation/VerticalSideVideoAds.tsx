@@ -2,20 +2,20 @@
 
 import {
   Check,
+  ChevronLeft,
   ChevronRight,
-  Minimize2,
   Play,
   Plus,
   X,
 } from "lucide-react";
 import type React from "react";
-import { useEffect, useState } from "react";
+import { useState } from "react";
 import { PRODUCTS_CATALOG } from "../../data/waterworks-data";
 import type { ProductItem } from "../../types";
 
 interface VideoAdItem {
   id: string;
-  side: "left";
+  side: "left" | "right";
   badge: string;
   title: string;
   standard: string;
@@ -185,6 +185,48 @@ const LEFT_VIDEO_ADS: VideoAdItem[] = [
   },
 ];
 
+const RIGHT_VIDEO_ADS: VideoAdItem[] = [
+  {
+    id: "ad-right-1",
+    side: "right",
+    badge: "HIGHWAY TRAFFIC",
+    title: "The Century Curb Box",
+    standard: "AASHTO H-20 40,000 LB",
+    duration: "0:52",
+    videoUrl: "/videos/bison-box/bison-curb-box.mp4",
+    posterUrl: "/images/our-images/curb-box-ultimate.png",
+    description:
+      "AASHTO H-20 heavy highway casting. Rigid Class 35B iron withstands severe 40,000 LB wheel loads without valve crushing.",
+    product: PRODUCTS_CATALOG[1],
+  },
+  {
+    id: "ad-right-2",
+    side: "right",
+    badge: "JOINT RESTRAINT",
+    title: "Cam-Action Restraint",
+    standard: "UL Listed & FM Approved",
+    duration: "1:05",
+    videoUrl: "https://soleno.com/wp-content/uploads/2024/12/bkg_water111.mp4",
+    posterUrl: "/images/products/Joint-Restraints.jpg",
+    description:
+      "Concrete-free thrust restraint. Heat-treated ductile iron cam wedges bite radially under line pressure surges.",
+    product: PRODUCTS_CATALOG[2],
+  },
+  {
+    id: "ad-right-3",
+    side: "right",
+    badge: "MUNICIPAL CASTING",
+    title: "Highway Vane Grate",
+    standard: "AASHTO M306 Proof Load",
+    duration: "0:48",
+    videoUrl: "https://soleno.com/wp-content/uploads/2024/12/bkg_water111.mp4",
+    posterUrl: "/images/our-images/trench-grates.png",
+    description:
+      "Machined noise-dampening bearing seat under 40,000 lb proof load press. Eliminates street rattle and dynamic road impacts.",
+    product: PRODUCTS_CATALOG[5] || PRODUCTS_CATALOG[1],
+  },
+];
+
 interface VerticalSideVideoAdsProps {
   onAddToRfq: (product: ProductItem) => void;
   onPreviewSubmittal: (product: ProductItem) => void;
@@ -194,37 +236,12 @@ export const VerticalSideVideoAds: React.FC<VerticalSideVideoAdsProps> = ({
   onAddToRfq,
   onPreviewSubmittal,
 }) => {
-  const [isVisible, setIsVisible] = useState(true);
   const [activeVideoModal, setActiveVideoModal] = useState<VideoAdItem | null>(
     null,
   );
   const [addedIds, setAddedIds] = useState<Record<string, boolean>>({});
   const [leftDrawerOpen, setLeftDrawerOpen] = useState(false);
-  const [leftMinimized, setLeftMinimized] = useState(false);
-
-  // Monitor scroll: visible across Hero and all sections, cleanly avoids Navbar (top) and Footer (bottom)
-  useEffect(() => {
-    const handleScroll = () => {
-      const footerEl = document.querySelector("footer");
-      if (footerEl) {
-        const footerRect = footerEl.getBoundingClientRect();
-        // Hide smoothly when footer enters near the bottom of viewport
-        const beforeFooter = footerRect.top > 160;
-        setIsVisible(beforeFooter);
-      } else {
-        const scrollY = window.scrollY;
-        const windowHeight = window.innerHeight;
-        const fullHeight = document.documentElement.scrollHeight;
-        const beforeFooter = scrollY + windowHeight < fullHeight - 500;
-        setIsVisible(beforeFooter);
-      }
-    };
-
-    window.addEventListener("scroll", handleScroll, { passive: true });
-    handleScroll();
-
-    return () => window.removeEventListener("scroll", handleScroll);
-  }, []);
+  const [rightDrawerOpen, setRightDrawerOpen] = useState(false);
 
   const handleAddProduct = (product: ProductItem) => {
     onAddToRfq(product);
@@ -351,64 +368,77 @@ export const VerticalSideVideoAds: React.FC<VerticalSideVideoAdsProps> = ({
 
   return (
     <>
-      {/* 1. LEFT SIDE VERTICAL VIDEO ADS COLUMN (Total 12 cards, vertically scrollable with clean custom scrollbar) */}
-      {!leftMinimized && (
-        <aside
-          aria-label="Left Side Product Video Ads"
-          className={`fixed top-[128px] left-2.5 z-30 transition-all duration-300 select-none ${
-            isVisible ? "opacity-100" : "opacity-0 pointer-events-none"
-          } hidden min-[1600px]:flex flex-col max-h-[calc(100vh-148px)] overflow-y-auto overflow-x-hidden pr-1 [scrollbar-width:thin] [scrollbar-color:#0082FC_rgba(0,130,252,0.1)] [&::-webkit-scrollbar]:w-1.5 [&::-webkit-scrollbar-track]:bg-[#0082FC]/10 [&::-webkit-scrollbar-thumb]:bg-[#0082FC] [&::-webkit-scrollbar-thumb]:hover:bg-[#5FD4FD]`}
-        >
-          {/* Header Bar */}
-          <div className="bg-[#0074f0] text-white text-[9px] font-black uppercase tracking-wider px-2 py-1.5 border-2 border-[#0082FC] flex items-center justify-between shadow-md sticky top-0 z-20 mb-2">
-            <span className="flex items-center gap-1.5">
-              <span className="w-1.5 h-1.5 rounded-full bg-emerald-400 animate-pulse" />
-              Waterworks Reels ({LEFT_VIDEO_ADS.length})
-            </span>
-            <button
-              type="button"
-              onClick={() => setLeftMinimized(true)}
-              title="Minimize to side tab"
-              className="hover:text-[#5FD4FD] p-0.5 cursor-pointer ml-1 transition-colors"
-            >
-              <Minimize2 className="w-2.5 h-2.5" />
-            </button>
-          </div>
-
-          {/* 12 Video Cards Stack */}
-          <div className="flex flex-col gap-2.5 pb-2">
-            {LEFT_VIDEO_ADS.map(renderVideoCard)}
-          </div>
-        </aside>
-      )}
-
-      {/* 2. RESPONSIVE FLOATING EDGE PILL (Left side only) */}
-      <div
-        className={`fixed left-0 top-1/2 -translate-y-1/2 z-30 transition-all duration-300 ${
-          isVisible ? "opacity-100" : "opacity-0 pointer-events-none"
-        } ${leftMinimized ? "flex" : "min-[1600px]:hidden"}`}
+      {/* 1. LEFT SIDE VERTICAL VIDEO ADS COLUMN:
+          - Starts at top with 10px space (top-[10px] pb-[10px]).
+          - Absolute positioning ensures it scrolls along naturally with website scroll.
+          - Contains all 12 cards stacked vertically with 10px gaps. */}
+      <aside
+        aria-label="Left Side Product Video Ads"
+        className="absolute top-[10px] pb-[10px] left-2 min-[1720px]:left-3 min-[1900px]:left-4 z-30 hidden min-[1600px]:flex flex-col gap-[10px] select-none"
       >
+        {/* Header Bar */}
+        <div className="bg-[#0074f0] text-white text-[9px] font-black uppercase tracking-wider px-2 py-1.5 border-2 border-[#0082FC] flex items-center justify-between shadow-md mb-0.5">
+          <span className="flex items-center gap-1.5">
+            <span className="w-1.5 h-1.5 rounded-full bg-emerald-400 animate-pulse" />
+            Waterworks Reels ({LEFT_VIDEO_ADS.length})
+          </span>
+        </div>
+
+        {/* 12 Video Cards Stack */}
+        <div className="flex flex-col gap-[10px]">
+          {LEFT_VIDEO_ADS.map(renderVideoCard)}
+        </div>
+      </aside>
+
+      {/* 2. RIGHT SIDE VERTICAL VIDEO ADS COLUMN:
+          - Fixed position and vertically centered (top-1/2 -translate-y-1/2).
+          - Contains the 3 cards. */}
+      <aside
+        aria-label="Right Side Product Video Ads"
+        className="fixed top-1/2 -translate-y-1/2 right-2 min-[1720px]:right-3 min-[1900px]:right-4 z-30 hidden min-[1600px]:flex flex-col gap-[10px] select-none shadow-xl"
+      >
+        {/* Header Bar */}
+        <div className="bg-[#0074f0] text-white text-[9px] font-black uppercase tracking-wider px-2 py-1.5 border-2 border-[#0082FC] flex items-center justify-between shadow-md mb-0.5">
+          <span className="flex items-center gap-1.5">
+            <span className="w-1.5 h-1.5 rounded-full bg-[#5FD4FD] animate-pulse" />
+            Quality Reels ({RIGHT_VIDEO_ADS.length})
+          </span>
+        </div>
+
+        {/* 3 Video Cards Stack */}
+        <div className="flex flex-col gap-[10px]">
+          {RIGHT_VIDEO_ADS.map(renderVideoCard)}
+        </div>
+      </aside>
+
+      {/* 3. RESPONSIVE FLOATING EDGE PILLS (Left & Right for screens < 1600px) */}
+      <div className="fixed left-0 top-1/2 -translate-y-1/2 z-30 min-[1600px]:hidden">
         <button
           type="button"
-          onClick={() => {
-            if (leftMinimized) {
-              setLeftMinimized(false);
-            } else {
-              setLeftDrawerOpen(true);
-            }
-          }}
+          onClick={() => setLeftDrawerOpen(true)}
           className="bg-[#0074f0] hover:bg-[#0082FC] text-white hover:text-[#5FD4FD] border-y-2 border-r-2 border-white px-1.5 py-3 text-[9px] font-black uppercase tracking-widest shadow-2xl flex items-center gap-1 cursor-pointer transition-all [writing-mode:vertical-lr]"
           title="Open Waterworks Video Reels"
         >
           <Play className="w-2.5 h-2.5 fill-current rotate-90" />
           <span>Waterworks Reels ({LEFT_VIDEO_ADS.length})</span>
-          {leftMinimized && (
-            <ChevronRight className="w-2.5 h-2.5 rotate-90 mt-1" />
-          )}
+          <ChevronRight className="w-2.5 h-2.5 rotate-90 mt-1" />
         </button>
       </div>
 
-      {/* 3. SLIDE-OVER DRAWER FOR LEFT VIDEO ADS (Responsive for all screen sizes) */}
+      <div className="fixed right-0 top-1/2 -translate-y-1/2 z-30 min-[1600px]:hidden">
+        <button
+          type="button"
+          onClick={() => setRightDrawerOpen(true)}
+          className="bg-[#0074f0] hover:bg-[#0082FC] text-white hover:text-[#5FD4FD] border-y-2 border-l-2 border-white px-1.5 py-3 text-[9px] font-black uppercase tracking-widest shadow-2xl flex items-center gap-1 cursor-pointer transition-all [writing-mode:vertical-rl]"
+          title="Open Quality Reels"
+        >
+          <Play className="w-2.5 h-2.5 fill-current -rotate-90" />
+          <span>Quality Reels ({RIGHT_VIDEO_ADS.length})</span>
+          <ChevronLeft className="w-2.5 h-2.5 -rotate-90 mt-1" />
+        </button>
+      </div>
+
+      {/* 4. SLIDE-OVER DRAWER FOR LEFT VIDEO ADS (Responsive for all screen sizes) */}
       {leftDrawerOpen && (
         <div className="fixed inset-0 z-50 flex">
           <button
@@ -439,7 +469,38 @@ export const VerticalSideVideoAds: React.FC<VerticalSideVideoAdsProps> = ({
         </div>
       )}
 
-      {/* 4. FULL VIDEO PLAYER MODAL (When clicking any video play button) */}
+      {/* 5. SLIDE-OVER DRAWER FOR RIGHT VIDEO ADS (Responsive for all screen sizes) */}
+      {rightDrawerOpen && (
+        <div className="fixed inset-0 z-50 flex justify-end">
+          <button
+            type="button"
+            className="fixed inset-0 bg-[#0074f0]/75 backdrop-blur-xs cursor-default w-full h-full border-0"
+            onClick={() => setRightDrawerOpen(false)}
+            aria-label="Close Right Video Ads"
+          />
+          <div className="relative w-64 max-w-[85vw] bg-white h-full shadow-2xl border-l-4 border-[#0074f0] z-10 p-3.5 flex flex-col justify-between overflow-y-auto [scrollbar-width:thin] [scrollbar-color:#0082FC_rgba(0,130,252,0.1)]">
+            <div>
+              <div className="flex items-center justify-between pb-2.5 mb-3 border-b-2 border-[#0074f0] sticky top-0 bg-white z-20">
+                <span className="font-black text-xs uppercase text-[#0074f0]">
+                  Quality Reels ({RIGHT_VIDEO_ADS.length} Products)
+                </span>
+                <button
+                  type="button"
+                  onClick={() => setRightDrawerOpen(false)}
+                  className="p-1 text-[#0074f0] hover:bg-[#0082FC]/30 cursor-pointer"
+                >
+                  <X className="w-4 h-4" />
+                </button>
+              </div>
+              <div className="flex flex-col gap-3 pb-6">
+                {RIGHT_VIDEO_ADS.map(renderVideoCard)}
+              </div>
+            </div>
+          </div>
+        </div>
+      )}
+
+      {/* 6. FULL VIDEO PLAYER MODAL (When clicking any video play button) */}
       {activeVideoModal && (
         <div className="fixed inset-0 z-60 flex items-center justify-center p-4 sm:p-6">
           <button

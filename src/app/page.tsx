@@ -118,7 +118,13 @@ export default function Home() {
       />
 
       {/* Main Single-Page Blueprint with Alternating Background Rhythm */}
-      <main className="flex-1">
+      <main className="flex-1 relative">
+        {/* Left (12 cards) and Right (3 cards) Vertical Video Ads (Scrolling along with website in side gutters) */}
+        <VerticalSideVideoAds
+          onAddToRfq={handleAddToRfq}
+          onPreviewSubmittal={(product) => setSubmittalModalProduct(product)}
+        />
+
         {/* Section 1: 1st Place - Soleno Flagship Showcase (Sampling Station Hero - Blue #0082FC) */}
         <SolenoSamplingHero />
 
@@ -278,12 +284,6 @@ export default function Home() {
         product={submittalModalProduct}
         onClose={() => setSubmittalModalProduct(null)}
         onAddToRfq={handleAddToRfq}
-      />
-
-      {/* Left and Right Vertical Video Ads (Active in side gutters between Hero and Footer) */}
-      <VerticalSideVideoAds
-        onAddToRfq={handleAddToRfq}
-        onPreviewSubmittal={(product) => setSubmittalModalProduct(product)}
       />
 
       {/* Floating Quick Action Buttons: Call, Mail, YouTube, Top/Bottom */}
