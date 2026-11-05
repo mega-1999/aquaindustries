@@ -4,7 +4,6 @@ import {
   Award,
   ChevronRight,
   Clock,
-  Droplets,
   Layers,
   MapPin,
   PhoneCall,
@@ -410,7 +409,11 @@ export const IndustrialFooter: React.FC<IndustrialFooterProps> = ({
         {/* Floating Architectural Ribbon Badges */}
         <div className="absolute inset-0 flex items-center justify-between px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto pointer-events-none">
           <div className="flex items-center gap-2.5 bg-[#0074f0]/85 backdrop-blur-xs px-3.5 py-1.5 border border-[#0082FC]/70 shadow-md">
-            <Droplets className="w-3.5 h-3.5 text-[#0082FC] shrink-0" />
+            <img
+              src="/images/AI_Fevicon.png"
+              alt="Watermark"
+              className="w-3.5 h-3.5 object-contain shrink-0"
+            />
             <span className="text-[10px] sm:text-xs font-black uppercase tracking-wider text-white">
               Sustaining America&apos;s Clean Waterways
             </span>

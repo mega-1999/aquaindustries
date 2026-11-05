@@ -5,7 +5,6 @@ import {
   Calculator,
   ChevronDown,
   Clock,
-  Droplets,
   FileText,
   Layers,
   Lock,

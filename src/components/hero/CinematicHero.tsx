@@ -3,7 +3,6 @@
 import {
   ArrowRight,
   CheckCircle2,
-  Droplets,
   FileCheck2,
   PhoneCall,
   ShieldCheck,
@@ -105,7 +104,11 @@ export const CinematicHero: React.FC<CinematicHeroProps> = ({
               : "bg-[#0082FC] border-[#5FD4FD] text-white"
           }`}
         >
-          <Droplets className="w-3.5 h-3.5 text-[#5FD4FD] shrink-0" />
+          <img
+            src="/images/AI_Fevicon.png"
+            alt="Aqua Industries Emblem"
+            className="w-3.5 h-3.5 object-contain shrink-0"
+          />
           <span className="text-xs font-bold tracking-wide uppercase whitespace-nowrap">
             Domestic Waterworks Manufacturing &bull; Melville, NY &amp; Florida
             Hubs

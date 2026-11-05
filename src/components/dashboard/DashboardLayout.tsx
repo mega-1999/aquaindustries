@@ -5,7 +5,6 @@ import {
   ArrowLeft,
   Building,
   CheckCircle2,
-  Droplets,
   ExternalLink,
   Eye,
   EyeOff,
@@ -279,8 +278,12 @@ export const DashboardLayout: React.FC<DashboardLayoutProps> = ({
       {/* Mobile Top Header (Small screens only) */}
       <div className="lg:hidden bg-[#0082FC] text-white px-4 py-3 flex items-center justify-between border-b-2 border-[#5FD4FD] sticky top-0 z-50">
         <Link href="/" className="flex items-center gap-2">
-          <div className="w-8 h-8 bg-white text-[#0082FC] border border-[#5FD4FD] flex items-center justify-center shrink-0">
-            <Droplets className="w-5 h-5 text-[#0082FC]" />
+          <div className="h-8 px-1 bg-white border border-[#5FD4FD] flex items-center justify-center shrink-0">
+            <img
+              src="/images/AI_Fevicon.png"
+              alt="Aqua Industries"
+              className="h-6 w-auto object-contain"
+            />
           </div>
           <span className="font-black text-sm uppercase tracking-tight">
             Aqua <span className="text-[#5FD4FD]">Industries</span>
