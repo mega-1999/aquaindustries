@@ -513,10 +513,7 @@ export const VerticalSideVideoAds: React.FC<VerticalSideVideoAdsProps> = ({
         </div>
       </aside>
 
-      {/* 2. RIGHT SIDE VERTICAL VIDEO ADS COLUMN:
-          - Fixed in the vertical center of the screen, safely clamped below the navbar (min top 125px).
-          - Automatically fades out when scrolling near the footer to prevent any overlap.
-          - Contains the 3 cards. */}
+      {/* 2. RIGHT SIDE VERTICAL VIDEO ADS COLUMN (Temporarily commented out)
       <aside
         aria-label="Right Side Product Video Ads"
         style={{
@@ -527,7 +524,6 @@ export const VerticalSideVideoAds: React.FC<VerticalSideVideoAdsProps> = ({
             : "opacity-100 pointer-events-auto translate-y-0 scale-100"
           }`}
       >
-        {/* Header Bar */}
         <div className="bg-[#3087ff] text-white text-[9px] font-black uppercase tracking-wider px-2 py-1.5 border-2 border-[#3087ff] flex items-center justify-between shadow-md mb-0.5">
           <span className="flex items-center gap-1.5">
             <span className="w-1.5 h-1.5 rounded-full bg-[#3087ff] animate-pulse" />
@@ -535,7 +531,6 @@ export const VerticalSideVideoAds: React.FC<VerticalSideVideoAdsProps> = ({
           </span>
         </div>
 
-        {/* 3 Video Cards Stack */}
         <div className="flex flex-col gap-[10px]">
           {RIGHT_VIDEO_ADS.map((ad) => (
             <SideAdCard
@@ -548,6 +543,7 @@ export const VerticalSideVideoAds: React.FC<VerticalSideVideoAdsProps> = ({
           ))}
         </div>
       </aside>
+      */}
 
       {/* 3. RESPONSIVE FLOATING EDGE PILLS (Left & Right for screens < 1600px) */}
       <div
@@ -568,6 +564,7 @@ export const VerticalSideVideoAds: React.FC<VerticalSideVideoAdsProps> = ({
         </button>
       </div>
 
+      {/* RIGHT SIDE FLOATING EDGE PILL (Temporarily commented out)
       <div
         className={`fixed right-0 top-1/2 -translate-y-1/2 z-30 min-[1600px]:hidden transition-all duration-300 ${isFooterNear
             ? "opacity-0 pointer-events-none translate-x-full"
@@ -585,6 +582,7 @@ export const VerticalSideVideoAds: React.FC<VerticalSideVideoAdsProps> = ({
           <ChevronLeft className="w-2.5 h-2.5 -rotate-90 mt-1" />
         </button>
       </div>
+      */}
 
       {/* 4. SLIDE-OVER DRAWER FOR LEFT VIDEO ADS (Responsive for all screen sizes) */}
       {leftDrawerOpen && (
@@ -625,7 +623,7 @@ export const VerticalSideVideoAds: React.FC<VerticalSideVideoAdsProps> = ({
         </div>
       )}
 
-      {/* 5. SLIDE-OVER DRAWER FOR RIGHT VIDEO ADS (Responsive for all screen sizes) */}
+      {/* 5. SLIDE-OVER DRAWER FOR RIGHT VIDEO ADS (Temporarily commented out)
       {rightDrawerOpen && (
         <div className="fixed inset-0 z-50 flex justify-end">
           <button
@@ -663,6 +661,7 @@ export const VerticalSideVideoAds: React.FC<VerticalSideVideoAdsProps> = ({
           </div>
         </div>
       )}
+      */}
 
       {/* 6. FULL VIDEO PLAYER MODAL (When clicking any video play button) */}
       {activeVideoModal && (
