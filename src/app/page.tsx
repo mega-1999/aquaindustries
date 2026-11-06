@@ -148,8 +148,8 @@ export default function Home() {
           onPreviewSubmittal={(product) => setSubmittalModalProduct(product)}
         />
 
-        {/* Section 4: American Infrastructure Ductile Iron Waterworks Overview (White Background #FFFFFF - Alternating) */}
-        <CinematicHero variant="white" />
+        {/* Section 4: American Infrastructure Ductile Iron Waterworks Overview (Blue Background #0082FC - Water Dynamics) */}
+        <CinematicHero variant="blue" />
 
         {/* Section 5: Quick Metrics Ribbon */}
         <CertifiedMetricsBar />

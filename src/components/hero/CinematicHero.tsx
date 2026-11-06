@@ -16,7 +16,7 @@ interface CinematicHeroProps {
 }
 
 export const CinematicHero: React.FC<CinematicHeroProps> = ({
-  variant = "white",
+  variant = "blue",
 }) => {
   const isBlue = variant === "blue";
 
@@ -30,23 +30,32 @@ export const CinematicHero: React.FC<CinematicHeroProps> = ({
           : "bg-white text-[#0082FC] border-[#0082FC]"
       }`}
     >
-      {/* Background Fluid Wave Watermarks and Subtle Hydro Geometric Motif */}
+      {/* Background Fluid Wave Watermarks and Seamless Looping Water Animation */}
       <div className="absolute inset-0 z-0 overflow-hidden pointer-events-none select-none">
         {/* Infinite Seamless Looping Water Background Animation */}
         <InfiniteWaterBackground
-          opacity={isBlue ? "opacity-25" : "opacity-12"}
-          mixBlend={isBlue ? "mix-blend-screen" : "mix-blend-multiply"}
+          opacity={isBlue ? "opacity-35" : "opacity-25"}
+          mixBlend={isBlue ? "mix-blend-screen" : "mix-blend-overlay"}
+        />
+
+        {/* Hydrodynamic Fluid Caustic Accent Layer */}
+        <div
+          className="absolute inset-0 w-full h-full opacity-30 mix-blend-overlay gpu-water-drift pointer-events-none"
+          style={{
+            backgroundImage:
+              "radial-gradient(ellipse at 30% 30%, rgba(95, 212, 253, 0.8) 0%, rgba(0, 130, 252, 0.95) 100%)",
+          }}
         />
 
         {/* Soft Fluid Waves */}
         <div
           className={`absolute -top-24 -left-24 w-[500px] h-[500px] rounded-none blur-3xl fluid-wave ${
-            isBlue ? "bg-[#5FD4FD]/20" : "bg-[#5FD4FD]/15"
+            isBlue ? "bg-[#5FD4FD]/25" : "bg-[#5FD4FD]/15"
           }`}
         />
         <div
           className={`absolute -bottom-32 -right-24 w-[600px] h-[600px] rounded-none blur-3xl fluid-wave ${
-            isBlue ? "bg-white/10" : "bg-[#0082FC]/5"
+            isBlue ? "bg-white/15" : "bg-[#0082FC]/5"
           }`}
         />
 
