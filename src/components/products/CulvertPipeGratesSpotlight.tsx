@@ -1,15 +1,13 @@
 "use client";
 
 import {
+  Camera,
   Check,
   Copy,
   Download,
   Filter,
-  Lock,
   Plus,
   ShieldCheck,
-  Unlock,
-  Wrench,
 } from "lucide-react";
 import Image from "next/image";
 import type React from "react";
@@ -20,6 +18,36 @@ interface CulvertPipeGratesSpotlightProps {
   onAddToRfq?: (product: ProductItem) => void;
   onPreviewSubmittal?: (product: ProductItem) => void;
 }
+
+const REAL_PIPE_GRATE_PHOTOS = [
+  {
+    id: "pipe-grate-photo-1",
+    src: "/images/pipe_TREE_GRATE/image13.jpg",
+    alt: "Heavy Highway Culvert End Grate with Solid Steel Bar Grid",
+    title: "Heavy Highway Culvert End Grate",
+    badge: "100% REAL FABRICATION",
+    caption:
+      'ASTM A36 heavy-gauge welded steel circular culvert safety grate engineered for 18" to 36" concrete pipe outfalls.',
+  },
+  {
+    id: "pipe-grate-photo-2",
+    src: "/images/pipe_TREE_GRATE/image19.jpeg",
+    alt: "Flared End Section (FES) Hinged Pipe Safety Grate Assembly",
+    title: "Flared End Pipe Grate Assembly",
+    badge: "JOB SITE VERIFIED",
+    caption:
+      "Hot-dip galvanized ASTM A123 pipe protection screen fitted with heavy top maintenance cleanout hinges and anchor frame.",
+  },
+  {
+    id: "pipe-grate-photo-3",
+    src: "/images/pipe_TREE_GRATE/image3.jpeg",
+    alt: "Traversable Slope Drainage Bar Grid Fabrication Detail",
+    title: "Traversable Roadside Safety Slope Grid",
+    badge: "AASHTO / DOT COMPLIANT",
+    caption:
+      "Full heavy bar screen structure engineered for AASHTO roadside clear zones to prevent vehicle wheel-trap drops along ditch lines.",
+  },
+];
 
 const PIPE_GRATE_VARIANTS = [
   {
@@ -43,7 +71,8 @@ const PIPE_GRATE_VARIANTS = [
     standards: "ASTM A123 • AASHTO M180 • DOT Standard 604",
     description:
       'Hinged bar grate manufactured to clamp directly to standard 18" precast concrete flared end sections. Top hinges allow the grate to be swung upward for debris cleaning and maintenance rodding.',
-    photoUrl: "/images/products/Trench-Grates.jpg",
+    photoUrl: "/images/pipe_TREE_GRATE/image13.jpg",
+    photoIndex: 0,
   },
   {
     id: "pg-rnd-24",
@@ -66,7 +95,8 @@ const PIPE_GRATE_VARIANTS = [
     standards: "ASTM A123 • ASTM A36 • AASHTO Roadside Design",
     description:
       'Circular pipe end grate featuring 3" on-center round safety bars welded to an expandable retention collar. Easily slips into the bell or spigot of 24" storm culverts and locks rigidly in place.',
-    photoUrl: "/images/our-images/trench-grates.png",
+    photoUrl: "/images/pipe_TREE_GRATE/image19.jpeg",
+    photoIndex: 1,
   },
   {
     id: "pg-slp-36",
@@ -89,7 +119,8 @@ const PIPE_GRATE_VARIANTS = [
     standards: "AASHTO Highway Safety Manual • DOT Cross-Drain Standard",
     description:
       "Traversable roadway safety pipe grate engineered to highway cross-drain specifications. Allows vehicles accidentally running off the road to safely traverse ditch culverts without hazardous wheel-trap drops.",
-    photoUrl: "/images/products/Trench-Grates.jpg",
+    photoUrl: "/images/pipe_TREE_GRATE/image3.jpeg",
+    photoIndex: 2,
   },
   {
     id: "pg-ind-48",
@@ -112,7 +143,8 @@ const PIPE_GRATE_VARIANTS = [
     standards: "USACE Civil Works • ASTM A123 • AIS Compliant",
     description:
       'Industrial-grade 48" outfall safety grate designed to stop heavy logs, tree branches, and urban detritus. Includes dual counter-weighted hinged service doors for backhoe and excavator maintenance access.',
-    photoUrl: "/images/our-images/trench-grates.png",
+    photoUrl: "/images/pipe_TREE_GRATE/image13.jpg",
+    photoIndex: 0,
   },
 ];
 
@@ -120,17 +152,22 @@ export const CulvertPipeGratesSpotlight: React.FC<
   CulvertPipeGratesSpotlightProps
 > = ({ onAddToRfq, onPreviewSubmittal }) => {
   const [activeVariantId, setActiveVariantId] = useState<string>("pg-fes-18");
-  const [gateSwungOpen, setGateSwungOpen] = useState(false);
-  const [selectedSlope, setSelectedSlope] = useState<"3:1" | "4:1" | "6:1">(
-    "4:1",
-  );
-  const [viewMode, setViewMode] = useState<"cad" | "photo">("cad");
+  const [activePhotoIndex, setActivePhotoIndex] = useState<number>(0);
   const [added, setAdded] = useState(false);
   const [copied, setCopied] = useState(false);
 
   const activeVariant =
     PIPE_GRATE_VARIANTS.find((v) => v.id === activeVariantId) ||
     PIPE_GRATE_VARIANTS[0];
+
+  const currentPhoto =
+    REAL_PIPE_GRATE_PHOTOS[activePhotoIndex] || REAL_PIPE_GRATE_PHOTOS[0];
+
+  const handleSelectVariant = (variant: (typeof PIPE_GRATE_VARIANTS)[0]) => {
+    setActiveVariantId(variant.id);
+    setActivePhotoIndex(variant.photoIndex);
+    setAdded(false);
+  };
 
   const handleAdd = () => {
     setAdded(true);
@@ -160,9 +197,9 @@ export const CulvertPipeGratesSpotlight: React.FC<
           torqueSpec: activeVariant.standards,
         },
         keyFeatures: [
-          `Flow Area: ${activeVariant.dimensions.flowArea}`,
-          `Weight: ${activeVariant.dimensions.weightLbs} lbs • Fit: ${activeVariant.pipeFit}`,
-          `Cleanout: ${activeVariant.cleanoutType}`,
+          `Clear Flow Area: ${activeVariant.dimensions.flowArea}`,
+          `Weight: ${activeVariant.dimensions.weightLbs} lbs • Pipe Fit: ${activeVariant.pipeFit}`,
+          `Mechanism: ${activeVariant.cleanoutType}`,
           `Standards: ${activeVariant.standards}`,
         ],
         imageUrl: activeVariant.photoUrl,
@@ -197,9 +234,9 @@ export const CulvertPipeGratesSpotlight: React.FC<
           torqueSpec: activeVariant.standards,
         },
         keyFeatures: [
-          `Flow Area: ${activeVariant.dimensions.flowArea}`,
-          `Weight: ${activeVariant.dimensions.weightLbs} lbs • Fit: ${activeVariant.pipeFit}`,
-          `Cleanout: ${activeVariant.cleanoutType}`,
+          `Clear Flow Area: ${activeVariant.dimensions.flowArea}`,
+          `Weight: ${activeVariant.dimensions.weightLbs} lbs • Pipe Fit: ${activeVariant.pipeFit}`,
+          `Mechanism: ${activeVariant.cleanoutType}`,
           `Standards: ${activeVariant.standards}`,
         ],
         imageUrl: activeVariant.photoUrl,
@@ -210,15 +247,15 @@ export const CulvertPipeGratesSpotlight: React.FC<
   };
 
   const handleCopySpecs = () => {
-    const text = `AQUA INDUSTRIES PIPE GRATE SPECIFICATION
+    const text = `AQUA INDUSTRIES CULVERT PIPE SAFETY GRATE SPECIFICATION
 Model: ${activeVariant.name} (${activeVariant.catNumber})
-Pipe Size: ${activeVariant.pipeFit}
-Clear Area: ${activeVariant.dimensions.flowArea}
+Pipe Size Compatibility: ${activeVariant.pipeFit}
+Clear Hydraulic Intake: ${activeVariant.dimensions.flowArea}
 Weight: ${activeVariant.dimensions.weightLbs} lbs (H: ${activeVariant.dimensions.height}, W: ${activeVariant.dimensions.width}, D: ${activeVariant.dimensions.depth})
-Material: ${activeVariant.material}
-Coating: ${activeVariant.coating}
-Hinge & Latch: ${activeVariant.cleanoutType}
-Safety Rating: ${activeVariant.trafficRating}
+Structural Steel: ${activeVariant.material}
+Galvanizing: ${activeVariant.coating}
+Access Hasp: ${activeVariant.cleanoutType}
+Safety Slope Standard: ${activeVariant.trafficRating}
 Compliance: ${activeVariant.standards}
 100% Domestic AIS / Buy America Certified`;
 
@@ -266,7 +303,7 @@ Compliance: ${activeVariant.standards}
               <span>Select Culvert Pipe Grate Model:</span>
             </span>
             <span className="text-[10px] font-bold text-[#0082FC]/70 uppercase">
-              {PIPE_GRATE_VARIANTS.length} Heavy Fabrications Available
+              {PIPE_GRATE_VARIANTS.length} Real Heavy Fabrications Available
             </span>
           </div>
 
@@ -277,10 +314,7 @@ Compliance: ${activeVariant.standards}
                 <button
                   key={variant.id}
                   type="button"
-                  onClick={() => {
-                    setActiveVariantId(variant.id);
-                    setAdded(false);
-                  }}
+                  onClick={() => handleSelectVariant(variant)}
                   className={`px-4 py-2 text-xs font-black uppercase tracking-wider rounded-none border-2 transition-all flex items-center gap-2 cursor-pointer ${
                     isActive
                       ? "bg-[#0082FC] text-white border-[#0082FC] shadow-md scale-102"
@@ -307,313 +341,94 @@ Compliance: ${activeVariant.standards}
         {/* Main Showcase Split Panel */}
         <div className="bg-white text-[#0082FC] border-4 border-[#0082FC] p-6 sm:p-8 shadow-2xl">
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 items-center">
-            {/* Left 6 Cols: Hinged Gate Swing Simulator & Roadside Slope Visualizer */}
+            {/* Left 6 Cols: Real Photography Showcase & Interactive Gallery */}
             <div className="lg:col-span-6 flex flex-col items-center">
               {/* Header Ribbon */}
               <div className="w-full flex items-center justify-between mb-2">
                 <span className="text-[10px] font-black uppercase tracking-wider bg-[#0082FC] text-white px-2 py-0.5 border border-[#0082FC] flex items-center gap-1.5">
-                  <Wrench className="w-3 h-3" />
-                  <span>
-                    Hinged Swing Gate &amp; Traversable Slope Simulator
-                  </span>
+                  <Camera className="w-3 h-3 text-white" />
+                  <span>Real Manufactured Pipe Grate Photography</span>
                 </span>
 
-                <div className="flex items-center gap-1">
-                  <button
-                    type="button"
-                    onClick={() => setViewMode("cad")}
-                    className={`px-2 py-0.5 text-[10px] font-black uppercase border transition-colors cursor-pointer ${
-                      viewMode === "cad"
-                        ? "bg-[#0082FC] text-white border-[#0082FC]"
-                        : "bg-white text-[#0082FC] border-[#5FD4FD] hover:bg-[#5FD4FD]/10"
-                    }`}
-                  >
-                    CAD Simulator
-                  </button>
-                  <button
-                    type="button"
-                    onClick={() => setViewMode("photo")}
-                    className={`px-2 py-0.5 text-[10px] font-black uppercase border transition-colors cursor-pointer ${
-                      viewMode === "photo"
-                        ? "bg-[#0082FC] text-white border-[#0082FC]"
-                        : "bg-white text-[#0082FC] border-[#5FD4FD] hover:bg-[#5FD4FD]/10"
-                    }`}
-                  >
-                    Site Photo
-                  </button>
-                </div>
+                <span className="text-[10px] font-bold text-[#0082FC]/80 uppercase">
+                  Photo {activePhotoIndex + 1} of {REAL_PIPE_GRATE_PHOTOS.length}
+                </span>
               </div>
 
-              {/* Simulation Canvas Box */}
-              <div className="relative w-full h-80 bg-slate-900 border-2 border-[#0082FC] overflow-hidden flex items-center justify-center">
-                {viewMode === "photo" ? (
-                  <div className="relative w-full h-full flex items-center justify-center p-4 bg-slate-800">
-                    <Image
-                      src={activeVariant.photoUrl}
-                      alt={activeVariant.name}
-                      fill
-                      className="object-contain p-4"
-                      sizes="(max-width: 768px) 100vw, 50vw"
-                    />
-                    <span className="absolute bottom-2 left-2 bg-[#0082FC] text-white px-2 py-0.5 text-[10px] font-mono font-bold">
-                      Site Pattern: {activeVariant.catNumber}
-                    </span>
-                  </div>
-                ) : (
-                  /* Animated SVG Culvert End with Swing Gate */
-                  <div className="relative w-full h-full flex items-center justify-center bg-slate-900 p-2">
-                    <svg
-                      className="w-full h-full"
-                      viewBox="0 0 320 220"
-                      fill="none"
-                      stroke="currentColor"
-                      strokeWidth="2"
-                    >
-                      <title>Culvert Pipe Safety Grate Swing Simulation</title>
+              {/* Main Real Product Photography Display Viewport */}
+              <div className="relative w-full h-80 sm:h-96 bg-slate-950 border-2 border-[#0082FC] overflow-hidden flex items-center justify-center group shadow-inner">
+                {/* Real High-Resolution Photo */}
+                <Image
+                  src={currentPhoto.src}
+                  alt={currentPhoto.alt}
+                  fill
+                  className="object-contain p-4 group-hover:scale-105 transition-transform duration-300"
+                  sizes="(max-width: 768px) 100vw, 50vw"
+                  priority
+                />
 
-                      {/* Roadside Embankment Slope Angle Line */}
-                      <line
-                        x1="10"
-                        y1={
-                          selectedSlope === "3:1"
-                            ? "170"
-                            : selectedSlope === "4:1"
-                              ? "185"
-                              : "200"
-                        }
-                        x2="310"
-                        y2={
-                          selectedSlope === "3:1"
-                            ? "30"
-                            : selectedSlope === "4:1"
-                              ? "40"
-                              : "55"
-                        }
-                        stroke="#475569"
-                        strokeWidth="3"
-                        strokeDasharray="4 4"
-                      />
-                      <text
-                        x="30"
-                        y="45"
-                        fontSize="8"
-                        fill="#94a3b8"
-                        fontWeight="bold"
-                      >
-                        ROADSIDE EMBANKMENT ({selectedSlope} SLOPE)
-                      </text>
-
-                      {/* Concrete Headwall / Flared Culvert Bell */}
-                      <path
-                        d="M 60 40 L 260 40 L 230 180 L 90 180 Z"
-                        fill="#334155"
-                        stroke="#64748b"
-                        strokeWidth="3"
-                      />
-
-                      {/* Culvert Interior Pipe Void */}
-                      <ellipse
-                        cx="160"
-                        cy="110"
-                        rx="65"
-                        ry="50"
-                        fill="#0f172a"
-                        stroke="#38bdf8"
-                        strokeWidth="2.5"
-                      />
-
-                      {/* Water Flow Stream */}
-                      <path
-                        d="M 120 125 Q 160 135 200 125"
-                        stroke="#38bdf8"
-                        strokeWidth="3"
-                        strokeDasharray="3 3"
-                        className="animate-pulse"
-                      />
-
-                      {/* Top Hinge Assembly */}
-                      <rect
-                        x="145"
-                        y="52"
-                        width="30"
-                        height="10"
-                        fill="#e2e8f0"
-                        stroke="#0082fc"
-                        strokeWidth="2"
-                      />
-                      <circle cx="160" cy="57" r="3" fill="#0082fc" />
-
-                      {/* Hinged Grate (Rotates when swung open) */}
-                      <g
-                        className="transition-transform duration-700 origin-[160px_57px] ease-in-out"
-                        style={{
-                          transform: gateSwungOpen
-                            ? "rotate(-75deg) translateY(-8px)"
-                            : "rotate(0deg)",
-                        }}
-                      >
-                        {/* Outer Grate Frame */}
-                        <ellipse
-                          cx="160"
-                          cy="110"
-                          rx="60"
-                          ry="45"
-                          stroke={gateSwungOpen ? "#f59e0b" : "#5fd4fd"}
-                          strokeWidth="3.5"
-                          fill={gateSwungOpen ? "#f59e0b15" : "#5fd4fd15"}
-                        />
-
-                        {/* Heavy Safety Bars */}
-                        <line
-                          x1="120"
-                          y1="80"
-                          x2="120"
-                          y2="140"
-                          stroke="#5fd4fd"
-                          strokeWidth="3"
-                        />
-                        <line
-                          x1="135"
-                          y1="70"
-                          x2="135"
-                          y2="150"
-                          stroke="#5fd4fd"
-                          strokeWidth="3"
-                        />
-                        <line
-                          x1="150"
-                          y1="66"
-                          x2="150"
-                          y2="154"
-                          stroke="#5fd4fd"
-                          strokeWidth="3.5"
-                        />
-                        <line
-                          x1="165"
-                          y1="66"
-                          x2="165"
-                          y2="154"
-                          stroke="#5fd4fd"
-                          strokeWidth="3.5"
-                        />
-                        <line
-                          x1="180"
-                          y1="70"
-                          x2="180"
-                          y2="150"
-                          stroke="#5fd4fd"
-                          strokeWidth="3"
-                        />
-                        <line
-                          x1="195"
-                          y1="80"
-                          x2="195"
-                          y2="140"
-                          stroke="#5fd4fd"
-                          strokeWidth="3"
-                        />
-
-                        {/* Bottom Padlock Latch */}
-                        <rect
-                          x="153"
-                          y="152"
-                          width="14"
-                          height="8"
-                          fill={gateSwungOpen ? "#f59e0b" : "#10b981"}
-                          stroke="#ffffff"
-                        />
-                      </g>
-
-                      {/* State Status Indicator text */}
-                      <text
-                        x="160"
-                        y="205"
-                        textAnchor="middle"
-                        fontSize="9"
-                        fill={gateSwungOpen ? "#f59e0b" : "#10b981"}
-                        fontWeight="black"
-                      >
-                        {gateSwungOpen
-                          ? "GATE SWUNG OPEN 75° (BACKHOE DREDGING CLEARANCE)"
-                          : "GATE LOCKED FLUSH (TRAVERSABLE SAFETY MODE)"}
-                      </text>
-                    </svg>
-
-                    {/* Operational Badge */}
-                    <div className="absolute top-2 left-2 bg-slate-900/90 text-white border border-[#5FD4FD] px-2 py-1 text-[10px] font-mono">
-                      <span>Gate Mode: </span>
-                      <span className="text-[#5FD4FD] font-bold">
-                        {gateSwungOpen
-                          ? "Maintenance Swing"
-                          : "Locked Operational"}
-                      </span>
-                    </div>
-                  </div>
-                )}
-              </div>
-
-              {/* Interactive Control Ribbon */}
-              <div className="w-full bg-[#5FD4FD]/15 border-2 border-[#5FD4FD] p-2.5 mt-3 flex flex-wrap items-center justify-between gap-2">
-                <div className="flex items-center gap-1.5">
-                  <span className="text-[10px] font-black uppercase text-[#0082FC]">
-                    Slope Rating:
+                {/* Corner Badges */}
+                <div className="absolute top-2 left-2 flex flex-col gap-1 z-10 pointer-events-none">
+                  <span className="bg-[#0082FC] text-white px-2 py-0.5 text-[9px] font-black uppercase tracking-wider border border-white/50 shadow-md">
+                    {currentPhoto.badge}
                   </span>
-                  <button
-                    type="button"
-                    onClick={() => setSelectedSlope("3:1")}
-                    className={`px-2 py-1 text-[10px] font-black uppercase border transition-colors cursor-pointer ${
-                      selectedSlope === "3:1"
-                        ? "bg-[#0082FC] text-white border-[#0082FC]"
-                        : "bg-white text-[#0082FC] border-[#5FD4FD]"
-                    }`}
-                  >
-                    3:1 Standard
-                  </button>
-                  <button
-                    type="button"
-                    onClick={() => setSelectedSlope("4:1")}
-                    className={`px-2 py-1 text-[10px] font-black uppercase border transition-colors cursor-pointer ${
-                      selectedSlope === "4:1"
-                        ? "bg-[#0082FC] text-white border-[#0082FC]"
-                        : "bg-white text-[#0082FC] border-[#5FD4FD]"
-                    }`}
-                  >
-                    4:1 Highway
-                  </button>
-                  <button
-                    type="button"
-                    onClick={() => setSelectedSlope("6:1")}
-                    className={`px-2 py-1 text-[10px] font-black uppercase border transition-colors cursor-pointer ${
-                      selectedSlope === "6:1"
-                        ? "bg-[#0082FC] text-white border-[#0082FC]"
-                        : "bg-white text-[#0082FC] border-[#5FD4FD]"
-                    }`}
-                  >
-                    6:1 Interstate
-                  </button>
+                  <span className="bg-black/80 backdrop-blur-xs text-[#5FD4FD] px-2 py-0.5 text-[9px] font-mono font-bold border border-[#5FD4FD]/50">
+                    Pattern: {activeVariant.catNumber}
+                  </span>
                 </div>
 
-                <button
-                  type="button"
-                  onClick={() => setGateSwungOpen((prev) => !prev)}
-                  className={`px-3 py-1 text-[10px] font-black uppercase border transition-all flex items-center gap-1.5 cursor-pointer ${
-                    gateSwungOpen
-                      ? "bg-amber-500 text-white border-amber-500 shadow-md"
-                      : "bg-[#0082FC] text-white border-[#0082FC] hover:bg-[#5FD4FD] hover:text-[#0082FC]"
-                  }`}
-                >
-                  {gateSwungOpen ? (
-                    <>
-                      <Unlock className="w-3.5 h-3.5" />
-                      <span>Swing Closed</span>
-                    </>
-                  ) : (
-                    <>
-                      <Lock className="w-3.5 h-3.5" />
-                      <span>Swing Open 75°</span>
-                    </>
-                  )}
-                </button>
+                <div className="absolute bottom-2 right-2 bg-white/95 text-[#0082FC] px-2 py-0.5 text-[9px] font-bold border border-[#0082FC] shadow-sm pointer-events-none">
+                  ASTM A36 Heavy Steel
+                </div>
+              </div>
+
+              {/* Real Photo Caption Bar */}
+              <div className="w-full bg-[#5FD4FD]/15 border-2 border-[#5FD4FD] p-2 mt-2 text-left">
+                <p className="text-[11px] text-[#0082FC] font-semibold leading-tight">
+                  <span className="font-black uppercase text-[#0082FC] mr-1.5">
+                    {currentPhoto.title}:
+                  </span>
+                  {currentPhoto.caption}
+                </p>
+              </div>
+
+              {/* 3 Real Photography Thumbnail Selector Gallery */}
+              <div className="w-full grid grid-cols-3 gap-2 mt-3">
+                {REAL_PIPE_GRATE_PHOTOS.map((photo, idx) => {
+                  const isSelected = activePhotoIndex === idx;
+                  return (
+                    <button
+                      key={photo.id}
+                      type="button"
+                      onClick={() => setActivePhotoIndex(idx)}
+                      className={`relative h-20 sm:h-22 bg-slate-900 border-2 transition-all p-1 flex flex-col items-center justify-between cursor-pointer overflow-hidden ${
+                        isSelected
+                          ? "border-[#0082FC] ring-2 ring-[#0082FC] scale-102 bg-white"
+                          : "border-slate-300 hover:border-[#0082FC] opacity-80 hover:opacity-100"
+                      }`}
+                      title={photo.title}
+                    >
+                      <div className="relative w-full flex-1">
+                        <Image
+                          src={photo.src}
+                          alt={photo.alt}
+                          fill
+                          className="object-contain p-0.5"
+                          sizes="150px"
+                        />
+                      </div>
+                      <span
+                        className={`text-[8px] font-bold uppercase truncate w-full text-center mt-0.5 px-0.5 ${
+                          isSelected
+                            ? "bg-[#0082FC] text-white"
+                            : "bg-slate-800 text-white/90"
+                        }`}
+                      >
+                        {photo.badge.split(" ")[0]}
+                      </span>
+                    </button>
+                  );
+                })}
               </div>
             </div>
 
