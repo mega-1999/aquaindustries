@@ -1,14 +1,13 @@
 "use client";
 
 import {
+  Camera,
   Check,
   Copy,
   Download,
   Filter,
   Plus,
   ShieldCheck,
-  Waves,
-  Zap,
 } from "lucide-react";
 import Image from "next/image";
 import type React from "react";
@@ -19,6 +18,45 @@ interface StormwaterTrashRacksSpotlightProps {
   onAddToRfq?: (product: ProductItem) => void;
   onPreviewSubmittal?: (product: ProductItem) => void;
 }
+
+const REAL_TRASH_RACK_PHOTOS = [
+  {
+    id: "photo-type-1",
+    src: "/images/trash_racks/trash_rack_type_1.png",
+    alt: "Heavy Structural Steel Pyramidal Anti-Vortex Trash Rack",
+    title: '36" Pyramidal Anti-Vortex Trash Rack',
+    badge: "100% REAL FABRICATION",
+    caption:
+      "Precision welded ASTM A36 structural angle & flat-bar pyramidal anti-vortex trash rack with removable apex cleanout hatch.",
+  },
+  {
+    id: "photo-field-1",
+    src: "/images/trash_racks/trash_racks1.jpg",
+    alt: "Stormwater Retention Basin Riser Trash Rack Installation",
+    title: "Retention Basin Field Structure",
+    badge: "REAL JOB SITE INSTALLATION",
+    caption:
+      "Municipal retention pond riser structure fitted with hot-dip galvanized ASTM A123 heavy debris protection rack.",
+  },
+  {
+    id: "photo-detail-2",
+    src: "/images/trash_racks/trash_racks2.jpg",
+    alt: "Structural Welded Bar Grid and Framing Detail",
+    title: "Structural Bar Welded Assembly",
+    badge: "ASTM A36 STRUCTURAL STEEL",
+    caption:
+      "Heavy solid steel flow-tapered bar screen layout engineered for 300%+ free open hydraulic area without clogging.",
+  },
+  {
+    id: "photo-spillway-3",
+    src: "/images/trash_racks/trash_racks3.jpg",
+    alt: "Municipal Spillway Broad-Crested Overflow Trash Rack",
+    title: "Spillway Heavy Overflow Barrier",
+    badge: "USACE TR-55 / AASHTO COMPLIANT",
+    caption:
+      "High-capacity debris barrier protecting broad-crested concrete weir spillways from dynamic log and branch impacts.",
+  },
+];
 
 const TRASH_RACK_VARIANTS = [
   {
@@ -42,7 +80,8 @@ const TRASH_RACK_VARIANTS = [
     standards: "State Water Quality BMP • USACE TR-55 Hydraulic Manual",
     description:
       "Four-sided pyramid anti-vortex trash rack that sits atop stormwater riser structures. Its unique pyramidal slope sheds floating debris automatically while vertical vortex-breaking vanes prevent high-velocity whirlpool suction.",
-    photoUrl: "/images/our-images/trench-grates.png",
+    photoUrl: "/images/trash_racks/trash_rack_type_1.png",
+    photoIndex: 0,
   },
   {
     id: "tr-inc-48",
@@ -65,7 +104,8 @@ const TRASH_RACK_VARIANTS = [
     standards: "EPA Stormwater Phase II BMP • ASTM A123 • Buy America",
     description:
       "Inclined bar screen set at a 45-degree angle to the approaching water current. Floating branches and leaves rise up the screen as water levels rise, preserving full open hydraulic area through the lower slots.",
-    photoUrl: "/images/products/Trench-Grates.jpg",
+    photoUrl: "/images/trash_racks/trash_racks1.jpg",
+    photoIndex: 1,
   },
   {
     id: "tr-orf-18",
@@ -88,7 +128,8 @@ const TRASH_RACK_VARIANTS = [
     standards: "BMP Design Manual • ASTM A240 • 100% Domestic",
     description:
       'Protective debris enclosure designed to prevent mulch, plastic bags, and sediment from clogging small bottom drawdown orifices (2" to 12") in extended detention water quality ponds.',
-    photoUrl: "/images/our-images/curb_inlet_riser_heavy_iron.png",
+    photoUrl: "/images/trash_racks/trash_racks2.jpg",
+    photoIndex: 2,
   },
   {
     id: "tr-weir-72",
@@ -111,7 +152,8 @@ const TRASH_RACK_VARIANTS = [
     standards: "USACE Standards • AASHTO • NRCS Pond Standard 378",
     description:
       "Modular multi-section weir overflow rack designed for broad-crested concrete spillways. Interlocking sections allow any perimeter length to be covered with high-impact debris protection.",
-    photoUrl: "/images/our-images/trench-grates.png",
+    photoUrl: "/images/trash_racks/trash_racks3.jpg",
+    photoIndex: 3,
   },
 ];
 
@@ -119,17 +161,22 @@ export const StormwaterTrashRacksSpotlight: React.FC<
   StormwaterTrashRacksSpotlightProps
 > = ({ onAddToRfq, onPreviewSubmittal }) => {
   const [activeVariantId, setActiveVariantId] = useState<string>("tr-vort-36");
-  const [hasAntiVortexRack, setHasAntiVortexRack] = useState(true);
-  const [floodStage, setFloodStage] = useState<"pond" | "peak" | "surge">(
-    "peak",
-  );
-  const [viewMode, setViewMode] = useState<"cad" | "photo">("cad");
+  const [activePhotoIndex, setActivePhotoIndex] = useState<number>(0);
   const [added, setAdded] = useState(false);
   const [copied, setCopied] = useState(false);
 
   const activeVariant =
     TRASH_RACK_VARIANTS.find((v) => v.id === activeVariantId) ||
     TRASH_RACK_VARIANTS[0];
+
+  const currentPhoto =
+    REAL_TRASH_RACK_PHOTOS[activePhotoIndex] || REAL_TRASH_RACK_PHOTOS[0];
+
+  const handleSelectVariant = (variant: (typeof TRASH_RACK_VARIANTS)[0]) => {
+    setActiveVariantId(variant.id);
+    setActivePhotoIndex(variant.photoIndex);
+    setAdded(false);
+  };
 
   const handleAdd = () => {
     setAdded(true);
@@ -226,13 +273,6 @@ Compliance: ${activeVariant.standards}
     setTimeout(() => setCopied(false), 2000);
   };
 
-  const dischargeGpm =
-    floodStage === "pond"
-      ? "2,450 GPM"
-      : floodStage === "peak"
-        ? "8,800 GPM"
-        : "16,500 GPM";
-
   return (
     <section
       id="trash-racks"
@@ -271,7 +311,7 @@ Compliance: ${activeVariant.standards}
               <span>Select Riser &amp; Weir Trash Rack Configuration:</span>
             </span>
             <span className="text-[10px] font-bold text-[#0082FC]/70 uppercase">
-              {TRASH_RACK_VARIANTS.length} BMP Geometries Available
+              {TRASH_RACK_VARIANTS.length} Real Manufactured Geometries
             </span>
           </div>
 
@@ -282,10 +322,7 @@ Compliance: ${activeVariant.standards}
                 <button
                   key={variant.id}
                   type="button"
-                  onClick={() => {
-                    setActiveVariantId(variant.id);
-                    setAdded(false);
-                  }}
+                  onClick={() => handleSelectVariant(variant)}
                   className={`px-4 py-2 text-xs font-black uppercase tracking-wider rounded-none border-2 transition-all flex items-center gap-2 cursor-pointer ${
                     isActive
                       ? "bg-[#0082FC] text-white border-[#0082FC] shadow-md scale-102"
@@ -312,383 +349,94 @@ Compliance: ${activeVariant.standards}
         {/* Main Showcase Split Panel */}
         <div className="bg-white text-[#0082FC] border-4 border-white p-6 sm:p-8 shadow-2xl">
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 items-center">
-            {/* Left 6 Cols: Anti-Vortex Whirlpool vs Shedding Flow Simulator */}
+            {/* Left 6 Cols: Real Photography Showcase & Gallery Strip */}
             <div className="lg:col-span-6 flex flex-col items-center">
               {/* Header Ribbon */}
               <div className="w-full flex items-center justify-between mb-2">
                 <span className="text-[10px] font-black uppercase tracking-wider bg-[#5FD4FD]/20 text-[#0082FC] px-2 py-0.5 border border-[#0082FC] flex items-center gap-1.5">
-                  <Waves className="w-3 h-3" />
-                  <span>
-                    Whirlpool Cavitation vs Pyramidal Shedding Simulator
-                  </span>
+                  <Camera className="w-3 h-3 text-[#0082FC]" />
+                  <span>Real Manufactured Product Photography</span>
                 </span>
 
-                <div className="flex items-center gap-1">
-                  <button
-                    type="button"
-                    onClick={() => setViewMode("cad")}
-                    className={`px-2 py-0.5 text-[10px] font-black uppercase border transition-colors cursor-pointer ${
-                      viewMode === "cad"
-                        ? "bg-[#0082FC] text-white border-[#0082FC]"
-                        : "bg-white text-[#0082FC] border-[#5FD4FD] hover:bg-[#5FD4FD]/10"
-                    }`}
-                  >
-                    CAD Simulator
-                  </button>
-                  <button
-                    type="button"
-                    onClick={() => setViewMode("photo")}
-                    className={`px-2 py-0.5 text-[10px] font-black uppercase border transition-colors cursor-pointer ${
-                      viewMode === "photo"
-                        ? "bg-[#0082FC] text-white border-[#0082FC]"
-                        : "bg-white text-[#0082FC] border-[#5FD4FD] hover:bg-[#5FD4FD]/10"
-                    }`}
-                  >
-                    Foundry Image
-                  </button>
+                <span className="text-[10px] font-bold text-[#0082FC]/80 uppercase">
+                  Photo {activePhotoIndex + 1} of {REAL_TRASH_RACK_PHOTOS.length}
+                </span>
+              </div>
+
+              {/* Main Real Product Photography Display Viewport */}
+              <div className="relative w-full h-80 sm:h-96 bg-slate-950 border-2 border-[#0082FC] overflow-hidden flex items-center justify-center group shadow-inner">
+                {/* Real High-Resolution Photo */}
+                <Image
+                  src={currentPhoto.src}
+                  alt={currentPhoto.alt}
+                  fill
+                  className="object-contain p-4 group-hover:scale-105 transition-transform duration-300"
+                  sizes="(max-width: 768px) 100vw, 50vw"
+                  priority
+                />
+
+                {/* Corner Badges */}
+                <div className="absolute top-2 left-2 flex flex-col gap-1 z-10 pointer-events-none">
+                  <span className="bg-[#0082FC] text-white px-2 py-0.5 text-[9px] font-black uppercase tracking-wider border border-white/50 shadow-md">
+                    {currentPhoto.badge}
+                  </span>
+                  <span className="bg-black/80 backdrop-blur-xs text-[#5FD4FD] px-2 py-0.5 text-[9px] font-mono font-bold border border-[#5FD4FD]/50">
+                    Pattern: {activeVariant.catNumber}
+                  </span>
+                </div>
+
+                <div className="absolute bottom-2 right-2 bg-white/95 text-[#0082FC] px-2 py-0.5 text-[9px] font-bold border border-[#0082FC] shadow-sm pointer-events-none">
+                  {activeVariant.material.split(" ")[0]} Structural Steel
                 </div>
               </div>
 
-              {/* Simulation Canvas Box */}
-              <div className="relative w-full h-80 bg-slate-900 border-2 border-[#0082FC] overflow-hidden flex items-center justify-center">
-                {viewMode === "photo" ? (
-                  <div className="relative w-full h-full flex items-center justify-center p-4 bg-slate-800">
-                    <Image
-                      src={activeVariant.photoUrl}
-                      alt={activeVariant.name}
-                      fill
-                      className="object-contain p-4"
-                      sizes="(max-width: 768px) 100vw, 50vw"
-                    />
-                    <span className="absolute bottom-2 left-2 bg-[#0082FC] text-white px-2 py-0.5 text-[10px] font-mono font-bold">
-                      Pattern: {activeVariant.catNumber}
-                    </span>
-                  </div>
-                ) : (
-                  /* Animated SVG Riser Flow */
-                  <div className="relative w-full h-full flex items-center justify-center bg-slate-900 p-2">
-                    <svg
-                      className="w-full h-full"
-                      viewBox="0 0 320 220"
-                      fill="none"
-                      stroke="currentColor"
-                      strokeWidth="2"
+              {/* Real Photo Caption Bar */}
+              <div className="w-full bg-[#5FD4FD]/15 border-2 border-[#5FD4FD] p-2 mt-2 text-left">
+                <p className="text-[11px] text-[#0082FC] font-semibold leading-tight">
+                  <span className="font-black uppercase text-[#0082FC] mr-1.5">
+                    {currentPhoto.title}:
+                  </span>
+                  {currentPhoto.caption}
+                </p>
+              </div>
+
+              {/* 4 Real Photography Thumbnail Selector Gallery */}
+              <div className="w-full grid grid-cols-4 gap-2 mt-3">
+                {REAL_TRASH_RACK_PHOTOS.map((photo, idx) => {
+                  const isSelected = activePhotoIndex === idx;
+                  return (
+                    <button
+                      key={photo.id}
+                      type="button"
+                      onClick={() => setActivePhotoIndex(idx)}
+                      className={`relative h-18 sm:h-20 bg-slate-900 border-2 transition-all p-1 flex flex-col items-center justify-between cursor-pointer overflow-hidden ${
+                        isSelected
+                          ? "border-[#0082FC] ring-2 ring-[#0082FC] scale-102 bg-white"
+                          : "border-slate-300 hover:border-[#0082FC] opacity-80 hover:opacity-100"
+                      }`}
+                      title={photo.title}
                     >
-                      <title>Detention Basin Anti-Vortex Simulator</title>
-
-                      {/* Detention Pond Water Reservoir Background */}
-                      <rect
-                        x="10"
-                        y={
-                          floodStage === "pond"
-                            ? "120"
-                            : floodStage === "peak"
-                              ? "80"
-                              : "40"
-                        }
-                        width="300"
-                        height={
-                          floodStage === "pond"
-                            ? "90"
-                            : floodStage === "peak"
-                              ? "130"
-                              : "170"
-                        }
-                        fill="#0284c7"
-                        fillOpacity="0.35"
-                        className="transition-all duration-700 ease-out"
-                      />
-
-                      {/* Precast Concrete Circular Riser Shaft */}
-                      <rect
-                        x="110"
-                        y="120"
-                        width="100"
-                        height="90"
-                        fill="#334155"
-                        stroke="#64748b"
-                        strokeWidth="3"
-                      />
-                      <ellipse
-                        cx="160"
-                        cy="120"
-                        rx="50"
-                        ry="18"
-                        fill="#0f172a"
-                        stroke="#64748b"
-                        strokeWidth="2.5"
-                      />
-
-                      {/* CASE A: WITHOUT RACK -> DANGEROUS WHIRLPOOL VORTEX */}
-                      {!hasAntiVortexRack ? (
-                        <g className="animate-spin origin-[160px_100px] duration-1000">
-                          {/* Swirling Vortex Funnel */}
-                          <path
-                            d="M 110 50 Q 160 120 160 150"
-                            stroke="#f43f5e"
-                            strokeWidth="3.5"
-                            strokeDasharray="4 2"
-                          />
-                          <path
-                            d="M 210 50 Q 160 120 160 150"
-                            stroke="#f43f5e"
-                            strokeWidth="3.5"
-                            strokeDasharray="4 2"
-                          />
-                          <ellipse
-                            cx="160"
-                            cy="70"
-                            rx="35"
-                            ry="12"
-                            stroke="#f43f5e"
-                            strokeWidth="2.5"
-                          />
-                          <ellipse
-                            cx="160"
-                            cy="95"
-                            rx="20"
-                            ry="8"
-                            stroke="#f43f5e"
-                            strokeWidth="2"
-                          />
-                          <circle cx="160" cy="118" r="6" fill="#f43f5e" />
-
-                          {/* Debris sucked down into pipe */}
-                          <rect
-                            x="145"
-                            y="80"
-                            width="22"
-                            height="6"
-                            fill="#eab308"
-                            transform="rotate(25 155 83)"
-                          />
-                          <rect
-                            x="155"
-                            y="105"
-                            width="16"
-                            height="5"
-                            fill="#eab308"
-                            transform="rotate(-35 163 107)"
-                          />
-                        </g>
-                      ) : (
-                        /* CASE B: WITH PYRAMIDAL ANTI-VORTEX TRASH RACK */
-                        <g>
-                          {/* Pyramidal 4-Sided Structure */}
-                          <path
-                            d="M 110 120 L 160 40 L 210 120 Z"
-                            fill="#0284c7"
-                            fillOpacity="0.2"
-                            stroke="#38bdf8"
-                            strokeWidth="3.5"
-                          />
-
-                          {/* Sloped Debris-Shedding Bars */}
-                          <line
-                            x1="160"
-                            y1="40"
-                            x2="160"
-                            y2="120"
-                            stroke="#38bdf8"
-                            strokeWidth="3"
-                          />
-                          <line
-                            x1="125"
-                            y1="120"
-                            x2="160"
-                            y2="40"
-                            stroke="#38bdf8"
-                            strokeWidth="2"
-                          />
-                          <line
-                            x1="142"
-                            y1="120"
-                            x2="160"
-                            y2="40"
-                            stroke="#38bdf8"
-                            strokeWidth="2"
-                          />
-                          <line
-                            x1="178"
-                            y1="120"
-                            x2="160"
-                            y2="40"
-                            stroke="#38bdf8"
-                            strokeWidth="2"
-                          />
-                          <line
-                            x1="195"
-                            y1="120"
-                            x2="160"
-                            y2="40"
-                            stroke="#38bdf8"
-                            strokeWidth="2"
-                          />
-
-                          {/* Anti-Vortex Top Apex Cap & Vane */}
-                          <polygon
-                            points="160,25 168,40 152,40"
-                            fill="#38bdf8"
-                          />
-
-                          {/* Floating Logs Shedding Safely to the Sides */}
-                          <rect
-                            x="60"
-                            y={
-                              floodStage === "pond"
-                                ? "125"
-                                : floodStage === "peak"
-                                  ? "85"
-                                  : "45"
-                            }
-                            width="35"
-                            height="7"
-                            fill="#d97706"
-                            className="transition-all duration-700"
-                          />
-                          <text
-                            x="50"
-                            y="70"
-                            fontSize="7"
-                            fill="#fbbf24"
-                            fontWeight="bold"
-                          >
-                            DEBRIS SHED OUTWARD
-                          </text>
-
-                          <rect
-                            x="225"
-                            y={
-                              floodStage === "pond"
-                                ? "128"
-                                : floodStage === "peak"
-                                  ? "88"
-                                  : "48"
-                            }
-                            width="30"
-                            height="6"
-                            fill="#d97706"
-                            className="transition-all duration-700"
-                          />
-
-                          {/* Laminar High-Capacity Water Inflow Arrows */}
-                          <path
-                            d="M 90 100 L 130 115"
-                            stroke="#38bdf8"
-                            strokeWidth="2.5"
-                            strokeDasharray="3 2"
-                            className="animate-pulse"
-                          />
-                          <polygon
-                            points="135,116 125,112 127,120"
-                            fill="#38bdf8"
-                          />
-
-                          <path
-                            d="M 230 100 L 190 115"
-                            stroke="#38bdf8"
-                            strokeWidth="2.5"
-                            strokeDasharray="3 2"
-                            className="animate-pulse"
-                          />
-                          <polygon
-                            points="185,116 193,120 195,112"
-                            fill="#38bdf8"
-                          />
-                        </g>
-                      )}
-
-                      {/* Hydraulic Status Label */}
-                      <text
-                        x="160"
-                        y="205"
-                        textAnchor="middle"
-                        fontSize="9"
-                        fill={hasAntiVortexRack ? "#38bdf8" : "#f43f5e"}
-                        fontWeight="black"
-                      >
-                        {hasAntiVortexRack
-                          ? `OPTIMAL LAMINAR DRAWDOWN: ${dischargeGpm} (NO CAVITATION)`
-                          : "SEVERE WHIRLPOOL CAVITATION & ORIFICE CLOG DETECTED!"}
-                      </text>
-                    </svg>
-
-                    {/* Simulation Status Badge */}
-                    <div className="absolute top-2 left-2 bg-slate-900/90 text-white border border-[#5FD4FD] px-2 py-1 text-[10px] font-mono">
-                      <span>Hydraulic Mode: </span>
+                      <div className="relative w-full flex-1">
+                        <Image
+                          src={photo.src}
+                          alt={photo.alt}
+                          fill
+                          className="object-contain p-0.5"
+                          sizes="120px"
+                        />
+                      </div>
                       <span
-                        className={
-                          hasAntiVortexRack
-                            ? "text-[#38bdf8] font-bold"
-                            : "text-red-400 font-bold"
-                        }
+                        className={`text-[8px] font-bold uppercase truncate w-full text-center mt-0.5 px-0.5 ${
+                          isSelected
+                            ? "bg-[#0082FC] text-white"
+                            : "bg-slate-800 text-white/90"
+                        }`}
                       >
-                        {hasAntiVortexRack
-                          ? "Pyramidal Anti-Vortex"
-                          : "Unprotected (High Risk)"}
+                        {photo.badge.split(" ")[0]}
                       </span>
-                    </div>
-                  </div>
-                )}
-              </div>
-
-              {/* Interactive Controls */}
-              <div className="w-full bg-[#5FD4FD]/15 border-2 border-[#5FD4FD] p-2.5 mt-3 flex flex-wrap items-center justify-between gap-2">
-                <div className="flex items-center gap-1.5">
-                  <span className="text-[10px] font-black uppercase text-[#0082FC]">
-                    Basin Inflow:
-                  </span>
-                  <button
-                    type="button"
-                    onClick={() => setFloodStage("pond")}
-                    className={`px-2 py-1 text-[10px] font-black uppercase border transition-colors cursor-pointer ${
-                      floodStage === "pond"
-                        ? "bg-[#0082FC] text-white border-[#0082FC]"
-                        : "bg-white text-[#0082FC] border-[#5FD4FD]"
-                    }`}
-                  >
-                    Low Pool
-                  </button>
-                  <button
-                    type="button"
-                    onClick={() => setFloodStage("peak")}
-                    className={`px-2 py-1 text-[10px] font-black uppercase border transition-colors cursor-pointer ${
-                      floodStage === "peak"
-                        ? "bg-[#0082FC] text-white border-[#0082FC]"
-                        : "bg-white text-[#0082FC] border-[#5FD4FD]"
-                    }`}
-                  >
-                    Peak Design
-                  </button>
-                  <button
-                    type="button"
-                    onClick={() => setFloodStage("surge")}
-                    className={`px-2 py-1 text-[10px] font-black uppercase border transition-colors cursor-pointer ${
-                      floodStage === "surge"
-                        ? "bg-[#0082FC] text-white border-[#0082FC]"
-                        : "bg-white text-[#0082FC] border-[#5FD4FD]"
-                    }`}
-                  >
-                    100-Yr Surge
-                  </button>
-                </div>
-
-                <button
-                  type="button"
-                  onClick={() => setHasAntiVortexRack((prev) => !prev)}
-                  className={`px-3 py-1 text-[10px] font-black uppercase border transition-all flex items-center gap-1.5 cursor-pointer ${
-                    hasAntiVortexRack
-                      ? "bg-white text-[#0082FC] border-[#0082FC] hover:bg-[#5FD4FD]/20"
-                      : "bg-red-600 text-white border-red-600 animate-pulse"
-                  }`}
-                >
-                  <Zap className="w-3.5 h-3.5" />
-                  <span>
-                    {hasAntiVortexRack
-                      ? "Simulate Whirlpool Failure"
-                      : "Engage Anti-Vortex Rack"}
-                  </span>
-                </button>
+                    </button>
+                  );
+                })}
               </div>
             </div>
 

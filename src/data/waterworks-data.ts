@@ -1448,7 +1448,7 @@ export const PRODUCTS_CATALOG: ProductItem[] = [
       "Open area exceeds 300% of riser outlet area to prevent head loss",
       "Complies with EPA Stormwater Phase II and USACE BMP manuals",
     ],
-    imageUrl: "/images/our-images/trench-grates.png",
+    imageUrl: "/images/trash_racks/trash_rack_type_1.png",
     aisCompliant: true,
     buyAmericaReady: true,
   },
