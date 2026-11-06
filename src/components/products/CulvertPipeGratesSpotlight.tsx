@@ -3,6 +3,8 @@
 import {
   Camera,
   Check,
+  ChevronLeft,
+  ChevronRight,
   Copy,
   Download,
   Filter,
@@ -22,136 +24,179 @@ interface CulvertPipeGratesSpotlightProps {
 const REAL_PIPE_GRATE_PHOTOS = [
   {
     id: "pipe-grate-photo-1",
-    src: "/images/pipe_TREE_GRATE/image13.jpg",
-    alt: "Heavy Highway Culvert End Grate with Solid Steel Bar Grid",
-    title: "Heavy Highway Culvert End Grate",
-    badge: "100% REAL FABRICATION",
+    src: "/images/pipe_TREE_GRATE/8016_2.1.png",
+    alt: "Aqua Model 8016 Heavy Cast Tree & Pipe Aperture Grate",
+    title: "Model 8016 Architectural Tree & Pipe Grate",
+    badge: "AASHTO H-20 / ASTM A48",
+    shortTag: "8016 PLAN",
     caption:
-      'ASTM A36 heavy-gauge welded steel circular culvert safety grate engineered for 18" to 36" concrete pipe outfalls.',
+      "Precision heavy ductile/cast iron radial tree surround and circular culvert aperture grate with multi-ring expansion concentric slots.",
   },
   {
     id: "pipe-grate-photo-2",
-    src: "/images/pipe_TREE_GRATE/image19.jpeg",
-    alt: "Flared End Section (FES) Hinged Pipe Safety Grate Assembly",
-    title: "Flared End Pipe Grate Assembly",
-    badge: "JOB SITE VERIFIED",
+    src: "/images/pipe_TREE_GRATE/NON_SIFTING.15.png",
+    alt: "Aqua Non-Sifting ADA Compliant Heel-Proof Grate",
+    title: "Model NS-15 Non-Sifting ADA Heel-Proof Grate",
+    badge: "ADA COMPLIANT 1/4\" SLOTS",
+    shortTag: "NON-SIFTING",
     caption:
-      "Hot-dip galvanized ASTM A123 pipe protection screen fitted with heavy top maintenance cleanout hinges and anchor frame.",
+      "Non-sifting architectural pattern engineered to prevent high-heel entrapment and small debris intrusion while maintaining optimum hydraulic stormwater flow.",
   },
   {
     id: "pipe-grate-photo-3",
-    src: "/images/pipe_TREE_GRATE/image3.jpeg",
-    alt: "Traversable Slope Drainage Bar Grid Fabrication Detail",
-    title: "Traversable Roadside Safety Slope Grid",
-    badge: "AASHTO / DOT COMPLIANT",
+    src: "/images/pipe_TREE_GRATE/4x24.1.png",
+    alt: "Aqua 4x24 Heavy-Duty Linear Trench & Culvert Drop Grate",
+    title: "Model 4x24 Linear Culvert & Trench Drainage Grate",
+    badge: "HEAVY TRAFFIC CLASS D",
+    shortTag: "4x24 LINEAR",
     caption:
-      "Full heavy bar screen structure engineered for AASHTO roadside clear zones to prevent vehicle wheel-trap drops along ditch lines.",
+      "High-load cast iron linear drainage grate engineered for culvert drop inlets, roadside flumes, and municipal stormwater channel trenches.",
+  },
+  {
+    id: "pipe-grate-photo-4",
+    src: "/images/pipe_TREE_GRATE/8016_2.2.png",
+    alt: "Aqua Model 8016 Radial Casting & Inner Tree Expansion Ring",
+    title: "Model 8016 Radial Section & Growth Ring Detail",
+    badge: "EXPANDABLE COLLAR",
+    shortTag: "8016 RADIAL",
+    caption:
+      "Knockout / modular concentric inner collar rings allowing incremental expansion as tree caliper grows or larger pipe conduits are fitted.",
+  },
+  {
+    id: "pipe-grate-photo-5",
+    src: "/images/pipe_TREE_GRATE/8016_2.3.png",
+    alt: "Aqua Model 8016 Slotted Flow Grid Texture Detail",
+    title: "Model 8016 Flow Geometry & Anti-Slip Surface",
+    badge: "TEXTURED ANTI-SLIP",
+    shortTag: "8016 TEXTURE",
+    caption:
+      "Close-up inspection of heavy casting grain structure and hydrodynamic drainage slot geometry engineered for zero vehicle or pedestrian slipping.",
+  },
+  {
+    id: "pipe-grate-photo-6",
+    src: "/images/pipe_TREE_GRATE/8016_2.4.png",
+    alt: "Aqua Model 8016 Underside Structural Reinforcement Ribs",
+    title: "Model 8016 Underside Heavy Load Ribbing",
+    badge: "STRUCTURAL WEBS",
+    shortTag: "8016 RIBS",
+    caption:
+      "Deep cast reinforcement webs along the underside distribute heavy wheel impacts directly into supporting angle frames and concrete collars.",
+  },
+  {
+    id: "pipe-grate-photo-7",
+    src: "/images/pipe_TREE_GRATE/8016_2.5.png",
+    alt: "Aqua Model 8016 Complete Two-Piece Interlocking Assembly",
+    title: "Model 8016 Matched Dual-Hemisphere Assembly",
+    badge: "FACTORY MATCHED SET",
+    shortTag: "8016 FULL SET",
+    caption:
+      "Complete 2-piece split circular grate assembly with precision interlocking alignment lugs and concealed stainless steel bolt connections.",
   },
 ];
 
 const PIPE_GRATE_VARIANTS = [
   {
-    id: "pg-fes-18",
-    catNumber: "Cat. PG-FES-18",
-    name: '18" Flared End Section (FES) Hinged Bar Grate',
-    tag: '18" FES HINGED GRATE',
-    sizeLabel: '18" Flared End Pipe',
-    pipeFit: '18" Concrete or Metal Flared End Sections',
+    id: "pg-8016-circ",
+    catNumber: "Cat. PG-8016-A",
+    name: 'Model 8016 Circular Heavy Cast Tree & Pipe Aperture Grate',
+    tag: '8016 CIRCULAR GRATE',
+    sizeLabel: '48" / 60" Diameter (16" Center Opening)',
+    pipeFit: 'Circular Culvert Vaults, Urban Storm Inlets & Tree Wells',
     dimensions: {
-      height: '24.00"',
-      width: '28.00"',
-      depth: '4.50"',
-      weightLbs: 48,
-      flowArea: "88% Clear Area",
+      height: '48.00" - 60.00" OD',
+      width: '16.00" Center ID',
+      depth: '1.50" - 2.00" Rim',
+      weightLbs: 285,
+      flowArea: "42% Open Hydraulic Area",
     },
-    material: 'ASTM A36 Structural Carbon Steel (1/2" x 2" Flat Bars)',
-    coating: "Hot-Dip Galvanized per ASTM A123 (3.9 mil minimum)",
-    cleanoutType: "Heavy Top Hinge Pin with Tamper-Resistant Padlock Hasp",
-    trafficRating: "State DOT Standard Roadside Drainage",
-    standards: "ASTM A123 • AASHTO M180 • DOT Standard 604",
+    material: "ASTM A48 Class 35B Gray Iron / ASTM A536 65-45-12 Ductile Iron",
+    coating: "Uncoated Raw Natural Cast / Asphaltic Black Dip per AASHTO M306",
+    cleanoutType: "Two-Piece Split Interlocking Halves with Tamper-Proof Fasteners",
+    trafficRating: "AASHTO H-20 / HS-20 Heavy Traffic Rated",
+    standards: "ASTM A48 • ASTM A536 • AASHTO M306 • Buy America Compliant",
     description:
-      'Hinged bar grate manufactured to clamp directly to standard 18" precast concrete flared end sections. Top hinges allow the grate to be swung upward for debris cleaning and maintenance rodding.',
-    photoUrl: "/images/pipe_TREE_GRATE/image13.jpg",
+      'Heavy-duty cast iron circular grate assembly featuring concentric radial drainage slots and a 16" expandable center opening. Designed for municipal streetscapes, plaza drainage basins, and circular concrete pipe vault covers.',
+    photoUrl: "/images/pipe_TREE_GRATE/8016_2.1.png",
     photoIndex: 0,
   },
   {
-    id: "pg-rnd-24",
-    catNumber: "Cat. PG-RND-24",
-    name: '24" Round Culvert Safety Bar Grate',
-    tag: '24" CIRCULAR PIPE INSERT',
-    sizeLabel: '24" Round Culvert',
-    pipeFit: '24" RCP, CMP & Corrugated HDPE Pipes',
+    id: "pg-ns-15-ada",
+    catNumber: "Cat. PG-NS-15",
+    name: "Model NS-15 Non-Sifting ADA Heel-Proof Tree & Safety Grate",
+    tag: "NS-15 ADA HEEL-PROOF",
+    sizeLabel: '48" x 48" / 60" x 60" Square & Round Options',
+    pipeFit: "Pedestrian Concourse Culverts, Tree Pits & High-Traffic Plazas",
     dimensions: {
-      height: '24.00" Dia',
-      width: '24.00" Dia',
-      depth: '8.00" Collar',
-      weightLbs: 72,
-      flowArea: '86% Clear Area (3" Spacing)',
+      height: '48.00" Square',
+      width: '16.00" Opening',
+      depth: '1.75" Flange',
+      weightLbs: 310,
+      flowArea: "1/4\" Max ADA Non-Sifting Slots",
     },
-    material: 'Heavy 5/8" Round Solid Steel Bars with Welded Outer Ring',
-    coating: "Hot-Dip Galvanized per ASTM A123 or Black Bituminous",
-    cleanoutType: "Internal Wedge-Lock Compression Fasteners",
-    trafficRating: "AASHTO H-20 Wheel Load Rated",
-    standards: "ASTM A123 • ASTM A36 • AASHTO Roadside Design",
+    material: "ASTM A536 Grade 65-45-12 High-Ductility Iron",
+    coating: "Black Bituminous Eco-Coat or Natural Weathering Patina",
+    cleanoutType: "Quick-Release Bolt-Down Security Clips",
+    trafficRating: "Pedestrian Safe ADA & Occasional Maintenance Vehicle Rated",
+    standards: "ADA Standards Section 302.3 • ASTM A536 • AASHTO H-15/H-20",
     description:
-      'Circular pipe end grate featuring 3" on-center round safety bars welded to an expandable retention collar. Easily slips into the bell or spigot of 24" storm culverts and locks rigidly in place.',
-    photoUrl: "/images/pipe_TREE_GRATE/image19.jpeg",
+      "Architectural non-sifting grate engineered specifically with narrow 1/4\" maximum slot dimensions. Prevents pedestrian shoe heel entrapment, cane slips, and large debris passage while sustaining rapid stormwater absorption.",
+    photoUrl: "/images/pipe_TREE_GRATE/NON_SIFTING.15.png",
     photoIndex: 1,
   },
   {
-    id: "pg-slp-36",
-    catNumber: "Cat. PG-SLP-36",
-    name: '36" Highway Traversable Safety Slope Grate',
-    tag: '36" 4:1 TRAVERSABLE SLOPE',
-    sizeLabel: '36" Safety Sloped Culvert',
-    pipeFit: '36" Highway Ditch Crossings (4:1 & 6:1 Slopes)',
+    id: "pg-4x24-lin",
+    catNumber: "Cat. PG-4x24",
+    name: '4" x 24" Heavy-Duty Linear Culvert Drop Trench Grate',
+    tag: '4x24 LINEAR TRENCH',
+    sizeLabel: '4.00" W x 24.00" L Segment',
+    pipeFit: 'Roadside Culvert Flumes, Swale Drop Inlets & Concrete Trenches',
     dimensions: {
-      height: '42.00"',
-      width: '52.00"',
-      depth: '12.00"',
-      weightLbs: 145,
-      flowArea: "84% Clear Flow Area",
+      height: '24.00" L',
+      width: '4.00" W',
+      depth: '1.50" H',
+      weightLbs: 34,
+      flowArea: "68% Free Flow Bar Area",
     },
-    material: "Heavy-Gauge Structural Steel Tubing & Solid Cross-Bars",
-    coating: "Hot-Dip Galvanized per ASTM A123",
-    cleanoutType: "Removable Center Bar Section for Sediment Bucket Entry",
-    trafficRating: "AASHTO Safety Clear Zone Traversable (4:1 / 6:1)",
-    standards: "AASHTO Highway Safety Manual • DOT Cross-Drain Standard",
+    material: "ASTM A536 80-55-06 Ductile Iron / Class 35B Cast Iron",
+    coating: "Hot-Dip Galvanized per ASTM A123 or Black Bituminous",
+    cleanoutType: "Individual Drop-In Modular Interlock with Security Hold-Downs",
+    trafficRating: "AASHTO H-25 / FAA Airport Heavy Wheel Load Rated",
+    standards: "ASTM A536 • AASHTO M306 Class D • DOT Approved Trench Specs",
     description:
-      "Traversable roadway safety pipe grate engineered to highway cross-drain specifications. Allows vehicles accidentally running off the road to safely traverse ditch culverts without hazardous wheel-trap drops.",
-    photoUrl: "/images/pipe_TREE_GRATE/image3.jpeg",
+      'Heavy transverse bar channel grate manufactured for continuous trench drains, roadside drainage channels, and highway culvert inlet aprons. Withstands repetitive high-speed wheel impacts without shifting.',
+    photoUrl: "/images/pipe_TREE_GRATE/4x24.1.png",
     photoIndex: 2,
   },
   {
-    id: "pg-ind-48",
-    catNumber: "Cat. PG-IND-48",
-    name: '48" Heavy Industrial Pipe Intake Grate',
-    tag: '48" HEAVY INTAKE SCREEN',
-    sizeLabel: '48" Large Diameter Culvert',
-    pipeFit: '42" to 48" Reinforced Concrete Pipe Outfalls',
+    id: "pg-8016-mod",
+    catNumber: "Cat. PG-8016-MOD",
+    name: 'Model 8016-M Interlocking Modular Split Grate Assembly',
+    tag: '8016-M MODULAR SPLIT',
+    sizeLabel: '60" OD Outer Diameter Set',
+    pipeFit: 'Retrofit Round Pipe Catch Basins & Established Urban Trees',
     dimensions: {
-      height: '50.00"',
-      width: '50.00"',
-      depth: '10.00"',
-      weightLbs: 230,
-      flowArea: "85% Clear Hydraulic Intake",
+      height: '60.00" Outer Dia',
+      width: '24.00" Expandable ID',
+      depth: '2.00" Seat Flange',
+      weightLbs: 345,
+      flowArea: "45% Hydraulic Infiltration Area",
     },
-    material: '3/4" Solid High-Strength Round Bars & 3" Channel Frame',
-    coating: "ASTM A123 Hot-Dip Galvanized or 304 Stainless",
-    cleanoutType: "Dual Counterweighted Swing-Up Access Gates",
-    trafficRating: "Heavy Industrial Floodwater & Hydraulic Surge",
-    standards: "USACE Civil Works • ASTM A123 • AIS Compliant",
+    material: "ASTM A536 Heavy Ductile Iron with Underside Truss Ribs",
+    coating: "Industrial Hot-Dip Galvanized or Standard Black Bituminous",
+    cleanoutType: "Dual Radial Lugs with Stainless Socket-Head Hardware",
+    trafficRating: "AASHTO H-20 Heavy Traffic Loading",
+    standards: "ASTM A536 • AASHTO M306 • Buy America Compliant",
     description:
-      'Industrial-grade 48" outfall safety grate designed to stop heavy logs, tree branches, and urban detritus. Includes dual counter-weighted hinged service doors for backhoe and excavator maintenance access.',
-    photoUrl: "/images/pipe_TREE_GRATE/image13.jpg",
-    photoIndex: 0,
+      "Two-piece matched radial hemisphere system engineered for effortless retrofit installation over existing culvert pipes, stormwater risers, and large mature street trees without excavation or structural disruption.",
+    photoUrl: "/images/pipe_TREE_GRATE/8016_2.5.png",
+    photoIndex: 6,
   },
 ];
 
 export const CulvertPipeGratesSpotlight: React.FC<
   CulvertPipeGratesSpotlightProps
 > = ({ onAddToRfq, onPreviewSubmittal }) => {
-  const [activeVariantId, setActiveVariantId] = useState<string>("pg-fes-18");
+  const [activeVariantId, setActiveVariantId] = useState<string>("pg-8016-circ");
   const [activePhotoIndex, setActivePhotoIndex] = useState<number>(0);
   const [added, setAdded] = useState(false);
   const [copied, setCopied] = useState(false);
@@ -169,6 +214,18 @@ export const CulvertPipeGratesSpotlight: React.FC<
     setAdded(false);
   };
 
+  const handlePrevPhoto = () => {
+    setActivePhotoIndex((prev) =>
+      prev === 0 ? REAL_PIPE_GRATE_PHOTOS.length - 1 : prev - 1
+    );
+  };
+
+  const handleNextPhoto = () => {
+    setActivePhotoIndex((prev) =>
+      prev === REAL_PIPE_GRATE_PHOTOS.length - 1 ? 0 : prev + 1
+    );
+  };
+
   const handleAdd = () => {
     setAdded(true);
     setTimeout(() => setAdded(false), 2500);
@@ -178,7 +235,7 @@ export const CulvertPipeGratesSpotlight: React.FC<
         id: activeVariant.id,
         name: `${activeVariant.name} (${activeVariant.catNumber})`,
         category: "municipal-castings",
-        categoryLabel: "Pipe Grates",
+        categoryLabel: "Pipe & Tree Grates",
         standard: "ASTM A48",
         pressureRating: activeVariant.trafficRating,
         jointType: "Gravity Flow Drop-In",
@@ -186,8 +243,8 @@ export const CulvertPipeGratesSpotlight: React.FC<
         material: activeVariant.material,
         coating: activeVariant.coating,
         description: activeVariant.description,
-        cadFile: "AQUA_PIPE_GRATES.DWG",
-        submittalFile: "SUBMITTAL_CULVERT_PIPE_GRATES.PDF",
+        cadFile: "AQUA_PIPE_TREE_GRATES.DWG",
+        submittalFile: "SUBMITTAL_PIPE_TREE_GRATES.PDF",
         specs: {
           tensileStrength: activeVariant.material,
           yieldStrength: activeVariant.trafficRating,
@@ -198,8 +255,8 @@ export const CulvertPipeGratesSpotlight: React.FC<
         },
         keyFeatures: [
           `Clear Flow Area: ${activeVariant.dimensions.flowArea}`,
-          `Weight: ${activeVariant.dimensions.weightLbs} lbs • Pipe Fit: ${activeVariant.pipeFit}`,
-          `Mechanism: ${activeVariant.cleanoutType}`,
+          `Weight: ${activeVariant.dimensions.weightLbs} lbs • Fit: ${activeVariant.pipeFit}`,
+          `Assembly: ${activeVariant.cleanoutType}`,
           `Standards: ${activeVariant.standards}`,
         ],
         imageUrl: activeVariant.photoUrl,
@@ -215,7 +272,7 @@ export const CulvertPipeGratesSpotlight: React.FC<
         id: activeVariant.id,
         name: `${activeVariant.name} (${activeVariant.catNumber})`,
         category: "municipal-castings",
-        categoryLabel: "Pipe Grates",
+        categoryLabel: "Pipe & Tree Grates",
         standard: "ASTM A48",
         pressureRating: activeVariant.trafficRating,
         jointType: "Gravity Flow Drop-In",
@@ -223,8 +280,8 @@ export const CulvertPipeGratesSpotlight: React.FC<
         material: activeVariant.material,
         coating: activeVariant.coating,
         description: activeVariant.description,
-        cadFile: "AQUA_PIPE_GRATES.DWG",
-        submittalFile: "SUBMITTAL_CULVERT_PIPE_GRATES.PDF",
+        cadFile: "AQUA_PIPE_TREE_GRATES.DWG",
+        submittalFile: "SUBMITTAL_PIPE_TREE_GRATES.PDF",
         specs: {
           tensileStrength: activeVariant.material,
           yieldStrength: activeVariant.trafficRating,
@@ -235,8 +292,8 @@ export const CulvertPipeGratesSpotlight: React.FC<
         },
         keyFeatures: [
           `Clear Flow Area: ${activeVariant.dimensions.flowArea}`,
-          `Weight: ${activeVariant.dimensions.weightLbs} lbs • Pipe Fit: ${activeVariant.pipeFit}`,
-          `Mechanism: ${activeVariant.cleanoutType}`,
+          `Weight: ${activeVariant.dimensions.weightLbs} lbs • Fit: ${activeVariant.pipeFit}`,
+          `Assembly: ${activeVariant.cleanoutType}`,
           `Standards: ${activeVariant.standards}`,
         ],
         imageUrl: activeVariant.photoUrl,
@@ -247,16 +304,16 @@ export const CulvertPipeGratesSpotlight: React.FC<
   };
 
   const handleCopySpecs = () => {
-    const text = `AQUA INDUSTRIES CULVERT PIPE SAFETY GRATE SPECIFICATION
+    const text = `AQUA INDUSTRIES PIPE & TREE GRATE SPECIFICATION
 Model: ${activeVariant.name} (${activeVariant.catNumber})
-Pipe Size Compatibility: ${activeVariant.pipeFit}
-Clear Hydraulic Intake: ${activeVariant.dimensions.flowArea}
-Weight: ${activeVariant.dimensions.weightLbs} lbs (H: ${activeVariant.dimensions.height}, W: ${activeVariant.dimensions.width}, D: ${activeVariant.dimensions.depth})
-Structural Steel: ${activeVariant.material}
-Galvanizing: ${activeVariant.coating}
-Access Hasp: ${activeVariant.cleanoutType}
-Safety Slope Standard: ${activeVariant.trafficRating}
-Compliance: ${activeVariant.standards}
+Fit / Application: ${activeVariant.pipeFit}
+Clear Infiltration Area: ${activeVariant.dimensions.flowArea}
+Weight: ${activeVariant.dimensions.weightLbs} lbs (Dimensions: ${activeVariant.dimensions.height} x ${activeVariant.dimensions.width} x ${activeVariant.dimensions.depth})
+Material Specification: ${activeVariant.material}
+Coating: ${activeVariant.coating}
+Fastening & Cleanout: ${activeVariant.cleanoutType}
+Load Rating: ${activeVariant.trafficRating}
+Standards: ${activeVariant.standards}
 100% Domestic AIS / Buy America Certified`;
 
     navigator.clipboard.writeText(text);
@@ -267,7 +324,7 @@ Compliance: ${activeVariant.standards}
   return (
     <section
       id="pipe-grates"
-      aria-label="Culvert Pipe Grates Spotlight"
+      aria-label="Pipe and Tree Grates Spotlight"
       className="py-16 sm:py-20 bg-white text-[#0082FC] border-b-4 border-[#0082FC] relative overflow-hidden"
     >
       {/* Background Subtle Grid Pattern */}
@@ -279,19 +336,19 @@ Compliance: ${activeVariant.standards}
           <div className="inline-flex items-center gap-2 px-3 py-1 bg-[#5FD4FD]/20 text-[#0082FC] text-xs font-black uppercase tracking-widest border border-[#0082FC] mb-3">
             <ShieldCheck className="w-4 h-4 text-[#0082FC]" />
             <span>
-              SECTION 2: END-OF-PIPE &amp; ROADSIDE TRAVERSABLE SAFETY GRATES
+              SECTION 2: MUNICIPAL CAST PIPE &amp; TREE GRATES
             </span>
           </div>
 
           <h2 className="text-2xl sm:text-4xl font-black uppercase tracking-tight text-[#0082FC] mb-2">
-            Culvert Safety Pipe Grates
+            Heavy-Duty Pipe &amp; Tree Grates
           </h2>
 
           <p className="text-xs sm:text-sm text-[#0082FC]/90 font-medium leading-relaxed">
-            Engineered for circular RCP, CMP, and flared concrete end walls.
-            Protects culverts against debris clogs and animal intrusion while
-            delivering AASHTO traversable roadside safety across 3:1 to 6:1
-            slopes.
+            Engineered for circular pipe outfalls, urban streetscapes, roadside
+            trenches, and civil stormwater vaults. Manufactured in heavy-duty
+            ASTM A536 ductile iron and ASTM A48 gray iron with AASHTO H-20 and
+            ADA heel-proof compliance.
           </p>
         </div>
 
@@ -300,10 +357,10 @@ Compliance: ${activeVariant.standards}
           <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-2 mb-3">
             <span className="text-xs font-black uppercase tracking-wider text-[#0082FC] flex items-center gap-2">
               <Filter className="w-3.5 h-3.5" />
-              <span>Select Culvert Pipe Grate Model:</span>
+              <span>Select Grate Configuration:</span>
             </span>
             <span className="text-[10px] font-bold text-[#0082FC]/70 uppercase">
-              {PIPE_GRATE_VARIANTS.length} Real Heavy Fabrications Available
+              {PIPE_GRATE_VARIANTS.length} Cast Patterns Available
             </span>
           </div>
 
@@ -322,7 +379,7 @@ Compliance: ${activeVariant.standards}
                   }`}
                 >
                   {isActive && <Check className="w-3.5 h-3.5 stroke-[3]" />}
-                  <span>{variant.tag.split(" ")[0]} GRATE</span>
+                  <span>{variant.tag}</span>
                   <span
                     className={`text-[9px] font-mono px-1 py-0.2 border ${
                       isActive
@@ -347,7 +404,7 @@ Compliance: ${activeVariant.standards}
               <div className="w-full flex items-center justify-between mb-2">
                 <span className="text-[10px] font-black uppercase tracking-wider bg-[#0082FC] text-white px-2 py-0.5 border border-[#0082FC] flex items-center gap-1.5">
                   <Camera className="w-3 h-3 text-white" />
-                  <span>Real Manufactured Pipe Grate Photography</span>
+                  <span>Real Casting Photography ({REAL_PIPE_GRATE_PHOTOS.length} Views)</span>
                 </span>
 
                 <span className="text-[10px] font-bold text-[#0082FC]/80 uppercase">
@@ -367,6 +424,24 @@ Compliance: ${activeVariant.standards}
                   priority
                 />
 
+                {/* Left/Right Quick Arrows */}
+                <button
+                  type="button"
+                  onClick={handlePrevPhoto}
+                  className="absolute left-2 top-1/2 -translate-y-1/2 bg-black/60 hover:bg-[#0082FC] text-white p-1.5 border border-white/40 transition-colors z-20 cursor-pointer"
+                  title="Previous Photo"
+                >
+                  <ChevronLeft className="w-4 h-4" />
+                </button>
+                <button
+                  type="button"
+                  onClick={handleNextPhoto}
+                  className="absolute right-2 top-1/2 -translate-y-1/2 bg-black/60 hover:bg-[#0082FC] text-white p-1.5 border border-white/40 transition-colors z-20 cursor-pointer"
+                  title="Next Photo"
+                >
+                  <ChevronRight className="w-4 h-4" />
+                </button>
+
                 {/* Corner Badges */}
                 <div className="absolute top-2 left-2 flex flex-col gap-1 z-10 pointer-events-none">
                   <span className="bg-[#0082FC] text-white px-2 py-0.5 text-[9px] font-black uppercase tracking-wider border border-white/50 shadow-md">
@@ -378,7 +453,7 @@ Compliance: ${activeVariant.standards}
                 </div>
 
                 <div className="absolute bottom-2 right-2 bg-white/95 text-[#0082FC] px-2 py-0.5 text-[9px] font-bold border border-[#0082FC] shadow-sm pointer-events-none">
-                  ASTM A36 Heavy Steel
+                  100% Real Heavy Casting
                 </div>
               </div>
 
@@ -392,8 +467,8 @@ Compliance: ${activeVariant.standards}
                 </p>
               </div>
 
-              {/* 3 Real Photography Thumbnail Selector Gallery */}
-              <div className="w-full grid grid-cols-3 gap-2 mt-3">
+              {/* 7 Real Photography Thumbnail Selector Gallery */}
+              <div className="w-full grid grid-cols-4 sm:grid-cols-7 gap-1.5 mt-3">
                 {REAL_PIPE_GRATE_PHOTOS.map((photo, idx) => {
                   const isSelected = activePhotoIndex === idx;
                   return (
@@ -401,10 +476,10 @@ Compliance: ${activeVariant.standards}
                       key={photo.id}
                       type="button"
                       onClick={() => setActivePhotoIndex(idx)}
-                      className={`relative h-20 sm:h-22 bg-slate-900 border-2 transition-all p-1 flex flex-col items-center justify-between cursor-pointer overflow-hidden ${
+                      className={`relative h-16 bg-slate-900 border-2 transition-all p-0.5 flex flex-col items-center justify-between cursor-pointer overflow-hidden ${
                         isSelected
-                          ? "border-[#0082FC] ring-2 ring-[#0082FC] scale-102 bg-white"
-                          : "border-slate-300 hover:border-[#0082FC] opacity-80 hover:opacity-100"
+                          ? "border-[#0082FC] ring-2 ring-[#0082FC] scale-105 bg-white z-10"
+                          : "border-slate-300 hover:border-[#0082FC] opacity-75 hover:opacity-100"
                       }`}
                       title={photo.title}
                     >
@@ -414,17 +489,17 @@ Compliance: ${activeVariant.standards}
                           alt={photo.alt}
                           fill
                           className="object-contain p-0.5"
-                          sizes="150px"
+                          sizes="100px"
                         />
                       </div>
                       <span
-                        className={`text-[8px] font-bold uppercase truncate w-full text-center mt-0.5 px-0.5 ${
+                        className={`text-[7px] font-black uppercase truncate w-full text-center mt-0.5 px-0.5 ${
                           isSelected
                             ? "bg-[#0082FC] text-white"
                             : "bg-slate-800 text-white/90"
                         }`}
                       >
-                        {photo.badge.split(" ")[0]}
+                        {photo.shortTag}
                       </span>
                     </button>
                   );
@@ -444,7 +519,7 @@ Compliance: ${activeVariant.standards}
                     {activeVariant.catNumber}
                   </span>
                   <span className="text-[10px] font-bold text-[#0082FC]/80 uppercase">
-                    ASTM A123 HOT-DIP GALVANIZED
+                    ASTM A536 / A48 HEAVY CASTING
                   </span>
                 </div>
 
@@ -460,7 +535,7 @@ Compliance: ${activeVariant.standards}
                 <div className="grid grid-cols-1 sm:grid-cols-2 gap-2 text-xs border-y-2 border-[#0082FC]/20 py-3 mb-4">
                   <div>
                     <span className="font-bold text-[#0082FC]/70 uppercase text-[10px] block">
-                      Pipe Compatibility:
+                      Application / Fit:
                     </span>
                     <span className="font-black text-[#0082FC]">
                       {activeVariant.pipeFit}
@@ -476,7 +551,7 @@ Compliance: ${activeVariant.standards}
                   </div>
                   <div>
                     <span className="font-bold text-[#0082FC]/70 uppercase text-[10px] block">
-                      Steel Bar Grid Spec:
+                      Metallurgical Grade:
                     </span>
                     <span className="font-black text-[#0082FC]">
                       {activeVariant.material}
@@ -484,61 +559,78 @@ Compliance: ${activeVariant.standards}
                   </div>
                   <div>
                     <span className="font-bold text-[#0082FC]/70 uppercase text-[10px] block">
-                      Hinge &amp; Latch Mechanism:
-                    </span>
-                    <span className="font-black text-[#0082FC]">
-                      {activeVariant.cleanoutType}
-                    </span>
-                  </div>
-                  <div>
-                    <span className="font-bold text-[#0082FC]/70 uppercase text-[10px] block">
-                      Galvanizing Standard:
-                    </span>
-                    <span className="font-black text-[#0082FC]">
-                      {activeVariant.coating}
-                    </span>
-                  </div>
-                  <div>
-                    <span className="font-bold text-[#0082FC]/70 uppercase text-[10px] block">
-                      Roadside Safety Standards:
+                      Load / Traffic Rating:
                     </span>
                     <span className="font-black text-[#0082FC]">
                       {activeVariant.trafficRating}
                     </span>
                   </div>
+                  <div>
+                    <span className="font-bold text-[#0082FC]/70 uppercase text-[10px] block">
+                      Dimensions &amp; Unit Weight:
+                    </span>
+                    <span className="font-black text-[#0082FC]">
+                      {activeVariant.dimensions.height} • {activeVariant.dimensions.weightLbs} lbs
+                    </span>
+                  </div>
+                  <div>
+                    <span className="font-bold text-[#0082FC]/70 uppercase text-[10px] block">
+                      Standard Compliance:
+                    </span>
+                    <span className="font-black text-[#0082FC]">
+                      {activeVariant.standards}
+                    </span>
+                  </div>
                 </div>
 
-                {/* Dimensions Metric Ribbon */}
-                <div className="bg-[#5FD4FD]/10 border border-[#5FD4FD] p-2.5 mb-5 flex flex-wrap items-center justify-between gap-3 text-xs font-mono font-bold text-[#0082FC]">
-                  <span>Height: {activeVariant.dimensions.height}</span>
-                  <span>Width: {activeVariant.dimensions.width}</span>
-                  <span>Depth: {activeVariant.dimensions.depth}</span>
-                  <span className="text-[#0082FC]">
-                    Weight: {activeVariant.dimensions.weightLbs} lbs
-                  </span>
+                {/* Engineering Advantage Highlights */}
+                <div className="bg-[#5FD4FD]/10 border border-[#5FD4FD] p-3 mb-6">
+                  <div className="text-[10px] font-black uppercase tracking-wider text-[#0082FC] mb-1.5">
+                    Municipal &amp; Civil Engineering Advantages:
+                  </div>
+                  <ul className="text-xs text-[#0082FC]/90 space-y-1">
+                    <li className="flex items-center gap-1.5">
+                      <span className="text-[#0082FC] font-black">✓</span>
+                      <span>
+                        <strong>True Heavy Cast Ductile &amp; Gray Iron:</strong> Superior tensile &amp; impact resistance compared to rolled sheet-metal products.
+                      </span>
+                    </li>
+                    <li className="flex items-center gap-1.5">
+                      <span className="text-[#0082FC] font-black">✓</span>
+                      <span>
+                        <strong>ADA Section 302.3 Compliant:</strong> Heel-proof 1/4\" narrow slots available on NS-15 models for zero pedestrian hazard.
+                      </span>
+                    </li>
+                    <li className="flex items-center gap-1.5">
+                      <span className="text-[#0082FC] font-black">✓</span>
+                      <span>
+                        <strong>Expandable Center Apertures:</strong> Multi-ring concentric knockouts allow gradual growth without grate replacement.
+                      </span>
+                    </li>
+                  </ul>
                 </div>
               </div>
 
               {/* Action Buttons */}
-              <div className="flex flex-col sm:flex-row items-stretch sm:items-center gap-3 pt-2">
+              <div className="flex flex-col sm:flex-row gap-3 pt-4 border-t-2 border-[#0082FC]/20">
                 <button
                   type="button"
                   onClick={handleAdd}
-                  className={`flex-1 py-3 px-4 text-xs font-black uppercase tracking-wider rounded-none border-2 transition-all flex items-center justify-center gap-2 cursor-pointer shadow-md ${
+                  className={`flex-1 py-3 px-4 text-xs font-black uppercase tracking-wider border-2 transition-all flex items-center justify-center gap-2 cursor-pointer ${
                     added
-                      ? "bg-[#5FD4FD] text-[#0082FC] border-[#0082FC]"
-                      : "bg-[#0082FC] hover:bg-[#5FD4FD] text-white hover:text-[#0082FC] border-[#0082FC]"
+                      ? "bg-green-600 text-white border-green-600"
+                      : "bg-[#0082FC] text-white border-[#0082FC] hover:bg-[#0082FC]/90 shadow-md"
                   }`}
                 >
                   {added ? (
                     <>
                       <Check className="w-4 h-4 stroke-[3]" />
-                      <span>Added to RFQ Quote</span>
+                      <span>ADDED TO RFQ CART</span>
                     </>
                   ) : (
                     <>
-                      <Plus className="w-4 h-4 stroke-[2.5]" />
-                      <span>Add to Project RFQ</span>
+                      <Plus className="w-4 h-4 stroke-[3]" />
+                      <span>ADD {activeVariant.catNumber} TO RFQ</span>
                     </>
                   )}
                 </button>
@@ -546,29 +638,26 @@ Compliance: ${activeVariant.standards}
                 <button
                   type="button"
                   onClick={handleSubmittal}
-                  className="py-3 px-4 bg-white hover:bg-[#0082FC] text-[#0082FC] hover:text-white border-2 border-[#0082FC] text-xs font-black uppercase tracking-wider transition-all flex items-center justify-center gap-2 cursor-pointer shadow-sm"
+                  className="py-3 px-4 bg-white text-[#0082FC] text-xs font-black uppercase tracking-wider border-2 border-[#0082FC] hover:bg-[#5FD4FD]/15 transition-all flex items-center justify-center gap-2 cursor-pointer"
                 >
-                  <Download className="w-4 h-4 shrink-0" />
-                  <span>Submittal PDF</span>
+                  <Download className="w-4 h-4" />
+                  <span>SUBMITTAL PDF</span>
                 </button>
 
                 <button
                   type="button"
                   onClick={handleCopySpecs}
-                  title="Copy engineering specifications"
-                  className="py-3 px-3 bg-[#5FD4FD]/20 hover:bg-[#0082FC] text-[#0082FC] hover:text-white border-2 border-[#5FD4FD] text-xs font-black uppercase transition-all flex items-center justify-center gap-1.5 cursor-pointer shadow-xs"
+                  className="py-3 px-3 bg-white text-[#0082FC] text-xs font-black uppercase tracking-wider border-2 border-[#5FD4FD] hover:border-[#0082FC] hover:bg-[#5FD4FD]/15 transition-all flex items-center justify-center gap-1.5 cursor-pointer"
+                  title="Copy Engineering Spec Text"
                 >
                   {copied ? (
-                    <>
-                      <Check className="w-4 h-4 stroke-[3] text-[#0082FC]" />
-                      <span className="text-[11px]">Copied!</span>
-                    </>
+                    <Check className="w-4 h-4 text-green-600 stroke-[3]" />
                   ) : (
-                    <>
-                      <Copy className="w-4 h-4 shrink-0" />
-                      <span className="text-[11px]">Copy Specs</span>
-                    </>
+                    <Copy className="w-4 h-4" />
                   )}
+                  <span className="hidden sm:inline">
+                    {copied ? "COPIED" : "SPECS"}
+                  </span>
                 </button>
               </div>
             </div>
@@ -578,3 +667,4 @@ Compliance: ${activeVariant.standards}
     </section>
   );
 };
+export default CulvertPipeGratesSpotlight;

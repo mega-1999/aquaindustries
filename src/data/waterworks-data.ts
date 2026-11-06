@@ -1415,7 +1415,7 @@ export const PRODUCTS_CATALOG: ProductItem[] = [
       "Hot-dip galvanized per ASTM A123 for maximum corrosive soil durability",
       "Fits all round pipe materials (RCP, CMP, HDPE, PVC)",
     ],
-    imageUrl: "/images/pipe_TREE_GRATE/image13.jpg",
+    imageUrl: "/images/pipe_TREE_GRATE/8016_2.1.png",
     aisCompliant: true,
     buyAmericaReady: true,
   },
