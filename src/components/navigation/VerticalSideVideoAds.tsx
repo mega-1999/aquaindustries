@@ -62,7 +62,7 @@ const LEFT_VIDEO_ADS: VideoAdItem[] = [
     standard: "ASTM A48 / ASTM A536",
     duration: "0:38",
     videoUrl: "https://soleno.com/wp-content/uploads/2024/12/bkg_water111.mp4",
-    posterUrl: "/images/catch_basin_riser/catch_basin_riser_preview.jpeg",
+    posterUrl: "/images/traps/traps.png",
     description:
       "Cast iron gas and siphon water-seal traps stopping floatable debris, oils, and sewer gases in municipal catch basins.",
     product:

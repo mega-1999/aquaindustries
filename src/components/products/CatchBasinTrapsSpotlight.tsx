@@ -42,7 +42,7 @@ const TRAP_VARIANTS = [
     standards: "ASTM A48 Class 35B • AASHTO M306 • AIS Certified",
     description:
       'Compact cast iron catch basin gas and siphon hood designed for 8" storm sewer outlet pipes. Features an integrated downward water-dip siphon skirt and an easy-access cleanout plug for maintenance rodding.',
-    photoUrl: "/images/products/Drainage-Grates-Curb-Inlets-Feature.jpg",
+    photoUrl: "/images/traps/traps.png",
     blueprintSvg: "cbt-08",
   },
   {
@@ -67,7 +67,7 @@ const TRAP_VARIANTS = [
     standards: "State DOT Approved • ASTM A48 • Buy America Ready",
     description:
       'High-capacity municipal stormwater gas hood engineered for 12" storm laterals. Keeps floatable street plastics, bottles, and floating oils trapped in the sump basin while discharging pristine subsurface storm flows.',
-    photoUrl: "/images/our-images/curb_inlet_riser_heavy_iron.png",
+    photoUrl: "/images/traps/traps.png",
     blueprintSvg: "cbt-12",
   },
   {
@@ -91,7 +91,7 @@ const TRAP_VARIANTS = [
     standards: "AASHTO M306 • ASTM A536 • 100% Domestic Melt",
     description:
       "Heavy ductile iron anti-debris trap built for highway culvert basins and high-volume interchange storm structures. Dual mounting anchor ears bolt securely to round or square precast catch basin walls.",
-    photoUrl: "/images/products/Drainage-Grates-Curb-Inlets-Feature.jpg",
+    photoUrl: "/images/traps/traps.png",
     blueprintSvg: "cbt-18",
   },
   {
@@ -115,7 +115,7 @@ const TRAP_VARIANTS = [
     standards: "AASHTO M306 • ASTM A536 • USACE Heavy Spec",
     description:
       'Extra-large siphon trap hood engineered for 24" storm trunk lines. Equipped with internal vortex dampening baffles to minimize hydraulic turbulence while providing maximum debris holding capacity.',
-    photoUrl: "/images/our-images/curb_inlet_riser_heavy_iron.png",
+    photoUrl: "/images/traps/traps.png",
     blueprintSvg: "cbt-24",
   },
 ];
@@ -128,7 +128,7 @@ export const CatchBasinTrapsSpotlight: React.FC<
     "normal",
   );
   const [cleanoutOpen, setCleanoutOpen] = useState(false);
-  const [viewMode, setViewMode] = useState<"cad" | "photo">("cad");
+  const [viewMode, setViewMode] = useState<"cad" | "photo">("photo");
   const [added, setAdded] = useState(false);
   const [copied, setCopied] = useState(false);
 

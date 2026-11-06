@@ -1382,7 +1382,7 @@ export const PRODUCTS_CATALOG: ProductItem[] = [
       "Integrated rodding cleanout plug allows sewer line maintenance",
       "Meets state DOT and municipal storm drainage standard details",
     ],
-    imageUrl: "/images/products/Drainage-Grates-Curb-Inlets-Feature.jpg",
+    imageUrl: "/images/traps/traps.png",
     aisCompliant: true,
     buyAmericaReady: true,
   },
