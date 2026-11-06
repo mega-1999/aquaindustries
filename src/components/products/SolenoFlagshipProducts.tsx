@@ -167,7 +167,7 @@ export const SolenoFlagshipProducts: React.FC<SolenoFlagshipProductsProps> = ({
                     {item.specs.map((spec) => (
                       <span
                         key={spec}
-                        className="inline-flex items-center gap-1 text-[10px] font-bold text-[#3087ff] bg-[#3087ff]/15 border border-[#3087ff] px-2 py-0.5 rounded-none max-w-full"
+                        className="inline-flex items-center gap-1 text-[10px] font-bold text-white bg-[#3087ff]/15 border border-[#3087ff] px-2 py-0.5 rounded-none max-w-full"
                       >
                         <CheckCircle2 className="w-3 h-3 text-[#3087ff] shrink-0" />
                         <span className="truncate">{spec}</span>
@@ -182,8 +182,8 @@ export const SolenoFlagshipProducts: React.FC<SolenoFlagshipProductsProps> = ({
                     type="button"
                     onClick={() => handleAdd(item.product)}
                     className={`flex-1 min-w-0 py-2.5 px-3 text-xs font-black uppercase tracking-wider rounded-none transition-all flex items-center justify-center gap-1.5 cursor-pointer border-2 ${isAdded
-                      ? "bg-[#3087ff] text-[#3087ff] border-[#3087ff]"
-                      : "bg-[#3087ff] hover:bg-[#3087ff] text-white hover:text-[#3087ff] border-[#3087ff] shadow-sm"
+                      ? "bg-[#3087ff] text-white border-[#3087ff]"
+                      : "bg-[#3087ff] hover:bg-[#3087ff] text-white hover:text-white border-[#3087ff] shadow-sm"
                       }`}
                   >
                     {isAdded ? (

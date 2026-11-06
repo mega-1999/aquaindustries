@@ -378,7 +378,7 @@ export default function SettingsPage() {
                     <div className="pt-2 flex flex-wrap items-center justify-between gap-3">
                       <button
                         type="submit"
-                        className="px-6 py-3 bg-[#3087ff] hover:bg-[#3087ff] text-white hover:text-[#3087ff] font-black text-xs uppercase tracking-wider transition-colors shadow-md cursor-pointer"
+                        className="px-6 py-3 bg-[#3087ff] hover:bg-[#3087ff] text-white hover:text-white font-black text-xs uppercase tracking-wider transition-colors shadow-md cursor-pointer"
                       >
                         Save New Password
                       </button>
@@ -469,7 +469,7 @@ export default function SettingsPage() {
                   <div className="pt-2 flex justify-end">
                     <button
                       type="submit"
-                      className="px-6 py-3 bg-[#3087ff] hover:bg-[#3087ff] text-white hover:text-[#3087ff] font-black text-xs uppercase tracking-wider transition-colors shadow-md cursor-pointer flex items-center gap-2"
+                      className="px-6 py-3 bg-[#3087ff] hover:bg-[#3087ff] text-white hover:text-white font-black text-xs uppercase tracking-wider transition-colors shadow-md cursor-pointer flex items-center gap-2"
                     >
                       <Save className="w-4 h-4" />
                       <span>Update Contact &amp; Hub</span>

@@ -184,7 +184,7 @@ export function MunicipalCaseStudies() {
             <div className="pt-4 flex flex-wrap gap-4 items-center">
               <a
                 href="#quote-builder"
-                className="inline-flex items-center justify-center bg-[#3087ff] text-white hover:bg-[#3087ff] hover:text-[#3087ff] font-extrabold text-sm sm:text-base uppercase tracking-wider py-4 px-6 border-2 border-[#3087ff] transition-colors duration-150 whitespace-nowrap shadow-md"
+                className="inline-flex items-center justify-center bg-[#3087ff] text-white hover:bg-[#3087ff] hover:text-white font-extrabold text-sm sm:text-base uppercase tracking-wider py-4 px-6 border-2 border-[#3087ff] transition-colors duration-150 whitespace-nowrap shadow-md"
               >
                 <span>Request Pricing For Similar Project</span>
               </a>

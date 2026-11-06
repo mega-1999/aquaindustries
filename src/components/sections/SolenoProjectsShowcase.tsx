@@ -312,7 +312,7 @@ export const SolenoProjectsShowcase: React.FC<SolenoProjectsShowcaseProps> = ({
                 <button
                   type="button"
                   onClick={() => setActiveProjectModal(featuredProject)}
-                  className="inline-flex items-center gap-2 px-6 py-3.5 bg-white hover:bg-[#3087ff] text-[#3087ff] font-black text-xs sm:text-sm uppercase tracking-wider rounded-none shadow-xl transition-all cursor-pointer"
+                  className="inline-flex items-center gap-2 px-6 py-3.5 bg-white hover:bg-[#3087ff] text-[#3087ff] hover:text-white font-black text-xs sm:text-sm uppercase tracking-wider rounded-none shadow-xl transition-all cursor-pointer"
                 >
                   <span>View Complete Project Study</span>
                   <ArrowRight className="w-4 h-4 text-[#3087ff]" />
@@ -464,7 +464,7 @@ export const SolenoProjectsShowcase: React.FC<SolenoProjectsShowcaseProps> = ({
                     <button
                       type="button"
                       onClick={() => setActiveProjectModal(project)}
-                      className="w-full py-2.5 px-3 bg-[#3087ff] hover:bg-[#3087ff] text-white hover:text-[#3087ff] font-black text-xs uppercase tracking-wider rounded-none transition-all flex items-center justify-center gap-1.5 cursor-pointer border border-[#3087ff]"
+                      className="w-full py-2.5 px-3 bg-[#3087ff] hover:bg-[#3087ff] text-white hover:text-white font-black text-xs uppercase tracking-wider rounded-none transition-all flex items-center justify-center gap-1.5 cursor-pointer border border-[#3087ff]"
                     >
                       <span>View Project Study</span>
                       <ArrowRight className="w-3.5 h-3.5" />
@@ -562,7 +562,7 @@ export const SolenoProjectsShowcase: React.FC<SolenoProjectsShowcaseProps> = ({
                   onAddToRfq(activeProjectModal.product);
                   setActiveProjectModal(null);
                 }}
-                className="flex-1 py-3 px-4 bg-[#3087ff] hover:bg-[#3087ff] text-white hover:text-[#3087ff] font-black text-xs uppercase tracking-wider text-center border-2 border-[#3087ff] transition-all cursor-pointer"
+                className="flex-1 py-3 px-4 bg-[#3087ff] hover:bg-[#3087ff] text-white hover:text-white font-black text-xs uppercase tracking-wider text-center border-2 border-[#3087ff] transition-all cursor-pointer"
               >
                 + Add Project Materials to RFQ
               </button>

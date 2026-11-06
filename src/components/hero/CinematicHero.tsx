@@ -182,8 +182,8 @@ export const CinematicHero: React.FC<CinematicHeroProps> = ({
           <a
             href="#product-matrix"
             className={`w-full sm:w-auto inline-flex items-center justify-center gap-2 px-6 py-3.5 text-sm sm:text-base font-bold rounded-none shadow-lg transition-all transform hover:-translate-y-0.5 active:translate-y-0 whitespace-nowrap ${isBlue
-                ? "text-[#3087ff] bg-white hover:bg-[#3087ff] hover:text-[#3087ff]"
-                : "text-white bg-[#3087ff] hover:bg-[#3087ff] hover:text-[#3087ff]"
+                ? "text-[#3087ff] bg-white hover:bg-[#3087ff] hover:text-white"
+                : "text-white bg-[#3087ff] hover:bg-[#3087ff] hover:text-white"
               }`}
           >
             <span>Browse Waterworks Catalog</span>
@@ -196,7 +196,7 @@ export const CinematicHero: React.FC<CinematicHeroProps> = ({
           <a
             href="#submittal-builder"
             className={`w-full sm:w-auto inline-flex items-center justify-center gap-2 px-6 py-3.5 text-sm sm:text-base font-bold rounded-none shadow-md transition-all transform hover:-translate-y-0.5 active:translate-y-0 whitespace-nowrap border-2 ${isBlue
-                ? "text-[#3087ff] hover:text-[#3087ff] bg-[#3087ff] hover:bg-[#3087ff] border-[#3087ff]"
+                ? "text-[#3087ff] hover:text-white bg-[#3087ff] hover:bg-[#3087ff] border-[#3087ff]"
                 : "text-[#3087ff] hover:text-white bg-white hover:bg-[#3087ff] border-[#3087ff]"
               }`}
           >

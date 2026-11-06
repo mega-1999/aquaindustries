@@ -267,7 +267,7 @@ export const ProductSubmittalModal: React.FC<ProductSubmittalModalProps> = ({
               onAddToRfq(product);
               onClose();
             }}
-            className="w-full sm:w-auto px-6 py-3.5 bg-[#3087ff] hover:bg-[#3087ff] hover:text-[#3087ff] text-white font-extrabold text-sm sm:text-base rounded-none border-2 border-[#3087ff] shadow-md transition-colors whitespace-nowrap"
+            className="w-full sm:w-auto px-6 py-3.5 bg-[#3087ff] hover:bg-[#3087ff] hover:text-white text-white font-extrabold text-sm sm:text-base rounded-none border-2 border-[#3087ff] shadow-md transition-colors whitespace-nowrap"
           >
             + Add to Quote List
           </button>

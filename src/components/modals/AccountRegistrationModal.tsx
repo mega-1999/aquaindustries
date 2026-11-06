@@ -267,7 +267,7 @@ export const AccountRegistrationModal: React.FC<
               <button
                 type="button"
                 onClick={handleResetAndClose}
-                className="w-full py-3 px-6 bg-[#3087ff] hover:bg-[#3087ff] text-white hover:text-[#3087ff] font-black text-xs uppercase tracking-wider shadow-md transition-all cursor-pointer text-center"
+                className="w-full py-3 px-6 bg-[#3087ff] hover:bg-[#3087ff] text-white hover:text-white font-black text-xs uppercase tracking-wider shadow-md transition-all cursor-pointer text-center"
               >
                 Done / Close Application Window
               </button>
@@ -576,7 +576,7 @@ export const AccountRegistrationModal: React.FC<
               <button
                 type="submit"
                 disabled={isSubmitting}
-                className="inline-flex items-center gap-2 px-6 py-2.5 bg-[#3087ff] hover:bg-[#3087ff] text-white hover:text-[#3087ff] font-black text-xs sm:text-sm uppercase tracking-wider rounded-none shadow-md transition-all cursor-pointer"
+                className="inline-flex items-center gap-2 px-6 py-2.5 bg-[#3087ff] hover:bg-[#3087ff] text-white hover:text-white font-black text-xs sm:text-sm uppercase tracking-wider rounded-none shadow-md transition-all cursor-pointer"
               >
                 <span>
                   {currentStep === 3

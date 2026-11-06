@@ -137,7 +137,7 @@ export const CurbBoxSpotlight: React.FC<CurbBoxSpotlightProps> = ({
             <div className="relative bg-white border-4 border-[#3087ff] p-5 sm:p-8 shadow-2xl flex flex-col items-center justify-center min-h-[440px] sm:min-h-[500px] overflow-hidden">
               {/* Corner Waterworks Badge */}
               <div className="absolute top-4 left-4 z-20">
-                <span className="text-[11px] font-black uppercase tracking-widest text-[#3087ff] bg-[#3087ff]/20 px-2.5 py-1 border border-[#3087ff]">
+                <span className="text-[11px] font-black uppercase tracking-widest text-white bg-[#3087ff]/20 px-2.5 py-1 border border-[#3087ff]">
                   AASHTO H-20 Traffic Rated
                 </span>
               </div>
@@ -366,7 +366,7 @@ export const CurbBoxSpotlight: React.FC<CurbBoxSpotlightProps> = ({
               <button
                 type="button"
                 onClick={() => onAddToRfq(product)}
-                className="inline-flex items-center justify-center gap-2 px-5 py-3 text-xs sm:text-sm font-bold text-white bg-[#3087ff] hover:bg-[#3087ff] hover:text-[#3087ff] rounded-none shadow-sm transition-all uppercase tracking-wide cursor-pointer"
+                className="inline-flex items-center justify-center gap-2 px-5 py-3 text-xs sm:text-sm font-bold text-white bg-[#3087ff] hover:bg-[#3087ff] hover:text-white rounded-none shadow-sm transition-all uppercase tracking-wide cursor-pointer"
               >
                 <CheckCircle2 className="w-4 h-4" />
                 <span>Add Bison Curb Box to RFQ</span>

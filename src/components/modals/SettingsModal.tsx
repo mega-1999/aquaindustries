@@ -394,7 +394,7 @@ export const SettingsModal: React.FC<SettingsModalProps> = ({
               <div className="pt-2 flex items-center justify-between gap-2">
                 <button
                   type="submit"
-                  className="px-4 py-2.5 bg-[#3087ff] hover:bg-[#3087ff] text-white hover:text-[#3087ff] font-black text-xs uppercase tracking-wider transition-colors cursor-pointer rounded-none shadow-md"
+                  className="px-4 py-2.5 bg-[#3087ff] hover:bg-[#3087ff] text-white hover:text-white font-black text-xs uppercase tracking-wider transition-colors cursor-pointer rounded-none shadow-md"
                 >
                   Update Password
                 </button>
@@ -483,7 +483,7 @@ export const SettingsModal: React.FC<SettingsModalProps> = ({
             <div className="pt-2 flex justify-end">
               <button
                 type="submit"
-                className="px-5 py-2.5 bg-[#3087ff] hover:bg-[#3087ff] text-white hover:text-[#3087ff] font-black text-xs uppercase tracking-wider transition-colors cursor-pointer rounded-none shadow-md flex items-center gap-1.5"
+                className="px-5 py-2.5 bg-[#3087ff] hover:bg-[#3087ff] text-white hover:text-white font-black text-xs uppercase tracking-wider transition-colors cursor-pointer rounded-none shadow-md flex items-center gap-1.5"
               >
                 <Save className="w-4 h-4" />
                 <span>Save Contact Details</span>

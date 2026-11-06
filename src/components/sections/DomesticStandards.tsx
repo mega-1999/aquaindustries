@@ -124,7 +124,7 @@ export function DomesticStandards() {
             {/* Symmetrical Left Bottom Action Strip */}
             <a
               href="#quote-form"
-              className="w-full py-3 px-6 bg-white hover:bg-[#3087ff] text-[#3087ff] font-black text-xs sm:text-sm uppercase tracking-wider text-center border-2 border-white transition-colors duration-150 flex items-center justify-center gap-2 min-h-[48px] shadow-md cursor-pointer"
+              className="w-full py-3 px-6 bg-white hover:bg-[#3087ff] text-[#3087ff] hover:text-white font-black text-xs sm:text-sm uppercase tracking-wider text-center border-2 border-white transition-colors duration-150 flex items-center justify-center gap-2 min-h-[48px] shadow-md cursor-pointer"
             >
               <span>Request Certified Mill Test Reports (MTR)</span>
               <svg

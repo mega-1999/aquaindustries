@@ -257,7 +257,7 @@ export const ProfileDashboardModal: React.FC<ProfileDashboardModalProps> = ({
                       onClose();
                       onOpenSuperAdmin();
                     }}
-                    className="w-full py-2.5 px-3 bg-white hover:bg-[#3087ff] text-[#3087ff] font-black text-xs uppercase tracking-wider transition-colors cursor-pointer text-center"
+                    className="w-full py-2.5 px-3 bg-white hover:bg-[#3087ff] text-[#3087ff] hover:text-white font-black text-xs uppercase tracking-wider transition-colors cursor-pointer text-center"
                   >
                     Open Super-Admin Contractor Approvals Desk &rsaquo;
                   </button>
@@ -334,7 +334,7 @@ export const ProfileDashboardModal: React.FC<ProfileDashboardModalProps> = ({
                 />
                 <button
                   type="submit"
-                  className="px-4 py-2 bg-[#3087ff] hover:bg-[#3087ff] text-white hover:text-[#3087ff] font-black text-xs uppercase tracking-wider transition-colors cursor-pointer"
+                  className="px-4 py-2 bg-[#3087ff] hover:bg-[#3087ff] text-white hover:text-white font-black text-xs uppercase tracking-wider transition-colors cursor-pointer"
                 >
                   Track Trailer
                 </button>
@@ -393,7 +393,7 @@ export const ProfileDashboardModal: React.FC<ProfileDashboardModalProps> = ({
           <button
             type="button"
             onClick={onClose}
-            className="px-5 py-2 bg-[#3087ff] hover:bg-[#3087ff] text-white hover:text-[#3087ff] font-black text-xs uppercase tracking-wider transition-colors cursor-pointer"
+            className="px-5 py-2 bg-[#3087ff] hover:bg-[#3087ff] text-white hover:text-white font-black text-xs uppercase tracking-wider transition-colors cursor-pointer"
           >
             Close Dashboard
           </button>

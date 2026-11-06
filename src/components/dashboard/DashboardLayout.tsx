@@ -95,7 +95,7 @@ export const DashboardLayout: React.FC<DashboardLayoutProps> = ({
           </Link>
           <Link
             href="/"
-            className="px-3.5 py-1.5 bg-white hover:bg-[#3087ff] text-[#3087ff] font-black text-xs uppercase tracking-wider transition-colors"
+            className="px-3.5 py-1.5 bg-white hover:bg-[#3087ff] text-[#3087ff] hover:text-white font-black text-xs uppercase tracking-wider transition-colors"
           >
             &larr; Return to Catalog
           </Link>
@@ -175,7 +175,7 @@ export const DashboardLayout: React.FC<DashboardLayoutProps> = ({
 
               <button
                 type="submit"
-                className="w-full py-3 px-4 bg-[#3087ff] hover:bg-[#3087ff] text-white hover:text-[#3087ff] font-black text-xs uppercase tracking-wider shadow-md transition-all cursor-pointer"
+                className="w-full py-3 px-4 bg-[#3087ff] hover:bg-[#3087ff] text-white hover:text-white font-black text-xs uppercase tracking-wider shadow-md transition-all cursor-pointer"
               >
                 Sign In to Unlock Dashboard
               </button>
@@ -230,7 +230,7 @@ export const DashboardLayout: React.FC<DashboardLayoutProps> = ({
           </Link>
           <Link
             href="/profile"
-            className="px-3.5 py-1.5 bg-white hover:bg-[#3087ff] text-[#3087ff] font-black text-xs uppercase tracking-wider transition-colors"
+            className="px-3.5 py-1.5 bg-white hover:bg-[#3087ff] text-[#3087ff] hover:text-white font-black text-xs uppercase tracking-wider transition-colors"
           >
             My Profile Dashboard &rsaquo;
           </Link>
@@ -256,7 +256,7 @@ export const DashboardLayout: React.FC<DashboardLayoutProps> = ({
             <div className="pt-2 flex flex-col gap-2">
               <Link
                 href="/profile"
-                className="w-full py-2.5 px-4 bg-[#3087ff] hover:bg-[#3087ff] text-white hover:text-[#3087ff] font-black text-xs uppercase tracking-wider transition-colors"
+                className="w-full py-2.5 px-4 bg-[#3087ff] hover:bg-[#3087ff] text-white hover:text-white font-black text-xs uppercase tracking-wider transition-colors"
               >
                 Return to My Profile Dashboard &rsaquo;
               </Link>

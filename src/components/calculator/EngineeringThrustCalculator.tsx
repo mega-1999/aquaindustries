@@ -179,7 +179,7 @@ export const EngineeringThrustCalculator: React.FC = () => {
                     >
                       Fitting Geometry &amp; Deflection Angle
                     </label>
-                    <span className="text-[10px] font-bold text-[#3087ff] bg-[#3087ff]/20 px-2 py-0.5 uppercase">
+                    <span className="text-[10px] font-bold text-white bg-[#3087ff]/20 px-2 py-0.5 uppercase">
                       {fittingType === "90-bend"
                         ? "Maximum Radial Thrust"
                         : fittingType === "dead-end"
@@ -420,7 +420,7 @@ export const EngineeringThrustCalculator: React.FC = () => {
               <button
                 type="button"
                 onClick={() => setShowExportModal(true)}
-                className="w-full flex-1 inline-flex items-center justify-center gap-2 py-2.5 px-5 bg-[#3087ff] hover:bg-[#3087ff] hover:text-[#3087ff] text-white font-black rounded-none text-xs sm:text-sm uppercase tracking-wider border-2 border-[#3087ff] shadow-md transition-all whitespace-nowrap cursor-pointer"
+                className="w-full flex-1 inline-flex items-center justify-center gap-2 py-2.5 px-5 bg-[#3087ff] hover:bg-[#3087ff] hover:text-white text-white font-black rounded-none text-xs sm:text-sm uppercase tracking-wider border-2 border-[#3087ff] shadow-md transition-all whitespace-nowrap cursor-pointer"
               >
                 <Download className="w-4 h-4 text-white" />
                 <span className="whitespace-nowrap">
@@ -532,7 +532,7 @@ export const EngineeringThrustCalculator: React.FC = () => {
               <button
                 type="button"
                 onClick={handlePrintSummary}
-                className="px-5 py-2 bg-[#3087ff] hover:bg-[#3087ff] hover:text-[#3087ff] text-white text-xs font-bold rounded-none border-2 border-[#3087ff] shadow-md flex items-center gap-2"
+                className="px-5 py-2 bg-[#3087ff] hover:bg-[#3087ff] hover:text-white text-white text-xs font-bold rounded-none border-2 border-[#3087ff] shadow-md flex items-center gap-2"
               >
                 <Printer className="w-4 h-4" />
                 <span>Print Official PDF</span>

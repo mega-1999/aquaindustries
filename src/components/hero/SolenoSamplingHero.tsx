@@ -142,7 +142,7 @@ export const SolenoSamplingHero: React.FC = () => {
             <div className="flex flex-col sm:flex-row items-stretch sm:items-center gap-3.5 pt-2">
               <a
                 href="#curb-box-spotlight"
-                className="inline-flex items-center justify-center gap-2 px-6 py-3.5 text-sm sm:text-base font-bold text-[#3087ff] bg-white hover:bg-[#3087ff] hover:text-[#3087ff] rounded-none shadow-lg transition-all transform hover:-translate-y-0.5 active:translate-y-0 whitespace-nowrap"
+                className="inline-flex items-center justify-center gap-2 px-6 py-3.5 text-sm sm:text-base font-bold text-[#3087ff] bg-white hover:bg-[#3087ff] hover:text-white rounded-none shadow-lg transition-all transform hover:-translate-y-0.5 active:translate-y-0 whitespace-nowrap"
               >
                 <span>Explore Curb Box &amp; Innovations</span>
                 <ArrowRight className="w-4 h-4 text-[#3087ff]" />
@@ -150,7 +150,7 @@ export const SolenoSamplingHero: React.FC = () => {
 
               <a
                 href="#product-matrix"
-                className="inline-flex items-center justify-center gap-2 px-6 py-3.5 text-sm sm:text-base font-bold text-[#3087ff] hover:text-[#3087ff] bg-[#3087ff] hover:bg-[#3087ff] border-2 border-[#3087ff] rounded-none shadow-md transition-all transform hover:-translate-y-0.5 active:translate-y-0 whitespace-nowrap"
+                className="inline-flex items-center justify-center gap-2 px-6 py-3.5 text-sm sm:text-base font-bold text-white hover:text-[#3087ff] bg-transparent hover:bg-white border-2 border-white rounded-none shadow-md transition-all transform hover:-translate-y-0.5 active:translate-y-0 whitespace-nowrap"
               >
                 <FileCheck2 className="w-4 h-4 text-[#3087ff] group-hover:text-[#3087ff]" />
                 <span>Browse Complete Catalog</span>
@@ -230,13 +230,13 @@ export const SolenoSamplingHero: React.FC = () => {
                       </span>
                     </div>
                     <div className="flex items-center gap-2">
-                      <span className="text-[10px] bg-[#3087ff] text-[#3087ff] font-extrabold px-2 py-0.5 whitespace-nowrap shadow-xs">
+                      <span className="text-[10px] bg-[#3087ff] text-white font-extrabold px-2 py-0.5 whitespace-nowrap shadow-xs">
                         {HOTSPOTS.find((h) => h.id === activeHotspot)?.badge}
                       </span>
                       <button
                         type="button"
                         onClick={() => setActiveHotspot(null)}
-                        className="w-6 h-6 bg-[#3087ff]/10 hover:bg-[#3087ff] text-[#3087ff] hover:text-white flex items-center justify-center font-bold text-xs transition-colors cursor-pointer"
+                        className="w-6 h-6 bg-[#3087ff]/10 hover:bg-[#3087ff] text-white hover:text-white flex items-center justify-center font-bold text-xs transition-colors cursor-pointer"
                         title="Close Popup"
                       >
                         ✕
@@ -384,7 +384,7 @@ export const SolenoSamplingHero: React.FC = () => {
               {/* Soleno Circular Floating Interactive CTA Button */}
               <a
                 href="#quote-form"
-                className="absolute -bottom-3 -right-3 sm:bottom-0 sm:right-0 w-24 h-24 sm:w-28 sm:h-28 rounded-full bg-[#3087ff] hover:bg-[#3087ff] text-white hover:text-[#3087ff] border-4 border-white flex flex-col items-center justify-center p-2 text-center shadow-xl transition-all duration-300 hover:scale-105 group z-30"
+                className="absolute -bottom-3 -right-3 sm:bottom-0 sm:right-0 w-24 h-24 sm:w-28 sm:h-28 rounded-full bg-[#3087ff] hover:bg-[#3087ff] text-white hover:text-white border-4 border-white flex flex-col items-center justify-center p-2 text-center shadow-xl transition-all duration-300 hover:scale-105 group z-30"
                 title="Start a project with Aqua Industries"
               >
                 <span className="text-[10px] sm:text-[11px] font-black tracking-wider uppercase leading-tight">

@@ -559,7 +559,7 @@ export const FoundryWalkthrough: React.FC = () => {
                             <span
                               className={`mt-1 px-1.5 py-0.5 text-[9px] font-black uppercase tracking-wider whitespace-nowrap shadow-md transition-colors ${isSelected
                                   ? "bg-white text-[#3087ff] border border-[#3087ff]"
-                                  : "bg-[#3087ff] text-white border border-white/40 group-hover:bg-[#3087ff] group-hover:text-[#3087ff]"
+                                  : "bg-[#3087ff] text-white border border-white/40 group-hover:bg-[#3087ff] group-hover:text-white"
                                 }`}
                             >
                               {yard.city}, {yard.state}
@@ -655,7 +655,7 @@ export const FoundryWalkthrough: React.FC = () => {
                   )}`}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="px-3.5 py-2 bg-[#3087ff] text-white hover:bg-[#3087ff] hover:text-[#3087ff] border-2 border-[#3087ff] font-black text-xs uppercase tracking-wider transition-all flex items-center gap-1.5 shadow-xs"
+                  className="px-3.5 py-2 bg-[#3087ff] text-white hover:bg-[#3087ff] hover:text-white border-2 border-[#3087ff] font-black text-xs uppercase tracking-wider transition-all flex items-center gap-1.5 shadow-xs"
                 >
                   <Navigation className="w-3.5 h-3.5" />
                   <span>Get Directions</span>
@@ -726,7 +726,7 @@ export const FoundryWalkthrough: React.FC = () => {
                 </div>
                 <div className="pt-2 border-t border-[#3087ff]/30 flex items-center justify-between text-xs font-black">
                   <span className="text-[#3087ff]">Fulfillment:</span>
-                  <span className="text-[#3087ff] bg-[#3087ff]/20 px-2 py-0.5">
+                  <span className="text-white bg-[#3087ff]/20 px-2 py-0.5">
                     {activeYard.transitHours}
                   </span>
                 </div>
@@ -760,7 +760,7 @@ export const FoundryWalkthrough: React.FC = () => {
                 </div>
                 <a
                   href="#quote-calculator"
-                  className="w-full py-2 bg-[#3087ff] hover:bg-[#3087ff] text-white hover:text-[#3087ff] font-black text-[11px] uppercase tracking-wider text-center transition-all block border border-[#3087ff]"
+                  className="w-full py-2 bg-[#3087ff] hover:bg-[#3087ff] text-white hover:text-white font-black text-[11px] uppercase tracking-wider text-center transition-all block border border-[#3087ff]"
                 >
                   Allocate Freight Here &rsaquo;
                 </a>

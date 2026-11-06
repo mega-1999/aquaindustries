@@ -598,7 +598,7 @@ Compliance: ${activeVariant.standards}
                   onClick={handleImpactTest}
                   className={`px-3 py-1.5 text-[10px] font-black uppercase border transition-all flex items-center gap-1.5 cursor-pointer ${impactTested
                       ? "bg-red-600 text-white border-red-600 shadow-md animate-pulse"
-                      : "bg-[#3087ff] text-white border-[#3087ff] hover:bg-[#3087ff] hover:text-[#3087ff]"
+                      : "bg-[#3087ff] text-white border-[#3087ff] hover:bg-[#3087ff] hover:text-white"
                     }`}
                 >
                   <Zap className="w-3.5 h-3.5" />
@@ -724,8 +724,8 @@ Compliance: ${activeVariant.standards}
                   type="button"
                   onClick={handleAdd}
                   className={`flex-1 py-3 px-4 text-xs font-black uppercase tracking-wider rounded-none border-2 transition-all flex items-center justify-center gap-2 cursor-pointer shadow-md ${added
-                      ? "bg-[#3087ff] text-[#3087ff] border-[#3087ff]"
-                      : "bg-[#3087ff] hover:bg-[#3087ff] text-white hover:text-[#3087ff] border-[#3087ff]"
+                      ? "bg-[#3087ff] text-white border-[#3087ff]"
+                      : "bg-[#3087ff] hover:bg-[#3087ff] text-white hover:text-white border-[#3087ff]"
                     }`}
                 >
                   {added ? (
@@ -754,7 +754,7 @@ Compliance: ${activeVariant.standards}
                   type="button"
                   onClick={handleCopySpecs}
                   title="Copy engineering specifications"
-                  className="py-3 px-3 bg-[#3087ff]/20 hover:bg-[#3087ff] text-[#3087ff] hover:text-white border-2 border-[#3087ff] text-xs font-black uppercase transition-all flex items-center justify-center gap-1.5 cursor-pointer shadow-xs"
+                  className="py-3 px-3 bg-[#3087ff]/20 hover:bg-[#3087ff] text-white hover:text-white border-2 border-[#3087ff] text-xs font-black uppercase transition-all flex items-center justify-center gap-1.5 cursor-pointer shadow-xs"
                 >
                   {copied ? (
                     <>

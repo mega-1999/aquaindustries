@@ -135,7 +135,7 @@ export const ProductCatalogMatrix: React.FC<ProductCatalogMatrixProps> = ({
               onClick={() => setActiveTab(tab.id)}
               className={`px-4 py-2.5 rounded-none text-xs sm:text-sm font-bold transition-all whitespace-nowrap shrink-0 border-2 ${activeTab === tab.id
                   ? "bg-[#3087ff] text-white border-[#3087ff] shadow-sm"
-                  : "bg-white text-[#3087ff] border-[#3087ff] hover:bg-[#3087ff] hover:text-[#3087ff]"
+                  : "bg-white text-[#3087ff] border-[#3087ff] hover:bg-[#3087ff] hover:text-white"
                 }`}
             >
               <span className="whitespace-nowrap">{tab.label}</span>
@@ -236,8 +236,8 @@ export const ProductCatalogMatrix: React.FC<ProductCatalogMatrixProps> = ({
                       type="button"
                       onClick={() => handleAddProduct(product)}
                       className={`flex-1 inline-flex items-center justify-center gap-1.5 py-2 px-3 rounded-none text-xs font-bold uppercase tracking-wider transition-all whitespace-nowrap border-2 cursor-pointer ${isAdded
-                          ? "bg-[#3087ff] text-[#3087ff] border-[#3087ff]"
-                          : "bg-[#3087ff] hover:bg-[#3087ff] hover:text-[#3087ff] text-white border-[#3087ff] shadow-xs"
+                          ? "bg-[#3087ff] text-white border-[#3087ff]"
+                          : "bg-[#3087ff] hover:bg-[#3087ff] hover:text-white text-white border-[#3087ff] shadow-xs"
                         }`}
                     >
                       {isAdded ? (
@@ -265,7 +265,7 @@ export const ProductCatalogMatrix: React.FC<ProductCatalogMatrixProps> = ({
             <button
               type="button"
               onClick={handleLoadMore}
-              className="w-full sm:w-auto inline-flex items-center justify-center gap-2 px-6 py-3 bg-[#3087ff] text-white hover:bg-[#3087ff] hover:text-[#3087ff] font-bold text-sm rounded-none border-2 border-[#3087ff] transition-colors duration-150 shadow-sm whitespace-nowrap cursor-pointer"
+              className="w-full sm:w-auto inline-flex items-center justify-center gap-2 px-6 py-3 bg-[#3087ff] text-white hover:bg-[#3087ff] hover:text-white font-bold text-sm rounded-none border-2 border-[#3087ff] transition-colors duration-150 shadow-sm whitespace-nowrap cursor-pointer"
             >
               <span>Load More Products (+6)</span>
               <ChevronDown className="w-4 h-4" />

@@ -157,7 +157,7 @@ export const SamplingStationSpotlight: React.FC<
                       }
                     </span>
                   </div>
-                  <span className="text-[10px] bg-[#3087ff] text-[#3087ff] font-extrabold px-2 py-0.5 whitespace-nowrap">
+                  <span className="text-[10px] bg-[#3087ff] text-white font-extrabold px-2 py-0.5 whitespace-nowrap">
                     {
                       STATION_HOTSPOTS.find((h) => h.id === activeHotspot)
                         ?.badge
@@ -198,7 +198,7 @@ export const SamplingStationSpotlight: React.FC<
                       }
                     </span>
                   </div>
-                  <span className="text-[10px] bg-[#3087ff] text-[#3087ff] font-extrabold px-2 py-0.5 whitespace-nowrap">
+                  <span className="text-[10px] bg-[#3087ff] text-white font-extrabold px-2 py-0.5 whitespace-nowrap">
                     {
                       STATION_HOTSPOTS.find((h) => h.id === activeHotspot)
                         ?.badge
@@ -547,7 +547,7 @@ export const SamplingStationSpotlight: React.FC<
               <button
                 type="button"
                 onClick={() => onAddToRfq(product)}
-                className="flex-1 px-5 py-3 bg-white hover:bg-[#3087ff] text-[#3087ff] font-bold text-xs sm:text-sm rounded-none shadow-md transition-all whitespace-nowrap text-center uppercase tracking-wide cursor-pointer"
+                className="flex-1 px-5 py-3 bg-white hover:bg-[#3087ff] text-[#3087ff] hover:text-white font-bold text-xs sm:text-sm rounded-none shadow-md transition-all whitespace-nowrap text-center uppercase tracking-wide cursor-pointer"
               >
                 + Add Sampling Station to Quote
               </button>
@@ -555,7 +555,7 @@ export const SamplingStationSpotlight: React.FC<
               <button
                 type="button"
                 onClick={() => onPreviewSubmittal(product)}
-                className="flex-1 px-5 py-3 bg-[#3087ff] hover:bg-white text-[#3087ff] hover:text-[#3087ff] font-bold text-xs sm:text-sm rounded-none border-2 border-[#3087ff] transition-all whitespace-nowrap text-center inline-flex items-center justify-center gap-2 uppercase tracking-wide cursor-pointer"
+                className="flex-1 px-5 py-3 bg-[#3087ff] hover:bg-white text-white hover:text-[#3087ff] font-bold text-xs sm:text-sm rounded-none border-2 border-[#3087ff] transition-all whitespace-nowrap text-center inline-flex items-center justify-center gap-2 uppercase tracking-wide cursor-pointer"
               >
                 <FileCheck2 className="w-4 h-4 text-[#3087ff] group-hover:text-[#3087ff]" />
                 <span>Download Submittal PDF</span>

@@ -196,7 +196,7 @@ export const MainNavbar: React.FC<MainNavbarProps> = ({
 
                       <div className="col-span-4 bg-[#3087ff] text-white border-2 border-[#3087ff] rounded-none p-4 flex flex-col justify-between">
                         <div>
-                          <span className="text-xs font-bold uppercase tracking-wider text-[#3087ff] bg-[#3087ff] px-2 py-0.5 rounded-none whitespace-nowrap">
+                          <span className="text-xs font-bold uppercase tracking-wider text-white bg-[#3087ff] px-2 py-0.5 rounded-none whitespace-nowrap">
                             Foundry Certified
                           </span>
                           <h4 className="font-extrabold text-white text-sm sm:text-base mt-2.5 mb-1">
@@ -462,7 +462,7 @@ export const MainNavbar: React.FC<MainNavbarProps> = ({
                       <div>
                         <div className="font-extrabold text-sm mb-0.5 leading-tight flex items-center gap-1.5">
                           <span>Thrust Calculator</span>
-                          <span className="px-2 py-0.5 rounded-none bg-[#3087ff] text-[#3087ff] text-xs font-bold whitespace-nowrap">
+                          <span className="px-2 py-0.5 rounded-none bg-[#3087ff] text-white text-xs font-bold whitespace-nowrap">
                             Live
                           </span>
                         </div>
@@ -646,7 +646,7 @@ export const MainNavbar: React.FC<MainNavbarProps> = ({
             {/* Primary CTA: Request a Job Quote */}
             <a
               href="#quote-form"
-              className="inline-flex items-center gap-1.5 px-4 2xl:px-5 py-2 text-xs 2xl:text-sm font-extrabold text-white bg-[#3087ff] hover:bg-[#3087ff] hover:text-[#3087ff] border-2 border-[#3087ff] rounded-none shadow-md shadow-[#3087ff]/30 transition-all transform hover:-translate-y-0.5 active:translate-y-0 whitespace-nowrap"
+              className="inline-flex items-center gap-1.5 px-4 2xl:px-5 py-2 text-xs 2xl:text-sm font-extrabold text-white bg-[#3087ff] hover:bg-[#3087ff] hover:text-white border-2 border-[#3087ff] rounded-none shadow-md shadow-[#3087ff]/30 transition-all transform hover:-translate-y-0.5 active:translate-y-0 whitespace-nowrap"
             >
               <FileText className="w-4 h-4 shrink-0" />
               <span className="whitespace-nowrap">Request Quote</span>
@@ -667,7 +667,7 @@ export const MainNavbar: React.FC<MainNavbarProps> = ({
           <div className="flex items-center gap-2 xl:hidden shrink-0">
             <a
               href="#quote-form"
-              className="inline-flex items-center gap-1.5 px-3.5 py-2 text-sm font-bold text-white bg-[#3087ff] hover:bg-[#3087ff] hover:text-[#3087ff] rounded-none shadow-sm whitespace-nowrap border border-[#3087ff]"
+              className="inline-flex items-center gap-1.5 px-3.5 py-2 text-sm font-bold text-white bg-[#3087ff] hover:bg-[#3087ff] hover:text-white rounded-none shadow-sm whitespace-nowrap border border-[#3087ff]"
             >
               <span>Quote</span>
             </a>

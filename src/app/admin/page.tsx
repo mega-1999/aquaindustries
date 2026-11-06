@@ -229,7 +229,7 @@ export default function SuperAdminPage() {
                     "All demo contractor applications reloaded and synchronized!",
                   );
                 }}
-                className="px-3.5 py-3 bg-white hover:bg-[#3087ff] text-[#3087ff] font-black text-xs uppercase tracking-wider transition-colors cursor-pointer flex items-center gap-1.5 shadow-md shrink-0"
+                className="px-3.5 py-3 bg-white hover:bg-[#3087ff] text-[#3087ff] hover:text-white font-black text-xs uppercase tracking-wider transition-colors cursor-pointer flex items-center gap-1.5 shadow-md shrink-0"
                 title="Reload initial demo applications including Mega Foundries"
               >
                 <RefreshCw className="w-3.5 h-3.5" />
@@ -377,7 +377,7 @@ export default function SuperAdminPage() {
                 }`}
             >
               <span>Quote Requests</span>
-              <span className="w-5 h-5 bg-[#3087ff] text-[#3087ff] rounded-none text-[10px] font-black flex items-center justify-center">
+              <span className="w-5 h-5 bg-[#3087ff] text-white rounded-none text-[10px] font-black flex items-center justify-center">
                 {rfqRequests.length}
               </span>
             </button>

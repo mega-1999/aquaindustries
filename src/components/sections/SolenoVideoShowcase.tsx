@@ -233,7 +233,7 @@ export const SolenoVideoShowcase: React.FC<SolenoVideoShowcaseProps> = ({
                   <button
                     type="button"
                     onClick={() => setActiveVideo(item)}
-                    className="absolute inset-0 m-auto w-12 h-12 bg-white/95 hover:bg-[#3087ff] text-[#3087ff] flex items-center justify-center border-2 border-[#3087ff] shadow-xl transition-transform hover:scale-110 cursor-pointer z-20"
+                    className="absolute inset-0 m-auto w-12 h-12 bg-white/95 hover:bg-[#3087ff] text-white flex items-center justify-center border-2 border-[#3087ff] shadow-xl transition-transform hover:scale-110 cursor-pointer z-20"
                     title={`Watch ${item.title}`}
                     aria-label={`Watch ${item.title}`}
                   >
@@ -262,7 +262,7 @@ export const SolenoVideoShowcase: React.FC<SolenoVideoShowcaseProps> = ({
                     <button
                       type="button"
                       onClick={() => setActiveVideo(item)}
-                      className="w-full py-2 px-3 bg-[#3087ff] hover:bg-[#3087ff] text-white hover:text-[#3087ff] font-black text-xs uppercase tracking-wider rounded-none transition-all flex items-center justify-center gap-1.5 cursor-pointer border border-[#3087ff]"
+                      className="w-full py-2 px-3 bg-[#3087ff] hover:bg-[#3087ff] text-white hover:text-white font-black text-xs uppercase tracking-wider rounded-none transition-all flex items-center justify-center gap-1.5 cursor-pointer border border-[#3087ff]"
                     >
                       <Play className="w-3.5 h-3.5" />
                       <span>Watch Full Demo</span>
@@ -272,7 +272,7 @@ export const SolenoVideoShowcase: React.FC<SolenoVideoShowcaseProps> = ({
                       type="button"
                       onClick={() => handleAdd(item.product)}
                       className={`w-full py-2 px-3 text-xs font-black uppercase tracking-wider rounded-none border border-[#3087ff] transition-all flex items-center justify-center gap-1.5 cursor-pointer ${isAdded
-                        ? "bg-[#3087ff] text-[#3087ff]"
+                        ? "bg-[#3087ff] text-white"
                         : "bg-white hover:bg-[#3087ff]/30 text-[#3087ff]"
                         }`}
                     >
@@ -366,7 +366,7 @@ export const SolenoVideoShowcase: React.FC<SolenoVideoShowcaseProps> = ({
                 onClick={() => {
                   handleAdd(activeVideo.product);
                 }}
-                className="flex-1 py-2.5 px-4 bg-[#3087ff] hover:bg-[#3087ff] text-white hover:text-[#3087ff] font-black text-xs uppercase tracking-wider transition-all border-2 border-[#3087ff] cursor-pointer text-center"
+                className="flex-1 py-2.5 px-4 bg-[#3087ff] hover:bg-[#3087ff] text-white hover:text-white font-black text-xs uppercase tracking-wider transition-all border-2 border-[#3087ff] cursor-pointer text-center"
               >
                 + Add {activeVideo.product.name} to RFQ
               </button>

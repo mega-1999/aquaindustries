@@ -85,7 +85,7 @@ export const SuperAdminApprovalModal: React.FC<
           <button
             type="button"
             onClick={onClose}
-            className="w-full py-3 px-4 bg-[#3087ff] hover:bg-[#3087ff] text-white hover:text-[#3087ff] font-black text-xs uppercase tracking-wider transition-all cursor-pointer shadow-md"
+            className="w-full py-3 px-4 bg-[#3087ff] hover:bg-[#3087ff] text-white hover:text-white font-black text-xs uppercase tracking-wider transition-all cursor-pointer shadow-md"
           >
             Close Window
           </button>
@@ -152,7 +152,7 @@ export const SuperAdminApprovalModal: React.FC<
         <button
           type="button"
           onClick={onClose}
-          className="absolute top-4 right-4 p-2 bg-[#3087ff] text-white hover:bg-[#3087ff] hover:text-[#3087ff] transition-colors rounded-none cursor-pointer z-10"
+          className="absolute top-4 right-4 p-2 bg-[#3087ff] text-white hover:bg-[#3087ff] hover:text-white transition-colors rounded-none cursor-pointer z-10"
           aria-label="Close Admin Modal"
         >
           <X className="w-5 h-5" />
@@ -508,7 +508,7 @@ export const SuperAdminApprovalModal: React.FC<
                           <button
                             type="button"
                             onClick={() => onOpenContractorLogin(user.email)}
-                            className="inline-flex items-center justify-center gap-1 px-2.5 py-2 bg-[#3087ff] hover:bg-[#3087ff] text-white hover:text-[#3087ff] font-bold text-xs uppercase tracking-wider rounded-none transition-colors cursor-pointer"
+                            className="inline-flex items-center justify-center gap-1 px-2.5 py-2 bg-[#3087ff] hover:bg-[#3087ff] text-white hover:text-white font-bold text-xs uppercase tracking-wider rounded-none transition-colors cursor-pointer"
                             title="Test logging in as this approved contractor"
                           >
                             <ExternalLink className="w-3.5 h-3.5" />

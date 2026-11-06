@@ -393,7 +393,7 @@ export const EngineeringInnovationSpotlight: React.FC<
             <span className="px-3 py-1 bg-white text-[#3087ff] text-xs font-black uppercase tracking-wider border-2 border-[#3087ff] shadow-sm">
               {currentProduct.badge}
             </span>
-            <span className="px-3 py-1 bg-[#3087ff] text-[#3087ff] text-xs font-bold uppercase tracking-wider">
+            <span className="px-3 py-1 bg-[#3087ff] text-white text-xs font-bold uppercase tracking-wider">
               {currentProduct.spec}
             </span>
             <span className="text-[11px] text-white/80 font-mono">
@@ -519,13 +519,13 @@ export const EngineeringInnovationSpotlight: React.FC<
                       </h4>
                     </div>
                     <div className="flex items-center gap-2">
-                      <span className="text-[11px] font-black uppercase bg-[#3087ff] text-[#3087ff] px-2.5 py-0.5 shrink-0">
+                      <span className="text-[11px] font-black uppercase bg-[#3087ff] text-white px-2.5 py-0.5 shrink-0">
                         {activeSpotData.badge}
                       </span>
                       <button
                         type="button"
                         onClick={() => setActiveHotspot(null)}
-                        className="w-6 h-6 bg-[#3087ff]/10 hover:bg-[#3087ff] text-[#3087ff] hover:text-white flex items-center justify-center font-bold text-xs transition-colors cursor-pointer"
+                        className="w-6 h-6 bg-[#3087ff]/10 hover:bg-[#3087ff] text-white hover:text-white flex items-center justify-center font-bold text-xs transition-colors cursor-pointer"
                         title="Close Popup"
                       >
                         ✕
@@ -555,7 +555,7 @@ export const EngineeringInnovationSpotlight: React.FC<
               )}
               {/* Corner Waterworks Badge */}
               <div className="absolute top-4 left-4 z-20">
-                <span className="text-[10px] font-black uppercase tracking-widest text-[#3087ff] bg-[#3087ff]/30 px-2.5 py-1 border border-[#3087ff]">
+                <span className="text-[10px] font-black uppercase tracking-widest text-white bg-[#3087ff]/30 px-2.5 py-1 border border-[#3087ff]">
                   {currentProduct.categoryLabel}
                 </span>
               </div>
@@ -824,7 +824,7 @@ export const EngineeringInnovationSpotlight: React.FC<
                       <div
                         className={`w-14 h-8 border-2 border-[#3087ff] font-black text-xs flex items-center justify-center transition-all duration-300 ${isTorqueSheared
                             ? "translate-x-12 -translate-y-6 rotate-45 opacity-0 bg-red-100"
-                            : "bg-[#3087ff] text-[#3087ff]"
+                            : "bg-[#3087ff] text-white"
                           }`}
                       >
                         {isTorqueSheared ? "SHEARED" : "TORQUE"}
@@ -1029,7 +1029,7 @@ export const EngineeringInnovationSpotlight: React.FC<
               <button
                 type="button"
                 onClick={() => onPreviewSubmittal(product)}
-                className="flex-1 inline-flex items-center justify-center gap-2 px-5 py-3 text-xs sm:text-sm font-bold text-[#3087ff] hover:text-[#3087ff] bg-[#3087ff] hover:bg-white border-2 border-[#3087ff] rounded-none shadow-xs transition-all uppercase tracking-wide cursor-pointer"
+                className="flex-1 inline-flex items-center justify-center gap-2 px-5 py-3 text-xs sm:text-sm font-bold text-white hover:text-[#3087ff] bg-transparent hover:bg-white border-2 border-white rounded-none shadow-xs transition-all uppercase tracking-wide cursor-pointer"
               >
                 <FileCheck2 className="w-4 h-4 text-[#3087ff] group-hover:text-[#3087ff]" />
                 <span>Download Submittal</span>

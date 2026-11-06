@@ -51,7 +51,7 @@ export const IndustrialFooter: React.FC<IndustrialFooterProps> = ({
             <div className="flex flex-col sm:flex-row items-stretch sm:items-center gap-3 w-full lg:w-auto shrink-0">
               <a
                 href="tel:+15162521111"
-                className="inline-flex items-center justify-center gap-2.5 px-6 py-3.5 bg-white hover:bg-[#3087ff] text-[#3087ff] font-black text-sm uppercase tracking-wider shadow-lg transition-all text-center cursor-pointer"
+                className="inline-flex items-center justify-center gap-2.5 px-6 py-3.5 bg-white hover:bg-[#3087ff] text-[#3087ff] hover:text-white font-black text-sm uppercase tracking-wider shadow-lg transition-all text-center cursor-pointer"
               >
                 <PhoneCall className="w-4 h-4 text-[#3087ff] shrink-0" />
                 <span>+1 (516) 252-1111</span>
@@ -361,7 +361,7 @@ export const IndustrialFooter: React.FC<IndustrialFooterProps> = ({
                         </div>
                       </td>
                       <td className="p-2.5 align-top text-right">
-                        <span className="inline-block bg-[#3087ff] text-[#3087ff] text-[10px] font-black uppercase px-2 py-0.5 shadow-xs">
+                        <span className="inline-block bg-[#3087ff] text-white text-[10px] font-black uppercase px-2 py-0.5 shadow-xs">
                           {yard.stockStatus}
                         </span>
                         <div className="text-[10px] text-white/80 mt-1 leading-tight break-words">

@@ -226,14 +226,14 @@ export const ClientPortalModal: React.FC<ClientPortalModalProps> = ({
                   <Link
                     href="/admin"
                     onClick={onClose}
-                    className="w-full py-2.5 px-3 bg-white hover:bg-[#3087ff] text-[#3087ff] font-black text-xs uppercase tracking-wider shadow-md transition-all cursor-pointer text-center block"
+                    className="w-full py-2.5 px-3 bg-white hover:bg-[#3087ff] text-[#3087ff] hover:text-white font-black text-xs uppercase tracking-wider shadow-md transition-all cursor-pointer text-center block"
                   >
                     Approvals Desk &rsaquo;
                   </Link>
                   <Link
                     href="/profile"
                     onClick={onClose}
-                    className="w-full py-2.5 px-3 bg-[#3087ff] hover:bg-white text-[#3087ff] font-black text-xs uppercase tracking-wider shadow-md transition-all cursor-pointer text-center block"
+                    className="w-full py-2.5 px-3 bg-[#3087ff] hover:bg-white text-white font-black text-xs uppercase tracking-wider shadow-md transition-all cursor-pointer text-center block"
                   >
                     Profile Dashboard &rsaquo;
                   </Link>
@@ -282,7 +282,7 @@ export const ClientPortalModal: React.FC<ClientPortalModalProps> = ({
                     <button
                       type="button"
                       onClick={handleBolLookup}
-                      className="px-3 py-1.5 bg-[#3087ff] text-white hover:bg-[#3087ff] hover:text-[#3087ff] text-xs font-black uppercase cursor-pointer"
+                      className="px-3 py-1.5 bg-[#3087ff] text-white hover:bg-[#3087ff] hover:text-white text-xs font-black uppercase cursor-pointer"
                     >
                       Track
                     </button>
@@ -300,7 +300,7 @@ export const ClientPortalModal: React.FC<ClientPortalModalProps> = ({
               <Link
                 href="/profile"
                 onClick={onClose}
-                className="px-4 py-2 bg-[#3087ff] hover:bg-[#3087ff] text-white hover:text-[#3087ff] font-black text-xs uppercase tracking-wider text-center transition-colors"
+                className="px-4 py-2 bg-[#3087ff] hover:bg-[#3087ff] text-white hover:text-white font-black text-xs uppercase tracking-wider text-center transition-colors"
               >
                 Go to Profile Dashboard &rsaquo;
               </Link>
@@ -376,7 +376,7 @@ export const ClientPortalModal: React.FC<ClientPortalModalProps> = ({
                         </div>
                         <div className="flex-1 min-w-0">
                           <div className="flex items-center gap-2 flex-wrap">
-                            <span className="px-2 py-0.5 bg-[#3087ff] text-[#3087ff] text-[10px] font-black uppercase tracking-wider">
+                            <span className="px-2 py-0.5 bg-[#3087ff] text-white text-[10px] font-black uppercase tracking-wider">
                               Super-Admin Profile Detected
                             </span>
                             <span className="text-[11px] font-mono text-[#3087ff] font-bold">
@@ -511,7 +511,7 @@ export const ClientPortalModal: React.FC<ClientPortalModalProps> = ({
                         onClose();
                         onOpenRegisterModal();
                       }}
-                      className="px-2.5 py-1 bg-[#3087ff] hover:bg-[#3087ff] text-white hover:text-[#3087ff] text-[10px] font-black uppercase tracking-wider shrink-0 cursor-pointer"
+                      className="px-2.5 py-1 bg-[#3087ff] hover:bg-[#3087ff] text-white hover:text-white text-[10px] font-black uppercase tracking-wider shrink-0 cursor-pointer"
                     >
                       Register Company &rsaquo;
                     </button>
@@ -587,7 +587,7 @@ export const ClientPortalModal: React.FC<ClientPortalModalProps> = ({
                     <button
                       type="button"
                       onClick={handleResetSubmit}
-                      className="w-full py-2 bg-[#3087ff] hover:bg-[#3087ff] text-white hover:text-[#3087ff] font-black text-xs uppercase tracking-wider transition-colors cursor-pointer"
+                      className="w-full py-2 bg-[#3087ff] hover:bg-[#3087ff] text-white hover:text-white font-black text-xs uppercase tracking-wider transition-colors cursor-pointer"
                     >
                       Reset &amp; Save New Password
                     </button>
@@ -625,7 +625,7 @@ export const ClientPortalModal: React.FC<ClientPortalModalProps> = ({
             <div className="pt-2">
               <button
                 type="submit"
-                className="w-full py-3 px-4 bg-[#3087ff] hover:bg-[#3087ff] text-white hover:text-[#3087ff] font-black text-xs sm:text-sm uppercase tracking-wider rounded-none shadow-md transition-all cursor-pointer"
+                className="w-full py-3 px-4 bg-[#3087ff] hover:bg-[#3087ff] text-white hover:text-white font-black text-xs sm:text-sm uppercase tracking-wider rounded-none shadow-md transition-all cursor-pointer"
               >
                 Sign In
               </button>

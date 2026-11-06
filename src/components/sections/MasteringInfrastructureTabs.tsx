@@ -146,7 +146,7 @@ export function MasteringInfrastructureTabs() {
                 onClick={() => setActiveTab(idx)}
                 className={`flex-1 py-2.5 px-3.5 text-xs sm:text-sm font-bold uppercase tracking-wider transition-colors duration-150 whitespace-nowrap cursor-pointer ${isActive
                     ? "bg-[#3087ff] text-white"
-                    : "bg-white text-[#3087ff] hover:bg-[#3087ff] hover:text-[#3087ff]"
+                    : "bg-white text-[#3087ff] hover:bg-[#3087ff] hover:text-white"
                   }`}
               >
                 {sector.tabLabel}
@@ -161,7 +161,7 @@ export function MasteringInfrastructureTabs() {
           <div className="lg:col-span-7 border-2 border-[#3087ff] bg-white p-6 sm:p-7 flex flex-col justify-between">
             <div className="space-y-4">
               <div className="space-y-1.5">
-                <span className="text-xs font-mono font-bold text-[#3087ff] bg-[#3087ff] px-2.5 py-0.5 uppercase tracking-wider whitespace-nowrap inline-block">
+                <span className="text-xs font-mono font-bold text-white bg-[#3087ff] px-2.5 py-0.5 uppercase tracking-wider whitespace-nowrap inline-block">
                   {current.subhead}
                 </span>
                 <h3 className="text-xl sm:text-2xl font-black text-[#3087ff] leading-snug">
@@ -614,7 +614,7 @@ export function MasteringInfrastructureTabs() {
             <div className="pt-6 border-t border-[#3087ff] relative z-10">
               <a
                 href="#quote-builder"
-                className="w-full inline-flex items-center justify-center bg-white text-[#3087ff] hover:bg-[#3087ff] hover:text-[#3087ff] font-bold text-sm px-6 py-3 border-2 border-white transition-colors duration-150 whitespace-nowrap"
+                className="w-full inline-flex items-center justify-center bg-white text-[#3087ff] hover:bg-[#3087ff] hover:text-white font-bold text-sm px-6 py-3 border-2 border-white transition-colors duration-150 whitespace-nowrap"
               >
                 <span>Request Submittal for {current.tabLabel}</span>
                 <svg

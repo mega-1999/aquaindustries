@@ -744,8 +744,8 @@ Compliance: ${activeVariant.standards}
                   type="button"
                   onClick={handleAdd}
                   className={`flex-1 py-3 px-4 text-xs font-black uppercase tracking-wider rounded-none border-2 transition-all flex items-center justify-center gap-2 cursor-pointer shadow-md ${added
-                      ? "bg-[#3087ff] text-[#3087ff] border-[#3087ff]"
-                      : "bg-[#3087ff] hover:bg-[#3087ff] text-white hover:text-[#3087ff] border-[#3087ff]"
+                      ? "bg-[#3087ff] text-white border-[#3087ff]"
+                      : "bg-[#3087ff] hover:bg-[#3087ff] text-white hover:text-white border-[#3087ff]"
                     }`}
                 >
                   {added ? (
@@ -774,7 +774,7 @@ Compliance: ${activeVariant.standards}
                   type="button"
                   onClick={handleCopySpecs}
                   title="Copy engineering specifications"
-                  className="py-3 px-3 bg-[#3087ff]/20 hover:bg-[#3087ff] text-[#3087ff] hover:text-white border-2 border-[#3087ff] text-xs font-black uppercase transition-all flex items-center justify-center gap-1.5 cursor-pointer shadow-xs"
+                  className="py-3 px-3 bg-[#3087ff]/20 hover:bg-[#3087ff] text-white hover:text-white border-2 border-[#3087ff] text-xs font-black uppercase transition-all flex items-center justify-center gap-1.5 cursor-pointer shadow-xs"
                 >
                   {copied ? (
                     <>

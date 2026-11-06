@@ -206,7 +206,7 @@ export default function ProfilePage() {
                     </p>
                     <Link
                       href="/admin"
-                      className="inline-block py-2.5 px-5 bg-white hover:bg-[#3087ff] text-[#3087ff] font-black text-xs uppercase tracking-wider transition-colors shadow-md"
+                      className="inline-block py-2.5 px-5 bg-white hover:bg-[#3087ff] text-[#3087ff] hover:text-white font-black text-xs uppercase tracking-wider transition-colors shadow-md"
                     >
                       Open Approvals Desk &rsaquo;
                     </Link>
@@ -283,7 +283,7 @@ export default function ProfilePage() {
                     />
                     <button
                       type="submit"
-                      className="px-5 py-2.5 bg-[#3087ff] hover:bg-[#3087ff] text-white hover:text-[#3087ff] font-black text-xs uppercase tracking-wider transition-colors cursor-pointer"
+                      className="px-5 py-2.5 bg-[#3087ff] hover:bg-[#3087ff] text-white hover:text-white font-black text-xs uppercase tracking-wider transition-colors cursor-pointer"
                     >
                       Track Trailer
                     </button>

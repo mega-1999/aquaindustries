@@ -443,7 +443,7 @@ export const OurNewInnovations: React.FC<OurNewInnovationsProps> = ({
         <div className="mb-6 p-4 sm:p-5 bg-white/10 border-2 border-[#3087ff] backdrop-blur-md flex flex-col md:flex-row md:items-center justify-between gap-4">
           <div className="min-w-0">
             <div className="flex items-center gap-2 mb-1.5">
-              <span className="text-[10px] font-black uppercase tracking-wider bg-[#3087ff] text-[#3087ff] px-2 py-0.5">
+              <span className="text-[10px] font-black uppercase tracking-wider bg-[#3087ff] text-white px-2 py-0.5">
                 Innovation #{currentItem.number}
               </span>
               <span className="text-[11px] font-bold text-white/90 uppercase tracking-wide">
@@ -513,7 +513,7 @@ export const OurNewInnovations: React.FC<OurNewInnovationsProps> = ({
                     </span>
                   </div>
                   <div className="flex items-center gap-2">
-                    <span className="text-[10px] bg-[#3087ff] text-[#3087ff] font-black px-2 py-0.5 whitespace-nowrap shadow-xs">
+                    <span className="text-[10px] bg-[#3087ff] text-white font-black px-2 py-0.5 whitespace-nowrap shadow-xs">
                       {activeSpotData.badge}
                     </span>
                     <button
@@ -754,7 +754,7 @@ export const OurNewInnovations: React.FC<OurNewInnovationsProps> = ({
               <button
                 type="button"
                 onClick={() => handleAdd(currentItem)}
-                className="flex-1 px-5 py-3.5 bg-white hover:bg-[#3087ff] text-[#3087ff] font-bold text-xs sm:text-sm rounded-none shadow-md transition-all whitespace-nowrap text-center uppercase tracking-wide cursor-pointer flex items-center justify-center gap-2"
+                className="flex-1 px-5 py-3.5 bg-white hover:bg-[#3087ff] text-[#3087ff] hover:text-white font-bold text-xs sm:text-sm rounded-none shadow-md transition-all whitespace-nowrap text-center uppercase tracking-wide cursor-pointer flex items-center justify-center gap-2"
               >
                 {addedIds[currentItem.id] ? (
                   <>
@@ -774,7 +774,7 @@ export const OurNewInnovations: React.FC<OurNewInnovationsProps> = ({
                 onClick={() =>
                   onPreviewSubmittal(findCatalogProduct(currentItem))
                 }
-                className="flex-1 px-5 py-3.5 bg-[#3087ff] hover:bg-white text-[#3087ff] hover:text-[#3087ff] font-bold text-xs sm:text-sm rounded-none border-2 border-[#3087ff] transition-all whitespace-nowrap text-center inline-flex items-center justify-center gap-2 uppercase tracking-wide cursor-pointer"
+                className="flex-1 px-5 py-3.5 bg-[#3087ff] hover:bg-white text-white hover:text-[#3087ff] font-bold text-xs sm:text-sm rounded-none border-2 border-[#3087ff] transition-all whitespace-nowrap text-center inline-flex items-center justify-center gap-2 uppercase tracking-wide cursor-pointer"
               >
                 <FileCheck2 className="w-4 h-4 text-[#3087ff] group-hover:text-[#3087ff]" />
                 <span>Download Submittal PDF</span>

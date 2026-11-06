@@ -152,7 +152,7 @@ export const CommercialQuoteForm: React.FC<CommercialQuoteFormProps> = ({
                 <FileCheck2 className="w-5 h-5 text-[#3087ff] shrink-0" />
                 <span>Project Material Take-Off &amp; Sizing Specs</span>
               </div>
-              <span className="text-xs font-bold text-[#3087ff] bg-[#3087ff]/20 border border-[#3087ff] px-2.5 py-1 uppercase tracking-wider">
+              <span className="text-xs font-bold text-white bg-[#3087ff]/20 border border-[#3087ff] px-2.5 py-1 uppercase tracking-wider">
                 Direct Foundry Pricing
               </span>
             </div>
@@ -180,7 +180,7 @@ export const CommercialQuoteForm: React.FC<CommercialQuoteFormProps> = ({
                 <button
                   type="button"
                   onClick={() => setIsSubmitted(false)}
-                  className="px-6 py-2.5 bg-[#3087ff] hover:bg-[#3087ff] hover:text-[#3087ff] text-white text-xs font-bold rounded-none border-2 border-[#3087ff] transition-colors cursor-pointer"
+                  className="px-6 py-2.5 bg-[#3087ff] hover:bg-[#3087ff] hover:text-white text-white text-xs font-bold rounded-none border-2 border-[#3087ff] transition-colors cursor-pointer"
                 >
                   Submit Another Quote Request
                 </button>
@@ -417,7 +417,7 @@ export const CommercialQuoteForm: React.FC<CommercialQuoteFormProps> = ({
                 <div className="pt-4 border-t-2 border-[#3087ff]/30 mt-auto">
                   <button
                     type="submit"
-                    className="w-full py-4 px-8 bg-[#3087ff] hover:bg-[#3087ff] hover:text-[#3087ff] text-white font-extrabold rounded-none text-base border-2 border-[#3087ff] shadow-lg transition-all transform hover:-translate-y-0.5 active:translate-y-0 whitespace-nowrap flex items-center justify-center gap-2 cursor-pointer"
+                    className="w-full py-4 px-8 bg-[#3087ff] hover:bg-[#3087ff] hover:text-white text-white font-extrabold rounded-none text-base border-2 border-[#3087ff] shadow-lg transition-all transform hover:-translate-y-0.5 active:translate-y-0 whitespace-nowrap flex items-center justify-center gap-2 cursor-pointer"
                   >
                     <Send className="w-5 h-5 text-white group-hover:text-[#3087ff] shrink-0" />
                     <span className="whitespace-nowrap">
@@ -571,7 +571,7 @@ export const CommercialQuoteForm: React.FC<CommercialQuoteFormProps> = ({
                 </p>
                 <a
                   href="tel:+15162521111"
-                  className="mt-1.5 w-full py-2.5 px-3 bg-white hover:bg-[#3087ff] text-[#3087ff] font-black text-xs sm:text-sm uppercase tracking-wider border-2 border-white transition-all text-center flex items-center justify-center gap-2 shadow-xs cursor-pointer break-words"
+                  className="mt-1.5 w-full py-2.5 px-3 bg-white hover:bg-[#3087ff] text-[#3087ff] hover:text-white font-black text-xs sm:text-sm uppercase tracking-wider border-2 border-white transition-all text-center flex items-center justify-center gap-2 shadow-xs cursor-pointer break-words"
                 >
                   <Phone className="w-3.5 h-3.5 text-[#3087ff] shrink-0" />
                   <span>Call: +1 (516) 252-1111</span>

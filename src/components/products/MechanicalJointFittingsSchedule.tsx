@@ -1161,7 +1161,7 @@ export const MechanicalJointFittingsSchedule: React.FC<
             <button
               type="button"
               onClick={() => setSpecDrawerOpen((prev) => !prev)}
-              className="inline-flex items-center gap-2 px-5 py-2.5 bg-[#3087ff] hover:bg-[#3087ff] text-white hover:text-[#3087ff] text-xs font-black uppercase tracking-wider rounded-none border-2 border-[#3087ff] transition-all shadow-md cursor-pointer"
+              className="inline-flex items-center gap-2 px-5 py-2.5 bg-[#3087ff] hover:bg-[#3087ff] text-white hover:text-white text-xs font-black uppercase tracking-wider rounded-none border-2 border-[#3087ff] transition-all shadow-md cursor-pointer"
             >
               <FileCheck2 className="w-4 h-4 shrink-0" />
               <span>
@@ -1222,7 +1222,7 @@ export const MechanicalJointFittingsSchedule: React.FC<
                 <button
                   type="button"
                   onClick={() => setSpecDrawerOpen(false)}
-                  className="px-3.5 py-2 bg-[#3087ff] hover:bg-[#3087ff] text-white hover:text-[#3087ff] border-2 border-[#3087ff] text-xs font-black uppercase tracking-wider rounded-none transition-all cursor-pointer shadow-xs"
+                  className="px-3.5 py-2 bg-[#3087ff] hover:bg-[#3087ff] text-white hover:text-white border-2 border-[#3087ff] text-xs font-black uppercase tracking-wider rounded-none transition-all cursor-pointer shadow-xs"
                 >
                   Close Sheet &times;
                 </button>
@@ -1345,13 +1345,13 @@ export const MechanicalJointFittingsSchedule: React.FC<
                         </p>
 
                         <div className="flex flex-wrap gap-1 mb-3">
-                          <span className="inline-flex items-center gap-1 text-[9px] font-bold text-[#3087ff] bg-[#3087ff]/15 border border-[#3087ff] px-1.5 py-0.5 rounded-none max-w-full">
+                          <span className="inline-flex items-center gap-1 text-[9px] font-bold text-white bg-[#3087ff]/15 border border-[#3087ff] px-1.5 py-0.5 rounded-none max-w-full">
                             <ShieldCheck className="w-2.5 h-2.5 text-[#3087ff] shrink-0" />
                             <span className="truncate">
                               {fitting.pressureRating.split(" ")[0]} PSI
                             </span>
                           </span>
-                          <span className="inline-flex items-center gap-1 text-[9px] font-bold text-[#3087ff] bg-[#3087ff]/15 border border-[#3087ff] px-1.5 py-0.5 rounded-none max-w-full">
+                          <span className="inline-flex items-center gap-1 text-[9px] font-bold text-white bg-[#3087ff]/15 border border-[#3087ff] px-1.5 py-0.5 rounded-none max-w-full">
                             <CheckCircle2 className="w-2.5 h-2.5 text-[#3087ff] shrink-0" />
                             <span className="truncate">
                               {fitting.standards.split(" ")[0]}
@@ -1366,8 +1366,8 @@ export const MechanicalJointFittingsSchedule: React.FC<
                           type="button"
                           onClick={() => handleAddFitting(fitting)}
                           className={`flex-1 min-w-0 py-2.5 px-3 text-xs font-black uppercase tracking-wider rounded-none transition-all flex items-center justify-center gap-1.5 cursor-pointer border-2 ${isAdded
-                              ? "bg-[#3087ff] text-[#3087ff] border-[#3087ff]"
-                              : "bg-[#3087ff] hover:bg-[#3087ff] text-white hover:text-[#3087ff] border-[#3087ff] shadow-sm"
+                              ? "bg-[#3087ff] text-white border-[#3087ff]"
+                              : "bg-[#3087ff] hover:bg-[#3087ff] text-white hover:text-white border-[#3087ff] shadow-sm"
                             }`}
                         >
                           {isAdded ? (
@@ -1409,7 +1409,7 @@ export const MechanicalJointFittingsSchedule: React.FC<
                 <button
                   type="button"
                   onClick={() => setSearchQuery("")}
-                  className="mt-4 px-4 py-2 bg-[#3087ff] text-white text-xs font-bold uppercase rounded-none border-2 border-[#3087ff] hover:bg-[#3087ff] hover:text-[#3087ff] cursor-pointer"
+                  className="mt-4 px-4 py-2 bg-[#3087ff] text-white text-xs font-bold uppercase rounded-none border-2 border-[#3087ff] hover:bg-[#3087ff] hover:text-white cursor-pointer"
                 >
                   Clear Search
                 </button>
@@ -1434,7 +1434,7 @@ export const MechanicalJointFittingsSchedule: React.FC<
                 <button
                   type="button"
                   onClick={() => setSpecDrawerOpen((prev) => !prev)}
-                  className="inline-flex items-center gap-1.5 px-3 py-2 bg-[#3087ff]/15 hover:bg-[#3087ff] text-[#3087ff] hover:text-white border-2 border-[#3087ff] text-xs font-black uppercase tracking-wider rounded-none transition-all shadow-xs cursor-pointer"
+                  className="inline-flex items-center gap-1.5 px-3 py-2 bg-[#3087ff]/15 hover:bg-[#3087ff] text-white hover:text-white border-2 border-[#3087ff] text-xs font-black uppercase tracking-wider rounded-none transition-all shadow-xs cursor-pointer"
                 >
                   <FileCheck2 className="w-3.5 h-3.5 shrink-0" />
                   <span>
@@ -1593,8 +1593,8 @@ export const MechanicalJointFittingsSchedule: React.FC<
                         type="button"
                         onClick={() => handleAddFitting(activeSubvariant)}
                         className={`w-full sm:flex-1 py-3 px-4 text-xs sm:text-sm font-black uppercase tracking-wider rounded-none transition-all flex items-center justify-center gap-2 cursor-pointer border-2 ${addedIds[activeSubvariant.id]
-                            ? "bg-[#3087ff] text-[#3087ff] border-[#3087ff]"
-                            : "bg-[#3087ff] hover:bg-[#3087ff] text-white hover:text-[#3087ff] border-[#3087ff] shadow-md"
+                            ? "bg-[#3087ff] text-white border-[#3087ff]"
+                            : "bg-[#3087ff] hover:bg-[#3087ff] text-white hover:text-white border-[#3087ff] shadow-md"
                           }`}
                       >
                         {addedIds[activeSubvariant.id] ? (
@@ -1706,7 +1706,7 @@ export const MechanicalJointFittingsSchedule: React.FC<
                     <button
                       type="button"
                       onClick={() => handleOpenFamily(family.id)}
-                      className="w-full py-3 px-4 bg-[#3087ff] hover:bg-[#3087ff] text-white hover:text-[#3087ff] text-xs sm:text-sm font-black uppercase tracking-wider rounded-none border-2 border-[#3087ff] transition-all flex items-center justify-center gap-2 cursor-pointer shadow-md mt-auto"
+                      className="w-full py-3 px-4 bg-[#3087ff] hover:bg-[#3087ff] text-white hover:text-white text-xs sm:text-sm font-black uppercase tracking-wider rounded-none border-2 border-[#3087ff] transition-all flex items-center justify-center gap-2 cursor-pointer shadow-md mt-auto"
                     >
                       <span>Explore {family.shortName}</span>
                       <ArrowRight className="w-4 h-4 shrink-0" />

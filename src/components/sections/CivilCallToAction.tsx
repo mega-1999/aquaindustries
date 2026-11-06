@@ -143,7 +143,7 @@ export function CivilCallToAction({
                 </svg>
 
                 {/* Sky blue dimension callout pill */}
-                <div className="absolute bottom-2 right-2 bg-[#3087ff] border border-[#3087ff] px-2.5 py-1 text-xs font-mono text-[#3087ff] font-bold whitespace-nowrap">
+                <div className="absolute bottom-2 right-2 bg-[#3087ff] border border-white px-2.5 py-1 text-xs font-mono text-white font-bold whitespace-nowrap">
                   GRADE 65-45-12 DUCTILE
                 </div>
               </div>
@@ -151,7 +151,7 @@ export function CivilCallToAction({
               {/* Technical Specifications Matrix */}
               <div className="grid grid-cols-3 gap-2.5 pt-4 border-t border-[#3087ff] text-center">
                 <div className="bg-[#3087ff] p-2.5">
-                  <div className="text-xs font-mono text-[#3087ff] uppercase tracking-wider font-bold whitespace-nowrap">
+                  <div className="text-xs font-mono text-white/80 uppercase tracking-wider font-bold whitespace-nowrap">
                     AWWA Standard
                   </div>
                   <div className="text-sm font-extrabold text-white whitespace-nowrap mt-0.5">
@@ -159,7 +159,7 @@ export function CivilCallToAction({
                   </div>
                 </div>
                 <div className="bg-[#3087ff] p-2.5">
-                  <div className="text-xs font-mono text-[#3087ff] uppercase tracking-wider font-bold whitespace-nowrap">
+                  <div className="text-xs font-mono text-white/80 uppercase tracking-wider font-bold whitespace-nowrap">
                     Lining
                   </div>
                   <div className="text-sm font-extrabold text-white whitespace-nowrap mt-0.5">
@@ -167,7 +167,7 @@ export function CivilCallToAction({
                   </div>
                 </div>
                 <div className="bg-[#3087ff] p-2.5">
-                  <div className="text-xs font-mono text-[#3087ff] uppercase tracking-wider font-bold whitespace-nowrap">
+                  <div className="text-xs font-mono text-white/80 uppercase tracking-wider font-bold whitespace-nowrap">
                     Hydro Test
                   </div>
                   <div className="text-sm font-extrabold text-white whitespace-nowrap mt-0.5">
@@ -213,7 +213,7 @@ export function CivilCallToAction({
               <button
                 type="button"
                 onClick={scrollToMatrix}
-                className="inline-flex items-center justify-center bg-white text-[#3087ff] hover:bg-[#3087ff] hover:text-[#3087ff] font-bold text-sm sm:text-base px-6 py-3.5 border-2 border-white transition-colors duration-150 whitespace-nowrap cursor-pointer shadow-sm"
+                className="inline-flex items-center justify-center bg-white text-[#3087ff] hover:bg-[#3087ff] hover:text-white font-bold text-sm sm:text-base px-6 py-3.5 border-2 border-white transition-colors duration-150 whitespace-nowrap cursor-pointer shadow-sm"
               >
                 <span>Browse Fittings &amp; Castings</span>
                 <svg

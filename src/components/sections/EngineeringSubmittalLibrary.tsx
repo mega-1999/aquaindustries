@@ -300,7 +300,7 @@ export function EngineeringSubmittalLibrary({
                 <button
                   type="button"
                   onClick={() => handleDownload(doc)}
-                  className="w-full inline-flex items-center justify-center bg-[#3087ff] text-white hover:bg-[#3087ff] hover:text-[#3087ff] font-bold text-xs sm:text-sm uppercase tracking-wider py-2.5 px-3.5 border-2 border-[#3087ff] transition-colors duration-150 whitespace-nowrap cursor-pointer shadow-xs"
+                  className="w-full inline-flex items-center justify-center bg-[#3087ff] text-white hover:bg-[#3087ff] hover:text-white font-bold text-xs sm:text-sm uppercase tracking-wider py-2.5 px-3.5 border-2 border-[#3087ff] transition-colors duration-150 whitespace-nowrap cursor-pointer shadow-xs"
                 >
                   <span>Download Spec Sheet ({doc.fileType})</span>
                   <svg
@@ -336,7 +336,7 @@ export function EngineeringSubmittalLibrary({
 
           <a
             href="#quote-builder"
-            className="inline-flex items-center justify-center bg-white text-[#3087ff] hover:bg-[#3087ff] hover:text-[#3087ff] font-extrabold text-sm sm:text-base uppercase tracking-wider py-4 px-8 border-2 border-white transition-colors duration-150 whitespace-nowrap shadow-md"
+            className="inline-flex items-center justify-center bg-white text-[#3087ff] hover:bg-[#3087ff] hover:text-white font-extrabold text-sm sm:text-base uppercase tracking-wider py-4 px-8 border-2 border-white transition-colors duration-150 whitespace-nowrap shadow-md"
           >
             <span>Request Engineer Submittal Binder</span>
           </a>
