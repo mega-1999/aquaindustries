@@ -98,10 +98,10 @@ export const MainNavbar: React.FC<MainNavbarProps> = ({
             </button>
           </div>
 
-          {/* Desktop Left Navigation Links (>= xl) */}
+          {/* 1. ALL MENU ON LEFT (Desktop >= xl) */}
           <nav
-            aria-label="Main Navigation - Left"
-            className="hidden xl:flex items-center gap-1 2xl:gap-1.5 text-xs 2xl:text-sm font-bold text-[#0082fc]"
+            aria-label="Main Navigation"
+            className="hidden xl:flex items-center gap-0.5 2xl:gap-1.5 text-xs 2xl:text-sm font-bold text-[#0082fc]"
           >
             {/* 1. Waterworks Fittings Mega Menu */}
             <div
@@ -516,10 +516,37 @@ export const MainNavbar: React.FC<MainNavbarProps> = ({
                 </div>
               )}
             </div>
+
+            {/* 5. Yard Locations & Freight */}
+            <button
+              type="button"
+              onClick={onOpenYardModal}
+              className="px-2 2xl:px-3 py-2 rounded-none text-[#0082fc] hover:bg-[#5fd4fd]/20 transition-colors whitespace-nowrap font-bold inline-flex items-center gap-1 cursor-pointer"
+            >
+              <Truck className="w-3.5 h-3.5 text-[#0082fc] shrink-0" />
+              <span>Yards</span>
+            </button>
+
+            {/* 6. Projects & Case Studies */}
+            <a
+              href="/projects"
+              className="px-2 2xl:px-3 py-2 rounded-none text-[#0082fc] hover:bg-[#5fd4fd]/20 transition-colors whitespace-nowrap font-bold"
+            >
+              Projects
+            </a>
+
+            {/* 7. About Aqua Industries (Foundry) */}
+            <a
+              href="/#foundry-walkthrough"
+              onClick={() => handleNavClick("/#foundry-walkthrough")}
+              className="px-2 2xl:px-3 py-2 rounded-none text-[#0082fc] hover:bg-[#5fd4fd]/20 transition-colors whitespace-nowrap font-bold"
+            >
+              Foundry
+            </a>
           </nav>
 
-          {/* EXACT HORIZONTAL CENTER: Brand Logo (Aqua Industries - Centered & Large) */}
-          <div className="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 flex items-center justify-center z-20 pointer-events-auto">
+          {/* 2. THEN LOGO: Large Aqua Industries Brand Logo */}
+          <div className="flex items-center justify-center shrink-0 px-2 sm:px-4">
             <a
               href="/"
               className="flex items-center justify-center shrink-0 group focus:outline-none focus-visible:ring-2 focus-visible:ring-[#0082fc] rounded-none p-1"
@@ -533,34 +560,8 @@ export const MainNavbar: React.FC<MainNavbarProps> = ({
             </a>
           </div>
 
-          {/* Desktop Right Header Actions (>= xl) */}
-          <div className="hidden xl:flex items-center gap-1.5 2xl:gap-2 shrink-0">
-            {/* 5. Yard Locations & Freight */}
-            <button
-              type="button"
-              onClick={onOpenYardModal}
-              className="px-2.5 2xl:px-3 py-2 rounded-none text-[#0082fc] hover:bg-[#5fd4fd]/20 transition-colors whitespace-nowrap font-bold inline-flex items-center gap-1.5 cursor-pointer"
-            >
-              <Truck className="w-4 h-4 text-[#0082fc] shrink-0" />
-              <span>Yards</span>
-            </button>
-
-            {/* 6. Projects & Case Studies (Soleno Projects Cloned Page) */}
-            <a
-              href="/projects"
-              className="px-2.5 2xl:px-3 py-2 rounded-none text-[#0082fc] hover:bg-[#5fd4fd]/20 transition-colors whitespace-nowrap font-bold"
-            >
-              Projects
-            </a>
-
-            {/* 7. About Aqua Industries */}
-            <a
-              href="/#foundry-walkthrough"
-              onClick={() => handleNavClick("/#foundry-walkthrough")}
-              className="px-2.5 2xl:px-3 py-2 rounded-none text-[#0082fc] hover:bg-[#5fd4fd]/20 transition-colors whitespace-nowrap font-bold"
-            >
-              Foundry
-            </a>
+          {/* 3. THEN OTHER THINGS: Desktop Right Header Actions (>= xl) */}
+          <div className="hidden xl:flex items-center gap-2 shrink-0">
 
             {currentUser ? (
               /* User Session Menu */
