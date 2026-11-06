@@ -80,28 +80,27 @@ export const MainNavbar: React.FC<MainNavbarProps> = ({
     <header
       className={`sticky top-0 z-50 w-full transition-all duration-200 ${
         isScrolled
-          ? "bg-white shadow-md border-b-2 border-[#5fd4fd] py-2.5"
-          : "bg-white border-b-2 border-[#0082fc]/20 py-3"
+          ? "bg-white shadow-md border-b-2 border-[#5fd4fd] py-2"
+          : "bg-white border-b-2 border-[#0082fc]/20 py-2.5 sm:py-3"
       }`}
     >
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="flex items-center justify-between gap-2 sm:gap-4">
-          {/* Brand Logo: Aqua Industries (Centered by itself, Large, No text) */}
-          <a
-            href="/"
-            className="flex items-center justify-center shrink-0 group focus:outline-none focus-visible:ring-2 focus-visible:ring-[#0082fc] rounded-none p-1"
-            title="Aqua Industries"
-          >
-            <img
-              src="/images/AI_Waterdrop.png"
-              alt="Aqua Industries"
-              className="h-11 sm:h-13 lg:h-16 w-auto object-contain group-hover:scale-105 transition-transform duration-200 shrink-0"
-            />
-          </a>
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative">
+        <div className="flex items-center justify-between gap-2 sm:gap-4 min-h-[3.75rem] sm:min-h-[4.25rem] lg:min-h-[5rem]">
+          {/* Mobile Left: Menu Hamburger (< xl) */}
+          <div className="flex items-center xl:hidden shrink-0">
+            <button
+              type="button"
+              onClick={() => setMobileMenuOpen(true)}
+              className="p-2 text-[#0082fc] hover:bg-[#5fd4fd]/20 rounded-none border-2 border-[#0082fc] focus:outline-none focus:ring-2 focus:ring-[#5fd4fd] cursor-pointer"
+              aria-label="Open Navigation Menu"
+            >
+              <Menu className="w-6 h-6" />
+            </button>
+          </div>
 
-          {/* Desktop Navigation Links */}
+          {/* Desktop Left Navigation Links (>= xl) */}
           <nav
-            aria-label="Main Navigation"
+            aria-label="Main Navigation - Left"
             className="hidden xl:flex items-center gap-1 2xl:gap-1.5 text-xs 2xl:text-sm font-bold text-[#0082fc]"
           >
             {/* 1. Waterworks Fittings Mega Menu */}
@@ -517,7 +516,25 @@ export const MainNavbar: React.FC<MainNavbarProps> = ({
                 </div>
               )}
             </div>
+          </nav>
 
+          {/* EXACT HORIZONTAL CENTER: Brand Logo (Aqua Industries - Centered & Large) */}
+          <div className="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 flex items-center justify-center z-20 pointer-events-auto">
+            <a
+              href="/"
+              className="flex items-center justify-center shrink-0 group focus:outline-none focus-visible:ring-2 focus-visible:ring-[#0082fc] rounded-none p-1"
+              title="Aqua Industries"
+            >
+              <img
+                src="/images/AI_Waterdrop.png"
+                alt="Aqua Industries"
+                className="h-14 sm:h-16 lg:h-20 w-auto object-contain group-hover:scale-105 transition-transform duration-200 shrink-0 filter drop-shadow-xs"
+              />
+            </a>
+          </div>
+
+          {/* Desktop Right Header Actions (>= xl) */}
+          <div className="hidden xl:flex items-center gap-1.5 2xl:gap-2 shrink-0">
             {/* 5. Yard Locations & Freight */}
             <button
               type="button"
@@ -544,10 +561,7 @@ export const MainNavbar: React.FC<MainNavbarProps> = ({
             >
               Foundry
             </a>
-          </nav>
 
-          {/* Desktop Right Header Actions */}
-          <div className="hidden xl:flex items-center gap-2 shrink-0">
             {currentUser ? (
               /* User Session Menu */
               <div className="flex items-center gap-1.5">
@@ -675,15 +689,6 @@ export const MainNavbar: React.FC<MainNavbarProps> = ({
             >
               <span>Quote</span>
             </a>
-
-            <button
-              type="button"
-              onClick={() => setMobileMenuOpen(true)}
-              className="p-2 text-[#0082fc] hover:bg-[#5fd4fd]/20 rounded-none border-2 border-[#0082fc] focus:outline-none focus:ring-2 focus:ring-[#5fd4fd]"
-              aria-label="Open Navigation Menu"
-            >
-              <Menu className="w-6 h-6" />
-            </button>
           </div>
         </div>
       </div>
