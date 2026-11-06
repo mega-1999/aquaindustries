@@ -33,12 +33,12 @@ export interface FittingItemData {
   name: string;
   catNumber: string;
   category:
-    | "mj-mj-bends"
-    | "mj-pe-bends"
-    | "mj-fe-bends"
-    | "tees-crosses"
-    | "reducers-sleeves"
-    | "swivel-hydrant";
+  | "mj-mj-bends"
+  | "mj-pe-bends"
+  | "mj-fe-bends"
+  | "tees-crosses"
+  | "reducers-sleeves"
+  | "swivel-hydrant";
   categoryLabel: string;
   sizeRange: string;
   pressureRating: string;
@@ -54,12 +54,12 @@ export interface FittingItemData {
 export interface FittingFamily {
   id: string;
   categoryKey:
-    | "mj-mj-bends"
-    | "mj-pe-bends"
-    | "mj-fe-bends"
-    | "tees-crosses"
-    | "reducers-sleeves"
-    | "swivel-hydrant";
+  | "mj-mj-bends"
+  | "mj-pe-bends"
+  | "mj-fe-bends"
+  | "tees-crosses"
+  | "reducers-sleeves"
+  | "swivel-hydrant";
   title: string;
   subtitle: string;
   shortName: string;
@@ -818,7 +818,7 @@ const FittingCardImage: React.FC<{ fitting: FittingItemData }> = ({
   const src = fitting.imageUrl || `/images/fittings/${fitting.id}.png`;
 
   return (
-    <div className="relative w-full h-32 sm:h-36 flex items-center justify-center p-3 overflow-hidden my-1 bg-gradient-to-b from-[#5FD4FD]/10 to-transparent border border-[#5FD4FD]/25">
+    <div className="relative w-full h-32 sm:h-36 flex items-center justify-center p-3 overflow-hidden my-1 bg-gradient-to-b from-[#0565d6]/10 to-transparent border border-[#0565d6]/25">
       {!imgError ? (
         <img
           src={src}
@@ -855,7 +855,7 @@ const FittingCardImage: React.FC<{ fitting: FittingItemData }> = ({
       )}
 
       {/* Stock Status Badge */}
-      <span className="absolute bottom-1.5 right-1.5 text-[9px] font-bold bg-[#5FD4FD]/20 text-[#0082FC] px-1.5 py-0.2 border border-[#5FD4FD]">
+      <span className="absolute bottom-1.5 right-1.5 text-[9px] font-bold bg-[#0565d6]/20 text-[#0082FC] px-1.5 py-0.2 border border-[#0565d6]">
         Foundry Stock
       </span>
     </div>
@@ -1134,12 +1134,12 @@ export const MechanicalJointFittingsSchedule: React.FC<
     <section
       id="c153-fittings-schedule"
       aria-label="2 to 64 Inch Ductile Iron Mechanical Joint Compact Fittings Schedule"
-      className="py-16 sm:py-24 bg-white text-[#0082FC] border-t-4 border-[#5FD4FD] border-b-4 border-[#5FD4FD] relative"
+      className="py-16 sm:py-24 bg-white text-[#0082FC] border-t-4 border-[#0565d6] border-b-4 border-[#0565d6] relative"
     >
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         {/* Section Header */}
         <div className="text-center max-w-3xl mx-auto mb-10">
-          <div className="inline-flex items-center gap-2 px-3 py-1 bg-white text-[#0082FC] text-xs font-bold uppercase tracking-wider rounded-none mb-3 shadow-sm border-2 border-[#5FD4FD]">
+          <div className="inline-flex items-center gap-2 px-3 py-1 bg-white text-[#0082FC] text-xs font-bold uppercase tracking-wider rounded-none mb-3 shadow-sm border-2 border-[#0565d6]">
             <Compass className="w-3.5 h-3.5 text-[#0082FC] shrink-0" />
             <span>ANSI/AWWA C153 &bull; ANSI/AWWA C111 &bull; ASTM A536</span>
           </div>
@@ -1161,7 +1161,7 @@ export const MechanicalJointFittingsSchedule: React.FC<
             <button
               type="button"
               onClick={() => setSpecDrawerOpen((prev) => !prev)}
-              className="inline-flex items-center gap-2 px-5 py-2.5 bg-[#0082FC] hover:bg-[#5FD4FD] text-white hover:text-[#0082FC] text-xs font-black uppercase tracking-wider rounded-none border-2 border-[#0082FC] transition-all shadow-md cursor-pointer"
+              className="inline-flex items-center gap-2 px-5 py-2.5 bg-[#0082FC] hover:bg-[#0565d6] text-white hover:text-[#0082FC] text-xs font-black uppercase tracking-wider rounded-none border-2 border-[#0082FC] transition-all shadow-md cursor-pointer"
             >
               <FileCheck2 className="w-4 h-4 shrink-0" />
               <span>
@@ -1187,7 +1187,7 @@ export const MechanicalJointFittingsSchedule: React.FC<
             {/* Header of the Blueprint Sheet */}
             <div className="flex flex-col md:flex-row md:items-center justify-between gap-4 border-b-2 border-[#0082FC] pb-5 mb-6">
               <div>
-                <div className="inline-flex items-center gap-1.5 px-2.5 py-0.5 bg-[#5FD4FD]/20 border border-[#0082FC] text-[10px] font-black uppercase tracking-wider text-[#0082FC] mb-2">
+                <div className="inline-flex items-center gap-1.5 px-2.5 py-0.5 bg-[#0565d6]/20 border border-[#0082FC] text-[10px] font-black uppercase tracking-wider text-[#0082FC] mb-2">
                   <FileCheck2 className="w-3.5 h-3.5 text-[#0082FC] shrink-0" />
                   <span>Official Foundry Catalog Standard Sheet</span>
                 </div>
@@ -1222,7 +1222,7 @@ export const MechanicalJointFittingsSchedule: React.FC<
                 <button
                   type="button"
                   onClick={() => setSpecDrawerOpen(false)}
-                  className="px-3.5 py-2 bg-[#0082FC] hover:bg-[#5FD4FD] text-white hover:text-[#0082FC] border-2 border-[#0082FC] text-xs font-black uppercase tracking-wider rounded-none transition-all cursor-pointer shadow-xs"
+                  className="px-3.5 py-2 bg-[#0082FC] hover:bg-[#0565d6] text-white hover:text-[#0082FC] border-2 border-[#0082FC] text-xs font-black uppercase tracking-wider rounded-none transition-all cursor-pointer shadow-xs"
                 >
                   Close Sheet &times;
                 </button>
@@ -1234,7 +1234,7 @@ export const MechanicalJointFittingsSchedule: React.FC<
               {GENERAL_SPECIFICATIONS_DATA.map((item) => (
                 <div
                   key={item.id}
-                  className="p-3.5 sm:p-4 bg-white hover:bg-[#5FD4FD]/10 border-2 border-[#5FD4FD] transition-colors flex flex-col justify-between"
+                  className="p-3.5 sm:p-4 bg-white hover:bg-[#0565d6]/10 border-2 border-[#0565d6] transition-colors flex flex-col justify-between"
                 >
                   <div>
                     <div className="flex items-center justify-between gap-2 mb-1.5 border-b border-[#0082FC]/15 pb-1.5">
@@ -1256,7 +1256,7 @@ export const MechanicalJointFittingsSchedule: React.FC<
             </div>
 
             {/* Footer Notes & Installation Guidance */}
-            <div className="mt-6 pt-4 border-t-2 border-[#5FD4FD] flex flex-col sm:flex-row items-center justify-between gap-3 text-[11px] font-bold text-[#0082FC]/85">
+            <div className="mt-6 pt-4 border-t-2 border-[#0565d6] flex flex-col sm:flex-row items-center justify-between gap-3 text-[11px] font-bold text-[#0082FC]/85">
               <span>
                 Standard Compliance: ANSI/AWWA C153 &bull; ANSI/AWWA C111 &bull;
                 ANSI/AWWA C104 &bull; ANSI/AWWA C115 &bull; ASTM A536
@@ -1277,7 +1277,7 @@ export const MechanicalJointFittingsSchedule: React.FC<
               placeholder="Search all fittings (e.g. 45 bend, 90, Cat. 1280, eccentric, swivel ell)..."
               value={searchQuery}
               onChange={(e) => setSearchQuery(e.target.value)}
-              className="w-full bg-white border-2 border-[#5FD4FD] text-[#0082FC] rounded-none pl-10 pr-4 py-2.5 text-xs sm:text-sm font-bold focus:border-[#0082FC] focus:outline-none placeholder-[#0082FC]/40"
+              className="w-full bg-white border-2 border-[#0565d6] text-[#0082FC] rounded-none pl-10 pr-4 py-2.5 text-xs sm:text-sm font-bold focus:border-[#0082FC] focus:outline-none placeholder-[#0082FC]/40"
             />
             {searchQuery && (
               <button
@@ -1294,7 +1294,7 @@ export const MechanicalJointFittingsSchedule: React.FC<
         {/* VIEW 1: SEARCH RESULTS (IF USER TYPED IN SEARCH BOX) */}
         {searchQuery ? (
           <div>
-            <div className="mb-6 flex items-center justify-between text-xs font-bold text-[#0082FC] border-b-2 border-[#5FD4FD]/30 pb-2">
+            <div className="mb-6 flex items-center justify-between text-xs font-bold text-[#0082FC] border-b-2 border-[#0565d6]/30 pb-2">
               <span>
                 Search Results for &quot;<strong>{searchQuery}</strong>&quot; (
                 {searchResults.length} matches)
@@ -1315,7 +1315,7 @@ export const MechanicalJointFittingsSchedule: React.FC<
                   return (
                     <div
                       key={fitting.id}
-                      className="bg-white border-4 border-[#5FD4FD] rounded-none p-4 sm:p-5 flex flex-col justify-between shadow-lg hover:border-[#0082FC] transition-all duration-300 group hover:-translate-y-1 relative text-[#0082FC] h-full min-w-0 overflow-hidden"
+                      className="bg-white border-4 border-[#0565d6] rounded-none p-4 sm:p-5 flex flex-col justify-between shadow-lg hover:border-[#0082FC] transition-all duration-300 group hover:-translate-y-1 relative text-[#0082FC] h-full min-w-0 overflow-hidden"
                     >
                       <div>
                         {/* Top Bar */}
@@ -1345,13 +1345,13 @@ export const MechanicalJointFittingsSchedule: React.FC<
                         </p>
 
                         <div className="flex flex-wrap gap-1 mb-3">
-                          <span className="inline-flex items-center gap-1 text-[9px] font-bold text-[#0082FC] bg-[#5FD4FD]/15 border border-[#5FD4FD] px-1.5 py-0.5 rounded-none max-w-full">
+                          <span className="inline-flex items-center gap-1 text-[9px] font-bold text-[#0082FC] bg-[#0565d6]/15 border border-[#0565d6] px-1.5 py-0.5 rounded-none max-w-full">
                             <ShieldCheck className="w-2.5 h-2.5 text-[#0082FC] shrink-0" />
                             <span className="truncate">
                               {fitting.pressureRating.split(" ")[0]} PSI
                             </span>
                           </span>
-                          <span className="inline-flex items-center gap-1 text-[9px] font-bold text-[#0082FC] bg-[#5FD4FD]/15 border border-[#5FD4FD] px-1.5 py-0.5 rounded-none max-w-full">
+                          <span className="inline-flex items-center gap-1 text-[9px] font-bold text-[#0082FC] bg-[#0565d6]/15 border border-[#0565d6] px-1.5 py-0.5 rounded-none max-w-full">
                             <CheckCircle2 className="w-2.5 h-2.5 text-[#0082FC] shrink-0" />
                             <span className="truncate">
                               {fitting.standards.split(" ")[0]}
@@ -1365,11 +1365,10 @@ export const MechanicalJointFittingsSchedule: React.FC<
                         <button
                           type="button"
                           onClick={() => handleAddFitting(fitting)}
-                          className={`flex-1 min-w-0 py-2.5 px-3 text-xs font-black uppercase tracking-wider rounded-none transition-all flex items-center justify-center gap-1.5 cursor-pointer border-2 ${
-                            isAdded
-                              ? "bg-[#5FD4FD] text-[#0082FC] border-[#0082FC]"
-                              : "bg-[#0082FC] hover:bg-[#5FD4FD] text-white hover:text-[#0082FC] border-[#0082FC] shadow-sm"
-                          }`}
+                          className={`flex-1 min-w-0 py-2.5 px-3 text-xs font-black uppercase tracking-wider rounded-none transition-all flex items-center justify-center gap-1.5 cursor-pointer border-2 ${isAdded
+                              ? "bg-[#0565d6] text-[#0082FC] border-[#0082FC]"
+                              : "bg-[#0082FC] hover:bg-[#0565d6] text-white hover:text-[#0082FC] border-[#0082FC] shadow-sm"
+                            }`}
                         >
                           {isAdded ? (
                             <>
@@ -1398,8 +1397,8 @@ export const MechanicalJointFittingsSchedule: React.FC<
                 })}
               </div>
             ) : (
-              <div className="py-16 text-center bg-white border-2 border-dashed border-[#5FD4FD] p-8 max-w-lg mx-auto">
-                <Compass className="w-10 h-10 text-[#5FD4FD] mx-auto mb-3" />
+              <div className="py-16 text-center bg-white border-2 border-dashed border-[#0565d6] p-8 max-w-lg mx-auto">
+                <Compass className="w-10 h-10 text-[#0565d6] mx-auto mb-3" />
                 <h4 className="text-base font-bold text-[#0082FC]">
                   No fittings found matching &quot;{searchQuery}&quot;
                 </h4>
@@ -1410,7 +1409,7 @@ export const MechanicalJointFittingsSchedule: React.FC<
                 <button
                   type="button"
                   onClick={() => setSearchQuery("")}
-                  className="mt-4 px-4 py-2 bg-[#0082FC] text-white text-xs font-bold uppercase rounded-none border-2 border-[#0082FC] hover:bg-[#5FD4FD] hover:text-[#0082FC] cursor-pointer"
+                  className="mt-4 px-4 py-2 bg-[#0082FC] text-white text-xs font-bold uppercase rounded-none border-2 border-[#0082FC] hover:bg-[#0565d6] hover:text-[#0082FC] cursor-pointer"
                 >
                   Clear Search
                 </button>
@@ -1435,7 +1434,7 @@ export const MechanicalJointFittingsSchedule: React.FC<
                 <button
                   type="button"
                   onClick={() => setSpecDrawerOpen((prev) => !prev)}
-                  className="inline-flex items-center gap-1.5 px-3 py-2 bg-[#5FD4FD]/15 hover:bg-[#0082FC] text-[#0082FC] hover:text-white border-2 border-[#5FD4FD] text-xs font-black uppercase tracking-wider rounded-none transition-all shadow-xs cursor-pointer"
+                  className="inline-flex items-center gap-1.5 px-3 py-2 bg-[#0565d6]/15 hover:bg-[#0082FC] text-[#0082FC] hover:text-white border-2 border-[#0565d6] text-xs font-black uppercase tracking-wider rounded-none transition-all shadow-xs cursor-pointer"
                 >
                   <FileCheck2 className="w-3.5 h-3.5 shrink-0" />
                   <span>
@@ -1447,7 +1446,7 @@ export const MechanicalJointFittingsSchedule: React.FC<
               </div>
 
               <div className="text-left sm:text-right">
-                <span className="text-[10px] font-black uppercase tracking-wider bg-[#5FD4FD]/20 text-[#0082FC] px-2 py-0.5 border border-[#0082FC]">
+                <span className="text-[10px] font-black uppercase tracking-wider bg-[#0565d6]/20 text-[#0082FC] px-2 py-0.5 border border-[#0082FC]">
                   {activeFamily.tag}
                 </span>
                 <h3 className="text-base sm:text-lg font-black uppercase tracking-tight text-[#0082FC] mt-0.5">
@@ -1457,7 +1456,7 @@ export const MechanicalJointFittingsSchedule: React.FC<
             </div>
 
             {/* Subvariant Angle / Option Selector Bar */}
-            <div className="bg-white border-2 border-[#5FD4FD] p-3 sm:p-4 rounded-none">
+            <div className="bg-white border-2 border-[#0565d6] p-3 sm:p-4 rounded-none">
               <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-2 mb-2.5">
                 <div className="text-xs font-black uppercase tracking-wider text-[#0082FC] flex items-center gap-2">
                   <Compass className="w-3.5 h-3.5 text-[#0082FC] shrink-0" />
@@ -1481,22 +1480,20 @@ export const MechanicalJointFittingsSchedule: React.FC<
                       key={variant.id}
                       type="button"
                       onClick={() => setActiveSubvariantId(variant.id)}
-                      className={`px-3 py-1.5 text-xs font-black uppercase tracking-wider rounded-none border-2 transition-all flex items-center gap-1.5 cursor-pointer ${
-                        isActive
+                      className={`px-3 py-1.5 text-xs font-black uppercase tracking-wider rounded-none border-2 transition-all flex items-center gap-1.5 cursor-pointer ${isActive
                           ? "bg-[#0082FC] text-white border-[#0082FC] shadow-sm"
-                          : "bg-white text-[#0082FC] border-[#5FD4FD] hover:border-[#0082FC] hover:bg-[#5FD4FD]/10"
-                      }`}
+                          : "bg-white text-[#0082FC] border-[#0565d6] hover:border-[#0082FC] hover:bg-[#0565d6]/10"
+                        }`}
                     >
                       {isActive && (
                         <Check className="w-3.5 h-3.5 stroke-[3] shrink-0" />
                       )}
                       <span>{displayAngle}</span>
                       <span
-                        className={`text-[9px] font-mono px-1 py-0.2 border ${
-                          isActive
+                        className={`text-[9px] font-mono px-1 py-0.2 border ${isActive
                             ? "bg-white/20 border-white text-white"
-                            : "bg-[#5FD4FD]/15 border-[#5FD4FD] text-[#0082FC]"
-                        }`}
+                            : "bg-[#0565d6]/15 border-[#0565d6] text-[#0082FC]"
+                          }`}
                       >
                         {variant.catNumber}
                       </span>
@@ -1512,7 +1509,7 @@ export const MechanicalJointFittingsSchedule: React.FC<
                 <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 items-center">
                   {/* Left: Subvariant Image & Blueprint Frame */}
                   <div className="lg:col-span-5 flex flex-col items-center">
-                    <div className="relative w-full h-56 sm:h-64 flex items-center justify-center p-4 bg-gradient-to-b from-[#5FD4FD]/10 to-transparent border-2 border-[#5FD4FD]">
+                    <div className="relative w-full h-56 sm:h-64 flex items-center justify-center p-4 bg-gradient-to-b from-[#0565d6]/10 to-transparent border-2 border-[#0565d6]">
                       <FittingCardImage fitting={activeSubvariant} />
                     </div>
                     <div className="mt-3 flex items-center justify-between w-full text-xs font-bold text-[#0082FC]">
@@ -1528,7 +1525,7 @@ export const MechanicalJointFittingsSchedule: React.FC<
                   {/* Right: Technical Specifications & Actions */}
                   <div className="lg:col-span-7 flex flex-col justify-between h-full space-y-4">
                     <div>
-                      <div className="inline-flex items-center gap-1.5 text-[11px] font-black uppercase tracking-wider bg-[#5FD4FD]/20 text-[#0082FC] px-2.5 py-0.5 border border-[#0082FC] mb-2">
+                      <div className="inline-flex items-center gap-1.5 text-[11px] font-black uppercase tracking-wider bg-[#0565d6]/20 text-[#0082FC] px-2.5 py-0.5 border border-[#0082FC] mb-2">
                         <span>{activeFamily.title}</span>
                         <span>&bull;</span>
                         <span>
@@ -1551,7 +1548,7 @@ export const MechanicalJointFittingsSchedule: React.FC<
 
                       {/* 4 Technical Parameter Boxes */}
                       <div className="grid grid-cols-2 sm:grid-cols-2 gap-3 text-xs text-[#0082FC] mb-6">
-                        <div className="p-3 bg-[#5FD4FD]/10 border border-[#5FD4FD]/40">
+                        <div className="p-3 bg-[#0565d6]/10 border border-[#0565d6]/40">
                           <span className="text-[10px] font-bold uppercase tracking-wider text-[#0082FC]/70 block">
                             Size Range
                           </span>
@@ -1560,7 +1557,7 @@ export const MechanicalJointFittingsSchedule: React.FC<
                           </span>
                         </div>
 
-                        <div className="p-3 bg-[#5FD4FD]/10 border border-[#5FD4FD]/40">
+                        <div className="p-3 bg-[#0565d6]/10 border border-[#0565d6]/40">
                           <span className="text-[10px] font-bold uppercase tracking-wider text-[#0082FC]/70 block">
                             Working Pressure
                           </span>
@@ -1570,7 +1567,7 @@ export const MechanicalJointFittingsSchedule: React.FC<
                           </span>
                         </div>
 
-                        <div className="p-3 bg-[#5FD4FD]/10 border border-[#5FD4FD]/40">
+                        <div className="p-3 bg-[#0565d6]/10 border border-[#0565d6]/40">
                           <span className="text-[10px] font-bold uppercase tracking-wider text-[#0082FC]/70 block">
                             Joint Deflection Limit
                           </span>
@@ -1579,7 +1576,7 @@ export const MechanicalJointFittingsSchedule: React.FC<
                           </span>
                         </div>
 
-                        <div className="p-3 bg-[#5FD4FD]/10 border border-[#5FD4FD]/40">
+                        <div className="p-3 bg-[#0565d6]/10 border border-[#0565d6]/40">
                           <span className="text-[10px] font-bold uppercase tracking-wider text-[#0082FC]/70 block">
                             Sanitary Linings
                           </span>
@@ -1595,11 +1592,10 @@ export const MechanicalJointFittingsSchedule: React.FC<
                       <button
                         type="button"
                         onClick={() => handleAddFitting(activeSubvariant)}
-                        className={`w-full sm:flex-1 py-3 px-4 text-xs sm:text-sm font-black uppercase tracking-wider rounded-none transition-all flex items-center justify-center gap-2 cursor-pointer border-2 ${
-                          addedIds[activeSubvariant.id]
-                            ? "bg-[#5FD4FD] text-[#0082FC] border-[#0082FC]"
-                            : "bg-[#0082FC] hover:bg-[#5FD4FD] text-white hover:text-[#0082FC] border-[#0082FC] shadow-md"
-                        }`}
+                        className={`w-full sm:flex-1 py-3 px-4 text-xs sm:text-sm font-black uppercase tracking-wider rounded-none transition-all flex items-center justify-center gap-2 cursor-pointer border-2 ${addedIds[activeSubvariant.id]
+                            ? "bg-[#0565d6] text-[#0082FC] border-[#0082FC]"
+                            : "bg-[#0082FC] hover:bg-[#0565d6] text-white hover:text-[#0082FC] border-[#0082FC] shadow-md"
+                          }`}
                       >
                         {addedIds[activeSubvariant.id] ? (
                           <>
@@ -1631,7 +1627,7 @@ export const MechanicalJointFittingsSchedule: React.FC<
         ) : (
           /* VIEW 3: CLEAN CATEGORY FRONT VIEW (SHOW ONLY CATEGORIES IN FRONT) */
           <div>
-            <div className="mb-6 flex items-center justify-between text-xs font-bold text-[#0082FC] border-b-2 border-[#5FD4FD]/30 pb-2">
+            <div className="mb-6 flex items-center justify-between text-xs font-bold text-[#0082FC] border-b-2 border-[#0565d6]/30 pb-2">
               <span>
                 Showing <strong>{FITTING_FAMILIES.length}</strong> Mechanical
                 Joint Product Families
@@ -1651,12 +1647,12 @@ export const MechanicalJointFittingsSchedule: React.FC<
                 return (
                   <div
                     key={family.id}
-                    className="bg-white border-4 border-[#5FD4FD] hover:border-[#0082FC] rounded-none p-5 sm:p-6 flex flex-col justify-between shadow-xl transition-all duration-300 group hover:-translate-y-1 relative text-[#0082FC] h-full"
+                    className="bg-white border-4 border-[#0565d6] hover:border-[#0082FC] rounded-none p-5 sm:p-6 flex flex-col justify-between shadow-xl transition-all duration-300 group hover:-translate-y-1 relative text-[#0082FC] h-full"
                   >
                     <div>
                       {/* Top Category Tag */}
                       <div className="flex items-center justify-between mb-3 border-b-2 border-[#0082FC]/15 pb-2.5 min-h-[28px]">
-                        <span className="text-[10px] font-black uppercase tracking-wider bg-[#5FD4FD]/20 text-[#0082FC] px-2.5 py-0.5 border border-[#0082FC]">
+                        <span className="text-[10px] font-black uppercase tracking-wider bg-[#0565d6]/20 text-[#0082FC] px-2.5 py-0.5 border border-[#0082FC]">
                           {family.tag}
                         </span>
                         <span className="text-[10px] font-bold text-[#0082FC]/80 uppercase">
@@ -1665,7 +1661,7 @@ export const MechanicalJointFittingsSchedule: React.FC<
                       </div>
 
                       {/* Family Image Frame */}
-                      <div className="relative w-full h-44 sm:h-48 flex items-center justify-center p-3 overflow-hidden my-2 bg-gradient-to-b from-[#5FD4FD]/10 to-transparent border border-[#5FD4FD]/30">
+                      <div className="relative w-full h-44 sm:h-48 flex items-center justify-center p-3 overflow-hidden my-2 bg-gradient-to-b from-[#0565d6]/10 to-transparent border border-[#0565d6]/30">
                         <FittingCardImage fitting={sampleFitting} />
                       </div>
 
@@ -1696,7 +1692,7 @@ export const MechanicalJointFittingsSchedule: React.FC<
                                 e.stopPropagation();
                                 handleOpenFamily(family.id, ang.subvariantId);
                               }}
-                              className="px-2 py-0.5 text-[10px] font-black uppercase bg-[#5FD4FD]/15 hover:bg-[#0082FC] hover:text-white text-[#0082FC] border border-[#5FD4FD] rounded-none transition-colors cursor-pointer"
+                              className="px-2 py-0.5 text-[10px] font-black uppercase bg-[#0565d6]/15 hover:bg-[#0082FC] hover:text-white text-[#0082FC] border border-[#0565d6] rounded-none transition-colors cursor-pointer"
                               title={`View ${ang.label} subvariant specifications`}
                             >
                               {ang.label}
@@ -1710,7 +1706,7 @@ export const MechanicalJointFittingsSchedule: React.FC<
                     <button
                       type="button"
                       onClick={() => handleOpenFamily(family.id)}
-                      className="w-full py-3 px-4 bg-[#0082FC] hover:bg-[#5FD4FD] text-white hover:text-[#0082FC] text-xs sm:text-sm font-black uppercase tracking-wider rounded-none border-2 border-[#0082FC] transition-all flex items-center justify-center gap-2 cursor-pointer shadow-md mt-auto"
+                      className="w-full py-3 px-4 bg-[#0082FC] hover:bg-[#0565d6] text-white hover:text-[#0082FC] text-xs sm:text-sm font-black uppercase tracking-wider rounded-none border-2 border-[#0082FC] transition-all flex items-center justify-center gap-2 cursor-pointer shadow-md mt-auto"
                     >
                       <span>Explore {family.shortName}</span>
                       <ArrowRight className="w-4 h-4 shrink-0" />

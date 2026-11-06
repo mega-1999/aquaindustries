@@ -163,11 +163,10 @@ export default function SettingsPage() {
               <button
                 type="button"
                 onClick={() => setActiveTab("security")}
-                className={`py-3 px-4 sm:px-6 text-xs sm:text-sm font-black uppercase tracking-wider border-b-2 -mb-[2px] transition-colors cursor-pointer flex items-center gap-1.5 ${
-                  activeTab === "security"
+                className={`py-3 px-4 sm:px-6 text-xs sm:text-sm font-black uppercase tracking-wider border-b-2 -mb-[2px] transition-colors cursor-pointer flex items-center gap-1.5 ${activeTab === "security"
                     ? "border-[#0082FC] bg-[#0082FC] text-white"
-                    : "border-transparent text-[#0082FC] hover:bg-[#5FD4FD]/20"
-                }`}
+                    : "border-transparent text-[#0082FC] hover:bg-[#0565d6]/20"
+                  }`}
               >
                 <KeyRound className="w-4 h-4" />
                 <span>Password &amp; Security</span>
@@ -175,11 +174,10 @@ export default function SettingsPage() {
               <button
                 type="button"
                 onClick={() => setActiveTab("company")}
-                className={`py-3 px-4 sm:px-6 text-xs sm:text-sm font-black uppercase tracking-wider border-b-2 -mb-[2px] transition-colors cursor-pointer flex items-center gap-1.5 ${
-                  activeTab === "company"
+                className={`py-3 px-4 sm:px-6 text-xs sm:text-sm font-black uppercase tracking-wider border-b-2 -mb-[2px] transition-colors cursor-pointer flex items-center gap-1.5 ${activeTab === "company"
                     ? "border-[#0082FC] bg-[#0082FC] text-white"
-                    : "border-transparent text-[#0082FC] hover:bg-[#5FD4FD]/20"
-                }`}
+                    : "border-transparent text-[#0082FC] hover:bg-[#0565d6]/20"
+                  }`}
               >
                 <User className="w-4 h-4" />
                 <span>Contact &amp; Hub</span>
@@ -187,11 +185,10 @@ export default function SettingsPage() {
               <button
                 type="button"
                 onClick={() => setActiveTab("notifications")}
-                className={`py-3 px-4 sm:px-6 text-xs sm:text-sm font-black uppercase tracking-wider border-b-2 -mb-[2px] transition-colors cursor-pointer flex items-center gap-1.5 ${
-                  activeTab === "notifications"
+                className={`py-3 px-4 sm:px-6 text-xs sm:text-sm font-black uppercase tracking-wider border-b-2 -mb-[2px] transition-colors cursor-pointer flex items-center gap-1.5 ${activeTab === "notifications"
                     ? "border-[#0082FC] bg-[#0082FC] text-white"
-                    : "border-transparent text-[#0082FC] hover:bg-[#5FD4FD]/20"
-                }`}
+                    : "border-transparent text-[#0082FC] hover:bg-[#0565d6]/20"
+                  }`}
               >
                 <Bell className="w-4 h-4" />
                 <span>Alerts &amp; Dispatch</span>
@@ -203,11 +200,10 @@ export default function SettingsPage() {
               <div className="bg-white border-2 border-[#0082FC] p-6 sm:p-8 space-y-6 shadow-md">
                 {passwordStatus && (
                   <div
-                    className={`p-3.5 border-2 text-xs font-bold flex items-center gap-2 ${
-                      passwordStatus.success
+                    className={`p-3.5 border-2 text-xs font-bold flex items-center gap-2 ${passwordStatus.success
                         ? "bg-emerald-50 border-emerald-600 text-emerald-950"
                         : "bg-rose-50 border-rose-500 text-rose-900"
-                    }`}
+                      }`}
                   >
                     {passwordStatus.success ? (
                       <CheckCircle2 className="w-5 h-5 text-emerald-600 shrink-0" />
@@ -273,14 +269,14 @@ export default function SettingsPage() {
                           }
                           value={currentPassword}
                           onChange={(e) => setCurrentPassword(e.target.value)}
-                          className="w-full bg-white border-2 border-[#0082FC] pl-3.5 pr-10 py-2.5 text-xs font-bold text-[#0082FC] focus:outline-none focus:border-[#5FD4FD]"
+                          className="w-full bg-white border-2 border-[#0082FC] pl-3.5 pr-10 py-2.5 text-xs font-bold text-[#0082FC] focus:outline-none focus:border-[#0565d6]"
                         />
                         <button
                           type="button"
                           onClick={() =>
                             setShowCurrentPassword(!showCurrentPassword)
                           }
-                          className="absolute right-2.5 top-1/2 -translate-y-1/2 p-1 text-[#0082FC] hover:text-[#5FD4FD] transition-colors cursor-pointer"
+                          className="absolute right-2.5 top-1/2 -translate-y-1/2 p-1 text-[#0082FC] hover:text-[#0565d6] transition-colors cursor-pointer"
                           title={
                             showCurrentPassword
                               ? "Hide password"
@@ -313,12 +309,12 @@ export default function SettingsPage() {
                             placeholder="Min 6 characters"
                             value={newPassword}
                             onChange={(e) => setNewPassword(e.target.value)}
-                            className="w-full bg-white border-2 border-[#0082FC] pl-3.5 pr-10 py-2.5 text-xs font-bold text-[#0082FC] focus:outline-none focus:border-[#5FD4FD]"
+                            className="w-full bg-white border-2 border-[#0082FC] pl-3.5 pr-10 py-2.5 text-xs font-bold text-[#0082FC] focus:outline-none focus:border-[#0565d6]"
                           />
                           <button
                             type="button"
                             onClick={() => setShowNewPassword(!showNewPassword)}
-                            className="absolute right-2.5 top-1/2 -translate-y-1/2 p-1 text-[#0082FC] hover:text-[#5FD4FD] transition-colors cursor-pointer"
+                            className="absolute right-2.5 top-1/2 -translate-y-1/2 p-1 text-[#0082FC] hover:text-[#0565d6] transition-colors cursor-pointer"
                             title={
                               showNewPassword
                                 ? "Hide password"
@@ -350,14 +346,14 @@ export default function SettingsPage() {
                             placeholder="Re-type new password"
                             value={confirmPassword}
                             onChange={(e) => setConfirmPassword(e.target.value)}
-                            className="w-full bg-white border-2 border-[#0082FC] pl-3.5 pr-10 py-2.5 text-xs font-bold text-[#0082FC] focus:outline-none focus:border-[#5FD4FD]"
+                            className="w-full bg-white border-2 border-[#0082FC] pl-3.5 pr-10 py-2.5 text-xs font-bold text-[#0082FC] focus:outline-none focus:border-[#0565d6]"
                           />
                           <button
                             type="button"
                             onClick={() =>
                               setShowConfirmPassword(!showConfirmPassword)
                             }
-                            className="absolute right-2.5 top-1/2 -translate-y-1/2 p-1 text-[#0082FC] hover:text-[#5FD4FD] transition-colors cursor-pointer"
+                            className="absolute right-2.5 top-1/2 -translate-y-1/2 p-1 text-[#0082FC] hover:text-[#0565d6] transition-colors cursor-pointer"
                             title={
                               showConfirmPassword
                                 ? "Hide password"
@@ -382,7 +378,7 @@ export default function SettingsPage() {
                     <div className="pt-2 flex flex-wrap items-center justify-between gap-3">
                       <button
                         type="submit"
-                        className="px-6 py-3 bg-[#0082FC] hover:bg-[#5FD4FD] text-white hover:text-[#0082FC] font-black text-xs uppercase tracking-wider transition-colors shadow-md cursor-pointer"
+                        className="px-6 py-3 bg-[#0082FC] hover:bg-[#0565d6] text-white hover:text-[#0082FC] font-black text-xs uppercase tracking-wider transition-colors shadow-md cursor-pointer"
                       >
                         Save New Password
                       </button>
@@ -407,11 +403,10 @@ export default function SettingsPage() {
               <div className="bg-white border-2 border-[#0082FC] p-6 sm:p-8 space-y-6 shadow-md">
                 {profileStatus && (
                   <div
-                    className={`p-3.5 border-2 text-xs font-bold flex items-center gap-2 ${
-                      profileStatus.success
+                    className={`p-3.5 border-2 text-xs font-bold flex items-center gap-2 ${profileStatus.success
                         ? "bg-emerald-50 border-emerald-600 text-emerald-950"
                         : "bg-rose-50 border-rose-500 text-rose-900"
-                    }`}
+                      }`}
                   >
                     <CheckCircle2 className="w-5 h-5 text-emerald-600 shrink-0" />
                     <span>{profileStatus.message}</span>
@@ -429,7 +424,7 @@ export default function SettingsPage() {
                         required
                         value={fullName}
                         onChange={(e) => setFullName(e.target.value)}
-                        className="w-full bg-white border-2 border-[#0082FC] px-3.5 py-2.5 text-xs font-bold text-[#0082FC] focus:outline-none focus:border-[#5FD4FD]"
+                        className="w-full bg-white border-2 border-[#0082FC] px-3.5 py-2.5 text-xs font-bold text-[#0082FC] focus:outline-none focus:border-[#0565d6]"
                       />
                     </div>
 
@@ -442,7 +437,7 @@ export default function SettingsPage() {
                         required
                         value={phone}
                         onChange={(e) => setPhone(e.target.value)}
-                        className="w-full bg-white border-2 border-[#0082FC] px-3.5 py-2.5 text-xs font-mono font-bold text-[#0082FC] focus:outline-none focus:border-[#5FD4FD]"
+                        className="w-full bg-white border-2 border-[#0082FC] px-3.5 py-2.5 text-xs font-mono font-bold text-[#0082FC] focus:outline-none focus:border-[#0565d6]"
                       />
                     </div>
                   </div>
@@ -454,7 +449,7 @@ export default function SettingsPage() {
                     <select
                       value={preferredYard}
                       onChange={(e) => setPreferredYard(e.target.value)}
-                      className="w-full bg-white border-2 border-[#0082FC] px-3.5 py-2.5 text-xs font-bold text-[#0082FC] focus:outline-none focus:border-[#5FD4FD] rounded-none"
+                      className="w-full bg-white border-2 border-[#0082FC] px-3.5 py-2.5 text-xs font-bold text-[#0082FC] focus:outline-none focus:border-[#0565d6] rounded-none"
                     >
                       <option value="new-york-hub">
                         Melville, NY Foundry Yard (Global Master Hub)
@@ -474,7 +469,7 @@ export default function SettingsPage() {
                   <div className="pt-2 flex justify-end">
                     <button
                       type="submit"
-                      className="px-6 py-3 bg-[#0082FC] hover:bg-[#5FD4FD] text-white hover:text-[#0082FC] font-black text-xs uppercase tracking-wider transition-colors shadow-md cursor-pointer flex items-center gap-2"
+                      className="px-6 py-3 bg-[#0082FC] hover:bg-[#0565d6] text-white hover:text-[#0082FC] font-black text-xs uppercase tracking-wider transition-colors shadow-md cursor-pointer flex items-center gap-2"
                     >
                       <Save className="w-4 h-4" />
                       <span>Update Contact &amp; Hub</span>

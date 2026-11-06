@@ -70,14 +70,14 @@ export const SolenoSamplingHero: React.FC = () => {
   return (
     <section
       aria-label="Aqua Industries Soleno Water Management Showcase"
-      className="relative min-h-[90vh] flex items-center justify-center overflow-hidden bg-[#0082FC] text-white py-16 sm:py-20 lg:py-24 border-b-4 border-[#5FD4FD]"
+      className="relative min-h-[90vh] flex items-center justify-center overflow-hidden bg-[#0082FC] text-white py-16 sm:py-20 lg:py-24 border-b-4 border-[#0565d6]"
     >
       {/* Background Fluid Wave Watermarks and Schematic Geometry */}
       <div className="absolute inset-0 z-0 overflow-hidden pointer-events-none select-none">
         {/* Infinite Seamless Looping Water Background Animation */}
         <InfiniteWaterBackground opacity="opacity-25" />
 
-        <div className="absolute -top-32 -left-32 w-[600px] h-[600px] bg-[#5FD4FD]/20 rounded-none blur-3xl fluid-wave" />
+        <div className="absolute -top-32 -left-32 w-[600px] h-[600px] bg-[#0565d6]/20 rounded-none blur-3xl fluid-wave" />
         <div className="absolute -bottom-40 -right-32 w-[700px] h-[700px] bg-white/10 rounded-none blur-3xl fluid-wave" />
 
         {/* Ambient Technical Coordinate Grid Lines */}
@@ -96,7 +96,7 @@ export const SolenoSamplingHero: React.FC = () => {
           {/* LEFT COLUMN: Soleno Industrial Typography */}
           <div className="lg:col-span-7 text-left space-y-6">
             {/* Top Category Badge */}
-            <div className="inline-flex items-center gap-2 px-3.5 py-1.5 bg-white text-[#0082FC] shadow-md border-2 border-[#5FD4FD] rounded-none">
+            <div className="inline-flex items-center gap-2 px-3.5 py-1.5 bg-white text-[#0082FC] shadow-md border-2 border-[#0565d6] rounded-none">
               <FlaskConical className="w-4 h-4 text-[#0082FC] shrink-0" />
               <span className="text-xs font-bold uppercase tracking-wider whitespace-nowrap">
                 Flagship Product Showcase &bull; Laboratory Grade
@@ -105,7 +105,7 @@ export const SolenoSamplingHero: React.FC = () => {
 
             {/* Soleno-Style Headline (Balanced Scale) */}
             <h1 className="text-3xl sm:text-5xl lg:text-6xl font-black text-white tracking-tight leading-[0.96] uppercase font-sans">
-              <span className="text-[#5FD4FD] block">CONNECTING YOU</span>
+              <span className="text-[#0565d6] block">CONNECTING YOU</span>
               TO THE FUTURE OF
               <br />
               WATER MANAGEMENT
@@ -122,18 +122,18 @@ export const SolenoSamplingHero: React.FC = () => {
 
             {/* Single-Line Trust Badges */}
             <div className="flex flex-wrap items-center gap-2.5 pt-1">
-              <div className="px-3 py-1.5 bg-white/10 border border-[#5FD4FD] text-white text-xs font-semibold whitespace-nowrap inline-flex items-center gap-1.5 shadow-xs backdrop-blur-sm">
-                <ShieldCheck className="w-3.5 h-3.5 text-[#5FD4FD] shrink-0" />
+              <div className="px-3 py-1.5 bg-white/10 border border-[#0565d6] text-white text-xs font-semibold whitespace-nowrap inline-flex items-center gap-1.5 shadow-xs backdrop-blur-sm">
+                <ShieldCheck className="w-3.5 h-3.5 text-[#0565d6] shrink-0" />
                 <span>EPA Lead &amp; Copper Rule Approved</span>
               </div>
 
-              <div className="px-3 py-1.5 bg-white/10 border border-[#5FD4FD] text-white text-xs font-semibold whitespace-nowrap inline-flex items-center gap-1.5 shadow-xs backdrop-blur-sm">
-                <CheckCircle2 className="w-3.5 h-3.5 text-[#5FD4FD] shrink-0" />
+              <div className="px-3 py-1.5 bg-white/10 border border-[#0565d6] text-white text-xs font-semibold whitespace-nowrap inline-flex items-center gap-1.5 shadow-xs backdrop-blur-sm">
+                <CheckCircle2 className="w-3.5 h-3.5 text-[#0565d6] shrink-0" />
                 <span>NSF/ANSI 61 &amp; 372 Certified Lead-Free</span>
               </div>
 
-              <div className="px-3 py-1.5 bg-white/10 border border-[#5FD4FD] text-white text-xs font-semibold whitespace-nowrap inline-flex items-center gap-1.5 shadow-xs backdrop-blur-sm">
-                <Truck className="w-3.5 h-3.5 text-[#5FD4FD] shrink-0" />
+              <div className="px-3 py-1.5 bg-white/10 border border-[#0565d6] text-white text-xs font-semibold whitespace-nowrap inline-flex items-center gap-1.5 shadow-xs backdrop-blur-sm">
+                <Truck className="w-3.5 h-3.5 text-[#0565d6] shrink-0" />
                 <span>Melville, NY Foundry &amp; FL Logistics</span>
               </div>
             </div>
@@ -142,7 +142,7 @@ export const SolenoSamplingHero: React.FC = () => {
             <div className="flex flex-col sm:flex-row items-stretch sm:items-center gap-3.5 pt-2">
               <a
                 href="#curb-box-spotlight"
-                className="inline-flex items-center justify-center gap-2 px-6 py-3.5 text-sm sm:text-base font-bold text-[#0082FC] bg-white hover:bg-[#5FD4FD] hover:text-[#0082FC] rounded-none shadow-lg transition-all transform hover:-translate-y-0.5 active:translate-y-0 whitespace-nowrap"
+                className="inline-flex items-center justify-center gap-2 px-6 py-3.5 text-sm sm:text-base font-bold text-[#0082FC] bg-white hover:bg-[#0565d6] hover:text-[#0082FC] rounded-none shadow-lg transition-all transform hover:-translate-y-0.5 active:translate-y-0 whitespace-nowrap"
               >
                 <span>Explore Curb Box &amp; Innovations</span>
                 <ArrowRight className="w-4 h-4 text-[#0082FC]" />
@@ -150,9 +150,9 @@ export const SolenoSamplingHero: React.FC = () => {
 
               <a
                 href="#product-matrix"
-                className="inline-flex items-center justify-center gap-2 px-6 py-3.5 text-sm sm:text-base font-bold text-[#5FD4FD] hover:text-[#0082FC] bg-[#0082FC] hover:bg-[#5FD4FD] border-2 border-[#5FD4FD] rounded-none shadow-md transition-all transform hover:-translate-y-0.5 active:translate-y-0 whitespace-nowrap"
+                className="inline-flex items-center justify-center gap-2 px-6 py-3.5 text-sm sm:text-base font-bold text-[#0565d6] hover:text-[#0082FC] bg-[#0082FC] hover:bg-[#0565d6] border-2 border-[#0565d6] rounded-none shadow-md transition-all transform hover:-translate-y-0.5 active:translate-y-0 whitespace-nowrap"
               >
-                <FileCheck2 className="w-4 h-4 text-[#5FD4FD] group-hover:text-[#0082FC]" />
+                <FileCheck2 className="w-4 h-4 text-[#0565d6] group-hover:text-[#0082FC]" />
                 <span>Browse Complete Catalog</span>
               </a>
             </div>
@@ -161,16 +161,15 @@ export const SolenoSamplingHero: React.FC = () => {
           {/* RIGHT COLUMN: Soleno Circular Showcase Complex with Interactive Physics Render & Hotspots */}
           <div className="lg:col-span-5 flex flex-col items-center justify-center relative pt-6 lg:pt-0">
             {/* Mode Switcher Bar - Fixed 4-Column Grid (NO SCROLLBAR, Single Line) */}
-            <div className="w-full max-w-[480px] xl:max-w-[490px] mb-4 grid grid-cols-4 gap-1 sm:gap-1.5 bg-white/10 p-1 border-2 border-[#5FD4FD] backdrop-blur-md">
+            <div className="w-full max-w-[480px] xl:max-w-[490px] mb-4 grid grid-cols-4 gap-1 sm:gap-1.5 bg-white/10 p-1 border-2 border-[#0565d6] backdrop-blur-md">
               {/* 1. Field Video FIRST */}
               <button
                 type="button"
                 onClick={() => setActiveMode("video")}
-                className={`py-1.5 px-1 sm:px-2 text-[10px] sm:text-[11px] xl:text-xs font-black uppercase tracking-tight sm:tracking-wider transition-all flex items-center justify-center gap-1 sm:gap-1.5 rounded-none whitespace-nowrap min-w-0 ${
-                  activeMode === "video"
+                className={`py-1.5 px-1 sm:px-2 text-[10px] sm:text-[11px] xl:text-xs font-black uppercase tracking-tight sm:tracking-wider transition-all flex items-center justify-center gap-1 sm:gap-1.5 rounded-none whitespace-nowrap min-w-0 ${activeMode === "video"
                     ? "bg-white text-[#0082FC] shadow-sm"
                     : "text-white hover:bg-white/10"
-                }`}
+                  }`}
               >
                 <Play className="w-3 h-3 fill-current shrink-0" />
                 <span className="truncate">Field Video</span>
@@ -180,11 +179,10 @@ export const SolenoSamplingHero: React.FC = () => {
               <button
                 type="button"
                 onClick={() => setActiveMode("flow")}
-                className={`py-1.5 px-1 sm:px-2 text-[10px] sm:text-[11px] xl:text-xs font-black uppercase tracking-tight sm:tracking-wider transition-all flex items-center justify-center gap-1 sm:gap-1.5 rounded-none whitespace-nowrap min-w-0 ${
-                  activeMode === "flow"
+                className={`py-1.5 px-1 sm:px-2 text-[10px] sm:text-[11px] xl:text-xs font-black uppercase tracking-tight sm:tracking-wider transition-all flex items-center justify-center gap-1 sm:gap-1.5 rounded-none whitespace-nowrap min-w-0 ${activeMode === "flow"
                     ? "bg-white text-[#0082FC] shadow-sm"
                     : "text-white hover:bg-white/10"
-                }`}
+                  }`}
               >
                 <Droplets className="w-3 h-3 sm:w-3.5 sm:h-3.5 shrink-0" />
                 <span className="truncate">Active Flow</span>
@@ -194,11 +192,10 @@ export const SolenoSamplingHero: React.FC = () => {
               <button
                 type="button"
                 onClick={() => setActiveMode("thermal")}
-                className={`py-1.5 px-1 sm:px-2 text-[10px] sm:text-[11px] xl:text-xs font-black uppercase tracking-tight sm:tracking-wider transition-all flex items-center justify-center gap-1 sm:gap-1.5 rounded-none whitespace-nowrap min-w-0 ${
-                  activeMode === "thermal"
+                className={`py-1.5 px-1 sm:px-2 text-[10px] sm:text-[11px] xl:text-xs font-black uppercase tracking-tight sm:tracking-wider transition-all flex items-center justify-center gap-1 sm:gap-1.5 rounded-none whitespace-nowrap min-w-0 ${activeMode === "thermal"
                     ? "bg-white text-[#0082FC] shadow-sm"
                     : "text-white hover:bg-white/10"
-                }`}
+                  }`}
               >
                 <ThermometerSnowflake className="w-3 h-3 sm:w-3.5 sm:h-3.5 shrink-0" />
                 <span className="truncate">Frost -20°F</span>
@@ -208,11 +205,10 @@ export const SolenoSamplingHero: React.FC = () => {
               <button
                 type="button"
                 onClick={() => setActiveMode("pressure")}
-                className={`py-1.5 px-1 sm:px-2 text-[10px] sm:text-[11px] xl:text-xs font-black uppercase tracking-tight sm:tracking-wider transition-all flex items-center justify-center gap-1 sm:gap-1.5 rounded-none whitespace-nowrap min-w-0 ${
-                  activeMode === "pressure"
+                className={`py-1.5 px-1 sm:px-2 text-[10px] sm:text-[11px] xl:text-xs font-black uppercase tracking-tight sm:tracking-wider transition-all flex items-center justify-center gap-1 sm:gap-1.5 rounded-none whitespace-nowrap min-w-0 ${activeMode === "pressure"
                     ? "bg-white text-[#0082FC] shadow-sm"
                     : "text-white hover:bg-white/10"
-                }`}
+                  }`}
               >
                 <Gauge className="w-3 h-3 sm:w-3.5 sm:h-3.5 shrink-0" />
                 <span className="truncate">{livePsi} PSI Live</span>
@@ -223,7 +219,7 @@ export const SolenoSamplingHero: React.FC = () => {
             <div className="relative w-[340px] h-[340px] sm:w-[440px] sm:h-[440px] xl:w-[490px] xl:h-[490px] flex items-center justify-center">
               {/* Floating Upper Hotspot Detail Popup (Zero Layout Displacement) */}
               {activeHotspot !== null && (
-                <div className="absolute top-6 sm:top-10 inset-x-2 sm:inset-x-8 z-40 bg-white border-2 border-[#5FD4FD] p-4 text-left shadow-2xl text-[#0082FC] backdrop-blur-md animate-in fade-in zoom-in-95 duration-200">
+                <div className="absolute top-6 sm:top-10 inset-x-2 sm:inset-x-8 z-40 bg-white border-2 border-[#0565d6] p-4 text-left shadow-2xl text-[#0082FC] backdrop-blur-md animate-in fade-in zoom-in-95 duration-200">
                   <div className="flex items-center justify-between gap-2 mb-1.5">
                     <div className="flex items-center gap-2">
                       <span className="w-6 h-6 bg-[#0082FC] text-white flex items-center justify-center font-black text-xs shadow-xs">
@@ -234,7 +230,7 @@ export const SolenoSamplingHero: React.FC = () => {
                       </span>
                     </div>
                     <div className="flex items-center gap-2">
-                      <span className="text-[10px] bg-[#5FD4FD] text-[#0082FC] font-extrabold px-2 py-0.5 whitespace-nowrap shadow-xs">
+                      <span className="text-[10px] bg-[#0565d6] text-[#0082FC] font-extrabold px-2 py-0.5 whitespace-nowrap shadow-xs">
                         {HOTSPOTS.find((h) => h.id === activeHotspot)?.badge}
                       </span>
                       <button
@@ -258,7 +254,7 @@ export const SolenoSamplingHero: React.FC = () => {
                     <button
                       type="button"
                       onClick={() => setActiveHotspot(null)}
-                      className="underline text-[#0082FC] hover:text-[#5FD4FD] cursor-pointer"
+                      className="underline text-[#0082FC] hover:text-[#0565d6] cursor-pointer"
                     >
                       Dismiss
                     </button>
@@ -267,7 +263,7 @@ export const SolenoSamplingHero: React.FC = () => {
               )}
               {/* Outer Rotating Dashed Ring */}
               <div
-                className="absolute inset-0 rounded-full border-2 border-dashed border-[#5FD4FD]/60 soleno-rotate-ring pointer-events-none"
+                className="absolute inset-0 rounded-full border-2 border-dashed border-[#0565d6]/60 soleno-rotate-ring pointer-events-none"
                 style={{
                   boxShadow: "0 0 50px rgba(95, 212, 253, 0.25)",
                 }}
@@ -284,11 +280,11 @@ export const SolenoSamplingHero: React.FC = () => {
 
               {/* Pressure Radar Wave Pulse (Active during pressure mode or continuous) */}
               {activeMode === "pressure" && (
-                <div className="absolute inset-0 rounded-full border-4 border-[#5FD4FD] animate-radar-ping pointer-events-none" />
+                <div className="absolute inset-0 rounded-full border-4 border-[#0565d6] animate-radar-ping pointer-events-none" />
               )}
 
               {/* Soleno Circular Vessel Container */}
-              <div className="relative w-[280px] h-[280px] sm:w-[380px] sm:h-[380px] xl:w-[420px] xl:h-[420px] rounded-full bg-white border-4 border-[#5FD4FD] shadow-2xl flex items-center justify-center overflow-hidden p-3 sm:p-5">
+              <div className="relative w-[280px] h-[280px] sm:w-[380px] sm:h-[380px] xl:w-[420px] xl:h-[420px] rounded-full bg-white border-4 border-[#0565d6] shadow-2xl flex items-center justify-center overflow-hidden p-3 sm:p-5">
                 {activeMode === "video" ? (
                   <div className="relative w-full h-full bg-white flex items-center justify-center overflow-hidden">
                     <video
@@ -300,7 +296,7 @@ export const SolenoSamplingHero: React.FC = () => {
                       preload="auto"
                       className="w-full h-full object-contain filter drop-shadow-xl z-10"
                     />
-                    <div className="absolute top-2 left-1/2 -translate-x-1/2 z-20 flex items-center gap-1.5 bg-[#0082FC] text-white px-2.5 py-0.5 text-[9px] sm:text-[10px] font-black uppercase tracking-wider shadow border border-[#5FD4FD]">
+                    <div className="absolute top-2 left-1/2 -translate-x-1/2 z-20 flex items-center gap-1.5 bg-[#0082FC] text-white px-2.5 py-0.5 text-[9px] sm:text-[10px] font-black uppercase tracking-wider shadow border border-[#0565d6]">
                       <span className="w-1.5 h-1.5 bg-red-500 rounded-full animate-ping" />
                       <span>LIVE FIELD DEMO</span>
                     </div>
@@ -309,13 +305,12 @@ export const SolenoSamplingHero: React.FC = () => {
                   <>
                     {/* Radial Water Glow Background */}
                     <div
-                      className={`absolute inset-0 transition-opacity duration-700 ${
-                        activeMode === "thermal"
-                          ? "bg-radial from-[#5FD4FD]/40 via-white to-white"
+                      className={`absolute inset-0 transition-opacity duration-700 ${activeMode === "thermal"
+                          ? "bg-radial from-[#0565d6]/40 via-white to-white"
                           : activeMode === "pressure"
                             ? "bg-radial from-[#0082FC]/20 via-white to-white"
-                            : "bg-radial from-[#5FD4FD]/30 via-white to-white"
-                      }`}
+                            : "bg-radial from-[#0565d6]/30 via-white to-white"
+                        }`}
                     />
 
                     {/* Animated Hydrodynamic SVG Water Flow Circuit */}
@@ -329,7 +324,7 @@ export const SolenoSamplingHero: React.FC = () => {
                         {/* Subterranean Supply Line to Bibb */}
                         <path
                           d="M200 380 L200 240 Q200 170 140 170 L110 170"
-                          stroke="#5FD4FD"
+                          stroke="#0565d6"
                           strokeWidth="5"
                           strokeLinecap="square"
                           className="animate-hydro-flow"
@@ -347,12 +342,12 @@ export const SolenoSamplingHero: React.FC = () => {
                     {/* Animated Droplet Dispense from Sample Bibb */}
                     {isSimulating && activeMode === "flow" && (
                       <div className="absolute top-[38%] left-[26%] z-20 pointer-events-none">
-                        <span className="block w-2.5 h-3.5 bg-[#0082FC] border border-[#5FD4FD] rounded-none animate-drop-dispense" />
+                        <span className="block w-2.5 h-3.5 bg-[#0082FC] border border-[#0565d6] rounded-none animate-drop-dispense" />
                       </div>
                     )}
 
                     {/* Floating Wave Texture */}
-                    <div className="absolute -bottom-10 inset-x-0 h-32 bg-[#5FD4FD]/20 rounded-full blur-xl pointer-events-none" />
+                    <div className="absolute -bottom-10 inset-x-0 h-32 bg-[#0565d6]/20 rounded-full blur-xl pointer-events-none" />
 
                     {/* Central Flagship Product: Water Sampling Station (100% visible inside circle) */}
                     <img
@@ -372,11 +367,10 @@ export const SolenoSamplingHero: React.FC = () => {
                           )
                         }
                         style={{ left: spot.x, top: spot.y }}
-                        className={`absolute z-30 w-7 h-7 -translate-x-1/2 -translate-y-1/2 rounded-none border-2 flex items-center justify-center font-black text-xs shadow-xl transition-all hover:scale-125 cursor-pointer ${
-                          activeHotspot === spot.id
-                            ? "bg-[#0082FC] text-white border-white scale-125 ring-4 ring-[#5FD4FD]"
-                            : "bg-white text-[#0082FC] border-[#0082FC] hover:bg-[#5FD4FD]/30"
-                        }`}
+                        className={`absolute z-30 w-7 h-7 -translate-x-1/2 -translate-y-1/2 rounded-none border-2 flex items-center justify-center font-black text-xs shadow-xl transition-all hover:scale-125 cursor-pointer ${activeHotspot === spot.id
+                            ? "bg-[#0082FC] text-white border-white scale-125 ring-4 ring-[#0565d6]"
+                            : "bg-white text-[#0082FC] border-[#0082FC] hover:bg-[#0565d6]/30"
+                          }`}
                         title={spot.title}
                         aria-label={spot.title}
                       >
@@ -390,7 +384,7 @@ export const SolenoSamplingHero: React.FC = () => {
               {/* Soleno Circular Floating Interactive CTA Button */}
               <a
                 href="#quote-form"
-                className="absolute -bottom-3 -right-3 sm:bottom-0 sm:right-0 w-24 h-24 sm:w-28 sm:h-28 rounded-full bg-[#0082FC] hover:bg-[#5FD4FD] text-white hover:text-[#0082FC] border-4 border-white flex flex-col items-center justify-center p-2 text-center shadow-xl transition-all duration-300 hover:scale-105 group z-30"
+                className="absolute -bottom-3 -right-3 sm:bottom-0 sm:right-0 w-24 h-24 sm:w-28 sm:h-28 rounded-full bg-[#0082FC] hover:bg-[#0565d6] text-white hover:text-[#0082FC] border-4 border-white flex flex-col items-center justify-center p-2 text-center shadow-xl transition-all duration-300 hover:scale-105 group z-30"
                 title="Start a project with Aqua Industries"
               >
                 <span className="text-[10px] sm:text-[11px] font-black tracking-wider uppercase leading-tight">
@@ -416,15 +410,15 @@ export const SolenoSamplingHero: React.FC = () => {
                 </span>
               </div>
 
-              <div className="absolute top-12 -right-4 bg-white border-2 border-[#5FD4FD] px-2.5 py-1 text-[11px] font-bold text-[#0082FC] shadow-sm z-20 hidden sm:block whitespace-nowrap">
+              <div className="absolute top-12 -right-4 bg-white border-2 border-[#0565d6] px-2.5 py-1 text-[11px] font-bold text-[#0082FC] shadow-sm z-20 hidden sm:block whitespace-nowrap">
                 ✓ Click Pins 1-4 to Inspect
               </div>
             </div>
 
             {/* Soleno-Style Badge: Municipal Sampling Station / Industry Leader positioned outside below the circle */}
             <div className="mt-4 text-center z-20">
-              <div className="inline-block bg-[#0082FC] border-2 border-[#5FD4FD] px-5 py-2 shadow-2xl">
-                <span className="block text-[10px] sm:text-xs font-black text-[#5FD4FD] uppercase tracking-wider">
+              <div className="inline-block bg-[#0082FC] border-2 border-[#0565d6] px-5 py-2 shadow-2xl">
+                <span className="block text-[10px] sm:text-xs font-black text-[#0565d6] uppercase tracking-wider">
                   Flagship Innovation
                 </span>
                 <h2 className="text-xs sm:text-sm font-black text-white uppercase tracking-tight leading-tight">
@@ -442,24 +436,24 @@ export const SolenoSamplingHero: React.FC = () => {
         <div className="mt-12 pt-6 border-t border-white/20 flex flex-col md:flex-row items-center justify-between gap-4 text-xs sm:text-sm text-white font-normal">
           <div className="flex flex-wrap items-center justify-center md:justify-start gap-4 sm:gap-6">
             <div className="flex items-center gap-2 whitespace-nowrap">
-              <span className="w-2 h-2 bg-[#5FD4FD]" />
+              <span className="w-2 h-2 bg-[#0565d6]" />
               <span>Traceable Melt Heat Numbers Cast on Every Body</span>
             </div>
             <div className="flex items-center gap-2 whitespace-nowrap">
-              <span className="w-2 h-2 bg-[#5FD4FD]" />
+              <span className="w-2 h-2 bg-[#0565d6]" />
               <span>New York Foundry &amp; Florida Operations</span>
             </div>
             <div className="flex items-center gap-2 whitespace-nowrap">
-              <span className="w-2 h-2 bg-[#5FD4FD]" />
+              <span className="w-2 h-2 bg-[#0565d6]" />
               <span>Certified Mill Test Reports (MTRs) Provided</span>
             </div>
           </div>
 
           <a
             href="tel:+15162521111"
-            className="inline-flex items-center gap-2 text-xs sm:text-sm font-bold text-white hover:text-[#5FD4FD] transition-colors whitespace-nowrap bg-white/10 px-3.5 py-1.5 border border-[#5FD4FD]/50"
+            className="inline-flex items-center gap-2 text-xs sm:text-sm font-bold text-white hover:text-[#0565d6] transition-colors whitespace-nowrap bg-white/10 px-3.5 py-1.5 border border-[#0565d6]/50"
           >
-            <PhoneCall className="w-3.5 h-3.5 text-[#5FD4FD]" />
+            <PhoneCall className="w-3.5 h-3.5 text-[#0565d6]" />
             <span>Direct Dispatch: +1 (516) 252-1111</span>
           </a>
         </div>

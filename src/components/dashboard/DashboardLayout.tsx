@@ -61,7 +61,7 @@ export const DashboardLayout: React.FC<DashboardLayoutProps> = ({
   if (!isInitialized) {
     return (
       <div className="min-h-screen bg-slate-100 flex flex-col items-center justify-center p-6 text-[#0082FC]">
-        <div className="h-16 px-3 bg-white border-2 border-[#5FD4FD] flex items-center justify-center shadow-lg animate-pulse mb-4">
+        <div className="h-16 px-3 bg-white border-2 border-[#0565d6] flex items-center justify-center shadow-lg animate-pulse mb-4">
           <img
             src="/images/AI_Waterdrop.png"
             alt="Aqua Industries"
@@ -80,9 +80,9 @@ export const DashboardLayout: React.FC<DashboardLayoutProps> = ({
     return (
       <div className="min-h-screen bg-slate-100 flex flex-col text-[#0082FC]">
         {/* Top Header */}
-        <header className="bg-[#0082FC] text-white px-6 py-4 border-b-4 border-[#5FD4FD] flex items-center justify-between">
+        <header className="bg-[#0082FC] text-white px-6 py-4 border-b-4 border-[#0565d6] flex items-center justify-between">
           <Link href="/" className="flex items-center gap-2.5">
-            <div className="h-8 px-1.5 bg-white border border-[#5FD4FD] flex items-center justify-center">
+            <div className="h-8 px-1.5 bg-white border border-[#0565d6] flex items-center justify-center">
               <img
                 src="/images/AI_Waterdrop.png"
                 alt="Aqua Industries"
@@ -90,12 +90,12 @@ export const DashboardLayout: React.FC<DashboardLayoutProps> = ({
               />
             </div>
             <span className="font-black text-sm uppercase tracking-tight">
-              Aqua <span className="text-[#5FD4FD]">Industries</span>
+              Aqua <span className="text-[#0565d6]">Industries</span>
             </span>
           </Link>
           <Link
             href="/"
-            className="px-3.5 py-1.5 bg-white hover:bg-[#5FD4FD] text-[#0082FC] font-black text-xs uppercase tracking-wider transition-colors"
+            className="px-3.5 py-1.5 bg-white hover:bg-[#0565d6] text-[#0082FC] font-black text-xs uppercase tracking-wider transition-colors"
           >
             &larr; Return to Catalog
           </Link>
@@ -138,7 +138,7 @@ export const DashboardLayout: React.FC<DashboardLayoutProps> = ({
                   placeholder="name@company.com"
                   value={gateEmail}
                   onChange={(e) => setGateEmail(e.target.value)}
-                  className="w-full bg-white border-2 border-[#0082FC] px-3 py-2 text-xs font-bold text-[#0082FC] focus:outline-none focus:border-[#5FD4FD]"
+                  className="w-full bg-white border-2 border-[#0082FC] px-3 py-2 text-xs font-bold text-[#0082FC] focus:outline-none focus:border-[#0565d6]"
                 />
               </div>
 
@@ -153,12 +153,12 @@ export const DashboardLayout: React.FC<DashboardLayoutProps> = ({
                     placeholder="••••••••••••"
                     value={gatePassword}
                     onChange={(e) => setGatePassword(e.target.value)}
-                    className="w-full bg-white border-2 border-[#0082FC] pl-3 pr-10 py-2 text-xs font-bold text-[#0082FC] focus:outline-none focus:border-[#5FD4FD]"
+                    className="w-full bg-white border-2 border-[#0082FC] pl-3 pr-10 py-2 text-xs font-bold text-[#0082FC] focus:outline-none focus:border-[#0565d6]"
                   />
                   <button
                     type="button"
                     onClick={() => setShowGatePassword(!showGatePassword)}
-                    className="absolute right-2.5 top-1/2 -translate-y-1/2 p-1 text-[#0082FC] hover:text-[#5FD4FD] transition-colors cursor-pointer"
+                    className="absolute right-2.5 top-1/2 -translate-y-1/2 p-1 text-[#0082FC] hover:text-[#0565d6] transition-colors cursor-pointer"
                     title={showGatePassword ? "Hide password" : "Show password"}
                     aria-label={
                       showGatePassword ? "Hide password" : "Show password"
@@ -175,7 +175,7 @@ export const DashboardLayout: React.FC<DashboardLayoutProps> = ({
 
               <button
                 type="submit"
-                className="w-full py-3 px-4 bg-[#0082FC] hover:bg-[#5FD4FD] text-white hover:text-[#0082FC] font-black text-xs uppercase tracking-wider shadow-md transition-all cursor-pointer"
+                className="w-full py-3 px-4 bg-[#0082FC] hover:bg-[#0565d6] text-white hover:text-[#0082FC] font-black text-xs uppercase tracking-wider shadow-md transition-all cursor-pointer"
               >
                 Sign In to Unlock Dashboard
               </button>
@@ -215,9 +215,9 @@ export const DashboardLayout: React.FC<DashboardLayoutProps> = ({
   if (activePage === "admin" && !isSuperAdmin) {
     return (
       <div className="min-h-screen bg-slate-100 flex flex-col text-[#0082FC]">
-        <header className="bg-[#0082FC] text-white px-6 py-4 border-b-4 border-[#5FD4FD] flex items-center justify-between">
+        <header className="bg-[#0082FC] text-white px-6 py-4 border-b-4 border-[#0565d6] flex items-center justify-between">
           <Link href="/" className="flex items-center gap-2.5">
-            <div className="h-8 px-1.5 bg-white border border-[#5FD4FD] flex items-center justify-center">
+            <div className="h-8 px-1.5 bg-white border border-[#0565d6] flex items-center justify-center">
               <img
                 src="/images/AI_Waterdrop.png"
                 alt="Aqua Industries"
@@ -225,12 +225,12 @@ export const DashboardLayout: React.FC<DashboardLayoutProps> = ({
               />
             </div>
             <span className="font-black text-sm uppercase tracking-tight">
-              Aqua <span className="text-[#5FD4FD]">Industries</span>
+              Aqua <span className="text-[#0565d6]">Industries</span>
             </span>
           </Link>
           <Link
             href="/profile"
-            className="px-3.5 py-1.5 bg-white hover:bg-[#5FD4FD] text-[#0082FC] font-black text-xs uppercase tracking-wider transition-colors"
+            className="px-3.5 py-1.5 bg-white hover:bg-[#0565d6] text-[#0082FC] font-black text-xs uppercase tracking-wider transition-colors"
           >
             My Profile Dashboard &rsaquo;
           </Link>
@@ -256,7 +256,7 @@ export const DashboardLayout: React.FC<DashboardLayoutProps> = ({
             <div className="pt-2 flex flex-col gap-2">
               <Link
                 href="/profile"
-                className="w-full py-2.5 px-4 bg-[#0082FC] hover:bg-[#5FD4FD] text-white hover:text-[#0082FC] font-black text-xs uppercase tracking-wider transition-colors"
+                className="w-full py-2.5 px-4 bg-[#0082FC] hover:bg-[#0565d6] text-white hover:text-[#0082FC] font-black text-xs uppercase tracking-wider transition-colors"
               >
                 Return to My Profile Dashboard &rsaquo;
               </Link>
@@ -276,9 +276,9 @@ export const DashboardLayout: React.FC<DashboardLayoutProps> = ({
   return (
     <div className="min-h-screen bg-slate-100 flex flex-col lg:flex-row text-[#0082FC]">
       {/* Mobile Top Header (Small screens only) */}
-      <div className="lg:hidden bg-[#0082FC] text-white px-4 py-3 flex items-center justify-between border-b-2 border-[#5FD4FD] sticky top-0 z-50">
+      <div className="lg:hidden bg-[#0082FC] text-white px-4 py-3 flex items-center justify-between border-b-2 border-[#0565d6] sticky top-0 z-50">
         <Link href="/" className="flex items-center gap-2">
-          <div className="h-8 px-1 bg-white border border-[#5FD4FD] flex items-center justify-center shrink-0">
+          <div className="h-8 px-1 bg-white border border-[#0565d6] flex items-center justify-center shrink-0">
             <img
               src="/images/AI_Fevicon.png"
               alt="Aqua Industries"
@@ -286,7 +286,7 @@ export const DashboardLayout: React.FC<DashboardLayoutProps> = ({
             />
           </div>
           <span className="font-black text-sm uppercase tracking-tight">
-            Aqua <span className="text-[#5FD4FD]">Industries</span>
+            Aqua <span className="text-[#0565d6]">Industries</span>
           </span>
         </Link>
 
@@ -294,7 +294,7 @@ export const DashboardLayout: React.FC<DashboardLayoutProps> = ({
           <button
             type="button"
             onClick={() => setMobileSidebarOpen(!mobileSidebarOpen)}
-            className="p-1.5 bg-white text-[#0082FC] border border-[#5FD4FD]"
+            className="p-1.5 bg-white text-[#0082FC] border border-[#0565d6]"
             aria-label="Toggle Sidebar Menu"
           >
             {mobileSidebarOpen ? (
@@ -310,11 +310,10 @@ export const DashboardLayout: React.FC<DashboardLayoutProps> = ({
           LEFT SIDEBAR (Fixed Desktop & Collapsible Mobile)
       ======================================================== */}
       <aside
-        className={`w-full lg:w-72 xl:w-80 bg-white border-r-4 border-[#0082FC] shrink-0 flex flex-col justify-between z-40 transition-all duration-200 ${
-          mobileSidebarOpen
+        className={`w-full lg:w-72 xl:w-80 bg-white border-r-4 border-[#0082FC] shrink-0 flex flex-col justify-between z-40 transition-all duration-200 ${mobileSidebarOpen
             ? "block fixed inset-0 z-50 overflow-y-auto lg:relative lg:inset-auto"
             : "hidden lg:flex lg:sticky lg:top-0 lg:h-screen lg:overflow-y-auto"
-        }`}
+          }`}
       >
         <div className="p-5 sm:p-6 space-y-6">
           {/* Mobile Close Button */}
@@ -325,7 +324,7 @@ export const DashboardLayout: React.FC<DashboardLayoutProps> = ({
             <button
               type="button"
               onClick={() => setMobileSidebarOpen(false)}
-              className="p-1 text-[#0082FC] hover:bg-[#5FD4FD]/20"
+              className="p-1 text-[#0082FC] hover:bg-[#0565d6]/20"
             >
               <X className="w-5 h-5" />
             </button>
@@ -337,7 +336,7 @@ export const DashboardLayout: React.FC<DashboardLayoutProps> = ({
             className="flex items-center gap-3 group focus:outline-none"
             title="Return to Aqua Industries Home"
           >
-            <div className="h-10 px-1.5 bg-white border-2 border-[#5FD4FD] flex items-center justify-center shrink-0 shadow-md group-hover:scale-105 transition-transform">
+            <div className="h-10 px-1.5 bg-white border-2 border-[#0565d6] flex items-center justify-center shrink-0 shadow-md group-hover:scale-105 transition-transform">
               <img
                 src="/images/AI_Waterdrop.png"
                 alt="Aqua Industries"
@@ -346,7 +345,7 @@ export const DashboardLayout: React.FC<DashboardLayoutProps> = ({
             </div>
             <div>
               <div className="font-extrabold text-[#0082FC] text-lg tracking-tight leading-none">
-                Aqua <span className="text-[#5FD4FD]">Industries</span>
+                Aqua <span className="text-[#0565d6]">Industries</span>
               </div>
               <span className="text-[10px] text-[#0082FC]/80 font-bold uppercase tracking-wider block mt-0.5">
                 Waterworks Portal Desk
@@ -359,13 +358,12 @@ export const DashboardLayout: React.FC<DashboardLayoutProps> = ({
             <div className="p-4 bg-[#0082FC]/5 border-2 border-[#0082FC] space-y-2.5">
               <div className="flex items-center justify-between gap-1">
                 <span
-                  className={`px-2 py-0.5 text-[9px] font-black uppercase tracking-wider ${
-                    currentUser.role === "super-admin"
+                  className={`px-2 py-0.5 text-[9px] font-black uppercase tracking-wider ${currentUser.role === "super-admin"
                       ? "bg-[#0082FC] text-white"
                       : currentUser.status === "APPROVED"
                         ? "bg-emerald-600 text-white"
                         : "bg-amber-500 text-white"
-                  }`}
+                    }`}
                 >
                   {currentUser.role === "super-admin"
                     ? "SUPER-ADMIN EXECUTIVE"
@@ -408,16 +406,14 @@ export const DashboardLayout: React.FC<DashboardLayoutProps> = ({
             <Link
               href="/profile"
               onClick={() => setMobileSidebarOpen(false)}
-              className={`flex items-center gap-3 px-3 py-2.5 text-xs font-black uppercase tracking-wider border-2 transition-all cursor-pointer ${
-                activePage === "profile"
+              className={`flex items-center gap-3 px-3 py-2.5 text-xs font-black uppercase tracking-wider border-2 transition-all cursor-pointer ${activePage === "profile"
                   ? "bg-[#0082FC] text-white border-[#0082FC] shadow-sm"
-                  : "bg-white text-[#0082FC] border-[#0082FC]/30 hover:border-[#0082FC] hover:bg-[#5FD4FD]/20"
-              }`}
+                  : "bg-white text-[#0082FC] border-[#0082FC]/30 hover:border-[#0082FC] hover:bg-[#0565d6]/20"
+                }`}
             >
               <User
-                className={`w-4 h-4 shrink-0 ${
-                  activePage === "profile" ? "text-[#5FD4FD]" : "text-[#0082FC]"
-                }`}
+                className={`w-4 h-4 shrink-0 ${activePage === "profile" ? "text-[#0565d6]" : "text-[#0082FC]"
+                  }`}
               />
               <span className="flex-1">Profile Dashboard</span>
             </Link>
@@ -426,18 +422,16 @@ export const DashboardLayout: React.FC<DashboardLayoutProps> = ({
             <Link
               href="/settings"
               onClick={() => setMobileSidebarOpen(false)}
-              className={`flex items-center gap-3 px-3 py-2.5 text-xs font-black uppercase tracking-wider border-2 transition-all cursor-pointer ${
-                activePage === "settings"
+              className={`flex items-center gap-3 px-3 py-2.5 text-xs font-black uppercase tracking-wider border-2 transition-all cursor-pointer ${activePage === "settings"
                   ? "bg-[#0082FC] text-white border-[#0082FC] shadow-sm"
-                  : "bg-white text-[#0082FC] border-[#0082FC]/30 hover:border-[#0082FC] hover:bg-[#5FD4FD]/20"
-              }`}
+                  : "bg-white text-[#0082FC] border-[#0082FC]/30 hover:border-[#0082FC] hover:bg-[#0565d6]/20"
+                }`}
             >
               <Settings
-                className={`w-4 h-4 shrink-0 ${
-                  activePage === "settings"
-                    ? "text-[#5FD4FD]"
+                className={`w-4 h-4 shrink-0 ${activePage === "settings"
+                    ? "text-[#0565d6]"
                     : "text-[#0082FC]"
-                }`}
+                  }`}
               />
               <span className="flex-1">Account Settings</span>
             </Link>
@@ -447,11 +441,10 @@ export const DashboardLayout: React.FC<DashboardLayoutProps> = ({
               <Link
                 href="/admin"
                 onClick={() => setMobileSidebarOpen(false)}
-                className={`flex items-center justify-between gap-2 px-3 py-2.5 text-xs font-black uppercase tracking-wider border-2 transition-all cursor-pointer ${
-                  activePage === "admin"
+                className={`flex items-center justify-between gap-2 px-3 py-2.5 text-xs font-black uppercase tracking-wider border-2 transition-all cursor-pointer ${activePage === "admin"
                     ? "bg-[#0082FC] text-white border-[#0082FC] shadow-sm"
                     : "bg-amber-50 text-[#0082FC] border-amber-400 hover:bg-amber-100"
-                }`}
+                  }`}
               >
                 <div className="flex items-center gap-2.5 min-w-0">
                   <ShieldCheck className="w-4 h-4 text-amber-600 shrink-0" />
@@ -475,7 +468,7 @@ export const DashboardLayout: React.FC<DashboardLayoutProps> = ({
             <Link
               href="/"
               onClick={() => setMobileSidebarOpen(false)}
-              className="flex items-center gap-3 px-3 py-2.5 text-xs font-bold uppercase tracking-wider bg-white text-[#0082FC] border border-[#0082FC]/30 hover:bg-[#5FD4FD]/20 transition-all cursor-pointer"
+              className="flex items-center gap-3 px-3 py-2.5 text-xs font-bold uppercase tracking-wider bg-white text-[#0082FC] border border-[#0082FC]/30 hover:bg-[#0565d6]/20 transition-all cursor-pointer"
             >
               <ArrowLeft className="w-4 h-4 text-[#0082FC] shrink-0" />
               <span>Return to Main Site</span>
@@ -484,7 +477,7 @@ export const DashboardLayout: React.FC<DashboardLayoutProps> = ({
             <Link
               href="/projects"
               onClick={() => setMobileSidebarOpen(false)}
-              className="flex items-center gap-3 px-3 py-2.5 text-xs font-bold uppercase tracking-wider bg-white text-[#0082FC] border border-[#0082FC]/30 hover:bg-[#5FD4FD]/20 transition-all cursor-pointer"
+              className="flex items-center gap-3 px-3 py-2.5 text-xs font-bold uppercase tracking-wider bg-white text-[#0082FC] border border-[#0082FC]/30 hover:bg-[#0565d6]/20 transition-all cursor-pointer"
             >
               <Globe className="w-4 h-4 text-[#0082FC] shrink-0" />
               <span>View Case Studies</span>
@@ -543,7 +536,7 @@ export const DashboardLayout: React.FC<DashboardLayoutProps> = ({
           <div className="hidden sm:flex items-center gap-3">
             <Link
               href="/"
-              className="px-3.5 py-1.5 bg-white hover:bg-[#5FD4FD]/20 text-[#0082FC] border border-[#0082FC] text-xs font-black uppercase tracking-wider transition-colors flex items-center gap-1.5"
+              className="px-3.5 py-1.5 bg-white hover:bg-[#0565d6]/20 text-[#0082FC] border border-[#0082FC] text-xs font-black uppercase tracking-wider transition-colors flex items-center gap-1.5"
             >
               <span>Aqua Catalog</span>
               <ExternalLink className="w-3.5 h-3.5" />

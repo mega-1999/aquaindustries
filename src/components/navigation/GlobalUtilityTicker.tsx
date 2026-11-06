@@ -42,7 +42,7 @@ export const GlobalUtilityTicker: React.FC<GlobalUtilityTickerProps> = ({
   return (
     <aside
       aria-label="Live municipal specifications and quick actions"
-      className="bg-[#0082fc] border-b border-[#5fd4fd]/30 text-xs sm:text-sm text-white select-none relative z-50"
+      className="bg-[#0082fc] border-b border-[#0565d6]/30 text-xs sm:text-sm text-white select-none relative z-50"
     >
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex items-center justify-between h-11 gap-4 overflow-hidden">
@@ -56,7 +56,7 @@ export const GlobalUtilityTicker: React.FC<GlobalUtilityTickerProps> = ({
             </div>
 
             {currentTime && (
-              <span className="hidden md:inline-block font-mono text-[11px] font-bold text-[#5fd4fd] bg-black/20 px-2 py-0.5 border border-[#5fd4fd]/30 mr-3 shrink-0">
+              <span className="hidden md:inline-block font-mono text-[11px] font-bold text-[#0565d6] bg-black/20 px-2 py-0.5 border border-[#0565d6]/30 mr-3 shrink-0">
                 {currentTime}
               </span>
             )}
@@ -64,29 +64,29 @@ export const GlobalUtilityTicker: React.FC<GlobalUtilityTickerProps> = ({
             <div className="relative overflow-hidden w-full whitespace-nowrap">
               <div className="animate-ticker inline-flex items-center gap-8 text-xs sm:text-sm text-white font-semibold">
                 <span className="whitespace-nowrap text-white flex items-center gap-1.5">
-                  <Activity className="w-3.5 h-3.5 text-[#5fd4fd]" />
+                  <Activity className="w-3.5 h-3.5 text-[#0565d6]" />
                   <span>Foundry Melt Heat #8492-B:</span>
-                  <strong className="text-[#5fd4fd] font-extrabold">
+                  <strong className="text-[#0565d6] font-extrabold">
                     ASTM A536 65-45-12 Verified
                   </strong>
                 </span>
-                <span className="text-[#5fd4fd]">•</span>
+                <span className="text-[#0565d6]">•</span>
                 <span className="whitespace-nowrap text-white">
                   Flatbed Dispatch Queue:{" "}
-                  <strong className="text-[#5fd4fd] font-extrabold">
+                  <strong className="text-[#0565d6] font-extrabold">
                     14 Loads In-Transit Today
                   </strong>
                 </span>
-                <span className="text-[#5fd4fd]">•</span>
+                <span className="text-[#0565d6]">•</span>
                 <span className="whitespace-nowrap text-white">
                   AWWA C153 Compact Fittings: In Stock for Immediate Jobsite
                   Delivery
                 </span>
-                <span className="text-[#5fd4fd]">•</span>
+                <span className="text-[#0565d6]">•</span>
                 <span className="whitespace-nowrap text-white">
                   NSF/ANSI 61 Annex G Certified Lead-Free (&lt;0.25% Pb)
                 </span>
-                <span className="text-[#5fd4fd]">•</span>
+                <span className="text-[#0565d6]">•</span>
                 <span className="whitespace-nowrap text-white">
                   Hydrostatic Testing Rig: 350 PSI Continuous Working Pressure
                   Proof
@@ -107,7 +107,7 @@ export const GlobalUtilityTicker: React.FC<GlobalUtilityTickerProps> = ({
           <div className="flex items-center gap-3 shrink-0 text-xs sm:text-sm">
             <a
               href="tel:+15162521111"
-              className="inline-flex items-center gap-1.5 text-white hover:text-[#5fd4fd] transition-colors whitespace-nowrap font-bold"
+              className="inline-flex items-center gap-1.5 text-white hover:text-[#0565d6] transition-colors whitespace-nowrap font-bold"
               title="Speak with Aqua Industries New York Foundry dispatch"
             >
               <PhoneCall className="w-3.5 h-3.5 text-white shrink-0" />
@@ -121,7 +121,7 @@ export const GlobalUtilityTicker: React.FC<GlobalUtilityTickerProps> = ({
             <button
               type="button"
               onClick={onOpenYardModal}
-              className="inline-flex items-center gap-1.5 text-white hover:text-[#5fd4fd] transition-colors whitespace-nowrap font-bold bg-white/10 px-2.5 py-1 rounded-none border border-white/50"
+              className="inline-flex items-center gap-1.5 text-white hover:text-[#0565d6] transition-colors whitespace-nowrap font-bold bg-white/10 px-2.5 py-1 rounded-none border border-white/50"
             >
               <MapPin className="w-3.5 h-3.5 text-white shrink-0" />
               <span className="whitespace-nowrap">
@@ -133,7 +133,7 @@ export const GlobalUtilityTicker: React.FC<GlobalUtilityTickerProps> = ({
 
             <a
               href="#quote-form"
-              className="hidden md:inline-flex items-center gap-1.5 text-white hover:text-[#5fd4fd] transition-colors whitespace-nowrap font-bold"
+              className="hidden md:inline-flex items-center gap-1.5 text-white hover:text-[#0565d6] transition-colors whitespace-nowrap font-bold"
             >
               <FileCheck2 className="w-3.5 h-3.5 text-white shrink-0" />
               <span className="whitespace-nowrap">Spec Sheet Portal</span>

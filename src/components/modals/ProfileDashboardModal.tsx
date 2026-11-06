@@ -66,19 +66,19 @@ export const ProfileDashboardModal: React.FC<ProfileDashboardModalProps> = ({
         <button
           type="button"
           onClick={onClose}
-          className="absolute top-5 right-5 p-1 rounded-none text-[#0082FC] hover:bg-[#5FD4FD]/20 transition-colors cursor-pointer"
+          className="absolute top-5 right-5 p-1 rounded-none text-[#0082FC] hover:bg-[#0565d6]/20 transition-colors cursor-pointer"
           aria-label="Close Profile Dashboard"
         >
           <X className="w-5 h-5" />
         </button>
 
         {/* Modal Header */}
-        <div className="flex items-start gap-3.5 mb-6 pb-4 border-b-2 border-[#5FD4FD]/40">
-          <div className="w-12 h-12 bg-[#0082FC] text-white border-2 border-[#5FD4FD] flex items-center justify-center shrink-0">
+        <div className="flex items-start gap-3.5 mb-6 pb-4 border-b-2 border-[#0565d6]/40">
+          <div className="w-12 h-12 bg-[#0082FC] text-white border-2 border-[#0565d6] flex items-center justify-center shrink-0">
             {currentUser.role === "super-admin" ? (
-              <ShieldCheck className="w-6 h-6 text-[#5FD4FD]" />
+              <ShieldCheck className="w-6 h-6 text-[#0565d6]" />
             ) : (
-              <User className="w-6 h-6 text-[#5FD4FD]" />
+              <User className="w-6 h-6 text-[#0565d6]" />
             )}
           </div>
           <div className="flex-1 min-w-0">
@@ -90,13 +90,12 @@ export const ProfileDashboardModal: React.FC<ProfileDashboardModalProps> = ({
                 Account Profile Dashboard
               </h2>
               <span
-                className={`px-2 py-0.5 text-[10px] font-black uppercase tracking-wider ${
-                  currentUser.role === "super-admin"
+                className={`px-2 py-0.5 text-[10px] font-black uppercase tracking-wider ${currentUser.role === "super-admin"
                     ? "bg-[#0082FC] text-white"
                     : currentUser.status === "APPROVED"
                       ? "bg-emerald-600 text-white"
                       : "bg-amber-500 text-white"
-                }`}
+                  }`}
               >
                 {currentUser.role === "super-admin"
                   ? "Super-Admin Executive"
@@ -115,33 +114,30 @@ export const ProfileDashboardModal: React.FC<ProfileDashboardModalProps> = ({
           <button
             type="button"
             onClick={() => setActiveTab("overview")}
-            className={`py-2 px-3 sm:px-4 text-xs font-black uppercase tracking-wider border-b-2 -mb-[2px] transition-colors cursor-pointer ${
-              activeTab === "overview"
+            className={`py-2 px-3 sm:px-4 text-xs font-black uppercase tracking-wider border-b-2 -mb-[2px] transition-colors cursor-pointer ${activeTab === "overview"
                 ? "border-[#0082FC] bg-[#0082FC] text-white"
-                : "border-transparent text-[#0082FC] hover:bg-[#5FD4FD]/20"
-            }`}
+                : "border-transparent text-[#0082FC] hover:bg-[#0565d6]/20"
+              }`}
           >
             Profile Overview
           </button>
           <button
             type="button"
             onClick={() => setActiveTab("commercial")}
-            className={`py-2 px-3 sm:px-4 text-xs font-black uppercase tracking-wider border-b-2 -mb-[2px] transition-colors cursor-pointer ${
-              activeTab === "commercial"
+            className={`py-2 px-3 sm:px-4 text-xs font-black uppercase tracking-wider border-b-2 -mb-[2px] transition-colors cursor-pointer ${activeTab === "commercial"
                 ? "border-[#0082FC] bg-[#0082FC] text-white"
-                : "border-transparent text-[#0082FC] hover:bg-[#5FD4FD]/20"
-            }`}
+                : "border-transparent text-[#0082FC] hover:bg-[#0565d6]/20"
+              }`}
           >
             Commercial Privileges
           </button>
           <button
             type="button"
             onClick={() => setActiveTab("bol")}
-            className={`py-2 px-3 sm:px-4 text-xs font-black uppercase tracking-wider border-b-2 -mb-[2px] transition-colors cursor-pointer ${
-              activeTab === "bol"
+            className={`py-2 px-3 sm:px-4 text-xs font-black uppercase tracking-wider border-b-2 -mb-[2px] transition-colors cursor-pointer ${activeTab === "bol"
                 ? "border-[#0082FC] bg-[#0082FC] text-white"
-                : "border-transparent text-[#0082FC] hover:bg-[#5FD4FD]/20"
-            }`}
+                : "border-transparent text-[#0082FC] hover:bg-[#0565d6]/20"
+              }`}
           >
             BOL Tracking &amp; MTRs
           </button>
@@ -235,10 +231,10 @@ export const ProfileDashboardModal: React.FC<ProfileDashboardModalProps> = ({
 
             {/* Super-Admin Action Box (If Super Admin) */}
             {currentUser.role === "super-admin" && (
-              <div className="p-4 bg-[#0082FC] text-white border-2 border-[#5FD4FD] space-y-2.5">
+              <div className="p-4 bg-[#0082FC] text-white border-2 border-[#0565d6] space-y-2.5">
                 <div className="flex items-center justify-between">
                   <div className="flex items-center gap-2">
-                    <ShieldCheck className="w-5 h-5 text-[#5FD4FD]" />
+                    <ShieldCheck className="w-5 h-5 text-[#0565d6]" />
                     <span className="font-black text-xs sm:text-sm uppercase tracking-wide">
                       Super-Admin Master Approval Panel
                     </span>
@@ -261,7 +257,7 @@ export const ProfileDashboardModal: React.FC<ProfileDashboardModalProps> = ({
                       onClose();
                       onOpenSuperAdmin();
                     }}
-                    className="w-full py-2.5 px-3 bg-white hover:bg-[#5FD4FD] text-[#0082FC] font-black text-xs uppercase tracking-wider transition-colors cursor-pointer text-center"
+                    className="w-full py-2.5 px-3 bg-white hover:bg-[#0565d6] text-[#0082FC] font-black text-xs uppercase tracking-wider transition-colors cursor-pointer text-center"
                   >
                     Open Super-Admin Contractor Approvals Desk &rsaquo;
                   </button>
@@ -302,7 +298,7 @@ export const ProfileDashboardModal: React.FC<ProfileDashboardModalProps> = ({
               </div>
             </div>
 
-            <div className="p-4 bg-[#5FD4FD]/20 border border-[#0082FC] space-y-2">
+            <div className="p-4 bg-[#0565d6]/20 border border-[#0082FC] space-y-2">
               <div className="flex items-center gap-2">
                 <Truck className="w-4 h-4 text-[#0082FC]" />
                 <span className="font-extrabold text-xs uppercase tracking-wider text-[#0082FC]">
@@ -334,11 +330,11 @@ export const ProfileDashboardModal: React.FC<ProfileDashboardModalProps> = ({
                   placeholder="e.g. BOL-88410 or PO-2026-NY"
                   value={bolSearch}
                   onChange={(e) => setBolSearch(e.target.value)}
-                  className="flex-1 bg-white border-2 border-[#0082FC] px-3 py-2 text-xs font-mono font-bold text-[#0082FC] focus:outline-none focus:border-[#5FD4FD]"
+                  className="flex-1 bg-white border-2 border-[#0082FC] px-3 py-2 text-xs font-mono font-bold text-[#0082FC] focus:outline-none focus:border-[#0565d6]"
                 />
                 <button
                   type="submit"
-                  className="px-4 py-2 bg-[#0082FC] hover:bg-[#5FD4FD] text-white hover:text-[#0082FC] font-black text-xs uppercase tracking-wider transition-colors cursor-pointer"
+                  className="px-4 py-2 bg-[#0082FC] hover:bg-[#0565d6] text-white hover:text-[#0082FC] font-black text-xs uppercase tracking-wider transition-colors cursor-pointer"
                 >
                   Track Trailer
                 </button>
@@ -365,7 +361,7 @@ export const ProfileDashboardModal: React.FC<ProfileDashboardModalProps> = ({
         )}
 
         {/* Footer Actions */}
-        <div className="pt-5 mt-6 border-t-2 border-[#5FD4FD]/40 flex flex-wrap items-center justify-between gap-3">
+        <div className="pt-5 mt-6 border-t-2 border-[#0565d6]/40 flex flex-wrap items-center justify-between gap-3">
           <div className="flex items-center gap-2">
             {onOpenSettings && (
               <button
@@ -374,7 +370,7 @@ export const ProfileDashboardModal: React.FC<ProfileDashboardModalProps> = ({
                   onClose();
                   onOpenSettings();
                 }}
-                className="px-3.5 py-2 bg-white hover:bg-[#5FD4FD]/20 text-[#0082FC] border-2 border-[#0082FC] font-bold text-xs uppercase tracking-wider flex items-center gap-1.5 transition-colors cursor-pointer"
+                className="px-3.5 py-2 bg-white hover:bg-[#0565d6]/20 text-[#0082FC] border-2 border-[#0082FC] font-bold text-xs uppercase tracking-wider flex items-center gap-1.5 transition-colors cursor-pointer"
               >
                 <Settings className="w-3.5 h-3.5" />
                 <span>Account Settings</span>
@@ -397,7 +393,7 @@ export const ProfileDashboardModal: React.FC<ProfileDashboardModalProps> = ({
           <button
             type="button"
             onClick={onClose}
-            className="px-5 py-2 bg-[#0082FC] hover:bg-[#5FD4FD] text-white hover:text-[#0082FC] font-black text-xs uppercase tracking-wider transition-colors cursor-pointer"
+            className="px-5 py-2 bg-[#0082FC] hover:bg-[#0565d6] text-white hover:text-[#0082FC] font-black text-xs uppercase tracking-wider transition-colors cursor-pointer"
           >
             Close Dashboard
           </button>

@@ -67,8 +67,8 @@ export const SuperAdminApprovalModal: React.FC<
         className="fixed inset-0 z-50 flex items-center justify-center p-3 sm:p-4 bg-[#0082FC]/80 backdrop-blur-sm"
       >
         <div className="bg-white border-4 border-[#0082FC] rounded-none max-w-md w-full p-6 sm:p-8 shadow-2xl text-[#0082FC] text-center space-y-4">
-          <div className="w-14 h-14 bg-[#0082FC] text-white border-2 border-[#5FD4FD] flex items-center justify-center mx-auto shadow-md">
-            <Lock className="w-7 h-7 text-[#5FD4FD]" />
+          <div className="w-14 h-14 bg-[#0082FC] text-white border-2 border-[#0565d6] flex items-center justify-center mx-auto shadow-md">
+            <Lock className="w-7 h-7 text-[#0565d6]" />
           </div>
           <h3
             id="superadmin-restricted-title"
@@ -85,7 +85,7 @@ export const SuperAdminApprovalModal: React.FC<
           <button
             type="button"
             onClick={onClose}
-            className="w-full py-3 px-4 bg-[#0082FC] hover:bg-[#5FD4FD] text-white hover:text-[#0082FC] font-black text-xs uppercase tracking-wider transition-all cursor-pointer shadow-md"
+            className="w-full py-3 px-4 bg-[#0082FC] hover:bg-[#0565d6] text-white hover:text-[#0082FC] font-black text-xs uppercase tracking-wider transition-all cursor-pointer shadow-md"
           >
             Close Window
           </button>
@@ -152,7 +152,7 @@ export const SuperAdminApprovalModal: React.FC<
         <button
           type="button"
           onClick={onClose}
-          className="absolute top-4 right-4 p-2 bg-[#0082FC] text-white hover:bg-[#5FD4FD] hover:text-[#0082FC] transition-colors rounded-none cursor-pointer z-10"
+          className="absolute top-4 right-4 p-2 bg-[#0082FC] text-white hover:bg-[#0565d6] hover:text-[#0082FC] transition-colors rounded-none cursor-pointer z-10"
           aria-label="Close Admin Modal"
         >
           <X className="w-5 h-5" />
@@ -164,8 +164,8 @@ export const SuperAdminApprovalModal: React.FC<
           ======================================================== */}
           <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-4 pb-4 border-b-2 border-[#0082FC] mb-4">
             <div className="flex items-center gap-3">
-              <div className="w-12 h-12 bg-[#0082FC] text-white flex items-center justify-center border-2 border-[#5FD4FD] shrink-0">
-                <ShieldCheck className="w-7 h-7 text-[#5FD4FD]" />
+              <div className="w-12 h-12 bg-[#0082FC] text-white flex items-center justify-center border-2 border-[#0565d6] shrink-0">
+                <ShieldCheck className="w-7 h-7 text-[#0565d6]" />
               </div>
               <div>
                 <div className="flex items-center gap-2">
@@ -201,15 +201,15 @@ export const SuperAdminApprovalModal: React.FC<
 
           {/* Feedback Toast */}
           {feedbackMessage && (
-            <div className="mb-4 p-3 bg-[#0082FC] text-white text-xs font-bold border-2 border-[#5FD4FD] shadow-md flex items-center justify-between animate-in fade-in slide-in-from-top-1">
+            <div className="mb-4 p-3 bg-[#0082FC] text-white text-xs font-bold border-2 border-[#0565d6] shadow-md flex items-center justify-between animate-in fade-in slide-in-from-top-1">
               <div className="flex items-center gap-2">
-                <CheckCircle2 className="w-4 h-4 text-[#5FD4FD] shrink-0" />
+                <CheckCircle2 className="w-4 h-4 text-[#0565d6] shrink-0" />
                 <span>{feedbackMessage}</span>
               </div>
               <button
                 type="button"
                 onClick={() => setFeedbackMessage(null)}
-                className="text-white hover:text-[#5FD4FD] font-black uppercase text-[10px]"
+                className="text-white hover:text-[#0565d6] font-black uppercase text-[10px]"
               >
                 Dismiss
               </button>
@@ -275,11 +275,10 @@ export const SuperAdminApprovalModal: React.FC<
               <button
                 type="button"
                 onClick={() => setActiveTab("pending")}
-                className={`py-1.5 px-3 text-xs font-black uppercase tracking-wider transition-all rounded-none cursor-pointer flex items-center gap-1.5 ${
-                  activeTab === "pending"
+                className={`py-1.5 px-3 text-xs font-black uppercase tracking-wider transition-all rounded-none cursor-pointer flex items-center gap-1.5 ${activeTab === "pending"
                     ? "bg-[#0082FC] text-white shadow-xs"
-                    : "text-[#0082FC] hover:bg-[#5FD4FD]/30"
-                }`}
+                    : "text-[#0082FC] hover:bg-[#0565d6]/30"
+                  }`}
               >
                 <span>Pending Approvals</span>
                 {pendingCount > 0 && (
@@ -292,11 +291,10 @@ export const SuperAdminApprovalModal: React.FC<
               <button
                 type="button"
                 onClick={() => setActiveTab("approved")}
-                className={`py-1.5 px-3 text-xs font-black uppercase tracking-wider transition-all rounded-none cursor-pointer ${
-                  activeTab === "approved"
+                className={`py-1.5 px-3 text-xs font-black uppercase tracking-wider transition-all rounded-none cursor-pointer ${activeTab === "approved"
                     ? "bg-[#0082FC] text-white shadow-xs"
-                    : "text-[#0082FC] hover:bg-[#5FD4FD]/30"
-                }`}
+                    : "text-[#0082FC] hover:bg-[#0565d6]/30"
+                  }`}
               >
                 Approved ({approvedCount})
               </button>
@@ -304,11 +302,10 @@ export const SuperAdminApprovalModal: React.FC<
               <button
                 type="button"
                 onClick={() => setActiveTab("rejected")}
-                className={`py-1.5 px-3 text-xs font-black uppercase tracking-wider transition-all rounded-none cursor-pointer ${
-                  activeTab === "rejected"
+                className={`py-1.5 px-3 text-xs font-black uppercase tracking-wider transition-all rounded-none cursor-pointer ${activeTab === "rejected"
                     ? "bg-[#0082FC] text-white shadow-xs"
-                    : "text-[#0082FC] hover:bg-[#5FD4FD]/30"
-                }`}
+                    : "text-[#0082FC] hover:bg-[#0565d6]/30"
+                  }`}
               >
                 Rejected ({rejectedCount})
               </button>
@@ -316,11 +313,10 @@ export const SuperAdminApprovalModal: React.FC<
               <button
                 type="button"
                 onClick={() => setActiveTab("all")}
-                className={`py-1.5 px-3 text-xs font-black uppercase tracking-wider transition-all rounded-none cursor-pointer ${
-                  activeTab === "all"
+                className={`py-1.5 px-3 text-xs font-black uppercase tracking-wider transition-all rounded-none cursor-pointer ${activeTab === "all"
                     ? "bg-[#0082FC] text-white shadow-xs"
-                    : "text-[#0082FC] hover:bg-[#5FD4FD]/30"
-                }`}
+                    : "text-[#0082FC] hover:bg-[#0565d6]/30"
+                  }`}
               >
                 All ({allUsers.length})
               </button>
@@ -334,7 +330,7 @@ export const SuperAdminApprovalModal: React.FC<
                 placeholder="Search contractor, email, tax ID..."
                 value={searchQuery}
                 onChange={(e) => setSearchQuery(e.target.value)}
-                className="w-full bg-white border-2 border-[#0082FC] pl-9 pr-3 py-1.5 text-xs text-[#0082FC] font-bold placeholder-[#0082FC]/50 focus:outline-none focus:border-[#5FD4FD]"
+                className="w-full bg-white border-2 border-[#0082FC] pl-9 pr-3 py-1.5 text-xs text-[#0082FC] font-bold placeholder-[#0082FC]/50 focus:outline-none focus:border-[#0565d6]"
               />
             </div>
           </div>
@@ -346,7 +342,7 @@ export const SuperAdminApprovalModal: React.FC<
         <div className="flex-1 overflow-y-auto max-h-[50vh] border-2 border-[#0082FC] divide-y-2 divide-[#0082FC]/20 mb-4 bg-white">
           {filteredUsers.length === 0 ? (
             <div className="p-8 text-center text-[#0082FC]">
-              <Users className="w-10 h-10 text-[#5FD4FD] mx-auto mb-2" />
+              <Users className="w-10 h-10 text-[#0565d6] mx-auto mb-2" />
               <p className="font-black text-sm uppercase">
                 No registrations match the selected filter.
               </p>
@@ -366,13 +362,12 @@ export const SuperAdminApprovalModal: React.FC<
               return (
                 <div
                   key={user.id}
-                  className={`p-4 transition-colors ${
-                    isPending
+                  className={`p-4 transition-colors ${isPending
                       ? "bg-amber-50/50 hover:bg-amber-50"
                       : isRejected
                         ? "bg-rose-50/30 hover:bg-rose-50/60"
-                        : "hover:bg-[#5FD4FD]/10"
-                  }`}
+                        : "hover:bg-[#0565d6]/10"
+                    }`}
                 >
                   <div className="flex flex-col lg:flex-row lg:items-center justify-between gap-4">
                     {/* User & Company Details */}
@@ -513,7 +508,7 @@ export const SuperAdminApprovalModal: React.FC<
                           <button
                             type="button"
                             onClick={() => onOpenContractorLogin(user.email)}
-                            className="inline-flex items-center justify-center gap-1 px-2.5 py-2 bg-[#0082FC] hover:bg-[#5FD4FD] text-white hover:text-[#0082FC] font-bold text-xs uppercase tracking-wider rounded-none transition-colors cursor-pointer"
+                            className="inline-flex items-center justify-center gap-1 px-2.5 py-2 bg-[#0082FC] hover:bg-[#0565d6] text-white hover:text-[#0082FC] font-bold text-xs uppercase tracking-wider rounded-none transition-colors cursor-pointer"
                             title="Test logging in as this approved contractor"
                           >
                             <ExternalLink className="w-3.5 h-3.5" />

@@ -54,33 +54,30 @@ export default function ProfilePage() {
               <button
                 type="button"
                 onClick={() => setActiveTab("overview")}
-                className={`py-3 px-4 sm:px-6 text-xs sm:text-sm font-black uppercase tracking-wider border-b-2 -mb-[2px] transition-colors cursor-pointer ${
-                  activeTab === "overview"
+                className={`py-3 px-4 sm:px-6 text-xs sm:text-sm font-black uppercase tracking-wider border-b-2 -mb-[2px] transition-colors cursor-pointer ${activeTab === "overview"
                     ? "border-[#0082FC] bg-[#0082FC] text-white"
-                    : "border-transparent text-[#0082FC] hover:bg-[#5FD4FD]/20"
-                }`}
+                    : "border-transparent text-[#0082FC] hover:bg-[#0565d6]/20"
+                  }`}
               >
                 Profile Overview
               </button>
               <button
                 type="button"
                 onClick={() => setActiveTab("commercial")}
-                className={`py-3 px-4 sm:px-6 text-xs sm:text-sm font-black uppercase tracking-wider border-b-2 -mb-[2px] transition-colors cursor-pointer ${
-                  activeTab === "commercial"
+                className={`py-3 px-4 sm:px-6 text-xs sm:text-sm font-black uppercase tracking-wider border-b-2 -mb-[2px] transition-colors cursor-pointer ${activeTab === "commercial"
                     ? "border-[#0082FC] bg-[#0082FC] text-white"
-                    : "border-transparent text-[#0082FC] hover:bg-[#5FD4FD]/20"
-                }`}
+                    : "border-transparent text-[#0082FC] hover:bg-[#0565d6]/20"
+                  }`}
               >
                 Commercial Privileges
               </button>
               <button
                 type="button"
                 onClick={() => setActiveTab("bol")}
-                className={`py-3 px-4 sm:px-6 text-xs sm:text-sm font-black uppercase tracking-wider border-b-2 -mb-[2px] transition-colors cursor-pointer ${
-                  activeTab === "bol"
+                className={`py-3 px-4 sm:px-6 text-xs sm:text-sm font-black uppercase tracking-wider border-b-2 -mb-[2px] transition-colors cursor-pointer ${activeTab === "bol"
                     ? "border-[#0082FC] bg-[#0082FC] text-white"
-                    : "border-transparent text-[#0082FC] hover:bg-[#5FD4FD]/20"
-                }`}
+                    : "border-transparent text-[#0082FC] hover:bg-[#0565d6]/20"
+                  }`}
               >
                 BOL Shipment &amp; MTRs
               </button>
@@ -188,10 +185,10 @@ export default function ProfilePage() {
 
                 {/* If Super-Admin */}
                 {currentUser.role === "super-admin" && (
-                  <div className="p-5 bg-[#0082FC] text-white border-2 border-[#5FD4FD] space-y-3">
+                  <div className="p-5 bg-[#0082FC] text-white border-2 border-[#0565d6] space-y-3">
                     <div className="flex items-center justify-between">
                       <div className="flex items-center gap-2">
-                        <ShieldCheck className="w-6 h-6 text-[#5FD4FD]" />
+                        <ShieldCheck className="w-6 h-6 text-[#0565d6]" />
                         <h4 className="font-black text-base uppercase">
                           Super-Admin Master Approval Panel
                         </h4>
@@ -209,7 +206,7 @@ export default function ProfilePage() {
                     </p>
                     <Link
                       href="/admin"
-                      className="inline-block py-2.5 px-5 bg-white hover:bg-[#5FD4FD] text-[#0082FC] font-black text-xs uppercase tracking-wider transition-colors shadow-md"
+                      className="inline-block py-2.5 px-5 bg-white hover:bg-[#0565d6] text-[#0082FC] font-black text-xs uppercase tracking-wider transition-colors shadow-md"
                     >
                       Open Approvals Desk &rsaquo;
                     </Link>
@@ -250,7 +247,7 @@ export default function ProfilePage() {
                   </div>
                 </div>
 
-                <div className="p-4 bg-[#5FD4FD]/20 border border-[#0082FC] space-y-2">
+                <div className="p-4 bg-[#0565d6]/20 border border-[#0082FC] space-y-2">
                   <div className="flex items-center gap-2">
                     <Truck className="w-5 h-5 text-[#0082FC]" />
                     <span className="font-black text-sm uppercase text-[#0082FC]">
@@ -282,11 +279,11 @@ export default function ProfilePage() {
                       placeholder="e.g. BOL-88410 or PO-2026-NY"
                       value={bolSearch}
                       onChange={(e) => setBolSearch(e.target.value)}
-                      className="flex-1 bg-white border-2 border-[#0082FC] px-3.5 py-2.5 text-xs font-mono font-bold text-[#0082FC] focus:outline-none focus:border-[#5FD4FD]"
+                      className="flex-1 bg-white border-2 border-[#0082FC] px-3.5 py-2.5 text-xs font-mono font-bold text-[#0082FC] focus:outline-none focus:border-[#0565d6]"
                     />
                     <button
                       type="submit"
-                      className="px-5 py-2.5 bg-[#0082FC] hover:bg-[#5FD4FD] text-white hover:text-[#0082FC] font-black text-xs uppercase tracking-wider transition-colors cursor-pointer"
+                      className="px-5 py-2.5 bg-[#0082FC] hover:bg-[#0565d6] text-white hover:text-[#0082FC] font-black text-xs uppercase tracking-wider transition-colors cursor-pointer"
                     >
                       Track Trailer
                     </button>

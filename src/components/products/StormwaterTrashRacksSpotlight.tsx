@@ -323,20 +323,18 @@ Compliance: ${activeVariant.standards}
                   key={variant.id}
                   type="button"
                   onClick={() => handleSelectVariant(variant)}
-                  className={`px-4 py-2 text-xs font-black uppercase tracking-wider rounded-none border-2 transition-all flex items-center gap-2 cursor-pointer ${
-                    isActive
+                  className={`px-4 py-2 text-xs font-black uppercase tracking-wider rounded-none border-2 transition-all flex items-center gap-2 cursor-pointer ${isActive
                       ? "bg-[#0082FC] text-white border-[#0082FC] shadow-md scale-102"
-                      : "bg-white text-[#0082FC] border-[#5FD4FD] hover:border-[#0082FC] hover:bg-[#5FD4FD]/10"
-                  }`}
+                      : "bg-white text-[#0082FC] border-[#0565d6] hover:border-[#0082FC] hover:bg-[#0565d6]/10"
+                    }`}
                 >
                   {isActive && <Check className="w-3.5 h-3.5 stroke-[3]" />}
                   <span>{variant.tag.split(" ")[0]} RACK</span>
                   <span
-                    className={`text-[9px] font-mono px-1 py-0.2 border ${
-                      isActive
+                    className={`text-[9px] font-mono px-1 py-0.2 border ${isActive
                         ? "bg-white/20 border-white text-white"
-                        : "bg-[#5FD4FD]/15 border-[#5FD4FD] text-[#0082FC]"
-                    }`}
+                        : "bg-[#0565d6]/15 border-[#0565d6] text-[#0082FC]"
+                      }`}
                   >
                     {variant.catNumber}
                   </span>
@@ -353,7 +351,7 @@ Compliance: ${activeVariant.standards}
             <div className="lg:col-span-6 flex flex-col items-center">
               {/* Header Ribbon */}
               <div className="w-full flex items-center justify-between mb-2">
-                <span className="text-[10px] font-black uppercase tracking-wider bg-[#5FD4FD]/20 text-[#0082FC] px-2 py-0.5 border border-[#0082FC] flex items-center gap-1.5">
+                <span className="text-[10px] font-black uppercase tracking-wider bg-[#0565d6]/20 text-[#0082FC] px-2 py-0.5 border border-[#0082FC] flex items-center gap-1.5">
                   <Camera className="w-3 h-3 text-[#0082FC]" />
                   <span>Real Manufactured Product Photography</span>
                 </span>
@@ -380,7 +378,7 @@ Compliance: ${activeVariant.standards}
                   <span className="bg-[#0082FC] text-white px-2 py-0.5 text-[9px] font-black uppercase tracking-wider border border-white/50 shadow-md">
                     {currentPhoto.badge}
                   </span>
-                  <span className="bg-black/80 backdrop-blur-xs text-[#5FD4FD] px-2 py-0.5 text-[9px] font-mono font-bold border border-[#5FD4FD]/50">
+                  <span className="bg-black/80 backdrop-blur-xs text-[#0565d6] px-2 py-0.5 text-[9px] font-mono font-bold border border-[#0565d6]/50">
                     Pattern: {activeVariant.catNumber}
                   </span>
                 </div>
@@ -391,7 +389,7 @@ Compliance: ${activeVariant.standards}
               </div>
 
               {/* Real Photo Caption Bar */}
-              <div className="w-full bg-[#5FD4FD]/15 border-2 border-[#5FD4FD] p-2 mt-2 text-left">
+              <div className="w-full bg-[#0565d6]/15 border-2 border-[#0565d6] p-2 mt-2 text-left">
                 <p className="text-[11px] text-[#0082FC] font-semibold leading-tight">
                   <span className="font-black uppercase text-[#0082FC] mr-1.5">
                     {currentPhoto.title}:
@@ -409,11 +407,10 @@ Compliance: ${activeVariant.standards}
                       key={photo.id}
                       type="button"
                       onClick={() => setActivePhotoIndex(idx)}
-                      className={`relative h-18 sm:h-20 bg-slate-900 border-2 transition-all p-1 flex flex-col items-center justify-between cursor-pointer overflow-hidden ${
-                        isSelected
+                      className={`relative h-18 sm:h-20 bg-slate-900 border-2 transition-all p-1 flex flex-col items-center justify-between cursor-pointer overflow-hidden ${isSelected
                           ? "border-[#0082FC] ring-2 ring-[#0082FC] scale-102 bg-white"
                           : "border-slate-300 hover:border-[#0082FC] opacity-80 hover:opacity-100"
-                      }`}
+                        }`}
                       title={photo.title}
                     >
                       <div className="relative w-full flex-1">
@@ -426,11 +423,10 @@ Compliance: ${activeVariant.standards}
                         />
                       </div>
                       <span
-                        className={`text-[8px] font-bold uppercase truncate w-full text-center mt-0.5 px-0.5 ${
-                          isSelected
+                        className={`text-[8px] font-bold uppercase truncate w-full text-center mt-0.5 px-0.5 ${isSelected
                             ? "bg-[#0082FC] text-white"
                             : "bg-slate-800 text-white/90"
-                        }`}
+                          }`}
                       >
                         {photo.badge.split(" ")[0]}
                       </span>
@@ -448,7 +444,7 @@ Compliance: ${activeVariant.standards}
                   <span className="bg-[#0082FC] text-white px-2.5 py-0.5 text-[10px] font-black uppercase tracking-wider">
                     {activeVariant.tag}
                   </span>
-                  <span className="bg-[#5FD4FD]/20 border border-[#0082FC] text-[#0082FC] px-2 py-0.5 text-[10px] font-black uppercase tracking-wider">
+                  <span className="bg-[#0565d6]/20 border border-[#0082FC] text-[#0082FC] px-2 py-0.5 text-[10px] font-black uppercase tracking-wider">
                     {activeVariant.catNumber}
                   </span>
                   <span className="text-[10px] font-bold text-[#0082FC]/80 uppercase">
@@ -517,7 +513,7 @@ Compliance: ${activeVariant.standards}
                 </div>
 
                 {/* Dimensions Metric Ribbon */}
-                <div className="bg-[#5FD4FD]/10 border border-[#5FD4FD] p-2.5 mb-5 flex flex-wrap items-center justify-between gap-3 text-xs font-mono font-bold text-[#0082FC]">
+                <div className="bg-[#0565d6]/10 border border-[#0565d6] p-2.5 mb-5 flex flex-wrap items-center justify-between gap-3 text-xs font-mono font-bold text-[#0082FC]">
                   <span>Height: {activeVariant.dimensions.height}</span>
                   <span>Width: {activeVariant.dimensions.width}</span>
                   <span>Depth: {activeVariant.dimensions.depth}</span>
@@ -532,11 +528,10 @@ Compliance: ${activeVariant.standards}
                 <button
                   type="button"
                   onClick={handleAdd}
-                  className={`flex-1 py-3 px-4 text-xs font-black uppercase tracking-wider rounded-none border-2 transition-all flex items-center justify-center gap-2 cursor-pointer shadow-md ${
-                    added
-                      ? "bg-[#5FD4FD] text-[#0082FC] border-[#0082FC]"
-                      : "bg-[#0082FC] hover:bg-[#5FD4FD] text-white hover:text-[#0082FC] border-[#0082FC]"
-                  }`}
+                  className={`flex-1 py-3 px-4 text-xs font-black uppercase tracking-wider rounded-none border-2 transition-all flex items-center justify-center gap-2 cursor-pointer shadow-md ${added
+                      ? "bg-[#0565d6] text-[#0082FC] border-[#0082FC]"
+                      : "bg-[#0082FC] hover:bg-[#0565d6] text-white hover:text-[#0082FC] border-[#0082FC]"
+                    }`}
                 >
                   {added ? (
                     <>
@@ -564,7 +559,7 @@ Compliance: ${activeVariant.standards}
                   type="button"
                   onClick={handleCopySpecs}
                   title="Copy engineering specifications"
-                  className="py-3 px-3 bg-[#5FD4FD]/20 hover:bg-[#0082FC] text-[#0082FC] hover:text-white border-2 border-[#5FD4FD] text-xs font-black uppercase transition-all flex items-center justify-center gap-1.5 cursor-pointer shadow-xs"
+                  className="py-3 px-3 bg-[#0565d6]/20 hover:bg-[#0082FC] text-[#0082FC] hover:text-white border-2 border-[#0565d6] text-xs font-black uppercase transition-all flex items-center justify-center gap-1.5 cursor-pointer shadow-xs"
                 >
                   {copied ? (
                     <>

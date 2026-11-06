@@ -280,20 +280,18 @@ Compliance: ${activeVariant.standards}
                     setActiveVariantId(variant.id);
                     setAdded(false);
                   }}
-                  className={`px-4 py-2 text-xs font-black uppercase tracking-wider rounded-none border-2 transition-all flex items-center gap-2 cursor-pointer ${
-                    isActive
+                  className={`px-4 py-2 text-xs font-black uppercase tracking-wider rounded-none border-2 transition-all flex items-center gap-2 cursor-pointer ${isActive
                       ? "bg-[#0082FC] text-white border-[#0082FC] shadow-md scale-102"
-                      : "bg-white text-[#0082FC] border-[#5FD4FD] hover:border-[#0082FC] hover:bg-[#5FD4FD]/10"
-                  }`}
+                      : "bg-white text-[#0082FC] border-[#0565d6] hover:border-[#0082FC] hover:bg-[#0565d6]/10"
+                    }`}
                 >
                   {isActive && <Check className="w-3.5 h-3.5 stroke-[3]" />}
                   <span>{variant.tag.split(" ")[0]} OUTLET</span>
                   <span
-                    className={`text-[9px] font-mono px-1 py-0.2 border ${
-                      isActive
+                    className={`text-[9px] font-mono px-1 py-0.2 border ${isActive
                         ? "bg-white/20 border-white text-white"
-                        : "bg-[#5FD4FD]/15 border-[#5FD4FD] text-[#0082FC]"
-                    }`}
+                        : "bg-[#0565d6]/15 border-[#0565d6] text-[#0082FC]"
+                      }`}
                   >
                     {variant.catNumber}
                   </span>
@@ -310,7 +308,7 @@ Compliance: ${activeVariant.standards}
             <div className="lg:col-span-6 flex flex-col items-center">
               {/* Simulator Header & View Mode Switcher */}
               <div className="w-full flex items-center justify-between mb-2">
-                <span className="text-[10px] font-black uppercase tracking-wider bg-[#5FD4FD]/20 text-[#0082FC] px-2 py-0.5 border border-[#0082FC] flex items-center gap-1.5">
+                <span className="text-[10px] font-black uppercase tracking-wider bg-[#0565d6]/20 text-[#0082FC] px-2 py-0.5 border border-[#0082FC] flex items-center gap-1.5">
                   <Waves className="w-3 h-3" />
                   <span>Interactive Water Seal &amp; Siphon Simulator</span>
                 </span>
@@ -319,22 +317,20 @@ Compliance: ${activeVariant.standards}
                   <button
                     type="button"
                     onClick={() => setViewMode("cad")}
-                    className={`px-2 py-0.5 text-[10px] font-black uppercase border transition-colors cursor-pointer ${
-                      viewMode === "cad"
+                    className={`px-2 py-0.5 text-[10px] font-black uppercase border transition-colors cursor-pointer ${viewMode === "cad"
                         ? "bg-[#0082FC] text-white border-[#0082FC]"
-                        : "bg-white text-[#0082FC] border-[#5FD4FD] hover:bg-[#5FD4FD]/10"
-                    }`}
+                        : "bg-white text-[#0082FC] border-[#0565d6] hover:bg-[#0565d6]/10"
+                      }`}
                   >
                     CAD Blueprint
                   </button>
                   <button
                     type="button"
                     onClick={() => setViewMode("photo")}
-                    className={`px-2 py-0.5 text-[10px] font-black uppercase border transition-colors cursor-pointer ${
-                      viewMode === "photo"
+                    className={`px-2 py-0.5 text-[10px] font-black uppercase border transition-colors cursor-pointer ${viewMode === "photo"
                         ? "bg-[#0082FC] text-white border-[#0082FC]"
-                        : "bg-white text-[#0082FC] border-[#5FD4FD] hover:bg-[#5FD4FD]/10"
-                    }`}
+                        : "bg-white text-[#0082FC] border-[#0565d6] hover:bg-[#0565d6]/10"
+                      }`}
                   >
                     Foundry Photo
                   </button>
@@ -490,7 +486,7 @@ Compliance: ${activeVariant.standards}
                       <path
                         d="M 130 50 L 270 50 L 270 130 L 220 130 Q 220 170 160 170 L 130 170 Z"
                         fill="#1e293b"
-                        stroke="#5fd4fd"
+                        stroke="#0565d6"
                         strokeWidth="3.5"
                       />
 
@@ -547,18 +543,18 @@ Compliance: ${activeVariant.standards}
                       {/* Subsurface Clean Water Path Flowing Under Baffle */}
                       <path
                         d="M 100 185 Q 145 185 175 145 L 290 90"
-                        stroke="#5fd4fd"
+                        stroke="#0565d6"
                         strokeWidth="3"
                         strokeDasharray="4 3"
                         className="animate-pulse"
                       />
-                      <polygon points="295,88 285,84 288,94" fill="#5fd4fd" />
+                      <polygon points="295,88 285,84 288,94" fill="#0565d6" />
 
                       <text
                         x="210"
                         y="105"
                         fontSize="8"
-                        fill="#5fd4fd"
+                        fill="#0565d6"
                         fontWeight="bold"
                       >
                         CLEAN WATER FLOW
@@ -572,7 +568,7 @@ Compliance: ${activeVariant.standards}
                         height="50"
                         fill="#0082fc"
                         fillOpacity="0.3"
-                        stroke="#5fd4fd"
+                        stroke="#0565d6"
                         strokeWidth="2"
                       />
                       <text
@@ -587,9 +583,9 @@ Compliance: ${activeVariant.standards}
                     </svg>
 
                     {/* Siphon Depth Indicator */}
-                    <div className="absolute top-2 left-2 bg-slate-900/90 text-white border border-[#5FD4FD] px-2 py-1 text-[10px] font-mono">
+                    <div className="absolute top-2 left-2 bg-slate-900/90 text-white border border-[#0565d6] px-2 py-1 text-[10px] font-mono">
                       <span>Siphon Seal: </span>
-                      <span className="text-[#5FD4FD] font-bold">
+                      <span className="text-[#0565d6] font-bold">
                         {waterStage === "low"
                           ? 'Seal Engaged (5.5")'
                           : waterStage === "normal"
@@ -602,7 +598,7 @@ Compliance: ${activeVariant.standards}
               </div>
 
               {/* Simulator Interactive Control Ribbon */}
-              <div className="w-full bg-[#5FD4FD]/15 border-2 border-[#5FD4FD] p-2.5 mt-3 flex flex-wrap items-center justify-between gap-2">
+              <div className="w-full bg-[#0565d6]/15 border-2 border-[#0565d6] p-2.5 mt-3 flex flex-wrap items-center justify-between gap-2">
                 <div className="flex items-center gap-1.5">
                   <span className="text-[10px] font-black uppercase text-[#0082FC]">
                     Water Inflow:
@@ -610,33 +606,30 @@ Compliance: ${activeVariant.standards}
                   <button
                     type="button"
                     onClick={() => setWaterStage("low")}
-                    className={`px-2 py-1 text-[10px] font-black uppercase border transition-colors cursor-pointer ${
-                      waterStage === "low"
+                    className={`px-2 py-1 text-[10px] font-black uppercase border transition-colors cursor-pointer ${waterStage === "low"
                         ? "bg-[#0082FC] text-white border-[#0082FC]"
-                        : "bg-white text-[#0082FC] border-[#5FD4FD]"
-                    }`}
+                        : "bg-white text-[#0082FC] border-[#0565d6]"
+                      }`}
                   >
                     Low Dry Run
                   </button>
                   <button
                     type="button"
                     onClick={() => setWaterStage("normal")}
-                    className={`px-2 py-1 text-[10px] font-black uppercase border transition-colors cursor-pointer ${
-                      waterStage === "normal"
+                    className={`px-2 py-1 text-[10px] font-black uppercase border transition-colors cursor-pointer ${waterStage === "normal"
                         ? "bg-[#0082FC] text-white border-[#0082FC]"
-                        : "bg-white text-[#0082FC] border-[#5FD4FD]"
-                    }`}
+                        : "bg-white text-[#0082FC] border-[#0565d6]"
+                      }`}
                   >
                     Normal Storm
                   </button>
                   <button
                     type="button"
                     onClick={() => setWaterStage("surge")}
-                    className={`px-2 py-1 text-[10px] font-black uppercase border transition-colors cursor-pointer ${
-                      waterStage === "surge"
+                    className={`px-2 py-1 text-[10px] font-black uppercase border transition-colors cursor-pointer ${waterStage === "surge"
                         ? "bg-[#0082FC] text-white border-[#0082FC]"
-                        : "bg-white text-[#0082FC] border-[#5FD4FD]"
-                    }`}
+                        : "bg-white text-[#0082FC] border-[#0565d6]"
+                      }`}
                   >
                     Peak Surge
                   </button>
@@ -645,11 +638,10 @@ Compliance: ${activeVariant.standards}
                 <button
                   type="button"
                   onClick={() => setCleanoutOpen((prev) => !prev)}
-                  className={`px-2.5 py-1 text-[10px] font-black uppercase border transition-all flex items-center gap-1 cursor-pointer ${
-                    cleanoutOpen
+                  className={`px-2.5 py-1 text-[10px] font-black uppercase border transition-all flex items-center gap-1 cursor-pointer ${cleanoutOpen
                       ? "bg-red-600 text-white border-red-600 animate-pulse"
                       : "bg-white text-[#0082FC] border-[#0082FC] hover:bg-[#0082FC] hover:text-white"
-                  }`}
+                    }`}
                 >
                   <Wrench className="w-3 h-3" />
                   <span>
@@ -667,7 +659,7 @@ Compliance: ${activeVariant.standards}
                   <span className="bg-[#0082FC] text-white px-2.5 py-0.5 text-[10px] font-black uppercase tracking-wider">
                     {activeVariant.tag}
                   </span>
-                  <span className="bg-[#5FD4FD]/20 border border-[#0082FC] text-[#0082FC] px-2 py-0.5 text-[10px] font-black uppercase tracking-wider">
+                  <span className="bg-[#0565d6]/20 border border-[#0082FC] text-[#0082FC] px-2 py-0.5 text-[10px] font-black uppercase tracking-wider">
                     {activeVariant.catNumber}
                   </span>
                   <span className="text-[10px] font-bold text-[#0082FC]/80 uppercase">
@@ -736,7 +728,7 @@ Compliance: ${activeVariant.standards}
                 </div>
 
                 {/* Dimensions Metric Ribbon */}
-                <div className="bg-[#5FD4FD]/10 border border-[#5FD4FD] p-2.5 mb-5 flex flex-wrap items-center justify-between gap-3 text-xs font-mono font-bold text-[#0082FC]">
+                <div className="bg-[#0565d6]/10 border border-[#0565d6] p-2.5 mb-5 flex flex-wrap items-center justify-between gap-3 text-xs font-mono font-bold text-[#0082FC]">
                   <span>Height: {activeVariant.dimensions.height}</span>
                   <span>Width: {activeVariant.dimensions.width}</span>
                   <span>Depth: {activeVariant.dimensions.depth}</span>
@@ -751,11 +743,10 @@ Compliance: ${activeVariant.standards}
                 <button
                   type="button"
                   onClick={handleAdd}
-                  className={`flex-1 py-3 px-4 text-xs font-black uppercase tracking-wider rounded-none border-2 transition-all flex items-center justify-center gap-2 cursor-pointer shadow-md ${
-                    added
-                      ? "bg-[#5FD4FD] text-[#0082FC] border-[#0082FC]"
-                      : "bg-[#0082FC] hover:bg-[#5FD4FD] text-white hover:text-[#0082FC] border-[#0082FC]"
-                  }`}
+                  className={`flex-1 py-3 px-4 text-xs font-black uppercase tracking-wider rounded-none border-2 transition-all flex items-center justify-center gap-2 cursor-pointer shadow-md ${added
+                      ? "bg-[#0565d6] text-[#0082FC] border-[#0082FC]"
+                      : "bg-[#0082FC] hover:bg-[#0565d6] text-white hover:text-[#0082FC] border-[#0082FC]"
+                    }`}
                 >
                   {added ? (
                     <>
@@ -783,7 +774,7 @@ Compliance: ${activeVariant.standards}
                   type="button"
                   onClick={handleCopySpecs}
                   title="Copy engineering specifications"
-                  className="py-3 px-3 bg-[#5FD4FD]/20 hover:bg-[#0082FC] text-[#0082FC] hover:text-white border-2 border-[#5FD4FD] text-xs font-black uppercase transition-all flex items-center justify-center gap-1.5 cursor-pointer shadow-xs"
+                  className="py-3 px-3 bg-[#0565d6]/20 hover:bg-[#0082FC] text-[#0082FC] hover:text-white border-2 border-[#0565d6] text-xs font-black uppercase transition-all flex items-center justify-center gap-1.5 cursor-pointer shadow-xs"
                 >
                   {copied ? (
                     <>

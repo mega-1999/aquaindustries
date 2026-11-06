@@ -195,12 +195,12 @@ export function EngineeringSubmittalLibrary({
           {visibleDocs.map((doc) => (
             <div
               key={doc.id}
-              className="border-2 border-[#0082FC] bg-white flex flex-col justify-between hover:border-[#5FD4FD] transition-colors duration-200"
+              className="border-2 border-[#0082FC] bg-white flex flex-col justify-between hover:border-[#0565d6] transition-colors duration-200"
             >
               <div>
                 {/* Card Top Banner */}
                 <div className="bg-[#0082FC] text-white p-4 flex items-center justify-between border-b border-[#0082FC]">
-                  <span className="text-xs font-mono uppercase tracking-wider text-[#5FD4FD] font-bold whitespace-nowrap">
+                  <span className="text-xs font-mono uppercase tracking-wider text-[#0565d6] font-bold whitespace-nowrap">
                     {doc.category}
                   </span>
                   <span className="text-xs font-mono font-bold bg-white text-[#0082FC] px-2.5 py-1 whitespace-nowrap">
@@ -232,7 +232,7 @@ export function EngineeringSubmittalLibrary({
                         y1="20"
                         x2="85"
                         y2="20"
-                        stroke="#5FD4FD"
+                        stroke="#0565d6"
                         strokeWidth="2"
                       />
                       <line
@@ -264,7 +264,7 @@ export function EngineeringSubmittalLibrary({
                         y="40"
                         width="15"
                         height="15"
-                        fill="#5FD4FD"
+                        fill="#0565d6"
                       />
                     </svg>
                   </div>
@@ -300,7 +300,7 @@ export function EngineeringSubmittalLibrary({
                 <button
                   type="button"
                   onClick={() => handleDownload(doc)}
-                  className="w-full inline-flex items-center justify-center bg-[#0082FC] text-white hover:bg-[#5FD4FD] hover:text-[#0082FC] font-bold text-xs sm:text-sm uppercase tracking-wider py-2.5 px-3.5 border-2 border-[#0082FC] transition-colors duration-150 whitespace-nowrap cursor-pointer shadow-xs"
+                  className="w-full inline-flex items-center justify-center bg-[#0082FC] text-white hover:bg-[#0565d6] hover:text-[#0082FC] font-bold text-xs sm:text-sm uppercase tracking-wider py-2.5 px-3.5 border-2 border-[#0082FC] transition-colors duration-150 whitespace-nowrap cursor-pointer shadow-xs"
                 >
                   <span>Download Spec Sheet ({doc.fileType})</span>
                   <svg
@@ -325,7 +325,7 @@ export function EngineeringSubmittalLibrary({
         {/* Bottom Fast Access Bar */}
         <div className="mt-12 p-6 sm:p-8 border-2 border-[#0082FC] bg-[#0082FC] text-white flex flex-col md:flex-row items-center justify-between gap-6">
           <div className="space-y-1.5 text-center md:text-left">
-            <div className="text-sm font-mono uppercase text-[#5FD4FD] tracking-wider font-bold whitespace-nowrap">
+            <div className="text-sm font-mono uppercase text-[#0565d6] tracking-wider font-bold whitespace-nowrap">
               Need a Custom Engineered Submittal Package?
             </div>
             <div className="text-lg font-bold text-white">
@@ -336,7 +336,7 @@ export function EngineeringSubmittalLibrary({
 
           <a
             href="#quote-builder"
-            className="inline-flex items-center justify-center bg-white text-[#0082FC] hover:bg-[#5FD4FD] hover:text-[#0082FC] font-extrabold text-sm sm:text-base uppercase tracking-wider py-4 px-8 border-2 border-white transition-colors duration-150 whitespace-nowrap shadow-md"
+            className="inline-flex items-center justify-center bg-white text-[#0082FC] hover:bg-[#0565d6] hover:text-[#0082FC] font-extrabold text-sm sm:text-base uppercase tracking-wider py-4 px-8 border-2 border-white transition-colors duration-150 whitespace-nowrap shadow-md"
           >
             <span>Request Engineer Submittal Binder</span>
           </a>

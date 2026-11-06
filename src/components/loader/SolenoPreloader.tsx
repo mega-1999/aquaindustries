@@ -63,9 +63,8 @@ export const SolenoPreloader: React.FC = () => {
   return (
     <div
       id="myLoader"
-      className={`fixed inset-0 w-screen h-screen z-[99999] select-none flex items-center justify-center overflow-hidden transition-all duration-300 ${
-        is100Percent ? "pointer-events-none" : "pointer-events-auto"
-      }`}
+      className={`fixed inset-0 w-screen h-screen z-[99999] select-none flex items-center justify-center overflow-hidden transition-all duration-300 ${is100Percent ? "pointer-events-none" : "pointer-events-auto"
+        }`}
       aria-hidden={is100Percent}
     >
       {/* Dynamic SVG Circular Aperture Iris Mask Reveal */}
@@ -106,7 +105,7 @@ export const SolenoPreloader: React.FC = () => {
           cy="50%"
           r={is100Percent ? "150vmax" : "0px"}
           fill="none"
-          stroke="#5FD4FD"
+          stroke="#0565d6"
           strokeWidth="6"
           opacity={is100Percent ? 0.9 : 0}
           style={{
@@ -118,15 +117,14 @@ export const SolenoPreloader: React.FC = () => {
 
       {/* Central Brand Identity & Percentage Counter */}
       <div
-        className={`relative z-10 flex flex-col items-center transition-all duration-400 ${
-          is100Percent
+        className={`relative z-10 flex flex-col items-center transition-all duration-400 ${is100Percent
             ? "opacity-0 scale-90 pointer-events-none"
             : "opacity-100 scale-100"
-        }`}
+          }`}
       >
         {/* Pulsing Brand Emblem */}
         <div className="pulse-logo mb-5">
-          <div className="w-24 h-24 sm:w-28 sm:h-28 bg-white border-2 border-[#5FD4FD] flex items-center justify-center shadow-2xl relative p-3">
+          <div className="w-24 h-24 sm:w-28 sm:h-28 bg-white border-2 border-[#0565d6] flex items-center justify-center shadow-2xl relative p-3">
             <img
               src="/images/AI_Waterdrop.png"
               alt="Aqua Industries"
@@ -137,10 +135,10 @@ export const SolenoPreloader: React.FC = () => {
 
         {/* Brand Name */}
         <div className="text-white font-extrabold text-2xl sm:text-3xl tracking-tight uppercase whitespace-nowrap mb-1">
-          Aqua <span className="text-[#5FD4FD]">Industries</span>
+          Aqua <span className="text-[#0565d6]">Industries</span>
         </div>
 
-        <div className="text-[#5FD4FD] text-xs sm:text-sm font-extrabold tracking-widest uppercase whitespace-nowrap mb-4">
+        <div className="text-[#0565d6] text-xs sm:text-sm font-extrabold tracking-widest uppercase whitespace-nowrap mb-4">
           Municipal Waterworks &bull; Domestic Foundries
         </div>
 
@@ -156,12 +154,11 @@ export const SolenoPreloader: React.FC = () => {
 
       {/* Bottom Horizontal Progress Tracker */}
       <div
-        className={`fixed bottom-8 sm:bottom-12 left-6 sm:left-12 right-6 sm:right-12 h-1 bg-white/20 overflow-hidden transition-opacity duration-300 ${
-          is100Percent ? "opacity-0" : "opacity-100"
-        }`}
+        className={`fixed bottom-8 sm:bottom-12 left-6 sm:left-12 right-6 sm:right-12 h-1 bg-white/20 overflow-hidden transition-opacity duration-300 ${is100Percent ? "opacity-0" : "opacity-100"
+          }`}
       >
         <div
-          className="h-full bg-[#5FD4FD] transition-all duration-100 ease-out"
+          className="h-full bg-[#0565d6] transition-all duration-100 ease-out"
           style={{ width: `${progress}%` }}
         />
       </div>

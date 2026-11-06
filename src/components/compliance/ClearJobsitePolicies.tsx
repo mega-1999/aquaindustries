@@ -15,7 +15,7 @@ export const ClearJobsitePolicies: React.FC = () => {
   return (
     <section
       aria-label="Aqua Industries Order & Jobsite Policies"
-      className="py-16 bg-white border-t-2 border-[#5FD4FD]"
+      className="py-16 bg-white border-t-2 border-[#0565d6]"
     >
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="border-2 border-[#0082FC] bg-white rounded-none p-6 sm:p-10 shadow-sm relative overflow-hidden text-[#0082FC]">
@@ -23,9 +23,9 @@ export const ClearJobsitePolicies: React.FC = () => {
           <div className="absolute top-0 inset-x-0 h-1.5 bg-[#0082FC]" />
 
           {/* Header */}
-          <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-4 mb-8 pb-6 border-b-2 border-[#5FD4FD]/30">
+          <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-4 mb-8 pb-6 border-b-2 border-[#0565d6]/30">
             <div className="flex items-center gap-3.5">
-              <span className="p-3 rounded-none bg-white border-2 border-[#5FD4FD] text-[#0082FC] shrink-0 shadow-sm">
+              <span className="p-3 rounded-none bg-white border-2 border-[#0565d6] text-[#0082FC] shrink-0 shadow-sm">
                 <ShieldCheck className="w-7 h-7 text-[#0082FC]" />
               </span>
               <div>
@@ -40,8 +40,8 @@ export const ClearJobsitePolicies: React.FC = () => {
             </div>
 
             <div className="shrink-0">
-              <span className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-none bg-white border-2 border-[#5FD4FD] text-[#0082FC] text-sm font-bold shadow-sm whitespace-nowrap">
-                <CheckCircle2 className="w-4 h-4 text-[#5FD4FD] shrink-0" />
+              <span className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-none bg-white border-2 border-[#0565d6] text-[#0082FC] text-sm font-bold shadow-sm whitespace-nowrap">
+                <CheckCircle2 className="w-4 h-4 text-[#0565d6] shrink-0" />
                 Plain English Terms
               </span>
             </div>
@@ -50,7 +50,7 @@ export const ClearJobsitePolicies: React.FC = () => {
           {/* 3 Safeguard Columns */}
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
             {/* 1. Pricing & Quotes */}
-            <div className="bg-white p-6 rounded-none border-2 border-[#5FD4FD] shadow-sm space-y-3.5">
+            <div className="bg-white p-6 rounded-none border-2 border-[#0565d6] shadow-sm space-y-3.5">
               <div className="flex items-center gap-2 text-[#0082FC] font-extrabold text-base">
                 <CalendarCheck className="w-5 h-5 text-[#0082FC] shrink-0" />
                 <span className="whitespace-nowrap">
@@ -67,7 +67,7 @@ export const ClearJobsitePolicies: React.FC = () => {
             </div>
 
             {/* 2. Jobsite Deliveries & Offloading */}
-            <div className="bg-white p-6 rounded-none border-2 border-[#5FD4FD] shadow-sm space-y-3.5">
+            <div className="bg-white p-6 rounded-none border-2 border-[#0565d6] shadow-sm space-y-3.5">
               <div className="flex items-center gap-2 text-[#0082FC] font-extrabold text-base">
                 <Truck className="w-5 h-5 text-[#0082FC] shrink-0" />
                 <span className="whitespace-nowrap">
@@ -87,7 +87,7 @@ export const ClearJobsitePolicies: React.FC = () => {
             </div>
 
             {/* 3. Proper Field Installation */}
-            <div className="bg-white p-6 rounded-none border-2 border-[#5FD4FD] shadow-sm space-y-3.5">
+            <div className="bg-white p-6 rounded-none border-2 border-[#0565d6] shadow-sm space-y-3.5">
               <div className="flex items-center gap-2 text-[#0082FC] font-extrabold text-base">
                 <Wrench className="w-5 h-5 text-[#0082FC] shrink-0" />
                 <span className="whitespace-nowrap">

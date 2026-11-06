@@ -98,7 +98,7 @@ export default function Home() {
   };
 
   return (
-    <div className="min-h-screen flex flex-col bg-white text-[#0082FC] selection:bg-[#5FD4FD] selection:text-[#0082FC]">
+    <div className="min-h-screen flex flex-col bg-white text-[#0082FC] selection:bg-[#0565d6] selection:text-[#0082FC]">
       {/* Soleno-Style Iris Aperture Preloader Animation */}
       <SolenoPreloader />
 

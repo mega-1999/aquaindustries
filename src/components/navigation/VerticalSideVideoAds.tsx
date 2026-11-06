@@ -29,158 +29,178 @@ const LEFT_VIDEO_ADS: VideoAdItem[] = [
   {
     id: "ad-left-1",
     side: "left",
-    badge: "NEW INNOVATION",
-    title: "Water Sampling Station",
+    badge: "UTILITY TOOLS",
+    title: "Water works tools",
     standard: "ANSI/NSF 61 Certified",
     duration: "0:45",
     videoUrl: "/videos/sampling-stations.mp4",
     posterUrl: "/images/our-images/sampling-station.png",
     description:
-      "Direct municipal watermain tap demo. Eliminates customer plumbing contamination and provides EPA Lead & Copper Rule testing points.",
+      "Municipal water quality sampling stations, valve keys, and field utility service tools engineered for pure main testing.",
     product: PRODUCTS_CATALOG[0],
   },
   {
     id: "ad-left-2",
     side: "left",
-    badge: "HIGHWAY TRAFFIC",
-    title: "The Century Curb Box",
-    standard: "AASHTO H-20 40,000 LB",
+    badge: "ARCHITECTURAL",
+    title: "Down spouts (downspouts)",
+    standard: "ASTM A48 Class 35B",
     duration: "0:52",
-    videoUrl: "/videos/bison-box/bison-curb-box.mp4",
-    posterUrl: "/images/our-images/curb-box-ultimate.png",
+    videoUrl: "https://soleno.com/wp-content/uploads/2024/12/bkg_water111.mp4",
+    posterUrl: "/images/products/Cleanout-Monument-Box.jpg",
     description:
-      "AASHTO H-20 heavy highway casting. Rigid Class 35B iron withstands severe 40,000 LB wheel loads without valve crushing.",
-    product: PRODUCTS_CATALOG[1],
+      "Heavy cast iron conductor boots, parapet overflow scuppers, and highway bridge deck spouts protecting building facades.",
+    product:
+      PRODUCTS_CATALOG.find((p) => p.id === "cast-iron-downspout-spouts") ||
+      PRODUCTS_CATALOG[1],
   },
   {
     id: "ad-left-3",
     side: "left",
-    badge: "FOUNDRY CASTING",
-    title: "Century Next-Gen Box",
-    standard: "ASTM A48 Class 35B",
+    badge: "STORMWATER SEAL",
+    title: "Catch basin traps",
+    standard: "ASTM A48 / ASTM A536",
     duration: "0:38",
-    videoUrl: "/videos/bison-box/bison-curb-box-next-centruary.mp4",
-    posterUrl: "/images/our-images/curb-box-buffalo.png",
+    videoUrl: "https://soleno.com/wp-content/uploads/2024/12/bkg_water111.mp4",
+    posterUrl: "/images/catch_basin_riser/catch_basin_riser_preview.jpeg",
     description:
-      "Authentic PR-branded pattern tooling with arch base securely straddling 3/4\" through 2\" municipal curb stops.",
-    product: PRODUCTS_CATALOG[1],
+      "Cast iron gas and siphon water-seal traps stopping floatable debris, oils, and sewer gases in municipal catch basins.",
+    product:
+      PRODUCTS_CATALOG.find((p) => p.id === "catch-basin-traps") ||
+      PRODUCTS_CATALOG[1],
   },
   {
     id: "ad-left-4",
     side: "left",
-    badge: "MECHANICAL RESTRAINT",
-    title: "Cam-Action Restraint",
-    standard: "UL Listed & FM Approved",
+    badge: "ROADWAY SAFETY",
+    title: "Pipe grates",
+    standard: "AASHTO H-20 Proof",
     duration: "1:05",
     videoUrl: "https://soleno.com/wp-content/uploads/2024/12/bkg_water111.mp4",
-    posterUrl: "/images/products/Joint-Restraints.jpg",
+    posterUrl: "/images/pipe_GRATE/8016_2.1.png",
     description:
-      "Concrete-free thrust restraint. Heat-treated ductile iron cam wedges bite radially under line pressure surges.",
-    product: PRODUCTS_CATALOG[2],
+      "Heavy-duty circular pipe grates, flared end hinged bar grates, and traversable ditch safety slope grates.",
+    product:
+      PRODUCTS_CATALOG.find((p) => p.id === "culvert-pipe-grates") ||
+      PRODUCTS_CATALOG[2],
   },
   {
     id: "ad-left-5",
     side: "left",
-    badge: "HYDROSTATIC TEST",
-    title: "C153 Compact Fittings",
-    standard: "AWWA C153 / C111",
+    badge: "MUNICIPAL CASTING",
+    title: "Water works castings",
+    standard: "AASHTO M306 40,000 LB",
     duration: "0:58",
-    videoUrl: "https://soleno.com/wp-content/uploads/2024/12/bkg_water111.mp4",
-    posterUrl: "/images/our-images/MJ_Fittings.jpeg",
+    videoUrl: "/videos/bison-box/bison-curb-box.mp4",
+    posterUrl: "/images/our-images/curb_inlet_riser_heavy_iron.png",
     description:
-      "Automated pressure chamber hydro-testing compact mechanical joint bends and tees beyond 2:1 safety factor thresholds.",
-    product: PRODUCTS_CATALOG[3] || PRODUCTS_CATALOG[0],
+      "Proof-tested roadway manhole frames, curb inlets, catch basin covers, and high-velocity stormwater storm grates.",
+    product:
+      PRODUCTS_CATALOG.find((p) => p.id === "drainage-grates-curb-inlets") ||
+      PRODUCTS_CATALOG[0],
   },
   {
     id: "ad-left-6",
     side: "left",
-    badge: "ROADWAY DRAINAGE",
-    title: "Heavy Trench Grates",
-    standard: "AASHTO M306 Proof Load",
+    badge: "350 PSI RATED",
+    title: "MJ fittings",
+    standard: "AWWA C153 / C110",
     duration: "0:48",
     videoUrl: "https://soleno.com/wp-content/uploads/2024/12/bkg_water111.mp4",
-    posterUrl: "/images/our-images/trench-grates.png",
+    posterUrl: "/images/our-images/MJ_Fittings.jpeg",
     description:
-      "Machined noise-dampening bearing seat under 40,000 lb proof load press. Eliminates street rattle and dynamic road impacts.",
-    product: PRODUCTS_CATALOG[5] || PRODUCTS_CATALOG[1],
+      "Compact & full-body ductile iron mechanical joint bends, tees, crosses, reducers, and cutting-in sleeves.",
+    product:
+      PRODUCTS_CATALOG.find((p) => p.id === "c153-compact-mj-fittings") ||
+      PRODUCTS_CATALOG[3],
   },
   {
     id: "ad-left-7",
     side: "left",
-    badge: "FIELD INSPECTION",
-    title: "Bison Field Close-Up",
-    standard: "ASTM A48 Class 35B",
+    badge: "CLASS 125 / 250",
+    title: "Flanges",
+    standard: "ANSI/AWWA C115 / C110",
     duration: "0:30",
-    videoUrl: "/videos/bison-box/bison-curb-box2.mp4",
-    posterUrl: "/images/our-images/curb-box-minneapolis.png",
+    videoUrl: "https://soleno.com/wp-content/uploads/2024/12/bkg_water111.mp4",
+    posterUrl: "/images/products/Fabricator-Flanges.jpg",
     description:
-      "Tamper-resistant recessed brass pentagon bolt security closure prevents unauthorized valve manipulation.",
-    product: PRODUCTS_CATALOG[1],
+      "Precision-machined threaded ductile iron flanges, blind flanges, and reducing flanges for plant piping.",
+    product:
+      PRODUCTS_CATALOG.find((p) => p.id === "threaded-ductile-iron-flanges") ||
+      PRODUCTS_CATALOG.find((p) => p.id === "c110-flange-fittings") ||
+      PRODUCTS_CATALOG[0],
   },
   {
     id: "ad-left-8",
     side: "left",
-    badge: "MUNICIPAL INLET",
-    title: "Curb Inlets & Basins",
-    standard: "ASTM A48 Class 35B",
+    badge: "AWWA C111",
+    title: "Glands",
+    standard: "ASTM A536 Ductile Iron",
     duration: "1:02",
     videoUrl: "https://soleno.com/wp-content/uploads/2024/12/bkg_water111.mp4",
-    posterUrl: "/images/our-images/curb_inlet_riser_heavy_iron.png",
+    posterUrl: "/images/products/MJ-Accessories.jpg",
     description:
-      "Precision cast iron curb opening inlets engineered for high-velocity storm capture and street profile seating.",
-    product: PRODUCTS_CATALOG[4] || PRODUCTS_CATALOG[0],
+      "High-strength ductile iron follower glands and cam-action wedge restraint follower glands for MJ joints.",
+    product:
+      PRODUCTS_CATALOG.find((p) => p.id === "mechanical-joint-follower-glands") ||
+      PRODUCTS_CATALOG.find((p) => p.id === "series-3000-wedge-restraint") ||
+      PRODUCTS_CATALOG[2],
   },
   {
     id: "ad-left-9",
     side: "left",
-    badge: "ADA COMPLIANCE",
-    title: "Warning Dome Plates",
-    standard: "ADAAG Title III",
+    badge: "ANTI-VORTEX",
+    title: "Trash racks",
+    standard: "ASTM A123 Galvanized",
     duration: "0:40",
     videoUrl: "https://soleno.com/wp-content/uploads/2024/12/bkg_water111.mp4",
-    posterUrl: "/images/our-images/warning-plate.png",
+    posterUrl: "/images/trash_racks/trash_rack_type_1.png",
     description:
-      "Truncated dome tactile tiles cast in unpainted natural patina ductile iron with non-slip slip-resistance ratings.",
-    product: PRODUCTS_CATALOG[6] || PRODUCTS_CATALOG[0],
+      "360-degree pyramidal anti-vortex trash racks and self-cleaning inclined screens for detention basin risers.",
+    product:
+      PRODUCTS_CATALOG.find((p) => p.id === "detention-trash-racks") ||
+      PRODUCTS_CATALOG[0],
   },
   {
     id: "ad-left-10",
     side: "left",
-    badge: "CIVIL UTILITY",
-    title: "Monument & Cleanout",
-    standard: "Heavy Duty Municipal",
+    badge: "CORROSION PROOF",
+    title: "Marine castings",
+    standard: "ASTM A536 Heavy Marine",
     duration: "0:44",
-    videoUrl: "https://soleno.com/wp-content/uploads/2024/12/bkg_water111.mp4",
-    posterUrl: "/images/our-images/cleanout.png",
+    videoUrl: "/videos/swan_vidoe.mp4",
+    posterUrl: "/images/our-images/Ornamental_Castings.jpeg",
     description:
-      "Self-centering cast iron monument frames and cleanout access covers protecting survey pins and municipal cleanouts.",
-    product: PRODUCTS_CATALOG[7] || PRODUCTS_CATALOG[0],
+      "Ductile iron mooring bollards, dock bitts, marine cleats, and heavy waterfront bulkhead infrastructure.",
+    product:
+      PRODUCTS_CATALOG.find((p) => p.id === "ornamental-architectural-castings") ||
+      PRODUCTS_CATALOG[8],
   },
   {
     id: "ad-left-11",
     side: "left",
-    badge: "PVC COMPATIBLE",
-    title: "Series 1400 Restraint",
-    standard: "UNI-B-13 / AWWA C900",
+    badge: "UTILITY TOOLS",
+    title: "Water works tools",
+    standard: "AWWA / Municipal Field",
     duration: "0:55",
-    videoUrl: "https://soleno.com/wp-content/uploads/2024/12/bkg_water111.mp4",
-    posterUrl: "/images/products/Joint-Restraints.jpg",
+    videoUrl: "/videos/sampling-stations.mp4",
+    posterUrl: "/images/our-images/sampling-station.png",
     description:
-      "360-degree radial gripping pads ensure uniform circumferential hold on PVC pipe walls without point-loading stress.",
-    product: PRODUCTS_CATALOG[14] || PRODUCTS_CATALOG[2],
+      "Dedicated municipal watermain sampling stations and certified brass testing equipment for waterworks.",
+    product: PRODUCTS_CATALOG[0],
   },
   {
     id: "ad-left-12",
     side: "left",
-    badge: "FOUNDRY QA",
-    title: "NY Melt Pour Demo",
-    standard: "ASTM A536 Grade 65-45-12",
+    badge: "HIGHWAY TRAFFIC",
+    title: "Water works castings",
+    standard: "AASHTO M306 Proof Load",
     duration: "1:15",
-    videoUrl: "/videos/swan_vidoe.mp4",
-    posterUrl: "/images/our-images/Ornamental_Castings.jpeg",
+    videoUrl: "/videos/bison-box/bison-curb-box2.mp4",
+    posterUrl: "/images/our-images/curb-box-ultimate.png",
     description:
-      "2,500°F electric induction furnace pouring ductile iron. Traceable heat numbers cast directly on every casting.",
-    product: PRODUCTS_CATALOG[8] || PRODUCTS_CATALOG[3],
+      "Century curb service boxes, valve boxes, and municipal highway roadway access iron castings.",
+    product: PRODUCTS_CATALOG[1],
   },
 ];
 
@@ -251,7 +271,7 @@ const SideAdCard: React.FC<SideAdCardProps> = ({
       ([entry]) => {
         if (videoRef.current) {
           if (entry.isIntersecting) {
-            videoRef.current.play().catch(() => {});
+            videoRef.current.play().catch(() => { });
           } else {
             videoRef.current.pause();
           }
@@ -281,7 +301,7 @@ const SideAdCard: React.FC<SideAdCardProps> = ({
           preload="none"
           onEnded={(e) => {
             e.currentTarget.currentTime = 0;
-            e.currentTarget.play().catch(() => {});
+            e.currentTarget.play().catch(() => { });
           }}
           className="absolute inset-0 w-full h-full object-cover opacity-75 group-hover:opacity-95 transition-opacity duration-300"
         />
@@ -354,11 +374,10 @@ const SideAdCard: React.FC<SideAdCardProps> = ({
           <button
             type="button"
             onClick={() => onAdd(ad.product)}
-            className={`py-0.5 px-1.5 border border-[#0074f0] text-[9px] font-black uppercase tracking-wider transition-all cursor-pointer flex items-center justify-center ${
-              isAdded
+            className={`py-0.5 px-1.5 border border-[#0074f0] text-[9px] font-black uppercase tracking-wider transition-all cursor-pointer flex items-center justify-center ${isAdded
                 ? "bg-[#0082FC] text-[#0074f0]"
                 : "bg-[#0074f0] text-white hover:bg-[#0082FC] hover:text-[#0074f0]"
-            }`}
+              }`}
             title="Add to Quote"
           >
             {isAdded ? (
@@ -503,16 +522,15 @@ export const VerticalSideVideoAds: React.FC<VerticalSideVideoAdsProps> = ({
         style={{
           top: "max(125px, calc(50vh - 255px))",
         }}
-        className={`fixed right-2 min-[1720px]:right-3 min-[1900px]:right-4 z-30 hidden min-[1600px]:flex flex-col gap-[10px] select-none shadow-xl max-h-[calc(100vh-140px)] transition-all duration-300 ease-out ${
-          isFooterNear
+        className={`fixed right-2 min-[1720px]:right-3 min-[1900px]:right-4 z-30 hidden min-[1600px]:flex flex-col gap-[10px] select-none shadow-xl max-h-[calc(100vh-140px)] transition-all duration-300 ease-out ${isFooterNear
             ? "opacity-0 pointer-events-none translate-y-6 scale-95"
             : "opacity-100 pointer-events-auto translate-y-0 scale-100"
-        }`}
+          }`}
       >
         {/* Header Bar */}
         <div className="bg-[#0074f0] text-white text-[9px] font-black uppercase tracking-wider px-2 py-1.5 border-2 border-[#0082FC] flex items-center justify-between shadow-md mb-0.5">
           <span className="flex items-center gap-1.5">
-            <span className="w-1.5 h-1.5 rounded-full bg-[#5FD4FD] animate-pulse" />
+            <span className="w-1.5 h-1.5 rounded-full bg-[#0565d6] animate-pulse" />
             Quality Reels ({RIGHT_VIDEO_ADS.length})
           </span>
         </div>
@@ -533,16 +551,15 @@ export const VerticalSideVideoAds: React.FC<VerticalSideVideoAdsProps> = ({
 
       {/* 3. RESPONSIVE FLOATING EDGE PILLS (Left & Right for screens < 1600px) */}
       <div
-        className={`fixed left-0 top-1/2 -translate-y-1/2 z-30 min-[1600px]:hidden transition-all duration-300 ${
-          isFooterNear
+        className={`fixed left-0 top-1/2 -translate-y-1/2 z-30 min-[1600px]:hidden transition-all duration-300 ${isFooterNear
             ? "opacity-0 pointer-events-none -translate-x-full"
             : "opacity-100 pointer-events-auto translate-x-0"
-        }`}
+          }`}
       >
         <button
           type="button"
           onClick={() => setLeftDrawerOpen(true)}
-          className="bg-[#0074f0] hover:bg-[#0082FC] text-white hover:text-[#5FD4FD] border-y-2 border-r-2 border-white px-1.5 py-3 text-[9px] font-black uppercase tracking-widest shadow-2xl flex items-center gap-1 cursor-pointer transition-all [writing-mode:vertical-lr]"
+          className="bg-[#0074f0] hover:bg-[#0082FC] text-white hover:text-[#0565d6] border-y-2 border-r-2 border-white px-1.5 py-3 text-[9px] font-black uppercase tracking-widest shadow-2xl flex items-center gap-1 cursor-pointer transition-all [writing-mode:vertical-lr]"
           title="Open Waterworks Video Reels"
         >
           <Play className="w-2.5 h-2.5 fill-current rotate-90" />
@@ -552,16 +569,15 @@ export const VerticalSideVideoAds: React.FC<VerticalSideVideoAdsProps> = ({
       </div>
 
       <div
-        className={`fixed right-0 top-1/2 -translate-y-1/2 z-30 min-[1600px]:hidden transition-all duration-300 ${
-          isFooterNear
+        className={`fixed right-0 top-1/2 -translate-y-1/2 z-30 min-[1600px]:hidden transition-all duration-300 ${isFooterNear
             ? "opacity-0 pointer-events-none translate-x-full"
             : "opacity-100 pointer-events-auto translate-x-0"
-        }`}
+          }`}
       >
         <button
           type="button"
           onClick={() => setRightDrawerOpen(true)}
-          className="bg-[#0074f0] hover:bg-[#0082FC] text-white hover:text-[#5FD4FD] border-y-2 border-l-2 border-white px-1.5 py-3 text-[9px] font-black uppercase tracking-widest shadow-2xl flex items-center gap-1 cursor-pointer transition-all [writing-mode:vertical-rl]"
+          className="bg-[#0074f0] hover:bg-[#0082FC] text-white hover:text-[#0565d6] border-y-2 border-l-2 border-white px-1.5 py-3 text-[9px] font-black uppercase tracking-widest shadow-2xl flex items-center gap-1 cursor-pointer transition-all [writing-mode:vertical-rl]"
           title="Open Quality Reels"
         >
           <Play className="w-2.5 h-2.5 fill-current -rotate-90" />

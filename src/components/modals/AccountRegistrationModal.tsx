@@ -165,16 +165,16 @@ export const AccountRegistrationModal: React.FC<
         <button
           type="button"
           onClick={handleResetAndClose}
-          className="absolute top-5 right-5 p-1 rounded-none text-[#0082FC] hover:bg-[#5FD4FD]/20 transition-colors cursor-pointer"
+          className="absolute top-5 right-5 p-1 rounded-none text-[#0082FC] hover:bg-[#0565d6]/20 transition-colors cursor-pointer"
           aria-label="Close Registration"
         >
           <X className="w-5 h-5" />
         </button>
 
         {/* Modal Header */}
-        <div className="flex items-center gap-3 mb-6 pb-4 border-b-2 border-[#5FD4FD]/40">
-          <div className="w-12 h-12 bg-[#0082FC] text-white border-2 border-[#5FD4FD] flex items-center justify-center shrink-0">
-            <UserCheck className="w-6 h-6 text-[#5FD4FD]" />
+        <div className="flex items-center gap-3 mb-6 pb-4 border-b-2 border-[#0565d6]/40">
+          <div className="w-12 h-12 bg-[#0082FC] text-white border-2 border-[#0565d6] flex items-center justify-center shrink-0">
+            <UserCheck className="w-6 h-6 text-[#0565d6]" />
           </div>
           <div>
             <h3
@@ -267,7 +267,7 @@ export const AccountRegistrationModal: React.FC<
               <button
                 type="button"
                 onClick={handleResetAndClose}
-                className="w-full py-3 px-6 bg-[#0082FC] hover:bg-[#5FD4FD] text-white hover:text-[#0082FC] font-black text-xs uppercase tracking-wider shadow-md transition-all cursor-pointer text-center"
+                className="w-full py-3 px-6 bg-[#0082FC] hover:bg-[#0565d6] text-white hover:text-[#0082FC] font-black text-xs uppercase tracking-wider shadow-md transition-all cursor-pointer text-center"
               >
                 Done / Close Application Window
               </button>
@@ -287,13 +287,12 @@ export const AccountRegistrationModal: React.FC<
               ].map((item) => (
                 <div
                   key={item.step}
-                  className={`p-2 text-center border-2 transition-all ${
-                    currentStep === item.step
+                  className={`p-2 text-center border-2 transition-all ${currentStep === item.step
                       ? "bg-[#0082FC] border-[#0082FC] text-white font-black shadow-xs"
                       : currentStep > item.step
-                        ? "bg-[#5FD4FD]/20 border-[#0082FC] text-[#0082FC] font-bold"
-                        : "bg-white border-[#5FD4FD]/50 text-[#0082FC]/60 font-semibold"
-                  }`}
+                        ? "bg-[#0565d6]/20 border-[#0082FC] text-[#0082FC] font-bold"
+                        : "bg-white border-[#0565d6]/50 text-[#0082FC]/60 font-semibold"
+                    }`}
                 >
                   <span className="text-[11px] block">{item.title}</span>
                 </div>
@@ -319,7 +318,7 @@ export const AccountRegistrationModal: React.FC<
                       placeholder="e.g. Northeast Utilities & Excavation LLC"
                       value={companyName}
                       onChange={(e) => setCompanyName(e.target.value)}
-                      className="w-full bg-white border-2 border-[#0082FC] pl-9 pr-3 py-2 text-xs sm:text-sm font-bold text-[#0082FC] focus:outline-none focus:border-[#5FD4FD]"
+                      className="w-full bg-white border-2 border-[#0082FC] pl-9 pr-3 py-2 text-xs sm:text-sm font-bold text-[#0082FC] focus:outline-none focus:border-[#0565d6]"
                     />
                   </div>
                 </div>
@@ -341,7 +340,7 @@ export const AccountRegistrationModal: React.FC<
                         placeholder="e.g. Dave Miller"
                         value={fullName}
                         onChange={(e) => setFullName(e.target.value)}
-                        className="w-full bg-white border-2 border-[#0082FC] pl-9 pr-3 py-2 text-xs sm:text-sm font-bold text-[#0082FC] focus:outline-none focus:border-[#5FD4FD]"
+                        className="w-full bg-white border-2 border-[#0082FC] pl-9 pr-3 py-2 text-xs sm:text-sm font-bold text-[#0082FC] focus:outline-none focus:border-[#0565d6]"
                       />
                     </div>
                   </div>
@@ -362,7 +361,7 @@ export const AccountRegistrationModal: React.FC<
                         placeholder="+1 (516) 252-1111"
                         value={phone}
                         onChange={(e) => setPhone(e.target.value)}
-                        className="w-full bg-white border-2 border-[#0082FC] pl-9 pr-3 py-2 text-xs sm:text-sm font-bold text-[#0082FC] focus:outline-none focus:border-[#5FD4FD]"
+                        className="w-full bg-white border-2 border-[#0082FC] pl-9 pr-3 py-2 text-xs sm:text-sm font-bold text-[#0082FC] focus:outline-none focus:border-[#0565d6]"
                       />
                     </div>
                   </div>
@@ -379,7 +378,7 @@ export const AccountRegistrationModal: React.FC<
                     id="reg-type"
                     value={accountType}
                     onChange={(e: any) => setAccountType(e.target.value)}
-                    className="w-full bg-white border-2 border-[#0082FC] px-3 py-2 text-xs sm:text-sm font-bold text-[#0082FC] focus:outline-none focus:border-[#5FD4FD]"
+                    className="w-full bg-white border-2 border-[#0082FC] px-3 py-2 text-xs sm:text-sm font-bold text-[#0082FC] focus:outline-none focus:border-[#0565d6]"
                   >
                     <option value="Contractor">
                       Civil / Waterworks Utility Contractor
@@ -417,7 +416,7 @@ export const AccountRegistrationModal: React.FC<
                       placeholder="e.g. 11-0933871 or LIC-948102"
                       value={taxId}
                       onChange={(e) => setTaxId(e.target.value)}
-                      className="w-full bg-white border-2 border-[#0082FC] pl-9 pr-3 py-2 text-xs sm:text-sm font-mono font-bold text-[#0082FC] focus:outline-none focus:border-[#5FD4FD]"
+                      className="w-full bg-white border-2 border-[#0082FC] pl-9 pr-3 py-2 text-xs sm:text-sm font-mono font-bold text-[#0082FC] focus:outline-none focus:border-[#0565d6]"
                     />
                   </div>
                   <span className="text-[11px] text-[#0082FC]/75 mt-0.5 block">
@@ -437,7 +436,7 @@ export const AccountRegistrationModal: React.FC<
                     id="reg-yard"
                     value={assignedYard}
                     onChange={(e) => setAssignedYard(e.target.value)}
-                    className="w-full bg-white border-2 border-[#0082FC] px-3 py-2 text-xs sm:text-sm font-bold text-[#0082FC] focus:outline-none focus:border-[#5FD4FD]"
+                    className="w-full bg-white border-2 border-[#0082FC] px-3 py-2 text-xs sm:text-sm font-bold text-[#0082FC] focus:outline-none focus:border-[#0565d6]"
                   >
                     {DISTRIBUTION_YARDS.map((yard) => (
                       <option key={yard.id} value={yard.id}>
@@ -448,7 +447,7 @@ export const AccountRegistrationModal: React.FC<
                   </select>
                 </div>
 
-                <div className="p-3 bg-[#5FD4FD]/20 border border-[#0082FC] text-xs text-[#0082FC]">
+                <div className="p-3 bg-[#0565d6]/20 border border-[#0082FC] text-xs text-[#0082FC]">
                   <strong>Dispatch Policy:</strong> Your designated hub
                   determines shipping transit time, rail siding access, and
                   flatbed freight rates.
@@ -475,7 +474,7 @@ export const AccountRegistrationModal: React.FC<
                       placeholder="e.g. purchasing@company.com"
                       value={email}
                       onChange={(e) => setEmail(e.target.value)}
-                      className="w-full bg-white border-2 border-[#0082FC] pl-9 pr-3 py-2 text-xs sm:text-sm font-bold text-[#0082FC] focus:outline-none focus:border-[#5FD4FD]"
+                      className="w-full bg-white border-2 border-[#0082FC] pl-9 pr-3 py-2 text-xs sm:text-sm font-bold text-[#0082FC] focus:outline-none focus:border-[#0565d6]"
                     />
                   </div>
                 </div>
@@ -496,12 +495,12 @@ export const AccountRegistrationModal: React.FC<
                       placeholder="••••••••••••"
                       value={password}
                       onChange={(e) => setPassword(e.target.value)}
-                      className="w-full bg-white border-2 border-[#0082FC] pl-9 pr-10 py-2 text-xs sm:text-sm font-bold text-[#0082FC] focus:outline-none focus:border-[#5FD4FD]"
+                      className="w-full bg-white border-2 border-[#0082FC] pl-9 pr-10 py-2 text-xs sm:text-sm font-bold text-[#0082FC] focus:outline-none focus:border-[#0565d6]"
                     />
                     <button
                       type="button"
                       onClick={() => setShowPassword(!showPassword)}
-                      className="absolute right-2.5 top-1/2 -translate-y-1/2 p-1 text-[#0082FC] hover:text-[#5FD4FD] transition-colors cursor-pointer"
+                      className="absolute right-2.5 top-1/2 -translate-y-1/2 p-1 text-[#0082FC] hover:text-[#0565d6] transition-colors cursor-pointer"
                       title={showPassword ? "Hide password" : "Show password"}
                       aria-label={
                         showPassword ? "Hide password" : "Show password"
@@ -560,12 +559,12 @@ export const AccountRegistrationModal: React.FC<
             )}
 
             {/* Modal Controls */}
-            <div className="flex items-center justify-between pt-4 border-t-2 border-[#5FD4FD]/30">
+            <div className="flex items-center justify-between pt-4 border-t-2 border-[#0565d6]/30">
               {currentStep > 1 ? (
                 <button
                   type="button"
                   onClick={handlePrevStep}
-                  className="inline-flex items-center gap-1.5 px-4 py-2.5 bg-white text-[#0082FC] border-2 border-[#0082FC] text-xs font-bold uppercase hover:bg-[#5FD4FD]/20 transition-colors cursor-pointer"
+                  className="inline-flex items-center gap-1.5 px-4 py-2.5 bg-white text-[#0082FC] border-2 border-[#0082FC] text-xs font-bold uppercase hover:bg-[#0565d6]/20 transition-colors cursor-pointer"
                 >
                   <ArrowLeft className="w-3.5 h-3.5" />
                   <span>Previous</span>
@@ -577,7 +576,7 @@ export const AccountRegistrationModal: React.FC<
               <button
                 type="submit"
                 disabled={isSubmitting}
-                className="inline-flex items-center gap-2 px-6 py-2.5 bg-[#0082FC] hover:bg-[#5FD4FD] text-white hover:text-[#0082FC] font-black text-xs sm:text-sm uppercase tracking-wider rounded-none shadow-md transition-all cursor-pointer"
+                className="inline-flex items-center gap-2 px-6 py-2.5 bg-[#0082FC] hover:bg-[#0565d6] text-white hover:text-[#0082FC] font-black text-xs sm:text-sm uppercase tracking-wider rounded-none shadow-md transition-all cursor-pointer"
               >
                 <span>
                   {currentStep === 3

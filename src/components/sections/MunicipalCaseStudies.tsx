@@ -114,19 +114,17 @@ export function MunicipalCaseStudies() {
                 key={item.id}
                 type="button"
                 onClick={() => setSelectedCase(idx)}
-                className={`p-4 text-left border-2 transition-all duration-150 flex flex-col justify-between ${
-                  isSelected
+                className={`p-4 text-left border-2 transition-all duration-150 flex flex-col justify-between ${isSelected
                     ? "border-[#0082FC] bg-[#0082FC] text-white"
-                    : "border-[#0082FC] bg-white text-[#0082FC] hover:border-[#5FD4FD]"
-                }`}
+                    : "border-[#0082FC] bg-white text-[#0082FC] hover:border-[#0565d6]"
+                  }`}
               >
                 <div>
                   <span
-                    className={`text-xs font-mono uppercase font-bold tracking-wider px-2.5 py-1 inline-block mb-2 whitespace-nowrap ${
-                      isSelected
+                    className={`text-xs font-mono uppercase font-bold tracking-wider px-2.5 py-1 inline-block mb-2 whitespace-nowrap ${isSelected
                         ? "bg-white text-[#0082FC]"
                         : "bg-[#0082FC] text-white"
-                    }`}
+                      }`}
                   >
                     {item.sectorTag}
                   </span>
@@ -138,11 +136,10 @@ export function MunicipalCaseStudies() {
                   </h4>
                 </div>
                 <div
-                  className={`text-xs sm:text-sm font-mono font-bold mt-3 pt-2 border-t flex items-center justify-between whitespace-nowrap ${
-                    isSelected
-                      ? "border-white/40 text-[#5FD4FD]"
+                  className={`text-xs sm:text-sm font-mono font-bold mt-3 pt-2 border-t flex items-center justify-between whitespace-nowrap ${isSelected
+                      ? "border-white/40 text-[#0565d6]"
                       : "border-[#0082FC]/20 text-[#0082FC]"
-                  }`}
+                    }`}
                 >
                   <span>VIEW FIELD REPORT</span>
                   <span>&rarr;</span>
@@ -187,7 +184,7 @@ export function MunicipalCaseStudies() {
             <div className="pt-4 flex flex-wrap gap-4 items-center">
               <a
                 href="#quote-builder"
-                className="inline-flex items-center justify-center bg-[#0082FC] text-white hover:bg-[#5FD4FD] hover:text-[#0082FC] font-extrabold text-sm sm:text-base uppercase tracking-wider py-4 px-6 border-2 border-[#0082FC] transition-colors duration-150 whitespace-nowrap shadow-md"
+                className="inline-flex items-center justify-center bg-[#0082FC] text-white hover:bg-[#0565d6] hover:text-[#0082FC] font-extrabold text-sm sm:text-base uppercase tracking-wider py-4 px-6 border-2 border-[#0082FC] transition-colors duration-150 whitespace-nowrap shadow-md"
               >
                 <span>Request Pricing For Similar Project</span>
               </a>
@@ -204,8 +201,8 @@ export function MunicipalCaseStudies() {
           {/* Right Verified Technical Matrix Panel */}
           <div className="lg:col-span-4 bg-[#0082FC] text-white p-6 sm:p-10 flex flex-col justify-between border-t-2 lg:border-t-0 lg:border-l-2 border-[#0082FC]">
             <div className="space-y-6">
-              <div className="border-b border-[#5FD4FD] pb-3">
-                <span className="text-xs font-mono uppercase text-[#5FD4FD] tracking-wider font-bold whitespace-nowrap">
+              <div className="border-b border-[#0565d6] pb-3">
+                <span className="text-xs font-mono uppercase text-[#0565d6] tracking-wider font-bold whitespace-nowrap">
                   FIELD VERIFICATION DOSSIER
                 </span>
                 <div className="text-base font-bold text-white mt-1 whitespace-nowrap">
@@ -215,7 +212,7 @@ export function MunicipalCaseStudies() {
 
               <div className="space-y-4">
                 <div>
-                  <div className="text-xs font-mono uppercase text-[#5FD4FD] font-bold whitespace-nowrap">
+                  <div className="text-xs font-mono uppercase text-[#0565d6] font-bold whitespace-nowrap">
                     Nominal Diameters
                   </div>
                   <div className="text-base font-bold text-white mt-0.5">
@@ -224,7 +221,7 @@ export function MunicipalCaseStudies() {
                 </div>
 
                 <div>
-                  <div className="text-xs font-mono uppercase text-[#5FD4FD] font-bold whitespace-nowrap">
+                  <div className="text-xs font-mono uppercase text-[#0565d6] font-bold whitespace-nowrap">
                     Field Pressure Test
                   </div>
                   <div className="text-base font-bold text-white mt-0.5">
@@ -233,7 +230,7 @@ export function MunicipalCaseStudies() {
                 </div>
 
                 <div>
-                  <div className="text-xs font-mono uppercase text-[#5FD4FD] font-bold whitespace-nowrap">
+                  <div className="text-xs font-mono uppercase text-[#0565d6] font-bold whitespace-nowrap">
                     Fittings &amp; Components Supplied
                   </div>
                   <div className="text-base font-bold text-white mt-0.5">
@@ -242,7 +239,7 @@ export function MunicipalCaseStudies() {
                 </div>
 
                 <div>
-                  <div className="text-xs font-mono uppercase text-[#5FD4FD] font-bold whitespace-nowrap">
+                  <div className="text-xs font-mono uppercase text-[#0565d6] font-bold whitespace-nowrap">
                     Yard Freight Dispatch
                   </div>
                   <div className="text-base font-bold text-white mt-0.5">
@@ -252,7 +249,7 @@ export function MunicipalCaseStudies() {
               </div>
             </div>
 
-            <div className="pt-6 border-t border-[#5FD4FD] mt-6">
+            <div className="pt-6 border-t border-[#0565d6] mt-6">
               <div className="text-xs font-mono text-white/90 font-bold">
                 CERTIFIED COMPLIANCE: AWWA C153 / C110 / C111 • NSF 61 • ASTM
                 A536

@@ -80,7 +80,7 @@ export const IndustrialFooter: React.FC<IndustrialFooterProps> = ({
           ======================================================== */}
           <div className="lg:col-span-3 min-w-0 space-y-4">
             <div className="flex items-center gap-2.5">
-              <div className="h-9 px-1.5 bg-white flex items-center justify-center border border-[#5FD4FD] shrink-0 shadow-sm">
+              <div className="h-9 px-1.5 bg-white flex items-center justify-center border border-[#0565d6] shrink-0 shadow-sm">
                 <img
                   src="/images/AI_Waterdrop.png"
                   alt="Aqua Industries Logo"

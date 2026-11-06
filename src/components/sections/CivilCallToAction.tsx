@@ -39,7 +39,7 @@ export function CivilCallToAction({
       <div
         className="absolute inset-0 opacity-10 pointer-events-none"
         style={{
-          backgroundImage: `radial-gradient(circle at 2px 2px, #5FD4FD 1px, transparent 0)`,
+          backgroundImage: `radial-gradient(circle at 2px 2px, #0565d6 1px, transparent 0)`,
           backgroundSize: "32px 32px",
         }}
       />
@@ -48,7 +48,7 @@ export function CivilCallToAction({
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
           {/* Left Visual: Technical Mechanical Joint Blueprint Diagram */}
           <div className="lg:col-span-5 flex justify-center">
-            <div className="w-full max-w-md bg-white border-2 border-[#5FD4FD] p-6 shadow-2xl relative">
+            <div className="w-full max-w-md bg-white border-2 border-[#0565d6] p-6 shadow-2xl relative">
               {/* Technical Blueprint Badge */}
               <div className="flex items-center justify-between border-b border-[#0082FC] pb-3 mb-4">
                 <span className="text-xs font-mono uppercase tracking-widest text-[#0082FC] font-bold whitespace-nowrap">
@@ -116,7 +116,7 @@ export function CivilCallToAction({
                   {/* Centerline hydraulic flow arrow */}
                   <path
                     d="M 45 70 C 170 70 200 95 200 175"
-                    stroke="#5FD4FD"
+                    stroke="#0565d6"
                     strokeWidth="3"
                     strokeDasharray="6 4"
                   />
@@ -143,7 +143,7 @@ export function CivilCallToAction({
                 </svg>
 
                 {/* Sky blue dimension callout pill */}
-                <div className="absolute bottom-2 right-2 bg-[#0082FC] border border-[#5FD4FD] px-2.5 py-1 text-xs font-mono text-[#5FD4FD] font-bold whitespace-nowrap">
+                <div className="absolute bottom-2 right-2 bg-[#0082FC] border border-[#0565d6] px-2.5 py-1 text-xs font-mono text-[#0565d6] font-bold whitespace-nowrap">
                   GRADE 65-45-12 DUCTILE
                 </div>
               </div>
@@ -151,7 +151,7 @@ export function CivilCallToAction({
               {/* Technical Specifications Matrix */}
               <div className="grid grid-cols-3 gap-2.5 pt-4 border-t border-[#0082FC] text-center">
                 <div className="bg-[#0082FC] p-2.5">
-                  <div className="text-xs font-mono text-[#5FD4FD] uppercase tracking-wider font-bold whitespace-nowrap">
+                  <div className="text-xs font-mono text-[#0565d6] uppercase tracking-wider font-bold whitespace-nowrap">
                     AWWA Standard
                   </div>
                   <div className="text-sm font-extrabold text-white whitespace-nowrap mt-0.5">
@@ -159,7 +159,7 @@ export function CivilCallToAction({
                   </div>
                 </div>
                 <div className="bg-[#0082FC] p-2.5">
-                  <div className="text-xs font-mono text-[#5FD4FD] uppercase tracking-wider font-bold whitespace-nowrap">
+                  <div className="text-xs font-mono text-[#0565d6] uppercase tracking-wider font-bold whitespace-nowrap">
                     Lining
                   </div>
                   <div className="text-sm font-extrabold text-white whitespace-nowrap mt-0.5">
@@ -167,7 +167,7 @@ export function CivilCallToAction({
                   </div>
                 </div>
                 <div className="bg-[#0082FC] p-2.5">
-                  <div className="text-xs font-mono text-[#5FD4FD] uppercase tracking-wider font-bold whitespace-nowrap">
+                  <div className="text-xs font-mono text-[#0565d6] uppercase tracking-wider font-bold whitespace-nowrap">
                     Hydro Test
                   </div>
                   <div className="text-sm font-extrabold text-white whitespace-nowrap mt-0.5">
@@ -180,7 +180,7 @@ export function CivilCallToAction({
 
           {/* Right Content: Title, Direct US Contractor Copy, Single-Line Action CTAs */}
           <div className="lg:col-span-7 space-y-6">
-            <div className="inline-flex items-center space-x-2 border-2 border-[#5FD4FD] bg-white px-3.5 py-1.5">
+            <div className="inline-flex items-center space-x-2 border-2 border-[#0565d6] bg-white px-3.5 py-1.5">
               <span className="w-2.5 h-2.5 bg-[#0082FC]"></span>
               <span className="text-sm font-bold uppercase tracking-wider text-[#0082FC] whitespace-nowrap">
                 Mastering Water Infrastructure
@@ -213,7 +213,7 @@ export function CivilCallToAction({
               <button
                 type="button"
                 onClick={scrollToMatrix}
-                className="inline-flex items-center justify-center bg-white text-[#0082FC] hover:bg-[#5FD4FD] hover:text-[#0082FC] font-bold text-sm sm:text-base px-6 py-3.5 border-2 border-white transition-colors duration-150 whitespace-nowrap cursor-pointer shadow-sm"
+                className="inline-flex items-center justify-center bg-white text-[#0082FC] hover:bg-[#0565d6] hover:text-[#0082FC] font-bold text-sm sm:text-base px-6 py-3.5 border-2 border-white transition-colors duration-150 whitespace-nowrap cursor-pointer shadow-sm"
               >
                 <span>Browse Fittings &amp; Castings</span>
                 <svg
@@ -241,21 +241,21 @@ export function CivilCallToAction({
             </div>
 
             {/* Bottom 3 Single-line Trust Markers */}
-            <div className="pt-4 border-t border-[#5FD4FD] grid grid-cols-1 sm:grid-cols-3 gap-3 text-xs font-mono font-bold">
+            <div className="pt-4 border-t border-[#0565d6] grid grid-cols-1 sm:grid-cols-3 gap-3 text-xs font-mono font-bold">
               <div className="flex items-center space-x-2">
-                <span className="w-2 h-2 bg-[#5FD4FD]"></span>
+                <span className="w-2 h-2 bg-[#0565d6]"></span>
                 <span className="whitespace-nowrap">
                   AWWA C153 &amp; C110 COMPLIANT
                 </span>
               </div>
               <div className="flex items-center space-x-2">
-                <span className="w-2 h-2 bg-[#5FD4FD]"></span>
+                <span className="w-2 h-2 bg-[#0565d6]"></span>
                 <span className="whitespace-nowrap">
                   NSF/ANSI 61 &amp; 372 APPROVED
                 </span>
               </div>
               <div className="flex items-center space-x-2">
-                <span className="w-2 h-2 bg-[#5FD4FD]"></span>
+                <span className="w-2 h-2 bg-[#0565d6]"></span>
                 <span className="whitespace-nowrap">
                   AIS &amp; BABA DOMESTIC ELIGIBLE
                 </span>

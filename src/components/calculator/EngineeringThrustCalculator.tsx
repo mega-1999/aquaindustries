@@ -56,12 +56,12 @@ export const EngineeringThrustCalculator: React.FC = () => {
     <section
       id="thrust-calculator"
       aria-label="Interactive Joint Restraint Thrust Calculator"
-      className="py-20 lg:py-28 bg-white text-[#0082FC] border-t-2 border-[#5FD4FD]"
+      className="py-20 lg:py-28 bg-white text-[#0082FC] border-t-2 border-[#0565d6]"
     >
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         {/* Section Header */}
         <div className="text-center max-w-3xl mx-auto mb-14">
-          <div className="inline-flex items-center gap-2 px-3 py-1 rounded-none bg-white border-2 border-[#5FD4FD] text-[#0082FC] text-xs font-semibold uppercase tracking-wider mb-3 shadow-sm">
+          <div className="inline-flex items-center gap-2 px-3 py-1 rounded-none bg-white border-2 border-[#0565d6] text-[#0082FC] text-xs font-semibold uppercase tracking-wider mb-3 shadow-sm">
             <Calculator className="w-3.5 h-3.5 text-[#0082FC]" />
             <span className="whitespace-nowrap">
               Practical Field Utility Sizing Tool
@@ -80,27 +80,27 @@ export const EngineeringThrustCalculator: React.FC = () => {
         {/* Calculator Main Grid - Balanced 1:1 Two-Column Architecture */}
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 items-stretch">
           {/* Left Inputs Column (Balanced 50% Width) */}
-          <div className="bg-white border-2 border-[#5FD4FD] rounded-none p-6 sm:p-8 shadow-sm flex flex-col justify-between h-full">
+          <div className="bg-white border-2 border-[#0565d6] rounded-none p-6 sm:p-8 shadow-sm flex flex-col justify-between h-full">
             <div>
               {/* Synchronized Left Header matching Right Header Height */}
-              <div className="flex items-center justify-between mb-6 pb-3 border-b-2 border-[#5FD4FD]/30 min-h-[42px]">
+              <div className="flex items-center justify-between mb-6 pb-3 border-b-2 border-[#0565d6]/30 min-h-[42px]">
                 <h3 className="text-base sm:text-lg font-extrabold text-[#0082FC] flex items-center gap-2 uppercase tracking-tight">
                   <Wrench className="w-5 h-5 text-[#0082FC]" />
                   <span>Jobsite &amp; Trench Parameters</span>
                 </h3>
-                <span className="text-xs font-bold text-[#0082FC] bg-white px-2.5 py-1 rounded-none border border-[#5FD4FD] uppercase tracking-wider">
+                <span className="text-xs font-bold text-[#0082FC] bg-white px-2.5 py-1 rounded-none border border-[#0565d6] uppercase tracking-wider">
                   AWWA Sizing Engine
                 </span>
               </div>
 
               <div className="space-y-4">
                 {/* 1. Pipe Size & Geometry Selector */}
-                <div className="bg-white border-2 border-[#5FD4FD]/60 p-4 rounded-none">
+                <div className="bg-white border-2 border-[#0565d6]/60 p-4 rounded-none">
                   <div className="flex items-center justify-between mb-2">
                     <span className="text-xs sm:text-sm font-black uppercase tracking-wider text-[#0082FC]">
                       Pipe Size (Nominal Diameter)
                     </span>
-                    <span className="text-xs font-bold text-[#0082FC] bg-white border border-[#5FD4FD] px-2 py-0.5 rounded-none">
+                    <span className="text-xs font-bold text-[#0082FC] bg-white border border-[#0565d6] px-2 py-0.5 rounded-none">
                       Actual O.D.: {result.pipeOd}&quot; &bull;{" "}
                       {result.crossSectionArea} sq. in.
                     </span>
@@ -112,11 +112,10 @@ export const EngineeringThrustCalculator: React.FC = () => {
                           key={diam}
                           type="button"
                           onClick={() => setPipeDiameter(diam)}
-                          className={`py-2 text-center text-xs sm:text-sm font-bold rounded-none border-2 transition-all whitespace-nowrap cursor-pointer ${
-                            pipeDiameter === diam
+                          className={`py-2 text-center text-xs sm:text-sm font-bold rounded-none border-2 transition-all whitespace-nowrap cursor-pointer ${pipeDiameter === diam
                               ? "bg-[#0082FC] text-white border-[#0082FC] font-black shadow-sm"
-                              : "bg-white text-[#0082FC] border-[#5FD4FD] hover:bg-[#5FD4FD]/20"
-                          }`}
+                              : "bg-white text-[#0082FC] border-[#0565d6] hover:bg-[#0565d6]/20"
+                            }`}
                         >
                           {diam}&quot;
                         </button>
@@ -126,7 +125,7 @@ export const EngineeringThrustCalculator: React.FC = () => {
                 </div>
 
                 {/* 2. Water Pressure (PSI) with Quick Presets */}
-                <div className="bg-white border-2 border-[#5FD4FD]/60 p-4 rounded-none">
+                <div className="bg-white border-2 border-[#0565d6]/60 p-4 rounded-none">
                   <div className="flex items-center justify-between mb-2">
                     <label
                       htmlFor="calc-pressure-slider"
@@ -134,7 +133,7 @@ export const EngineeringThrustCalculator: React.FC = () => {
                     >
                       Working Water Pressure
                     </label>
-                    <span className="text-sm font-black text-[#0082FC] bg-white border-2 border-[#5FD4FD] px-3 py-0.5 rounded-none">
+                    <span className="text-sm font-black text-[#0082FC] bg-white border-2 border-[#0565d6] px-3 py-0.5 rounded-none">
                       {testPressure} PSI
                     </span>
                   </div>
@@ -146,10 +145,10 @@ export const EngineeringThrustCalculator: React.FC = () => {
                     step="25"
                     value={testPressure}
                     onChange={(e) => setTestPressure(Number(e.target.value))}
-                    className="w-full h-2.5 bg-white border border-[#5FD4FD] rounded-none appearance-none cursor-pointer accent-[#0082FC]"
+                    className="w-full h-2.5 bg-white border border-[#0565d6] rounded-none appearance-none cursor-pointer accent-[#0082FC]"
                   />
                   {/* Quick-Select Municipal Pressure Presets */}
-                  <div className="flex items-center justify-between gap-1.5 mt-2.5 pt-2 border-t border-[#5FD4FD]/30">
+                  <div className="flex items-center justify-between gap-1.5 mt-2.5 pt-2 border-t border-[#0565d6]/30">
                     <span className="text-[10px] font-bold text-[#0082FC]/75 uppercase">
                       Presets:
                     </span>
@@ -159,11 +158,10 @@ export const EngineeringThrustCalculator: React.FC = () => {
                           key={preset}
                           type="button"
                           onClick={() => setTestPressure(preset)}
-                          className={`px-2 py-0.5 text-[10px] font-bold rounded-none border transition-colors cursor-pointer ${
-                            testPressure === preset
+                          className={`px-2 py-0.5 text-[10px] font-bold rounded-none border transition-colors cursor-pointer ${testPressure === preset
                               ? "bg-[#0082FC] text-white border-[#0082FC]"
-                              : "bg-white text-[#0082FC] border-[#5FD4FD] hover:bg-[#5FD4FD]/20"
-                          }`}
+                              : "bg-white text-[#0082FC] border-[#0565d6] hover:bg-[#0565d6]/20"
+                            }`}
                         >
                           {preset} PSI
                         </button>
@@ -173,7 +171,7 @@ export const EngineeringThrustCalculator: React.FC = () => {
                 </div>
 
                 {/* 3. Fitting Configuration & Deflection Angle */}
-                <div className="bg-white border-2 border-[#5FD4FD]/60 p-4 rounded-none">
+                <div className="bg-white border-2 border-[#0565d6]/60 p-4 rounded-none">
                   <div className="flex items-center justify-between mb-2">
                     <label
                       htmlFor="calc-fitting-select"
@@ -181,7 +179,7 @@ export const EngineeringThrustCalculator: React.FC = () => {
                     >
                       Fitting Geometry &amp; Deflection Angle
                     </label>
-                    <span className="text-[10px] font-bold text-[#0082FC] bg-[#5FD4FD]/20 px-2 py-0.5 uppercase">
+                    <span className="text-[10px] font-bold text-[#0082FC] bg-[#0565d6]/20 px-2 py-0.5 uppercase">
                       {fittingType === "90-bend"
                         ? "Maximum Radial Thrust"
                         : fittingType === "dead-end"
@@ -197,7 +195,7 @@ export const EngineeringThrustCalculator: React.FC = () => {
                         e.target.value as CalculatorInputs["fittingType"],
                       )
                     }
-                    className="w-full bg-white border-2 border-[#5FD4FD] text-[#0082FC] rounded-none px-3.5 py-2 text-xs sm:text-sm font-bold focus:border-[#0082FC] focus:outline-none"
+                    className="w-full bg-white border-2 border-[#0565d6] text-[#0082FC] rounded-none px-3.5 py-2 text-xs sm:text-sm font-bold focus:border-[#0082FC] focus:outline-none"
                   >
                     <option value="90-bend">
                       90° Elbow Bend (High Radial Load)
@@ -213,7 +211,7 @@ export const EngineeringThrustCalculator: React.FC = () => {
                 </div>
 
                 {/* 4. Soil Type & AWWA C150 Trench Bedding */}
-                <div className="bg-white border-2 border-[#5FD4FD]/60 p-4 rounded-none">
+                <div className="bg-white border-2 border-[#0565d6]/60 p-4 rounded-none">
                   <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
                     {/* Soil Mechanics */}
                     <div>
@@ -231,7 +229,7 @@ export const EngineeringThrustCalculator: React.FC = () => {
                             e.target.value as CalculatorInputs["soilType"],
                           )
                         }
-                        className="w-full bg-white border-2 border-[#5FD4FD] text-[#0082FC] rounded-none px-2.5 py-2 text-xs font-bold focus:border-[#0082FC] focus:outline-none"
+                        className="w-full bg-white border-2 border-[#0565d6] text-[#0082FC] rounded-none px-2.5 py-2 text-xs font-bold focus:border-[#0082FC] focus:outline-none"
                       >
                         <option value="sand">
                           Coarse Sand / Compact Gravel (Good)
@@ -266,7 +264,7 @@ export const EngineeringThrustCalculator: React.FC = () => {
                             ) as CalculatorInputs["trenchType"],
                           )
                         }
-                        className="w-full bg-white border-2 border-[#5FD4FD] text-[#0082FC] rounded-none px-2.5 py-2 text-xs font-bold focus:border-[#0082FC] focus:outline-none"
+                        className="w-full bg-white border-2 border-[#0565d6] text-[#0082FC] rounded-none px-2.5 py-2 text-xs font-bold focus:border-[#0082FC] focus:outline-none"
                       >
                         <option value={1}>Type 1: Flat-bottom, loose</option>
                         <option value={2}>Type 2: Lightly tamped</option>
@@ -281,9 +279,9 @@ export const EngineeringThrustCalculator: React.FC = () => {
             </div>
 
             {/* Safety Factor Footer Strip - Synchronized height and border with right actions */}
-            <div className="pt-5 mt-5 border-t-2 border-[#5FD4FD]/30 flex flex-wrap items-center justify-between gap-3 min-h-[58px]">
+            <div className="pt-5 mt-5 border-t-2 border-[#0565d6]/30 flex flex-wrap items-center justify-between gap-3 min-h-[58px]">
               <span className="text-xs sm:text-sm text-[#0082FC] flex items-center gap-2 font-black uppercase tracking-wider">
-                <ShieldCheck className="w-5 h-5 text-[#5FD4FD]" />
+                <ShieldCheck className="w-5 h-5 text-[#0565d6]" />
                 <span>Safety Factor:</span>
               </span>
               <div className="flex gap-2">
@@ -292,11 +290,10 @@ export const EngineeringThrustCalculator: React.FC = () => {
                     key={factor}
                     type="button"
                     onClick={() => setSafetyFactor(factor)}
-                    className={`px-3.5 py-1.5 text-xs font-black rounded-none border-2 transition-colors cursor-pointer uppercase tracking-wider ${
-                      safetyFactor === factor
+                    className={`px-3.5 py-1.5 text-xs font-black rounded-none border-2 transition-colors cursor-pointer uppercase tracking-wider ${safetyFactor === factor
                         ? "bg-[#0082FC] text-white border-[#0082FC] shadow-sm"
-                        : "bg-white text-[#0082FC] border-[#5FD4FD] hover:bg-[#5FD4FD]/20"
-                    }`}
+                        : "bg-white text-[#0082FC] border-[#0565d6] hover:bg-[#0565d6]/20"
+                      }`}
                   >
                     {factor.toFixed(1)}x Factor
                   </button>
@@ -306,15 +303,15 @@ export const EngineeringThrustCalculator: React.FC = () => {
           </div>
 
           {/* Right Output Panel (Balanced 50% Width) */}
-          <div className="bg-white border-2 border-[#5FD4FD] rounded-none p-6 sm:p-8 shadow-sm flex flex-col justify-between h-full">
+          <div className="bg-white border-2 border-[#0565d6] rounded-none p-6 sm:p-8 shadow-sm flex flex-col justify-between h-full">
             <div>
               {/* Synchronized Right Header matching Left Header Height */}
-              <div className="flex items-center justify-between mb-6 pb-3 border-b-2 border-[#5FD4FD]/30 min-h-[42px]">
+              <div className="flex items-center justify-between mb-6 pb-3 border-b-2 border-[#0565d6]/30 min-h-[42px]">
                 <h3 className="text-base sm:text-lg font-extrabold text-[#0082FC] flex items-center gap-2 uppercase tracking-tight">
-                  <span className="w-2.5 h-2.5 rounded-none bg-[#5FD4FD] animate-pulse" />
+                  <span className="w-2.5 h-2.5 rounded-none bg-[#0565d6] animate-pulse" />
                   <span>Calculation Results</span>
                 </h3>
-                <span className="text-xs font-bold text-[#0082FC] bg-white px-2.5 py-1 rounded-none border border-[#5FD4FD] uppercase tracking-wider">
+                <span className="text-xs font-bold text-[#0082FC] bg-white px-2.5 py-1 rounded-none border border-[#0565d6] uppercase tracking-wider">
                   AWWA C600 Standard
                 </span>
               </div>
@@ -351,18 +348,17 @@ export const EngineeringThrustCalculator: React.FC = () => {
                       {[1, 2, 3, 4, 5, 6].map((stickNum) => (
                         <div
                           key={`joint-stick-${stickNum}`}
-                          className={`h-2 border border-[#0082FC] ${
-                            stickNum <= result.numberOfJointsRestrained
-                              ? "bg-[#5FD4FD]"
+                          className={`h-2 border border-[#0082FC] ${stickNum <= result.numberOfJointsRestrained
+                              ? "bg-[#0565d6]"
                               : "bg-[#0082FC]/10"
-                          }`}
+                            }`}
                           title={`Joint Stick ${stickNum}`}
                         />
                       ))}
                     </div>
 
                     <div className="inline-flex items-center gap-1.5 text-xs text-[#0082FC] font-semibold mt-1">
-                      <CheckCircle2 className="w-3.5 h-3.5 text-[#5FD4FD] shrink-0" />
+                      <CheckCircle2 className="w-3.5 h-3.5 text-[#0565d6] shrink-0" />
                       <span>
                         Restrain minimum {result.numberOfJointsRestrained}{" "}
                         joints upstream &amp; downstream from fitting
@@ -372,7 +368,7 @@ export const EngineeringThrustCalculator: React.FC = () => {
                 </div>
 
                 {/* 2. Total Hydrostatic Thrust Force */}
-                <div className="bg-white border-2 border-[#5FD4FD] rounded-none p-4 sm:p-5">
+                <div className="bg-white border-2 border-[#0565d6] rounded-none p-4 sm:p-5">
                   <div className="text-xs font-black uppercase text-[#0082FC] tracking-wider mb-1">
                     Resultant Hydrostatic Thrust Force (T)
                   </div>
@@ -391,7 +387,7 @@ export const EngineeringThrustCalculator: React.FC = () => {
                 </div>
 
                 {/* 3. Recommended Mechanical Restraint Gland */}
-                <div className="bg-white border-2 border-[#5FD4FD] rounded-none p-4">
+                <div className="bg-white border-2 border-[#0565d6] rounded-none p-4">
                   <div className="flex items-center justify-between mb-1">
                     <span className="text-xs font-black uppercase text-[#0082FC] tracking-wider">
                       Recommended Mechanical Restraint
@@ -406,7 +402,7 @@ export const EngineeringThrustCalculator: React.FC = () => {
                   <div className="text-xs text-[#0082FC] font-bold mt-0.5">
                     Catalog Part Number: {result.recommendedModelCode}
                   </div>
-                  <div className="mt-2.5 pt-2 border-t border-[#5FD4FD]/30 flex flex-wrap items-center justify-between gap-2 text-xs text-[#0082FC]">
+                  <div className="mt-2.5 pt-2 border-t border-[#0565d6]/30 flex flex-wrap items-center justify-between gap-2 text-xs text-[#0082FC]">
                     <span>
                       Actuating Wedges:{" "}
                       <strong>{result.actuatingWedges} Grippers</strong>
@@ -420,11 +416,11 @@ export const EngineeringThrustCalculator: React.FC = () => {
             </div>
 
             {/* Action Buttons: "Save Calculation to PDF" - Synchronized height and border with left strip */}
-            <div className="pt-5 mt-5 border-t-2 border-[#5FD4FD]/30 flex flex-col sm:flex-row gap-3 min-h-[58px] items-center">
+            <div className="pt-5 mt-5 border-t-2 border-[#0565d6]/30 flex flex-col sm:flex-row gap-3 min-h-[58px] items-center">
               <button
                 type="button"
                 onClick={() => setShowExportModal(true)}
-                className="w-full flex-1 inline-flex items-center justify-center gap-2 py-2.5 px-5 bg-[#0082FC] hover:bg-[#5FD4FD] hover:text-[#0082FC] text-white font-black rounded-none text-xs sm:text-sm uppercase tracking-wider border-2 border-[#0082FC] shadow-md transition-all whitespace-nowrap cursor-pointer"
+                className="w-full flex-1 inline-flex items-center justify-center gap-2 py-2.5 px-5 bg-[#0082FC] hover:bg-[#0565d6] hover:text-[#0082FC] text-white font-black rounded-none text-xs sm:text-sm uppercase tracking-wider border-2 border-[#0082FC] shadow-md transition-all whitespace-nowrap cursor-pointer"
               >
                 <Download className="w-4 h-4 text-white" />
                 <span className="whitespace-nowrap">
@@ -435,7 +431,7 @@ export const EngineeringThrustCalculator: React.FC = () => {
               <button
                 type="button"
                 onClick={handlePrintSummary}
-                className="inline-flex items-center justify-center gap-2 py-2.5 px-5 bg-white hover:bg-[#5FD4FD]/20 text-[#0082FC] font-black rounded-none text-xs sm:text-sm uppercase tracking-wider border-2 border-[#5FD4FD] transition-colors whitespace-nowrap cursor-pointer"
+                className="inline-flex items-center justify-center gap-2 py-2.5 px-5 bg-white hover:bg-[#0565d6]/20 text-[#0082FC] font-black rounded-none text-xs sm:text-sm uppercase tracking-wider border-2 border-[#0565d6] transition-colors whitespace-nowrap cursor-pointer"
                 title="Print Submittal"
               >
                 <Printer className="w-4 h-4 text-[#0082FC]" />
@@ -446,7 +442,7 @@ export const EngineeringThrustCalculator: React.FC = () => {
         </div>
 
         {/* Practical Field Tip */}
-        <div className="mt-8 p-5 rounded-none bg-white border-2 border-[#5FD4FD] text-sm text-[#0082FC] flex items-start gap-3 shadow-sm">
+        <div className="mt-8 p-5 rounded-none bg-white border-2 border-[#0565d6] text-sm text-[#0082FC] flex items-start gap-3 shadow-sm">
           <AlertCircle className="w-5 h-5 text-[#0082FC] shrink-0 mt-0.5" />
           <p className="leading-relaxed">
             <strong>Jobsite Field Note:</strong> This calculation follows
@@ -467,7 +463,7 @@ export const EngineeringThrustCalculator: React.FC = () => {
           className="fixed inset-0 z-50 flex items-center justify-center p-4 bg-[#0082FC]/80 backdrop-blur-sm"
         >
           <div className="bg-white border-2 border-[#0082FC] rounded-none max-w-lg w-full p-6 sm:p-8 shadow-2xl text-[#0082FC]">
-            <div className="flex items-center justify-between pb-4 border-b-2 border-[#5FD4FD] mb-6">
+            <div className="flex items-center justify-between pb-4 border-b-2 border-[#0565d6] mb-6">
               <div>
                 <h3
                   id="calc-modal-title"
@@ -483,32 +479,32 @@ export const EngineeringThrustCalculator: React.FC = () => {
               <button
                 type="button"
                 onClick={() => setShowExportModal(false)}
-                className="p-1 rounded-none hover:bg-[#5FD4FD]/20 text-[#0082FC] font-bold"
+                className="p-1 rounded-none hover:bg-[#0565d6]/20 text-[#0082FC] font-bold"
               >
                 ✕
               </button>
             </div>
 
-            <div className="space-y-3 text-xs bg-white p-4 rounded-none border-2 border-[#5FD4FD]">
-              <div className="flex justify-between border-b border-[#5FD4FD]/30 pb-2">
+            <div className="space-y-3 text-xs bg-white p-4 rounded-none border-2 border-[#0565d6]">
+              <div className="flex justify-between border-b border-[#0565d6]/30 pb-2">
                 <span className="text-[#0082FC]">Pipe Size:</span>
                 <span className="font-bold text-[#0082FC]">
                   {pipeDiameter}&quot; Ductile Iron (O.D. {result.pipeOd}&quot;)
                 </span>
               </div>
-              <div className="flex justify-between border-b border-[#5FD4FD]/30 pb-2">
+              <div className="flex justify-between border-b border-[#0565d6]/30 pb-2">
                 <span className="text-[#0082FC]">Test Pressure:</span>
                 <span className="font-bold text-[#0082FC]">
                   {testPressure} PSI
                 </span>
               </div>
-              <div className="flex justify-between border-b border-[#5FD4FD]/30 pb-2">
+              <div className="flex justify-between border-b border-[#0565d6]/30 pb-2">
                 <span className="text-[#0082FC]">Resultant Thrust:</span>
                 <span className="font-bold text-[#0082FC]">
                   {result.thrustForceLbf.toLocaleString()} LBS FORCE
                 </span>
               </div>
-              <div className="flex justify-between border-b border-[#5FD4FD]/30 pb-2">
+              <div className="flex justify-between border-b border-[#0565d6]/30 pb-2">
                 <span className="text-[#0082FC]">
                   Restrained Footage Required:
                 </span>
@@ -529,14 +525,14 @@ export const EngineeringThrustCalculator: React.FC = () => {
               <button
                 type="button"
                 onClick={() => setShowExportModal(false)}
-                className="px-4 py-2 bg-white hover:bg-[#5FD4FD]/20 text-[#0082FC] border border-[#5FD4FD] text-xs font-semibold rounded-none"
+                className="px-4 py-2 bg-white hover:bg-[#0565d6]/20 text-[#0082FC] border border-[#0565d6] text-xs font-semibold rounded-none"
               >
                 Close
               </button>
               <button
                 type="button"
                 onClick={handlePrintSummary}
-                className="px-5 py-2 bg-[#0082FC] hover:bg-[#5FD4FD] hover:text-[#0082FC] text-white text-xs font-bold rounded-none border-2 border-[#0082FC] shadow-md flex items-center gap-2"
+                className="px-5 py-2 bg-[#0082FC] hover:bg-[#0565d6] hover:text-[#0082FC] text-white text-xs font-bold rounded-none border-2 border-[#0082FC] shadow-md flex items-center gap-2"
               >
                 <Printer className="w-4 h-4" />
                 <span>Print Official PDF</span>

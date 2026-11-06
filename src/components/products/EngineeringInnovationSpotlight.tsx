@@ -351,7 +351,7 @@ export const EngineeringInnovationSpotlight: React.FC<
     <section
       id="innovation-spotlight"
       aria-label="4th Showcase: Next-Gen Mechanical Joint Innovations"
-      className="py-14 sm:py-20 bg-[#0082FC] text-white border-b-4 border-[#5FD4FD] relative overflow-hidden"
+      className="py-14 sm:py-20 bg-[#0082FC] text-white border-b-4 border-[#0565d6] relative overflow-hidden"
     >
       {/* Background Architectural Grid Lines */}
       <div
@@ -369,7 +369,7 @@ export const EngineeringInnovationSpotlight: React.FC<
         ======================================================== */}
         <div className="flex flex-col md:flex-row md:items-end justify-between gap-6 mb-10 sm:mb-12 border-b-2 border-white/20 pb-8">
           <div className="max-w-3xl">
-            <div className="inline-flex items-center gap-2 px-3.5 py-1.5 bg-white text-[#0082FC] text-xs font-bold uppercase tracking-wider rounded-none mb-4 shadow-md border-2 border-[#5FD4FD]">
+            <div className="inline-flex items-center gap-2 px-3.5 py-1.5 bg-white text-[#0082FC] text-xs font-bold uppercase tracking-wider rounded-none mb-4 shadow-md border-2 border-[#0565d6]">
               <Sparkles className="w-4 h-4 text-[#0082FC] shrink-0" />
               <span>
                 4th Product Showcase &bull; Mechanical Joint Engineering
@@ -378,7 +378,7 @@ export const EngineeringInnovationSpotlight: React.FC<
 
             <h2 className="text-2xl sm:text-4xl lg:text-5xl font-black uppercase tracking-tight text-white leading-[1.05] mb-3">
               {currentProduct.name.split(" ")[0]}{" "}
-              <span className="text-[#5FD4FD]">
+              <span className="text-[#0565d6]">
                 {currentProduct.name.split(" ").slice(1).join(" ")}
               </span>
             </h2>
@@ -390,10 +390,10 @@ export const EngineeringInnovationSpotlight: React.FC<
 
           {/* Quick Action Badges */}
           <div className="flex flex-wrap md:flex-col items-start md:items-end gap-2 shrink-0">
-            <span className="px-3 py-1 bg-white text-[#0082FC] text-xs font-black uppercase tracking-wider border-2 border-[#5FD4FD] shadow-sm">
+            <span className="px-3 py-1 bg-white text-[#0082FC] text-xs font-black uppercase tracking-wider border-2 border-[#0565d6] shadow-sm">
               {currentProduct.badge}
             </span>
-            <span className="px-3 py-1 bg-[#5FD4FD] text-[#0082FC] text-xs font-bold uppercase tracking-wider">
+            <span className="px-3 py-1 bg-[#0565d6] text-[#0082FC] text-xs font-bold uppercase tracking-wider">
               {currentProduct.spec}
             </span>
             <span className="text-[11px] text-white/80 font-mono">
@@ -413,43 +413,38 @@ export const EngineeringInnovationSpotlight: React.FC<
                 key={prod.id}
                 type="button"
                 onClick={() => handleSelectProduct(idx)}
-                className={`p-3 sm:p-4 text-left border-2 rounded-none transition-all flex flex-col justify-between cursor-pointer ${
-                  isSelected
-                    ? "bg-white text-[#0082FC] border-[#5FD4FD] shadow-lg ring-2 ring-white"
-                    : "bg-white/10 text-white border-white/30 hover:border-[#5FD4FD] hover:bg-white/20"
-                }`}
+                className={`p-3 sm:p-4 text-left border-2 rounded-none transition-all flex flex-col justify-between cursor-pointer ${isSelected
+                    ? "bg-white text-[#0082FC] border-[#0565d6] shadow-lg ring-2 ring-white"
+                    : "bg-white/10 text-white border-white/30 hover:border-[#0565d6] hover:bg-white/20"
+                  }`}
               >
                 <div>
                   <div className="flex items-center justify-between gap-1 mb-1.5">
                     <span
-                      className={`text-[10px] font-black uppercase tracking-wider px-1.5 py-0.5 ${
-                        isSelected
+                      className={`text-[10px] font-black uppercase tracking-wider px-1.5 py-0.5 ${isSelected
                           ? "bg-[#0082FC] text-white"
                           : "bg-white/20 text-white"
-                      }`}
+                        }`}
                     >
                       Innovation 0{idx + 1}
                     </span>
                     <span
-                      className={`text-[10px] font-bold ${
-                        isSelected ? "text-[#0082FC]" : "text-[#5FD4FD]"
-                      }`}
+                      className={`text-[10px] font-bold ${isSelected ? "text-[#0082FC]" : "text-[#0565d6]"
+                        }`}
                     >
                       AWWA
                     </span>
                   </div>
                   <h3
-                    className={`text-xs sm:text-sm font-black uppercase leading-snug line-clamp-2 ${
-                      isSelected ? "text-[#0082FC]" : "text-white"
-                    }`}
+                    className={`text-xs sm:text-sm font-black uppercase leading-snug line-clamp-2 ${isSelected ? "text-[#0082FC]" : "text-white"
+                      }`}
                   >
                     {prod.name}
                   </h3>
                 </div>
                 <p
-                  className={`text-[11px] mt-2 font-medium line-clamp-1 ${
-                    isSelected ? "text-[#0082FC]/75" : "text-white/75"
-                  }`}
+                  className={`text-[11px] mt-2 font-medium line-clamp-1 ${isSelected ? "text-[#0082FC]/75" : "text-white/75"
+                    }`}
                 >
                   {prod.subtitle}
                 </p>
@@ -471,11 +466,10 @@ export const EngineeringInnovationSpotlight: React.FC<
               <button
                 type="button"
                 onClick={() => setViewMode("photo")}
-                className={`flex-1 py-2 px-3 text-xs font-black uppercase tracking-wider transition-all rounded-none cursor-pointer flex items-center justify-center gap-1.5 ${
-                  viewMode === "photo"
+                className={`flex-1 py-2 px-3 text-xs font-black uppercase tracking-wider transition-all rounded-none cursor-pointer flex items-center justify-center gap-1.5 ${viewMode === "photo"
                     ? "bg-white text-[#0082FC] shadow-sm"
                     : "text-white hover:bg-white/10"
-                }`}
+                  }`}
               >
                 <Sparkles className="w-3.5 h-3.5" />
                 <span>Interactive Hotspots</span>
@@ -484,11 +478,10 @@ export const EngineeringInnovationSpotlight: React.FC<
               <button
                 type="button"
                 onClick={() => setViewMode("simulation")}
-                className={`flex-1 py-2 px-3 text-xs font-black uppercase tracking-wider transition-all rounded-none cursor-pointer flex items-center justify-center gap-1.5 ${
-                  viewMode === "simulation"
+                className={`flex-1 py-2 px-3 text-xs font-black uppercase tracking-wider transition-all rounded-none cursor-pointer flex items-center justify-center gap-1.5 ${viewMode === "simulation"
                     ? "bg-white text-[#0082FC] shadow-sm"
                     : "text-white hover:bg-white/10"
-                }`}
+                  }`}
               >
                 <Sliders className="w-3.5 h-3.5" />
                 <span>Pressure Bite Simulation</span>
@@ -497,11 +490,10 @@ export const EngineeringInnovationSpotlight: React.FC<
               <button
                 type="button"
                 onClick={() => setViewMode("torque")}
-                className={`flex-1 py-2 px-3 text-xs font-black uppercase tracking-wider transition-all rounded-none cursor-pointer flex items-center justify-center gap-1.5 ${
-                  viewMode === "torque"
+                className={`flex-1 py-2 px-3 text-xs font-black uppercase tracking-wider transition-all rounded-none cursor-pointer flex items-center justify-center gap-1.5 ${viewMode === "torque"
                     ? "bg-white text-[#0082FC] shadow-sm"
                     : "text-white hover:bg-white/10"
-                }`}
+                  }`}
               >
                 <Wrench className="w-3.5 h-3.5" />
                 <span>Torque Shear Test</span>
@@ -509,13 +501,13 @@ export const EngineeringInnovationSpotlight: React.FC<
             </div>
 
             {/* MAIN VISUAL CANVAS */}
-            <div className="relative bg-white border-4 border-[#5FD4FD] p-6 sm:p-8 shadow-2xl flex flex-col items-center justify-center min-h-[420px] sm:min-h-[480px] text-[#0082FC] overflow-hidden">
+            <div className="relative bg-white border-4 border-[#0565d6] p-6 sm:p-8 shadow-2xl flex flex-col items-center justify-center min-h-[420px] sm:min-h-[480px] text-[#0082FC] overflow-hidden">
               {/* Floating Upper Hotspot Detail Popup (Zero Layout Displacement) */}
               {activeSpotData && viewMode === "photo" && (
                 <div
                   role="region"
                   aria-live="polite"
-                  className="absolute inset-x-4 sm:inset-x-6 top-14 z-30 bg-white text-[#0082FC] border-4 border-[#5FD4FD] p-4 shadow-2xl animate-in fade-in zoom-in-95 duration-200 backdrop-blur-md"
+                  className="absolute inset-x-4 sm:inset-x-6 top-14 z-30 bg-white text-[#0082FC] border-4 border-[#0565d6] p-4 shadow-2xl animate-in fade-in zoom-in-95 duration-200 backdrop-blur-md"
                 >
                   <div className="flex items-start justify-between gap-4 mb-2">
                     <div className="flex items-center gap-2">
@@ -527,7 +519,7 @@ export const EngineeringInnovationSpotlight: React.FC<
                       </h4>
                     </div>
                     <div className="flex items-center gap-2">
-                      <span className="text-[11px] font-black uppercase bg-[#5FD4FD] text-[#0082FC] px-2.5 py-0.5 shrink-0">
+                      <span className="text-[11px] font-black uppercase bg-[#0565d6] text-[#0082FC] px-2.5 py-0.5 shrink-0">
                         {activeSpotData.badge}
                       </span>
                       <button
@@ -554,7 +546,7 @@ export const EngineeringInnovationSpotlight: React.FC<
                     <button
                       type="button"
                       onClick={() => setActiveHotspot(null)}
-                      className="font-black text-[#0082FC] hover:text-[#5FD4FD] uppercase cursor-pointer"
+                      className="font-black text-[#0082FC] hover:text-[#0565d6] uppercase cursor-pointer"
                     >
                       &times; Close Inspection
                     </button>
@@ -563,7 +555,7 @@ export const EngineeringInnovationSpotlight: React.FC<
               )}
               {/* Corner Waterworks Badge */}
               <div className="absolute top-4 left-4 z-20">
-                <span className="text-[10px] font-black uppercase tracking-widest text-[#0082FC] bg-[#5FD4FD]/30 px-2.5 py-1 border border-[#0082FC]">
+                <span className="text-[10px] font-black uppercase tracking-widest text-[#0082FC] bg-[#0565d6]/30 px-2.5 py-1 border border-[#0082FC]">
                   {currentProduct.categoryLabel}
                 </span>
               </div>
@@ -609,17 +601,16 @@ export const EngineeringInnovationSpotlight: React.FC<
 
                           {/* Numbered Hotspot Pill */}
                           <span
-                            className={`relative w-8 h-8 rounded-none border-2 font-black text-xs flex items-center justify-center shadow-lg transition-transform duration-200 group-hover:scale-110 ${
-                              isActive
-                                ? "bg-[#0082FC] text-white border-white scale-110 ring-2 ring-[#5FD4FD]"
-                                : "bg-white text-[#0082FC] border-[#0082FC] hover:bg-[#5FD4FD]"
-                            }`}
+                            className={`relative w-8 h-8 rounded-none border-2 font-black text-xs flex items-center justify-center shadow-lg transition-transform duration-200 group-hover:scale-110 ${isActive
+                                ? "bg-[#0082FC] text-white border-white scale-110 ring-2 ring-[#0565d6]"
+                                : "bg-white text-[#0082FC] border-[#0082FC] hover:bg-[#0565d6]"
+                              }`}
                           >
                             {spot.id}
                           </span>
 
                           {/* Hover Tooltip Label */}
-                          <span className="absolute bottom-full mb-1 left-1/2 -translate-x-1/2 hidden group-hover:block whitespace-nowrap bg-[#0082FC] text-white text-[10px] font-black uppercase px-2 py-0.5 border border-[#5FD4FD] shadow-md z-30 pointer-events-none">
+                          <span className="absolute bottom-full mb-1 left-1/2 -translate-x-1/2 hidden group-hover:block whitespace-nowrap bg-[#0082FC] text-white text-[10px] font-black uppercase px-2 py-0.5 border border-[#0565d6] shadow-md z-30 pointer-events-none">
                             {spot.title}
                           </span>
                         </button>
@@ -641,11 +632,10 @@ export const EngineeringInnovationSpotlight: React.FC<
                         key={step.psi}
                         type="button"
                         onClick={() => setSelectedPsi(step.psi)}
-                        className={`px-3 py-1.5 text-xs font-black uppercase rounded-none border transition-all cursor-pointer ${
-                          selectedPsi === step.psi
+                        className={`px-3 py-1.5 text-xs font-black uppercase rounded-none border transition-all cursor-pointer ${selectedPsi === step.psi
                             ? "bg-[#0082FC] text-white border-[#0082FC] shadow-md"
-                            : "bg-white text-[#0082FC] border-[#5FD4FD] hover:bg-[#5FD4FD]/20"
-                        }`}
+                            : "bg-white text-[#0082FC] border-[#0565d6] hover:bg-[#0565d6]/20"
+                          }`}
                       >
                         {step.label}
                       </button>
@@ -689,7 +679,7 @@ export const EngineeringInnovationSpotlight: React.FC<
                         width="220"
                         height="35"
                         fill="#0082FC"
-                        stroke="#5FD4FD"
+                        stroke="#0565d6"
                         strokeWidth="2"
                       />
                       <text
@@ -705,22 +695,21 @@ export const EngineeringInnovationSpotlight: React.FC<
                       {/* Left Cam Wedge with Dynamic Penetration */}
                       <g
                         style={{
-                          transform: `translateY(${
-                            selectedPsi === 100
+                          transform: `translateY(${selectedPsi === 100
                               ? 2
                               : selectedPsi === 250
                                 ? 6
                                 : selectedPsi === 350
                                   ? 10
                                   : 14
-                          }px)`,
+                            }px)`,
                           transition:
                             "transform 0.5s cubic-bezier(0.4, 0, 0.2, 1)",
                         }}
                       >
                         <polygon
                           points="95,65 125,65 120,85 100,85"
-                          fill="#5FD4FD"
+                          fill="#0565d6"
                           stroke="#0082FC"
                           strokeWidth="2"
                         />
@@ -738,22 +727,21 @@ export const EngineeringInnovationSpotlight: React.FC<
                       {/* Right Cam Wedge with Dynamic Penetration */}
                       <g
                         style={{
-                          transform: `translateY(${
-                            selectedPsi === 100
+                          transform: `translateY(${selectedPsi === 100
                               ? 2
                               : selectedPsi === 250
                                 ? 6
                                 : selectedPsi === 350
                                   ? 10
                                   : 14
-                          }px)`,
+                            }px)`,
                           transition:
                             "transform 0.5s cubic-bezier(0.4, 0, 0.2, 1)",
                         }}
                       >
                         <polygon
                           points="235,65 265,65 260,85 240,85"
-                          fill="#5FD4FD"
+                          fill="#0565d6"
                           stroke="#0082FC"
                           strokeWidth="2"
                         />
@@ -775,7 +763,7 @@ export const EngineeringInnovationSpotlight: React.FC<
                         width="220"
                         height="30"
                         fill="#0082FC"
-                        stroke="#5FD4FD"
+                        stroke="#0565d6"
                         strokeWidth="2"
                       />
                     </svg>
@@ -805,7 +793,7 @@ export const EngineeringInnovationSpotlight: React.FC<
                       <span className="text-[10px] text-[#0082FC]/70 uppercase block">
                         Operating State
                       </span>
-                      <span className="inline-block bg-[#5FD4FD]/30 px-2 py-0.5 border border-[#0082FC] font-extrabold text-[11px]">
+                      <span className="inline-block bg-[#0565d6]/30 px-2 py-0.5 border border-[#0082FC] font-extrabold text-[11px]">
                         {currentStep.state}
                       </span>
                     </div>
@@ -834,11 +822,10 @@ export const EngineeringInnovationSpotlight: React.FC<
                     <div className="relative w-32 h-44 flex flex-col items-center justify-center">
                       {/* Upper Breakaway Hex Nut */}
                       <div
-                        className={`w-14 h-8 border-2 border-[#0082FC] font-black text-xs flex items-center justify-center transition-all duration-300 ${
-                          isTorqueSheared
+                        className={`w-14 h-8 border-2 border-[#0082FC] font-black text-xs flex items-center justify-center transition-all duration-300 ${isTorqueSheared
                             ? "translate-x-12 -translate-y-6 rotate-45 opacity-0 bg-red-100"
-                            : "bg-[#5FD4FD] text-[#0082FC]"
-                        }`}
+                            : "bg-[#0565d6] text-[#0082FC]"
+                          }`}
                       >
                         {isTorqueSheared ? "SHEARED" : "TORQUE"}
                       </div>
@@ -847,7 +834,7 @@ export const EngineeringInnovationSpotlight: React.FC<
                       <div className="w-5 h-3 bg-[#0082FC] border border-white" />
 
                       {/* Secondary Permanent Inspection Nut */}
-                      <div className="w-16 h-10 bg-[#0082FC] text-white font-black text-xs flex items-center justify-center border-2 border-[#5FD4FD]">
+                      <div className="w-16 h-10 bg-[#0082FC] text-white font-black text-xs flex items-center justify-center border-2 border-[#0565d6]">
                         REMOVAL
                       </div>
 
@@ -857,8 +844,8 @@ export const EngineeringInnovationSpotlight: React.FC<
 
                     <div className="mt-2 text-center">
                       {isTorqueSheared ? (
-                        <span className="px-3 py-1 bg-[#0082FC] text-white text-xs font-black uppercase tracking-wider border-2 border-[#5FD4FD] shadow-md inline-flex items-center gap-1.5">
-                          <CheckCircle2 className="w-3.5 h-3.5 text-[#5FD4FD]" />
+                        <span className="px-3 py-1 bg-[#0082FC] text-white text-xs font-black uppercase tracking-wider border-2 border-[#0565d6] shadow-md inline-flex items-center gap-1.5">
+                          <CheckCircle2 className="w-3.5 h-3.5 text-[#0565d6]" />
                           Shear Achieved @ {torqueValue} Ft-Lbs &bull; Certified
                         </span>
                       ) : (
@@ -890,13 +877,13 @@ export const EngineeringInnovationSpotlight: React.FC<
             </div>
 
             {/* Instruction Banner */}
-            <div className="bg-white/10 border border-[#5FD4FD] p-2.5 flex items-center justify-between text-xs text-white">
+            <div className="bg-white/10 border border-[#0565d6] p-2.5 flex items-center justify-between text-xs text-white">
               <span className="font-semibold flex items-center gap-1.5">
-                <Sparkles className="w-3.5 h-3.5 text-[#5FD4FD]" />
+                <Sparkles className="w-3.5 h-3.5 text-[#0565d6]" />
                 Click numbered dots (1-4) on the active product to inspect
                 engineering specs.
               </span>
-              <span className="text-[11px] font-mono text-[#5FD4FD]">
+              <span className="text-[11px] font-mono text-[#0565d6]">
                 100% AIS / Buy America
               </span>
             </div>
@@ -908,7 +895,7 @@ export const EngineeringInnovationSpotlight: React.FC<
           <div className="lg:col-span-5 space-y-6">
             {/* 4 Feature Cards */}
             <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
-              <div className="p-3.5 bg-white/10 border-2 border-[#5FD4FD] shadow-xs backdrop-blur-sm">
+              <div className="p-3.5 bg-white/10 border-2 border-[#0565d6] shadow-xs backdrop-blur-sm">
                 <div className="flex items-center gap-2 mb-1.5">
                   <div className="w-7 h-7 bg-white text-[#0082FC] flex items-center justify-center shrink-0">
                     <Zap className="w-3.5 h-3.5 text-[#0082FC]" />
@@ -923,7 +910,7 @@ export const EngineeringInnovationSpotlight: React.FC<
                 </p>
               </div>
 
-              <div className="p-3.5 bg-white/10 border-2 border-[#5FD4FD] shadow-xs backdrop-blur-sm">
+              <div className="p-3.5 bg-white/10 border-2 border-[#0565d6] shadow-xs backdrop-blur-sm">
                 <div className="flex items-center gap-2 mb-1.5">
                   <div className="w-7 h-7 bg-white text-[#0082FC] flex items-center justify-center shrink-0">
                     <Wrench className="w-3.5 h-3.5 text-[#0082FC]" />
@@ -938,7 +925,7 @@ export const EngineeringInnovationSpotlight: React.FC<
                 </p>
               </div>
 
-              <div className="p-3.5 bg-white/10 border-2 border-[#5FD4FD] shadow-xs backdrop-blur-sm">
+              <div className="p-3.5 bg-white/10 border-2 border-[#0565d6] shadow-xs backdrop-blur-sm">
                 <div className="flex items-center gap-2 mb-1.5">
                   <div className="w-7 h-7 bg-white text-[#0082FC] flex items-center justify-center shrink-0">
                     <Activity className="w-3.5 h-3.5 text-[#0082FC]" />
@@ -953,7 +940,7 @@ export const EngineeringInnovationSpotlight: React.FC<
                 </p>
               </div>
 
-              <div className="p-3.5 bg-white/10 border-2 border-[#5FD4FD] shadow-xs backdrop-blur-sm">
+              <div className="p-3.5 bg-white/10 border-2 border-[#0565d6] shadow-xs backdrop-blur-sm">
                 <div className="flex items-center gap-2 mb-1.5">
                   <div className="w-7 h-7 bg-white text-[#0082FC] flex items-center justify-center shrink-0">
                     <ShieldCheck className="w-3.5 h-3.5 text-[#0082FC]" />
@@ -970,7 +957,7 @@ export const EngineeringInnovationSpotlight: React.FC<
             </div>
 
             {/* Submittal Specification Ledger */}
-            <div className="border-2 border-[#5FD4FD] bg-white/10 shadow-md backdrop-blur-sm">
+            <div className="border-2 border-[#0565d6] bg-white/10 shadow-md backdrop-blur-sm">
               <div className="bg-white text-[#0082FC] px-4 py-2.5 flex items-center justify-between">
                 <span className="text-xs font-black uppercase tracking-wider">
                   {currentProduct.name} Spec Ledger
@@ -1003,7 +990,7 @@ export const EngineeringInnovationSpotlight: React.FC<
                   <span className="text-white/80 font-normal">
                     Continuous Pressure:
                   </span>
-                  <span className="text-[#5FD4FD] font-bold text-right">
+                  <span className="text-[#0565d6] font-bold text-right">
                     {currentProduct.pressure}
                   </span>
                 </div>
@@ -1033,7 +1020,7 @@ export const EngineeringInnovationSpotlight: React.FC<
               <button
                 type="button"
                 onClick={() => onAddToRfq(product)}
-                className="flex-1 inline-flex items-center justify-center gap-2 px-5 py-3 text-xs sm:text-sm font-bold text-[#0082FC] bg-white hover:bg-[#5FD4FD] rounded-none shadow-md transition-all uppercase tracking-wide cursor-pointer"
+                className="flex-1 inline-flex items-center justify-center gap-2 px-5 py-3 text-xs sm:text-sm font-bold text-[#0082FC] bg-white hover:bg-[#0565d6] rounded-none shadow-md transition-all uppercase tracking-wide cursor-pointer"
               >
                 <CheckCircle2 className="w-4 h-4 text-[#0082FC]" />
                 <span>Add {currentProduct.name.split(" ")[0]} to RFQ</span>
@@ -1042,9 +1029,9 @@ export const EngineeringInnovationSpotlight: React.FC<
               <button
                 type="button"
                 onClick={() => onPreviewSubmittal(product)}
-                className="flex-1 inline-flex items-center justify-center gap-2 px-5 py-3 text-xs sm:text-sm font-bold text-[#5FD4FD] hover:text-[#0082FC] bg-[#0082FC] hover:bg-white border-2 border-[#5FD4FD] rounded-none shadow-xs transition-all uppercase tracking-wide cursor-pointer"
+                className="flex-1 inline-flex items-center justify-center gap-2 px-5 py-3 text-xs sm:text-sm font-bold text-[#0565d6] hover:text-[#0082FC] bg-[#0082FC] hover:bg-white border-2 border-[#0565d6] rounded-none shadow-xs transition-all uppercase tracking-wide cursor-pointer"
               >
-                <FileCheck2 className="w-4 h-4 text-[#5FD4FD] group-hover:text-[#0082FC]" />
+                <FileCheck2 className="w-4 h-4 text-[#0565d6] group-hover:text-[#0082FC]" />
                 <span>Download Submittal</span>
               </button>
             </div>
@@ -1056,9 +1043,9 @@ export const EngineeringInnovationSpotlight: React.FC<
               </span>
               <a
                 href="tel:+15162521111"
-                className="inline-flex items-center gap-1 hover:text-[#5FD4FD] transition-colors"
+                className="inline-flex items-center gap-1 hover:text-[#0565d6] transition-colors"
               >
-                <PhoneCall className="w-3.5 h-3.5 text-[#5FD4FD]" />
+                <PhoneCall className="w-3.5 h-3.5 text-[#0565d6]" />
                 <span>+1 (516) 252-1111</span>
               </a>
             </div>

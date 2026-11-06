@@ -3,7 +3,7 @@
 @layer base {
   :root {
     --primary: #0082fc;
-    --accent: #5fd4fd;
+    --accent: #0565d6;
     --white: #ffffff;
   }
 
@@ -24,7 +24,7 @@
 
   /* Selection colors restricted to brand palette */
   ::selection {
-    background-color: #5fd4fd;
+    background-color: #0565d6;
     color: #0082fc;
   }
 }
@@ -258,7 +258,7 @@
 }
 
 ::-webkit-scrollbar-thumb {
-  background: #5fd4fd;
+  background: #0565d6;
   border-radius: 0px;
 }
 

@@ -240,7 +240,7 @@ Compliance: ${activeVariant.standards}
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
         {/* Section Header */}
         <div className="text-center max-w-3xl mx-auto mb-10">
-          <div className="inline-flex items-center gap-2 px-3 py-1 bg-[#5FD4FD]/20 text-[#0082FC] text-xs font-black uppercase tracking-widest border border-[#0082FC] mb-3">
+          <div className="inline-flex items-center gap-2 px-3 py-1 bg-[#0565d6]/20 text-[#0082FC] text-xs font-black uppercase tracking-widest border border-[#0082FC] mb-3">
             <ShieldCheck className="w-4 h-4 text-[#0082FC]" />
             <span>
               SECTION 4: ARCHITECTURAL CAST IRON DOWNSPOUT BOOTS &amp; SPOUTS
@@ -260,7 +260,7 @@ Compliance: ${activeVariant.standards}
         </div>
 
         {/* Subvariant Switcher Bar */}
-        <div className="bg-[#5FD4FD]/10 border-2 border-[#5FD4FD] p-3 sm:p-4 mb-8 shadow-sm">
+        <div className="bg-[#0565d6]/10 border-2 border-[#0565d6] p-3 sm:p-4 mb-8 shadow-sm">
           <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-2 mb-3">
             <span className="text-xs font-black uppercase tracking-wider text-[#0082FC] flex items-center gap-2">
               <Filter className="w-3.5 h-3.5" />
@@ -282,20 +282,18 @@ Compliance: ${activeVariant.standards}
                     setActiveVariantId(variant.id);
                     setAdded(false);
                   }}
-                  className={`px-4 py-2 text-xs font-black uppercase tracking-wider rounded-none border-2 transition-all flex items-center gap-2 cursor-pointer ${
-                    isActive
+                  className={`px-4 py-2 text-xs font-black uppercase tracking-wider rounded-none border-2 transition-all flex items-center gap-2 cursor-pointer ${isActive
                       ? "bg-[#0082FC] text-white border-[#0082FC] shadow-md scale-102"
-                      : "bg-white text-[#0082FC] border-[#5FD4FD] hover:border-[#0082FC] hover:bg-[#5FD4FD]/10"
-                  }`}
+                      : "bg-white text-[#0082FC] border-[#0565d6] hover:border-[#0082FC] hover:bg-[#0565d6]/10"
+                    }`}
                 >
                   {isActive && <Check className="w-3.5 h-3.5 stroke-[3]" />}
                   <span>{variant.tag.split(" ")[0]}</span>
                   <span
-                    className={`text-[9px] font-mono px-1 py-0.2 border ${
-                      isActive
+                    className={`text-[9px] font-mono px-1 py-0.2 border ${isActive
                         ? "bg-white/20 border-white text-white"
-                        : "bg-[#5FD4FD]/15 border-[#5FD4FD] text-[#0082FC]"
-                    }`}
+                        : "bg-[#0565d6]/15 border-[#0565d6] text-[#0082FC]"
+                      }`}
                   >
                     {variant.catNumber}
                   </span>
@@ -323,22 +321,20 @@ Compliance: ${activeVariant.standards}
                   <button
                     type="button"
                     onClick={() => setViewMode("cad")}
-                    className={`px-2 py-0.5 text-[10px] font-black uppercase border transition-colors cursor-pointer ${
-                      viewMode === "cad"
+                    className={`px-2 py-0.5 text-[10px] font-black uppercase border transition-colors cursor-pointer ${viewMode === "cad"
                         ? "bg-[#0082FC] text-white border-[#0082FC]"
-                        : "bg-white text-[#0082FC] border-[#5FD4FD] hover:bg-[#5FD4FD]/10"
-                    }`}
+                        : "bg-white text-[#0082FC] border-[#0565d6] hover:bg-[#0565d6]/10"
+                      }`}
                   >
                     CAD Simulator
                   </button>
                   <button
                     type="button"
                     onClick={() => setViewMode("photo")}
-                    className={`px-2 py-0.5 text-[10px] font-black uppercase border transition-colors cursor-pointer ${
-                      viewMode === "photo"
+                    className={`px-2 py-0.5 text-[10px] font-black uppercase border transition-colors cursor-pointer ${viewMode === "photo"
                         ? "bg-[#0082FC] text-white border-[#0082FC]"
-                        : "bg-white text-[#0082FC] border-[#5FD4FD] hover:bg-[#5FD4FD]/10"
-                    }`}
+                        : "bg-white text-[#0082FC] border-[#0565d6] hover:bg-[#0565d6]/10"
+                      }`}
                   >
                     Foundry Image
                   </button>
@@ -467,7 +463,7 @@ Compliance: ${activeVariant.standards}
                       <path
                         d="M 75 35 L 115 35 L 115 110 Q 115 180 180 180 L 220 180 L 220 195 L 130 195 Q 75 195 75 130 Z"
                         fill="#0f172a"
-                        stroke={impactTested ? "#f59e0b" : "#5fd4fd"}
+                        stroke={impactTested ? "#f59e0b" : "#0565d6"}
                         strokeWidth={impactTested ? "4.5" : "3.5"}
                         className="transition-all duration-300"
                       />
@@ -583,7 +579,7 @@ Compliance: ${activeVariant.standards}
                     </svg>
 
                     {/* Simulation Status Badge */}
-                    <div className="absolute top-2 left-2 bg-slate-900/90 text-white border border-[#5FD4FD] px-2 py-1 text-[10px] font-mono">
+                    <div className="absolute top-2 left-2 bg-slate-900/90 text-white border border-[#0565d6] px-2 py-1 text-[10px] font-mono">
                       <span>Armor Status: </span>
                       <span className="text-[#38bdf8] font-bold">
                         {impactTested
@@ -596,15 +592,14 @@ Compliance: ${activeVariant.standards}
               </div>
 
               {/* Interactive Controls Ribbon */}
-              <div className="w-full bg-[#5FD4FD]/15 border-2 border-[#5FD4FD] p-2.5 mt-3 flex flex-wrap items-center justify-between gap-2">
+              <div className="w-full bg-[#0565d6]/15 border-2 border-[#0565d6] p-2.5 mt-3 flex flex-wrap items-center justify-between gap-2">
                 <button
                   type="button"
                   onClick={handleImpactTest}
-                  className={`px-3 py-1.5 text-[10px] font-black uppercase border transition-all flex items-center gap-1.5 cursor-pointer ${
-                    impactTested
+                  className={`px-3 py-1.5 text-[10px] font-black uppercase border transition-all flex items-center gap-1.5 cursor-pointer ${impactTested
                       ? "bg-red-600 text-white border-red-600 shadow-md animate-pulse"
-                      : "bg-[#0082FC] text-white border-[#0082FC] hover:bg-[#5FD4FD] hover:text-[#0082FC]"
-                  }`}
+                      : "bg-[#0082FC] text-white border-[#0082FC] hover:bg-[#0565d6] hover:text-[#0082FC]"
+                    }`}
                 >
                   <Zap className="w-3.5 h-3.5" />
                   <span>Test Mower / Vehicular Impact</span>
@@ -614,11 +609,10 @@ Compliance: ${activeVariant.standards}
                   <button
                     type="button"
                     onClick={() => setRainFlowing((prev) => !prev)}
-                    className={`px-2.5 py-1 text-[10px] font-black uppercase border transition-colors cursor-pointer ${
-                      rainFlowing
+                    className={`px-2.5 py-1 text-[10px] font-black uppercase border transition-colors cursor-pointer ${rainFlowing
                         ? "bg-[#0082FC] text-white border-[#0082FC]"
-                        : "bg-white text-[#0082FC] border-[#5FD4FD]"
-                    }`}
+                        : "bg-white text-[#0082FC] border-[#0565d6]"
+                      }`}
                   >
                     {rainFlowing ? "Pause Rain Flow" : "Start Rain Flow"}
                   </button>
@@ -626,11 +620,10 @@ Compliance: ${activeVariant.standards}
                   <button
                     type="button"
                     onClick={() => setDoorOpen((prev) => !prev)}
-                    className={`px-2.5 py-1 text-[10px] font-black uppercase border transition-colors cursor-pointer ${
-                      doorOpen
+                    className={`px-2.5 py-1 text-[10px] font-black uppercase border transition-colors cursor-pointer ${doorOpen
                         ? "bg-amber-500 text-white border-amber-500"
-                        : "bg-white text-[#0082FC] border-[#5FD4FD]"
-                    }`}
+                        : "bg-white text-[#0082FC] border-[#0565d6]"
+                      }`}
                   >
                     {doorOpen ? "Close Door" : "Open Cleanout"}
                   </button>
@@ -646,7 +639,7 @@ Compliance: ${activeVariant.standards}
                   <span className="bg-[#0082FC] text-white px-2.5 py-0.5 text-[10px] font-black uppercase tracking-wider">
                     {activeVariant.tag}
                   </span>
-                  <span className="bg-[#5FD4FD]/20 border border-[#0082FC] text-[#0082FC] px-2 py-0.5 text-[10px] font-black uppercase tracking-wider">
+                  <span className="bg-[#0565d6]/20 border border-[#0082FC] text-[#0082FC] px-2 py-0.5 text-[10px] font-black uppercase tracking-wider">
                     {activeVariant.catNumber}
                   </span>
                   <span className="text-[10px] font-bold text-[#0082FC]/80 uppercase">
@@ -715,7 +708,7 @@ Compliance: ${activeVariant.standards}
                 </div>
 
                 {/* Dimensions Metric Ribbon */}
-                <div className="bg-[#5FD4FD]/10 border border-[#5FD4FD] p-2.5 mb-5 flex flex-wrap items-center justify-between gap-3 text-xs font-mono font-bold text-[#0082FC]">
+                <div className="bg-[#0565d6]/10 border border-[#0565d6] p-2.5 mb-5 flex flex-wrap items-center justify-between gap-3 text-xs font-mono font-bold text-[#0082FC]">
                   <span>Height: {activeVariant.dimensions.height}</span>
                   <span>Width: {activeVariant.dimensions.width}</span>
                   <span>Depth: {activeVariant.dimensions.depth}</span>
@@ -730,11 +723,10 @@ Compliance: ${activeVariant.standards}
                 <button
                   type="button"
                   onClick={handleAdd}
-                  className={`flex-1 py-3 px-4 text-xs font-black uppercase tracking-wider rounded-none border-2 transition-all flex items-center justify-center gap-2 cursor-pointer shadow-md ${
-                    added
-                      ? "bg-[#5FD4FD] text-[#0082FC] border-[#0082FC]"
-                      : "bg-[#0082FC] hover:bg-[#5FD4FD] text-white hover:text-[#0082FC] border-[#0082FC]"
-                  }`}
+                  className={`flex-1 py-3 px-4 text-xs font-black uppercase tracking-wider rounded-none border-2 transition-all flex items-center justify-center gap-2 cursor-pointer shadow-md ${added
+                      ? "bg-[#0565d6] text-[#0082FC] border-[#0082FC]"
+                      : "bg-[#0082FC] hover:bg-[#0565d6] text-white hover:text-[#0082FC] border-[#0082FC]"
+                    }`}
                 >
                   {added ? (
                     <>
@@ -762,7 +754,7 @@ Compliance: ${activeVariant.standards}
                   type="button"
                   onClick={handleCopySpecs}
                   title="Copy engineering specifications"
-                  className="py-3 px-3 bg-[#5FD4FD]/20 hover:bg-[#0082FC] text-[#0082FC] hover:text-white border-2 border-[#5FD4FD] text-xs font-black uppercase transition-all flex items-center justify-center gap-1.5 cursor-pointer shadow-xs"
+                  className="py-3 px-3 bg-[#0565d6]/20 hover:bg-[#0082FC] text-[#0082FC] hover:text-white border-2 border-[#0565d6] text-xs font-black uppercase transition-all flex items-center justify-center gap-1.5 cursor-pointer shadow-xs"
                 >
                   {copied ? (
                     <>

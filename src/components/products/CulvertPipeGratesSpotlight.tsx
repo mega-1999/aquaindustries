@@ -333,7 +333,7 @@ Standards: ${activeVariant.standards}
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
         {/* Section Header */}
         <div className="text-center max-w-3xl mx-auto mb-10">
-          <div className="inline-flex items-center gap-2 px-3 py-1 bg-[#5FD4FD]/20 text-[#0082FC] text-xs font-black uppercase tracking-widest border border-[#0082FC] mb-3">
+          <div className="inline-flex items-center gap-2 px-3 py-1 bg-[#0565d6]/20 text-[#0082FC] text-xs font-black uppercase tracking-widest border border-[#0082FC] mb-3">
             <ShieldCheck className="w-4 h-4 text-[#0082FC]" />
             <span>
               SECTION 2: END-OF-PIPE &amp; CULVERT SAFETY GRATES
@@ -353,7 +353,7 @@ Standards: ${activeVariant.standards}
         </div>
 
         {/* Subvariant Switcher Bar */}
-        <div className="bg-[#5FD4FD]/10 border-2 border-[#5FD4FD] p-3 sm:p-4 mb-8 shadow-sm">
+        <div className="bg-[#0565d6]/10 border-2 border-[#0565d6] p-3 sm:p-4 mb-8 shadow-sm">
           <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-2 mb-3">
             <span className="text-xs font-black uppercase tracking-wider text-[#0082FC] flex items-center gap-2">
               <Filter className="w-3.5 h-3.5" />
@@ -372,20 +372,18 @@ Standards: ${activeVariant.standards}
                   key={variant.id}
                   type="button"
                   onClick={() => handleSelectVariant(variant)}
-                  className={`px-4 py-2 text-xs font-black uppercase tracking-wider rounded-none border-2 transition-all flex items-center gap-2 cursor-pointer ${
-                    isActive
+                  className={`px-4 py-2 text-xs font-black uppercase tracking-wider rounded-none border-2 transition-all flex items-center gap-2 cursor-pointer ${isActive
                       ? "bg-[#0082FC] text-white border-[#0082FC] shadow-md scale-102"
-                      : "bg-white text-[#0082FC] border-[#5FD4FD] hover:border-[#0082FC] hover:bg-[#5FD4FD]/10"
-                  }`}
+                      : "bg-white text-[#0082FC] border-[#0565d6] hover:border-[#0082FC] hover:bg-[#0565d6]/10"
+                    }`}
                 >
                   {isActive && <Check className="w-3.5 h-3.5 stroke-[3]" />}
                   <span>{variant.tag}</span>
                   <span
-                    className={`text-[9px] font-mono px-1 py-0.2 border ${
-                      isActive
+                    className={`text-[9px] font-mono px-1 py-0.2 border ${isActive
                         ? "bg-white/20 border-white text-white"
-                        : "bg-[#5FD4FD]/15 border-[#5FD4FD] text-[#0082FC]"
-                    }`}
+                        : "bg-[#0565d6]/15 border-[#0565d6] text-[#0082FC]"
+                      }`}
                   >
                     {variant.catNumber}
                   </span>
@@ -447,7 +445,7 @@ Standards: ${activeVariant.standards}
                   <span className="bg-[#0082FC] text-white px-2 py-0.5 text-[9px] font-black uppercase tracking-wider border border-white/50 shadow-md">
                     {currentPhoto.badge}
                   </span>
-                  <span className="bg-black/80 backdrop-blur-xs text-[#5FD4FD] px-2 py-0.5 text-[9px] font-mono font-bold border border-[#5FD4FD]/50">
+                  <span className="bg-black/80 backdrop-blur-xs text-[#0565d6] px-2 py-0.5 text-[9px] font-mono font-bold border border-[#0565d6]/50">
                     Pattern: {activeVariant.catNumber}
                   </span>
                 </div>
@@ -458,7 +456,7 @@ Standards: ${activeVariant.standards}
               </div>
 
               {/* Real Photo Caption Bar */}
-              <div className="w-full bg-[#5FD4FD]/15 border-2 border-[#5FD4FD] p-2 mt-2 text-left">
+              <div className="w-full bg-[#0565d6]/15 border-2 border-[#0565d6] p-2 mt-2 text-left">
                 <p className="text-[11px] text-[#0082FC] font-semibold leading-tight">
                   <span className="font-black uppercase text-[#0082FC] mr-1.5">
                     {currentPhoto.title}:
@@ -476,11 +474,10 @@ Standards: ${activeVariant.standards}
                       key={photo.id}
                       type="button"
                       onClick={() => setActivePhotoIndex(idx)}
-                      className={`relative h-16 bg-slate-900 border-2 transition-all p-0.5 flex flex-col items-center justify-between cursor-pointer overflow-hidden ${
-                        isSelected
+                      className={`relative h-16 bg-slate-900 border-2 transition-all p-0.5 flex flex-col items-center justify-between cursor-pointer overflow-hidden ${isSelected
                           ? "border-[#0082FC] ring-2 ring-[#0082FC] scale-105 bg-white z-10"
                           : "border-slate-300 hover:border-[#0082FC] opacity-75 hover:opacity-100"
-                      }`}
+                        }`}
                       title={photo.title}
                     >
                       <div className="relative w-full flex-1">
@@ -493,11 +490,10 @@ Standards: ${activeVariant.standards}
                         />
                       </div>
                       <span
-                        className={`text-[7px] font-black uppercase truncate w-full text-center mt-0.5 px-0.5 ${
-                          isSelected
+                        className={`text-[7px] font-black uppercase truncate w-full text-center mt-0.5 px-0.5 ${isSelected
                             ? "bg-[#0082FC] text-white"
                             : "bg-slate-800 text-white/90"
-                        }`}
+                          }`}
                       >
                         {photo.shortTag}
                       </span>
@@ -515,7 +511,7 @@ Standards: ${activeVariant.standards}
                   <span className="bg-[#0082FC] text-white px-2.5 py-0.5 text-[10px] font-black uppercase tracking-wider">
                     {activeVariant.tag}
                   </span>
-                  <span className="bg-[#5FD4FD]/20 border border-[#0082FC] text-[#0082FC] px-2 py-0.5 text-[10px] font-black uppercase tracking-wider">
+                  <span className="bg-[#0565d6]/20 border border-[#0082FC] text-[#0082FC] px-2 py-0.5 text-[10px] font-black uppercase tracking-wider">
                     {activeVariant.catNumber}
                   </span>
                   <span className="text-[10px] font-bold text-[#0082FC]/80 uppercase">
@@ -584,7 +580,7 @@ Standards: ${activeVariant.standards}
                 </div>
 
                 {/* Engineering Advantage Highlights */}
-                <div className="bg-[#5FD4FD]/10 border border-[#5FD4FD] p-3 mb-6">
+                <div className="bg-[#0565d6]/10 border border-[#0565d6] p-3 mb-6">
                   <div className="text-[10px] font-black uppercase tracking-wider text-[#0082FC] mb-1.5">
                     Municipal &amp; Civil Engineering Advantages:
                   </div>
@@ -616,11 +612,10 @@ Standards: ${activeVariant.standards}
                 <button
                   type="button"
                   onClick={handleAdd}
-                  className={`flex-1 py-3 px-4 text-xs font-black uppercase tracking-wider border-2 transition-all flex items-center justify-center gap-2 cursor-pointer ${
-                    added
+                  className={`flex-1 py-3 px-4 text-xs font-black uppercase tracking-wider border-2 transition-all flex items-center justify-center gap-2 cursor-pointer ${added
                       ? "bg-green-600 text-white border-green-600"
                       : "bg-[#0082FC] text-white border-[#0082FC] hover:bg-[#0082FC]/90 shadow-md"
-                  }`}
+                    }`}
                 >
                   {added ? (
                     <>
@@ -638,7 +633,7 @@ Standards: ${activeVariant.standards}
                 <button
                   type="button"
                   onClick={handleSubmittal}
-                  className="py-3 px-4 bg-white text-[#0082FC] text-xs font-black uppercase tracking-wider border-2 border-[#0082FC] hover:bg-[#5FD4FD]/15 transition-all flex items-center justify-center gap-2 cursor-pointer"
+                  className="py-3 px-4 bg-white text-[#0082FC] text-xs font-black uppercase tracking-wider border-2 border-[#0082FC] hover:bg-[#0565d6]/15 transition-all flex items-center justify-center gap-2 cursor-pointer"
                 >
                   <Download className="w-4 h-4" />
                   <span>SUBMITTAL PDF</span>
@@ -647,7 +642,7 @@ Standards: ${activeVariant.standards}
                 <button
                   type="button"
                   onClick={handleCopySpecs}
-                  className="py-3 px-3 bg-white text-[#0082FC] text-xs font-black uppercase tracking-wider border-2 border-[#5FD4FD] hover:border-[#0082FC] hover:bg-[#5FD4FD]/15 transition-all flex items-center justify-center gap-1.5 cursor-pointer"
+                  className="py-3 px-3 bg-white text-[#0082FC] text-xs font-black uppercase tracking-wider border-2 border-[#0565d6] hover:border-[#0082FC] hover:bg-[#0565d6]/15 transition-all flex items-center justify-center gap-1.5 cursor-pointer"
                   title="Copy Engineering Spec Text"
                 >
                   {copied ? (

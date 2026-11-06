@@ -172,16 +172,16 @@ export const SettingsModal: React.FC<SettingsModalProps> = ({
         <button
           type="button"
           onClick={onClose}
-          className="absolute top-5 right-5 p-1 rounded-none text-[#0082FC] hover:bg-[#5FD4FD]/20 transition-colors cursor-pointer"
+          className="absolute top-5 right-5 p-1 rounded-none text-[#0082FC] hover:bg-[#0565d6]/20 transition-colors cursor-pointer"
           aria-label="Close Settings Modal"
         >
           <X className="w-5 h-5" />
         </button>
 
         {/* Modal Header */}
-        <div className="flex items-center gap-3.5 mb-5 pb-4 border-b-2 border-[#5FD4FD]/40">
-          <div className="w-12 h-12 bg-[#0082FC] text-white border-2 border-[#5FD4FD] flex items-center justify-center shrink-0">
-            <Settings className="w-6 h-6 text-[#5FD4FD]" />
+        <div className="flex items-center gap-3.5 mb-5 pb-4 border-b-2 border-[#0565d6]/40">
+          <div className="w-12 h-12 bg-[#0082FC] text-white border-2 border-[#0565d6] flex items-center justify-center shrink-0">
+            <Settings className="w-6 h-6 text-[#0565d6]" />
           </div>
           <div>
             <h2
@@ -201,11 +201,10 @@ export const SettingsModal: React.FC<SettingsModalProps> = ({
           <button
             type="button"
             onClick={() => setActiveSection("security")}
-            className={`py-2 px-3 text-xs font-black uppercase tracking-wider border-b-2 -mb-[2px] transition-colors cursor-pointer flex items-center gap-1.5 ${
-              activeSection === "security"
+            className={`py-2 px-3 text-xs font-black uppercase tracking-wider border-b-2 -mb-[2px] transition-colors cursor-pointer flex items-center gap-1.5 ${activeSection === "security"
                 ? "border-[#0082FC] bg-[#0082FC] text-white"
-                : "border-transparent text-[#0082FC] hover:bg-[#5FD4FD]/20"
-            }`}
+                : "border-transparent text-[#0082FC] hover:bg-[#0565d6]/20"
+              }`}
           >
             <KeyRound className="w-3.5 h-3.5" />
             <span>Password &amp; Security</span>
@@ -213,11 +212,10 @@ export const SettingsModal: React.FC<SettingsModalProps> = ({
           <button
             type="button"
             onClick={() => setActiveSection("company")}
-            className={`py-2 px-3 text-xs font-black uppercase tracking-wider border-b-2 -mb-[2px] transition-colors cursor-pointer flex items-center gap-1.5 ${
-              activeSection === "company"
+            className={`py-2 px-3 text-xs font-black uppercase tracking-wider border-b-2 -mb-[2px] transition-colors cursor-pointer flex items-center gap-1.5 ${activeSection === "company"
                 ? "border-[#0082FC] bg-[#0082FC] text-white"
-                : "border-transparent text-[#0082FC] hover:bg-[#5FD4FD]/20"
-            }`}
+                : "border-transparent text-[#0082FC] hover:bg-[#0565d6]/20"
+              }`}
           >
             <User className="w-3.5 h-3.5" />
             <span>Contact &amp; Hub</span>
@@ -225,11 +223,10 @@ export const SettingsModal: React.FC<SettingsModalProps> = ({
           <button
             type="button"
             onClick={() => setActiveSection("notifications")}
-            className={`py-2 px-3 text-xs font-black uppercase tracking-wider border-b-2 -mb-[2px] transition-colors cursor-pointer flex items-center gap-1.5 ${
-              activeSection === "notifications"
+            className={`py-2 px-3 text-xs font-black uppercase tracking-wider border-b-2 -mb-[2px] transition-colors cursor-pointer flex items-center gap-1.5 ${activeSection === "notifications"
                 ? "border-[#0082FC] bg-[#0082FC] text-white"
-                : "border-transparent text-[#0082FC] hover:bg-[#5FD4FD]/20"
-            }`}
+                : "border-transparent text-[#0082FC] hover:bg-[#0565d6]/20"
+              }`}
           >
             <Bell className="w-3.5 h-3.5" />
             <span>Alerts</span>
@@ -241,11 +238,10 @@ export const SettingsModal: React.FC<SettingsModalProps> = ({
           <div className="space-y-4">
             {passwordStatus && (
               <div
-                className={`p-3 border-2 text-xs font-bold flex items-center gap-2 ${
-                  passwordStatus.success
+                className={`p-3 border-2 text-xs font-bold flex items-center gap-2 ${passwordStatus.success
                     ? "bg-emerald-50 border-emerald-600 text-emerald-950"
                     : "bg-rose-50 border-rose-500 text-rose-900"
-                }`}
+                  }`}
               >
                 {passwordStatus.success ? (
                   <CheckCircle2 className="w-4 h-4 text-emerald-600 shrink-0" />
@@ -304,12 +300,12 @@ export const SettingsModal: React.FC<SettingsModalProps> = ({
                     }
                     value={currentPassword}
                     onChange={(e) => setCurrentPassword(e.target.value)}
-                    className="w-full bg-white border-2 border-[#0082FC] pl-9 pr-10 py-2 text-xs font-bold text-[#0082FC] focus:outline-none focus:border-[#5FD4FD] rounded-none"
+                    className="w-full bg-white border-2 border-[#0082FC] pl-9 pr-10 py-2 text-xs font-bold text-[#0082FC] focus:outline-none focus:border-[#0565d6] rounded-none"
                   />
                   <button
                     type="button"
                     onClick={() => setShowCurrentPassword(!showCurrentPassword)}
-                    className="absolute right-2.5 top-1/2 -translate-y-1/2 p-1 text-[#0082FC] hover:text-[#5FD4FD] transition-colors cursor-pointer"
+                    className="absolute right-2.5 top-1/2 -translate-y-1/2 p-1 text-[#0082FC] hover:text-[#0565d6] transition-colors cursor-pointer"
                     title={
                       showCurrentPassword ? "Hide password" : "Show password"
                     }
@@ -338,12 +334,12 @@ export const SettingsModal: React.FC<SettingsModalProps> = ({
                       placeholder="Min 6 characters"
                       value={newPassword}
                       onChange={(e) => setNewPassword(e.target.value)}
-                      className="w-full bg-white border-2 border-[#0082FC] pl-3 pr-10 py-2 text-xs font-bold text-[#0082FC] focus:outline-none focus:border-[#5FD4FD] rounded-none"
+                      className="w-full bg-white border-2 border-[#0082FC] pl-3 pr-10 py-2 text-xs font-bold text-[#0082FC] focus:outline-none focus:border-[#0565d6] rounded-none"
                     />
                     <button
                       type="button"
                       onClick={() => setShowNewPassword(!showNewPassword)}
-                      className="absolute right-2.5 top-1/2 -translate-y-1/2 p-1 text-[#0082FC] hover:text-[#5FD4FD] transition-colors cursor-pointer"
+                      className="absolute right-2.5 top-1/2 -translate-y-1/2 p-1 text-[#0082FC] hover:text-[#0565d6] transition-colors cursor-pointer"
                       title={
                         showNewPassword ? "Hide password" : "Show password"
                       }
@@ -370,14 +366,14 @@ export const SettingsModal: React.FC<SettingsModalProps> = ({
                       placeholder="Re-type new password"
                       value={confirmPassword}
                       onChange={(e) => setConfirmPassword(e.target.value)}
-                      className="w-full bg-white border-2 border-[#0082FC] pl-3 pr-10 py-2 text-xs font-bold text-[#0082FC] focus:outline-none focus:border-[#5FD4FD] rounded-none"
+                      className="w-full bg-white border-2 border-[#0082FC] pl-3 pr-10 py-2 text-xs font-bold text-[#0082FC] focus:outline-none focus:border-[#0565d6] rounded-none"
                     />
                     <button
                       type="button"
                       onClick={() =>
                         setShowConfirmPassword(!showConfirmPassword)
                       }
-                      className="absolute right-2.5 top-1/2 -translate-y-1/2 p-1 text-[#0082FC] hover:text-[#5FD4FD] transition-colors cursor-pointer"
+                      className="absolute right-2.5 top-1/2 -translate-y-1/2 p-1 text-[#0082FC] hover:text-[#0565d6] transition-colors cursor-pointer"
                       title={
                         showConfirmPassword ? "Hide password" : "Show password"
                       }
@@ -398,7 +394,7 @@ export const SettingsModal: React.FC<SettingsModalProps> = ({
               <div className="pt-2 flex items-center justify-between gap-2">
                 <button
                   type="submit"
-                  className="px-4 py-2.5 bg-[#0082FC] hover:bg-[#5FD4FD] text-white hover:text-[#0082FC] font-black text-xs uppercase tracking-wider transition-colors cursor-pointer rounded-none shadow-md"
+                  className="px-4 py-2.5 bg-[#0082FC] hover:bg-[#0565d6] text-white hover:text-[#0082FC] font-black text-xs uppercase tracking-wider transition-colors cursor-pointer rounded-none shadow-md"
                 >
                   Update Password
                 </button>
@@ -422,11 +418,10 @@ export const SettingsModal: React.FC<SettingsModalProps> = ({
           <form onSubmit={handleProfileSave} className="space-y-4">
             {profileStatus && (
               <div
-                className={`p-3 border-2 text-xs font-bold flex items-center gap-2 ${
-                  profileStatus.success
+                className={`p-3 border-2 text-xs font-bold flex items-center gap-2 ${profileStatus.success
                     ? "bg-emerald-50 border-emerald-600 text-emerald-950"
                     : "bg-rose-50 border-rose-500 text-rose-900"
-                }`}
+                  }`}
               >
                 <CheckCircle2 className="w-4 h-4 text-emerald-600 shrink-0" />
                 <span>{profileStatus.message}</span>
@@ -443,7 +438,7 @@ export const SettingsModal: React.FC<SettingsModalProps> = ({
                   required
                   value={fullName}
                   onChange={(e) => setFullName(e.target.value)}
-                  className="w-full bg-white border-2 border-[#0082FC] px-3 py-2 font-bold text-[#0082FC] focus:outline-none focus:border-[#5FD4FD] rounded-none"
+                  className="w-full bg-white border-2 border-[#0082FC] px-3 py-2 font-bold text-[#0082FC] focus:outline-none focus:border-[#0565d6] rounded-none"
                 />
               </div>
 
@@ -456,7 +451,7 @@ export const SettingsModal: React.FC<SettingsModalProps> = ({
                   required
                   value={phone}
                   onChange={(e) => setPhone(e.target.value)}
-                  className="w-full bg-white border-2 border-[#0082FC] px-3 py-2 font-mono font-bold text-[#0082FC] focus:outline-none focus:border-[#5FD4FD] rounded-none"
+                  className="w-full bg-white border-2 border-[#0082FC] px-3 py-2 font-mono font-bold text-[#0082FC] focus:outline-none focus:border-[#0565d6] rounded-none"
                 />
               </div>
             </div>
@@ -468,7 +463,7 @@ export const SettingsModal: React.FC<SettingsModalProps> = ({
               <select
                 value={preferredYard}
                 onChange={(e) => setPreferredYard(e.target.value)}
-                className="w-full bg-white border-2 border-[#0082FC] px-3 py-2 text-xs font-bold text-[#0082FC] focus:outline-none focus:border-[#5FD4FD] rounded-none"
+                className="w-full bg-white border-2 border-[#0082FC] px-3 py-2 text-xs font-bold text-[#0082FC] focus:outline-none focus:border-[#0565d6] rounded-none"
               >
                 <option value="new-york-hub">
                   Melville, NY Foundry Yard (Global Master Hub)
@@ -488,7 +483,7 @@ export const SettingsModal: React.FC<SettingsModalProps> = ({
             <div className="pt-2 flex justify-end">
               <button
                 type="submit"
-                className="px-5 py-2.5 bg-[#0082FC] hover:bg-[#5FD4FD] text-white hover:text-[#0082FC] font-black text-xs uppercase tracking-wider transition-colors cursor-pointer rounded-none shadow-md flex items-center gap-1.5"
+                className="px-5 py-2.5 bg-[#0082FC] hover:bg-[#0565d6] text-white hover:text-[#0082FC] font-black text-xs uppercase tracking-wider transition-colors cursor-pointer rounded-none shadow-md flex items-center gap-1.5"
               >
                 <Save className="w-4 h-4" />
                 <span>Save Contact Details</span>
@@ -557,7 +552,7 @@ export const SettingsModal: React.FC<SettingsModalProps> = ({
         )}
 
         {/* Footer Navigation */}
-        <div className="pt-4 mt-6 border-t-2 border-[#5FD4FD]/40 flex items-center justify-between gap-3">
+        <div className="pt-4 mt-6 border-t-2 border-[#0565d6]/40 flex items-center justify-between gap-3">
           {onOpenProfile && (
             <button
               type="button"
@@ -565,7 +560,7 @@ export const SettingsModal: React.FC<SettingsModalProps> = ({
                 onClose();
                 onOpenProfile();
               }}
-              className="text-xs font-bold text-[#0082FC] underline hover:text-[#5FD4FD] cursor-pointer"
+              className="text-xs font-bold text-[#0082FC] underline hover:text-[#0565d6] cursor-pointer"
             >
               &lsaquo; Back to Profile Dashboard
             </button>
@@ -574,7 +569,7 @@ export const SettingsModal: React.FC<SettingsModalProps> = ({
           <button
             type="button"
             onClick={onClose}
-            className="ml-auto px-5 py-2 bg-white text-[#0082FC] border-2 border-[#0082FC] hover:bg-[#5FD4FD]/20 font-bold text-xs uppercase cursor-pointer rounded-none"
+            className="ml-auto px-5 py-2 bg-white text-[#0082FC] border-2 border-[#0082FC] hover:bg-[#0565d6]/20 font-bold text-xs uppercase cursor-pointer rounded-none"
           >
             Close Settings
           </button>

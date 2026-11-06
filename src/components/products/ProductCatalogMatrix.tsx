@@ -96,13 +96,13 @@ export const ProductCatalogMatrix: React.FC<ProductCatalogMatrixProps> = ({
     <section
       id="product-matrix"
       aria-label="Aqua Industries Waterworks Product Showcase"
-      className="py-20 lg:py-28 bg-white text-[#0082FC] border-t-2 border-[#5FD4FD]"
+      className="py-20 lg:py-28 bg-white text-[#0082FC] border-t-2 border-[#0565d6]"
     >
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         {/* Section Header */}
         <div className="flex flex-col md:flex-row md:items-end justify-between mb-8 gap-4">
           <div>
-            <div className="inline-flex items-center gap-2 px-3 py-1 rounded-none bg-white border-2 border-[#5FD4FD] text-[#0082FC] text-xs font-bold uppercase tracking-wider mb-2.5 shadow-xs">
+            <div className="inline-flex items-center gap-2 px-3 py-1 rounded-none bg-white border-2 border-[#0565d6] text-[#0082FC] text-xs font-bold uppercase tracking-wider mb-2.5 shadow-xs">
               <Layers className="w-3.5 h-3.5 text-[#0082FC]" />
               <span className="whitespace-nowrap">
                 Complete Municipal Piping Inventory
@@ -119,7 +119,7 @@ export const ProductCatalogMatrix: React.FC<ProductCatalogMatrixProps> = ({
           </div>
 
           <div className="shrink-0 flex items-center gap-2">
-            <span className="text-xs text-[#0082FC] font-bold bg-white border-2 border-[#5FD4FD] px-3.5 py-1.5 rounded-none whitespace-nowrap shadow-xs">
+            <span className="text-xs text-[#0082FC] font-bold bg-white border-2 border-[#0565d6] px-3.5 py-1.5 rounded-none whitespace-nowrap shadow-xs">
               Showing {Math.min(visibleCount, filteredProducts.length)} of{" "}
               {filteredProducts.length} Products
             </span>
@@ -133,11 +133,10 @@ export const ProductCatalogMatrix: React.FC<ProductCatalogMatrixProps> = ({
               type="button"
               key={tab.id}
               onClick={() => setActiveTab(tab.id)}
-              className={`px-4 py-2.5 rounded-none text-xs sm:text-sm font-bold transition-all whitespace-nowrap shrink-0 border-2 ${
-                activeTab === tab.id
+              className={`px-4 py-2.5 rounded-none text-xs sm:text-sm font-bold transition-all whitespace-nowrap shrink-0 border-2 ${activeTab === tab.id
                   ? "bg-[#0082FC] text-white border-[#0082FC] shadow-sm"
-                  : "bg-white text-[#0082FC] border-[#5FD4FD] hover:bg-[#5FD4FD] hover:text-[#0082FC]"
-              }`}
+                  : "bg-white text-[#0082FC] border-[#0565d6] hover:bg-[#0565d6] hover:text-[#0082FC]"
+                }`}
             >
               <span className="whitespace-nowrap">{tab.label}</span>
             </button>
@@ -151,23 +150,23 @@ export const ProductCatalogMatrix: React.FC<ProductCatalogMatrixProps> = ({
             return (
               <div
                 key={product.id}
-                className="bg-white border-2 border-[#5FD4FD] rounded-none overflow-hidden shadow-sm hover:border-[#0082FC] transition-all duration-300 flex flex-col justify-between group hover:-translate-y-1"
+                className="bg-white border-2 border-[#0565d6] rounded-none overflow-hidden shadow-sm hover:border-[#0082FC] transition-all duration-300 flex flex-col justify-between group hover:-translate-y-1"
               >
                 {/* Card Top Metadata Ribbon (Separated from image, never overlapping) */}
-                <div className="px-4 py-2 bg-white border-b border-[#5FD4FD]/40 flex items-center justify-between gap-2">
+                <div className="px-4 py-2 bg-white border-b border-[#0565d6]/40 flex items-center justify-between gap-2">
                   <div className="flex items-center gap-1.5 flex-wrap min-w-0">
-                    <span className="px-2 py-0.5 rounded-none bg-white text-[#0082FC] border border-[#5FD4FD] text-[11px] font-bold whitespace-nowrap shadow-xs">
+                    <span className="px-2 py-0.5 rounded-none bg-white text-[#0082FC] border border-[#0565d6] text-[11px] font-bold whitespace-nowrap shadow-xs">
                       {product.standard}
                     </span>
                     {product.aisCompliant && (
-                      <span className="px-1.5 py-0.5 rounded-none bg-white text-[#0082FC] border border-[#5FD4FD] text-[10px] font-bold whitespace-nowrap">
+                      <span className="px-1.5 py-0.5 rounded-none bg-white text-[#0082FC] border border-[#0565d6] text-[10px] font-bold whitespace-nowrap">
                         AIS
                       </span>
                     )}
                   </div>
 
                   <div className="shrink-0">
-                    <span className="px-2 py-0.5 rounded-none bg-[#5FD4FD]/20 text-[#0082FC] border border-[#0082FC]/30 text-[10px] font-bold uppercase tracking-wider whitespace-nowrap">
+                    <span className="px-2 py-0.5 rounded-none bg-[#0565d6]/20 text-[#0082FC] border border-[#0082FC]/30 text-[10px] font-bold uppercase tracking-wider whitespace-nowrap">
                       {product.pressureRating
                         .split("/")[0]
                         .split("(")[0]
@@ -178,7 +177,7 @@ export const ProductCatalogMatrix: React.FC<ProductCatalogMatrixProps> = ({
                 </div>
 
                 {/* Dedicated Product Image Canvas: 100% Contained, Zero Overflow, Generous Padding */}
-                <div className="relative w-full h-52 bg-white border-b-2 border-[#5FD4FD] flex items-center justify-center p-6 overflow-hidden">
+                <div className="relative w-full h-52 bg-white border-b-2 border-[#0565d6] flex items-center justify-center p-6 overflow-hidden">
                   <div className="w-full h-full flex items-center justify-center">
                     <img
                       src={product.imageUrl}
@@ -202,7 +201,7 @@ export const ProductCatalogMatrix: React.FC<ProductCatalogMatrixProps> = ({
                     </p>
 
                     {/* Key Technical Parameters */}
-                    <div className="grid grid-cols-2 gap-2 py-2.5 my-3 border-y border-[#5FD4FD]/40 text-[11px] font-bold text-[#0082FC]">
+                    <div className="grid grid-cols-2 gap-2 py-2.5 my-3 border-y border-[#0565d6]/40 text-[11px] font-bold text-[#0082FC]">
                       <div>
                         <span className="text-[#0082FC]/70 uppercase block text-[10px]">
                           Standard
@@ -236,11 +235,10 @@ export const ProductCatalogMatrix: React.FC<ProductCatalogMatrixProps> = ({
                     <button
                       type="button"
                       onClick={() => handleAddProduct(product)}
-                      className={`flex-1 inline-flex items-center justify-center gap-1.5 py-2 px-3 rounded-none text-xs font-bold uppercase tracking-wider transition-all whitespace-nowrap border-2 cursor-pointer ${
-                        isAdded
-                          ? "bg-[#5FD4FD] text-[#0082FC] border-[#0082FC]"
-                          : "bg-[#0082FC] hover:bg-[#5FD4FD] hover:text-[#0082FC] text-white border-[#0082FC] shadow-xs"
-                      }`}
+                      className={`flex-1 inline-flex items-center justify-center gap-1.5 py-2 px-3 rounded-none text-xs font-bold uppercase tracking-wider transition-all whitespace-nowrap border-2 cursor-pointer ${isAdded
+                          ? "bg-[#0565d6] text-[#0082FC] border-[#0082FC]"
+                          : "bg-[#0082FC] hover:bg-[#0565d6] hover:text-[#0082FC] text-white border-[#0082FC] shadow-xs"
+                        }`}
                     >
                       {isAdded ? (
                         <>
@@ -267,7 +265,7 @@ export const ProductCatalogMatrix: React.FC<ProductCatalogMatrixProps> = ({
             <button
               type="button"
               onClick={handleLoadMore}
-              className="w-full sm:w-auto inline-flex items-center justify-center gap-2 px-6 py-3 bg-[#0082FC] text-white hover:bg-[#5FD4FD] hover:text-[#0082FC] font-bold text-sm rounded-none border-2 border-[#0082FC] transition-colors duration-150 shadow-sm whitespace-nowrap cursor-pointer"
+              className="w-full sm:w-auto inline-flex items-center justify-center gap-2 px-6 py-3 bg-[#0082FC] text-white hover:bg-[#0565d6] hover:text-[#0082FC] font-bold text-sm rounded-none border-2 border-[#0082FC] transition-colors duration-150 shadow-sm whitespace-nowrap cursor-pointer"
             >
               <span>Load More Products (+6)</span>
               <ChevronDown className="w-4 h-4" />
@@ -286,14 +284,14 @@ export const ProductCatalogMatrix: React.FC<ProductCatalogMatrixProps> = ({
         {/* Collapse Option When All Cards Are Fully Loaded */}
         {!hasMore && filteredProducts.length > INITIAL_CARD_LIMIT && (
           <div className="mt-12 text-center">
-            <div className="inline-flex items-center gap-4 px-5 py-2.5 bg-white border-2 border-[#5FD4FD]">
+            <div className="inline-flex items-center gap-4 px-5 py-2.5 bg-white border-2 border-[#0565d6]">
               <span className="text-sm font-bold text-[#0082FC] whitespace-nowrap">
                 All {filteredProducts.length} Products Displayed
               </span>
               <button
                 type="button"
                 onClick={handleCollapseToSix}
-                className="text-sm font-bold text-[#0082FC] hover:text-[#5FD4FD] underline whitespace-nowrap"
+                className="text-sm font-bold text-[#0082FC] hover:text-[#0565d6] underline whitespace-nowrap"
               >
                 Show First 6 Only
               </button>

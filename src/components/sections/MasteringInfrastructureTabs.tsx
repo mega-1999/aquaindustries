@@ -144,11 +144,10 @@ export function MasteringInfrastructureTabs() {
                 key={sector.id}
                 type="button"
                 onClick={() => setActiveTab(idx)}
-                className={`flex-1 py-2.5 px-3.5 text-xs sm:text-sm font-bold uppercase tracking-wider transition-colors duration-150 whitespace-nowrap cursor-pointer ${
-                  isActive
+                className={`flex-1 py-2.5 px-3.5 text-xs sm:text-sm font-bold uppercase tracking-wider transition-colors duration-150 whitespace-nowrap cursor-pointer ${isActive
                     ? "bg-[#0082FC] text-white"
-                    : "bg-white text-[#0082FC] hover:bg-[#5FD4FD] hover:text-[#0082FC]"
-                }`}
+                    : "bg-white text-[#0082FC] hover:bg-[#0565d6] hover:text-[#0082FC]"
+                  }`}
               >
                 {sector.tabLabel}
               </button>
@@ -162,7 +161,7 @@ export function MasteringInfrastructureTabs() {
           <div className="lg:col-span-7 border-2 border-[#0082FC] bg-white p-6 sm:p-7 flex flex-col justify-between">
             <div className="space-y-4">
               <div className="space-y-1.5">
-                <span className="text-xs font-mono font-bold text-[#5FD4FD] bg-[#0082FC] px-2.5 py-0.5 uppercase tracking-wider whitespace-nowrap inline-block">
+                <span className="text-xs font-mono font-bold text-[#0565d6] bg-[#0082FC] px-2.5 py-0.5 uppercase tracking-wider whitespace-nowrap inline-block">
                   {current.subhead}
                 </span>
                 <h3 className="text-xl sm:text-2xl font-black text-[#0082FC] leading-snug">
@@ -240,9 +239,9 @@ export function MasteringInfrastructureTabs() {
 
             <div className="relative z-10">
               {/* Schematic Header */}
-              <div className="flex items-center justify-between border-b border-[#5FD4FD] pb-3 mb-6">
+              <div className="flex items-center justify-between border-b border-[#0565d6] pb-3 mb-6">
                 <div>
-                  <div className="text-xs font-mono uppercase text-[#5FD4FD] tracking-wider font-bold whitespace-nowrap">
+                  <div className="text-xs font-mono uppercase text-[#0565d6] tracking-wider font-bold whitespace-nowrap">
                     TECHNICAL SCHEMATIC
                   </div>
                   <div className="text-base font-bold text-white whitespace-nowrap">
@@ -255,7 +254,7 @@ export function MasteringInfrastructureTabs() {
               </div>
 
               {/* Dynamic SVG Schematic Based on Active Tab */}
-              <div className="bg-white border-2 border-[#5FD4FD] p-4 text-[#0082FC] my-4 flex items-center justify-center min-h-[260px]">
+              <div className="bg-white border-2 border-[#0565d6] p-4 text-[#0082FC] my-4 flex items-center justify-center min-h-[260px]">
                 {current.svgType === "watermain" && (
                   <svg
                     viewBox="0 0 320 180"
@@ -282,13 +281,13 @@ export function MasteringInfrastructureTabs() {
                       strokeWidth="3"
                     />
                     {/* Interior Cement Lining */}
-                    <rect x="22" y="42" width="116" height="8" fill="#5FD4FD" />
+                    <rect x="22" y="42" width="116" height="8" fill="#0565d6" />
                     <rect
                       x="22"
                       y="130"
                       width="116"
                       height="8"
-                      fill="#5FD4FD"
+                      fill="#0565d6"
                     />
                     {/* Gasket Socket Pocket */}
                     <rect
@@ -296,7 +295,7 @@ export function MasteringInfrastructureTabs() {
                       y="42"
                       width="20"
                       height="16"
-                      fill="#5FD4FD"
+                      fill="#0565d6"
                       stroke="#0082FC"
                       strokeWidth="1.5"
                     />
@@ -305,7 +304,7 @@ export function MasteringInfrastructureTabs() {
                       y="122"
                       width="20"
                       height="16"
-                      fill="#5FD4FD"
+                      fill="#0565d6"
                       stroke="#0082FC"
                       strokeWidth="1.5"
                     />
@@ -332,7 +331,7 @@ export function MasteringInfrastructureTabs() {
                       y1="32"
                       x2="210"
                       y2="32"
-                      stroke="#5FD4FD"
+                      stroke="#0565d6"
                       strokeWidth="4"
                     />
                     <line
@@ -340,7 +339,7 @@ export function MasteringInfrastructureTabs() {
                       y1="148"
                       x2="210"
                       y2="148"
-                      stroke="#5FD4FD"
+                      stroke="#0565d6"
                       strokeWidth="4"
                     />
                     <circle cx="210" cy="32" r="6" fill="#0082FC" />
@@ -374,7 +373,7 @@ export function MasteringInfrastructureTabs() {
                       y1="50"
                       x2="310"
                       y2="50"
-                      stroke="#5FD4FD"
+                      stroke="#0565d6"
                       strokeWidth="3"
                       strokeDasharray="4 4"
                     />
@@ -397,12 +396,12 @@ export function MasteringInfrastructureTabs() {
                       width="110"
                       height="26"
                       fill="#0082FC"
-                      stroke="#5FD4FD"
+                      stroke="#0565d6"
                       strokeWidth="2"
                     />
                     {/* Machined Bearing Seat */}
-                    <rect x="100" y="78" width="20" height="4" fill="#5FD4FD" />
-                    <rect x="200" y="78" width="20" height="4" fill="#5FD4FD" />
+                    <rect x="100" y="78" width="20" height="4" fill="#0565d6" />
+                    <rect x="200" y="78" width="20" height="4" fill="#0565d6" />
                     {/* Label on lid */}
                     <text
                       x="128"
@@ -469,7 +468,7 @@ export function MasteringInfrastructureTabs() {
                       width="20"
                       height="90"
                       fill="#0082FC"
-                      stroke="#5FD4FD"
+                      stroke="#0565d6"
                       strokeWidth="2"
                     />
                     <circle cx="30" cy="55" r="4" fill="#FFFFFF" />
@@ -481,7 +480,7 @@ export function MasteringInfrastructureTabs() {
                       width="20"
                       height="90"
                       fill="#0082FC"
-                      stroke="#5FD4FD"
+                      stroke="#0565d6"
                       strokeWidth="2"
                     />
                     <circle cx="290" cy="55" r="4" fill="#FFFFFF" />
@@ -492,7 +491,7 @@ export function MasteringInfrastructureTabs() {
                       y="40"
                       width="20"
                       height="100"
-                      fill="#5FD4FD"
+                      fill="#0565d6"
                       stroke="#0082FC"
                       strokeWidth="2"
                     />
@@ -540,13 +539,13 @@ export function MasteringInfrastructureTabs() {
                     {/* Mechanical Actuating Wedges */}
                     <polygon
                       points="175,60 185,60 180,72"
-                      fill="#5FD4FD"
+                      fill="#0565d6"
                       stroke="#0082FC"
                       strokeWidth="1.5"
                     />
                     <polygon
                       points="175,120 185,120 180,108"
-                      fill="#5FD4FD"
+                      fill="#0565d6"
                       stroke="#0082FC"
                       strokeWidth="1.5"
                     />
@@ -556,7 +555,7 @@ export function MasteringInfrastructureTabs() {
                       y="25"
                       width="15"
                       height="15"
-                      fill="#5FD4FD"
+                      fill="#0565d6"
                       stroke="#0082FC"
                     />
                     <rect
@@ -564,7 +563,7 @@ export function MasteringInfrastructureTabs() {
                       y="140"
                       width="15"
                       height="15"
-                      fill="#5FD4FD"
+                      fill="#0565d6"
                       stroke="#0082FC"
                     />
                     {/* Tie Rod to Fitting Bell */}
@@ -612,10 +611,10 @@ export function MasteringInfrastructureTabs() {
             </div>
 
             {/* Single-Line Action Button */}
-            <div className="pt-6 border-t border-[#5FD4FD] relative z-10">
+            <div className="pt-6 border-t border-[#0565d6] relative z-10">
               <a
                 href="#quote-builder"
-                className="w-full inline-flex items-center justify-center bg-white text-[#0082FC] hover:bg-[#5FD4FD] hover:text-[#0082FC] font-bold text-sm px-6 py-3 border-2 border-white transition-colors duration-150 whitespace-nowrap"
+                className="w-full inline-flex items-center justify-center bg-white text-[#0082FC] hover:bg-[#0565d6] hover:text-[#0082FC] font-bold text-sm px-6 py-3 border-2 border-white transition-colors duration-150 whitespace-nowrap"
               >
                 <span>Request Submittal for {current.tabLabel}</span>
                 <svg

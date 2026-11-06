@@ -33,7 +33,7 @@ export const ProductSubmittalModal: React.FC<ProductSubmittalModalProps> = ({
         <button
           type="button"
           onClick={onClose}
-          className="absolute top-5 right-5 p-1 rounded-none text-[#0082FC] hover:bg-[#5FD4FD]/20 transition-colors"
+          className="absolute top-5 right-5 p-1 rounded-none text-[#0082FC] hover:bg-[#0565d6]/20 transition-colors"
         >
           <X className="w-5 h-5" />
         </button>
@@ -57,10 +57,10 @@ export const ProductSubmittalModal: React.FC<ProductSubmittalModalProps> = ({
           </div>
 
           <div className="shrink-0 flex items-center gap-2">
-            <span className="px-3.5 py-1.5 rounded-none bg-white border-2 border-[#5FD4FD] text-xs sm:text-sm font-bold text-[#0082FC] whitespace-nowrap">
+            <span className="px-3.5 py-1.5 rounded-none bg-white border-2 border-[#0565d6] text-xs sm:text-sm font-bold text-[#0082FC] whitespace-nowrap">
               {product.standard}
             </span>
-            <span className="px-3.5 py-1.5 rounded-none bg-white border border-[#5FD4FD] text-xs sm:text-sm font-bold text-[#0082FC] whitespace-nowrap">
+            <span className="px-3.5 py-1.5 rounded-none bg-white border border-[#0565d6] text-xs sm:text-sm font-bold text-[#0082FC] whitespace-nowrap">
               {product.pressureRating.split(" ")[0]}
             </span>
           </div>
@@ -69,43 +69,43 @@ export const ProductSubmittalModal: React.FC<ProductSubmittalModalProps> = ({
         {/* Technical Specification Table */}
         <div className="space-y-6">
           {/* General Specs */}
-          <div className="bg-white rounded-none border-2 border-[#5FD4FD] p-5">
+          <div className="bg-white rounded-none border-2 border-[#0565d6] p-5">
             <h4 className="text-sm sm:text-base font-extrabold uppercase tracking-wider text-[#0082FC] mb-3 flex items-center gap-2">
               <Layers className="w-5 h-5 text-[#0082FC]" />
               <span>General Casting &amp; Metallurgical Parameters</span>
             </h4>
             <div className="grid grid-cols-1 sm:grid-cols-2 gap-3 text-sm sm:text-base">
-              <div className="flex justify-between border-b border-[#5FD4FD]/30 pb-2">
+              <div className="flex justify-between border-b border-[#0565d6]/30 pb-2">
                 <span className="text-[#0082FC]">Material Standard:</span>
                 <span className="text-[#0082FC] font-bold">
                   {product.material}
                 </span>
               </div>
-              <div className="flex justify-between border-b border-[#5FD4FD]/30 pb-2">
+              <div className="flex justify-between border-b border-[#0565d6]/30 pb-2">
                 <span className="text-[#0082FC]">Minimum Tensile:</span>
                 <span className="text-[#0082FC] font-bold">
                   {product.specs.tensileStrength}
                 </span>
               </div>
-              <div className="flex justify-between border-b border-[#5FD4FD]/30 pb-2">
+              <div className="flex justify-between border-b border-[#0565d6]/30 pb-2">
                 <span className="text-[#0082FC]">Minimum Yield:</span>
                 <span className="text-[#0082FC] font-bold">
                   {product.specs.yieldStrength}
                 </span>
               </div>
-              <div className="flex justify-between border-b border-[#5FD4FD]/30 pb-2">
+              <div className="flex justify-between border-b border-[#0565d6]/30 pb-2">
                 <span className="text-[#0082FC]">Minimum Elongation:</span>
                 <span className="text-[#0082FC] font-bold">
                   {product.specs.elongation}
                 </span>
               </div>
-              <div className="flex justify-between border-b border-[#5FD4FD]/30 pb-2">
+              <div className="flex justify-between border-b border-[#0565d6]/30 pb-2">
                 <span className="text-[#0082FC]">Joint Standard:</span>
                 <span className="text-[#0082FC] font-bold">
                   {product.jointType}
                 </span>
               </div>
-              <div className="flex justify-between border-b border-[#5FD4FD]/30 pb-2">
+              <div className="flex justify-between border-b border-[#0565d6]/30 pb-2">
                 <span className="text-[#0082FC]">Wall Thickness:</span>
                 <span className="text-[#0082FC] font-bold">
                   {product.specs.wallThicknessClass}
@@ -115,9 +115,9 @@ export const ProductSubmittalModal: React.FC<ProductSubmittalModalProps> = ({
           </div>
 
           {/* Lining, Coating & NSF 61 Certifications */}
-          <div className="bg-white rounded-none border-2 border-[#5FD4FD] p-5">
+          <div className="bg-white rounded-none border-2 border-[#0565d6] p-5">
             <h4 className="text-sm sm:text-base font-extrabold uppercase tracking-wider text-[#0082FC] mb-3 flex items-center gap-2">
-              <ShieldCheck className="w-5 h-5 text-[#5FD4FD]" />
+              <ShieldCheck className="w-5 h-5 text-[#0565d6]" />
               <span>
                 Corrosion Protection &amp; Potable Water Certifications
               </span>
@@ -130,13 +130,13 @@ export const ProductSubmittalModal: React.FC<ProductSubmittalModalProps> = ({
               request.
             </p>
             <div className="flex flex-wrap gap-2 text-xs sm:text-sm">
-              <span className="px-3 py-1.5 rounded-none bg-white border border-[#5FD4FD] text-[#0082FC] font-bold shadow-xs">
+              <span className="px-3 py-1.5 rounded-none bg-white border border-[#0565d6] text-[#0082FC] font-bold shadow-xs">
                 ANSI/NSF 61 Annex G Certified Lead-Free
               </span>
-              <span className="px-3 py-1.5 rounded-none bg-white border border-[#5FD4FD] text-[#0082FC] font-bold shadow-xs">
+              <span className="px-3 py-1.5 rounded-none bg-white border border-[#0565d6] text-[#0082FC] font-bold shadow-xs">
                 NSF/ANSI 372 Verified (&lt;0.25% Pb)
               </span>
-              <span className="px-3 py-1.5 rounded-none bg-white border border-[#5FD4FD] text-[#0082FC] font-bold shadow-xs">
+              <span className="px-3 py-1.5 rounded-none bg-white border border-[#0565d6] text-[#0082FC] font-bold shadow-xs">
                 Buy America Act (BAA) / AIS Compliant
               </span>
             </div>
@@ -149,30 +149,30 @@ export const ProductSubmittalModal: React.FC<ProductSubmittalModalProps> = ({
                 <span>
                   General Specifications (2&quot; - 64&quot; Compact Fittings)
                 </span>
-                <span className="text-[10px] font-mono bg-[#5FD4FD]/20 border border-[#0082FC] px-2 py-0.5">
+                <span className="text-[10px] font-mono bg-[#0565d6]/20 border border-[#0082FC] px-2 py-0.5">
                   ANSI/AWWA C153
                 </span>
               </h4>
               <div className="grid grid-cols-1 sm:grid-cols-2 gap-2.5 text-xs text-[#0082FC]">
-                <div className="p-2 border border-[#5FD4FD]/40 bg-[#5FD4FD]/10">
+                <div className="p-2 border border-[#0565d6]/40 bg-[#0565d6]/10">
                   <strong className="block text-[#0082FC]">MATERIAL:</strong>
                   <span>Ductile Iron per ASTM A536</span>
                 </div>
-                <div className="p-2 border border-[#5FD4FD]/40 bg-[#5FD4FD]/10">
+                <div className="p-2 border border-[#0565d6]/40 bg-[#0565d6]/10">
                   <strong className="block text-[#0082FC]">PRESSURE:</strong>
                   <span>
                     350 PSI rating for 2&quot; - 24&quot;, 250 PSI for 30&quot;
                     - 48&quot;, 150 PSI for 54&quot; - 64&quot;
                   </span>
                 </div>
-                <div className="p-2 border border-[#5FD4FD]/40 bg-[#5FD4FD]/10">
+                <div className="p-2 border border-[#0565d6]/40 bg-[#0565d6]/10">
                   <strong className="block text-[#0082FC]">TESTING:</strong>
                   <span>
                     In accordance with ANSI/AWWA C153/A21.53, ANSI/AWWA
                     C111/A21.11, UL and FM requirements
                   </span>
                 </div>
-                <div className="p-2 border border-[#5FD4FD]/40 bg-[#5FD4FD]/10">
+                <div className="p-2 border border-[#0565d6]/40 bg-[#0565d6]/10">
                   <strong className="block text-[#0082FC]">
                     LAYING LENGTH:
                   </strong>
@@ -180,7 +180,7 @@ export const ProductSubmittalModal: React.FC<ProductSubmittalModalProps> = ({
                     ANSI/AWWA C153/A21.53 (or catalog H2O design as noted)
                   </span>
                 </div>
-                <div className="p-2 border border-[#5FD4FD]/40 bg-[#5FD4FD]/10">
+                <div className="p-2 border border-[#0565d6]/40 bg-[#0565d6]/10">
                   <strong className="block text-[#0082FC]">DEFLECTION:</strong>
                   <span>
                     2&quot;-4&quot;=8° | 6&quot;=7° | 8&quot;-12&quot;=5° |
@@ -188,7 +188,7 @@ export const ProductSubmittalModal: React.FC<ProductSubmittalModalProps> = ({
                     30&quot;-64&quot;=2°
                   </span>
                 </div>
-                <div className="p-2 border border-[#5FD4FD]/40 bg-[#5FD4FD]/10">
+                <div className="p-2 border border-[#0565d6]/40 bg-[#0565d6]/10">
                   <strong className="block text-[#0082FC]">
                     CEMENT LINING:
                   </strong>
@@ -197,14 +197,14 @@ export const ProductSubmittalModal: React.FC<ProductSubmittalModalProps> = ({
                     4&quot;-64&quot; double thickness
                   </span>
                 </div>
-                <div className="p-2 border border-[#5FD4FD]/40 bg-[#5FD4FD]/10">
+                <div className="p-2 border border-[#0565d6]/40 bg-[#0565d6]/10">
                   <strong className="block text-[#0082FC]">COATING:</strong>
                   <span>
                     Asphaltic seal coat inside and out in accordance with
                     ANSI/AWWA C104 &amp; C153
                   </span>
                 </div>
-                <div className="p-2 border border-[#5FD4FD]/40 bg-[#5FD4FD]/10">
+                <div className="p-2 border border-[#0565d6]/40 bg-[#0565d6]/10">
                   <strong className="block text-[#0082FC]">
                     FLANGES &amp; HARDWARE:
                   </strong>
@@ -213,14 +213,14 @@ export const ProductSubmittalModal: React.FC<ProductSubmittalModalProps> = ({
                     &bull; Low alloy steel T-bolts
                   </span>
                 </div>
-                <div className="p-2 border border-[#5FD4FD]/40 bg-[#5FD4FD]/10">
+                <div className="p-2 border border-[#0565d6]/40 bg-[#0565d6]/10">
                   <strong className="block text-[#0082FC]">APPROVALS:</strong>
                   <span>
                     3&quot;-12&quot; UL/ULC Listed &bull; 2&quot;+ UL/ANSI/NSF
                     61 &amp; 372 &bull; 3&quot;-16&quot; FM APPROVED
                   </span>
                 </div>
-                <div className="p-2 border border-[#5FD4FD]/40 bg-[#5FD4FD]/10">
+                <div className="p-2 border border-[#0565d6]/40 bg-[#0565d6]/10">
                   <strong className="block text-[#0082FC]">
                     INSTALLATION:
                   </strong>
@@ -234,7 +234,7 @@ export const ProductSubmittalModal: React.FC<ProductSubmittalModalProps> = ({
           )}
 
           {/* Bolt & Installation Torque Specs */}
-          <div className="bg-white rounded-none border-2 border-[#5FD4FD] p-5">
+          <div className="bg-white rounded-none border-2 border-[#0565d6] p-5">
             <h4 className="text-sm sm:text-base font-extrabold uppercase tracking-wider text-[#0082FC] mb-2">
               Field Installation &amp; Bolt Torque Specifications
             </h4>
@@ -260,14 +260,14 @@ export const ProductSubmittalModal: React.FC<ProductSubmittalModalProps> = ({
         </div>
 
         {/* Modal Action Buttons */}
-        <div className="mt-8 pt-5 border-t-2 border-[#5FD4FD]/30 flex flex-col sm:flex-row items-center justify-between gap-3">
+        <div className="mt-8 pt-5 border-t-2 border-[#0565d6]/30 flex flex-col sm:flex-row items-center justify-between gap-3">
           <button
             type="button"
             onClick={() => {
               onAddToRfq(product);
               onClose();
             }}
-            className="w-full sm:w-auto px-6 py-3.5 bg-[#0082FC] hover:bg-[#5FD4FD] hover:text-[#0082FC] text-white font-extrabold text-sm sm:text-base rounded-none border-2 border-[#0082FC] shadow-md transition-colors whitespace-nowrap"
+            className="w-full sm:w-auto px-6 py-3.5 bg-[#0082FC] hover:bg-[#0565d6] hover:text-[#0082FC] text-white font-extrabold text-sm sm:text-base rounded-none border-2 border-[#0082FC] shadow-md transition-colors whitespace-nowrap"
           >
             + Add to Quote List
           </button>
@@ -276,7 +276,7 @@ export const ProductSubmittalModal: React.FC<ProductSubmittalModalProps> = ({
             <button
               type="button"
               onClick={handlePrint}
-              className="flex-1 sm:flex-initial px-5 py-3.5 bg-white hover:bg-[#5FD4FD]/20 text-[#0082FC] text-sm sm:text-base font-extrabold rounded-none border-2 border-[#5FD4FD] flex items-center justify-center gap-2 whitespace-nowrap"
+              className="flex-1 sm:flex-initial px-5 py-3.5 bg-white hover:bg-[#0565d6]/20 text-[#0082FC] text-sm sm:text-base font-extrabold rounded-none border-2 border-[#0565d6] flex items-center justify-center gap-2 whitespace-nowrap"
             >
               <Printer className="w-4 h-4 text-[#0082FC]" />
               <span>Print Submittal</span>
@@ -284,7 +284,7 @@ export const ProductSubmittalModal: React.FC<ProductSubmittalModalProps> = ({
             <button
               type="button"
               onClick={handlePrint}
-              className="flex-1 sm:flex-initial px-5 py-3.5 bg-white hover:bg-[#5FD4FD]/20 text-[#0082FC] text-sm sm:text-base font-extrabold rounded-none border-2 border-[#0082FC] flex items-center justify-center gap-2 whitespace-nowrap"
+              className="flex-1 sm:flex-initial px-5 py-3.5 bg-white hover:bg-[#0565d6]/20 text-[#0082FC] text-sm sm:text-base font-extrabold rounded-none border-2 border-[#0082FC] flex items-center justify-center gap-2 whitespace-nowrap"
             >
               <Download className="w-4 h-4 text-[#0082FC]" />
               <span>Download PDF</span>

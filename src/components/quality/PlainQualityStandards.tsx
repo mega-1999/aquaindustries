@@ -31,12 +31,12 @@ export const PlainQualityStandards: React.FC = () => {
     <section
       id="quality-standards"
       aria-label="Plain-English Quality Standards"
-      className="py-20 lg:py-28 bg-white text-[#0082FC] border-t-2 border-[#5FD4FD]"
+      className="py-20 lg:py-28 bg-white text-[#0082FC] border-t-2 border-[#0565d6]"
     >
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         {/* Section Header */}
         <div className="text-center max-w-3xl mx-auto mb-16">
-          <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-none bg-white border-2 border-[#5FD4FD] text-[#0082FC] text-sm font-bold uppercase tracking-wider mb-3 shadow-sm">
+          <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-none bg-white border-2 border-[#0565d6] text-[#0082FC] text-sm font-bold uppercase tracking-wider mb-3 shadow-sm">
             <Award className="w-4 h-4 text-[#0082FC]" />
             <span className="whitespace-nowrap">Straightforward Testing</span>
           </div>
@@ -57,14 +57,14 @@ export const PlainQualityStandards: React.FC = () => {
             return (
               <div
                 key={item.step}
-                className="bg-white border-2 border-[#5FD4FD] rounded-none p-6 lg:p-8 shadow-sm hover:border-[#0082FC] transition-all duration-300 flex flex-col justify-between"
+                className="bg-white border-2 border-[#0565d6] rounded-none p-6 lg:p-8 shadow-sm hover:border-[#0082FC] transition-all duration-300 flex flex-col justify-between"
               >
                 <div>
                   <div className="flex items-center justify-between mb-4">
-                    <span className="w-11 h-11 rounded-none bg-white text-[#0082FC] border-2 border-[#5FD4FD] flex items-center justify-center font-bold text-sm">
+                    <span className="w-11 h-11 rounded-none bg-white text-[#0082FC] border-2 border-[#0565d6] flex items-center justify-center font-bold text-sm">
                       <Icon className="w-6 h-6 text-[#0082FC]" />
                     </span>
-                    <span className="text-sm font-bold text-[#0082FC] bg-white px-3 py-1 rounded-none border-2 border-[#5FD4FD] whitespace-nowrap">
+                    <span className="text-sm font-bold text-[#0082FC] bg-white px-3 py-1 rounded-none border-2 border-[#0565d6] whitespace-nowrap">
                       {item.standard}
                     </span>
                   </div>
@@ -78,8 +78,8 @@ export const PlainQualityStandards: React.FC = () => {
                   </p>
                 </div>
 
-                <div className="mt-6 pt-4 border-t-2 border-[#5FD4FD]/30 flex items-center gap-2 text-sm sm:text-base font-bold text-[#0082FC]">
-                  <CheckCircle2 className="w-4 h-4 text-[#5FD4FD] shrink-0" />
+                <div className="mt-6 pt-4 border-t-2 border-[#0565d6]/30 flex items-center gap-2 text-sm sm:text-base font-bold text-[#0082FC]">
+                  <CheckCircle2 className="w-4 h-4 text-[#0565d6] shrink-0" />
                   <span>Standard Foundry Checkpoint Passed</span>
                 </div>
               </div>

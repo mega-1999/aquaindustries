@@ -190,7 +190,7 @@ export default function SuperAdminPage() {
     >
       <div className="max-w-6xl mx-auto space-y-8">
         {/* Header Banner */}
-        <div className="bg-[#0082FC] text-white p-6 sm:p-8 border-b-4 border-[#5FD4FD] shadow-xl relative overflow-hidden mb-8">
+        <div className="bg-[#0082FC] text-white p-6 sm:p-8 border-b-4 border-[#0565d6] shadow-xl relative overflow-hidden mb-8">
           <div className="flex flex-col md:flex-row md:items-center justify-between gap-6 relative z-10">
             <div className="space-y-2">
               <div className="inline-flex items-center gap-2 px-3 py-1 bg-white text-[#0082FC] text-xs font-bold uppercase tracking-wider">
@@ -209,8 +209,8 @@ export default function SuperAdminPage() {
 
             {/* Clearance Level Status Card & Sync Button */}
             <div className="flex flex-col sm:flex-row items-start sm:items-center gap-3 shrink-0">
-              <div className="bg-white/10 p-3 border border-[#5FD4FD] text-xs text-white flex items-center gap-3">
-                <ShieldCheck className="w-5 h-5 text-[#5FD4FD]" />
+              <div className="bg-white/10 p-3 border border-[#0565d6] text-xs text-white flex items-center gap-3">
+                <ShieldCheck className="w-5 h-5 text-[#0565d6]" />
                 <div>
                   <span className="font-bold block uppercase tracking-wider text-[11px]">
                     Master Clearance Level 1
@@ -229,7 +229,7 @@ export default function SuperAdminPage() {
                     "All demo contractor applications reloaded and synchronized!",
                   );
                 }}
-                className="px-3.5 py-3 bg-white hover:bg-[#5FD4FD] text-[#0082FC] font-black text-xs uppercase tracking-wider transition-colors cursor-pointer flex items-center gap-1.5 shadow-md shrink-0"
+                className="px-3.5 py-3 bg-white hover:bg-[#0565d6] text-[#0082FC] font-black text-xs uppercase tracking-wider transition-colors cursor-pointer flex items-center gap-1.5 shadow-md shrink-0"
                 title="Reload initial demo applications including Mega Foundries"
               >
                 <RefreshCw className="w-3.5 h-3.5" />
@@ -241,15 +241,15 @@ export default function SuperAdminPage() {
 
         {/* Feedback Toast */}
         {feedbackMessage && (
-          <div className="mb-6 p-4 bg-[#0082FC] text-white text-xs sm:text-sm font-bold border-2 border-[#5FD4FD] shadow-md flex items-center justify-between">
+          <div className="mb-6 p-4 bg-[#0082FC] text-white text-xs sm:text-sm font-bold border-2 border-[#0565d6] shadow-md flex items-center justify-between">
             <div className="flex items-center gap-2">
-              <CheckCircle2 className="w-5 h-5 text-[#5FD4FD] shrink-0" />
+              <CheckCircle2 className="w-5 h-5 text-[#0565d6] shrink-0" />
               <span>{feedbackMessage}</span>
             </div>
             <button
               type="button"
               onClick={() => setFeedbackMessage(null)}
-              className="text-white hover:text-[#5FD4FD] font-black uppercase text-xs cursor-pointer"
+              className="text-white hover:text-[#0565d6] font-black uppercase text-xs cursor-pointer"
             >
               Dismiss
             </button>
@@ -322,11 +322,10 @@ export default function SuperAdminPage() {
             <button
               type="button"
               onClick={() => setActiveTab("pending")}
-              className={`py-2 px-4 text-xs font-black uppercase tracking-wider transition-all rounded-none cursor-pointer flex items-center gap-1.5 ${
-                activeTab === "pending"
+              className={`py-2 px-4 text-xs font-black uppercase tracking-wider transition-all rounded-none cursor-pointer flex items-center gap-1.5 ${activeTab === "pending"
                   ? "bg-[#0082FC] text-white shadow-xs"
-                  : "text-[#0082FC] hover:bg-[#5FD4FD]/30"
-              }`}
+                  : "text-[#0082FC] hover:bg-[#0565d6]/30"
+                }`}
             >
               <span>Pending Approvals</span>
               {pendingCount > 0 && (
@@ -339,11 +338,10 @@ export default function SuperAdminPage() {
             <button
               type="button"
               onClick={() => setActiveTab("approved")}
-              className={`py-2 px-4 text-xs font-black uppercase tracking-wider transition-all rounded-none cursor-pointer ${
-                activeTab === "approved"
+              className={`py-2 px-4 text-xs font-black uppercase tracking-wider transition-all rounded-none cursor-pointer ${activeTab === "approved"
                   ? "bg-[#0082FC] text-white shadow-xs"
-                  : "text-[#0082FC] hover:bg-[#5FD4FD]/30"
-              }`}
+                  : "text-[#0082FC] hover:bg-[#0565d6]/30"
+                }`}
             >
               Approved ({approvedCount})
             </button>
@@ -351,11 +349,10 @@ export default function SuperAdminPage() {
             <button
               type="button"
               onClick={() => setActiveTab("rejected")}
-              className={`py-2 px-4 text-xs font-black uppercase tracking-wider transition-all rounded-none cursor-pointer ${
-                activeTab === "rejected"
+              className={`py-2 px-4 text-xs font-black uppercase tracking-wider transition-all rounded-none cursor-pointer ${activeTab === "rejected"
                   ? "bg-[#0082FC] text-white shadow-xs"
-                  : "text-[#0082FC] hover:bg-[#5FD4FD]/30"
-              }`}
+                  : "text-[#0082FC] hover:bg-[#0565d6]/30"
+                }`}
             >
               Rejected ({rejectedCount})
             </button>
@@ -363,11 +360,10 @@ export default function SuperAdminPage() {
             <button
               type="button"
               onClick={() => setActiveTab("all")}
-              className={`py-2 px-4 text-xs font-black uppercase tracking-wider transition-all rounded-none cursor-pointer ${
-                activeTab === "all"
+              className={`py-2 px-4 text-xs font-black uppercase tracking-wider transition-all rounded-none cursor-pointer ${activeTab === "all"
                   ? "bg-[#0082FC] text-white shadow-xs"
-                  : "text-[#0082FC] hover:bg-[#5FD4FD]/30"
-              }`}
+                  : "text-[#0082FC] hover:bg-[#0565d6]/30"
+                }`}
             >
               All Users ({allUsers.length})
             </button>
@@ -375,14 +371,13 @@ export default function SuperAdminPage() {
             <button
               type="button"
               onClick={() => setActiveTab("quotes")}
-              className={`py-2 px-4 text-xs font-black uppercase tracking-wider transition-all rounded-none cursor-pointer flex items-center gap-1.5 ${
-                activeTab === "quotes"
+              className={`py-2 px-4 text-xs font-black uppercase tracking-wider transition-all rounded-none cursor-pointer flex items-center gap-1.5 ${activeTab === "quotes"
                   ? "bg-[#0082FC] text-white shadow-xs"
-                  : "text-[#0082FC] hover:bg-[#5FD4FD]/30"
-              }`}
+                  : "text-[#0082FC] hover:bg-[#0565d6]/30"
+                }`}
             >
               <span>Quote Requests</span>
-              <span className="w-5 h-5 bg-[#5FD4FD] text-[#0082FC] rounded-none text-[10px] font-black flex items-center justify-center">
+              <span className="w-5 h-5 bg-[#0565d6] text-[#0082FC] rounded-none text-[10px] font-black flex items-center justify-center">
                 {rfqRequests.length}
               </span>
             </button>
@@ -395,7 +390,7 @@ export default function SuperAdminPage() {
               placeholder="Search company, contact, email..."
               value={searchQuery}
               onChange={(e) => setSearchQuery(e.target.value)}
-              className="w-full bg-white border-2 border-[#0082FC] pl-9 pr-3 py-2 text-xs text-[#0082FC] font-bold placeholder-[#0082FC]/50 focus:outline-none focus:border-[#5FD4FD]"
+              className="w-full bg-white border-2 border-[#0082FC] pl-9 pr-3 py-2 text-xs text-[#0082FC] font-bold placeholder-[#0082FC]/50 focus:outline-none focus:border-[#0565d6]"
             />
           </div>
         </div>
@@ -405,7 +400,7 @@ export default function SuperAdminPage() {
           <div className="space-y-4">
             {filteredRfq.length === 0 ? (
               <div className="p-12 text-center border-2 border-[#0082FC] bg-white text-[#0082FC]">
-                <FileText className="w-12 h-12 text-[#5FD4FD] mx-auto mb-3" />
+                <FileText className="w-12 h-12 text-[#0565d6] mx-auto mb-3" />
                 <h3 className="font-black text-base uppercase">
                   No Commercial Quote Requests Found
                 </h3>
@@ -490,7 +485,7 @@ export default function SuperAdminPage() {
           <div className="space-y-4">
             {filteredUsers.length === 0 ? (
               <div className="p-12 text-center border-2 border-[#0082FC] bg-white text-[#0082FC]">
-                <Users className="w-12 h-12 text-[#5FD4FD] mx-auto mb-3" />
+                <Users className="w-12 h-12 text-[#0565d6] mx-auto mb-3" />
                 <h3 className="font-black text-base uppercase">
                   No Registrations in this View
                 </h3>
@@ -508,13 +503,12 @@ export default function SuperAdminPage() {
                 return (
                   <div
                     key={user.id}
-                    className={`border-2 p-5 transition-all shadow-sm ${
-                      isPending
+                    className={`border-2 p-5 transition-all shadow-sm ${isPending
                         ? "bg-amber-50/60 border-amber-500"
                         : isRejected
                           ? "bg-rose-50/40 border-rose-400"
                           : "bg-white border-[#0082FC]"
-                    }`}
+                      }`}
                   >
                     <div className="flex flex-col lg:flex-row lg:items-center justify-between gap-5">
                       <div className="space-y-2 flex-1 min-w-0">

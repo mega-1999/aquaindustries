@@ -65,7 +65,7 @@ export function DomesticStandards() {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
         {/* Section Header */}
         <div className="max-w-3xl mb-12">
-          <div className="inline-flex items-center gap-2 border border-[#5FD4FD] bg-white px-3 py-1 mb-3 shadow-xs">
+          <div className="inline-flex items-center gap-2 border border-[#0565d6] bg-white px-3 py-1 mb-3 shadow-xs">
             <span className="w-2 h-2 bg-[#0082FC]" />
             <span className="text-xs font-bold uppercase tracking-wider text-[#0082FC] whitespace-nowrap">
               Domestic Standards &amp; Testing
@@ -89,7 +89,7 @@ export function DomesticStandards() {
           {/* Left Column: Certifications Directory (7 cols) */}
           <div className="lg:col-span-7 flex flex-col justify-between h-full">
             {/* Synchronized Left Header Bar matching Right Header Height */}
-            <div className="bg-white text-[#0082FC] px-4 py-2.5 border-2 border-[#5FD4FD] flex items-center justify-between min-h-[44px]">
+            <div className="bg-white text-[#0082FC] px-4 py-2.5 border-2 border-[#0565d6] flex items-center justify-between min-h-[44px]">
               <div className="flex items-center gap-2 text-xs font-black uppercase tracking-wider">
                 <span className="w-2 h-2 bg-[#0082FC]" />
                 <span>Enforced Industry Specifications</span>
@@ -104,7 +104,7 @@ export function DomesticStandards() {
               {CERTIFICATIONS.map((cert) => (
                 <div
                   key={cert.code}
-                  className="border-2 border-[#5FD4FD] bg-white text-[#0082FC] p-4 flex flex-col justify-between shadow-xs"
+                  className="border-2 border-[#0565d6] bg-white text-[#0082FC] p-4 flex flex-col justify-between shadow-xs"
                 >
                   <div>
                     <span className="text-xs font-mono uppercase bg-[#0082FC] text-white font-bold px-2 py-0.5 inline-block mb-2">
@@ -124,7 +124,7 @@ export function DomesticStandards() {
             {/* Symmetrical Left Bottom Action Strip */}
             <a
               href="#quote-form"
-              className="w-full py-3 px-6 bg-white hover:bg-[#5FD4FD] text-[#0082FC] font-black text-xs sm:text-sm uppercase tracking-wider text-center border-2 border-white transition-colors duration-150 flex items-center justify-center gap-2 min-h-[48px] shadow-md cursor-pointer"
+              className="w-full py-3 px-6 bg-white hover:bg-[#0565d6] text-[#0082FC] font-black text-xs sm:text-sm uppercase tracking-wider text-center border-2 border-white transition-colors duration-150 flex items-center justify-center gap-2 min-h-[48px] shadow-md cursor-pointer"
             >
               <span>Request Certified Mill Test Reports (MTR)</span>
               <svg
@@ -147,7 +147,7 @@ export function DomesticStandards() {
           {/* Right Column: Physical Metallurgical Properties & Hydro Gauge Graphic (5 cols) */}
           <div className="lg:col-span-5 flex flex-col justify-between h-full">
             {/* Synchronized Right Header Bar matching Left Header Height */}
-            <div className="bg-white text-[#0082FC] px-4 py-2.5 border-2 border-[#5FD4FD] flex items-center justify-between min-h-[44px]">
+            <div className="bg-white text-[#0082FC] px-4 py-2.5 border-2 border-[#0565d6] flex items-center justify-between min-h-[44px]">
               <div className="flex items-center gap-2 text-xs font-black uppercase tracking-wider">
                 <span className="w-2 h-2 bg-[#0082FC]" />
                 <span>Certified Metallurgical Test Report</span>
@@ -158,7 +158,7 @@ export function DomesticStandards() {
             </div>
 
             {/* Test Report Card Frame - Flex-1 stretches to match left column */}
-            <div className="bg-white border-2 border-[#5FD4FD] p-5 sm:p-6 text-[#0082FC] flex-1 flex flex-col justify-between my-3 shadow-xl">
+            <div className="bg-white border-2 border-[#0565d6] p-5 sm:p-6 text-[#0082FC] flex-1 flex flex-col justify-between my-3 shadow-xl">
               <div>
                 <div className="border-b border-[#0082FC]/30 pb-3 mb-4 flex items-center justify-between">
                   <div>
@@ -208,7 +208,7 @@ export function DomesticStandards() {
                       <span className="text-[#0082FC]">12% IN 2 INCHES</span>
                     </div>
                     <div className="w-full h-3.5 bg-white border border-[#0082FC] p-0.5">
-                      <div className="h-full bg-[#5FD4FD] w-3/4" />
+                      <div className="h-full bg-[#0565d6] w-3/4" />
                     </div>
                   </div>
 
@@ -226,7 +226,7 @@ export function DomesticStandards() {
                 </div>
 
                 {/* Chemical Spectrometry Breakdown */}
-                <div className="bg-[#0082FC]/5 border border-[#5FD4FD]/60 p-2.5 my-3">
+                <div className="bg-[#0082FC]/5 border border-[#0565d6]/60 p-2.5 my-3">
                   <span className="text-[10px] font-black uppercase text-[#0082FC] tracking-wider block mb-1">
                     Induction Melt Chemistry Spectrometry:
                   </span>
@@ -255,9 +255,9 @@ export function DomesticStandards() {
             </div>
 
             {/* Symmetrical Right Bottom Action Strip */}
-            <div className="w-full py-3 px-4 bg-white text-[#0082FC] font-black text-xs sm:text-sm uppercase tracking-wider border-2 border-[#5FD4FD] flex items-center justify-between min-h-[48px]">
+            <div className="w-full py-3 px-4 bg-white text-[#0082FC] font-black text-xs sm:text-sm uppercase tracking-wider border-2 border-[#0565d6] flex items-center justify-between min-h-[48px]">
               <span>Quality Assurance</span>
-              <span className="bg-[#5FD4FD]/30 px-2 py-0.5 text-[#0082FC] text-[11px] font-black">
+              <span className="bg-[#0565d6]/30 px-2 py-0.5 text-[#0082FC] text-[11px] font-black">
                 Permanent Heat Numbers Cast
               </span>
             </div>
@@ -265,9 +265,9 @@ export function DomesticStandards() {
         </div>
 
         {/* Industry Associations Ribbon from SIP Industries */}
-        <div className="mt-14 pt-8 border-t border-[#5FD4FD]">
+        <div className="mt-14 pt-8 border-t border-[#0565d6]">
           <div className="text-center mb-4">
-            <span className="text-xs sm:text-sm font-mono font-bold uppercase tracking-widest text-[#5FD4FD] whitespace-nowrap">
+            <span className="text-xs sm:text-sm font-mono font-bold uppercase tracking-widest text-[#0565d6] whitespace-nowrap">
               Approved &amp; Certified Across North American Waterworks
               Infrastructure Organizations
             </span>
@@ -276,7 +276,7 @@ export function DomesticStandards() {
             {INDUSTRY_ASSOCIATIONS.map((assoc) => (
               <span
                 key={assoc}
-                className="px-3.5 py-1.5 bg-white text-[#0082FC] text-sm font-bold whitespace-nowrap border-2 border-[#5FD4FD]"
+                className="px-3.5 py-1.5 bg-white text-[#0082FC] text-sm font-bold whitespace-nowrap border-2 border-[#0565d6]"
               >
                 {assoc}
               </span>

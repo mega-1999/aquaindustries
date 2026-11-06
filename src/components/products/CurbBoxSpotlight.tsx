@@ -255,7 +255,7 @@ export const CurbBoxSpotlight: React.FC<CurbBoxSpotlightProps> = ({
               <div className="p-4 bg-white border-2 border-[#0082FC] shadow-xs">
                 <div className="flex items-center gap-3 mb-2">
                   <div className="w-9 h-9 bg-[#0074f0] text-white flex items-center justify-center shrink-0">
-                    <ShieldCheck className="w-5 h-5 text-[#0082FC]" />
+                    <ShieldCheck className="w-5 h-5 text-white" />
                   </div>
                   <h3 className="text-sm sm:text-base font-black uppercase text-[#0074f0]">
                     Bison Cast Durability
@@ -270,7 +270,7 @@ export const CurbBoxSpotlight: React.FC<CurbBoxSpotlightProps> = ({
               <div className="p-4 bg-white border-2 border-[#0082FC] shadow-xs">
                 <div className="flex items-center gap-3 mb-2">
                   <div className="w-9 h-9 bg-[#0074f0] text-white flex items-center justify-center shrink-0">
-                    <ShieldAlert className="w-5 h-5 text-[#0082FC]" />
+                    <ShieldAlert className="w-5 h-5 text-white" />
                   </div>
                   <h3 className="text-sm sm:text-base font-black uppercase text-[#0074f0]">
                     Vandal-Proof Pentagon Lock
@@ -285,7 +285,7 @@ export const CurbBoxSpotlight: React.FC<CurbBoxSpotlightProps> = ({
               <div className="p-4 bg-white border-2 border-[#0082FC] shadow-xs">
                 <div className="flex items-center gap-3 mb-2">
                   <div className="w-9 h-9 bg-[#0074f0] text-white flex items-center justify-center shrink-0">
-                    <Ruler className="w-5 h-5 text-[#0082FC]" />
+                    <Ruler className="w-5 h-5 text-white" />
                   </div>
                   <h3 className="text-sm sm:text-base font-black uppercase text-[#0074f0]">
                     AASHTO H-20 Heavy Traffic
@@ -300,7 +300,7 @@ export const CurbBoxSpotlight: React.FC<CurbBoxSpotlightProps> = ({
               <div className="p-4 bg-white border-2 border-[#0082FC] shadow-xs">
                 <div className="flex items-center gap-3 mb-2">
                   <div className="w-9 h-9 bg-[#0074f0] text-white flex items-center justify-center shrink-0">
-                    <BoxSelect className="w-5 h-5 text-[#0082FC]" />
+                    <BoxSelect className="w-5 h-5 text-white" />
                   </div>
                   <h3 className="text-sm sm:text-base font-black uppercase text-[#0074f0]">
                     Arch Base Fitment
