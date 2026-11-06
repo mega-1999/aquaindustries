@@ -362,7 +362,7 @@ export const MainNavbar: React.FC<MainNavbarProps> = ({
                       className="block p-2.5 rounded-none hover:bg-[#0082fc] hover:text-white transition-colors group bg-[#5FD4FD]/10 border-l-2 border-[#0082fc]"
                     >
                       <div className="font-extrabold text-sm leading-tight flex items-center justify-between">
-                        <span>Detention Basin Trash Racks</span>
+                        <span>Trash Racks</span>
                         <span className="text-[9px] bg-[#0082fc] group-hover:bg-white text-white group-hover:text-[#0082fc] px-1.5 py-0.2 font-mono font-black">
                           FEATURED
                         </span>
@@ -378,7 +378,7 @@ export const MainNavbar: React.FC<MainNavbarProps> = ({
                       className="block p-2.5 rounded-none hover:bg-[#0082fc] hover:text-white transition-colors group border-l-2 border-[#5FD4FD] pl-3"
                     >
                       <div className="font-extrabold text-sm leading-tight flex items-center justify-between">
-                        <span>Culvert Safety Pipe Grates</span>
+                        <span>Pipe Grates</span>
                         <span className="text-[9px] bg-[#0082fc] group-hover:bg-white text-white group-hover:text-[#0082fc] px-1.5 py-0.2 font-mono font-black">
                           SIMULATOR
                         </span>

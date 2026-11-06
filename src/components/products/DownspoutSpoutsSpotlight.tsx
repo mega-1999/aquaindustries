@@ -248,7 +248,7 @@ Compliance: ${activeVariant.standards}
           </div>
 
           <h2 className="text-2xl sm:text-4xl font-black uppercase tracking-tight text-[#0082FC] mb-2">
-            Cast Iron Downspout Boots &amp; Spouts
+            Sprouts
           </h2>
 
           <p className="text-xs sm:text-sm text-[#0082FC]/90 font-medium leading-relaxed">

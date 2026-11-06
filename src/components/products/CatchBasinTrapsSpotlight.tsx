@@ -247,7 +247,7 @@ Compliance: ${activeVariant.standards}
           </div>
 
           <h2 className="text-2xl sm:text-4xl font-black uppercase tracking-tight text-white mb-2">
-            Cast Iron Catch Basin Traps
+            Catch Basin Traps
           </h2>
 
           <p className="text-xs sm:text-sm text-white/90 font-medium leading-relaxed">

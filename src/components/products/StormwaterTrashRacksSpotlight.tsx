@@ -293,7 +293,7 @@ Compliance: ${activeVariant.standards}
           </div>
 
           <h2 className="text-2xl sm:text-4xl font-black uppercase tracking-tight text-white mb-2">
-            Detention Basin Trash Racks
+            Trash Racks
           </h2>
 
           <p className="text-xs sm:text-sm text-white/90 font-medium leading-relaxed">
