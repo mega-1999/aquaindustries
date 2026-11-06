@@ -24,73 +24,73 @@ interface CulvertPipeGratesSpotlightProps {
 const REAL_PIPE_GRATE_PHOTOS = [
   {
     id: "pipe-grate-photo-1",
-    src: "/images/pipe_TREE_GRATE/8016_2.1.png",
-    alt: "Aqua Model 8016 Heavy Cast Tree & Pipe Aperture Grate",
-    title: "Model 8016 Architectural Tree & Pipe Grate",
+    src: "/images/pipe_GRATE/8016_2.1.png",
+    alt: "Aqua Model 8016 Heavy Cast Pipe Aperture Catch Basin Grate",
+    title: "Model 8016 Circular Pipe Aperture Grate",
     badge: "AASHTO H-20 / ASTM A48",
     shortTag: "8016 PLAN",
     caption:
-      "Precision heavy ductile/cast iron radial tree surround and circular culvert aperture grate with multi-ring expansion concentric slots.",
+      "Heavy-duty cast/ductile iron circular pipe aperture grate engineered with concentric intake slots for stormwater catch basins and culvert drop inlets.",
   },
   {
     id: "pipe-grate-photo-2",
-    src: "/images/pipe_TREE_GRATE/NON_SIFTING.15.png",
-    alt: "Aqua Non-Sifting ADA Compliant Heel-Proof Grate",
-    title: "Model NS-15 Non-Sifting ADA Heel-Proof Grate",
+    src: "/images/pipe_GRATE/NON_SIFTING.15.png",
+    alt: "Aqua Non-Sifting ADA Compliant Heel-Proof Pipe Grate",
+    title: "Model NS-15 Non-Sifting ADA Pipe Grate",
     badge: "ADA COMPLIANT 1/4\" SLOTS",
     shortTag: "NON-SIFTING",
     caption:
-      "Non-sifting architectural pattern engineered to prevent high-heel entrapment and small debris intrusion while maintaining optimum hydraulic stormwater flow.",
+      "Non-sifting slotted profile engineered for high-pedestrian civil culvert intakes, preventing heel entrapment while maintaining maximum hydraulic inflow.",
   },
   {
     id: "pipe-grate-photo-3",
-    src: "/images/pipe_TREE_GRATE/4x24.1.png",
+    src: "/images/pipe_GRATE/4x24.1.png",
     alt: "Aqua 4x24 Heavy-Duty Linear Trench & Culvert Drop Grate",
-    title: "Model 4x24 Linear Culvert & Trench Drainage Grate",
+    title: "Model 4x24 Linear Culvert Drainage Grate",
     badge: "HEAVY TRAFFIC CLASS D",
     shortTag: "4x24 LINEAR",
     caption:
-      "High-load cast iron linear drainage grate engineered for culvert drop inlets, roadside flumes, and municipal stormwater channel trenches.",
+      "High-load cast iron linear drainage grate engineered for culvert drop inlets, roadside flumes, and heavy municipal stormwater trenches.",
   },
   {
     id: "pipe-grate-photo-4",
-    src: "/images/pipe_TREE_GRATE/8016_2.2.png",
-    alt: "Aqua Model 8016 Radial Casting & Inner Tree Expansion Ring",
-    title: "Model 8016 Radial Section & Growth Ring Detail",
+    src: "/images/pipe_GRATE/8016_2.2.png",
+    alt: "Aqua Model 8016 Radial Casting & Inner Pipe Collar Ring",
+    title: "Model 8016 Radial Section & Inner Collar Detail",
     badge: "EXPANDABLE COLLAR",
     shortTag: "8016 RADIAL",
     caption:
-      "Knockout / modular concentric inner collar rings allowing incremental expansion as tree caliper grows or larger pipe conduits are fitted.",
+      "Concentric inner collar rings allowing precision fitment and incremental opening sizing for varying pipe diameters and cleanout access.",
   },
   {
     id: "pipe-grate-photo-5",
-    src: "/images/pipe_TREE_GRATE/8016_2.3.png",
+    src: "/images/pipe_GRATE/8016_2.3.png",
     alt: "Aqua Model 8016 Slotted Flow Grid Texture Detail",
     title: "Model 8016 Flow Geometry & Anti-Slip Surface",
     badge: "TEXTURED ANTI-SLIP",
     shortTag: "8016 TEXTURE",
     caption:
-      "Close-up inspection of heavy casting grain structure and hydrodynamic drainage slot geometry engineered for zero vehicle or pedestrian slipping.",
+      "Heavy cast metallurgical grain structure and hydrodynamic drainage slot geometry engineered for zero vehicle or pedestrian slippage.",
   },
   {
     id: "pipe-grate-photo-6",
-    src: "/images/pipe_TREE_GRATE/8016_2.4.png",
+    src: "/images/pipe_GRATE/8016_2.4.png",
     alt: "Aqua Model 8016 Underside Structural Reinforcement Ribs",
     title: "Model 8016 Underside Heavy Load Ribbing",
     badge: "STRUCTURAL WEBS",
     shortTag: "8016 RIBS",
     caption:
-      "Deep cast reinforcement webs along the underside distribute heavy wheel impacts directly into supporting angle frames and concrete collars.",
+      "Deep cast reinforcement webs along the underside distribute heavy wheel impacts directly into supporting angle frames and concrete pipe risers.",
   },
   {
     id: "pipe-grate-photo-7",
-    src: "/images/pipe_TREE_GRATE/8016_2.5.png",
+    src: "/images/pipe_GRATE/8016_2.5.png",
     alt: "Aqua Model 8016 Complete Two-Piece Interlocking Assembly",
     title: "Model 8016 Matched Dual-Hemisphere Assembly",
     badge: "FACTORY MATCHED SET",
     shortTag: "8016 FULL SET",
     caption:
-      "Complete 2-piece split circular grate assembly with precision interlocking alignment lugs and concealed stainless steel bolt connections.",
+      "Complete 2-piece split circular pipe grate assembly with precision interlocking alignment lugs and concealed stainless steel bolt connections.",
   },
 ];
 
@@ -98,10 +98,10 @@ const PIPE_GRATE_VARIANTS = [
   {
     id: "pg-8016-circ",
     catNumber: "Cat. PG-8016-A",
-    name: 'Model 8016 Circular Heavy Cast Tree & Pipe Aperture Grate',
+    name: 'Model 8016 Circular Heavy Cast Pipe Aperture Grate',
     tag: '8016 CIRCULAR GRATE',
-    sizeLabel: '48" / 60" Diameter (16" Center Opening)',
-    pipeFit: 'Circular Culvert Vaults, Urban Storm Inlets & Tree Wells',
+    sizeLabel: '48" / 60" Diameter (16" Center Aperture)',
+    pipeFit: 'Circular Culvert Vaults, Storm Inlets & Concrete Pipe Risers',
     dimensions: {
       height: '48.00" - 60.00" OD',
       width: '16.00" Center ID',
@@ -115,17 +115,17 @@ const PIPE_GRATE_VARIANTS = [
     trafficRating: "AASHTO H-20 / HS-20 Heavy Traffic Rated",
     standards: "ASTM A48 • ASTM A536 • AASHTO M306 • Buy America Compliant",
     description:
-      'Heavy-duty cast iron circular grate assembly featuring concentric radial drainage slots and a 16" expandable center opening. Designed for municipal streetscapes, plaza drainage basins, and circular concrete pipe vault covers.',
-    photoUrl: "/images/pipe_TREE_GRATE/8016_2.1.png",
+      'Heavy-duty cast iron circular grate assembly featuring concentric radial drainage slots and an expandable center pipe aperture. Designed for municipal stormwater basins, culvert vaults, and round precast pipe structures.',
+    photoUrl: "/images/pipe_GRATE/8016_2.1.png",
     photoIndex: 0,
   },
   {
     id: "pg-ns-15-ada",
     catNumber: "Cat. PG-NS-15",
-    name: "Model NS-15 Non-Sifting ADA Heel-Proof Tree & Safety Grate",
+    name: "Model NS-15 Non-Sifting ADA Heel-Proof Pipe Safety Grate",
     tag: "NS-15 ADA HEEL-PROOF",
     sizeLabel: '48" x 48" / 60" x 60" Square & Round Options',
-    pipeFit: "Pedestrian Concourse Culverts, Tree Pits & High-Traffic Plazas",
+    pipeFit: "Pedestrian Concourse Culverts, Catch Basins & High-Traffic Plazas",
     dimensions: {
       height: '48.00" Square',
       width: '16.00" Opening',
@@ -136,11 +136,11 @@ const PIPE_GRATE_VARIANTS = [
     material: "ASTM A536 Grade 65-45-12 High-Ductility Iron",
     coating: "Black Bituminous Eco-Coat or Natural Weathering Patina",
     cleanoutType: "Quick-Release Bolt-Down Security Clips",
-    trafficRating: "Pedestrian Safe ADA & Occasional Maintenance Vehicle Rated",
+    trafficRating: "Pedestrian Safe ADA & Heavy Maintenance Vehicle Rated",
     standards: "ADA Standards Section 302.3 • ASTM A536 • AASHTO H-15/H-20",
     description:
-      "Architectural non-sifting grate engineered specifically with narrow 1/4\" maximum slot dimensions. Prevents pedestrian shoe heel entrapment, cane slips, and large debris passage while sustaining rapid stormwater absorption.",
-    photoUrl: "/images/pipe_TREE_GRATE/NON_SIFTING.15.png",
+      "Architectural non-sifting pipe safety grate engineered specifically with narrow 1/4\" maximum slot dimensions. Prevents pedestrian shoe heel entrapment and debris passage while sustaining rapid stormwater inflow.",
+    photoUrl: "/images/pipe_GRATE/NON_SIFTING.15.png",
     photoIndex: 1,
   },
   {
@@ -163,20 +163,20 @@ const PIPE_GRATE_VARIANTS = [
     trafficRating: "AASHTO H-25 / FAA Airport Heavy Wheel Load Rated",
     standards: "ASTM A536 • AASHTO M306 Class D • DOT Approved Trench Specs",
     description:
-      'Heavy transverse bar channel grate manufactured for continuous trench drains, roadside drainage channels, and highway culvert inlet aprons. Withstands repetitive high-speed wheel impacts without shifting.',
-    photoUrl: "/images/pipe_TREE_GRATE/4x24.1.png",
+      'Heavy transverse bar channel grate manufactured for continuous trench drains, roadside drainage channels, and highway culvert inlet aprons. Withstands repetitive high-speed wheel impacts without displacement.',
+    photoUrl: "/images/pipe_GRATE/4x24.1.png",
     photoIndex: 2,
   },
   {
     id: "pg-8016-mod",
     catNumber: "Cat. PG-8016-MOD",
-    name: 'Model 8016-M Interlocking Modular Split Grate Assembly',
+    name: 'Model 8016-M Interlocking Modular Split Pipe Grate Assembly',
     tag: '8016-M MODULAR SPLIT',
     sizeLabel: '60" OD Outer Diameter Set',
-    pipeFit: 'Retrofit Round Pipe Catch Basins & Established Urban Trees',
+    pipeFit: 'Retrofit Round Pipe Catch Basins, Culverts & Riser Shafts',
     dimensions: {
       height: '60.00" Outer Dia',
-      width: '24.00" Expandable ID',
+      width: '24.00" Center Aperture',
       depth: '2.00" Seat Flange',
       weightLbs: 345,
       flowArea: "45% Hydraulic Infiltration Area",
@@ -187,8 +187,8 @@ const PIPE_GRATE_VARIANTS = [
     trafficRating: "AASHTO H-20 Heavy Traffic Loading",
     standards: "ASTM A536 • AASHTO M306 • Buy America Compliant",
     description:
-      "Two-piece matched radial hemisphere system engineered for effortless retrofit installation over existing culvert pipes, stormwater risers, and large mature street trees without excavation or structural disruption.",
-    photoUrl: "/images/pipe_TREE_GRATE/8016_2.5.png",
+      "Two-piece matched radial hemisphere system engineered for effortless retrofit installation over existing culvert pipes, stormwater risers, and drainage chambers without excavation or structural disruption.",
+    photoUrl: "/images/pipe_GRATE/8016_2.5.png",
     photoIndex: 6,
   },
 ];
@@ -235,7 +235,7 @@ export const CulvertPipeGratesSpotlight: React.FC<
         id: activeVariant.id,
         name: `${activeVariant.name} (${activeVariant.catNumber})`,
         category: "municipal-castings",
-        categoryLabel: "Pipe & Tree Grates",
+        categoryLabel: "Pipe Grates",
         standard: "ASTM A48",
         pressureRating: activeVariant.trafficRating,
         jointType: "Gravity Flow Drop-In",
@@ -243,8 +243,8 @@ export const CulvertPipeGratesSpotlight: React.FC<
         material: activeVariant.material,
         coating: activeVariant.coating,
         description: activeVariant.description,
-        cadFile: "AQUA_PIPE_TREE_GRATES.DWG",
-        submittalFile: "SUBMITTAL_PIPE_TREE_GRATES.PDF",
+        cadFile: "AQUA_PIPE_GRATES.DWG",
+        submittalFile: "SUBMITTAL_PIPE_GRATES.PDF",
         specs: {
           tensileStrength: activeVariant.material,
           yieldStrength: activeVariant.trafficRating,
@@ -272,7 +272,7 @@ export const CulvertPipeGratesSpotlight: React.FC<
         id: activeVariant.id,
         name: `${activeVariant.name} (${activeVariant.catNumber})`,
         category: "municipal-castings",
-        categoryLabel: "Pipe & Tree Grates",
+        categoryLabel: "Pipe Grates",
         standard: "ASTM A48",
         pressureRating: activeVariant.trafficRating,
         jointType: "Gravity Flow Drop-In",
@@ -280,8 +280,8 @@ export const CulvertPipeGratesSpotlight: React.FC<
         material: activeVariant.material,
         coating: activeVariant.coating,
         description: activeVariant.description,
-        cadFile: "AQUA_PIPE_TREE_GRATES.DWG",
-        submittalFile: "SUBMITTAL_PIPE_TREE_GRATES.PDF",
+        cadFile: "AQUA_PIPE_GRATES.DWG",
+        submittalFile: "SUBMITTAL_PIPE_GRATES.PDF",
         specs: {
           tensileStrength: activeVariant.material,
           yieldStrength: activeVariant.trafficRating,
@@ -304,7 +304,7 @@ export const CulvertPipeGratesSpotlight: React.FC<
   };
 
   const handleCopySpecs = () => {
-    const text = `AQUA INDUSTRIES PIPE & TREE GRATE SPECIFICATION
+    const text = `AQUA INDUSTRIES CULVERT & PIPE GRATE SPECIFICATION
 Model: ${activeVariant.name} (${activeVariant.catNumber})
 Fit / Application: ${activeVariant.pipeFit}
 Clear Infiltration Area: ${activeVariant.dimensions.flowArea}
@@ -324,7 +324,7 @@ Standards: ${activeVariant.standards}
   return (
     <section
       id="pipe-grates"
-      aria-label="Pipe and Tree Grates Spotlight"
+      aria-label="Culvert and Pipe Grates Spotlight"
       className="py-16 sm:py-20 bg-white text-[#0082FC] border-b-4 border-[#0082FC] relative overflow-hidden"
     >
       {/* Background Subtle Grid Pattern */}
@@ -336,17 +336,17 @@ Standards: ${activeVariant.standards}
           <div className="inline-flex items-center gap-2 px-3 py-1 bg-[#5FD4FD]/20 text-[#0082FC] text-xs font-black uppercase tracking-widest border border-[#0082FC] mb-3">
             <ShieldCheck className="w-4 h-4 text-[#0082FC]" />
             <span>
-              SECTION 2: MUNICIPAL CAST PIPE &amp; TREE GRATES
+              SECTION 2: END-OF-PIPE &amp; CULVERT SAFETY GRATES
             </span>
           </div>
 
           <h2 className="text-2xl sm:text-4xl font-black uppercase tracking-tight text-[#0082FC] mb-2">
-            Heavy-Duty Pipe &amp; Tree Grates
+            Heavy-Duty Culvert &amp; Pipe Grates
           </h2>
 
           <p className="text-xs sm:text-sm text-[#0082FC]/90 font-medium leading-relaxed">
-            Engineered for circular pipe outfalls, urban streetscapes, roadside
-            trenches, and civil stormwater vaults. Manufactured in heavy-duty
+            Engineered for circular pipe outfalls, stormwater risers, roadside
+            trenches, and civil drainage vaults. Manufactured in heavy-duty
             ASTM A536 ductile iron and ASTM A48 gray iron with AASHTO H-20 and
             ADA heel-proof compliance.
           </p>
@@ -357,7 +357,7 @@ Standards: ${activeVariant.standards}
           <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-2 mb-3">
             <span className="text-xs font-black uppercase tracking-wider text-[#0082FC] flex items-center gap-2">
               <Filter className="w-3.5 h-3.5" />
-              <span>Select Grate Configuration:</span>
+              <span>Select Pipe Grate Configuration:</span>
             </span>
             <span className="text-[10px] font-bold text-[#0082FC]/70 uppercase">
               {PIPE_GRATE_VARIANTS.length} Cast Patterns Available
@@ -404,7 +404,7 @@ Standards: ${activeVariant.standards}
               <div className="w-full flex items-center justify-between mb-2">
                 <span className="text-[10px] font-black uppercase tracking-wider bg-[#0082FC] text-white px-2 py-0.5 border border-[#0082FC] flex items-center gap-1.5">
                   <Camera className="w-3 h-3 text-white" />
-                  <span>Real Casting Photography ({REAL_PIPE_GRATE_PHOTOS.length} Views)</span>
+                  <span>Real Pipe Grate Photography ({REAL_PIPE_GRATE_PHOTOS.length} Views)</span>
                 </span>
 
                 <span className="text-[10px] font-bold text-[#0082FC]/80 uppercase">
@@ -592,19 +592,19 @@ Standards: ${activeVariant.standards}
                     <li className="flex items-center gap-1.5">
                       <span className="text-[#0082FC] font-black">✓</span>
                       <span>
-                        <strong>True Heavy Cast Ductile &amp; Gray Iron:</strong> Superior tensile &amp; impact resistance compared to rolled sheet-metal products.
+                        <strong>True Heavy Cast Ductile &amp; Gray Iron:</strong> Superior tensile &amp; impact resistance compared to fabricated sheet-metal products.
                       </span>
                     </li>
                     <li className="flex items-center gap-1.5">
                       <span className="text-[#0082FC] font-black">✓</span>
                       <span>
-                        <strong>ADA Section 302.3 Compliant:</strong> Heel-proof 1/4\" narrow slots available on NS-15 models for zero pedestrian hazard.
+                        <strong>ADA Section 302.3 Compliant:</strong> Heel-proof 1/4\" narrow slots available on NS-15 models for zero pedestrian hazard over pipe intakes.
                       </span>
                     </li>
                     <li className="flex items-center gap-1.5">
                       <span className="text-[#0082FC] font-black">✓</span>
                       <span>
-                        <strong>Expandable Center Apertures:</strong> Multi-ring concentric knockouts allow gradual growth without grate replacement.
+                        <strong>Modular Split Ring Architecture:</strong> Matched two-piece halves install quickly over pre-existing culvert risers and catch basins.
                       </span>
                     </li>
                   </ul>
