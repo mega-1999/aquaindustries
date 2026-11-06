@@ -389,6 +389,28 @@ export const VerticalSideVideoAds: React.FC<VerticalSideVideoAdsProps> = ({
   const [leftDrawerOpen, setLeftDrawerOpen] = useState(false);
   const [rightDrawerOpen, setRightDrawerOpen] = useState(false);
   const [loopedAds, setLoopedAds] = useState<VideoAdItem[]>(LEFT_VIDEO_ADS);
+  const [isFooterNear, setIsFooterNear] = useState(false);
+
+  // Monitor footer proximity to prevent side ads from ever overlapping the footer
+  useEffect(() => {
+    const checkFooterProximity = () => {
+      const footerEl = document.querySelector("footer");
+      if (!footerEl) return;
+      const rect = footerEl.getBoundingClientRect();
+      // Hide before footer touches viewport (40px buffer)
+      const near = rect.top <= window.innerHeight - 30;
+      setIsFooterNear(near);
+    };
+
+    window.addEventListener("scroll", checkFooterProximity, { passive: true });
+    window.addEventListener("resize", checkFooterProximity, { passive: true });
+    checkFooterProximity();
+
+    return () => {
+      window.removeEventListener("scroll", checkFooterProximity);
+      window.removeEventListener("resize", checkFooterProximity);
+    };
+  }, []);
 
   // Dynamically calculate how many card repetitions are needed to fill down to the footer
   useEffect(() => {
@@ -397,10 +419,10 @@ export const VerticalSideVideoAds: React.FC<VerticalSideVideoAdsProps> = ({
 
     const computeRepeatedCards = () => {
       const mainHeight = mainEl.scrollHeight || mainEl.clientHeight;
-      // Single card height is ~146px + 10px gap = 156px
-      const cardHeightWithGap = 160;
-      // Stop 60px before the footer
-      const availableHeight = Math.max(mainHeight - 60, 1000);
+      // Single card height is ~175px + 10px gap = 185px
+      const cardHeightWithGap = 185;
+      // Guarantee loop terminates strictly 220px before the footer boundary
+      const availableHeight = Math.max(mainHeight - 220, 1000);
       const totalCards = Math.max(
         12,
         Math.floor(availableHeight / cardHeightWithGap),
@@ -442,15 +464,16 @@ export const VerticalSideVideoAds: React.FC<VerticalSideVideoAdsProps> = ({
   return (
     <>
       {/* 1. LEFT SIDE VERTICAL VIDEO ADS COLUMN:
-          - Starts at top with 10px space (top-[10px] pb-[10px]).
-          - Loops the 12 cards infinitely based on page height, repeating until reaching the footer.
+          - Starts at top with 10px space below navbar.
+          - Loops the 12 cards infinitely based on page height, ending cleanly before the footer.
+          - max-h-[calc(100%-200px)] and overflow-hidden prevent ANY cards from bleeding into the footer.
           - Absolute positioning ensures it scrolls along naturally with website scroll. */}
       <aside
         aria-label="Left Side Product Video Ads"
-        className="absolute top-[10px] pb-[10px] left-2 min-[1720px]:left-3 min-[1900px]:left-4 z-30 hidden min-[1600px]:flex flex-col gap-[10px] select-none"
+        className="absolute top-[10px] pb-[10px] left-2 min-[1720px]:left-3 min-[1900px]:left-4 z-30 hidden min-[1600px]:flex flex-col gap-[10px] select-none max-h-[calc(100%-200px)] overflow-hidden"
       >
         {/* Header Bar */}
-        <div className="bg-[#0074f0] text-white text-[9px] font-black uppercase tracking-wider px-2 py-1.5 border-2 border-[#0082FC] flex items-center justify-between shadow-md mb-0.5 sticky top-[116px] z-20">
+        <div className="bg-[#0074f0] text-white text-[9px] font-black uppercase tracking-wider px-2 py-1.5 border-2 border-[#0082FC] flex items-center justify-between shadow-md mb-0.5">
           <span className="flex items-center gap-1.5">
             <span className="w-1.5 h-1.5 rounded-full bg-emerald-400 animate-pulse" />
             Waterworks Reels ({LEFT_VIDEO_ADS.length})
@@ -472,11 +495,19 @@ export const VerticalSideVideoAds: React.FC<VerticalSideVideoAdsProps> = ({
       </aside>
 
       {/* 2. RIGHT SIDE VERTICAL VIDEO ADS COLUMN:
-          - Fixed in the vertical center of the screen (fixed top-1/2 -translate-y-1/2).
+          - Fixed in the vertical center of the screen, safely clamped below the navbar (min top 125px).
+          - Automatically fades out when scrolling near the footer to prevent any overlap.
           - Contains the 3 cards. */}
       <aside
         aria-label="Right Side Product Video Ads"
-        className="fixed top-1/2 -translate-y-1/2 right-2 min-[1720px]:right-3 min-[1900px]:right-4 z-40 hidden min-[1600px]:flex flex-col gap-[10px] select-none shadow-xl"
+        style={{
+          top: "max(125px, calc(50vh - 255px))",
+        }}
+        className={`fixed right-2 min-[1720px]:right-3 min-[1900px]:right-4 z-30 hidden min-[1600px]:flex flex-col gap-[10px] select-none shadow-xl max-h-[calc(100vh-140px)] transition-all duration-300 ease-out ${
+          isFooterNear
+            ? "opacity-0 pointer-events-none translate-y-6 scale-95"
+            : "opacity-100 pointer-events-auto translate-y-0 scale-100"
+        }`}
       >
         {/* Header Bar */}
         <div className="bg-[#0074f0] text-white text-[9px] font-black uppercase tracking-wider px-2 py-1.5 border-2 border-[#0082FC] flex items-center justify-between shadow-md mb-0.5">
@@ -501,7 +532,13 @@ export const VerticalSideVideoAds: React.FC<VerticalSideVideoAdsProps> = ({
       </aside>
 
       {/* 3. RESPONSIVE FLOATING EDGE PILLS (Left & Right for screens < 1600px) */}
-      <div className="fixed left-0 top-1/2 -translate-y-1/2 z-30 min-[1600px]:hidden">
+      <div
+        className={`fixed left-0 top-1/2 -translate-y-1/2 z-30 min-[1600px]:hidden transition-all duration-300 ${
+          isFooterNear
+            ? "opacity-0 pointer-events-none -translate-x-full"
+            : "opacity-100 pointer-events-auto translate-x-0"
+        }`}
+      >
         <button
           type="button"
           onClick={() => setLeftDrawerOpen(true)}
@@ -514,7 +551,13 @@ export const VerticalSideVideoAds: React.FC<VerticalSideVideoAdsProps> = ({
         </button>
       </div>
 
-      <div className="fixed right-0 top-1/2 -translate-y-1/2 z-30 min-[1600px]:hidden">
+      <div
+        className={`fixed right-0 top-1/2 -translate-y-1/2 z-30 min-[1600px]:hidden transition-all duration-300 ${
+          isFooterNear
+            ? "opacity-0 pointer-events-none translate-x-full"
+            : "opacity-100 pointer-events-auto translate-x-0"
+        }`}
+      >
         <button
           type="button"
           onClick={() => setRightDrawerOpen(true)}

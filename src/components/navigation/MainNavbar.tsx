@@ -78,9 +78,9 @@ export const MainNavbar: React.FC<MainNavbarProps> = ({
 
   return (
     <header
-      className={`sticky top-0 z-40 w-full transition-all duration-200 ${
+      className={`sticky top-0 z-50 w-full transition-all duration-200 ${
         isScrolled
-          ? "bg-white/98 backdrop-blur-md shadow-md border-b-2 border-[#5fd4fd] py-2.5"
+          ? "bg-white shadow-md border-b-2 border-[#5fd4fd] py-2.5"
           : "bg-white border-b-2 border-[#0082fc]/20 py-3"
       }`}
     >
