@@ -113,7 +113,7 @@ export const SolenoVideoShowcase: React.FC<SolenoVideoShowcaseProps> = ({
   return (
     <section
       aria-label="Waterworks Engineering Video Demonstrations"
-      className="py-16 sm:py-24 bg-[#0074f0] text-white border-t-4 border-[#0082FC] border-b-4 border-[#0082FC] relative overflow-hidden"
+      className="py-16 sm:py-24 bg-[#3087ff] text-white border-t-4 border-[#3087ff] border-b-4 border-[#3087ff] relative overflow-hidden"
     >
       {/* Infinite Seamless Looping Water Background Animation */}
       <InfiniteWaterBackground
@@ -133,7 +133,7 @@ export const SolenoVideoShowcase: React.FC<SolenoVideoShowcaseProps> = ({
 
       {/* Floating Fluid Ambient Water Blobs */}
       <div
-        className="absolute -top-24 -left-24 w-96 h-96 bg-[#0082FC]/20 blur-3xl pointer-events-none fluid-wave"
+        className="absolute -top-24 -left-24 w-96 h-96 bg-[#3087ff]/20 blur-3xl pointer-events-none fluid-wave"
         aria-hidden="true"
       />
       <div
@@ -144,13 +144,13 @@ export const SolenoVideoShowcase: React.FC<SolenoVideoShowcaseProps> = ({
       <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         {/* Section Header */}
         <div className="text-center max-w-3xl mx-auto mb-12 sm:mb-16">
-          <div className="inline-flex items-center gap-2 px-3 py-1 bg-white text-[#0074f0] text-xs font-bold uppercase tracking-wider rounded-none mb-3 shadow-md border-2 border-[#0082FC]">
-            <Video className="w-3.5 h-3.5 text-[#0074f0] shrink-0" />
+          <div className="inline-flex items-center gap-2 px-3 py-1 bg-white text-[#3087ff] text-xs font-bold uppercase tracking-wider rounded-none mb-3 shadow-md border-2 border-[#3087ff]">
+            <Video className="w-3.5 h-3.5 text-[#3087ff] shrink-0" />
             <span>Field Proof &amp; Manufacturing Demonstrations</span>
           </div>
 
           <h2 className="text-3xl sm:text-4xl lg:text-5xl font-black uppercase tracking-tight text-white leading-[1.05] mb-3">
-            Waterworks <span className="text-[#0082FC]">Video Showcases</span>
+            Waterworks <span className="text-[#3087ff]">Video Showcases</span>
           </h2>
 
           {/* Animated Hydrodynamic Water Wave Stream Indicator */}
@@ -159,7 +159,7 @@ export const SolenoVideoShowcase: React.FC<SolenoVideoShowcaseProps> = ({
             aria-hidden="true"
           >
             <span className="h-0.5 w-10 bg-white/40" />
-            <span className="h-1.5 w-24 bg-[#0082FC] animate-pulse" />
+            <span className="h-1.5 w-24 bg-[#3087ff] animate-pulse" />
             <span className="h-0.5 w-10 bg-white/40" />
           </div>
 
@@ -180,10 +180,10 @@ export const SolenoVideoShowcase: React.FC<SolenoVideoShowcaseProps> = ({
                 key={item.id}
                 onMouseEnter={() => setHoveredCardId(item.id)}
                 onMouseLeave={() => setHoveredCardId(null)}
-                className="bg-white border-4 border-[#0082FC] rounded-none overflow-hidden flex flex-col justify-between shadow-2xl hover:border-white transition-all duration-300 group hover:-translate-y-1.5 relative text-[#0074f0]"
+                className="bg-white border-4 border-[#3087ff] rounded-none overflow-hidden flex flex-col justify-between shadow-2xl hover:border-white transition-all duration-300 group hover:-translate-y-1.5 relative text-[#3087ff]"
               >
                 {/* Top Video Preview Box with Active Looping Water Stream */}
-                <div className="relative w-full h-44 sm:h-48 bg-[#0074f0] overflow-hidden flex items-center justify-center">
+                <div className="relative w-full h-44 sm:h-48 bg-[#3087ff] overflow-hidden flex items-center justify-center">
                   {/* 1. Looping Water Video Flow - Active Continuous Animation */}
                   <video
                     src={item.videoUrl}
@@ -208,7 +208,7 @@ export const SolenoVideoShowcase: React.FC<SolenoVideoShowcaseProps> = ({
                     className="absolute inset-0 w-full h-full opacity-35 mix-blend-overlay gpu-water-drift pointer-events-none"
                     style={{
                       backgroundImage:
-                        "radial-gradient(ellipse at 30% 30%, rgba(95, 212, 253, 0.85) 0%, rgba(0, 130, 252, 0.95) 100%)",
+                        "radial-gradient(ellipse at 30% 30%, rgba(48, 135, 255, 0.85) 0%, rgba(48, 135, 255, 0.95) 100%)",
                     }}
                   />
 
@@ -221,10 +221,10 @@ export const SolenoVideoShowcase: React.FC<SolenoVideoShowcaseProps> = ({
 
                   {/* Top Badges */}
                   <div className="absolute top-2 left-2 right-2 flex items-center justify-between z-10">
-                    <span className="px-2 py-0.5 bg-[#0074f0] text-white text-[10px] font-black uppercase tracking-wider border border-[#0082FC]">
+                    <span className="px-2 py-0.5 bg-[#3087ff] text-white text-[10px] font-black uppercase tracking-wider border border-[#3087ff]">
                       {item.badge}
                     </span>
-                    <span className="px-2 py-0.5 bg-white text-[#0074f0] text-[10px] font-bold border border-[#0074f0]">
+                    <span className="px-2 py-0.5 bg-white text-[#3087ff] text-[10px] font-bold border border-[#3087ff]">
                       {item.duration}
                     </span>
                   </div>
@@ -233,36 +233,36 @@ export const SolenoVideoShowcase: React.FC<SolenoVideoShowcaseProps> = ({
                   <button
                     type="button"
                     onClick={() => setActiveVideo(item)}
-                    className="absolute inset-0 m-auto w-12 h-12 bg-white/95 hover:bg-[#0082FC] text-[#0074f0] flex items-center justify-center border-2 border-[#0074f0] shadow-xl transition-transform hover:scale-110 cursor-pointer z-20"
+                    className="absolute inset-0 m-auto w-12 h-12 bg-white/95 hover:bg-[#3087ff] text-[#3087ff] flex items-center justify-center border-2 border-[#3087ff] shadow-xl transition-transform hover:scale-110 cursor-pointer z-20"
                     title={`Watch ${item.title}`}
                     aria-label={`Watch ${item.title}`}
                   >
-                    <Play className="w-5 h-5 fill-[#0074f0] ml-0.5" />
+                    <Play className="w-5 h-5 fill-[#3087ff] ml-0.5" />
                   </button>
                 </div>
 
                 {/* Card Body */}
-                <div className="p-4 flex-1 flex flex-col justify-between text-[#0074f0]">
+                <div className="p-4 flex-1 flex flex-col justify-between text-[#3087ff]">
                   <div>
-                    <span className="text-[10px] font-bold text-[#0074f0]/75 uppercase block mb-1">
+                    <span className="text-[10px] font-bold text-[#3087ff]/75 uppercase block mb-1">
                       {item.standard}
                     </span>
 
-                    <h3 className="font-black text-sm sm:text-base uppercase tracking-tight text-[#0074f0] leading-tight mb-1">
+                    <h3 className="font-black text-sm sm:text-base uppercase tracking-tight text-[#3087ff] leading-tight mb-1">
                       {item.title}
                     </h3>
 
-                    <p className="text-xs text-[#0074f0]/90 leading-relaxed mb-4 line-clamp-3">
+                    <p className="text-xs text-[#3087ff]/90 leading-relaxed mb-4 line-clamp-3">
                       {item.summary}
                     </p>
                   </div>
 
                   {/* Dual Action Buttons */}
-                  <div className="pt-2 border-t border-[#0074f0]/20 space-y-2">
+                  <div className="pt-2 border-t border-[#3087ff]/20 space-y-2">
                     <button
                       type="button"
                       onClick={() => setActiveVideo(item)}
-                      className="w-full py-2 px-3 bg-[#0074f0] hover:bg-[#0082FC] text-white hover:text-[#0074f0] font-black text-xs uppercase tracking-wider rounded-none transition-all flex items-center justify-center gap-1.5 cursor-pointer border border-[#0074f0]"
+                      className="w-full py-2 px-3 bg-[#3087ff] hover:bg-[#3087ff] text-white hover:text-[#3087ff] font-black text-xs uppercase tracking-wider rounded-none transition-all flex items-center justify-center gap-1.5 cursor-pointer border border-[#3087ff]"
                     >
                       <Play className="w-3.5 h-3.5" />
                       <span>Watch Full Demo</span>
@@ -271,9 +271,9 @@ export const SolenoVideoShowcase: React.FC<SolenoVideoShowcaseProps> = ({
                     <button
                       type="button"
                       onClick={() => handleAdd(item.product)}
-                      className={`w-full py-2 px-3 text-xs font-black uppercase tracking-wider rounded-none border border-[#0074f0] transition-all flex items-center justify-center gap-1.5 cursor-pointer ${isAdded
-                        ? "bg-[#0082FC] text-[#0074f0]"
-                        : "bg-white hover:bg-[#0082FC]/30 text-[#0074f0]"
+                      className={`w-full py-2 px-3 text-xs font-black uppercase tracking-wider rounded-none border border-[#3087ff] transition-all flex items-center justify-center gap-1.5 cursor-pointer ${isAdded
+                        ? "bg-[#3087ff] text-[#3087ff]"
+                        : "bg-white hover:bg-[#3087ff]/30 text-[#3087ff]"
                         }`}
                     >
                       {isAdded ? (
@@ -301,26 +301,26 @@ export const SolenoVideoShowcase: React.FC<SolenoVideoShowcaseProps> = ({
         <div className="fixed inset-0 z-60 flex items-center justify-center p-4 sm:p-6">
           <button
             type="button"
-            className="fixed inset-0 bg-[#0074f0]/85 backdrop-blur-sm cursor-default w-full h-full border-0"
+            className="fixed inset-0 bg-[#3087ff]/85 backdrop-blur-sm cursor-default w-full h-full border-0"
             onClick={() => setActiveVideo(null)}
             aria-label="Close Video Player"
           />
 
-          <div className="relative w-full max-w-2xl bg-white border-4 border-[#0074f0] shadow-2xl z-10 text-[#0074f0] p-4 sm:p-6 animate-in fade-in zoom-in-95">
+          <div className="relative w-full max-w-2xl bg-white border-4 border-[#3087ff] shadow-2xl z-10 text-[#3087ff] p-4 sm:p-6 animate-in fade-in zoom-in-95">
             {/* Modal Header */}
-            <div className="flex items-center justify-between border-b-2 border-[#0074f0] pb-3 mb-4">
+            <div className="flex items-center justify-between border-b-2 border-[#3087ff] pb-3 mb-4">
               <div className="flex items-center gap-2">
-                <span className="px-2 py-0.5 bg-[#0074f0] text-white text-xs font-black uppercase">
+                <span className="px-2 py-0.5 bg-[#3087ff] text-white text-xs font-black uppercase">
                   {activeVideo.badge}
                 </span>
-                <h3 className="font-black text-base sm:text-lg uppercase text-[#0074f0]">
+                <h3 className="font-black text-base sm:text-lg uppercase text-[#3087ff]">
                   {activeVideo.title}
                 </h3>
               </div>
               <button
                 type="button"
                 onClick={() => setActiveVideo(null)}
-                className="p-1 text-[#0074f0] hover:bg-[#0082FC]/20 border border-[#0074f0] cursor-pointer"
+                className="p-1 text-[#3087ff] hover:bg-[#3087ff]/20 border border-[#3087ff] cursor-pointer"
                 aria-label="Close Modal"
               >
                 <X className="w-5 h-5" />
@@ -328,7 +328,7 @@ export const SolenoVideoShowcase: React.FC<SolenoVideoShowcaseProps> = ({
             </div>
 
             {/* Video Player Display */}
-            <div className="relative w-full h-64 sm:h-80 bg-[#0074f0] border-2 border-[#0074f0] overflow-hidden flex items-center justify-center">
+            <div className="relative w-full h-64 sm:h-80 bg-[#3087ff] border-2 border-[#3087ff] overflow-hidden flex items-center justify-center">
               <video
                 src={activeVideo.videoUrl}
                 controls
@@ -345,28 +345,28 @@ export const SolenoVideoShowcase: React.FC<SolenoVideoShowcaseProps> = ({
             </div>
 
             {/* Video Specifications & Overview */}
-            <div className="mt-4 pt-3 border-t border-[#0074f0]/20">
+            <div className="mt-4 pt-3 border-t border-[#3087ff]/20">
               <div className="flex items-center justify-between gap-2 mb-2">
-                <span className="text-xs font-bold text-[#0074f0] uppercase">
+                <span className="text-xs font-bold text-[#3087ff] uppercase">
                   Standard: {activeVideo.standard}
                 </span>
-                <span className="text-xs bg-[#0082FC]/30 px-2 py-0.5 font-extrabold text-[#0074f0] border border-[#0074f0]">
+                <span className="text-xs bg-[#3087ff]/30 px-2 py-0.5 font-extrabold text-[#3087ff] border border-[#3087ff]">
                   Duration: {activeVideo.duration}
                 </span>
               </div>
-              <p className="text-xs sm:text-sm text-[#0074f0]/90 font-medium leading-relaxed">
+              <p className="text-xs sm:text-sm text-[#3087ff]/90 font-medium leading-relaxed">
                 {activeVideo.summary}
               </p>
             </div>
 
             {/* Action Buttons */}
-            <div className="mt-4 pt-3 border-t-2 border-[#0074f0]/20 flex flex-col sm:flex-row gap-3">
+            <div className="mt-4 pt-3 border-t-2 border-[#3087ff]/20 flex flex-col sm:flex-row gap-3">
               <button
                 type="button"
                 onClick={() => {
                   handleAdd(activeVideo.product);
                 }}
-                className="flex-1 py-2.5 px-4 bg-[#0074f0] hover:bg-[#0082FC] text-white hover:text-[#0074f0] font-black text-xs uppercase tracking-wider transition-all border-2 border-[#0074f0] cursor-pointer text-center"
+                className="flex-1 py-2.5 px-4 bg-[#3087ff] hover:bg-[#3087ff] text-white hover:text-[#3087ff] font-black text-xs uppercase tracking-wider transition-all border-2 border-[#3087ff] cursor-pointer text-center"
               >
                 + Add {activeVideo.product.name} to RFQ
               </button>
@@ -377,7 +377,7 @@ export const SolenoVideoShowcase: React.FC<SolenoVideoShowcaseProps> = ({
                   onPreviewSubmittal(activeVideo.product);
                   setActiveVideo(null);
                 }}
-                className="flex-1 py-2.5 px-4 bg-white hover:bg-[#0074f0] text-[#0074f0] hover:text-white font-black text-xs uppercase tracking-wider transition-all border-2 border-[#0074f0] cursor-pointer text-center"
+                className="flex-1 py-2.5 px-4 bg-white hover:bg-[#3087ff] text-[#3087ff] hover:text-white font-black text-xs uppercase tracking-wider transition-all border-2 border-[#3087ff] cursor-pointer text-center"
               >
                 Download Submittal PDF
               </button>

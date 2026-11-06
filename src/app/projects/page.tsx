@@ -239,7 +239,7 @@ export default function ProjectsPage() {
       : PROJECTS_DATA.filter((p) => p.sectorId === selectedSector);
 
   return (
-    <div className="min-h-screen flex flex-col bg-white text-[#0074f0] selection:bg-[#0082FC] selection:text-[#0074f0]">
+    <div className="min-h-screen flex flex-col bg-white text-[#3087ff] selection:bg-[#3087ff] selection:text-[#3087ff]">
       {/* Top Utility Ribbon */}
       <GlobalUtilityTicker
         onOpenYardModal={() => setYardModalOpen(true)}
@@ -260,7 +260,7 @@ export default function ProjectsPage() {
         ======================================================== */}
         <article
           aria-label="Featured Waterworks Project Spotlight"
-          className="bg-[#0074f0] text-white py-14 sm:py-20 border-b-4 border-[#0082FC] relative overflow-hidden"
+          className="bg-[#3087ff] text-white py-14 sm:py-20 border-b-4 border-[#3087ff] relative overflow-hidden"
         >
           {/* Infinite Seamless Looping Water Background Animation */}
           <InfiniteWaterBackground opacity="opacity-25" />
@@ -279,8 +279,8 @@ export default function ProjectsPage() {
             <div className="grid grid-cols-1 lg:grid-cols-12 gap-10 lg:gap-14 items-center">
               {/* Left Column: Soleno news_hero_content Typography */}
               <div className="lg:col-span-7 space-y-5">
-                <div className="inline-flex items-center gap-2 px-3 py-1 bg-white text-[#0074f0] text-xs font-bold uppercase tracking-wider rounded-none shadow-md border-2 border-[#0082FC]">
-                  <Building2 className="w-3.5 h-3.5 text-[#0074f0] shrink-0" />
+                <div className="inline-flex items-center gap-2 px-3 py-1 bg-white text-[#3087ff] text-xs font-bold uppercase tracking-wider rounded-none shadow-md border-2 border-[#3087ff]">
+                  <Building2 className="w-3.5 h-3.5 text-[#3087ff] shrink-0" />
                   <span>Case Studies &bull; Our Infrastructure Projects</span>
                 </div>
 
@@ -288,8 +288,8 @@ export default function ProjectsPage() {
                   {featuredProject.title}
                 </h1>
 
-                <div className="flex flex-wrap items-center gap-2 text-xs font-bold text-[#0082FC]">
-                  <span className="bg-white/10 px-2.5 py-1 border border-[#0082FC]/60 text-white uppercase">
+                <div className="flex flex-wrap items-center gap-2 text-xs font-bold text-[#3087ff]">
+                  <span className="bg-white/10 px-2.5 py-1 border border-[#3087ff]/60 text-white uppercase">
                     {featuredProject.sectorTag}
                   </span>
                   <span>&bull;</span>
@@ -304,8 +304,8 @@ export default function ProjectsPage() {
 
                 {/* Key Technical Metric Chips */}
                 <div className="grid grid-cols-2 sm:grid-cols-3 gap-3 pt-2">
-                  <div className="p-3 bg-white/10 border border-[#0082FC]/50 rounded-none">
-                    <span className="text-[10px] text-[#0082FC] uppercase font-bold block">
+                  <div className="p-3 bg-white/10 border border-[#3087ff]/50 rounded-none">
+                    <span className="text-[10px] text-[#3087ff] uppercase font-bold block">
                       Diameter Spec
                     </span>
                     <span className="text-xs sm:text-sm font-black text-white">
@@ -313,8 +313,8 @@ export default function ProjectsPage() {
                     </span>
                   </div>
 
-                  <div className="p-3 bg-white/10 border border-[#0082FC]/50 rounded-none">
-                    <span className="text-[10px] text-[#0082FC] uppercase font-bold block">
+                  <div className="p-3 bg-white/10 border border-[#3087ff]/50 rounded-none">
+                    <span className="text-[10px] text-[#3087ff] uppercase font-bold block">
                       Hydrostatic Test
                     </span>
                     <span className="text-xs sm:text-sm font-black text-white">
@@ -322,8 +322,8 @@ export default function ProjectsPage() {
                     </span>
                   </div>
 
-                  <div className="p-3 bg-white/10 border border-[#0082FC]/50 rounded-none col-span-2 sm:col-span-1">
-                    <span className="text-[10px] text-[#0082FC] uppercase font-bold block">
+                  <div className="p-3 bg-white/10 border border-[#3087ff]/50 rounded-none col-span-2 sm:col-span-1">
+                    <span className="text-[10px] text-[#3087ff] uppercase font-bold block">
                       Delivery Method
                     </span>
                     <span className="text-xs sm:text-sm font-black text-white">
@@ -337,22 +337,22 @@ export default function ProjectsPage() {
                   <button
                     type="button"
                     onClick={() => setActiveProjectModal(featuredProject)}
-                    className="inline-flex items-center gap-2 px-6 py-3.5 bg-white hover:bg-[#0082FC] text-[#0074f0] font-black text-xs sm:text-sm uppercase tracking-wider rounded-none shadow-xl transition-all cursor-pointer"
+                    className="inline-flex items-center gap-2 px-6 py-3.5 bg-white hover:bg-[#3087ff] text-[#3087ff] font-black text-xs sm:text-sm uppercase tracking-wider rounded-none shadow-xl transition-all cursor-pointer"
                   >
                     <span>View Complete Project Study</span>
-                    <ArrowRight className="w-4 h-4 text-[#0074f0]" />
+                    <ArrowRight className="w-4 h-4 text-[#3087ff]" />
                   </button>
                 </div>
               </div>
 
               {/* Right Column: Soleno news_hero_img Visual Showcase */}
               <div className="lg:col-span-5 flex justify-center">
-                <div className="relative w-full max-w-md bg-white border-4 border-[#0082FC] p-6 sm:p-8 shadow-2xl text-[#0074f0] group">
-                  <div className="flex items-center justify-between border-b border-[#0074f0]/20 pb-3 mb-4 text-xs font-bold">
-                    <span className="uppercase tracking-widest text-[#0074f0]">
+                <div className="relative w-full max-w-md bg-white border-4 border-[#3087ff] p-6 sm:p-8 shadow-2xl text-[#3087ff] group">
+                  <div className="flex items-center justify-between border-b border-[#3087ff]/20 pb-3 mb-4 text-xs font-bold">
+                    <span className="uppercase tracking-widest text-[#3087ff]">
                       Project Record ID
                     </span>
-                    <span className="bg-[#0082FC]/20 px-2 py-0.5 border border-[#0074f0]">
+                    <span className="bg-[#3087ff]/20 px-2 py-0.5 border border-[#3087ff]">
                       AWWA C153 / C110
                     </span>
                   </div>
@@ -365,11 +365,11 @@ export default function ProjectsPage() {
                     />
                   </div>
 
-                  <div className="mt-4 pt-3 border-t border-[#0074f0]/20 flex items-center justify-between text-xs font-bold">
-                    <span className="text-[#0074f0]">
+                  <div className="mt-4 pt-3 border-t border-[#3087ff]/20 flex items-center justify-between text-xs font-bold">
+                    <span className="text-[#3087ff]">
                       ASTM A536 Grade 65-45-12
                     </span>
-                    <span className="text-[#0074f0]">100% AIS Ready</span>
+                    <span className="text-[#3087ff]">100% AIS Ready</span>
                   </div>
                 </div>
               </div>
@@ -382,11 +382,11 @@ export default function ProjectsPage() {
         ======================================================== */}
         <section
           aria-label="Filter Projects by Municipal Sector"
-          className="sticky top-[68px] z-30 bg-white border-b-2 border-[#0074f0] shadow-sm py-3"
+          className="sticky top-[68px] z-30 bg-white border-b-2 border-[#3087ff] shadow-sm py-3"
         >
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex flex-col sm:flex-row items-center justify-between gap-3">
-            <div className="flex items-center gap-2 text-xs font-black uppercase text-[#0074f0] whitespace-nowrap">
-              <Filter className="w-4 h-4 text-[#0074f0]" />
+            <div className="flex items-center gap-2 text-xs font-black uppercase text-[#3087ff] whitespace-nowrap">
+              <Filter className="w-4 h-4 text-[#3087ff]" />
               <span>Filter by Sector:</span>
             </div>
 
@@ -397,8 +397,8 @@ export default function ProjectsPage() {
                   key={tab.id}
                   onClick={() => setSelectedSector(tab.id)}
                   className={`px-3 py-1.5 text-xs font-bold uppercase tracking-wider rounded-none transition-all whitespace-nowrap border-2 cursor-pointer ${selectedSector === tab.id
-                    ? "bg-[#0074f0] text-white border-[#0074f0] shadow-xs"
-                    : "bg-white text-[#0074f0] border-[#0082FC] hover:bg-[#0082FC]/20"
+                    ? "bg-[#3087ff] text-white border-[#3087ff] shadow-xs"
+                    : "bg-white text-[#3087ff] border-[#3087ff] hover:bg-[#3087ff]/20"
                     }`}
                 >
                   {tab.label}
@@ -406,7 +406,7 @@ export default function ProjectsPage() {
               ))}
             </div>
 
-            <div className="text-xs font-bold text-[#0074f0]/80 hidden md:block whitespace-nowrap">
+            <div className="text-xs font-bold text-[#3087ff]/80 hidden md:block whitespace-nowrap">
               Showing {filteredProjects.length} Case Studies
             </div>
           </div>
@@ -417,17 +417,17 @@ export default function ProjectsPage() {
         ======================================================== */}
         <section
           aria-label="Municipal Infrastructure Projects Grid"
-          className="py-16 sm:py-20 bg-white text-[#0074f0]"
+          className="py-16 sm:py-20 bg-white text-[#3087ff]"
         >
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
               {filteredProjects.map((project) => (
                 <div
                   key={project.id}
-                  className="bg-white border-4 border-[#0074f0] rounded-none overflow-hidden flex flex-col justify-between shadow-xl hover:shadow-2xl hover:border-[#0082FC] transition-all duration-300 group hover:-translate-y-1.5 text-[#0074f0]"
+                  className="bg-white border-4 border-[#3087ff] rounded-none overflow-hidden flex flex-col justify-between shadow-xl hover:shadow-2xl hover:border-[#3087ff] transition-all duration-300 group hover:-translate-y-1.5 text-[#3087ff]"
                 >
                   {/* Card Image Container: Soleno post_img */}
-                  <div className="relative w-full h-56 bg-white border-b-2 border-[#0074f0] p-4 flex items-center justify-center overflow-hidden">
+                  <div className="relative w-full h-56 bg-white border-b-2 border-[#3087ff] p-4 flex items-center justify-center overflow-hidden">
                     <img
                       src={project.imageUrl}
                       alt={project.title}
@@ -436,7 +436,7 @@ export default function ProjectsPage() {
 
                     {/* Sector Tag Ribbon */}
                     <div className="absolute top-2.5 left-2.5">
-                      <span className="px-2.5 py-0.5 bg-[#0074f0] text-white text-[10px] font-black uppercase tracking-wider border border-[#0082FC]">
+                      <span className="px-2.5 py-0.5 bg-[#3087ff] text-white text-[10px] font-black uppercase tracking-wider border border-[#3087ff]">
                         {project.sectorTag}
                       </span>
                     </div>
@@ -446,46 +446,46 @@ export default function ProjectsPage() {
                   <div className="p-5 flex-1 flex flex-col justify-between">
                     <div>
                       {/* Location Tag */}
-                      <div className="flex items-center gap-1.5 text-xs font-bold text-[#0074f0]/75 mb-2 truncate">
-                        <MapPin className="w-3.5 h-3.5 shrink-0 text-[#0074f0]" />
+                      <div className="flex items-center gap-1.5 text-xs font-bold text-[#3087ff]/75 mb-2 truncate">
+                        <MapPin className="w-3.5 h-3.5 shrink-0 text-[#3087ff]" />
                         <span className="truncate">
                           {project.agencyLocation}
                         </span>
                       </div>
 
                       {/* Title */}
-                      <h2 className="font-black text-lg uppercase tracking-tight text-[#0074f0] leading-snug mb-2 group-hover:text-[#0074f0]">
+                      <h2 className="font-black text-lg uppercase tracking-tight text-[#3087ff] leading-snug mb-2 group-hover:text-[#3087ff]">
                         {project.title}
                       </h2>
 
                       {/* Summary */}
-                      <p className="text-xs sm:text-sm text-[#0074f0]/90 font-normal leading-relaxed mb-4 line-clamp-3">
+                      <p className="text-xs sm:text-sm text-[#3087ff]/90 font-normal leading-relaxed mb-4 line-clamp-3">
                         {project.summary}
                       </p>
 
                       {/* Technical Parameter Ledger */}
-                      <div className="space-y-1.5 border-t border-[#0074f0]/20 pt-3 mb-5 text-xs font-bold">
+                      <div className="space-y-1.5 border-t border-[#3087ff]/20 pt-3 mb-5 text-xs font-bold">
                         <div className="flex justify-between">
-                          <span className="text-[#0074f0]/75 font-normal">
+                          <span className="text-[#3087ff]/75 font-normal">
                             Spec:
                           </span>
-                          <span className="text-[#0074f0] uppercase">
+                          <span className="text-[#3087ff] uppercase">
                             {project.diameterSpec}
                           </span>
                         </div>
                         <div className="flex justify-between">
-                          <span className="text-[#0074f0]/75 font-normal">
+                          <span className="text-[#3087ff]/75 font-normal">
                             Pressure:
                           </span>
-                          <span className="text-[#0074f0] uppercase">
+                          <span className="text-[#3087ff] uppercase">
                             {project.pressureTest}
                           </span>
                         </div>
                         <div className="flex justify-between">
-                          <span className="text-[#0074f0]/75 font-normal">
+                          <span className="text-[#3087ff]/75 font-normal">
                             Transit:
                           </span>
-                          <span className="text-[#0074f0] truncate max-w-[180px]">
+                          <span className="text-[#3087ff] truncate max-w-[180px]">
                             {project.freightTimeline}
                           </span>
                         </div>
@@ -493,11 +493,11 @@ export default function ProjectsPage() {
                     </div>
 
                     {/* Action Button */}
-                    <div className="pt-2 border-t-2 border-[#0074f0]/20">
+                    <div className="pt-2 border-t-2 border-[#3087ff]/20">
                       <button
                         type="button"
                         onClick={() => setActiveProjectModal(project)}
-                        className="w-full py-2.5 px-3 bg-[#0074f0] hover:bg-[#0082FC] text-white hover:text-[#0074f0] font-black text-xs uppercase tracking-wider rounded-none transition-all flex items-center justify-center gap-1.5 cursor-pointer border border-[#0074f0]"
+                        className="w-full py-2.5 px-3 bg-[#3087ff] hover:bg-[#3087ff] text-white hover:text-[#3087ff] font-black text-xs uppercase tracking-wider rounded-none transition-all flex items-center justify-center gap-1.5 cursor-pointer border border-[#3087ff]"
                       >
                         <span>View Project Study</span>
                         <ArrowRight className="w-3.5 h-3.5" />
@@ -515,11 +515,11 @@ export default function ProjectsPage() {
         ======================================================== */}
         <article
           aria-label="Start a Waterworks Project"
-          className="py-16 sm:py-20 bg-[#0074f0] text-white border-t-4 border-[#0082FC] relative overflow-hidden"
+          className="py-16 sm:py-20 bg-[#3087ff] text-white border-t-4 border-[#3087ff] relative overflow-hidden"
         >
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10 flex flex-col md:flex-row items-center justify-between gap-8">
             <div className="max-w-2xl space-y-3">
-              <span className="text-xs font-black uppercase tracking-widest text-[#0082FC]">
+              <span className="text-xs font-black uppercase tracking-widest text-[#3087ff]">
                 Direct Foundry &amp; Logistics Allocation
               </span>
               <h2 className="text-2xl sm:text-4xl font-black uppercase tracking-tight text-white leading-tight">
@@ -535,14 +535,14 @@ export default function ProjectsPage() {
             <div className="flex flex-col sm:flex-row items-center gap-3 shrink-0">
               <a
                 href="/#quote-form"
-                className="px-6 py-3.5 bg-white hover:bg-[#0082FC] text-[#0074f0] font-black text-xs sm:text-sm uppercase tracking-wider rounded-none shadow-xl transition-all whitespace-nowrap text-center"
+                className="px-6 py-3.5 bg-white hover:bg-[#3087ff] text-[#3087ff] font-black text-xs sm:text-sm uppercase tracking-wider rounded-none shadow-xl transition-all whitespace-nowrap text-center"
               >
                 Start Commercial Quote
               </a>
 
               <a
                 href="tel:+15162521111"
-                className="px-6 py-3.5 bg-[#0074f0] hover:bg-white text-white hover:text-[#0074f0] border-2 border-white font-black text-xs sm:text-sm uppercase tracking-wider rounded-none transition-all whitespace-nowrap flex items-center justify-center gap-2"
+                className="px-6 py-3.5 bg-[#3087ff] hover:bg-white text-white hover:text-[#3087ff] border-2 border-white font-black text-xs sm:text-sm uppercase tracking-wider rounded-none transition-all whitespace-nowrap flex items-center justify-center gap-2"
               >
                 <PhoneCall className="w-4 h-4" />
                 <span>+1 (516) 252-1111</span>
@@ -565,29 +565,29 @@ export default function ProjectsPage() {
         <div className="fixed inset-0 z-60 flex items-center justify-center p-4 sm:p-6">
           <button
             type="button"
-            className="fixed inset-0 bg-[#0074f0]/85 backdrop-blur-sm cursor-default w-full h-full border-0"
+            className="fixed inset-0 bg-[#3087ff]/85 backdrop-blur-sm cursor-default w-full h-full border-0"
             onClick={() => setActiveProjectModal(null)}
             aria-label="Close Project Study Modal"
           />
 
-          <div className="relative w-full max-w-3xl bg-white border-4 border-[#0074f0] shadow-2xl z-10 text-[#0074f0] p-6 sm:p-8 animate-in fade-in zoom-in-95 max-h-[90vh] overflow-y-auto">
+          <div className="relative w-full max-w-3xl bg-white border-4 border-[#3087ff] shadow-2xl z-10 text-[#3087ff] p-6 sm:p-8 animate-in fade-in zoom-in-95 max-h-[90vh] overflow-y-auto">
             {/* Modal Header */}
-            <div className="flex items-center justify-between border-b-2 border-[#0074f0] pb-4 mb-5">
+            <div className="flex items-center justify-between border-b-2 border-[#3087ff] pb-4 mb-5">
               <div>
-                <span className="text-xs font-black uppercase bg-[#0082FC]/30 px-2.5 py-0.5 border border-[#0074f0] text-[#0074f0] block mb-1 w-max">
+                <span className="text-xs font-black uppercase bg-[#3087ff]/30 px-2.5 py-0.5 border border-[#3087ff] text-[#3087ff] block mb-1 w-max">
                   {activeProjectModal.sectorTag}
                 </span>
-                <h3 className="text-xl sm:text-2xl font-black uppercase text-[#0074f0] leading-tight">
+                <h3 className="text-xl sm:text-2xl font-black uppercase text-[#3087ff] leading-tight">
                   {activeProjectModal.title}
                 </h3>
-                <span className="text-xs font-bold text-[#0074f0]/80">
+                <span className="text-xs font-bold text-[#3087ff]/80">
                   {activeProjectModal.agencyLocation}
                 </span>
               </div>
               <button
                 type="button"
                 onClick={() => setActiveProjectModal(null)}
-                className="p-1.5 text-[#0074f0] hover:bg-[#0082FC]/20 border border-[#0074f0] cursor-pointer"
+                className="p-1.5 text-[#3087ff] hover:bg-[#3087ff]/20 border border-[#3087ff] cursor-pointer"
                 aria-label="Close Modal"
               >
                 <X className="w-6 h-6" />
@@ -596,7 +596,7 @@ export default function ProjectsPage() {
 
             {/* Modal Body: 2 Columns */}
             <div className="grid grid-cols-1 md:grid-cols-12 gap-6 items-center mb-6">
-              <div className="md:col-span-5 h-60 bg-white border-2 border-[#0074f0] p-4 flex items-center justify-center">
+              <div className="md:col-span-5 h-60 bg-white border-2 border-[#3087ff] p-4 flex items-center justify-center">
                 <img
                   src={activeProjectModal.imageUrl}
                   alt={activeProjectModal.title}
@@ -605,28 +605,28 @@ export default function ProjectsPage() {
               </div>
 
               <div className="md:col-span-7 space-y-3">
-                <h4 className="font-black text-sm uppercase text-[#0074f0]">
+                <h4 className="font-black text-sm uppercase text-[#3087ff]">
                   Engineering Challenge &amp; Solution
                 </h4>
-                <p className="text-xs sm:text-sm text-[#0074f0]/90 leading-relaxed font-normal">
+                <p className="text-xs sm:text-sm text-[#3087ff]/90 leading-relaxed font-normal">
                   {activeProjectModal.challengeSolved}
                 </p>
 
-                <div className="bg-[#0082FC]/15 border border-[#0074f0] p-3 space-y-1.5 text-xs font-bold text-[#0074f0]">
+                <div className="bg-[#3087ff]/15 border border-[#3087ff] p-3 space-y-1.5 text-xs font-bold text-[#3087ff]">
                   <div>
-                    <span className="text-[#0074f0]/75 font-normal">
+                    <span className="text-[#3087ff]/75 font-normal">
                       Standard:{" "}
                     </span>
                     <span>{activeProjectModal.specs.standard}</span>
                   </div>
                   <div>
-                    <span className="text-[#0074f0]/75 font-normal">
+                    <span className="text-[#3087ff]/75 font-normal">
                       Metallurgy:{" "}
                     </span>
                     <span>{activeProjectModal.specs.metallurgy}</span>
                   </div>
                   <div>
-                    <span className="text-[#0074f0]/75 font-normal">
+                    <span className="text-[#3087ff]/75 font-normal">
                       Quantity:{" "}
                     </span>
                     <span>{activeProjectModal.specs.quantity}</span>
@@ -636,11 +636,11 @@ export default function ProjectsPage() {
             </div>
 
             {/* Modal Action Footer */}
-            <div className="pt-4 border-t-2 border-[#0074f0] flex flex-col sm:flex-row gap-3">
+            <div className="pt-4 border-t-2 border-[#3087ff] flex flex-col sm:flex-row gap-3">
               <a
                 href="/#quote-form"
                 onClick={() => setActiveProjectModal(null)}
-                className="flex-1 py-3 px-4 bg-[#0074f0] hover:bg-[#0082FC] text-white hover:text-[#0074f0] font-black text-xs uppercase tracking-wider text-center border-2 border-[#0074f0] transition-all cursor-pointer"
+                className="flex-1 py-3 px-4 bg-[#3087ff] hover:bg-[#3087ff] text-white hover:text-[#3087ff] font-black text-xs uppercase tracking-wider text-center border-2 border-[#3087ff] transition-all cursor-pointer"
               >
                 Request Materials Takeoff for Similar Job
               </a>
@@ -651,7 +651,7 @@ export default function ProjectsPage() {
                   setSubmittalModalProduct(activeProjectModal.product);
                   setActiveProjectModal(null);
                 }}
-                className="flex-1 py-3 px-4 bg-white hover:bg-[#0074f0] text-[#0074f0] hover:text-white font-black text-xs uppercase tracking-wider text-center border-2 border-[#0074f0] transition-all cursor-pointer"
+                className="flex-1 py-3 px-4 bg-white hover:bg-[#3087ff] text-[#3087ff] hover:text-white font-black text-xs uppercase tracking-wider text-center border-2 border-[#3087ff] transition-all cursor-pointer"
               >
                 Download Submittal PDF
               </button>

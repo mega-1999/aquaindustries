@@ -165,45 +165,45 @@ export const SettingsModal: React.FC<SettingsModalProps> = ({
       role="dialog"
       aria-modal="true"
       aria-labelledby="settings-modal-title"
-      className="fixed inset-0 z-50 flex items-center justify-center p-3 sm:p-4 bg-[#0082FC]/80 backdrop-blur-sm overflow-y-auto"
+      className="fixed inset-0 z-50 flex items-center justify-center p-3 sm:p-4 bg-[#3087ff]/80 backdrop-blur-sm overflow-y-auto"
     >
-      <div className="bg-white border-4 border-[#0082FC] rounded-none max-w-xl w-full p-6 sm:p-8 shadow-2xl text-[#0082FC] relative my-auto">
+      <div className="bg-white border-4 border-[#3087ff] rounded-none max-w-xl w-full p-6 sm:p-8 shadow-2xl text-[#3087ff] relative my-auto">
         {/* Close Button */}
         <button
           type="button"
           onClick={onClose}
-          className="absolute top-5 right-5 p-1 rounded-none text-[#0082FC] hover:bg-[#0565d6]/20 transition-colors cursor-pointer"
+          className="absolute top-5 right-5 p-1 rounded-none text-[#3087ff] hover:bg-[#3087ff]/20 transition-colors cursor-pointer"
           aria-label="Close Settings Modal"
         >
           <X className="w-5 h-5" />
         </button>
 
         {/* Modal Header */}
-        <div className="flex items-center gap-3.5 mb-5 pb-4 border-b-2 border-[#0565d6]/40">
-          <div className="w-12 h-12 bg-[#0082FC] text-white border-2 border-[#0565d6] flex items-center justify-center shrink-0">
-            <Settings className="w-6 h-6 text-[#0565d6]" />
+        <div className="flex items-center gap-3.5 mb-5 pb-4 border-b-2 border-[#3087ff]/40">
+          <div className="w-12 h-12 bg-[#3087ff] text-white border-2 border-[#3087ff] flex items-center justify-center shrink-0">
+            <Settings className="w-6 h-6 text-[#3087ff]" />
           </div>
           <div>
             <h2
               id="settings-modal-title"
-              className="text-xl sm:text-2xl font-black text-[#0082FC] uppercase tracking-tight"
+              className="text-xl sm:text-2xl font-black text-[#3087ff] uppercase tracking-tight"
             >
               Account Settings
             </h2>
-            <p className="text-xs sm:text-sm text-[#0082FC]/90 font-medium mt-0.5">
+            <p className="text-xs sm:text-sm text-[#3087ff]/90 font-medium mt-0.5">
               Password Security, Dispatch Preferences &amp; Profile Information
             </p>
           </div>
         </div>
 
         {/* Section Navigation */}
-        <div className="flex border-b-2 border-[#0082FC] mb-5">
+        <div className="flex border-b-2 border-[#3087ff] mb-5">
           <button
             type="button"
             onClick={() => setActiveSection("security")}
             className={`py-2 px-3 text-xs font-black uppercase tracking-wider border-b-2 -mb-[2px] transition-colors cursor-pointer flex items-center gap-1.5 ${activeSection === "security"
-                ? "border-[#0082FC] bg-[#0082FC] text-white"
-                : "border-transparent text-[#0082FC] hover:bg-[#0565d6]/20"
+                ? "border-[#3087ff] bg-[#3087ff] text-white"
+                : "border-transparent text-[#3087ff] hover:bg-[#3087ff]/20"
               }`}
           >
             <KeyRound className="w-3.5 h-3.5" />
@@ -213,8 +213,8 @@ export const SettingsModal: React.FC<SettingsModalProps> = ({
             type="button"
             onClick={() => setActiveSection("company")}
             className={`py-2 px-3 text-xs font-black uppercase tracking-wider border-b-2 -mb-[2px] transition-colors cursor-pointer flex items-center gap-1.5 ${activeSection === "company"
-                ? "border-[#0082FC] bg-[#0082FC] text-white"
-                : "border-transparent text-[#0082FC] hover:bg-[#0565d6]/20"
+                ? "border-[#3087ff] bg-[#3087ff] text-white"
+                : "border-transparent text-[#3087ff] hover:bg-[#3087ff]/20"
               }`}
           >
             <User className="w-3.5 h-3.5" />
@@ -224,8 +224,8 @@ export const SettingsModal: React.FC<SettingsModalProps> = ({
             type="button"
             onClick={() => setActiveSection("notifications")}
             className={`py-2 px-3 text-xs font-black uppercase tracking-wider border-b-2 -mb-[2px] transition-colors cursor-pointer flex items-center gap-1.5 ${activeSection === "notifications"
-                ? "border-[#0082FC] bg-[#0082FC] text-white"
-                : "border-transparent text-[#0082FC] hover:bg-[#0565d6]/20"
+                ? "border-[#3087ff] bg-[#3087ff] text-white"
+                : "border-transparent text-[#3087ff] hover:bg-[#3087ff]/20"
               }`}
           >
             <Bell className="w-3.5 h-3.5" />
@@ -258,7 +258,7 @@ export const SettingsModal: React.FC<SettingsModalProps> = ({
                 <span className="text-[10px] font-black uppercase text-amber-900 block">
                   New Temporary Master Password:
                 </span>
-                <div className="text-base font-mono font-black tracking-wider text-[#0082FC] select-all bg-white px-2 py-1 border border-amber-400">
+                <div className="text-base font-mono font-black tracking-wider text-[#3087ff] select-all bg-white px-2 py-1 border border-amber-400">
                   {resetGeneratedPass}
                 </div>
                 <span className="text-[11px] text-amber-900 block">
@@ -271,7 +271,7 @@ export const SettingsModal: React.FC<SettingsModalProps> = ({
             <form onSubmit={handlePasswordSubmit} className="space-y-3">
               <div>
                 <div className="flex items-center justify-between mb-1">
-                  <label className="block text-[11px] font-black uppercase text-[#0082FC]">
+                  <label className="block text-[11px] font-black uppercase text-[#3087ff]">
                     Current Password{" "}
                     {currentUser?.role === "super-admin"
                       ? "(Optional for Admin)"
@@ -283,14 +283,14 @@ export const SettingsModal: React.FC<SettingsModalProps> = ({
                       onClick={() =>
                         setCurrentPassword(currentUser.password || "")
                       }
-                      className="text-[10px] text-[#0082FC] hover:underline font-bold uppercase tracking-wider cursor-pointer"
+                      className="text-[10px] text-[#3087ff] hover:underline font-bold uppercase tracking-wider cursor-pointer"
                     >
                       Auto-Fill Key
                     </button>
                   )}
                 </div>
                 <div className="relative">
-                  <Lock className="w-4 h-4 text-[#0082FC] absolute left-3 top-2.5" />
+                  <Lock className="w-4 h-4 text-[#3087ff] absolute left-3 top-2.5" />
                   <input
                     type={showCurrentPassword ? "text" : "password"}
                     placeholder={
@@ -300,12 +300,12 @@ export const SettingsModal: React.FC<SettingsModalProps> = ({
                     }
                     value={currentPassword}
                     onChange={(e) => setCurrentPassword(e.target.value)}
-                    className="w-full bg-white border-2 border-[#0082FC] pl-9 pr-10 py-2 text-xs font-bold text-[#0082FC] focus:outline-none focus:border-[#0565d6] rounded-none"
+                    className="w-full bg-white border-2 border-[#3087ff] pl-9 pr-10 py-2 text-xs font-bold text-[#3087ff] focus:outline-none focus:border-[#3087ff] rounded-none"
                   />
                   <button
                     type="button"
                     onClick={() => setShowCurrentPassword(!showCurrentPassword)}
-                    className="absolute right-2.5 top-1/2 -translate-y-1/2 p-1 text-[#0082FC] hover:text-[#0565d6] transition-colors cursor-pointer"
+                    className="absolute right-2.5 top-1/2 -translate-y-1/2 p-1 text-[#3087ff] hover:text-[#3087ff] transition-colors cursor-pointer"
                     title={
                       showCurrentPassword ? "Hide password" : "Show password"
                     }
@@ -324,7 +324,7 @@ export const SettingsModal: React.FC<SettingsModalProps> = ({
 
               <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
                 <div>
-                  <label className="block text-[11px] font-black uppercase text-[#0082FC] mb-1">
+                  <label className="block text-[11px] font-black uppercase text-[#3087ff] mb-1">
                     New Password
                   </label>
                   <div className="relative">
@@ -334,12 +334,12 @@ export const SettingsModal: React.FC<SettingsModalProps> = ({
                       placeholder="Min 6 characters"
                       value={newPassword}
                       onChange={(e) => setNewPassword(e.target.value)}
-                      className="w-full bg-white border-2 border-[#0082FC] pl-3 pr-10 py-2 text-xs font-bold text-[#0082FC] focus:outline-none focus:border-[#0565d6] rounded-none"
+                      className="w-full bg-white border-2 border-[#3087ff] pl-3 pr-10 py-2 text-xs font-bold text-[#3087ff] focus:outline-none focus:border-[#3087ff] rounded-none"
                     />
                     <button
                       type="button"
                       onClick={() => setShowNewPassword(!showNewPassword)}
-                      className="absolute right-2.5 top-1/2 -translate-y-1/2 p-1 text-[#0082FC] hover:text-[#0565d6] transition-colors cursor-pointer"
+                      className="absolute right-2.5 top-1/2 -translate-y-1/2 p-1 text-[#3087ff] hover:text-[#3087ff] transition-colors cursor-pointer"
                       title={
                         showNewPassword ? "Hide password" : "Show password"
                       }
@@ -356,7 +356,7 @@ export const SettingsModal: React.FC<SettingsModalProps> = ({
                   </div>
                 </div>
                 <div>
-                  <label className="block text-[11px] font-black uppercase text-[#0082FC] mb-1">
+                  <label className="block text-[11px] font-black uppercase text-[#3087ff] mb-1">
                     Confirm New Password
                   </label>
                   <div className="relative">
@@ -366,14 +366,14 @@ export const SettingsModal: React.FC<SettingsModalProps> = ({
                       placeholder="Re-type new password"
                       value={confirmPassword}
                       onChange={(e) => setConfirmPassword(e.target.value)}
-                      className="w-full bg-white border-2 border-[#0082FC] pl-3 pr-10 py-2 text-xs font-bold text-[#0082FC] focus:outline-none focus:border-[#0565d6] rounded-none"
+                      className="w-full bg-white border-2 border-[#3087ff] pl-3 pr-10 py-2 text-xs font-bold text-[#3087ff] focus:outline-none focus:border-[#3087ff] rounded-none"
                     />
                     <button
                       type="button"
                       onClick={() =>
                         setShowConfirmPassword(!showConfirmPassword)
                       }
-                      className="absolute right-2.5 top-1/2 -translate-y-1/2 p-1 text-[#0082FC] hover:text-[#0565d6] transition-colors cursor-pointer"
+                      className="absolute right-2.5 top-1/2 -translate-y-1/2 p-1 text-[#3087ff] hover:text-[#3087ff] transition-colors cursor-pointer"
                       title={
                         showConfirmPassword ? "Hide password" : "Show password"
                       }
@@ -394,7 +394,7 @@ export const SettingsModal: React.FC<SettingsModalProps> = ({
               <div className="pt-2 flex items-center justify-between gap-2">
                 <button
                   type="submit"
-                  className="px-4 py-2.5 bg-[#0082FC] hover:bg-[#0565d6] text-white hover:text-[#0082FC] font-black text-xs uppercase tracking-wider transition-colors cursor-pointer rounded-none shadow-md"
+                  className="px-4 py-2.5 bg-[#3087ff] hover:bg-[#3087ff] text-white hover:text-[#3087ff] font-black text-xs uppercase tracking-wider transition-colors cursor-pointer rounded-none shadow-md"
                 >
                   Update Password
                 </button>
@@ -430,7 +430,7 @@ export const SettingsModal: React.FC<SettingsModalProps> = ({
 
             <div className="grid grid-cols-1 sm:grid-cols-2 gap-3 text-xs">
               <div>
-                <label className="block text-[10px] font-black uppercase text-[#0082FC] mb-1">
+                <label className="block text-[10px] font-black uppercase text-[#3087ff] mb-1">
                   Primary Contact Full Name
                 </label>
                 <input
@@ -438,12 +438,12 @@ export const SettingsModal: React.FC<SettingsModalProps> = ({
                   required
                   value={fullName}
                   onChange={(e) => setFullName(e.target.value)}
-                  className="w-full bg-white border-2 border-[#0082FC] px-3 py-2 font-bold text-[#0082FC] focus:outline-none focus:border-[#0565d6] rounded-none"
+                  className="w-full bg-white border-2 border-[#3087ff] px-3 py-2 font-bold text-[#3087ff] focus:outline-none focus:border-[#3087ff] rounded-none"
                 />
               </div>
 
               <div>
-                <label className="block text-[10px] font-black uppercase text-[#0082FC] mb-1">
+                <label className="block text-[10px] font-black uppercase text-[#3087ff] mb-1">
                   Dispatch Phone Number
                 </label>
                 <input
@@ -451,19 +451,19 @@ export const SettingsModal: React.FC<SettingsModalProps> = ({
                   required
                   value={phone}
                   onChange={(e) => setPhone(e.target.value)}
-                  className="w-full bg-white border-2 border-[#0082FC] px-3 py-2 font-mono font-bold text-[#0082FC] focus:outline-none focus:border-[#0565d6] rounded-none"
+                  className="w-full bg-white border-2 border-[#3087ff] px-3 py-2 font-mono font-bold text-[#3087ff] focus:outline-none focus:border-[#3087ff] rounded-none"
                 />
               </div>
             </div>
 
             <div>
-              <label className="block text-[10px] font-black uppercase text-[#0082FC] mb-1">
+              <label className="block text-[10px] font-black uppercase text-[#3087ff] mb-1">
                 Primary Assigned Logistics Hub
               </label>
               <select
                 value={preferredYard}
                 onChange={(e) => setPreferredYard(e.target.value)}
-                className="w-full bg-white border-2 border-[#0082FC] px-3 py-2 text-xs font-bold text-[#0082FC] focus:outline-none focus:border-[#0565d6] rounded-none"
+                className="w-full bg-white border-2 border-[#3087ff] px-3 py-2 text-xs font-bold text-[#3087ff] focus:outline-none focus:border-[#3087ff] rounded-none"
               >
                 <option value="new-york-hub">
                   Melville, NY Foundry Yard (Global Master Hub)
@@ -483,7 +483,7 @@ export const SettingsModal: React.FC<SettingsModalProps> = ({
             <div className="pt-2 flex justify-end">
               <button
                 type="submit"
-                className="px-5 py-2.5 bg-[#0082FC] hover:bg-[#0565d6] text-white hover:text-[#0082FC] font-black text-xs uppercase tracking-wider transition-colors cursor-pointer rounded-none shadow-md flex items-center gap-1.5"
+                className="px-5 py-2.5 bg-[#3087ff] hover:bg-[#3087ff] text-white hover:text-[#3087ff] font-black text-xs uppercase tracking-wider transition-colors cursor-pointer rounded-none shadow-md flex items-center gap-1.5"
               >
                 <Save className="w-4 h-4" />
                 <span>Save Contact Details</span>
@@ -496,48 +496,48 @@ export const SettingsModal: React.FC<SettingsModalProps> = ({
         {activeSection === "notifications" && (
           <div className="space-y-4">
             <div className="space-y-3">
-              <label className="flex items-start gap-2.5 cursor-pointer p-2.5 bg-[#0082FC]/5 border border-[#0082FC]">
+              <label className="flex items-start gap-2.5 cursor-pointer p-2.5 bg-[#3087ff]/5 border border-[#3087ff]">
                 <input
                   type="checkbox"
                   checked={bolSmsAlerts}
                   onChange={(e) => setBolSmsAlerts(e.target.checked)}
-                  className="mt-0.5 rounded-none accent-[#0082FC] w-4 h-4"
+                  className="mt-0.5 rounded-none accent-[#3087ff] w-4 h-4"
                 />
-                <span className="text-xs font-bold text-[#0082FC]">
+                <span className="text-xs font-bold text-[#3087ff]">
                   SMS Trailer Staging Alerts{" "}
-                  <span className="block font-normal text-[11px] text-[#0082FC]/80 mt-0.5">
+                  <span className="block font-normal text-[11px] text-[#3087ff]/80 mt-0.5">
                     Receive instant texts when flatbed loads depart the foundry
                     gate.
                   </span>
                 </span>
               </label>
 
-              <label className="flex items-start gap-2.5 cursor-pointer p-2.5 bg-[#0082FC]/5 border border-[#0082FC]">
+              <label className="flex items-start gap-2.5 cursor-pointer p-2.5 bg-[#3087ff]/5 border border-[#3087ff]">
                 <input
                   type="checkbox"
                   checked={mtrEmailAlerts}
                   onChange={(e) => setMtrEmailAlerts(e.target.checked)}
-                  className="mt-0.5 rounded-none accent-[#0082FC] w-4 h-4"
+                  className="mt-0.5 rounded-none accent-[#3087ff] w-4 h-4"
                 />
-                <span className="text-xs font-bold text-[#0082FC]">
+                <span className="text-xs font-bold text-[#3087ff]">
                   Automated Certified MTR Submittals{" "}
-                  <span className="block font-normal text-[11px] text-[#0082FC]/80 mt-0.5">
+                  <span className="block font-normal text-[11px] text-[#3087ff]/80 mt-0.5">
                     Attach certified mill test reports automatically to digital
                     bills of lading.
                   </span>
                 </span>
               </label>
 
-              <label className="flex items-start gap-2.5 cursor-pointer p-2.5 bg-[#0082FC]/5 border border-[#0082FC]">
+              <label className="flex items-start gap-2.5 cursor-pointer p-2.5 bg-[#3087ff]/5 border border-[#3087ff]">
                 <input
                   type="checkbox"
                   checked={quoteUpdates}
                   onChange={(e) => setQuoteUpdates(e.target.checked)}
-                  className="mt-0.5 rounded-none accent-[#0082FC] w-4 h-4"
+                  className="mt-0.5 rounded-none accent-[#3087ff] w-4 h-4"
                 />
-                <span className="text-xs font-bold text-[#0082FC]">
+                <span className="text-xs font-bold text-[#3087ff]">
                   Direct Wholesale Quotation Updates{" "}
-                  <span className="block font-normal text-[11px] text-[#0082FC]/80 mt-0.5">
+                  <span className="block font-normal text-[11px] text-[#3087ff]/80 mt-0.5">
                     Receive price-lock notifications 48 hours prior to scrap
                     iron index adjustments.
                   </span>
@@ -552,7 +552,7 @@ export const SettingsModal: React.FC<SettingsModalProps> = ({
         )}
 
         {/* Footer Navigation */}
-        <div className="pt-4 mt-6 border-t-2 border-[#0565d6]/40 flex items-center justify-between gap-3">
+        <div className="pt-4 mt-6 border-t-2 border-[#3087ff]/40 flex items-center justify-between gap-3">
           {onOpenProfile && (
             <button
               type="button"
@@ -560,7 +560,7 @@ export const SettingsModal: React.FC<SettingsModalProps> = ({
                 onClose();
                 onOpenProfile();
               }}
-              className="text-xs font-bold text-[#0082FC] underline hover:text-[#0565d6] cursor-pointer"
+              className="text-xs font-bold text-[#3087ff] underline hover:text-[#3087ff] cursor-pointer"
             >
               &lsaquo; Back to Profile Dashboard
             </button>
@@ -569,7 +569,7 @@ export const SettingsModal: React.FC<SettingsModalProps> = ({
           <button
             type="button"
             onClick={onClose}
-            className="ml-auto px-5 py-2 bg-white text-[#0082FC] border-2 border-[#0082FC] hover:bg-[#0565d6]/20 font-bold text-xs uppercase cursor-pointer rounded-none"
+            className="ml-auto px-5 py-2 bg-white text-[#3087ff] border-2 border-[#3087ff] hover:bg-[#3087ff]/20 font-bold text-xs uppercase cursor-pointer rounded-none"
           >
             Close Settings
           </button>

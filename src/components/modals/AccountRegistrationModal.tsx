@@ -158,32 +158,32 @@ export const AccountRegistrationModal: React.FC<
       role="dialog"
       aria-modal="true"
       aria-labelledby="reg-modal-title"
-      className="fixed inset-0 z-50 flex items-center justify-center p-3 sm:p-4 bg-[#0082FC]/80 backdrop-blur-sm overflow-y-auto"
+      className="fixed inset-0 z-50 flex items-center justify-center p-3 sm:p-4 bg-[#3087ff]/80 backdrop-blur-sm overflow-y-auto"
     >
-      <div className="bg-white border-4 border-[#0082FC] rounded-none max-w-xl w-full p-6 sm:p-8 shadow-2xl text-[#0082FC] relative my-auto">
+      <div className="bg-white border-4 border-[#3087ff] rounded-none max-w-xl w-full p-6 sm:p-8 shadow-2xl text-[#3087ff] relative my-auto">
         {/* Close Button */}
         <button
           type="button"
           onClick={handleResetAndClose}
-          className="absolute top-5 right-5 p-1 rounded-none text-[#0082FC] hover:bg-[#0565d6]/20 transition-colors cursor-pointer"
+          className="absolute top-5 right-5 p-1 rounded-none text-[#3087ff] hover:bg-[#3087ff]/20 transition-colors cursor-pointer"
           aria-label="Close Registration"
         >
           <X className="w-5 h-5" />
         </button>
 
         {/* Modal Header */}
-        <div className="flex items-center gap-3 mb-6 pb-4 border-b-2 border-[#0565d6]/40">
-          <div className="w-12 h-12 bg-[#0082FC] text-white border-2 border-[#0565d6] flex items-center justify-center shrink-0">
-            <UserCheck className="w-6 h-6 text-[#0565d6]" />
+        <div className="flex items-center gap-3 mb-6 pb-4 border-b-2 border-[#3087ff]/40">
+          <div className="w-12 h-12 bg-[#3087ff] text-white border-2 border-[#3087ff] flex items-center justify-center shrink-0">
+            <UserCheck className="w-6 h-6 text-[#3087ff]" />
           </div>
           <div>
             <h3
               id="reg-modal-title"
-              className="text-xl sm:text-2xl font-black text-[#0082FC] uppercase tracking-tight"
+              className="text-xl sm:text-2xl font-black text-[#3087ff] uppercase tracking-tight"
             >
               Commercial Account Registration
             </h3>
-            <p className="text-xs sm:text-sm text-[#0082FC]/90 font-medium mt-0.5">
+            <p className="text-xs sm:text-sm text-[#3087ff]/90 font-medium mt-0.5">
               Wholesale Pricing, MTR Documentation &amp; Yard Allocation
             </p>
           </div>
@@ -222,37 +222,37 @@ export const AccountRegistrationModal: React.FC<
             </div>
 
             {/* Registration Summary Card */}
-            <div className="p-4 bg-white border-2 border-[#0082FC] space-y-2 text-xs">
-              <div className="flex justify-between border-b border-[#0082FC]/20 pb-1.5">
-                <span className="text-[#0082FC]/80">Registration ID:</span>
-                <span className="font-mono font-bold text-[#0082FC]">
+            <div className="p-4 bg-white border-2 border-[#3087ff] space-y-2 text-xs">
+              <div className="flex justify-between border-b border-[#3087ff]/20 pb-1.5">
+                <span className="text-[#3087ff]/80">Registration ID:</span>
+                <span className="font-mono font-bold text-[#3087ff]">
                   {registeredUser.id}
                 </span>
               </div>
-              <div className="flex justify-between border-b border-[#0082FC]/20 pb-1.5">
-                <span className="text-[#0082FC]/80">Account Email:</span>
-                <span className="font-mono font-bold text-[#0082FC]">
+              <div className="flex justify-between border-b border-[#3087ff]/20 pb-1.5">
+                <span className="text-[#3087ff]/80">Account Email:</span>
+                <span className="font-mono font-bold text-[#3087ff]">
                   {registeredUser.email}
                 </span>
               </div>
-              <div className="flex justify-between border-b border-[#0082FC]/20 pb-1.5">
-                <span className="text-[#0082FC]/80">Tax ID / License:</span>
-                <span className="font-mono font-bold text-[#0082FC]">
+              <div className="flex justify-between border-b border-[#3087ff]/20 pb-1.5">
+                <span className="text-[#3087ff]/80">Tax ID / License:</span>
+                <span className="font-mono font-bold text-[#3087ff]">
                   {registeredUser.taxIdOrLicense}
                 </span>
               </div>
               <div className="flex justify-between">
-                <span className="text-[#0082FC]/80">
+                <span className="text-[#3087ff]/80">
                   Primary Stocking Yard:
                 </span>
-                <span className="font-bold uppercase text-[#0082FC]">
+                <span className="font-bold uppercase text-[#3087ff]">
                   {registeredUser.assignedYard.replace("-", " ")}
                 </span>
               </div>
             </div>
 
-            <div className="p-3 bg-[#0082FC]/10 border border-[#0082FC] text-[11px] text-[#0082FC] leading-relaxed">
-              <strong className="block font-black uppercase text-[#0082FC] mb-0.5">
+            <div className="p-3 bg-[#3087ff]/10 border border-[#3087ff] text-[11px] text-[#3087ff] leading-relaxed">
+              <strong className="block font-black uppercase text-[#3087ff] mb-0.5">
                 Pending Administrator Authorization:
               </strong>
               Per municipal compliance rules, all new commercial accounts
@@ -267,7 +267,7 @@ export const AccountRegistrationModal: React.FC<
               <button
                 type="button"
                 onClick={handleResetAndClose}
-                className="w-full py-3 px-6 bg-[#0082FC] hover:bg-[#0565d6] text-white hover:text-[#0082FC] font-black text-xs uppercase tracking-wider shadow-md transition-all cursor-pointer text-center"
+                className="w-full py-3 px-6 bg-[#3087ff] hover:bg-[#3087ff] text-white hover:text-[#3087ff] font-black text-xs uppercase tracking-wider shadow-md transition-all cursor-pointer text-center"
               >
                 Done / Close Application Window
               </button>
@@ -288,10 +288,10 @@ export const AccountRegistrationModal: React.FC<
                 <div
                   key={item.step}
                   className={`p-2 text-center border-2 transition-all ${currentStep === item.step
-                      ? "bg-[#0082FC] border-[#0082FC] text-white font-black shadow-xs"
+                      ? "bg-[#3087ff] border-[#3087ff] text-white font-black shadow-xs"
                       : currentStep > item.step
-                        ? "bg-[#0565d6]/20 border-[#0082FC] text-[#0082FC] font-bold"
-                        : "bg-white border-[#0565d6]/50 text-[#0082FC]/60 font-semibold"
+                        ? "bg-[#3087ff]/20 border-[#3087ff] text-[#3087ff] font-bold"
+                        : "bg-white border-[#3087ff]/50 text-[#3087ff]/60 font-semibold"
                     }`}
                 >
                   <span className="text-[11px] block">{item.title}</span>
@@ -305,12 +305,12 @@ export const AccountRegistrationModal: React.FC<
                 <div>
                   <label
                     htmlFor="reg-company"
-                    className="block text-xs font-bold text-[#0082FC] uppercase mb-1"
+                    className="block text-xs font-bold text-[#3087ff] uppercase mb-1"
                   >
                     Legal Business Entity / Company Name *
                   </label>
                   <div className="relative">
-                    <Building className="w-4 h-4 text-[#0082FC] absolute left-3 top-3" />
+                    <Building className="w-4 h-4 text-[#3087ff] absolute left-3 top-3" />
                     <input
                       id="reg-company"
                       type="text"
@@ -318,7 +318,7 @@ export const AccountRegistrationModal: React.FC<
                       placeholder="e.g. Northeast Utilities & Excavation LLC"
                       value={companyName}
                       onChange={(e) => setCompanyName(e.target.value)}
-                      className="w-full bg-white border-2 border-[#0082FC] pl-9 pr-3 py-2 text-xs sm:text-sm font-bold text-[#0082FC] focus:outline-none focus:border-[#0565d6]"
+                      className="w-full bg-white border-2 border-[#3087ff] pl-9 pr-3 py-2 text-xs sm:text-sm font-bold text-[#3087ff] focus:outline-none focus:border-[#3087ff]"
                     />
                   </div>
                 </div>
@@ -327,12 +327,12 @@ export const AccountRegistrationModal: React.FC<
                   <div>
                     <label
                       htmlFor="reg-fullname"
-                      className="block text-xs font-bold text-[#0082FC] uppercase mb-1"
+                      className="block text-xs font-bold text-[#3087ff] uppercase mb-1"
                     >
                       Contact Full Name *
                     </label>
                     <div className="relative">
-                      <User className="w-4 h-4 text-[#0082FC] absolute left-3 top-3" />
+                      <User className="w-4 h-4 text-[#3087ff] absolute left-3 top-3" />
                       <input
                         id="reg-fullname"
                         type="text"
@@ -340,7 +340,7 @@ export const AccountRegistrationModal: React.FC<
                         placeholder="e.g. Dave Miller"
                         value={fullName}
                         onChange={(e) => setFullName(e.target.value)}
-                        className="w-full bg-white border-2 border-[#0082FC] pl-9 pr-3 py-2 text-xs sm:text-sm font-bold text-[#0082FC] focus:outline-none focus:border-[#0565d6]"
+                        className="w-full bg-white border-2 border-[#3087ff] pl-9 pr-3 py-2 text-xs sm:text-sm font-bold text-[#3087ff] focus:outline-none focus:border-[#3087ff]"
                       />
                     </div>
                   </div>
@@ -348,12 +348,12 @@ export const AccountRegistrationModal: React.FC<
                   <div>
                     <label
                       htmlFor="reg-phone"
-                      className="block text-xs font-bold text-[#0082FC] uppercase mb-1"
+                      className="block text-xs font-bold text-[#3087ff] uppercase mb-1"
                     >
                       Direct Phone Number *
                     </label>
                     <div className="relative">
-                      <Phone className="w-4 h-4 text-[#0082FC] absolute left-3 top-3" />
+                      <Phone className="w-4 h-4 text-[#3087ff] absolute left-3 top-3" />
                       <input
                         id="reg-phone"
                         type="tel"
@@ -361,7 +361,7 @@ export const AccountRegistrationModal: React.FC<
                         placeholder="+1 (516) 252-1111"
                         value={phone}
                         onChange={(e) => setPhone(e.target.value)}
-                        className="w-full bg-white border-2 border-[#0082FC] pl-9 pr-3 py-2 text-xs sm:text-sm font-bold text-[#0082FC] focus:outline-none focus:border-[#0565d6]"
+                        className="w-full bg-white border-2 border-[#3087ff] pl-9 pr-3 py-2 text-xs sm:text-sm font-bold text-[#3087ff] focus:outline-none focus:border-[#3087ff]"
                       />
                     </div>
                   </div>
@@ -370,7 +370,7 @@ export const AccountRegistrationModal: React.FC<
                 <div>
                   <label
                     htmlFor="reg-type"
-                    className="block text-xs font-bold text-[#0082FC] uppercase mb-1"
+                    className="block text-xs font-bold text-[#3087ff] uppercase mb-1"
                   >
                     Business Classification *
                   </label>
@@ -378,7 +378,7 @@ export const AccountRegistrationModal: React.FC<
                     id="reg-type"
                     value={accountType}
                     onChange={(e: any) => setAccountType(e.target.value)}
-                    className="w-full bg-white border-2 border-[#0082FC] px-3 py-2 text-xs sm:text-sm font-bold text-[#0082FC] focus:outline-none focus:border-[#0565d6]"
+                    className="w-full bg-white border-2 border-[#3087ff] px-3 py-2 text-xs sm:text-sm font-bold text-[#3087ff] focus:outline-none focus:border-[#3087ff]"
                   >
                     <option value="Contractor">
                       Civil / Waterworks Utility Contractor
@@ -403,12 +403,12 @@ export const AccountRegistrationModal: React.FC<
                 <div>
                   <label
                     htmlFor="reg-taxid"
-                    className="block text-xs font-bold text-[#0082FC] uppercase mb-1"
+                    className="block text-xs font-bold text-[#3087ff] uppercase mb-1"
                   >
                     Federal Tax ID (EIN) or State Contractor License # *
                   </label>
                   <div className="relative">
-                    <ShieldCheck className="w-4 h-4 text-[#0082FC] absolute left-3 top-3" />
+                    <ShieldCheck className="w-4 h-4 text-[#3087ff] absolute left-3 top-3" />
                     <input
                       id="reg-taxid"
                       type="text"
@@ -416,10 +416,10 @@ export const AccountRegistrationModal: React.FC<
                       placeholder="e.g. 11-0933871 or LIC-948102"
                       value={taxId}
                       onChange={(e) => setTaxId(e.target.value)}
-                      className="w-full bg-white border-2 border-[#0082FC] pl-9 pr-3 py-2 text-xs sm:text-sm font-mono font-bold text-[#0082FC] focus:outline-none focus:border-[#0565d6]"
+                      className="w-full bg-white border-2 border-[#3087ff] pl-9 pr-3 py-2 text-xs sm:text-sm font-mono font-bold text-[#3087ff] focus:outline-none focus:border-[#3087ff]"
                     />
                   </div>
-                  <span className="text-[11px] text-[#0082FC]/75 mt-0.5 block">
+                  <span className="text-[11px] text-[#3087ff]/75 mt-0.5 block">
                     Used by Super-Admin to verify contractor qualification
                     before approval.
                   </span>
@@ -428,7 +428,7 @@ export const AccountRegistrationModal: React.FC<
                 <div>
                   <label
                     htmlFor="reg-yard"
-                    className="block text-xs font-bold text-[#0082FC] uppercase mb-1"
+                    className="block text-xs font-bold text-[#3087ff] uppercase mb-1"
                   >
                     Primary Distribution Hub Allocation *
                   </label>
@@ -436,7 +436,7 @@ export const AccountRegistrationModal: React.FC<
                     id="reg-yard"
                     value={assignedYard}
                     onChange={(e) => setAssignedYard(e.target.value)}
-                    className="w-full bg-white border-2 border-[#0082FC] px-3 py-2 text-xs sm:text-sm font-bold text-[#0082FC] focus:outline-none focus:border-[#0565d6]"
+                    className="w-full bg-white border-2 border-[#3087ff] px-3 py-2 text-xs sm:text-sm font-bold text-[#3087ff] focus:outline-none focus:border-[#3087ff]"
                   >
                     {DISTRIBUTION_YARDS.map((yard) => (
                       <option key={yard.id} value={yard.id}>
@@ -447,7 +447,7 @@ export const AccountRegistrationModal: React.FC<
                   </select>
                 </div>
 
-                <div className="p-3 bg-[#0565d6]/20 border border-[#0082FC] text-xs text-[#0082FC]">
+                <div className="p-3 bg-[#3087ff]/20 border border-[#3087ff] text-xs text-[#3087ff]">
                   <strong>Dispatch Policy:</strong> Your designated hub
                   determines shipping transit time, rail siding access, and
                   flatbed freight rates.
@@ -461,12 +461,12 @@ export const AccountRegistrationModal: React.FC<
                 <div>
                   <label
                     htmlFor="reg-email"
-                    className="block text-xs font-bold text-[#0082FC] uppercase mb-1"
+                    className="block text-xs font-bold text-[#3087ff] uppercase mb-1"
                   >
                     Business Login Email *
                   </label>
                   <div className="relative">
-                    <Mail className="w-4 h-4 text-[#0082FC] absolute left-3 top-3" />
+                    <Mail className="w-4 h-4 text-[#3087ff] absolute left-3 top-3" />
                     <input
                       id="reg-email"
                       type="email"
@@ -474,7 +474,7 @@ export const AccountRegistrationModal: React.FC<
                       placeholder="e.g. purchasing@company.com"
                       value={email}
                       onChange={(e) => setEmail(e.target.value)}
-                      className="w-full bg-white border-2 border-[#0082FC] pl-9 pr-3 py-2 text-xs sm:text-sm font-bold text-[#0082FC] focus:outline-none focus:border-[#0565d6]"
+                      className="w-full bg-white border-2 border-[#3087ff] pl-9 pr-3 py-2 text-xs sm:text-sm font-bold text-[#3087ff] focus:outline-none focus:border-[#3087ff]"
                     />
                   </div>
                 </div>
@@ -482,12 +482,12 @@ export const AccountRegistrationModal: React.FC<
                 <div>
                   <label
                     htmlFor="reg-password"
-                    className="block text-xs font-bold text-[#0082FC] uppercase mb-1"
+                    className="block text-xs font-bold text-[#3087ff] uppercase mb-1"
                   >
                     Create Account Password *
                   </label>
                   <div className="relative">
-                    <Lock className="w-4 h-4 text-[#0082FC] absolute left-3 top-3" />
+                    <Lock className="w-4 h-4 text-[#3087ff] absolute left-3 top-3" />
                     <input
                       id="reg-password"
                       type={showPassword ? "text" : "password"}
@@ -495,12 +495,12 @@ export const AccountRegistrationModal: React.FC<
                       placeholder="••••••••••••"
                       value={password}
                       onChange={(e) => setPassword(e.target.value)}
-                      className="w-full bg-white border-2 border-[#0082FC] pl-9 pr-10 py-2 text-xs sm:text-sm font-bold text-[#0082FC] focus:outline-none focus:border-[#0565d6]"
+                      className="w-full bg-white border-2 border-[#3087ff] pl-9 pr-10 py-2 text-xs sm:text-sm font-bold text-[#3087ff] focus:outline-none focus:border-[#3087ff]"
                     />
                     <button
                       type="button"
                       onClick={() => setShowPassword(!showPassword)}
-                      className="absolute right-2.5 top-1/2 -translate-y-1/2 p-1 text-[#0082FC] hover:text-[#0565d6] transition-colors cursor-pointer"
+                      className="absolute right-2.5 top-1/2 -translate-y-1/2 p-1 text-[#3087ff] hover:text-[#3087ff] transition-colors cursor-pointer"
                       title={showPassword ? "Hide password" : "Show password"}
                       aria-label={
                         showPassword ? "Hide password" : "Show password"
@@ -516,15 +516,15 @@ export const AccountRegistrationModal: React.FC<
                 </div>
 
                 {/* Document Verification Checkboxes */}
-                <div className="space-y-2 pt-1 border-t border-[#0082FC]/20">
+                <div className="space-y-2 pt-1 border-t border-[#3087ff]/20">
                   <label className="flex items-start gap-2.5 cursor-pointer">
                     <input
                       type="checkbox"
                       checked={w9Uploaded}
                       onChange={(e) => setW9Uploaded(e.target.checked)}
-                      className="mt-0.5 accent-[#0082FC] w-4 h-4"
+                      className="mt-0.5 accent-[#3087ff] w-4 h-4"
                     />
-                    <span className="text-xs text-[#0082FC] font-medium leading-tight">
+                    <span className="text-xs text-[#3087ff] font-medium leading-tight">
                       <strong>W-9 Taxpayer Certification:</strong> I certify our
                       entity has an active IRS W-9 form on file for wholesale
                       waterworks purchases.
@@ -536,9 +536,9 @@ export const AccountRegistrationModal: React.FC<
                       type="checkbox"
                       checked={resaleUploaded}
                       onChange={(e) => setResaleUploaded(e.target.checked)}
-                      className="mt-0.5 accent-[#0082FC] w-4 h-4"
+                      className="mt-0.5 accent-[#3087ff] w-4 h-4"
                     />
-                    <span className="text-xs text-[#0082FC] font-medium leading-tight">
+                    <span className="text-xs text-[#3087ff] font-medium leading-tight">
                       <strong>State Resale / Exemption Certificate:</strong> I
                       acknowledge sales tax exemption requires proof of resale
                       certificate submission.
@@ -559,12 +559,12 @@ export const AccountRegistrationModal: React.FC<
             )}
 
             {/* Modal Controls */}
-            <div className="flex items-center justify-between pt-4 border-t-2 border-[#0565d6]/30">
+            <div className="flex items-center justify-between pt-4 border-t-2 border-[#3087ff]/30">
               {currentStep > 1 ? (
                 <button
                   type="button"
                   onClick={handlePrevStep}
-                  className="inline-flex items-center gap-1.5 px-4 py-2.5 bg-white text-[#0082FC] border-2 border-[#0082FC] text-xs font-bold uppercase hover:bg-[#0565d6]/20 transition-colors cursor-pointer"
+                  className="inline-flex items-center gap-1.5 px-4 py-2.5 bg-white text-[#3087ff] border-2 border-[#3087ff] text-xs font-bold uppercase hover:bg-[#3087ff]/20 transition-colors cursor-pointer"
                 >
                   <ArrowLeft className="w-3.5 h-3.5" />
                   <span>Previous</span>
@@ -576,7 +576,7 @@ export const AccountRegistrationModal: React.FC<
               <button
                 type="submit"
                 disabled={isSubmitting}
-                className="inline-flex items-center gap-2 px-6 py-2.5 bg-[#0082FC] hover:bg-[#0565d6] text-white hover:text-[#0082FC] font-black text-xs sm:text-sm uppercase tracking-wider rounded-none shadow-md transition-all cursor-pointer"
+                className="inline-flex items-center gap-2 px-6 py-2.5 bg-[#3087ff] hover:bg-[#3087ff] text-white hover:text-[#3087ff] font-black text-xs sm:text-sm uppercase tracking-wider rounded-none shadow-md transition-all cursor-pointer"
               >
                 <span>
                   {currentStep === 3

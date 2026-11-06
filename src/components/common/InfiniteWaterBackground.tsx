@@ -77,7 +77,7 @@ export const InfiniteWaterBackground: React.FC<
           className="absolute inset-0 w-full h-full gpu-water-drift"
           style={{
             backgroundImage:
-              "radial-gradient(ellipse at 30% 20%, rgba(95, 212, 253, 0.45) 0%, transparent 55%), radial-gradient(ellipse at 70% 80%, rgba(0, 130, 252, 0.5) 0%, transparent 60%)",
+              "radial-gradient(ellipse at 30% 20%, rgba(48, 135, 255, 0.45) 0%, transparent 55%), radial-gradient(ellipse at 70% 80%, rgba(48, 135, 255, 0.5) 0%, transparent 60%)",
           }}
         />
 
@@ -86,7 +86,7 @@ export const InfiniteWaterBackground: React.FC<
           className="absolute inset-0 w-full h-full gpu-water-layer-1 opacity-40 mix-blend-screen pointer-events-none"
           style={{
             backgroundImage:
-              "radial-gradient(circle at 45% 40%, rgba(95, 212, 253, 0.4) 0%, transparent 65%)",
+              "radial-gradient(circle at 45% 40%, rgba(48, 135, 255, 0.4) 0%, transparent 65%)",
           }}
         />
 
@@ -124,7 +124,7 @@ export const InfiniteWaterBackground: React.FC<
           className="absolute inset-0 w-full h-full opacity-15 pointer-events-none"
           style={{
             backgroundImage:
-              "radial-gradient(#0565d6 1.2px, transparent 1.2px), radial-gradient(#FFFFFF 1px, transparent 1px)",
+              "radial-gradient(#3087ff 1.2px, transparent 1.2px), radial-gradient(#FFFFFF 1px, transparent 1px)",
             backgroundSize: "48px 48px, 24px 24px",
             backgroundPosition: "0 0, 12px 12px",
           }}

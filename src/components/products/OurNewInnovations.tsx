@@ -349,7 +349,7 @@ export const OurNewInnovations: React.FC<OurNewInnovationsProps> = ({
     <section
       id="our-new-innovations"
       aria-label="3rd Showcase: Our New Innovations"
-      className="py-14 sm:py-20 bg-[#0082FC] text-white border-b-4 border-[#0565d6] relative overflow-hidden"
+      className="py-14 sm:py-20 bg-[#3087ff] text-white border-b-4 border-[#3087ff] relative overflow-hidden"
     >
       {/* Background Architectural Grid Lines */}
       <div
@@ -367,13 +367,13 @@ export const OurNewInnovations: React.FC<OurNewInnovationsProps> = ({
         ======================================================== */}
         <div className="flex flex-col lg:flex-row lg:items-end justify-between gap-6 mb-6 sm:mb-8 border-b-2 border-white/20 pb-5">
           <div className="max-w-3xl">
-            <div className="inline-flex items-center gap-2 px-3 py-1 bg-white text-[#0082FC] text-xs font-bold uppercase tracking-wider rounded-none mb-3 shadow-md border-2 border-[#0565d6]">
-              <Sparkles className="w-3.5 h-3.5 text-[#0082FC] shrink-0" />
+            <div className="inline-flex items-center gap-2 px-3 py-1 bg-white text-[#3087ff] text-xs font-bold uppercase tracking-wider rounded-none mb-3 shadow-md border-2 border-[#3087ff]">
+              <Sparkles className="w-3.5 h-3.5 text-[#3087ff] shrink-0" />
               <span>3rd Product Showcase &bull; Authentic Foundry Tooling</span>
             </div>
 
             <h2 className="text-2xl sm:text-4xl lg:text-5xl font-black uppercase tracking-tight text-white leading-[1.05] mb-2">
-              OUR NEW <span className="text-[#0565d6]">INNOVATIONS</span>
+              OUR NEW <span className="text-[#3087ff]">INNOVATIONS</span>
             </h2>
 
             <p className="text-xs sm:text-sm text-white/90 font-normal leading-relaxed">
@@ -386,7 +386,7 @@ export const OurNewInnovations: React.FC<OurNewInnovationsProps> = ({
 
           <div className="flex items-center gap-2 self-start lg:self-end">
             <div className="px-3.5 py-2 bg-white/10 border-2 border-white/30 text-white text-xs font-bold uppercase tracking-wider flex items-center gap-2 backdrop-blur-sm shadow-sm whitespace-nowrap">
-              <Sliders className="w-4 h-4 text-[#0565d6]" />
+              <Sliders className="w-4 h-4 text-[#3087ff]" />
               <span>CAD Hotspot Inspector</span>
             </div>
           </div>
@@ -395,7 +395,7 @@ export const OurNewInnovations: React.FC<OurNewInnovationsProps> = ({
         {/* ========================================================
             1. HORIZONTAL 4-ITEM SELECTOR BAR (NO SCROLLBAR, Grid)
         ======================================================== */}
-        <div className="w-full mb-6 bg-white/10 p-1.5 border-2 border-[#0565d6] backdrop-blur-md grid grid-cols-2 md:grid-cols-4 gap-1.5 sm:gap-2">
+        <div className="w-full mb-6 bg-white/10 p-1.5 border-2 border-[#3087ff] backdrop-blur-md grid grid-cols-2 md:grid-cols-4 gap-1.5 sm:gap-2">
           {INNOVATIONS.map((item, idx) => {
             const isSelected = selectedIndex === idx;
             return (
@@ -407,13 +407,13 @@ export const OurNewInnovations: React.FC<OurNewInnovationsProps> = ({
                   setActiveHotspot(null);
                 }}
                 className={`flex-1 py-2 sm:py-2.5 px-2 sm:px-3 text-center transition-all rounded-none cursor-pointer border-2 whitespace-nowrap flex-nowrap shrink-0 flex items-center justify-center gap-1.5 sm:gap-2 ${isSelected
-                    ? "bg-white text-[#0082FC] border-white shadow-lg"
+                    ? "bg-white text-[#3087ff] border-white shadow-lg"
                     : "bg-transparent text-white border-transparent hover:bg-white/10 hover:border-white/30"
                   }`}
               >
                 <span
                   className={`text-[10px] font-black uppercase px-1.5 py-0.5 shrink-0 ${isSelected
-                      ? "bg-[#0082FC] text-white"
+                      ? "bg-[#3087ff] text-white"
                       : "bg-white/20 text-white"
                     }`}
                 >
@@ -426,8 +426,8 @@ export const OurNewInnovations: React.FC<OurNewInnovationsProps> = ({
                 </span>
                 <span
                   className={`text-[9px] font-bold uppercase px-1.5 py-0.5 hidden md:inline-block shrink-0 ${isSelected
-                      ? "bg-[#0082FC]/10 text-[#0082FC]"
-                      : "bg-white/10 text-[#0565d6]"
+                      ? "bg-[#3087ff]/10 text-[#3087ff]"
+                      : "bg-white/10 text-[#3087ff]"
                     }`}
                 >
                   {item.badge}
@@ -440,10 +440,10 @@ export const OurNewInnovations: React.FC<OurNewInnovationsProps> = ({
         {/* ========================================================
             2. UNIFIED HORIZONTAL INNOVATION HEADER RIBBON
         ======================================================== */}
-        <div className="mb-6 p-4 sm:p-5 bg-white/10 border-2 border-[#0565d6] backdrop-blur-md flex flex-col md:flex-row md:items-center justify-between gap-4">
+        <div className="mb-6 p-4 sm:p-5 bg-white/10 border-2 border-[#3087ff] backdrop-blur-md flex flex-col md:flex-row md:items-center justify-between gap-4">
           <div className="min-w-0">
             <div className="flex items-center gap-2 mb-1.5">
-              <span className="text-[10px] font-black uppercase tracking-wider bg-[#0565d6] text-[#0082FC] px-2 py-0.5">
+              <span className="text-[10px] font-black uppercase tracking-wider bg-[#3087ff] text-[#3087ff] px-2 py-0.5">
                 Innovation #{currentItem.number}
               </span>
               <span className="text-[11px] font-bold text-white/90 uppercase tracking-wide">
@@ -459,10 +459,10 @@ export const OurNewInnovations: React.FC<OurNewInnovationsProps> = ({
           </div>
 
           <div className="flex items-center gap-2 shrink-0 self-start md:self-center">
-            <span className="px-3 py-1.5 bg-white text-[#0082FC] text-xs font-black uppercase tracking-wider border-2 border-[#0565d6] shadow-sm">
+            <span className="px-3 py-1.5 bg-white text-[#3087ff] text-xs font-black uppercase tracking-wider border-2 border-[#3087ff] shadow-sm">
               {currentItem.badge}
             </span>
-            <span className="px-3 py-1.5 bg-[#0082FC] text-white text-xs font-black uppercase tracking-wider border-2 border-[#0565d6]">
+            <span className="px-3 py-1.5 bg-[#3087ff] text-white text-xs font-black uppercase tracking-wider border-2 border-[#3087ff]">
               {currentItem.spec}
             </span>
           </div>
@@ -473,14 +473,14 @@ export const OurNewInnovations: React.FC<OurNewInnovationsProps> = ({
         ======================================================== */}
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-6 lg:gap-8 items-stretch">
           {/* LEFT COLUMN: Visual & Hotspot Inspector (6 cols) */}
-          <div className="lg:col-span-6 flex flex-col justify-between h-full bg-white border-4 border-[#0565d6] p-5 sm:p-6 shadow-2xl relative text-[#0082FC]">
+          <div className="lg:col-span-6 flex flex-col justify-between h-full bg-white border-4 border-[#3087ff] p-5 sm:p-6 shadow-2xl relative text-[#3087ff]">
             {/* Top Bar inside Left Card: View Mode Switcher */}
-            <div className="flex items-center justify-between gap-2 border-2 border-[#0082FC] p-1 bg-[#0082FC] mb-4">
+            <div className="flex items-center justify-between gap-2 border-2 border-[#3087ff] p-1 bg-[#3087ff] mb-4">
               <button
                 type="button"
                 onClick={() => setViewMode("photo")}
                 className={`flex-1 py-1.5 px-3 text-xs font-black uppercase tracking-wider transition-all rounded-none cursor-pointer text-center ${viewMode === "photo"
-                    ? "bg-white text-[#0082FC] shadow-sm"
+                    ? "bg-white text-[#3087ff] shadow-sm"
                     : "text-white hover:bg-white/10"
                   }`}
               >
@@ -491,7 +491,7 @@ export const OurNewInnovations: React.FC<OurNewInnovationsProps> = ({
                 type="button"
                 onClick={() => setViewMode("blueprint")}
                 className={`flex-1 py-1.5 px-3 text-xs font-black uppercase tracking-wider transition-all rounded-none cursor-pointer flex items-center justify-center gap-1.5 ${viewMode === "blueprint"
-                    ? "bg-white text-[#0082FC] shadow-sm"
+                    ? "bg-white text-[#3087ff] shadow-sm"
                     : "text-white hover:bg-white/10"
                   }`}
               >
@@ -502,10 +502,10 @@ export const OurNewInnovations: React.FC<OurNewInnovationsProps> = ({
 
             {/* Floating Upper Detail Popup (Absolute Overlay - Zero Layout Displacement) */}
             {activeHotspot !== null && activeSpotData && (
-              <div className="absolute inset-x-4 sm:inset-x-6 top-16 z-30 bg-[#0082FC]/95 border-2 border-[#0565d6] p-4 text-left shadow-2xl text-white backdrop-blur-md animate-in fade-in zoom-in-95 duration-200">
+              <div className="absolute inset-x-4 sm:inset-x-6 top-16 z-30 bg-[#3087ff]/95 border-2 border-[#3087ff] p-4 text-left shadow-2xl text-white backdrop-blur-md animate-in fade-in zoom-in-95 duration-200">
                 <div className="flex items-center justify-between gap-3 mb-2">
                   <div className="flex items-center gap-2">
-                    <span className="w-6 h-6 bg-white text-[#0082FC] flex items-center justify-center font-black text-xs shadow-sm">
+                    <span className="w-6 h-6 bg-white text-[#3087ff] flex items-center justify-center font-black text-xs shadow-sm">
                       {activeHotspot}
                     </span>
                     <span className="font-black text-xs sm:text-sm uppercase tracking-tight text-white">
@@ -513,13 +513,13 @@ export const OurNewInnovations: React.FC<OurNewInnovationsProps> = ({
                     </span>
                   </div>
                   <div className="flex items-center gap-2">
-                    <span className="text-[10px] bg-[#0565d6] text-[#0082FC] font-black px-2 py-0.5 whitespace-nowrap shadow-xs">
+                    <span className="text-[10px] bg-[#3087ff] text-[#3087ff] font-black px-2 py-0.5 whitespace-nowrap shadow-xs">
                       {activeSpotData.badge}
                     </span>
                     <button
                       type="button"
                       onClick={() => setActiveHotspot(null)}
-                      className="w-6 h-6 bg-white/20 hover:bg-white text-white hover:text-[#0082FC] flex items-center justify-center font-bold text-xs transition-colors cursor-pointer"
+                      className="w-6 h-6 bg-white/20 hover:bg-white text-white hover:text-[#3087ff] flex items-center justify-center font-bold text-xs transition-colors cursor-pointer"
                       title="Close Popup"
                     >
                       ✕
@@ -529,7 +529,7 @@ export const OurNewInnovations: React.FC<OurNewInnovationsProps> = ({
                 <p className="text-xs leading-relaxed text-white/95 font-medium mb-2.5">
                   {activeSpotData.desc}
                 </p>
-                <div className="flex items-center justify-between border-t border-white/20 pt-2 text-[10px] text-[#0565d6] font-bold uppercase">
+                <div className="flex items-center justify-between border-t border-white/20 pt-2 text-[10px] text-[#3087ff] font-bold uppercase">
                   <span>Feature Point {activeHotspot} of 4</span>
                   <button
                     type="button"
@@ -564,8 +564,8 @@ export const OurNewInnovations: React.FC<OurNewInnovationsProps> = ({
                       }
                       style={{ left: spot.x, top: spot.y }}
                       className={`absolute z-30 w-7 h-7 -translate-x-1/2 -translate-y-1/2 rounded-none border-2 flex items-center justify-center font-black text-xs shadow-xl transition-all hover:scale-125 cursor-pointer ${activeHotspot === spot.id
-                          ? "bg-[#0082FC] text-white border-white scale-125 ring-4 ring-[#0565d6]"
-                          : "bg-white text-[#0082FC] border-[#0082FC] hover:bg-[#0565d6]/30"
+                          ? "bg-[#3087ff] text-white border-white scale-125 ring-4 ring-[#3087ff]"
+                          : "bg-white text-[#3087ff] border-[#3087ff] hover:bg-[#3087ff]/30"
                         }`}
                       title={spot.title}
                       aria-label={spot.title}
@@ -589,17 +589,17 @@ export const OurNewInnovations: React.FC<OurNewInnovationsProps> = ({
                         y="40"
                         width="240"
                         height="140"
-                        stroke="#0082FC"
+                        stroke="#3087ff"
                         strokeWidth="2"
                         strokeDasharray="4 2"
-                        fill="#0082FC"
+                        fill="#3087ff"
                         fillOpacity="0.05"
                       />
                       <circle
                         cx="160"
                         cy="110"
                         r="60"
-                        stroke="#0565d6"
+                        stroke="#3087ff"
                         strokeWidth="1.5"
                         strokeDasharray="6 3"
                       />
@@ -607,7 +607,7 @@ export const OurNewInnovations: React.FC<OurNewInnovationsProps> = ({
                         cx="160"
                         cy="110"
                         r="35"
-                        stroke="#0082FC"
+                        stroke="#3087ff"
                         strokeWidth="2"
                       />
                       <line
@@ -615,7 +615,7 @@ export const OurNewInnovations: React.FC<OurNewInnovationsProps> = ({
                         y1="10"
                         x2="160"
                         y2="50"
-                        stroke="#0082FC"
+                        stroke="#3087ff"
                         strokeWidth="3"
                       />
                       <line
@@ -623,7 +623,7 @@ export const OurNewInnovations: React.FC<OurNewInnovationsProps> = ({
                         y1="10"
                         x2="80"
                         y2="50"
-                        stroke="#0082FC"
+                        stroke="#3087ff"
                         strokeWidth="2"
                       />
                       <line
@@ -631,14 +631,14 @@ export const OurNewInnovations: React.FC<OurNewInnovationsProps> = ({
                         y1="10"
                         x2="240"
                         y2="50"
-                        stroke="#0082FC"
+                        stroke="#3087ff"
                         strokeWidth="2"
                       />
                       <text
                         x="160"
                         y="115"
                         textAnchor="middle"
-                        fill="#0082FC"
+                        fill="#3087ff"
                         fontSize="10"
                         fontWeight="bold"
                       >
@@ -648,7 +648,7 @@ export const OurNewInnovations: React.FC<OurNewInnovationsProps> = ({
                         x="160"
                         y="170"
                         textAnchor="middle"
-                        fill="#0082FC"
+                        fill="#3087ff"
                         fontSize="9"
                         fontWeight="bold"
                       >
@@ -657,9 +657,9 @@ export const OurNewInnovations: React.FC<OurNewInnovationsProps> = ({
                     </svg>
                   </div>
 
-                  <div className="w-full flex items-center justify-between border-t border-[#0082FC]/20 pt-2 text-xs font-bold text-[#0082FC]">
+                  <div className="w-full flex items-center justify-between border-t border-[#3087ff]/20 pt-2 text-xs font-bold text-[#3087ff]">
                     <span>Metallurgy: {currentItem.metallurgy}</span>
-                    <span className="bg-[#0565d6]/30 px-2 py-0.5 border border-[#0082FC]">
+                    <span className="bg-[#3087ff]/30 px-2 py-0.5 border border-[#3087ff]">
                       AASHTO M306 Proof
                     </span>
                   </div>
@@ -668,13 +668,13 @@ export const OurNewInnovations: React.FC<OurNewInnovationsProps> = ({
             </div>
 
             {/* Bottom Strip of Left Card */}
-            <div className="w-full mt-3 pt-3 border-t border-[#0082FC]/20 flex flex-wrap items-center justify-between gap-2 text-xs font-bold text-[#0082FC]">
+            <div className="w-full mt-3 pt-3 border-t border-[#3087ff]/20 flex flex-wrap items-center justify-between gap-2 text-xs font-bold text-[#3087ff]">
               <span className="flex items-center gap-1.5">
-                <CheckCircle2 className="w-4 h-4 text-[#0082FC]" />
+                <CheckCircle2 className="w-4 h-4 text-[#3087ff]" />
                 ASTM A48 Class 35B Heavy Casting
               </span>
               <span className="flex items-center gap-1.5">
-                <ShieldCheck className="w-4 h-4 text-[#0082FC]" />
+                <ShieldCheck className="w-4 h-4 text-[#3087ff]" />
                 AASHTO H-20 Highway Proof
               </span>
             </div>
@@ -687,9 +687,9 @@ export const OurNewInnovations: React.FC<OurNewInnovationsProps> = ({
               {currentItem.features.map((feat) => (
                 <div
                   key={feat}
-                  className="p-3 bg-white/10 border border-[#0565d6]/60 flex items-start gap-2 shadow-xs backdrop-blur-sm"
+                  className="p-3 bg-white/10 border border-[#3087ff]/60 flex items-start gap-2 shadow-xs backdrop-blur-sm"
                 >
-                  <CheckCircle2 className="w-4 h-4 text-[#0565d6] shrink-0 mt-0.5" />
+                  <CheckCircle2 className="w-4 h-4 text-[#3087ff] shrink-0 mt-0.5" />
                   <span className="text-xs font-medium text-white/95 leading-snug">
                     {feat}
                   </span>
@@ -698,12 +698,12 @@ export const OurNewInnovations: React.FC<OurNewInnovationsProps> = ({
             </div>
 
             {/* Technical Submittal Matrix */}
-            <div className="border-2 border-[#0565d6] bg-white/10 shadow-md backdrop-blur-sm flex-1 flex flex-col justify-between">
-              <div className="px-4 py-2 bg-white text-[#0082FC] flex justify-between items-center">
+            <div className="border-2 border-[#3087ff] bg-white/10 shadow-md backdrop-blur-sm flex-1 flex flex-col justify-between">
+              <div className="px-4 py-2 bg-white text-[#3087ff] flex justify-between items-center">
                 <span className="text-xs font-bold uppercase tracking-wider">
                   Engineering Submittal Specifications
                 </span>
-                <span className="text-xs font-semibold text-[#0082FC]">
+                <span className="text-xs font-semibold text-[#3087ff]">
                   {currentItem.standards.split("•")[0]}
                 </span>
               </div>
@@ -742,7 +742,7 @@ export const OurNewInnovations: React.FC<OurNewInnovationsProps> = ({
                   <span className="text-white/80 font-normal">
                     Domestic Compliance:
                   </span>
-                  <span className="text-[#0565d6] font-bold text-right">
+                  <span className="text-[#3087ff] font-bold text-right">
                     100% AIS / Buy America Certified
                   </span>
                 </div>
@@ -754,16 +754,16 @@ export const OurNewInnovations: React.FC<OurNewInnovationsProps> = ({
               <button
                 type="button"
                 onClick={() => handleAdd(currentItem)}
-                className="flex-1 px-5 py-3.5 bg-white hover:bg-[#0565d6] text-[#0082FC] font-bold text-xs sm:text-sm rounded-none shadow-md transition-all whitespace-nowrap text-center uppercase tracking-wide cursor-pointer flex items-center justify-center gap-2"
+                className="flex-1 px-5 py-3.5 bg-white hover:bg-[#3087ff] text-[#3087ff] font-bold text-xs sm:text-sm rounded-none shadow-md transition-all whitespace-nowrap text-center uppercase tracking-wide cursor-pointer flex items-center justify-center gap-2"
               >
                 {addedIds[currentItem.id] ? (
                   <>
-                    <Check className="w-4 h-4 text-[#0082FC] stroke-[3]" />
+                    <Check className="w-4 h-4 text-[#3087ff] stroke-[3]" />
                     <span>Added to RFQ Quote</span>
                   </>
                 ) : (
                   <>
-                    <Plus className="w-4 h-4 text-[#0082FC] stroke-[2.5]" />
+                    <Plus className="w-4 h-4 text-[#3087ff] stroke-[2.5]" />
                     <span>+ Add {currentItem.name.split(" ")[0]} to Quote</span>
                   </>
                 )}
@@ -774,9 +774,9 @@ export const OurNewInnovations: React.FC<OurNewInnovationsProps> = ({
                 onClick={() =>
                   onPreviewSubmittal(findCatalogProduct(currentItem))
                 }
-                className="flex-1 px-5 py-3.5 bg-[#0082FC] hover:bg-white text-[#0565d6] hover:text-[#0082FC] font-bold text-xs sm:text-sm rounded-none border-2 border-[#0565d6] transition-all whitespace-nowrap text-center inline-flex items-center justify-center gap-2 uppercase tracking-wide cursor-pointer"
+                className="flex-1 px-5 py-3.5 bg-[#3087ff] hover:bg-white text-[#3087ff] hover:text-[#3087ff] font-bold text-xs sm:text-sm rounded-none border-2 border-[#3087ff] transition-all whitespace-nowrap text-center inline-flex items-center justify-center gap-2 uppercase tracking-wide cursor-pointer"
               >
-                <FileCheck2 className="w-4 h-4 text-[#0565d6] group-hover:text-[#0082FC]" />
+                <FileCheck2 className="w-4 h-4 text-[#3087ff] group-hover:text-[#3087ff]" />
                 <span>Download Submittal PDF</span>
               </button>
             </div>
@@ -787,24 +787,24 @@ export const OurNewInnovations: React.FC<OurNewInnovationsProps> = ({
         <div className="mt-10 pt-6 border-t border-white/20 flex flex-col md:flex-row items-center justify-between gap-4 text-xs sm:text-sm text-white font-normal">
           <div className="flex flex-wrap items-center justify-center md:justify-start gap-4 sm:gap-6">
             <div className="flex items-center gap-2 whitespace-nowrap">
-              <span className="w-2 h-2 bg-[#0565d6]" />
+              <span className="w-2 h-2 bg-[#3087ff]" />
               <span>Full ASTM A48 / A536 Foundry Melt Traceability</span>
             </div>
             <div className="flex items-center gap-2 whitespace-nowrap">
-              <span className="w-2 h-2 bg-[#0565d6]" />
+              <span className="w-2 h-2 bg-[#3087ff]" />
               <span>AASHTO H-20 &amp; M306 Highway Proof-Tested</span>
             </div>
             <div className="flex items-center gap-2 whitespace-nowrap">
-              <span className="w-2 h-2 bg-[#0565d6]" />
+              <span className="w-2 h-2 bg-[#3087ff]" />
               <span>Immediate Staging from Melville, NY &amp; FL Hubs</span>
             </div>
           </div>
 
           <a
             href="tel:+15162521111"
-            className="inline-flex items-center gap-2 text-xs sm:text-sm font-bold text-white hover:text-[#0565d6] transition-colors whitespace-nowrap bg-white/10 px-3.5 py-1.5 border border-[#0565d6]/50"
+            className="inline-flex items-center gap-2 text-xs sm:text-sm font-bold text-white hover:text-[#3087ff] transition-colors whitespace-nowrap bg-white/10 px-3.5 py-1.5 border border-[#3087ff]/50"
           >
-            <PhoneCall className="w-3.5 h-3.5 text-[#0565d6]" />
+            <PhoneCall className="w-3.5 h-3.5 text-[#3087ff]" />
             <span>Foundry Dispatch: +1 (516) 252-1111</span>
           </a>
         </div>

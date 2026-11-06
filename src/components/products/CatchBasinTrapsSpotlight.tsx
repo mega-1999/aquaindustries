@@ -233,7 +233,7 @@ Compliance: ${activeVariant.standards}
     <section
       id="catch-basin-traps"
       aria-label="Catch Basin Traps Spotlight"
-      className="py-16 sm:py-20 bg-[#0082FC] text-white border-b-4 border-white relative overflow-hidden"
+      className="py-16 sm:py-20 bg-[#3087ff] text-white border-b-4 border-white relative overflow-hidden"
     >
       {/* Background CAD Blueprint Grid */}
       <div className="absolute inset-0 bg-[linear-gradient(to_right,#ffffff10_1px,transparent_1px),linear-gradient(to_bottom,#ffffff10_1px,transparent_1px)] bg-[size:32px_32px] pointer-events-none" />
@@ -241,8 +241,8 @@ Compliance: ${activeVariant.standards}
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
         {/* Section Header */}
         <div className="text-center max-w-3xl mx-auto mb-10">
-          <div className="inline-flex items-center gap-2 px-3 py-1 bg-white text-[#0082FC] text-xs font-black uppercase tracking-widest border border-white mb-3">
-            <ShieldCheck className="w-4 h-4 text-[#0082FC]" />
+          <div className="inline-flex items-center gap-2 px-3 py-1 bg-white text-[#3087ff] text-xs font-black uppercase tracking-widest border border-white mb-3">
+            <ShieldCheck className="w-4 h-4 text-[#3087ff]" />
             <span>SECTION 1: MUNICIPAL STORMWATER GAS &amp; SIPHON TRAPS</span>
           </div>
 
@@ -258,13 +258,13 @@ Compliance: ${activeVariant.standards}
         </div>
 
         {/* Subvariant Switcher Bar (Select size to view ONLY that specific spec) */}
-        <div className="bg-white text-[#0082FC] border-2 border-white p-3 sm:p-4 mb-8 shadow-xl">
+        <div className="bg-white text-[#3087ff] border-2 border-white p-3 sm:p-4 mb-8 shadow-xl">
           <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-2 mb-3">
             <span className="text-xs font-black uppercase tracking-wider flex items-center gap-2">
               <Filter className="w-3.5 h-3.5" />
               <span>Select Catch Basin Outlet Size:</span>
             </span>
-            <span className="text-[10px] font-bold text-[#0082FC]/70 uppercase">
+            <span className="text-[10px] font-bold text-[#3087ff]/70 uppercase">
               {TRAP_VARIANTS.length} Calibrated Sizes Available
             </span>
           </div>
@@ -281,8 +281,8 @@ Compliance: ${activeVariant.standards}
                     setAdded(false);
                   }}
                   className={`px-4 py-2 text-xs font-black uppercase tracking-wider rounded-none border-2 transition-all flex items-center gap-2 cursor-pointer ${isActive
-                      ? "bg-[#0082FC] text-white border-[#0082FC] shadow-md scale-102"
-                      : "bg-white text-[#0082FC] border-[#0565d6] hover:border-[#0082FC] hover:bg-[#0565d6]/10"
+                      ? "bg-[#3087ff] text-white border-[#3087ff] shadow-md scale-102"
+                      : "bg-white text-[#3087ff] border-[#3087ff] hover:border-[#3087ff] hover:bg-[#3087ff]/10"
                     }`}
                 >
                   {isActive && <Check className="w-3.5 h-3.5 stroke-[3]" />}
@@ -290,7 +290,7 @@ Compliance: ${activeVariant.standards}
                   <span
                     className={`text-[9px] font-mono px-1 py-0.2 border ${isActive
                         ? "bg-white/20 border-white text-white"
-                        : "bg-[#0565d6]/15 border-[#0565d6] text-[#0082FC]"
+                        : "bg-[#3087ff]/15 border-[#3087ff] text-[#3087ff]"
                       }`}
                   >
                     {variant.catNumber}
@@ -302,13 +302,13 @@ Compliance: ${activeVariant.standards}
         </div>
 
         {/* Main Showcase Split Panel */}
-        <div className="bg-white text-[#0082FC] border-4 border-white p-6 sm:p-8 shadow-2xl">
+        <div className="bg-white text-[#3087ff] border-4 border-white p-6 sm:p-8 shadow-2xl">
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 items-center">
             {/* Left 6 Cols: Interactive Siphon Flow & Debris Trap Simulator */}
             <div className="lg:col-span-6 flex flex-col items-center">
               {/* Simulator Header & View Mode Switcher */}
               <div className="w-full flex items-center justify-between mb-2">
-                <span className="text-[10px] font-black uppercase tracking-wider bg-[#0565d6]/20 text-[#0082FC] px-2 py-0.5 border border-[#0082FC] flex items-center gap-1.5">
+                <span className="text-[10px] font-black uppercase tracking-wider bg-[#3087ff]/20 text-[#3087ff] px-2 py-0.5 border border-[#3087ff] flex items-center gap-1.5">
                   <Waves className="w-3 h-3" />
                   <span>Interactive Water Seal &amp; Siphon Simulator</span>
                 </span>
@@ -318,8 +318,8 @@ Compliance: ${activeVariant.standards}
                     type="button"
                     onClick={() => setViewMode("cad")}
                     className={`px-2 py-0.5 text-[10px] font-black uppercase border transition-colors cursor-pointer ${viewMode === "cad"
-                        ? "bg-[#0082FC] text-white border-[#0082FC]"
-                        : "bg-white text-[#0082FC] border-[#0565d6] hover:bg-[#0565d6]/10"
+                        ? "bg-[#3087ff] text-white border-[#3087ff]"
+                        : "bg-white text-[#3087ff] border-[#3087ff] hover:bg-[#3087ff]/10"
                       }`}
                   >
                     CAD Blueprint
@@ -328,8 +328,8 @@ Compliance: ${activeVariant.standards}
                     type="button"
                     onClick={() => setViewMode("photo")}
                     className={`px-2 py-0.5 text-[10px] font-black uppercase border transition-colors cursor-pointer ${viewMode === "photo"
-                        ? "bg-[#0082FC] text-white border-[#0082FC]"
-                        : "bg-white text-[#0082FC] border-[#0565d6] hover:bg-[#0565d6]/10"
+                        ? "bg-[#3087ff] text-white border-[#3087ff]"
+                        : "bg-white text-[#3087ff] border-[#3087ff] hover:bg-[#3087ff]/10"
                       }`}
                   >
                     Foundry Photo
@@ -338,7 +338,7 @@ Compliance: ${activeVariant.standards}
               </div>
 
               {/* Simulation Canvas Box */}
-              <div className="relative w-full h-80 bg-slate-900 border-2 border-[#0082FC] overflow-hidden flex items-center justify-center">
+              <div className="relative w-full h-80 bg-slate-900 border-2 border-[#3087ff] overflow-hidden flex items-center justify-center">
                 {viewMode === "photo" ? (
                   <div className="relative w-full h-full flex items-center justify-center p-4 bg-slate-800">
                     <Image
@@ -348,7 +348,7 @@ Compliance: ${activeVariant.standards}
                       className="object-contain p-4"
                       sizes="(max-width: 768px) 100vw, 50vw"
                     />
-                    <span className="absolute bottom-2 left-2 bg-[#0082FC] text-white px-2 py-0.5 text-[10px] font-mono font-bold">
+                    <span className="absolute bottom-2 left-2 bg-[#3087ff] text-white px-2 py-0.5 text-[10px] font-mono font-bold">
                       Foundry Pattern: {activeVariant.catNumber}
                     </span>
                   </div>
@@ -408,7 +408,7 @@ Compliance: ${activeVariant.standards}
                               ? "105"
                               : "145"
                         }
-                        fill="#0082fc"
+                        fill="#3087ff"
                         fillOpacity="0.45"
                         className="transition-all duration-700 ease-out"
                       />
@@ -451,7 +451,7 @@ Compliance: ${activeVariant.standards}
                               : "50"
                         }
                         r="4"
-                        fill="#3b82f6"
+                        fill="#3087ff"
                       />
                       <circle
                         cx="115"
@@ -486,7 +486,7 @@ Compliance: ${activeVariant.standards}
                       <path
                         d="M 130 50 L 270 50 L 270 130 L 220 130 Q 220 170 160 170 L 130 170 Z"
                         fill="#1e293b"
-                        stroke="#0565d6"
+                        stroke="#3087ff"
                         strokeWidth="3.5"
                       />
 
@@ -543,18 +543,18 @@ Compliance: ${activeVariant.standards}
                       {/* Subsurface Clean Water Path Flowing Under Baffle */}
                       <path
                         d="M 100 185 Q 145 185 175 145 L 290 90"
-                        stroke="#0565d6"
+                        stroke="#3087ff"
                         strokeWidth="3"
                         strokeDasharray="4 3"
                         className="animate-pulse"
                       />
-                      <polygon points="295,88 285,84 288,94" fill="#0565d6" />
+                      <polygon points="295,88 285,84 288,94" fill="#3087ff" />
 
                       <text
                         x="210"
                         y="105"
                         fontSize="8"
-                        fill="#0565d6"
+                        fill="#3087ff"
                         fontWeight="bold"
                       >
                         CLEAN WATER FLOW
@@ -566,9 +566,9 @@ Compliance: ${activeVariant.standards}
                         y="80"
                         width="45"
                         height="50"
-                        fill="#0082fc"
+                        fill="#3087ff"
                         fillOpacity="0.3"
-                        stroke="#0565d6"
+                        stroke="#3087ff"
                         strokeWidth="2"
                       />
                       <text
@@ -583,9 +583,9 @@ Compliance: ${activeVariant.standards}
                     </svg>
 
                     {/* Siphon Depth Indicator */}
-                    <div className="absolute top-2 left-2 bg-slate-900/90 text-white border border-[#0565d6] px-2 py-1 text-[10px] font-mono">
+                    <div className="absolute top-2 left-2 bg-slate-900/90 text-white border border-[#3087ff] px-2 py-1 text-[10px] font-mono">
                       <span>Siphon Seal: </span>
-                      <span className="text-[#0565d6] font-bold">
+                      <span className="text-[#3087ff] font-bold">
                         {waterStage === "low"
                           ? 'Seal Engaged (5.5")'
                           : waterStage === "normal"
@@ -598,17 +598,17 @@ Compliance: ${activeVariant.standards}
               </div>
 
               {/* Simulator Interactive Control Ribbon */}
-              <div className="w-full bg-[#0565d6]/15 border-2 border-[#0565d6] p-2.5 mt-3 flex flex-wrap items-center justify-between gap-2">
+              <div className="w-full bg-[#3087ff]/15 border-2 border-[#3087ff] p-2.5 mt-3 flex flex-wrap items-center justify-between gap-2">
                 <div className="flex items-center gap-1.5">
-                  <span className="text-[10px] font-black uppercase text-[#0082FC]">
+                  <span className="text-[10px] font-black uppercase text-[#3087ff]">
                     Water Inflow:
                   </span>
                   <button
                     type="button"
                     onClick={() => setWaterStage("low")}
                     className={`px-2 py-1 text-[10px] font-black uppercase border transition-colors cursor-pointer ${waterStage === "low"
-                        ? "bg-[#0082FC] text-white border-[#0082FC]"
-                        : "bg-white text-[#0082FC] border-[#0565d6]"
+                        ? "bg-[#3087ff] text-white border-[#3087ff]"
+                        : "bg-white text-[#3087ff] border-[#3087ff]"
                       }`}
                   >
                     Low Dry Run
@@ -617,8 +617,8 @@ Compliance: ${activeVariant.standards}
                     type="button"
                     onClick={() => setWaterStage("normal")}
                     className={`px-2 py-1 text-[10px] font-black uppercase border transition-colors cursor-pointer ${waterStage === "normal"
-                        ? "bg-[#0082FC] text-white border-[#0082FC]"
-                        : "bg-white text-[#0082FC] border-[#0565d6]"
+                        ? "bg-[#3087ff] text-white border-[#3087ff]"
+                        : "bg-white text-[#3087ff] border-[#3087ff]"
                       }`}
                   >
                     Normal Storm
@@ -627,8 +627,8 @@ Compliance: ${activeVariant.standards}
                     type="button"
                     onClick={() => setWaterStage("surge")}
                     className={`px-2 py-1 text-[10px] font-black uppercase border transition-colors cursor-pointer ${waterStage === "surge"
-                        ? "bg-[#0082FC] text-white border-[#0082FC]"
-                        : "bg-white text-[#0082FC] border-[#0565d6]"
+                        ? "bg-[#3087ff] text-white border-[#3087ff]"
+                        : "bg-white text-[#3087ff] border-[#3087ff]"
                       }`}
                   >
                     Peak Surge
@@ -640,7 +640,7 @@ Compliance: ${activeVariant.standards}
                   onClick={() => setCleanoutOpen((prev) => !prev)}
                   className={`px-2.5 py-1 text-[10px] font-black uppercase border transition-all flex items-center gap-1 cursor-pointer ${cleanoutOpen
                       ? "bg-red-600 text-white border-red-600 animate-pulse"
-                      : "bg-white text-[#0082FC] border-[#0082FC] hover:bg-[#0082FC] hover:text-white"
+                      : "bg-white text-[#3087ff] border-[#3087ff] hover:bg-[#3087ff] hover:text-white"
                     }`}
                 >
                   <Wrench className="w-3 h-3" />
@@ -656,83 +656,83 @@ Compliance: ${activeVariant.standards}
               <div>
                 {/* Badges */}
                 <div className="flex flex-wrap items-center gap-2 mb-2">
-                  <span className="bg-[#0082FC] text-white px-2.5 py-0.5 text-[10px] font-black uppercase tracking-wider">
+                  <span className="bg-[#3087ff] text-white px-2.5 py-0.5 text-[10px] font-black uppercase tracking-wider">
                     {activeVariant.tag}
                   </span>
-                  <span className="bg-[#0565d6]/20 border border-[#0082FC] text-[#0082FC] px-2 py-0.5 text-[10px] font-black uppercase tracking-wider">
+                  <span className="bg-[#3087ff]/20 border border-[#3087ff] text-[#3087ff] px-2 py-0.5 text-[10px] font-black uppercase tracking-wider">
                     {activeVariant.catNumber}
                   </span>
-                  <span className="text-[10px] font-bold text-[#0082FC]/80 uppercase">
+                  <span className="text-[10px] font-bold text-[#3087ff]/80 uppercase">
                     ASTM A48 CLASS 35B
                   </span>
                 </div>
 
-                <h3 className="text-xl sm:text-2xl font-black uppercase tracking-tight text-[#0082FC] leading-snug mb-2">
+                <h3 className="text-xl sm:text-2xl font-black uppercase tracking-tight text-[#3087ff] leading-snug mb-2">
                   {activeVariant.name}
                 </h3>
 
-                <p className="text-xs sm:text-[13px] text-[#0082FC]/90 font-medium leading-relaxed mb-4">
+                <p className="text-xs sm:text-[13px] text-[#3087ff]/90 font-medium leading-relaxed mb-4">
                   {activeVariant.description}
                 </p>
 
                 {/* Technical Specifications Grid */}
-                <div className="grid grid-cols-1 sm:grid-cols-2 gap-2 text-xs border-y-2 border-[#0082FC]/20 py-3 mb-4">
+                <div className="grid grid-cols-1 sm:grid-cols-2 gap-2 text-xs border-y-2 border-[#3087ff]/20 py-3 mb-4">
                   <div>
-                    <span className="font-bold text-[#0082FC]/70 uppercase text-[10px] block">
+                    <span className="font-bold text-[#3087ff]/70 uppercase text-[10px] block">
                       Pipe Outlet Fit:
                     </span>
-                    <span className="font-black text-[#0082FC]">
+                    <span className="font-black text-[#3087ff]">
                       {activeVariant.pipeFit}
                     </span>
                   </div>
                   <div>
-                    <span className="font-bold text-[#0082FC]/70 uppercase text-[10px] block">
+                    <span className="font-bold text-[#3087ff]/70 uppercase text-[10px] block">
                       Hydraulic Flow Capacity:
                     </span>
-                    <span className="font-black text-[#0082FC]">
+                    <span className="font-black text-[#3087ff]">
                       {activeVariant.dimensions.flowArea}
                     </span>
                   </div>
                   <div>
-                    <span className="font-bold text-[#0082FC]/70 uppercase text-[10px] block">
+                    <span className="font-bold text-[#3087ff]/70 uppercase text-[10px] block">
                       Material Specification:
                     </span>
-                    <span className="font-black text-[#0082FC]">
+                    <span className="font-black text-[#3087ff]">
                       {activeVariant.material}
                     </span>
                   </div>
                   <div>
-                    <span className="font-bold text-[#0082FC]/70 uppercase text-[10px] block">
+                    <span className="font-bold text-[#3087ff]/70 uppercase text-[10px] block">
                       Maintenance Access:
                     </span>
-                    <span className="font-black text-[#0082FC]">
+                    <span className="font-black text-[#3087ff]">
                       {activeVariant.cleanoutType}
                     </span>
                   </div>
                   <div>
-                    <span className="font-bold text-[#0082FC]/70 uppercase text-[10px] block">
+                    <span className="font-bold text-[#3087ff]/70 uppercase text-[10px] block">
                       Coating Protection:
                     </span>
-                    <span className="font-black text-[#0082FC]">
+                    <span className="font-black text-[#3087ff]">
                       {activeVariant.coating}
                     </span>
                   </div>
                   <div>
-                    <span className="font-bold text-[#0082FC]/70 uppercase text-[10px] block">
+                    <span className="font-bold text-[#3087ff]/70 uppercase text-[10px] block">
                       Proof Load Testing:
                     </span>
-                    <span className="font-black text-[#0082FC]">
+                    <span className="font-black text-[#3087ff]">
                       {activeVariant.trafficRating}
                     </span>
                   </div>
                 </div>
 
                 {/* Dimensions Metric Ribbon */}
-                <div className="bg-[#0565d6]/10 border border-[#0565d6] p-2.5 mb-5 flex flex-wrap items-center justify-between gap-3 text-xs font-mono font-bold text-[#0082FC]">
+                <div className="bg-[#3087ff]/10 border border-[#3087ff] p-2.5 mb-5 flex flex-wrap items-center justify-between gap-3 text-xs font-mono font-bold text-[#3087ff]">
                   <span>Height: {activeVariant.dimensions.height}</span>
                   <span>Width: {activeVariant.dimensions.width}</span>
                   <span>Depth: {activeVariant.dimensions.depth}</span>
-                  <span className="text-[#0082FC]">
+                  <span className="text-[#3087ff]">
                     Weight: {activeVariant.dimensions.weightLbs} lbs
                   </span>
                 </div>
@@ -744,8 +744,8 @@ Compliance: ${activeVariant.standards}
                   type="button"
                   onClick={handleAdd}
                   className={`flex-1 py-3 px-4 text-xs font-black uppercase tracking-wider rounded-none border-2 transition-all flex items-center justify-center gap-2 cursor-pointer shadow-md ${added
-                      ? "bg-[#0565d6] text-[#0082FC] border-[#0082FC]"
-                      : "bg-[#0082FC] hover:bg-[#0565d6] text-white hover:text-[#0082FC] border-[#0082FC]"
+                      ? "bg-[#3087ff] text-[#3087ff] border-[#3087ff]"
+                      : "bg-[#3087ff] hover:bg-[#3087ff] text-white hover:text-[#3087ff] border-[#3087ff]"
                     }`}
                 >
                   {added ? (
@@ -764,7 +764,7 @@ Compliance: ${activeVariant.standards}
                 <button
                   type="button"
                   onClick={handleSubmittal}
-                  className="py-3 px-4 bg-white hover:bg-[#0082FC] text-[#0082FC] hover:text-white border-2 border-[#0082FC] text-xs font-black uppercase tracking-wider transition-all flex items-center justify-center gap-2 cursor-pointer shadow-sm"
+                  className="py-3 px-4 bg-white hover:bg-[#3087ff] text-[#3087ff] hover:text-white border-2 border-[#3087ff] text-xs font-black uppercase tracking-wider transition-all flex items-center justify-center gap-2 cursor-pointer shadow-sm"
                 >
                   <Download className="w-4 h-4 shrink-0" />
                   <span>Submittal PDF</span>
@@ -774,11 +774,11 @@ Compliance: ${activeVariant.standards}
                   type="button"
                   onClick={handleCopySpecs}
                   title="Copy engineering specifications"
-                  className="py-3 px-3 bg-[#0565d6]/20 hover:bg-[#0082FC] text-[#0082FC] hover:text-white border-2 border-[#0565d6] text-xs font-black uppercase transition-all flex items-center justify-center gap-1.5 cursor-pointer shadow-xs"
+                  className="py-3 px-3 bg-[#3087ff]/20 hover:bg-[#3087ff] text-[#3087ff] hover:text-white border-2 border-[#3087ff] text-xs font-black uppercase transition-all flex items-center justify-center gap-1.5 cursor-pointer shadow-xs"
                 >
                   {copied ? (
                     <>
-                      <Check className="w-4 h-4 stroke-[3] text-[#0082FC]" />
+                      <Check className="w-4 h-4 stroke-[3] text-[#3087ff]" />
                       <span className="text-[11px]">Copied!</span>
                     </>
                   ) : (

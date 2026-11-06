@@ -98,7 +98,7 @@ export default function Home() {
   };
 
   return (
-    <div className="min-h-screen flex flex-col bg-white text-[#0082FC] selection:bg-[#0565d6] selection:text-[#0082FC]">
+    <div className="min-h-screen flex flex-col bg-white text-[#3087ff] selection:bg-[#3087ff] selection:text-[#3087ff]">
       {/* Soleno-Style Iris Aperture Preloader Animation */}
       <SolenoPreloader />
 
@@ -125,7 +125,7 @@ export default function Home() {
           onPreviewSubmittal={(product) => setSubmittalModalProduct(product)}
         />
 
-        {/* Section 1: 1st Place - Soleno Flagship Showcase (Sampling Station Hero - Blue #0082FC) */}
+        {/* Section 1: 1st Place - Soleno Flagship Showcase (Sampling Station Hero - Blue #3087ff) */}
         <SolenoSamplingHero />
 
         {/* Section 2: 2nd Place - Bison Curb Box Showcase (White Background #FFFFFF - Alternating) */}
@@ -135,7 +135,7 @@ export default function Home() {
           onPreviewSubmittal={(product) => setSubmittalModalProduct(product)}
         />
 
-        {/* Section 3: 3rd Place - Our New Innovations Showcase (Blue Background #0082FC - Alternating) */}
+        {/* Section 3: 3rd Place - Our New Innovations Showcase (Blue Background #3087ff - Alternating) */}
         <OurNewInnovations
           onAddToRfq={handleAddToRfq}
           onPreviewSubmittal={(product) => setSubmittalModalProduct(product)}
@@ -148,7 +148,7 @@ export default function Home() {
           onPreviewSubmittal={(product) => setSubmittalModalProduct(product)}
         />
 
-        {/* Section 4: American Infrastructure Ductile Iron Waterworks Overview (Blue Background #0082FC - Water Dynamics) */}
+        {/* Section 4: American Infrastructure Ductile Iron Waterworks Overview (Blue Background #3087ff - Water Dynamics) */}
         <CinematicHero variant="blue" />
 
         {/* Section 5: Quick Metrics Ribbon */}
@@ -166,7 +166,7 @@ export default function Home() {
         {/* Section 4: Civil Sector Interactive Tabs (Soleno mastering_water pattern) */}
         <MasteringInfrastructureTabs />
 
-        {/* Section 5: Flagship Engineered Products Showcase (Soleno other_drainage 4-card pattern - Blue #0082FC - Alternating) */}
+        {/* Section 5: Flagship Engineered Products Showcase (Soleno other_drainage 4-card pattern - Blue #3087ff - Alternating) */}
         <SolenoFlagshipProducts
           onAddToRfq={handleAddToRfq}
           onPreviewSubmittal={(product) => setSubmittalModalProduct(product)}
@@ -178,7 +178,7 @@ export default function Home() {
           onPreviewSubmittal={(product) => setSubmittalModalProduct(product)}
         />
 
-        {/* Section 7: Stormwater Detention Basin Trash Racks Showcase - Anti-Vortex Pyramids (Blue #0082FC - Alternating) */}
+        {/* Section 7: Stormwater Detention Basin Trash Racks Showcase - Anti-Vortex Pyramids (Blue #3087ff - Alternating) */}
         <StormwaterTrashRacksSpotlight
           onAddToRfq={handleAddToRfq}
           onPreviewSubmittal={(product) => setSubmittalModalProduct(product)}
@@ -190,7 +190,7 @@ export default function Home() {
           onPreviewSubmittal={(product) => setSubmittalModalProduct(product)}
         />
 
-        {/* Section 9: Cast Iron Catch Basin Traps Showcase (Blue #0082FC - Alternating) */}
+        {/* Section 9: Cast Iron Catch Basin Traps Showcase (Blue #3087ff - Alternating) */}
         <CatchBasinTrapsSpotlight
           onAddToRfq={handleAddToRfq}
           onPreviewSubmittal={(product) => setSubmittalModalProduct(product)}
@@ -220,7 +220,7 @@ export default function Home() {
           onPreviewSubmittal={(product) => setSubmittalModalProduct(product)}
         />
 
-        {/* Section 8: Waterworks Video Demonstrations & Field Proofs (Soleno video pattern - Blue #0082FC - Alternating) */}
+        {/* Section 8: Waterworks Video Demonstrations & Field Proofs (Soleno video pattern - Blue #3087ff - Alternating) */}
         <SolenoVideoShowcase
           onAddToRfq={handleAddToRfq}
           onPreviewSubmittal={(product) => setSubmittalModalProduct(product)}

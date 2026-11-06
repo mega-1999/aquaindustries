@@ -77,7 +77,7 @@ export const SamplingStationSpotlight: React.FC<
     <section
       id="sampling-station-spotlight"
       aria-label="New Innovation Municipal Water Sampling Station"
-      className="py-12 sm:py-16 bg-[#0082FC] text-white border-b-4 border-[#0565d6] relative overflow-hidden"
+      className="py-12 sm:py-16 bg-[#3087ff] text-white border-b-4 border-[#3087ff] relative overflow-hidden"
     >
       {/* Infinite Seamless Looping Water Background Animation */}
       <InfiniteWaterBackground opacity="opacity-25" />
@@ -95,14 +95,14 @@ export const SamplingStationSpotlight: React.FC<
       <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         {/* Section Header */}
         <div className="max-w-3xl mb-8 sm:mb-12">
-          <div className="inline-flex items-center gap-2 px-3 py-1 bg-white text-[#0082FC] text-xs font-bold uppercase tracking-wider rounded-none mb-3 shadow-md border-2 border-[#0565d6]">
-            <FlaskConical className="w-3.5 h-3.5 text-[#0082FC] shrink-0" />
+          <div className="inline-flex items-center gap-2 px-3 py-1 bg-white text-[#3087ff] text-xs font-bold uppercase tracking-wider rounded-none mb-3 shadow-md border-2 border-[#3087ff]">
+            <FlaskConical className="w-3.5 h-3.5 text-[#3087ff] shrink-0" />
             <span>Product Showcase &bull; New Flagship Innovation</span>
           </div>
 
           <h2 className="text-2xl sm:text-4xl lg:text-5xl font-black uppercase tracking-tight text-white leading-[1.05] mb-3">
             Municipal Water{" "}
-            <span className="text-[#0565d6]">Sampling Station</span>
+            <span className="text-[#3087ff]">Sampling Station</span>
           </h2>
 
           <p className="text-sm sm:text-base text-white/95 font-normal leading-relaxed">
@@ -118,12 +118,12 @@ export const SamplingStationSpotlight: React.FC<
           {/* Left 6 Columns: Crisp White Showcase Card with Interactive View Mode */}
           <div className="lg:col-span-6 flex flex-col gap-6">
             {/* View Mode Switcher */}
-            <div className="flex items-center justify-between gap-2 border-2 border-white/60 p-1 bg-[#0082FC]">
+            <div className="flex items-center justify-between gap-2 border-2 border-white/60 p-1 bg-[#3087ff]">
               <button
                 type="button"
                 onClick={() => setViewMode("photo")}
                 className={`flex-1 py-1.5 px-3 text-xs font-black uppercase tracking-wider transition-all rounded-none cursor-pointer text-center ${viewMode === "photo"
-                    ? "bg-white text-[#0082FC] shadow-sm"
+                    ? "bg-white text-[#3087ff] shadow-sm"
                     : "text-white hover:bg-white/10"
                   }`}
               >
@@ -133,7 +133,7 @@ export const SamplingStationSpotlight: React.FC<
                 type="button"
                 onClick={() => setViewMode("simulation")}
                 className={`flex-1 py-1.5 px-3 text-xs font-black uppercase tracking-wider transition-all rounded-none cursor-pointer flex items-center justify-center gap-1.5 ${viewMode === "simulation"
-                    ? "bg-white text-[#0082FC] shadow-sm"
+                    ? "bg-white text-[#3087ff] shadow-sm"
                     : "text-white hover:bg-white/10"
                   }`}
               >
@@ -144,38 +144,38 @@ export const SamplingStationSpotlight: React.FC<
 
             {/* Top Area Outside Image: Hotspot Inspection Callout Banner */}
             {activeHotspot !== null && (
-              <div className="w-full bg-white border-2 border-[#0565d6] p-3.5 text-left shadow-xl text-[#0082FC] animate-in fade-in slide-in-from-top-2">
+              <div className="w-full bg-white border-2 border-[#3087ff] p-3.5 text-left shadow-xl text-[#3087ff] animate-in fade-in slide-in-from-top-2">
                 <div className="flex items-center justify-between gap-2 mb-1">
                   <div className="flex items-center gap-2">
-                    <span className="w-6 h-6 bg-[#0082FC] text-white flex items-center justify-center font-black text-xs">
+                    <span className="w-6 h-6 bg-[#3087ff] text-white flex items-center justify-center font-black text-xs">
                       {activeHotspot}
                     </span>
-                    <span className="font-black text-xs sm:text-sm uppercase tracking-tight text-[#0082FC]">
+                    <span className="font-black text-xs sm:text-sm uppercase tracking-tight text-[#3087ff]">
                       {
                         STATION_HOTSPOTS.find((h) => h.id === activeHotspot)
                           ?.title
                       }
                     </span>
                   </div>
-                  <span className="text-[10px] bg-[#0565d6] text-[#0082FC] font-extrabold px-2 py-0.5 whitespace-nowrap">
+                  <span className="text-[10px] bg-[#3087ff] text-[#3087ff] font-extrabold px-2 py-0.5 whitespace-nowrap">
                     {
                       STATION_HOTSPOTS.find((h) => h.id === activeHotspot)
                         ?.badge
                     }
                   </span>
                 </div>
-                <p className="text-xs leading-relaxed text-[#0082FC]/90 font-medium">
+                <p className="text-xs leading-relaxed text-[#3087ff]/90 font-medium">
                   {STATION_HOTSPOTS.find((h) => h.id === activeHotspot)?.desc}
                 </p>
-                <div className="mt-2 flex items-center justify-between border-t border-[#0082FC]/15 pt-1.5">
-                  <span className="text-[10px] text-[#0082FC]/70 font-bold uppercase">
+                <div className="mt-2 flex items-center justify-between border-t border-[#3087ff]/15 pt-1.5">
+                  <span className="text-[10px] text-[#3087ff]/70 font-bold uppercase">
                     Specification ID AQUA-WSS-2026 &bull; Point {activeHotspot}{" "}
                     of 4
                   </span>
                   <button
                     type="button"
                     onClick={() => setActiveHotspot(null)}
-                    className="text-[11px] font-black text-[#0082FC] hover:text-[#0565d6] uppercase cursor-pointer"
+                    className="text-[11px] font-black text-[#3087ff] hover:text-[#3087ff] uppercase cursor-pointer"
                   >
                     ✕ Close Inspection
                   </button>
@@ -185,38 +185,38 @@ export const SamplingStationSpotlight: React.FC<
 
             {/* Top Area Outside Image: Hotspot Inspection Callout Banner */}
             {activeHotspot !== null && (
-              <div className="w-full bg-white border-2 border-[#0565d6] p-3.5 text-left shadow-xl text-[#0082FC] animate-in fade-in slide-in-from-top-2">
+              <div className="w-full bg-white border-2 border-[#3087ff] p-3.5 text-left shadow-xl text-[#3087ff] animate-in fade-in slide-in-from-top-2">
                 <div className="flex items-center justify-between gap-2 mb-1">
                   <div className="flex items-center gap-2">
-                    <span className="w-6 h-6 bg-[#0082FC] text-white flex items-center justify-center font-black text-xs">
+                    <span className="w-6 h-6 bg-[#3087ff] text-white flex items-center justify-center font-black text-xs">
                       {activeHotspot}
                     </span>
-                    <span className="font-black text-xs sm:text-sm uppercase tracking-tight text-[#0082FC]">
+                    <span className="font-black text-xs sm:text-sm uppercase tracking-tight text-[#3087ff]">
                       {
                         STATION_HOTSPOTS.find((h) => h.id === activeHotspot)
                           ?.title
                       }
                     </span>
                   </div>
-                  <span className="text-[10px] bg-[#0565d6] text-[#0082FC] font-extrabold px-2 py-0.5 whitespace-nowrap">
+                  <span className="text-[10px] bg-[#3087ff] text-[#3087ff] font-extrabold px-2 py-0.5 whitespace-nowrap">
                     {
                       STATION_HOTSPOTS.find((h) => h.id === activeHotspot)
                         ?.badge
                     }
                   </span>
                 </div>
-                <p className="text-xs leading-relaxed text-[#0082FC]/90 font-medium">
+                <p className="text-xs leading-relaxed text-[#3087ff]/90 font-medium">
                   {STATION_HOTSPOTS.find((h) => h.id === activeHotspot)?.desc}
                 </p>
-                <div className="mt-2 flex items-center justify-between border-t border-[#0082FC]/15 pt-1.5">
-                  <span className="text-[10px] text-[#0082FC]/70 font-bold uppercase">
+                <div className="mt-2 flex items-center justify-between border-t border-[#3087ff]/15 pt-1.5">
+                  <span className="text-[10px] text-[#3087ff]/70 font-bold uppercase">
                     Specification ID AQUA-WSS-2026 &bull; Point {activeHotspot}{" "}
                     of 4
                   </span>
                   <button
                     type="button"
                     onClick={() => setActiveHotspot(null)}
-                    className="text-[11px] font-black text-[#0082FC] hover:text-[#0565d6] uppercase cursor-pointer"
+                    className="text-[11px] font-black text-[#3087ff] hover:text-[#3087ff] uppercase cursor-pointer"
                   >
                     ✕ Close Inspection
                   </button>
@@ -224,19 +224,19 @@ export const SamplingStationSpotlight: React.FC<
               </div>
             )}
 
-            <div className="bg-white border-4 border-[#0565d6] p-6 sm:p-10 shadow-2xl relative flex flex-col items-center justify-center text-[#0082FC] min-h-[440px] sm:min-h-[500px]">
+            <div className="bg-white border-4 border-[#3087ff] p-6 sm:p-10 shadow-2xl relative flex flex-col items-center justify-center text-[#3087ff] min-h-[440px] sm:min-h-[500px]">
               {/* Corner Serial & Standard Tag */}
               <div className="absolute top-4 left-4 z-10 flex flex-col gap-1">
-                <span className="text-xs font-bold text-[#0082FC]/80 uppercase tracking-wider">
+                <span className="text-xs font-bold text-[#3087ff]/80 uppercase tracking-wider">
                   Specification ID
                 </span>
-                <span className="text-sm sm:text-base font-black text-[#0082FC]">
+                <span className="text-sm sm:text-base font-black text-[#3087ff]">
                   AQUA-WSS-2026
                 </span>
               </div>
 
               <div className="absolute top-4 right-4 z-10">
-                <span className="px-3 py-1 bg-white text-[#0082FC] border border-[#0082FC] text-xs font-extrabold uppercase tracking-wider shadow-xs">
+                <span className="px-3 py-1 bg-white text-[#3087ff] border border-[#3087ff] text-xs font-extrabold uppercase tracking-wider shadow-xs">
                   ANSI/NSF 61 Certified
                 </span>
               </div>
@@ -263,8 +263,8 @@ export const SamplingStationSpotlight: React.FC<
                         }
                         style={{ left: spot.x, top: spot.y }}
                         className={`absolute z-30 w-7 h-7 -translate-x-1/2 -translate-y-1/2 rounded-none border-2 flex items-center justify-center font-black text-xs shadow-xl transition-all hover:scale-125 cursor-pointer ${activeHotspot === spot.id
-                            ? "bg-[#0082FC] text-white border-white scale-125 ring-4 ring-[#0565d6]"
-                            : "bg-white text-[#0082FC] border-[#0082FC] hover:bg-[#0565d6]/30"
+                            ? "bg-[#3087ff] text-white border-white scale-125 ring-4 ring-[#3087ff]"
+                            : "bg-white text-[#3087ff] border-[#3087ff] hover:bg-[#3087ff]/30"
                           }`}
                         title={spot.title}
                         aria-label={spot.title}
@@ -275,13 +275,13 @@ export const SamplingStationSpotlight: React.FC<
                   </div>
 
                   {/* Bottom Caption Strip */}
-                  <div className="w-full mt-4 pt-4 border-t border-[#0082FC]/20 flex flex-wrap items-center justify-between gap-3 text-xs sm:text-sm font-bold text-[#0082FC]">
+                  <div className="w-full mt-4 pt-4 border-t border-[#3087ff]/20 flex flex-wrap items-center justify-between gap-3 text-xs sm:text-sm font-bold text-[#3087ff]">
                     <span className="flex items-center gap-1.5">
-                      <CheckCircle2 className="w-4 h-4 text-[#0082FC]" />
+                      <CheckCircle2 className="w-4 h-4 text-[#3087ff]" />
                       100% Lead-Free Brass Waterway
                     </span>
                     <span className="flex items-center gap-1.5">
-                      <ThermometerSnowflake className="w-4 h-4 text-[#0082FC]" />
+                      <ThermometerSnowflake className="w-4 h-4 text-[#3087ff]" />
                       Freeze-Proof Thermal Core
                     </span>
                   </div>
@@ -295,8 +295,8 @@ export const SamplingStationSpotlight: React.FC<
                       type="button"
                       onClick={() => setActiveMode("flow")}
                       className={`px-2.5 py-1 text-[11px] font-black uppercase rounded-none border transition-all cursor-pointer ${activeMode === "flow"
-                          ? "bg-[#0082FC] text-white border-[#0082FC] shadow-sm"
-                          : "bg-white text-[#0082FC] border-[#0565d6] hover:bg-[#0565d6]/20"
+                          ? "bg-[#3087ff] text-white border-[#3087ff] shadow-sm"
+                          : "bg-white text-[#3087ff] border-[#3087ff] hover:bg-[#3087ff]/20"
                         }`}
                     >
                       Active Water Flow
@@ -305,8 +305,8 @@ export const SamplingStationSpotlight: React.FC<
                       type="button"
                       onClick={() => setActiveMode("thermal")}
                       className={`px-2.5 py-1 text-[11px] font-black uppercase rounded-none border transition-all cursor-pointer ${activeMode === "thermal"
-                          ? "bg-[#0082FC] text-white border-[#0082FC] shadow-sm"
-                          : "bg-white text-[#0082FC] border-[#0565d6] hover:bg-[#0565d6]/20"
+                          ? "bg-[#3087ff] text-white border-[#3087ff] shadow-sm"
+                          : "bg-white text-[#3087ff] border-[#3087ff] hover:bg-[#3087ff]/20"
                         }`}
                     >
                       -20°F Frost Defense
@@ -315,8 +315,8 @@ export const SamplingStationSpotlight: React.FC<
                       type="button"
                       onClick={() => setActiveMode("pressure")}
                       className={`px-2.5 py-1 text-[11px] font-black uppercase rounded-none border transition-all cursor-pointer ${activeMode === "pressure"
-                          ? "bg-[#0082FC] text-white border-[#0082FC] shadow-sm"
-                          : "bg-white text-[#0082FC] border-[#0565d6] hover:bg-[#0565d6]/20"
+                          ? "bg-[#3087ff] text-white border-[#3087ff] shadow-sm"
+                          : "bg-white text-[#3087ff] border-[#3087ff] hover:bg-[#3087ff]/20"
                         }`}
                     >
                       300 PSI Hydrostatic
@@ -337,9 +337,9 @@ export const SamplingStationSpotlight: React.FC<
                         y="40"
                         width="100"
                         height="200"
-                        fill="#0082FC"
+                        fill="#3087ff"
                         fillOpacity="0.08"
-                        stroke="#0082FC"
+                        stroke="#3087ff"
                         strokeWidth="2.5"
                       />
 
@@ -349,9 +349,9 @@ export const SamplingStationSpotlight: React.FC<
                         y="50"
                         width="70"
                         height="180"
-                        fill="#0565d6"
+                        fill="#3087ff"
                         fillOpacity="0.2"
-                        stroke="#0565d6"
+                        stroke="#3087ff"
                         strokeWidth="1.5"
                         strokeDasharray="4 2"
                       />
@@ -363,7 +363,7 @@ export const SamplingStationSpotlight: React.FC<
                         width="20"
                         height="190"
                         fill="#FFFFFF"
-                        stroke="#0082FC"
+                        stroke="#3087ff"
                         strokeWidth="2"
                       />
 
@@ -373,7 +373,7 @@ export const SamplingStationSpotlight: React.FC<
                         y1="250"
                         x2="160"
                         y2="80"
-                        stroke="#0082FC"
+                        stroke="#3087ff"
                         strokeWidth="4"
                         strokeDasharray="6 4"
                         className="animate-hydro-flow-fast"
@@ -382,7 +382,7 @@ export const SamplingStationSpotlight: React.FC<
                       {/* Sampling Bibb Outlet Spigot */}
                       <path
                         d="M160 80 L90 80 L90 100"
-                        stroke="#0082FC"
+                        stroke="#3087ff"
                         strokeWidth="6"
                         fill="none"
                       />
@@ -391,7 +391,7 @@ export const SamplingStationSpotlight: React.FC<
                         y1="80"
                         x2="90"
                         y2="80"
-                        stroke="#0565d6"
+                        stroke="#3087ff"
                         strokeWidth="3"
                         strokeDasharray="4 2"
                         className="animate-hydro-flow"
@@ -403,7 +403,7 @@ export const SamplingStationSpotlight: React.FC<
                           cx="90"
                           cy="110"
                           r="4"
-                          fill="#0082FC"
+                          fill="#3087ff"
                           className="animate-drop-dispense"
                         />
                       )}
@@ -412,7 +412,7 @@ export const SamplingStationSpotlight: React.FC<
                       <text
                         x="180"
                         y="75"
-                        fill="#0082FC"
+                        fill="#3087ff"
                         fontSize="9"
                         fontWeight="bold"
                       >
@@ -421,7 +421,7 @@ export const SamplingStationSpotlight: React.FC<
                       <text
                         x="180"
                         y="140"
-                        fill="#0082FC"
+                        fill="#3087ff"
                         fontSize="9"
                         fontWeight="bold"
                       >
@@ -430,7 +430,7 @@ export const SamplingStationSpotlight: React.FC<
                       <text
                         x="180"
                         y="235"
-                        fill="#0082FC"
+                        fill="#3087ff"
                         fontSize="9"
                         fontWeight="bold"
                       >
@@ -440,7 +440,7 @@ export const SamplingStationSpotlight: React.FC<
                   </div>
 
                   {/* Telemetry Strip */}
-                  <div className="w-full flex items-center justify-between border-t border-[#0082FC]/20 pt-2 px-1 text-xs font-bold text-[#0082FC]">
+                  <div className="w-full flex items-center justify-between border-t border-[#3087ff]/20 pt-2 px-1 text-xs font-bold text-[#3087ff]">
                     <span>
                       {activeMode === "flow"
                         ? "Sampling Stream: 4.2 GPM (EPA Lead/Copper Verified)"
@@ -448,7 +448,7 @@ export const SamplingStationSpotlight: React.FC<
                           ? "Frost Protection: -20°F Sub-Zero Stable"
                           : "Hydrostatic Seal: 300 PSI Hydro-Proof Tested"}
                     </span>
-                    <span className="bg-[#0565d6]/30 px-2 py-0.5 border border-[#0082FC]">
+                    <span className="bg-[#3087ff]/30 px-2 py-0.5 border border-[#3087ff]">
                       Continuous Flow
                     </span>
                   </div>
@@ -461,9 +461,9 @@ export const SamplingStationSpotlight: React.FC<
           <div className="lg:col-span-6 space-y-6">
             {/* Feature Highlights Grid */}
             <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
-              <div className="p-4 bg-white/10 border-2 border-[#0565d6] shadow-xs backdrop-blur-sm">
-                <div className="w-10 h-10 bg-white text-[#0082FC] flex items-center justify-center mb-3">
-                  <ShieldCheck className="w-5 h-5 text-[#0082FC]" />
+              <div className="p-4 bg-white/10 border-2 border-[#3087ff] shadow-xs backdrop-blur-sm">
+                <div className="w-10 h-10 bg-white text-[#3087ff] flex items-center justify-center mb-3">
+                  <ShieldCheck className="w-5 h-5 text-[#3087ff]" />
                 </div>
                 <h3 className="text-base font-black uppercase text-white mb-1">
                   Zero Cross-Contamination
@@ -474,9 +474,9 @@ export const SamplingStationSpotlight: React.FC<
                 </p>
               </div>
 
-              <div className="p-4 bg-white/10 border-2 border-[#0565d6] shadow-xs backdrop-blur-sm">
-                <div className="w-10 h-10 bg-white text-[#0082FC] flex items-center justify-center mb-3">
-                  <Lock className="w-5 h-5 text-[#0082FC]" />
+              <div className="p-4 bg-white/10 border-2 border-[#3087ff] shadow-xs backdrop-blur-sm">
+                <div className="w-10 h-10 bg-white text-[#3087ff] flex items-center justify-center mb-3">
+                  <Lock className="w-5 h-5 text-[#3087ff]" />
                 </div>
                 <h3 className="text-base font-black uppercase text-white mb-1">
                   Vandal-Proof Security
@@ -489,12 +489,12 @@ export const SamplingStationSpotlight: React.FC<
             </div>
 
             {/* Technical Specifications Table */}
-            <div className="border-2 border-[#0565d6] bg-white/10 shadow-md backdrop-blur-sm">
-              <div className="px-4 py-2.5 bg-white text-[#0082FC] flex justify-between items-center">
+            <div className="border-2 border-[#3087ff] bg-white/10 shadow-md backdrop-blur-sm">
+              <div className="px-4 py-2.5 bg-white text-[#3087ff] flex justify-between items-center">
                 <span className="text-xs font-bold uppercase tracking-wider">
                   Engineering Submittal Specifications
                 </span>
-                <span className="text-xs font-semibold text-[#0082FC]">
+                <span className="text-xs font-semibold text-[#3087ff]">
                   Rev. 2026.1
                 </span>
               </div>
@@ -535,7 +535,7 @@ export const SamplingStationSpotlight: React.FC<
                   <span className="text-white/80 font-normal">
                     Working Pressure:
                   </span>
-                  <span className="text-[#0565d6] font-bold">
+                  <span className="text-[#3087ff] font-bold">
                     300 PSI Hydrostatic Proof Tested
                   </span>
                 </div>
@@ -547,7 +547,7 @@ export const SamplingStationSpotlight: React.FC<
               <button
                 type="button"
                 onClick={() => onAddToRfq(product)}
-                className="flex-1 px-5 py-3 bg-white hover:bg-[#0565d6] text-[#0082FC] font-bold text-xs sm:text-sm rounded-none shadow-md transition-all whitespace-nowrap text-center uppercase tracking-wide cursor-pointer"
+                className="flex-1 px-5 py-3 bg-white hover:bg-[#3087ff] text-[#3087ff] font-bold text-xs sm:text-sm rounded-none shadow-md transition-all whitespace-nowrap text-center uppercase tracking-wide cursor-pointer"
               >
                 + Add Sampling Station to Quote
               </button>
@@ -555,9 +555,9 @@ export const SamplingStationSpotlight: React.FC<
               <button
                 type="button"
                 onClick={() => onPreviewSubmittal(product)}
-                className="flex-1 px-5 py-3 bg-[#0082FC] hover:bg-white text-[#0565d6] hover:text-[#0082FC] font-bold text-xs sm:text-sm rounded-none border-2 border-[#0565d6] transition-all whitespace-nowrap text-center inline-flex items-center justify-center gap-2 uppercase tracking-wide cursor-pointer"
+                className="flex-1 px-5 py-3 bg-[#3087ff] hover:bg-white text-[#3087ff] hover:text-[#3087ff] font-bold text-xs sm:text-sm rounded-none border-2 border-[#3087ff] transition-all whitespace-nowrap text-center inline-flex items-center justify-center gap-2 uppercase tracking-wide cursor-pointer"
               >
-                <FileCheck2 className="w-4 h-4 text-[#0565d6] group-hover:text-[#0082FC]" />
+                <FileCheck2 className="w-4 h-4 text-[#3087ff] group-hover:text-[#3087ff]" />
                 <span>Download Submittal PDF</span>
               </button>
             </div>

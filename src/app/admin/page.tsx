@@ -190,11 +190,11 @@ export default function SuperAdminPage() {
     >
       <div className="max-w-6xl mx-auto space-y-8">
         {/* Header Banner */}
-        <div className="bg-[#0082FC] text-white p-6 sm:p-8 border-b-4 border-[#0565d6] shadow-xl relative overflow-hidden mb-8">
+        <div className="bg-[#3087ff] text-white p-6 sm:p-8 border-b-4 border-[#3087ff] shadow-xl relative overflow-hidden mb-8">
           <div className="flex flex-col md:flex-row md:items-center justify-between gap-6 relative z-10">
             <div className="space-y-2">
-              <div className="inline-flex items-center gap-2 px-3 py-1 bg-white text-[#0082FC] text-xs font-bold uppercase tracking-wider">
-                <ShieldCheck className="w-4 h-4 text-[#0082FC]" />
+              <div className="inline-flex items-center gap-2 px-3 py-1 bg-white text-[#3087ff] text-xs font-bold uppercase tracking-wider">
+                <ShieldCheck className="w-4 h-4 text-[#3087ff]" />
                 <span>Executive Headquarters Portal</span>
               </div>
               <h2 className="text-2xl sm:text-3xl font-black uppercase tracking-tight text-white">
@@ -209,8 +209,8 @@ export default function SuperAdminPage() {
 
             {/* Clearance Level Status Card & Sync Button */}
             <div className="flex flex-col sm:flex-row items-start sm:items-center gap-3 shrink-0">
-              <div className="bg-white/10 p-3 border border-[#0565d6] text-xs text-white flex items-center gap-3">
-                <ShieldCheck className="w-5 h-5 text-[#0565d6]" />
+              <div className="bg-white/10 p-3 border border-[#3087ff] text-xs text-white flex items-center gap-3">
+                <ShieldCheck className="w-5 h-5 text-[#3087ff]" />
                 <div>
                   <span className="font-bold block uppercase tracking-wider text-[11px]">
                     Master Clearance Level 1
@@ -229,7 +229,7 @@ export default function SuperAdminPage() {
                     "All demo contractor applications reloaded and synchronized!",
                   );
                 }}
-                className="px-3.5 py-3 bg-white hover:bg-[#0565d6] text-[#0082FC] font-black text-xs uppercase tracking-wider transition-colors cursor-pointer flex items-center gap-1.5 shadow-md shrink-0"
+                className="px-3.5 py-3 bg-white hover:bg-[#3087ff] text-[#3087ff] font-black text-xs uppercase tracking-wider transition-colors cursor-pointer flex items-center gap-1.5 shadow-md shrink-0"
                 title="Reload initial demo applications including Mega Foundries"
               >
                 <RefreshCw className="w-3.5 h-3.5" />
@@ -241,15 +241,15 @@ export default function SuperAdminPage() {
 
         {/* Feedback Toast */}
         {feedbackMessage && (
-          <div className="mb-6 p-4 bg-[#0082FC] text-white text-xs sm:text-sm font-bold border-2 border-[#0565d6] shadow-md flex items-center justify-between">
+          <div className="mb-6 p-4 bg-[#3087ff] text-white text-xs sm:text-sm font-bold border-2 border-[#3087ff] shadow-md flex items-center justify-between">
             <div className="flex items-center gap-2">
-              <CheckCircle2 className="w-5 h-5 text-[#0565d6] shrink-0" />
+              <CheckCircle2 className="w-5 h-5 text-[#3087ff] shrink-0" />
               <span>{feedbackMessage}</span>
             </div>
             <button
               type="button"
               onClick={() => setFeedbackMessage(null)}
-              className="text-white hover:text-[#0565d6] font-black uppercase text-xs cursor-pointer"
+              className="text-white hover:text-[#3087ff] font-black uppercase text-xs cursor-pointer"
             >
               Dismiss
             </button>
@@ -258,11 +258,11 @@ export default function SuperAdminPage() {
 
         {/* Stats Metrics Grid */}
         <div className="grid grid-cols-2 lg:grid-cols-5 gap-4 mb-8">
-          <div className="p-4 bg-white border-2 border-[#0082FC] shadow-sm">
-            <span className="text-xs font-bold uppercase tracking-wider text-[#0082FC]/70 block">
+          <div className="p-4 bg-white border-2 border-[#3087ff] shadow-sm">
+            <span className="text-xs font-bold uppercase tracking-wider text-[#3087ff]/70 block">
               Total Registrations
             </span>
-            <strong className="text-2xl font-black text-[#0082FC]">
+            <strong className="text-2xl font-black text-[#3087ff]">
               {allUsers.length}
             </strong>
           </div>
@@ -303,14 +303,14 @@ export default function SuperAdminPage() {
             </strong>
           </div>
 
-          <div className="p-4 bg-[#0082FC]/10 border-2 border-[#0082FC] shadow-sm col-span-2 lg:col-span-1">
+          <div className="p-4 bg-[#3087ff]/10 border-2 border-[#3087ff] shadow-sm col-span-2 lg:col-span-1">
             <div className="flex items-center justify-between">
-              <span className="text-xs font-bold uppercase tracking-wider text-[#0082FC] block">
+              <span className="text-xs font-bold uppercase tracking-wider text-[#3087ff] block">
                 Quote Takeoffs
               </span>
-              <FileText className="w-4 h-4 text-[#0082FC]" />
+              <FileText className="w-4 h-4 text-[#3087ff]" />
             </div>
-            <strong className="text-2xl font-black text-[#0082FC]">
+            <strong className="text-2xl font-black text-[#3087ff]">
               {rfqRequests.length}
             </strong>
           </div>
@@ -318,18 +318,18 @@ export default function SuperAdminPage() {
 
         {/* Search & Tabs */}
         <div className="flex flex-col md:flex-row items-stretch md:items-center justify-between gap-4 mb-6">
-          <div className="flex flex-wrap bg-[#0082FC]/10 border-2 border-[#0082FC] p-1 gap-1">
+          <div className="flex flex-wrap bg-[#3087ff]/10 border-2 border-[#3087ff] p-1 gap-1">
             <button
               type="button"
               onClick={() => setActiveTab("pending")}
               className={`py-2 px-4 text-xs font-black uppercase tracking-wider transition-all rounded-none cursor-pointer flex items-center gap-1.5 ${activeTab === "pending"
-                  ? "bg-[#0082FC] text-white shadow-xs"
-                  : "text-[#0082FC] hover:bg-[#0565d6]/30"
+                  ? "bg-[#3087ff] text-white shadow-xs"
+                  : "text-[#3087ff] hover:bg-[#3087ff]/30"
                 }`}
             >
               <span>Pending Approvals</span>
               {pendingCount > 0 && (
-                <span className="w-5 h-5 bg-amber-400 text-[#0082FC] rounded-none text-[10px] font-black flex items-center justify-center">
+                <span className="w-5 h-5 bg-amber-400 text-[#3087ff] rounded-none text-[10px] font-black flex items-center justify-center">
                   {pendingCount}
                 </span>
               )}
@@ -339,8 +339,8 @@ export default function SuperAdminPage() {
               type="button"
               onClick={() => setActiveTab("approved")}
               className={`py-2 px-4 text-xs font-black uppercase tracking-wider transition-all rounded-none cursor-pointer ${activeTab === "approved"
-                  ? "bg-[#0082FC] text-white shadow-xs"
-                  : "text-[#0082FC] hover:bg-[#0565d6]/30"
+                  ? "bg-[#3087ff] text-white shadow-xs"
+                  : "text-[#3087ff] hover:bg-[#3087ff]/30"
                 }`}
             >
               Approved ({approvedCount})
@@ -350,8 +350,8 @@ export default function SuperAdminPage() {
               type="button"
               onClick={() => setActiveTab("rejected")}
               className={`py-2 px-4 text-xs font-black uppercase tracking-wider transition-all rounded-none cursor-pointer ${activeTab === "rejected"
-                  ? "bg-[#0082FC] text-white shadow-xs"
-                  : "text-[#0082FC] hover:bg-[#0565d6]/30"
+                  ? "bg-[#3087ff] text-white shadow-xs"
+                  : "text-[#3087ff] hover:bg-[#3087ff]/30"
                 }`}
             >
               Rejected ({rejectedCount})
@@ -361,8 +361,8 @@ export default function SuperAdminPage() {
               type="button"
               onClick={() => setActiveTab("all")}
               className={`py-2 px-4 text-xs font-black uppercase tracking-wider transition-all rounded-none cursor-pointer ${activeTab === "all"
-                  ? "bg-[#0082FC] text-white shadow-xs"
-                  : "text-[#0082FC] hover:bg-[#0565d6]/30"
+                  ? "bg-[#3087ff] text-white shadow-xs"
+                  : "text-[#3087ff] hover:bg-[#3087ff]/30"
                 }`}
             >
               All Users ({allUsers.length})
@@ -372,25 +372,25 @@ export default function SuperAdminPage() {
               type="button"
               onClick={() => setActiveTab("quotes")}
               className={`py-2 px-4 text-xs font-black uppercase tracking-wider transition-all rounded-none cursor-pointer flex items-center gap-1.5 ${activeTab === "quotes"
-                  ? "bg-[#0082FC] text-white shadow-xs"
-                  : "text-[#0082FC] hover:bg-[#0565d6]/30"
+                  ? "bg-[#3087ff] text-white shadow-xs"
+                  : "text-[#3087ff] hover:bg-[#3087ff]/30"
                 }`}
             >
               <span>Quote Requests</span>
-              <span className="w-5 h-5 bg-[#0565d6] text-[#0082FC] rounded-none text-[10px] font-black flex items-center justify-center">
+              <span className="w-5 h-5 bg-[#3087ff] text-[#3087ff] rounded-none text-[10px] font-black flex items-center justify-center">
                 {rfqRequests.length}
               </span>
             </button>
           </div>
 
           <div className="relative w-full md:w-72">
-            <Search className="w-4 h-4 text-[#0082FC] absolute left-3 top-3 pointer-events-none" />
+            <Search className="w-4 h-4 text-[#3087ff] absolute left-3 top-3 pointer-events-none" />
             <input
               type="text"
               placeholder="Search company, contact, email..."
               value={searchQuery}
               onChange={(e) => setSearchQuery(e.target.value)}
-              className="w-full bg-white border-2 border-[#0082FC] pl-9 pr-3 py-2 text-xs text-[#0082FC] font-bold placeholder-[#0082FC]/50 focus:outline-none focus:border-[#0565d6]"
+              className="w-full bg-white border-2 border-[#3087ff] pl-9 pr-3 py-2 text-xs text-[#3087ff] font-bold placeholder-[#3087ff]/50 focus:outline-none focus:border-[#3087ff]"
             />
           </div>
         </div>
@@ -399,12 +399,12 @@ export default function SuperAdminPage() {
         {activeTab === "quotes" ? (
           <div className="space-y-4">
             {filteredRfq.length === 0 ? (
-              <div className="p-12 text-center border-2 border-[#0082FC] bg-white text-[#0082FC]">
-                <FileText className="w-12 h-12 text-[#0565d6] mx-auto mb-3" />
+              <div className="p-12 text-center border-2 border-[#3087ff] bg-white text-[#3087ff]">
+                <FileText className="w-12 h-12 text-[#3087ff] mx-auto mb-3" />
                 <h3 className="font-black text-base uppercase">
                   No Commercial Quote Requests Found
                 </h3>
-                <p className="text-xs text-[#0082FC]/80 mt-1">
+                <p className="text-xs text-[#3087ff]/80 mt-1">
                   Quote requests submitted through the quote builder will appear
                   here.
                 </p>
@@ -413,15 +413,15 @@ export default function SuperAdminPage() {
               filteredRfq.map((rfq) => (
                 <div
                   key={rfq.id}
-                  className="border-2 border-[#0082FC] bg-white p-5 shadow-sm space-y-3"
+                  className="border-2 border-[#3087ff] bg-white p-5 shadow-sm space-y-3"
                 >
-                  <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-3 pb-3 border-b border-[#0082FC]/20">
+                  <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-3 pb-3 border-b border-[#3087ff]/20">
                     <div>
                       <div className="flex items-center gap-2">
-                        <span className="px-2 py-0.5 bg-[#0082FC] text-white text-[10px] font-mono font-bold">
+                        <span className="px-2 py-0.5 bg-[#3087ff] text-white text-[10px] font-mono font-bold">
                           {rfq.id}
                         </span>
-                        <h3 className="text-base font-black text-[#0082FC] uppercase">
+                        <h3 className="text-base font-black text-[#3087ff] uppercase">
                           {rfq.companyName}
                         </h3>
                         {rfq.taxExempt && (
@@ -430,7 +430,7 @@ export default function SuperAdminPage() {
                           </span>
                         )}
                       </div>
-                      <div className="text-xs text-[#0082FC]/80 mt-1">
+                      <div className="text-xs text-[#3087ff]/80 mt-1">
                         Primary Estimator: <strong>{rfq.contactName}</strong>{" "}
                         &bull; <span className="font-mono">{rfq.email}</span>{" "}
                         &bull; {rfq.phone}
@@ -438,30 +438,30 @@ export default function SuperAdminPage() {
                     </div>
 
                     <div className="text-right">
-                      <span className="text-[10px] font-bold uppercase text-[#0082FC]/70 block">
+                      <span className="text-[10px] font-bold uppercase text-[#3087ff]/70 block">
                         Received Date
                       </span>
-                      <strong className="text-xs font-mono text-[#0082FC]">
+                      <strong className="text-xs font-mono text-[#3087ff]">
                         {new Date(rfq.createdAt).toLocaleDateString()}
                       </strong>
                     </div>
                   </div>
 
-                  <div className="grid grid-cols-1 sm:grid-cols-3 gap-3 text-xs text-[#0082FC]">
-                    <div className="p-2.5 bg-[#0082FC]/5 border border-[#0082FC]/20">
-                      <span className="text-[10px] font-bold uppercase text-[#0082FC]/70 block">
+                  <div className="grid grid-cols-1 sm:grid-cols-3 gap-3 text-xs text-[#3087ff]">
+                    <div className="p-2.5 bg-[#3087ff]/5 border border-[#3087ff]/20">
+                      <span className="text-[10px] font-bold uppercase text-[#3087ff]/70 block">
                         Project Sector
                       </span>
                       <strong>{rfq.projectType}</strong>
                     </div>
-                    <div className="p-2.5 bg-[#0082FC]/5 border border-[#0082FC]/20">
-                      <span className="text-[10px] font-bold uppercase text-[#0082FC]/70 block">
+                    <div className="p-2.5 bg-[#3087ff]/5 border border-[#3087ff]/20">
+                      <span className="text-[10px] font-bold uppercase text-[#3087ff]/70 block">
                         Jobsite Destination
                       </span>
                       <strong>{rfq.deliveryLocation}</strong>
                     </div>
-                    <div className="p-2.5 bg-[#0082FC]/5 border border-[#0082FC]/20">
-                      <span className="text-[10px] font-bold uppercase text-[#0082FC]/70 block">
+                    <div className="p-2.5 bg-[#3087ff]/5 border border-[#3087ff]/20">
+                      <span className="text-[10px] font-bold uppercase text-[#3087ff]/70 block">
                         Target Delivery
                       </span>
                       <strong>{rfq.targetDeliveryDate}</strong>
@@ -469,8 +469,8 @@ export default function SuperAdminPage() {
                   </div>
 
                   {rfq.notes && (
-                    <div className="p-3 bg-slate-50 border border-slate-300 text-xs text-[#0082FC]">
-                      <strong className="block text-[10px] uppercase font-bold text-[#0082FC]/70 mb-1">
+                    <div className="p-3 bg-slate-50 border border-slate-300 text-xs text-[#3087ff]">
+                      <strong className="block text-[10px] uppercase font-bold text-[#3087ff]/70 mb-1">
                         Takeoff &amp; Specification Notes:
                       </strong>
                       <p className="leading-relaxed">{rfq.notes}</p>
@@ -484,12 +484,12 @@ export default function SuperAdminPage() {
           /* Tab Content: Contractor Applications View */
           <div className="space-y-4">
             {filteredUsers.length === 0 ? (
-              <div className="p-12 text-center border-2 border-[#0082FC] bg-white text-[#0082FC]">
-                <Users className="w-12 h-12 text-[#0565d6] mx-auto mb-3" />
+              <div className="p-12 text-center border-2 border-[#3087ff] bg-white text-[#3087ff]">
+                <Users className="w-12 h-12 text-[#3087ff] mx-auto mb-3" />
                 <h3 className="font-black text-base uppercase">
                   No Registrations in this View
                 </h3>
-                <p className="text-xs text-[#0082FC]/80 mt-1">
+                <p className="text-xs text-[#3087ff]/80 mt-1">
                   Try switching tabs or resetting the search filter.
                 </p>
               </div>
@@ -507,18 +507,18 @@ export default function SuperAdminPage() {
                         ? "bg-amber-50/60 border-amber-500"
                         : isRejected
                           ? "bg-rose-50/40 border-rose-400"
-                          : "bg-white border-[#0082FC]"
+                          : "bg-white border-[#3087ff]"
                       }`}
                   >
                     <div className="flex flex-col lg:flex-row lg:items-center justify-between gap-5">
                       <div className="space-y-2 flex-1 min-w-0">
                         <div className="flex flex-wrap items-center gap-2">
-                          <h3 className="text-base sm:text-lg font-black text-[#0082FC] uppercase">
+                          <h3 className="text-base sm:text-lg font-black text-[#3087ff] uppercase">
                             {user.companyName}
                           </h3>
 
                           {isUserAdmin && (
-                            <span className="px-2.5 py-0.5 bg-[#0082FC] text-white text-xs font-black uppercase">
+                            <span className="px-2.5 py-0.5 bg-[#3087ff] text-white text-xs font-black uppercase">
                               Super-Admin
                             </span>
                           )}
@@ -544,21 +544,21 @@ export default function SuperAdminPage() {
                             </span>
                           )}
 
-                          <span className="text-xs font-bold text-[#0082FC] bg-white border border-[#0082FC] px-2 py-0.5">
+                          <span className="text-xs font-bold text-[#3087ff] bg-white border border-[#3087ff] px-2 py-0.5">
                             {user.accountType}
                           </span>
                         </div>
 
                         {/* Metadata Rows */}
-                        <div className="grid grid-cols-1 sm:grid-cols-3 gap-2 text-xs text-[#0082FC]">
+                        <div className="grid grid-cols-1 sm:grid-cols-3 gap-2 text-xs text-[#3087ff]">
                           <div className="flex items-center gap-1.5">
-                            <UserCheck className="w-3.5 h-3.5 text-[#0082FC] shrink-0" />
+                            <UserCheck className="w-3.5 h-3.5 text-[#3087ff] shrink-0" />
                             <span>
                               Contact: <strong>{user.fullName}</strong>
                             </span>
                           </div>
                           <div className="flex items-center gap-1.5">
-                            <Mail className="w-3.5 h-3.5 text-[#0082FC] shrink-0" />
+                            <Mail className="w-3.5 h-3.5 text-[#3087ff] shrink-0" />
                             <span>
                               Email:{" "}
                               <strong className="font-mono">
@@ -567,7 +567,7 @@ export default function SuperAdminPage() {
                             </span>
                           </div>
                           <div className="flex items-center gap-1.5">
-                            <Phone className="w-3.5 h-3.5 text-[#0082FC] shrink-0" />
+                            <Phone className="w-3.5 h-3.5 text-[#3087ff] shrink-0" />
                             <span>
                               Phone: <strong>{user.phone}</strong>
                             </span>
@@ -575,17 +575,17 @@ export default function SuperAdminPage() {
                         </div>
 
                         {/* Compliance & Audit Line */}
-                        <div className="flex flex-wrap items-center gap-3 text-xs text-[#0082FC]/80 pt-1">
+                        <div className="flex flex-wrap items-center gap-3 text-xs text-[#3087ff]/80 pt-1">
                           <span>
                             Tax ID / License:{" "}
-                            <strong className="font-mono text-[#0082FC]">
+                            <strong className="font-mono text-[#3087ff]">
                               {user.taxIdOrLicense}
                             </strong>
                           </span>
                           <span>&bull;</span>
                           <span>
                             Primary Yard:{" "}
-                            <strong className="uppercase text-[#0082FC]">
+                            <strong className="uppercase text-[#3087ff]">
                               {(user.assignedYard || "").replace("-", " ")}
                             </strong>
                           </span>
@@ -622,7 +622,7 @@ export default function SuperAdminPage() {
 
                       {/* Action Triggers */}
                       {!isUserAdmin && (
-                        <div className="flex flex-wrap sm:flex-nowrap items-center gap-2 shrink-0 pt-3 lg:pt-0 border-t lg:border-t-0 border-[#0082FC]/20">
+                        <div className="flex flex-wrap sm:flex-nowrap items-center gap-2 shrink-0 pt-3 lg:pt-0 border-t lg:border-t-0 border-[#3087ff]/20">
                           {!isApproved && (
                             <button
                               type="button"
@@ -657,7 +657,7 @@ export default function SuperAdminPage() {
                                 showFeedback(`Removed ${user.companyName}.`);
                               }
                             }}
-                            className="p-2.5 text-[#0082FC]/60 hover:text-rose-700 hover:bg-rose-100 transition-colors cursor-pointer"
+                            className="p-2.5 text-[#3087ff]/60 hover:text-rose-700 hover:bg-rose-100 transition-colors cursor-pointer"
                             title="Delete User Record"
                           >
                             <Trash2 className="w-4 h-4" />
@@ -676,7 +676,7 @@ export default function SuperAdminPage() {
                           <button
                             type="button"
                             onClick={() => setRejectingUserId(null)}
-                            className="text-[#0082FC] hover:underline cursor-pointer"
+                            className="text-[#3087ff] hover:underline cursor-pointer"
                           >
                             Cancel
                           </button>
@@ -686,13 +686,13 @@ export default function SuperAdminPage() {
                           value={rejectReason}
                           onChange={(e) => setRejectReason(e.target.value)}
                           placeholder="e.g. Unverified tax ID / Missing state contractor license"
-                          className="w-full bg-white border border-rose-400 p-2.5 text-xs text-[#0082FC] font-semibold focus:outline-none"
+                          className="w-full bg-white border border-rose-400 p-2.5 text-xs text-[#3087ff] font-semibold focus:outline-none"
                         />
                         <div className="flex justify-end gap-2 pt-1">
                           <button
                             type="button"
                             onClick={() => setRejectingUserId(null)}
-                            className="px-3 py-1.5 text-xs font-bold text-[#0082FC] border border-[#0082FC] cursor-pointer"
+                            className="px-3 py-1.5 text-xs font-bold text-[#3087ff] border border-[#3087ff] cursor-pointer"
                           >
                             Cancel
                           </button>

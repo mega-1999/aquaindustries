@@ -114,20 +114,20 @@ export function MasteringInfrastructureTabs() {
   const current = SECTORS[activeTab];
 
   return (
-    <section className="relative w-full bg-white text-[#0082FC] py-20 border-b border-[#0082FC]">
+    <section className="relative w-full bg-white text-[#3087ff] py-20 border-b border-[#3087ff]">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         {/* Section Header */}
         <div className="text-center max-w-3xl mx-auto mb-10">
-          <div className="inline-flex items-center space-x-2 border-2 border-[#0082FC] bg-white px-3 py-1 mb-3">
-            <span className="w-2 h-2 bg-[#0082FC]"></span>
-            <span className="text-xs font-bold uppercase tracking-wider text-[#0082FC] whitespace-nowrap">
+          <div className="inline-flex items-center space-x-2 border-2 border-[#3087ff] bg-white px-3 py-1 mb-3">
+            <span className="w-2 h-2 bg-[#3087ff]"></span>
+            <span className="text-xs font-bold uppercase tracking-wider text-[#3087ff] whitespace-nowrap">
               Sector Expertise
             </span>
           </div>
-          <h2 className="text-2xl sm:text-3xl lg:text-4xl font-black text-[#0082FC] tracking-tight">
+          <h2 className="text-2xl sm:text-3xl lg:text-4xl font-black text-[#3087ff] tracking-tight">
             Building America's Water Solutions Today
           </h2>
-          <p className="mt-3 text-sm sm:text-base text-[#0082FC]/90 font-normal leading-relaxed">
+          <p className="mt-3 text-sm sm:text-base text-[#3087ff]/90 font-normal leading-relaxed">
             From deep municipal water transmission corridors to high-velocity
             stormwater collection, Aqua Industries provides utility contractors
             with certified ductile iron fittings and castings tailored to every
@@ -136,7 +136,7 @@ export function MasteringInfrastructureTabs() {
         </div>
 
         {/* Tab Navigation Ribbon (Single Line Buttons, Sharp Corners) */}
-        <div className="flex flex-wrap border-2 border-[#0082FC] bg-white p-1 mb-8 gap-1">
+        <div className="flex flex-wrap border-2 border-[#3087ff] bg-white p-1 mb-8 gap-1">
           {SECTORS.map((sector, idx) => {
             const isActive = idx === activeTab;
             return (
@@ -145,8 +145,8 @@ export function MasteringInfrastructureTabs() {
                 type="button"
                 onClick={() => setActiveTab(idx)}
                 className={`flex-1 py-2.5 px-3.5 text-xs sm:text-sm font-bold uppercase tracking-wider transition-colors duration-150 whitespace-nowrap cursor-pointer ${isActive
-                    ? "bg-[#0082FC] text-white"
-                    : "bg-white text-[#0082FC] hover:bg-[#0565d6] hover:text-[#0082FC]"
+                    ? "bg-[#3087ff] text-white"
+                    : "bg-white text-[#3087ff] hover:bg-[#3087ff] hover:text-[#3087ff]"
                   }`}
               >
                 {sector.tabLabel}
@@ -158,33 +158,33 @@ export function MasteringInfrastructureTabs() {
         {/* Active Content Showcase (Split Layout: Technical Specs on Left, Schematic on Right) */}
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 items-stretch">
           {/* Left Column: Details & Technical Specifications */}
-          <div className="lg:col-span-7 border-2 border-[#0082FC] bg-white p-6 sm:p-7 flex flex-col justify-between">
+          <div className="lg:col-span-7 border-2 border-[#3087ff] bg-white p-6 sm:p-7 flex flex-col justify-between">
             <div className="space-y-4">
               <div className="space-y-1.5">
-                <span className="text-xs font-mono font-bold text-[#0565d6] bg-[#0082FC] px-2.5 py-0.5 uppercase tracking-wider whitespace-nowrap inline-block">
+                <span className="text-xs font-mono font-bold text-[#3087ff] bg-[#3087ff] px-2.5 py-0.5 uppercase tracking-wider whitespace-nowrap inline-block">
                   {current.subhead}
                 </span>
-                <h3 className="text-xl sm:text-2xl font-black text-[#0082FC] leading-snug">
+                <h3 className="text-xl sm:text-2xl font-black text-[#3087ff] leading-snug">
                   {current.headline}
                 </h3>
               </div>
 
-              <p className="text-sm sm:text-base text-[#0082FC]/90 leading-relaxed font-normal">
+              <p className="text-sm sm:text-base text-[#3087ff]/90 leading-relaxed font-normal">
                 {current.description}
               </p>
 
               {/* Bullet points */}
               <div className="space-y-2 pt-1">
-                <h4 className="text-xs font-mono font-bold uppercase tracking-wider text-[#0082FC]">
+                <h4 className="text-xs font-mono font-bold uppercase tracking-wider text-[#3087ff]">
                   Civil Engineering &amp; Contractor Standards:
                 </h4>
                 <ul className="space-y-2">
                   {current.bulletSpecs.map((bullet) => (
                     <li
                       key={bullet}
-                      className="flex items-start space-x-2.5 text-xs sm:text-sm text-[#0082FC]"
+                      className="flex items-start space-x-2.5 text-xs sm:text-sm text-[#3087ff]"
                     >
-                      <span className="w-1.5 h-1.5 mt-1.5 bg-[#0082FC] flex-shrink-0" />
+                      <span className="w-1.5 h-1.5 mt-1.5 bg-[#3087ff] flex-shrink-0" />
                       <span>{bullet}</span>
                     </li>
                   ))}
@@ -193,39 +193,39 @@ export function MasteringInfrastructureTabs() {
             </div>
 
             {/* 4 Technical Indicators Matrix (No Overflow, Self-Wrapping Grid) */}
-            <div className="mt-6 pt-5 border-t-2 border-[#0082FC] grid grid-cols-2 md:grid-cols-4 gap-2.5 sm:gap-3 text-center">
-              <div className="border-2 border-[#0082FC] p-2.5 sm:p-3 bg-white flex flex-col justify-between min-h-[76px] shadow-xs">
-                <div className="text-[10px] sm:text-[11px] font-mono uppercase text-[#0082FC]/75 font-bold tracking-wider">
+            <div className="mt-6 pt-5 border-t-2 border-[#3087ff] grid grid-cols-2 md:grid-cols-4 gap-2.5 sm:gap-3 text-center">
+              <div className="border-2 border-[#3087ff] p-2.5 sm:p-3 bg-white flex flex-col justify-between min-h-[76px] shadow-xs">
+                <div className="text-[10px] sm:text-[11px] font-mono uppercase text-[#3087ff]/75 font-bold tracking-wider">
                   Standard
                 </div>
-                <div className="text-xs sm:text-[13px] font-extrabold text-[#0082FC] mt-1 leading-snug break-words">
+                <div className="text-xs sm:text-[13px] font-extrabold text-[#3087ff] mt-1 leading-snug break-words">
                   {current.awwaStandard}
                 </div>
               </div>
 
-              <div className="border-2 border-[#0082FC] p-2.5 sm:p-3 bg-white flex flex-col justify-between min-h-[76px] shadow-xs">
-                <div className="text-[10px] sm:text-[11px] font-mono uppercase text-[#0082FC]/75 font-bold tracking-wider">
+              <div className="border-2 border-[#3087ff] p-2.5 sm:p-3 bg-white flex flex-col justify-between min-h-[76px] shadow-xs">
+                <div className="text-[10px] sm:text-[11px] font-mono uppercase text-[#3087ff]/75 font-bold tracking-wider">
                   Rating
                 </div>
-                <div className="text-xs sm:text-[13px] font-extrabold text-[#0082FC] mt-1 leading-snug break-words">
+                <div className="text-xs sm:text-[13px] font-extrabold text-[#3087ff] mt-1 leading-snug break-words">
                   {current.pressureRating}
                 </div>
               </div>
 
-              <div className="border-2 border-[#0082FC] p-2.5 sm:p-3 bg-white flex flex-col justify-between min-h-[76px] shadow-xs">
-                <div className="text-[10px] sm:text-[11px] font-mono uppercase text-[#0082FC]/75 font-bold tracking-wider">
+              <div className="border-2 border-[#3087ff] p-2.5 sm:p-3 bg-white flex flex-col justify-between min-h-[76px] shadow-xs">
+                <div className="text-[10px] sm:text-[11px] font-mono uppercase text-[#3087ff]/75 font-bold tracking-wider">
                   Metallurgy
                 </div>
-                <div className="text-xs sm:text-[13px] font-extrabold text-[#0082FC] mt-1 leading-snug break-words">
+                <div className="text-xs sm:text-[13px] font-extrabold text-[#3087ff] mt-1 leading-snug break-words">
                   {current.materialGrade}
                 </div>
               </div>
 
-              <div className="border-2 border-[#0082FC] p-2.5 sm:p-3 bg-white flex flex-col justify-between min-h-[76px] shadow-xs">
-                <div className="text-[10px] sm:text-[11px] font-mono uppercase text-[#0082FC]/75 font-bold tracking-wider">
+              <div className="border-2 border-[#3087ff] p-2.5 sm:p-3 bg-white flex flex-col justify-between min-h-[76px] shadow-xs">
+                <div className="text-[10px] sm:text-[11px] font-mono uppercase text-[#3087ff]/75 font-bold tracking-wider">
                   Lining
                 </div>
-                <div className="text-xs sm:text-[13px] font-extrabold text-[#0082FC] mt-1 leading-snug break-words">
+                <div className="text-xs sm:text-[13px] font-extrabold text-[#3087ff] mt-1 leading-snug break-words">
                   {current.coatingSystem}
                 </div>
               </div>
@@ -233,28 +233,28 @@ export function MasteringInfrastructureTabs() {
           </div>
 
           {/* Right Column: High-Contrast Technical Vector Schematic */}
-          <div className="lg:col-span-5 border-2 border-[#0082FC] bg-[#0082FC] text-white p-6 sm:p-8 flex flex-col justify-between relative overflow-hidden">
+          <div className="lg:col-span-5 border-2 border-[#3087ff] bg-[#3087ff] text-white p-6 sm:p-8 flex flex-col justify-between relative overflow-hidden">
             {/* Infinite Seamless Looping Water Background Animation */}
             <InfiniteWaterBackground opacity="opacity-20" />
 
             <div className="relative z-10">
               {/* Schematic Header */}
-              <div className="flex items-center justify-between border-b border-[#0565d6] pb-3 mb-6">
+              <div className="flex items-center justify-between border-b border-[#3087ff] pb-3 mb-6">
                 <div>
-                  <div className="text-xs font-mono uppercase text-[#0565d6] tracking-wider font-bold whitespace-nowrap">
+                  <div className="text-xs font-mono uppercase text-[#3087ff] tracking-wider font-bold whitespace-nowrap">
                     TECHNICAL SCHEMATIC
                   </div>
                   <div className="text-base font-bold text-white whitespace-nowrap">
                     {current.diagramTitle}
                   </div>
                 </div>
-                <span className="text-xs font-mono uppercase px-2.5 py-1 bg-white text-[#0082FC] font-bold whitespace-nowrap">
+                <span className="text-xs font-mono uppercase px-2.5 py-1 bg-white text-[#3087ff] font-bold whitespace-nowrap">
                   {current.diagramBadge}
                 </span>
               </div>
 
               {/* Dynamic SVG Schematic Based on Active Tab */}
-              <div className="bg-white border-2 border-[#0565d6] p-4 text-[#0082FC] my-4 flex items-center justify-center min-h-[260px]">
+              <div className="bg-white border-2 border-[#3087ff] p-4 text-[#3087ff] my-4 flex items-center justify-center min-h-[260px]">
                 {current.svgType === "watermain" && (
                   <svg
                     viewBox="0 0 320 180"
@@ -267,8 +267,8 @@ export function MasteringInfrastructureTabs() {
                     {/* Pipe Bell */}
                     <path
                       d="M 20 40 L 140 40 L 140 25 L 180 25 L 180 40 L 220 40 L 220 140 L 180 140 L 180 155 L 140 155 L 140 140 L 20 140 Z"
-                      fill="#0082FC"
-                      stroke="#0082FC"
+                      fill="#3087ff"
+                      stroke="#3087ff"
                     />
                     {/* Spigot End entering Bell */}
                     <rect
@@ -277,17 +277,17 @@ export function MasteringInfrastructureTabs() {
                       width="160"
                       height="80"
                       fill="#FFFFFF"
-                      stroke="#0082FC"
+                      stroke="#3087ff"
                       strokeWidth="3"
                     />
                     {/* Interior Cement Lining */}
-                    <rect x="22" y="42" width="116" height="8" fill="#0565d6" />
+                    <rect x="22" y="42" width="116" height="8" fill="#3087ff" />
                     <rect
                       x="22"
                       y="130"
                       width="116"
                       height="8"
-                      fill="#0565d6"
+                      fill="#3087ff"
                     />
                     {/* Gasket Socket Pocket */}
                     <rect
@@ -295,8 +295,8 @@ export function MasteringInfrastructureTabs() {
                       y="42"
                       width="20"
                       height="16"
-                      fill="#0565d6"
-                      stroke="#0082FC"
+                      fill="#3087ff"
+                      stroke="#3087ff"
                       strokeWidth="1.5"
                     />
                     <rect
@@ -304,8 +304,8 @@ export function MasteringInfrastructureTabs() {
                       y="122"
                       width="20"
                       height="16"
-                      fill="#0565d6"
-                      stroke="#0082FC"
+                      fill="#3087ff"
+                      stroke="#3087ff"
                       strokeWidth="1.5"
                     />
                     {/* MJ Follower Gland */}
@@ -314,16 +314,16 @@ export function MasteringInfrastructureTabs() {
                       y="20"
                       width="25"
                       height="35"
-                      fill="#0082FC"
-                      stroke="#0082FC"
+                      fill="#3087ff"
+                      stroke="#3087ff"
                     />
                     <rect
                       x="170"
                       y="125"
                       width="25"
                       height="35"
-                      fill="#0082FC"
-                      stroke="#0082FC"
+                      fill="#3087ff"
+                      stroke="#3087ff"
                     />
                     {/* T-Head Bolt */}
                     <line
@@ -331,7 +331,7 @@ export function MasteringInfrastructureTabs() {
                       y1="32"
                       x2="210"
                       y2="32"
-                      stroke="#0565d6"
+                      stroke="#3087ff"
                       strokeWidth="4"
                     />
                     <line
@@ -339,11 +339,11 @@ export function MasteringInfrastructureTabs() {
                       y1="148"
                       x2="210"
                       y2="148"
-                      stroke="#0565d6"
+                      stroke="#3087ff"
                       strokeWidth="4"
                     />
-                    <circle cx="210" cy="32" r="6" fill="#0082FC" />
-                    <circle cx="210" cy="148" r="6" fill="#0082FC" />
+                    <circle cx="210" cy="32" r="6" fill="#3087ff" />
+                    <circle cx="210" cy="148" r="6" fill="#3087ff" />
                     {/* Flow text annotation */}
                     <text
                       x="50"
@@ -373,21 +373,21 @@ export function MasteringInfrastructureTabs() {
                       y1="50"
                       x2="310"
                       y2="50"
-                      stroke="#0565d6"
+                      stroke="#3087ff"
                       strokeWidth="3"
                       strokeDasharray="4 4"
                     />
                     {/* Cast Iron Frame Left */}
                     <path
                       d="M 30 150 L 30 110 L 70 110 L 70 50 L 100 50 L 100 80 L 120 80 L 120 150 Z"
-                      fill="#0082FC"
-                      stroke="#0082FC"
+                      fill="#3087ff"
+                      stroke="#3087ff"
                     />
                     {/* Cast Iron Frame Right */}
                     <path
                       d="M 290 150 L 290 110 L 250 110 L 250 50 L 220 50 L 220 80 L 200 80 L 200 150 Z"
-                      fill="#0082FC"
-                      stroke="#0082FC"
+                      fill="#3087ff"
+                      stroke="#3087ff"
                     />
                     {/* Heavy Duty Cover Lid */}
                     <rect
@@ -395,13 +395,13 @@ export function MasteringInfrastructureTabs() {
                       y="52"
                       width="110"
                       height="26"
-                      fill="#0082FC"
-                      stroke="#0565d6"
+                      fill="#3087ff"
+                      stroke="#3087ff"
                       strokeWidth="2"
                     />
                     {/* Machined Bearing Seat */}
-                    <rect x="100" y="78" width="20" height="4" fill="#0565d6" />
-                    <rect x="200" y="78" width="20" height="4" fill="#0565d6" />
+                    <rect x="100" y="78" width="20" height="4" fill="#3087ff" />
+                    <rect x="200" y="78" width="20" height="4" fill="#3087ff" />
                     {/* Label on lid */}
                     <text
                       x="128"
@@ -416,13 +416,13 @@ export function MasteringInfrastructureTabs() {
                     {/* Wheel load arrow */}
                     <path
                       d="M 160 10 L 160 40 M 150 30 L 160 42 L 170 30"
-                      stroke="#0082FC"
+                      stroke="#3087ff"
                       strokeWidth="3"
                     />
                     <text
                       x="105"
                       y="25"
-                      fill="#0082FC"
+                      fill="#3087ff"
                       fontSize="9"
                       fontFamily="monospace"
                       fontWeight="bold"
@@ -448,7 +448,7 @@ export function MasteringInfrastructureTabs() {
                       width="80"
                       height="140"
                       fill="#FFFFFF"
-                      stroke="#0082FC"
+                      stroke="#3087ff"
                       strokeWidth="2"
                       strokeDasharray="4 2"
                     />
@@ -458,8 +458,8 @@ export function MasteringInfrastructureTabs() {
                       y="65"
                       width="260"
                       height="50"
-                      fill="#0082FC"
-                      stroke="#0082FC"
+                      fill="#3087ff"
+                      stroke="#3087ff"
                     />
                     {/* Left Flange */}
                     <rect
@@ -467,8 +467,8 @@ export function MasteringInfrastructureTabs() {
                       y="45"
                       width="20"
                       height="90"
-                      fill="#0082FC"
-                      stroke="#0565d6"
+                      fill="#3087ff"
+                      stroke="#3087ff"
                       strokeWidth="2"
                     />
                     <circle cx="30" cy="55" r="4" fill="#FFFFFF" />
@@ -479,8 +479,8 @@ export function MasteringInfrastructureTabs() {
                       y="45"
                       width="20"
                       height="90"
-                      fill="#0082FC"
-                      stroke="#0565d6"
+                      fill="#3087ff"
+                      stroke="#3087ff"
                       strokeWidth="2"
                     />
                     <circle cx="290" cy="55" r="4" fill="#FFFFFF" />
@@ -491,14 +491,14 @@ export function MasteringInfrastructureTabs() {
                       y="40"
                       width="20"
                       height="100"
-                      fill="#0565d6"
-                      stroke="#0082FC"
+                      fill="#3087ff"
+                      stroke="#3087ff"
                       strokeWidth="2"
                     />
                     <text
                       x="135"
                       y="155"
-                      fill="#0082FC"
+                      fill="#3087ff"
                       fontSize="9"
                       fontFamily="monospace"
                       fontWeight="bold"
@@ -524,7 +524,7 @@ export function MasteringInfrastructureTabs() {
                       width="240"
                       height="60"
                       fill="#FFFFFF"
-                      stroke="#0082FC"
+                      stroke="#3087ff"
                       strokeWidth="3"
                     />
                     {/* Wedge Restraint Ring */}
@@ -533,20 +533,20 @@ export function MasteringInfrastructureTabs() {
                       y="40"
                       width="35"
                       height="100"
-                      fill="#0082FC"
-                      stroke="#0082FC"
+                      fill="#3087ff"
+                      stroke="#3087ff"
                     />
                     {/* Mechanical Actuating Wedges */}
                     <polygon
                       points="175,60 185,60 180,72"
-                      fill="#0565d6"
-                      stroke="#0082FC"
+                      fill="#3087ff"
+                      stroke="#3087ff"
                       strokeWidth="1.5"
                     />
                     <polygon
                       points="175,120 185,120 180,108"
-                      fill="#0565d6"
-                      stroke="#0082FC"
+                      fill="#3087ff"
+                      stroke="#3087ff"
                       strokeWidth="1.5"
                     />
                     {/* Torque-off Breakaway Hex Head Bolts */}
@@ -555,16 +555,16 @@ export function MasteringInfrastructureTabs() {
                       y="25"
                       width="15"
                       height="15"
-                      fill="#0565d6"
-                      stroke="#0082FC"
+                      fill="#3087ff"
+                      stroke="#3087ff"
                     />
                     <rect
                       x="190"
                       y="140"
                       width="15"
                       height="15"
-                      fill="#0565d6"
-                      stroke="#0082FC"
+                      fill="#3087ff"
+                      stroke="#3087ff"
                     />
                     {/* Tie Rod to Fitting Bell */}
                     <line
@@ -572,7 +572,7 @@ export function MasteringInfrastructureTabs() {
                       y1="48"
                       x2="185"
                       y2="48"
-                      stroke="#0082FC"
+                      stroke="#3087ff"
                       strokeWidth="3"
                     />
                     <line
@@ -580,18 +580,18 @@ export function MasteringInfrastructureTabs() {
                       y1="132"
                       x2="185"
                       y2="132"
-                      stroke="#0082FC"
+                      stroke="#3087ff"
                       strokeWidth="3"
                     />
                     {/* Mechanical Joint Fitting Bell at Left */}
                     <path
                       d="M 40 40 L 70 40 L 70 140 L 40 140 Z"
-                      fill="#0082FC"
+                      fill="#3087ff"
                     />
                     <text
                       x="65"
                       y="95"
-                      fill="#0082FC"
+                      fill="#3087ff"
                       fontSize="10"
                       fontFamily="monospace"
                       fontWeight="bold"
@@ -611,10 +611,10 @@ export function MasteringInfrastructureTabs() {
             </div>
 
             {/* Single-Line Action Button */}
-            <div className="pt-6 border-t border-[#0565d6] relative z-10">
+            <div className="pt-6 border-t border-[#3087ff] relative z-10">
               <a
                 href="#quote-builder"
-                className="w-full inline-flex items-center justify-center bg-white text-[#0082FC] hover:bg-[#0565d6] hover:text-[#0082FC] font-bold text-sm px-6 py-3 border-2 border-white transition-colors duration-150 whitespace-nowrap"
+                className="w-full inline-flex items-center justify-center bg-white text-[#3087ff] hover:bg-[#3087ff] hover:text-[#3087ff] font-bold text-sm px-6 py-3 border-2 border-white transition-colors duration-150 whitespace-nowrap"
               >
                 <span>Request Submittal for {current.tabLabel}</span>
                 <svg

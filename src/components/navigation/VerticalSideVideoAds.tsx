@@ -287,10 +287,10 @@ const SideAdCard: React.FC<SideAdCardProps> = ({
   return (
     <div
       ref={cardRef}
-      className="w-36 min-[1720px]:w-40 min-[1900px]:w-44 bg-white border-2 border-[#0074f0] shadow-lg text-[#0074f0] flex flex-col justify-between group transition-all duration-300 hover:border-[#0082FC] hover:-translate-y-0.5 relative shrink-0"
+      className="w-36 min-[1720px]:w-40 min-[1900px]:w-44 bg-white border-2 border-[#3087ff] shadow-lg text-[#3087ff] flex flex-col justify-between group transition-all duration-300 hover:border-[#3087ff] hover:-translate-y-0.5 relative shrink-0"
     >
       {/* Top Video Preview Thumbnail Container */}
-      <div className="relative w-full h-18 min-[1720px]:h-22 bg-[#0074f0] overflow-hidden">
+      <div className="relative w-full h-18 min-[1720px]:h-22 bg-[#3087ff] overflow-hidden">
         {/* Active Ambient Water Looping Video */}
         <video
           ref={videoRef}
@@ -311,7 +311,7 @@ const SideAdCard: React.FC<SideAdCardProps> = ({
           className="absolute inset-0 w-full h-full opacity-35 mix-blend-overlay gpu-water-drift pointer-events-none"
           style={{
             backgroundImage:
-              "radial-gradient(ellipse at 30% 30%, rgba(95, 212, 253, 0.8) 0%, rgba(0, 130, 252, 0.95) 100%)",
+              "radial-gradient(ellipse at 30% 30%, rgba(48, 135, 255, 0.8) 0%, rgba(48, 135, 255, 0.95) 100%)",
           }}
         />
 
@@ -324,10 +324,10 @@ const SideAdCard: React.FC<SideAdCardProps> = ({
 
         {/* Top Pill: AD & Duration */}
         <div className="absolute top-1 left-1 right-1 flex items-center justify-between z-10">
-          <span className="px-1 py-0.2 bg-[#0074f0] text-white text-[8px] font-black uppercase tracking-wider border border-[#0082FC]">
+          <span className="px-1 py-0.2 bg-[#3087ff] text-white text-[8px] font-black uppercase tracking-wider border border-[#3087ff]">
             {ad.badge}
           </span>
-          <span className="px-1 py-0.2 bg-white/90 text-[#0074f0] text-[8px] font-bold">
+          <span className="px-1 py-0.2 bg-white/90 text-[#3087ff] text-[8px] font-bold">
             {ad.duration}
           </span>
         </div>
@@ -336,36 +336,36 @@ const SideAdCard: React.FC<SideAdCardProps> = ({
         <button
           type="button"
           onClick={() => onPlay(ad)}
-          className="absolute inset-0 m-auto w-8 h-8 bg-white/90 hover:bg-[#0082FC] text-[#0074f0] flex items-center justify-center border border-[#0074f0] shadow-md transition-transform hover:scale-110 cursor-pointer z-20"
+          className="absolute inset-0 m-auto w-8 h-8 bg-white/90 hover:bg-[#3087ff] text-[#3087ff] flex items-center justify-center border border-[#3087ff] shadow-md transition-transform hover:scale-110 cursor-pointer z-20"
           title={`Watch ${ad.title} video`}
           aria-label={`Watch ${ad.title} video`}
         >
-          <Play className="w-3.5 h-3.5 fill-[#0074f0] ml-0.5" />
+          <Play className="w-3.5 h-3.5 fill-[#3087ff] ml-0.5" />
         </button>
       </div>
 
       {/* Card Content Strip */}
       <div className="p-2 flex-1 flex flex-col justify-between">
         <div>
-          <div className="flex items-center gap-1 text-[9px] font-bold text-[#0074f0]/75 uppercase truncate mb-0.5">
+          <div className="flex items-center gap-1 text-[9px] font-bold text-[#3087ff]/75 uppercase truncate mb-0.5">
             <span>{ad.standard}</span>
           </div>
 
-          <h4 className="font-black text-[11px] uppercase tracking-tight text-[#0074f0] leading-tight line-clamp-1">
+          <h4 className="font-black text-[11px] uppercase tracking-tight text-[#3087ff] leading-tight line-clamp-1">
             {ad.title}
           </h4>
 
-          <p className="text-[10px] text-[#0074f0]/80 leading-tight line-clamp-1 min-[1720px]:line-clamp-2 mt-0.5">
+          <p className="text-[10px] text-[#3087ff]/80 leading-tight line-clamp-1 min-[1720px]:line-clamp-2 mt-0.5">
             {ad.description}
           </p>
         </div>
 
         {/* Action CTAs */}
-        <div className="mt-1.5 pt-1.5 border-t border-[#0074f0]/20 flex items-center gap-1">
+        <div className="mt-1.5 pt-1.5 border-t border-[#3087ff]/20 flex items-center gap-1">
           <button
             type="button"
             onClick={() => onPlay(ad)}
-            className="flex-1 py-0.5 px-1 bg-white hover:bg-[#0074f0] text-[#0074f0] hover:text-white border border-[#0074f0] text-[9px] font-black uppercase tracking-wider transition-colors flex items-center justify-center gap-0.5 cursor-pointer"
+            className="flex-1 py-0.5 px-1 bg-white hover:bg-[#3087ff] text-[#3087ff] hover:text-white border border-[#3087ff] text-[9px] font-black uppercase tracking-wider transition-colors flex items-center justify-center gap-0.5 cursor-pointer"
           >
             <Play className="w-2 h-2" />
             <span>Go to product</span>
@@ -374,9 +374,9 @@ const SideAdCard: React.FC<SideAdCardProps> = ({
           <button
             type="button"
             onClick={() => onAdd(ad.product)}
-            className={`py-0.5 px-1.5 border border-[#0074f0] text-[9px] font-black uppercase tracking-wider transition-all cursor-pointer flex items-center justify-center ${isAdded
-                ? "bg-[#0082FC] text-[#0074f0]"
-                : "bg-[#0074f0] text-white hover:bg-[#0082FC] hover:text-[#0074f0]"
+            className={`py-0.5 px-1.5 border border-[#3087ff] text-[9px] font-black uppercase tracking-wider transition-all cursor-pointer flex items-center justify-center ${isAdded
+                ? "bg-[#3087ff] text-[#3087ff]"
+                : "bg-[#3087ff] text-white hover:bg-[#3087ff] hover:text-[#3087ff]"
               }`}
             title="Add to Quote"
           >
@@ -492,7 +492,7 @@ export const VerticalSideVideoAds: React.FC<VerticalSideVideoAdsProps> = ({
         className="absolute top-[10px] pb-[10px] left-2 min-[1720px]:left-3 min-[1900px]:left-4 z-30 hidden min-[1600px]:flex flex-col gap-[10px] select-none max-h-[calc(100%-200px)] overflow-hidden"
       >
         {/* Header Bar */}
-        <div className="bg-[#0074f0] text-white text-[9px] font-black uppercase tracking-wider px-2 py-1.5 border-2 border-[#0082FC] flex items-center justify-between shadow-md mb-0.5">
+        <div className="bg-[#3087ff] text-white text-[9px] font-black uppercase tracking-wider px-2 py-1.5 border-2 border-[#3087ff] flex items-center justify-between shadow-md mb-0.5">
           <span className="flex items-center gap-1.5">
             <span className="w-1.5 h-1.5 rounded-full bg-emerald-400 animate-pulse" />
             Waterworks Reels ({LEFT_VIDEO_ADS.length})
@@ -528,9 +528,9 @@ export const VerticalSideVideoAds: React.FC<VerticalSideVideoAdsProps> = ({
           }`}
       >
         {/* Header Bar */}
-        <div className="bg-[#0074f0] text-white text-[9px] font-black uppercase tracking-wider px-2 py-1.5 border-2 border-[#0082FC] flex items-center justify-between shadow-md mb-0.5">
+        <div className="bg-[#3087ff] text-white text-[9px] font-black uppercase tracking-wider px-2 py-1.5 border-2 border-[#3087ff] flex items-center justify-between shadow-md mb-0.5">
           <span className="flex items-center gap-1.5">
-            <span className="w-1.5 h-1.5 rounded-full bg-[#0565d6] animate-pulse" />
+            <span className="w-1.5 h-1.5 rounded-full bg-[#3087ff] animate-pulse" />
             Quality Reels ({RIGHT_VIDEO_ADS.length})
           </span>
         </div>
@@ -559,7 +559,7 @@ export const VerticalSideVideoAds: React.FC<VerticalSideVideoAdsProps> = ({
         <button
           type="button"
           onClick={() => setLeftDrawerOpen(true)}
-          className="bg-[#0074f0] hover:bg-[#0082FC] text-white hover:text-[#0565d6] border-y-2 border-r-2 border-white px-1.5 py-3 text-[9px] font-black uppercase tracking-widest shadow-2xl flex items-center gap-1 cursor-pointer transition-all [writing-mode:vertical-lr]"
+          className="bg-[#3087ff] hover:bg-[#3087ff] text-white hover:text-[#3087ff] border-y-2 border-r-2 border-white px-1.5 py-3 text-[9px] font-black uppercase tracking-widest shadow-2xl flex items-center gap-1 cursor-pointer transition-all [writing-mode:vertical-lr]"
           title="Open Waterworks Video Reels"
         >
           <Play className="w-2.5 h-2.5 fill-current rotate-90" />
@@ -577,7 +577,7 @@ export const VerticalSideVideoAds: React.FC<VerticalSideVideoAdsProps> = ({
         <button
           type="button"
           onClick={() => setRightDrawerOpen(true)}
-          className="bg-[#0074f0] hover:bg-[#0082FC] text-white hover:text-[#0565d6] border-y-2 border-l-2 border-white px-1.5 py-3 text-[9px] font-black uppercase tracking-widest shadow-2xl flex items-center gap-1 cursor-pointer transition-all [writing-mode:vertical-rl]"
+          className="bg-[#3087ff] hover:bg-[#3087ff] text-white hover:text-[#3087ff] border-y-2 border-l-2 border-white px-1.5 py-3 text-[9px] font-black uppercase tracking-widest shadow-2xl flex items-center gap-1 cursor-pointer transition-all [writing-mode:vertical-rl]"
           title="Open Quality Reels"
         >
           <Play className="w-2.5 h-2.5 fill-current -rotate-90" />
@@ -591,20 +591,20 @@ export const VerticalSideVideoAds: React.FC<VerticalSideVideoAdsProps> = ({
         <div className="fixed inset-0 z-50 flex">
           <button
             type="button"
-            className="fixed inset-0 bg-[#0074f0]/75 backdrop-blur-xs cursor-default w-full h-full border-0"
+            className="fixed inset-0 bg-[#3087ff]/75 backdrop-blur-xs cursor-default w-full h-full border-0"
             onClick={() => setLeftDrawerOpen(false)}
             aria-label="Close Left Video Ads"
           />
-          <div className="relative w-64 max-w-[85vw] bg-white h-full shadow-2xl border-r-4 border-[#0074f0] z-10 p-3.5 flex flex-col justify-between overflow-y-auto [scrollbar-width:thin] [scrollbar-color:#0082FC_rgba(0,130,252,0.1)]">
+          <div className="relative w-64 max-w-[85vw] bg-white h-full shadow-2xl border-r-4 border-[#3087ff] z-10 p-3.5 flex flex-col justify-between overflow-y-auto [scrollbar-width:thin] [scrollbar-color:#3087ff_rgba(48, 135, 255,0.1)]">
             <div>
-              <div className="flex items-center justify-between pb-2.5 mb-3 border-b-2 border-[#0082fc] sticky top-0 bg-white z-20">
-                <span className="font-black text-xs uppercase text-[#0074f0]">
+              <div className="flex items-center justify-between pb-2.5 mb-3 border-b-2 border-[#3087ff] sticky top-0 bg-white z-20">
+                <span className="font-black text-xs uppercase text-[#3087ff]">
                   Waterworks Reels ({LEFT_VIDEO_ADS.length} Products)
                 </span>
                 <button
                   type="button"
                   onClick={() => setLeftDrawerOpen(false)}
-                  className="p-1 text-[#0074f0] hover:bg-[#0082FC]/30 cursor-pointer"
+                  className="p-1 text-[#3087ff] hover:bg-[#3087ff]/30 cursor-pointer"
                 >
                   <X className="w-4 h-4" />
                 </button>
@@ -630,20 +630,20 @@ export const VerticalSideVideoAds: React.FC<VerticalSideVideoAdsProps> = ({
         <div className="fixed inset-0 z-50 flex justify-end">
           <button
             type="button"
-            className="fixed inset-0 bg-[#0074f0]/75 backdrop-blur-xs cursor-default w-full h-full border-0"
+            className="fixed inset-0 bg-[#3087ff]/75 backdrop-blur-xs cursor-default w-full h-full border-0"
             onClick={() => setRightDrawerOpen(false)}
             aria-label="Close Right Video Ads"
           />
-          <div className="relative w-64 max-w-[85vw] bg-white h-full shadow-2xl border-l-4 border-[#0074f0] z-10 p-3.5 flex flex-col justify-between overflow-y-auto [scrollbar-width:thin] [scrollbar-color:#0082FC_rgba(0,130,252,0.1)]">
+          <div className="relative w-64 max-w-[85vw] bg-white h-full shadow-2xl border-l-4 border-[#3087ff] z-10 p-3.5 flex flex-col justify-between overflow-y-auto [scrollbar-width:thin] [scrollbar-color:#3087ff_rgba(48, 135, 255,0.1)]">
             <div>
-              <div className="flex items-center justify-between pb-2.5 mb-3 border-b-2 border-[#0082FC] sticky top-0 bg-white z-20">
-                <span className="font-black text-xs uppercase text-[#0074f0]">
+              <div className="flex items-center justify-between pb-2.5 mb-3 border-b-2 border-[#3087ff] sticky top-0 bg-white z-20">
+                <span className="font-black text-xs uppercase text-[#3087ff]">
                   Quality Reels ({RIGHT_VIDEO_ADS.length} Products)
                 </span>
                 <button
                   type="button"
                   onClick={() => setRightDrawerOpen(false)}
-                  className="p-1 text-[#0074f0] hover:bg-[#0082FC]/30 cursor-pointer"
+                  className="p-1 text-[#3087ff] hover:bg-[#3087ff]/30 cursor-pointer"
                 >
                   <X className="w-4 h-4" />
                 </button>
@@ -669,26 +669,26 @@ export const VerticalSideVideoAds: React.FC<VerticalSideVideoAdsProps> = ({
         <div className="fixed inset-0 z-60 flex items-center justify-center p-4 sm:p-6">
           <button
             type="button"
-            className="fixed inset-0 bg-[#0074f0]/85 backdrop-blur-sm cursor-default w-full h-full border-0"
+            className="fixed inset-0 bg-[#3087ff]/85 backdrop-blur-sm cursor-default w-full h-full border-0"
             onClick={() => setActiveVideoModal(null)}
             aria-label="Close Video Player"
           />
 
-          <div className="relative w-full max-w-2xl bg-white border-4 border-[#0082FC] shadow-2xl z-10 text-[#0074f0] p-4 sm:p-6 animate-in fade-in zoom-in-95">
+          <div className="relative w-full max-w-2xl bg-white border-4 border-[#3087ff] shadow-2xl z-10 text-[#3087ff] p-4 sm:p-6 animate-in fade-in zoom-in-95">
             {/* Modal Header */}
-            <div className="flex items-center justify-between border-b-2 border-[#0074f0] pb-3 mb-4">
+            <div className="flex items-center justify-between border-b-2 border-[#3087ff] pb-3 mb-4">
               <div className="flex items-center gap-2">
-                <span className="px-2 py-0.5 bg-[#0074f0] text-white text-xs font-black uppercase">
+                <span className="px-2 py-0.5 bg-[#3087ff] text-white text-xs font-black uppercase">
                   {activeVideoModal.badge}
                 </span>
-                <h3 className="font-black text-base sm:text-lg uppercase text-[#0074f0]">
+                <h3 className="font-black text-base sm:text-lg uppercase text-[#3087ff]">
                   {activeVideoModal.title}
                 </h3>
               </div>
               <button
                 type="button"
                 onClick={() => setActiveVideoModal(null)}
-                className="p-1 text-[#0074f0] hover:bg-[#0082FC]/20 border border-[#0074f0] cursor-pointer"
+                className="p-1 text-[#3087ff] hover:bg-[#3087ff]/20 border border-[#3087ff] cursor-pointer"
                 aria-label="Close Modal"
               >
                 <X className="w-5 h-5" />
@@ -696,7 +696,7 @@ export const VerticalSideVideoAds: React.FC<VerticalSideVideoAdsProps> = ({
             </div>
 
             {/* Video Player Display */}
-            <div className="relative w-full h-64 sm:h-80 bg-[#0074f0] border-2 border-[#0074f0] overflow-hidden flex items-center justify-center">
+            <div className="relative w-full h-64 sm:h-80 bg-[#3087ff] border-2 border-[#3087ff] overflow-hidden flex items-center justify-center">
               <video
                 src={activeVideoModal.videoUrl}
                 controls
@@ -713,28 +713,28 @@ export const VerticalSideVideoAds: React.FC<VerticalSideVideoAdsProps> = ({
             </div>
 
             {/* Video Specifications & Overview */}
-            <div className="mt-4 pt-3 border-t border-[#0074f0]/20">
+            <div className="mt-4 pt-3 border-t border-[#3087ff]/20">
               <div className="flex items-center justify-between gap-2 mb-2">
-                <span className="text-xs font-bold text-[#0074f0] uppercase">
+                <span className="text-xs font-bold text-[#3087ff] uppercase">
                   Standard: {activeVideoModal.standard}
                 </span>
-                <span className="text-xs bg-[#0082FC]/30 px-2 py-0.5 font-extrabold text-[#0074f0] border border-[#0074f0]">
+                <span className="text-xs bg-[#3087ff]/30 px-2 py-0.5 font-extrabold text-[#3087ff] border border-[#3087ff]">
                   Duration: {activeVideoModal.duration}
                 </span>
               </div>
-              <p className="text-xs sm:text-sm text-[#0074f0]/90 font-medium leading-relaxed">
+              <p className="text-xs sm:text-sm text-[#3087ff]/90 font-medium leading-relaxed">
                 {activeVideoModal.description}
               </p>
             </div>
 
             {/* Action Buttons */}
-            <div className="mt-4 pt-3 border-t-2 border-[#0074f0]/20 flex flex-col sm:flex-row gap-3">
+            <div className="mt-4 pt-3 border-t-2 border-[#3087ff]/20 flex flex-col sm:flex-row gap-3">
               <button
                 type="button"
                 onClick={() => {
                   handleAddProduct(activeVideoModal.product);
                 }}
-                className="flex-1 py-2.5 px-4 bg-[#0074f0] hover:bg-[#0082FC] text-white hover:text-[#0074f0] font-black text-xs uppercase tracking-wider transition-all border-2 border-[#0074f0] cursor-pointer text-center"
+                className="flex-1 py-2.5 px-4 bg-[#3087ff] hover:bg-[#3087ff] text-white hover:text-[#3087ff] font-black text-xs uppercase tracking-wider transition-all border-2 border-[#3087ff] cursor-pointer text-center"
               >
                 + Add {activeVideoModal.product.name} to RFQ
               </button>
@@ -745,7 +745,7 @@ export const VerticalSideVideoAds: React.FC<VerticalSideVideoAdsProps> = ({
                   onPreviewSubmittal(activeVideoModal.product);
                   setActiveVideoModal(null);
                 }}
-                className="flex-1 py-2.5 px-4 bg-white hover:bg-[#0074f0] text-[#0074f0] hover:text-white font-black text-xs uppercase tracking-wider transition-all border-2 border-[#0074f0] cursor-pointer text-center"
+                className="flex-1 py-2.5 px-4 bg-white hover:bg-[#3087ff] text-[#3087ff] hover:text-white font-black text-xs uppercase tracking-wider transition-all border-2 border-[#3087ff] cursor-pointer text-center"
               >
                 Download Submittal PDF
               </button>

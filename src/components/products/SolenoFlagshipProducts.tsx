@@ -88,7 +88,7 @@ export const SolenoFlagshipProducts: React.FC<SolenoFlagshipProductsProps> = ({
   return (
     <section
       aria-label="Flagship Engineered Waterworks Products"
-      className="py-14 sm:py-20 bg-[#0074f0] text-white border-t-4 border-[#0082FC] border-b-4 border-[#0082FC] relative overflow-hidden"
+      className="py-14 sm:py-20 bg-[#3087ff] text-white border-t-4 border-[#3087ff] border-b-4 border-[#3087ff] relative overflow-hidden"
     >
       {/* Background Architectural Grid Lines */}
       <div
@@ -103,13 +103,13 @@ export const SolenoFlagshipProducts: React.FC<SolenoFlagshipProductsProps> = ({
       <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         {/* Section Header */}
         <div className="text-center max-w-3xl mx-auto mb-10 sm:mb-12">
-          <div className="inline-flex items-center gap-2 px-3 py-1 bg-white text-[#0074f0] text-xs font-bold uppercase tracking-wider rounded-none mb-3 shadow-md border-2 border-[#0082FC]">
-            <Layers className="w-3.5 h-3.5 text-[#0074f0] shrink-0" />
+          <div className="inline-flex items-center gap-2 px-3 py-1 bg-white text-[#3087ff] text-xs font-bold uppercase tracking-wider rounded-none mb-3 shadow-md border-2 border-[#3087ff]">
+            <Layers className="w-3.5 h-3.5 text-[#3087ff] shrink-0" />
             <span>Engineered Waterworks Solutions</span>
           </div>
 
           <h2 className="text-3xl sm:text-4xl lg:text-5xl font-black uppercase tracking-tight text-white leading-[1.05] mb-3">
-            Our Flagship <span className="text-[#0082FC]">Products</span>
+            Our Flagship <span className="text-[#3087ff]">Products</span>
           </h2>
 
           <p className="text-sm sm:text-base text-white/95 font-normal leading-relaxed">
@@ -127,21 +127,21 @@ export const SolenoFlagshipProducts: React.FC<SolenoFlagshipProductsProps> = ({
             return (
               <div
                 key={item.product.id}
-                className="bg-white border-4 border-[#0082FC] rounded-none p-4 sm:p-5 flex flex-col justify-between shadow-2xl hover:border-white transition-all duration-300 group hover:-translate-y-1 relative text-[#0074f0] h-full min-w-0 overflow-hidden"
+                className="bg-white border-4 border-[#3087ff] rounded-none p-4 sm:p-5 flex flex-col justify-between shadow-2xl hover:border-white transition-all duration-300 group hover:-translate-y-1 relative text-[#3087ff] h-full min-w-0 overflow-hidden"
               >
                 <div>
                   {/* Top Category Tag */}
-                  <div className="flex items-center justify-between mb-3 border-b-2 border-[#0074f0]/15 pb-2.5 min-h-[28px]">
-                    <span className="text-[10px] font-black uppercase tracking-wider bg-[#0082FC]/20 text-[#0074f0] px-2.5 py-0.5 border border-[#0074f0]">
+                  <div className="flex items-center justify-between mb-3 border-b-2 border-[#3087ff]/15 pb-2.5 min-h-[28px]">
+                    <span className="text-[10px] font-black uppercase tracking-wider bg-[#3087ff]/20 text-[#3087ff] px-2.5 py-0.5 border border-[#3087ff]">
                       {item.tag}
                     </span>
-                    <span className="text-[10px] font-bold text-[#0074f0]/80 uppercase">
+                    <span className="text-[10px] font-bold text-[#3087ff]/80 uppercase">
                       In Stock
                     </span>
                   </div>
 
                   {/* Centered Compact Image */}
-                  <div className="relative w-full h-36 sm:h-40 flex items-center justify-center p-3 overflow-hidden my-1 bg-gradient-to-b from-[#0082FC]/10 to-transparent border border-[#0082FC]/20">
+                  <div className="relative w-full h-36 sm:h-40 flex items-center justify-center p-3 overflow-hidden my-1 bg-gradient-to-b from-[#3087ff]/10 to-transparent border border-[#3087ff]/20">
                     <img
                       src={item.image}
                       alt={item.label}
@@ -150,15 +150,15 @@ export const SolenoFlagshipProducts: React.FC<SolenoFlagshipProductsProps> = ({
                   </div>
 
                   {/* Content Block */}
-                  <h3 className="text-base font-black uppercase tracking-tight text-[#0074f0] leading-snug line-clamp-1 mt-3 mb-0.5">
+                  <h3 className="text-base font-black uppercase tracking-tight text-[#3087ff] leading-snug line-clamp-1 mt-3 mb-0.5">
                     {item.label}
                   </h3>
 
-                  <p className="text-[11px] font-bold text-[#0074f0]/75 uppercase tracking-wider mb-2 truncate">
+                  <p className="text-[11px] font-bold text-[#3087ff]/75 uppercase tracking-wider mb-2 truncate">
                     {item.sublabel}
                   </p>
 
-                  <p className="text-xs text-[#0074f0]/90 font-normal leading-relaxed line-clamp-2 mb-3 min-h-[34px]">
+                  <p className="text-xs text-[#3087ff]/90 font-normal leading-relaxed line-clamp-2 mb-3 min-h-[34px]">
                     {item.summary}
                   </p>
 
@@ -167,9 +167,9 @@ export const SolenoFlagshipProducts: React.FC<SolenoFlagshipProductsProps> = ({
                     {item.specs.map((spec) => (
                       <span
                         key={spec}
-                        className="inline-flex items-center gap-1 text-[10px] font-bold text-[#0074f0] bg-[#0082FC]/15 border border-[#0082FC] px-2 py-0.5 rounded-none max-w-full"
+                        className="inline-flex items-center gap-1 text-[10px] font-bold text-[#3087ff] bg-[#3087ff]/15 border border-[#3087ff] px-2 py-0.5 rounded-none max-w-full"
                       >
-                        <CheckCircle2 className="w-3 h-3 text-[#0074f0] shrink-0" />
+                        <CheckCircle2 className="w-3 h-3 text-[#3087ff] shrink-0" />
                         <span className="truncate">{spec}</span>
                       </span>
                     ))}
@@ -177,13 +177,13 @@ export const SolenoFlagshipProducts: React.FC<SolenoFlagshipProductsProps> = ({
                 </div>
 
                 {/* 100% Contained Single-Line Flex Action Buttons */}
-                <div className="w-full flex items-center gap-2 pt-3 border-t-2 border-[#0074f0]/15 mt-auto">
+                <div className="w-full flex items-center gap-2 pt-3 border-t-2 border-[#3087ff]/15 mt-auto">
                   <button
                     type="button"
                     onClick={() => handleAdd(item.product)}
                     className={`flex-1 min-w-0 py-2.5 px-3 text-xs font-black uppercase tracking-wider rounded-none transition-all flex items-center justify-center gap-1.5 cursor-pointer border-2 ${isAdded
-                      ? "bg-[#0082FC] text-[#0074f0] border-[#0074f0]"
-                      : "bg-[#0074f0] hover:bg-[#0082FC] text-white hover:text-[#0074f0] border-[#0074f0] shadow-sm"
+                      ? "bg-[#3087ff] text-[#3087ff] border-[#3087ff]"
+                      : "bg-[#3087ff] hover:bg-[#3087ff] text-white hover:text-[#3087ff] border-[#3087ff] shadow-sm"
                       }`}
                   >
                     {isAdded ? (
@@ -203,7 +203,7 @@ export const SolenoFlagshipProducts: React.FC<SolenoFlagshipProductsProps> = ({
                     type="button"
                     onClick={() => onPreviewSubmittal(item.product)}
                     title="Download Cut Sheet PDF"
-                    className="w-10 h-10 shrink-0 bg-white hover:bg-[#0074f0] text-[#0074f0] hover:text-white rounded-none border-2 border-[#0074f0] transition-all flex items-center justify-center cursor-pointer shadow-xs"
+                    className="w-10 h-10 shrink-0 bg-white hover:bg-[#3087ff] text-[#3087ff] hover:text-white rounded-none border-2 border-[#3087ff] transition-all flex items-center justify-center cursor-pointer shadow-xs"
                   >
                     <FileText className="w-4 h-4 shrink-0" />
                   </button>

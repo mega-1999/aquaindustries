@@ -91,11 +91,11 @@ export const SolenoPreloader: React.FC = () => {
           </mask>
         </defs>
 
-        {/* Solid #0082FC background masked with the circular aperture */}
+        {/* Solid #3087ff background masked with the circular aperture */}
         <rect
           width="100%"
           height="100%"
-          fill="#0082FC"
+          fill="#3087ff"
           mask="url(#solenoIrisMask)"
         />
 
@@ -105,7 +105,7 @@ export const SolenoPreloader: React.FC = () => {
           cy="50%"
           r={is100Percent ? "150vmax" : "0px"}
           fill="none"
-          stroke="#0565d6"
+          stroke="#3087ff"
           strokeWidth="6"
           opacity={is100Percent ? 0.9 : 0}
           style={{
@@ -124,7 +124,7 @@ export const SolenoPreloader: React.FC = () => {
       >
         {/* Pulsing Brand Emblem */}
         <div className="pulse-logo mb-5">
-          <div className="w-24 h-24 sm:w-28 sm:h-28 bg-white border-2 border-[#0565d6] flex items-center justify-center shadow-2xl relative p-3">
+          <div className="w-24 h-24 sm:w-28 sm:h-28 bg-white border-2 border-[#3087ff] flex items-center justify-center shadow-2xl relative p-3">
             <img
               src="/images/AI_Waterdrop.png"
               alt="Aqua Industries"
@@ -135,10 +135,10 @@ export const SolenoPreloader: React.FC = () => {
 
         {/* Brand Name */}
         <div className="text-white font-extrabold text-2xl sm:text-3xl tracking-tight uppercase whitespace-nowrap mb-1">
-          Aqua <span className="text-[#0565d6]">Industries</span>
+          Aqua <span className="text-[#3087ff]">Industries</span>
         </div>
 
-        <div className="text-[#0565d6] text-xs sm:text-sm font-extrabold tracking-widest uppercase whitespace-nowrap mb-4">
+        <div className="text-[#3087ff] text-xs sm:text-sm font-extrabold tracking-widest uppercase whitespace-nowrap mb-4">
           Municipal Waterworks &bull; Domestic Foundries
         </div>
 
@@ -158,7 +158,7 @@ export const SolenoPreloader: React.FC = () => {
           }`}
       >
         <div
-          className="h-full bg-[#0565d6] transition-all duration-100 ease-out"
+          className="h-full bg-[#3087ff] transition-all duration-100 ease-out"
           style={{ width: `${progress}%` }}
         />
       </div>

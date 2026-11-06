@@ -277,7 +277,7 @@ Compliance: ${activeVariant.standards}
     <section
       id="trash-racks"
       aria-label="Stormwater Trash Racks Spotlight"
-      className="py-16 sm:py-20 bg-[#0082FC] text-white border-b-4 border-white relative overflow-hidden"
+      className="py-16 sm:py-20 bg-[#3087ff] text-white border-b-4 border-white relative overflow-hidden"
     >
       {/* Background CAD Blueprint Grid */}
       <div className="absolute inset-0 bg-[linear-gradient(to_right,#ffffff10_1px,transparent_1px),linear-gradient(to_bottom,#ffffff10_1px,transparent_1px)] bg-[size:32px_32px] pointer-events-none" />
@@ -285,8 +285,8 @@ Compliance: ${activeVariant.standards}
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
         {/* Section Header */}
         <div className="text-center max-w-3xl mx-auto mb-10">
-          <div className="inline-flex items-center gap-2 px-3 py-1 bg-white text-[#0082FC] text-xs font-black uppercase tracking-widest border border-white mb-3">
-            <ShieldCheck className="w-4 h-4 text-[#0082FC]" />
+          <div className="inline-flex items-center gap-2 px-3 py-1 bg-white text-[#3087ff] text-xs font-black uppercase tracking-widest border border-white mb-3">
+            <ShieldCheck className="w-4 h-4 text-[#3087ff]" />
             <span>
               SECTION 3: STORMWATER DETENTION BASIN ANTI-VORTEX TRASH RACKS
             </span>
@@ -304,13 +304,13 @@ Compliance: ${activeVariant.standards}
         </div>
 
         {/* Subvariant Switcher Bar */}
-        <div className="bg-white text-[#0082FC] border-2 border-white p-3 sm:p-4 mb-8 shadow-xl">
+        <div className="bg-white text-[#3087ff] border-2 border-white p-3 sm:p-4 mb-8 shadow-xl">
           <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-2 mb-3">
             <span className="text-xs font-black uppercase tracking-wider flex items-center gap-2">
               <Filter className="w-3.5 h-3.5" />
               <span>Select Riser &amp; Weir Trash Rack Configuration:</span>
             </span>
-            <span className="text-[10px] font-bold text-[#0082FC]/70 uppercase">
+            <span className="text-[10px] font-bold text-[#3087ff]/70 uppercase">
               {TRASH_RACK_VARIANTS.length} Real Manufactured Geometries
             </span>
           </div>
@@ -324,8 +324,8 @@ Compliance: ${activeVariant.standards}
                   type="button"
                   onClick={() => handleSelectVariant(variant)}
                   className={`px-4 py-2 text-xs font-black uppercase tracking-wider rounded-none border-2 transition-all flex items-center gap-2 cursor-pointer ${isActive
-                      ? "bg-[#0082FC] text-white border-[#0082FC] shadow-md scale-102"
-                      : "bg-white text-[#0082FC] border-[#0565d6] hover:border-[#0082FC] hover:bg-[#0565d6]/10"
+                      ? "bg-[#3087ff] text-white border-[#3087ff] shadow-md scale-102"
+                      : "bg-white text-[#3087ff] border-[#3087ff] hover:border-[#3087ff] hover:bg-[#3087ff]/10"
                     }`}
                 >
                   {isActive && <Check className="w-3.5 h-3.5 stroke-[3]" />}
@@ -333,7 +333,7 @@ Compliance: ${activeVariant.standards}
                   <span
                     className={`text-[9px] font-mono px-1 py-0.2 border ${isActive
                         ? "bg-white/20 border-white text-white"
-                        : "bg-[#0565d6]/15 border-[#0565d6] text-[#0082FC]"
+                        : "bg-[#3087ff]/15 border-[#3087ff] text-[#3087ff]"
                       }`}
                   >
                     {variant.catNumber}
@@ -345,24 +345,24 @@ Compliance: ${activeVariant.standards}
         </div>
 
         {/* Main Showcase Split Panel */}
-        <div className="bg-white text-[#0082FC] border-4 border-white p-6 sm:p-8 shadow-2xl">
+        <div className="bg-white text-[#3087ff] border-4 border-white p-6 sm:p-8 shadow-2xl">
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 items-center">
             {/* Left 6 Cols: Real Photography Showcase & Gallery Strip */}
             <div className="lg:col-span-6 flex flex-col items-center">
               {/* Header Ribbon */}
               <div className="w-full flex items-center justify-between mb-2">
-                <span className="text-[10px] font-black uppercase tracking-wider bg-[#0565d6]/20 text-[#0082FC] px-2 py-0.5 border border-[#0082FC] flex items-center gap-1.5">
-                  <Camera className="w-3 h-3 text-[#0082FC]" />
+                <span className="text-[10px] font-black uppercase tracking-wider bg-[#3087ff]/20 text-[#3087ff] px-2 py-0.5 border border-[#3087ff] flex items-center gap-1.5">
+                  <Camera className="w-3 h-3 text-[#3087ff]" />
                   <span>Real Manufactured Product Photography</span>
                 </span>
 
-                <span className="text-[10px] font-bold text-[#0082FC]/80 uppercase">
+                <span className="text-[10px] font-bold text-[#3087ff]/80 uppercase">
                   Photo {activePhotoIndex + 1} of {REAL_TRASH_RACK_PHOTOS.length}
                 </span>
               </div>
 
               {/* Main Real Product Photography Display Viewport */}
-              <div className="relative w-full h-80 sm:h-96 bg-slate-950 border-2 border-[#0082FC] overflow-hidden flex items-center justify-center group shadow-inner">
+              <div className="relative w-full h-80 sm:h-96 bg-slate-950 border-2 border-[#3087ff] overflow-hidden flex items-center justify-center group shadow-inner">
                 {/* Real High-Resolution Photo */}
                 <Image
                   src={currentPhoto.src}
@@ -375,23 +375,23 @@ Compliance: ${activeVariant.standards}
 
                 {/* Corner Badges */}
                 <div className="absolute top-2 left-2 flex flex-col gap-1 z-10 pointer-events-none">
-                  <span className="bg-[#0082FC] text-white px-2 py-0.5 text-[9px] font-black uppercase tracking-wider border border-white/50 shadow-md">
+                  <span className="bg-[#3087ff] text-white px-2 py-0.5 text-[9px] font-black uppercase tracking-wider border border-white/50 shadow-md">
                     {currentPhoto.badge}
                   </span>
-                  <span className="bg-black/80 backdrop-blur-xs text-[#0565d6] px-2 py-0.5 text-[9px] font-mono font-bold border border-[#0565d6]/50">
+                  <span className="bg-black/80 backdrop-blur-xs text-[#3087ff] px-2 py-0.5 text-[9px] font-mono font-bold border border-[#3087ff]/50">
                     Pattern: {activeVariant.catNumber}
                   </span>
                 </div>
 
-                <div className="absolute bottom-2 right-2 bg-white/95 text-[#0082FC] px-2 py-0.5 text-[9px] font-bold border border-[#0082FC] shadow-sm pointer-events-none">
+                <div className="absolute bottom-2 right-2 bg-white/95 text-[#3087ff] px-2 py-0.5 text-[9px] font-bold border border-[#3087ff] shadow-sm pointer-events-none">
                   {activeVariant.material.split(" ")[0]} Structural Steel
                 </div>
               </div>
 
               {/* Real Photo Caption Bar */}
-              <div className="w-full bg-[#0565d6]/15 border-2 border-[#0565d6] p-2 mt-2 text-left">
-                <p className="text-[11px] text-[#0082FC] font-semibold leading-tight">
-                  <span className="font-black uppercase text-[#0082FC] mr-1.5">
+              <div className="w-full bg-[#3087ff]/15 border-2 border-[#3087ff] p-2 mt-2 text-left">
+                <p className="text-[11px] text-[#3087ff] font-semibold leading-tight">
+                  <span className="font-black uppercase text-[#3087ff] mr-1.5">
                     {currentPhoto.title}:
                   </span>
                   {currentPhoto.caption}
@@ -408,8 +408,8 @@ Compliance: ${activeVariant.standards}
                       type="button"
                       onClick={() => setActivePhotoIndex(idx)}
                       className={`relative h-18 sm:h-20 bg-slate-900 border-2 transition-all p-1 flex flex-col items-center justify-between cursor-pointer overflow-hidden ${isSelected
-                          ? "border-[#0082FC] ring-2 ring-[#0082FC] scale-102 bg-white"
-                          : "border-slate-300 hover:border-[#0082FC] opacity-80 hover:opacity-100"
+                          ? "border-[#3087ff] ring-2 ring-[#3087ff] scale-102 bg-white"
+                          : "border-slate-300 hover:border-[#3087ff] opacity-80 hover:opacity-100"
                         }`}
                       title={photo.title}
                     >
@@ -424,7 +424,7 @@ Compliance: ${activeVariant.standards}
                       </div>
                       <span
                         className={`text-[8px] font-bold uppercase truncate w-full text-center mt-0.5 px-0.5 ${isSelected
-                            ? "bg-[#0082FC] text-white"
+                            ? "bg-[#3087ff] text-white"
                             : "bg-slate-800 text-white/90"
                           }`}
                       >
@@ -441,83 +441,83 @@ Compliance: ${activeVariant.standards}
               <div>
                 {/* Badges */}
                 <div className="flex flex-wrap items-center gap-2 mb-2">
-                  <span className="bg-[#0082FC] text-white px-2.5 py-0.5 text-[10px] font-black uppercase tracking-wider">
+                  <span className="bg-[#3087ff] text-white px-2.5 py-0.5 text-[10px] font-black uppercase tracking-wider">
                     {activeVariant.tag}
                   </span>
-                  <span className="bg-[#0565d6]/20 border border-[#0082FC] text-[#0082FC] px-2 py-0.5 text-[10px] font-black uppercase tracking-wider">
+                  <span className="bg-[#3087ff]/20 border border-[#3087ff] text-[#3087ff] px-2 py-0.5 text-[10px] font-black uppercase tracking-wider">
                     {activeVariant.catNumber}
                   </span>
-                  <span className="text-[10px] font-bold text-[#0082FC]/80 uppercase">
+                  <span className="text-[10px] font-bold text-[#3087ff]/80 uppercase">
                     EPA BMP / USACE TR-55
                   </span>
                 </div>
 
-                <h3 className="text-xl sm:text-2xl font-black uppercase tracking-tight text-[#0082FC] leading-snug mb-2">
+                <h3 className="text-xl sm:text-2xl font-black uppercase tracking-tight text-[#3087ff] leading-snug mb-2">
                   {activeVariant.name}
                 </h3>
 
-                <p className="text-xs sm:text-[13px] text-[#0082FC]/90 font-medium leading-relaxed mb-4">
+                <p className="text-xs sm:text-[13px] text-[#3087ff]/90 font-medium leading-relaxed mb-4">
                   {activeVariant.description}
                 </p>
 
                 {/* Technical Specifications Grid */}
-                <div className="grid grid-cols-1 sm:grid-cols-2 gap-2 text-xs border-y-2 border-[#0082FC]/20 py-3 mb-4">
+                <div className="grid grid-cols-1 sm:grid-cols-2 gap-2 text-xs border-y-2 border-[#3087ff]/20 py-3 mb-4">
                   <div>
-                    <span className="font-bold text-[#0082FC]/70 uppercase text-[10px] block">
+                    <span className="font-bold text-[#3087ff]/70 uppercase text-[10px] block">
                       Riser / Weir Dimension:
                     </span>
-                    <span className="font-black text-[#0082FC]">
+                    <span className="font-black text-[#3087ff]">
                       {activeVariant.pipeFit}
                     </span>
                   </div>
                   <div>
-                    <span className="font-bold text-[#0082FC]/70 uppercase text-[10px] block">
+                    <span className="font-bold text-[#3087ff]/70 uppercase text-[10px] block">
                       Free Hydraulic Open Area:
                     </span>
-                    <span className="font-black text-[#0082FC]">
+                    <span className="font-black text-[#3087ff]">
                       {activeVariant.dimensions.flowArea}
                     </span>
                   </div>
                   <div>
-                    <span className="font-bold text-[#0082FC]/70 uppercase text-[10px] block">
+                    <span className="font-bold text-[#3087ff]/70 uppercase text-[10px] block">
                       Structural Metallurgy:
                     </span>
-                    <span className="font-black text-[#0082FC]">
+                    <span className="font-black text-[#3087ff]">
                       {activeVariant.material}
                     </span>
                   </div>
                   <div>
-                    <span className="font-bold text-[#0082FC]/70 uppercase text-[10px] block">
+                    <span className="font-bold text-[#3087ff]/70 uppercase text-[10px] block">
                       Hot-Dip Galvanizing:
                     </span>
-                    <span className="font-black text-[#0082FC]">
+                    <span className="font-black text-[#3087ff]">
                       {activeVariant.coating}
                     </span>
                   </div>
                   <div>
-                    <span className="font-bold text-[#0082FC]/70 uppercase text-[10px] block">
+                    <span className="font-bold text-[#3087ff]/70 uppercase text-[10px] block">
                       Debris Apex / Cleanout:
                     </span>
-                    <span className="font-black text-[#0082FC]">
+                    <span className="font-black text-[#3087ff]">
                       {activeVariant.cleanoutType}
                     </span>
                   </div>
                   <div>
-                    <span className="font-bold text-[#0082FC]/70 uppercase text-[10px] block">
+                    <span className="font-bold text-[#3087ff]/70 uppercase text-[10px] block">
                       Stormwater Design Standard:
                     </span>
-                    <span className="font-black text-[#0082FC]">
+                    <span className="font-black text-[#3087ff]">
                       {activeVariant.standards}
                     </span>
                   </div>
                 </div>
 
                 {/* Dimensions Metric Ribbon */}
-                <div className="bg-[#0565d6]/10 border border-[#0565d6] p-2.5 mb-5 flex flex-wrap items-center justify-between gap-3 text-xs font-mono font-bold text-[#0082FC]">
+                <div className="bg-[#3087ff]/10 border border-[#3087ff] p-2.5 mb-5 flex flex-wrap items-center justify-between gap-3 text-xs font-mono font-bold text-[#3087ff]">
                   <span>Height: {activeVariant.dimensions.height}</span>
                   <span>Width: {activeVariant.dimensions.width}</span>
                   <span>Depth: {activeVariant.dimensions.depth}</span>
-                  <span className="text-[#0082FC]">
+                  <span className="text-[#3087ff]">
                     Weight: {activeVariant.dimensions.weightLbs} lbs
                   </span>
                 </div>
@@ -529,8 +529,8 @@ Compliance: ${activeVariant.standards}
                   type="button"
                   onClick={handleAdd}
                   className={`flex-1 py-3 px-4 text-xs font-black uppercase tracking-wider rounded-none border-2 transition-all flex items-center justify-center gap-2 cursor-pointer shadow-md ${added
-                      ? "bg-[#0565d6] text-[#0082FC] border-[#0082FC]"
-                      : "bg-[#0082FC] hover:bg-[#0565d6] text-white hover:text-[#0082FC] border-[#0082FC]"
+                      ? "bg-[#3087ff] text-[#3087ff] border-[#3087ff]"
+                      : "bg-[#3087ff] hover:bg-[#3087ff] text-white hover:text-[#3087ff] border-[#3087ff]"
                     }`}
                 >
                   {added ? (
@@ -549,7 +549,7 @@ Compliance: ${activeVariant.standards}
                 <button
                   type="button"
                   onClick={handleSubmittal}
-                  className="py-3 px-4 bg-white hover:bg-[#0082FC] text-[#0082FC] hover:text-white border-2 border-[#0082FC] text-xs font-black uppercase tracking-wider transition-all flex items-center justify-center gap-2 cursor-pointer shadow-sm"
+                  className="py-3 px-4 bg-white hover:bg-[#3087ff] text-[#3087ff] hover:text-white border-2 border-[#3087ff] text-xs font-black uppercase tracking-wider transition-all flex items-center justify-center gap-2 cursor-pointer shadow-sm"
                 >
                   <Download className="w-4 h-4 shrink-0" />
                   <span>Submittal PDF</span>
@@ -559,11 +559,11 @@ Compliance: ${activeVariant.standards}
                   type="button"
                   onClick={handleCopySpecs}
                   title="Copy engineering specifications"
-                  className="py-3 px-3 bg-[#0565d6]/20 hover:bg-[#0082FC] text-[#0082FC] hover:text-white border-2 border-[#0565d6] text-xs font-black uppercase transition-all flex items-center justify-center gap-1.5 cursor-pointer shadow-xs"
+                  className="py-3 px-3 bg-[#3087ff]/20 hover:bg-[#3087ff] text-[#3087ff] hover:text-white border-2 border-[#3087ff] text-xs font-black uppercase transition-all flex items-center justify-center gap-1.5 cursor-pointer shadow-xs"
                 >
                   {copied ? (
                     <>
-                      <Check className="w-4 h-4 stroke-[3] text-[#0082FC]" />
+                      <Check className="w-4 h-4 stroke-[3] text-[#3087ff]" />
                       <span className="text-[11px]">Copied!</span>
                     </>
                   ) : (

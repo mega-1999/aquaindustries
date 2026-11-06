@@ -2,8 +2,8 @@
 
 @layer base {
   :root {
-    --primary: #0082fc;
-    --accent: #0565d6;
+    --primary: #3087ff;
+    --accent: #3087ff;
     --white: #ffffff;
   }
 
@@ -18,14 +18,14 @@
 
   body {
     background-color: #ffffff;
-    color: #0082fc;
+    color: #3087ff;
     font-family: Arial, Helvetica, sans-serif;
   }
 
   /* Selection colors restricted to brand palette */
   ::selection {
-    background-color: #0565d6;
-    color: #0082fc;
+    background-color: #3087ff;
+    color: #ffffff;
   }
 }
 
@@ -258,19 +258,19 @@
 }
 
 ::-webkit-scrollbar-thumb {
-  background: #0565d6;
+  background: #3087ff;
   border-radius: 0px;
 }
 
 ::-webkit-scrollbar-thumb:hover {
-  background: #0082fc;
+  background: #3087ff;
 }
 
 /* Print styles restricted strictly to white & brand color */
 @media print {
   body {
     background-color: #ffffff;
-    color: #0082fc;
+    color: #3087ff;
   }
   .no-print {
     display: none;

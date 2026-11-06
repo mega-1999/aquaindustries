@@ -159,13 +159,13 @@ export default function SettingsPage() {
         {currentUser && (
           <div className="space-y-6">
             {/* Sub-tab Navigation */}
-            <div className="flex border-b-2 border-[#0082FC] bg-white px-2">
+            <div className="flex border-b-2 border-[#3087ff] bg-white px-2">
               <button
                 type="button"
                 onClick={() => setActiveTab("security")}
                 className={`py-3 px-4 sm:px-6 text-xs sm:text-sm font-black uppercase tracking-wider border-b-2 -mb-[2px] transition-colors cursor-pointer flex items-center gap-1.5 ${activeTab === "security"
-                    ? "border-[#0082FC] bg-[#0082FC] text-white"
-                    : "border-transparent text-[#0082FC] hover:bg-[#0565d6]/20"
+                    ? "border-[#3087ff] bg-[#3087ff] text-white"
+                    : "border-transparent text-[#3087ff] hover:bg-[#3087ff]/20"
                   }`}
               >
                 <KeyRound className="w-4 h-4" />
@@ -175,8 +175,8 @@ export default function SettingsPage() {
                 type="button"
                 onClick={() => setActiveTab("company")}
                 className={`py-3 px-4 sm:px-6 text-xs sm:text-sm font-black uppercase tracking-wider border-b-2 -mb-[2px] transition-colors cursor-pointer flex items-center gap-1.5 ${activeTab === "company"
-                    ? "border-[#0082FC] bg-[#0082FC] text-white"
-                    : "border-transparent text-[#0082FC] hover:bg-[#0565d6]/20"
+                    ? "border-[#3087ff] bg-[#3087ff] text-white"
+                    : "border-transparent text-[#3087ff] hover:bg-[#3087ff]/20"
                   }`}
               >
                 <User className="w-4 h-4" />
@@ -186,8 +186,8 @@ export default function SettingsPage() {
                 type="button"
                 onClick={() => setActiveTab("notifications")}
                 className={`py-3 px-4 sm:px-6 text-xs sm:text-sm font-black uppercase tracking-wider border-b-2 -mb-[2px] transition-colors cursor-pointer flex items-center gap-1.5 ${activeTab === "notifications"
-                    ? "border-[#0082FC] bg-[#0082FC] text-white"
-                    : "border-transparent text-[#0082FC] hover:bg-[#0565d6]/20"
+                    ? "border-[#3087ff] bg-[#3087ff] text-white"
+                    : "border-transparent text-[#3087ff] hover:bg-[#3087ff]/20"
                   }`}
               >
                 <Bell className="w-4 h-4" />
@@ -197,7 +197,7 @@ export default function SettingsPage() {
 
             {/* Tab 1: Password & Security */}
             {activeTab === "security" && (
-              <div className="bg-white border-2 border-[#0082FC] p-6 sm:p-8 space-y-6 shadow-md">
+              <div className="bg-white border-2 border-[#3087ff] p-6 sm:p-8 space-y-6 shadow-md">
                 {passwordStatus && (
                   <div
                     className={`p-3.5 border-2 text-xs font-bold flex items-center gap-2 ${passwordStatus.success
@@ -219,7 +219,7 @@ export default function SettingsPage() {
                     <span className="text-xs font-black uppercase text-amber-900 block">
                       New Temporary Password Generated:
                     </span>
-                    <div className="text-lg font-mono font-black text-[#0082FC] select-all bg-white px-3 py-1.5 border border-amber-400">
+                    <div className="text-lg font-mono font-black text-[#3087ff] select-all bg-white px-3 py-1.5 border border-amber-400">
                       {resetGeneratedPass}
                     </div>
                     <span className="text-xs text-amber-900 block">
@@ -230,10 +230,10 @@ export default function SettingsPage() {
                 )}
 
                 <div>
-                  <h3 className="text-base sm:text-lg font-black uppercase tracking-wide text-[#0082FC] mb-2">
+                  <h3 className="text-base sm:text-lg font-black uppercase tracking-wide text-[#3087ff] mb-2">
                     Change Account Password
                   </h3>
-                  <p className="text-xs text-[#0082FC]/80 mb-4">
+                  <p className="text-xs text-[#3087ff]/80 mb-4">
                     Enter your current password and specify a new secure
                     passphrase (minimum 6 characters).
                   </p>
@@ -241,7 +241,7 @@ export default function SettingsPage() {
                   <form onSubmit={handlePasswordSubmit} className="space-y-4">
                     <div>
                       <div className="flex items-center justify-between mb-1">
-                        <label className="block text-xs font-black uppercase text-[#0082FC]">
+                        <label className="block text-xs font-black uppercase text-[#3087ff]">
                           Current Password{" "}
                           {currentUser?.role === "super-admin"
                             ? "(Optional for Admin)"
@@ -253,7 +253,7 @@ export default function SettingsPage() {
                             onClick={() =>
                               setCurrentPassword(currentUser.password || "")
                             }
-                            className="text-[10px] text-[#0082FC] hover:underline font-bold uppercase tracking-wider cursor-pointer"
+                            className="text-[10px] text-[#3087ff] hover:underline font-bold uppercase tracking-wider cursor-pointer"
                           >
                             Auto-Fill Current Key
                           </button>
@@ -269,14 +269,14 @@ export default function SettingsPage() {
                           }
                           value={currentPassword}
                           onChange={(e) => setCurrentPassword(e.target.value)}
-                          className="w-full bg-white border-2 border-[#0082FC] pl-3.5 pr-10 py-2.5 text-xs font-bold text-[#0082FC] focus:outline-none focus:border-[#0565d6]"
+                          className="w-full bg-white border-2 border-[#3087ff] pl-3.5 pr-10 py-2.5 text-xs font-bold text-[#3087ff] focus:outline-none focus:border-[#3087ff]"
                         />
                         <button
                           type="button"
                           onClick={() =>
                             setShowCurrentPassword(!showCurrentPassword)
                           }
-                          className="absolute right-2.5 top-1/2 -translate-y-1/2 p-1 text-[#0082FC] hover:text-[#0565d6] transition-colors cursor-pointer"
+                          className="absolute right-2.5 top-1/2 -translate-y-1/2 p-1 text-[#3087ff] hover:text-[#3087ff] transition-colors cursor-pointer"
                           title={
                             showCurrentPassword
                               ? "Hide password"
@@ -299,7 +299,7 @@ export default function SettingsPage() {
 
                     <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
                       <div>
-                        <label className="block text-xs font-black uppercase text-[#0082FC] mb-1">
+                        <label className="block text-xs font-black uppercase text-[#3087ff] mb-1">
                           New Password *
                         </label>
                         <div className="relative">
@@ -309,12 +309,12 @@ export default function SettingsPage() {
                             placeholder="Min 6 characters"
                             value={newPassword}
                             onChange={(e) => setNewPassword(e.target.value)}
-                            className="w-full bg-white border-2 border-[#0082FC] pl-3.5 pr-10 py-2.5 text-xs font-bold text-[#0082FC] focus:outline-none focus:border-[#0565d6]"
+                            className="w-full bg-white border-2 border-[#3087ff] pl-3.5 pr-10 py-2.5 text-xs font-bold text-[#3087ff] focus:outline-none focus:border-[#3087ff]"
                           />
                           <button
                             type="button"
                             onClick={() => setShowNewPassword(!showNewPassword)}
-                            className="absolute right-2.5 top-1/2 -translate-y-1/2 p-1 text-[#0082FC] hover:text-[#0565d6] transition-colors cursor-pointer"
+                            className="absolute right-2.5 top-1/2 -translate-y-1/2 p-1 text-[#3087ff] hover:text-[#3087ff] transition-colors cursor-pointer"
                             title={
                               showNewPassword
                                 ? "Hide password"
@@ -336,7 +336,7 @@ export default function SettingsPage() {
                       </div>
 
                       <div>
-                        <label className="block text-xs font-black uppercase text-[#0082FC] mb-1">
+                        <label className="block text-xs font-black uppercase text-[#3087ff] mb-1">
                           Confirm New Password *
                         </label>
                         <div className="relative">
@@ -346,14 +346,14 @@ export default function SettingsPage() {
                             placeholder="Re-type new password"
                             value={confirmPassword}
                             onChange={(e) => setConfirmPassword(e.target.value)}
-                            className="w-full bg-white border-2 border-[#0082FC] pl-3.5 pr-10 py-2.5 text-xs font-bold text-[#0082FC] focus:outline-none focus:border-[#0565d6]"
+                            className="w-full bg-white border-2 border-[#3087ff] pl-3.5 pr-10 py-2.5 text-xs font-bold text-[#3087ff] focus:outline-none focus:border-[#3087ff]"
                           />
                           <button
                             type="button"
                             onClick={() =>
                               setShowConfirmPassword(!showConfirmPassword)
                             }
-                            className="absolute right-2.5 top-1/2 -translate-y-1/2 p-1 text-[#0082FC] hover:text-[#0565d6] transition-colors cursor-pointer"
+                            className="absolute right-2.5 top-1/2 -translate-y-1/2 p-1 text-[#3087ff] hover:text-[#3087ff] transition-colors cursor-pointer"
                             title={
                               showConfirmPassword
                                 ? "Hide password"
@@ -378,7 +378,7 @@ export default function SettingsPage() {
                     <div className="pt-2 flex flex-wrap items-center justify-between gap-3">
                       <button
                         type="submit"
-                        className="px-6 py-3 bg-[#0082FC] hover:bg-[#0565d6] text-white hover:text-[#0082FC] font-black text-xs uppercase tracking-wider transition-colors shadow-md cursor-pointer"
+                        className="px-6 py-3 bg-[#3087ff] hover:bg-[#3087ff] text-white hover:text-[#3087ff] font-black text-xs uppercase tracking-wider transition-colors shadow-md cursor-pointer"
                       >
                         Save New Password
                       </button>
@@ -400,7 +400,7 @@ export default function SettingsPage() {
 
             {/* Tab 2: Contact Details & Yard */}
             {activeTab === "company" && (
-              <div className="bg-white border-2 border-[#0082FC] p-6 sm:p-8 space-y-6 shadow-md">
+              <div className="bg-white border-2 border-[#3087ff] p-6 sm:p-8 space-y-6 shadow-md">
                 {profileStatus && (
                   <div
                     className={`p-3.5 border-2 text-xs font-bold flex items-center gap-2 ${profileStatus.success
@@ -416,7 +416,7 @@ export default function SettingsPage() {
                 <form onSubmit={handleProfileSave} className="space-y-4">
                   <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
                     <div>
-                      <label className="block text-xs font-black uppercase text-[#0082FC] mb-1">
+                      <label className="block text-xs font-black uppercase text-[#3087ff] mb-1">
                         Primary Contact Name
                       </label>
                       <input
@@ -424,12 +424,12 @@ export default function SettingsPage() {
                         required
                         value={fullName}
                         onChange={(e) => setFullName(e.target.value)}
-                        className="w-full bg-white border-2 border-[#0082FC] px-3.5 py-2.5 text-xs font-bold text-[#0082FC] focus:outline-none focus:border-[#0565d6]"
+                        className="w-full bg-white border-2 border-[#3087ff] px-3.5 py-2.5 text-xs font-bold text-[#3087ff] focus:outline-none focus:border-[#3087ff]"
                       />
                     </div>
 
                     <div>
-                      <label className="block text-xs font-black uppercase text-[#0082FC] mb-1">
+                      <label className="block text-xs font-black uppercase text-[#3087ff] mb-1">
                         Direct Phone Number
                       </label>
                       <input
@@ -437,19 +437,19 @@ export default function SettingsPage() {
                         required
                         value={phone}
                         onChange={(e) => setPhone(e.target.value)}
-                        className="w-full bg-white border-2 border-[#0082FC] px-3.5 py-2.5 text-xs font-mono font-bold text-[#0082FC] focus:outline-none focus:border-[#0565d6]"
+                        className="w-full bg-white border-2 border-[#3087ff] px-3.5 py-2.5 text-xs font-mono font-bold text-[#3087ff] focus:outline-none focus:border-[#3087ff]"
                       />
                     </div>
                   </div>
 
                   <div>
-                    <label className="block text-xs font-black uppercase text-[#0082FC] mb-1">
+                    <label className="block text-xs font-black uppercase text-[#3087ff] mb-1">
                       Primary Regional Logistics Hub
                     </label>
                     <select
                       value={preferredYard}
                       onChange={(e) => setPreferredYard(e.target.value)}
-                      className="w-full bg-white border-2 border-[#0082FC] px-3.5 py-2.5 text-xs font-bold text-[#0082FC] focus:outline-none focus:border-[#0565d6] rounded-none"
+                      className="w-full bg-white border-2 border-[#3087ff] px-3.5 py-2.5 text-xs font-bold text-[#3087ff] focus:outline-none focus:border-[#3087ff] rounded-none"
                     >
                       <option value="new-york-hub">
                         Melville, NY Foundry Yard (Global Master Hub)
@@ -469,7 +469,7 @@ export default function SettingsPage() {
                   <div className="pt-2 flex justify-end">
                     <button
                       type="submit"
-                      className="px-6 py-3 bg-[#0082FC] hover:bg-[#0565d6] text-white hover:text-[#0082FC] font-black text-xs uppercase tracking-wider transition-colors shadow-md cursor-pointer flex items-center gap-2"
+                      className="px-6 py-3 bg-[#3087ff] hover:bg-[#3087ff] text-white hover:text-[#3087ff] font-black text-xs uppercase tracking-wider transition-colors shadow-md cursor-pointer flex items-center gap-2"
                     >
                       <Save className="w-4 h-4" />
                       <span>Update Contact &amp; Hub</span>
@@ -481,56 +481,56 @@ export default function SettingsPage() {
 
             {/* Tab 3: Notifications */}
             {activeTab === "notifications" && (
-              <div className="bg-white border-2 border-[#0082FC] p-6 sm:p-8 space-y-6 shadow-md">
+              <div className="bg-white border-2 border-[#3087ff] p-6 sm:p-8 space-y-6 shadow-md">
                 <div className="space-y-4">
-                  <label className="flex items-start gap-3 p-3.5 bg-[#0082FC]/5 border border-[#0082FC] cursor-pointer">
+                  <label className="flex items-start gap-3 p-3.5 bg-[#3087ff]/5 border border-[#3087ff] cursor-pointer">
                     <input
                       type="checkbox"
                       checked={bolSmsAlerts}
                       onChange={(e) => setBolSmsAlerts(e.target.checked)}
-                      className="mt-1 accent-[#0082FC] w-4 h-4"
+                      className="mt-1 accent-[#3087ff] w-4 h-4"
                     />
                     <div>
-                      <strong className="text-xs sm:text-sm font-black text-[#0082FC] block">
+                      <strong className="text-xs sm:text-sm font-black text-[#3087ff] block">
                         SMS Flatbed Staging &amp; Driver Departure Alerts
                       </strong>
-                      <p className="text-xs text-[#0082FC]/80 mt-0.5">
+                      <p className="text-xs text-[#3087ff]/80 mt-0.5">
                         Receive instant automated text notifications when your
                         flatbed leaves the loading bay.
                       </p>
                     </div>
                   </label>
 
-                  <label className="flex items-start gap-3 p-3.5 bg-[#0082FC]/5 border border-[#0082FC] cursor-pointer">
+                  <label className="flex items-start gap-3 p-3.5 bg-[#3087ff]/5 border border-[#3087ff] cursor-pointer">
                     <input
                       type="checkbox"
                       checked={mtrEmailAlerts}
                       onChange={(e) => setMtrEmailAlerts(e.target.checked)}
-                      className="mt-1 accent-[#0082FC] w-4 h-4"
+                      className="mt-1 accent-[#3087ff] w-4 h-4"
                     />
                     <div>
-                      <strong className="text-xs sm:text-sm font-black text-[#0082FC] block">
+                      <strong className="text-xs sm:text-sm font-black text-[#3087ff] block">
                         Certified Mill Test Report (MTR) Auto-Delivery
                       </strong>
-                      <p className="text-xs text-[#0082FC]/80 mt-0.5">
+                      <p className="text-xs text-[#3087ff]/80 mt-0.5">
                         Automatically generate and email signed ASTM A536
                         chemical and tensile test submittals upon BOL creation.
                       </p>
                     </div>
                   </label>
 
-                  <label className="flex items-start gap-3 p-3.5 bg-[#0082FC]/5 border border-[#0082FC] cursor-pointer">
+                  <label className="flex items-start gap-3 p-3.5 bg-[#3087ff]/5 border border-[#3087ff] cursor-pointer">
                     <input
                       type="checkbox"
                       checked={quoteUpdates}
                       onChange={(e) => setQuoteUpdates(e.target.checked)}
-                      className="mt-1 accent-[#0082FC] w-4 h-4"
+                      className="mt-1 accent-[#3087ff] w-4 h-4"
                     />
                     <div>
-                      <strong className="text-xs sm:text-sm font-black text-[#0082FC] block">
+                      <strong className="text-xs sm:text-sm font-black text-[#3087ff] block">
                         Wholesale Price Lock &amp; Index Bulletins
                       </strong>
-                      <p className="text-xs text-[#0082FC]/80 mt-0.5">
+                      <p className="text-xs text-[#3087ff]/80 mt-0.5">
                         Receive 48-hour advance notice prior to monthly ductile
                         iron scrap index price adjustments.
                       </p>

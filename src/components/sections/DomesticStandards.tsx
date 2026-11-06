@@ -58,16 +58,16 @@ const INDUSTRY_ASSOCIATIONS = [
 
 export function DomesticStandards() {
   return (
-    <section className="relative w-full bg-[#0082FC] text-white py-20 border-b border-[#0082FC] overflow-hidden">
+    <section className="relative w-full bg-[#3087ff] text-white py-20 border-b border-[#3087ff] overflow-hidden">
       {/* Infinite Seamless Looping Water Background Animation */}
       <InfiniteWaterBackground opacity="opacity-20" />
 
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
         {/* Section Header */}
         <div className="max-w-3xl mb-12">
-          <div className="inline-flex items-center gap-2 border border-[#0565d6] bg-white px-3 py-1 mb-3 shadow-xs">
-            <span className="w-2 h-2 bg-[#0082FC]" />
-            <span className="text-xs font-bold uppercase tracking-wider text-[#0082FC] whitespace-nowrap">
+          <div className="inline-flex items-center gap-2 border border-[#3087ff] bg-white px-3 py-1 mb-3 shadow-xs">
+            <span className="w-2 h-2 bg-[#3087ff]" />
+            <span className="text-xs font-bold uppercase tracking-wider text-[#3087ff] whitespace-nowrap">
               Domestic Standards &amp; Testing
             </span>
           </div>
@@ -89,12 +89,12 @@ export function DomesticStandards() {
           {/* Left Column: Certifications Directory (7 cols) */}
           <div className="lg:col-span-7 flex flex-col justify-between h-full">
             {/* Synchronized Left Header Bar matching Right Header Height */}
-            <div className="bg-white text-[#0082FC] px-4 py-2.5 border-2 border-[#0565d6] flex items-center justify-between min-h-[44px]">
+            <div className="bg-white text-[#3087ff] px-4 py-2.5 border-2 border-[#3087ff] flex items-center justify-between min-h-[44px]">
               <div className="flex items-center gap-2 text-xs font-black uppercase tracking-wider">
-                <span className="w-2 h-2 bg-[#0082FC]" />
+                <span className="w-2 h-2 bg-[#3087ff]" />
                 <span>Enforced Industry Specifications</span>
               </div>
-              <span className="text-[10px] font-bold bg-[#0082FC] text-white px-2 py-0.5 uppercase tracking-wider">
+              <span className="text-[10px] font-bold bg-[#3087ff] text-white px-2 py-0.5 uppercase tracking-wider">
                 6 Active Standards
               </span>
             </div>
@@ -104,16 +104,16 @@ export function DomesticStandards() {
               {CERTIFICATIONS.map((cert) => (
                 <div
                   key={cert.code}
-                  className="border-2 border-[#0565d6] bg-white text-[#0082FC] p-4 flex flex-col justify-between shadow-xs"
+                  className="border-2 border-[#3087ff] bg-white text-[#3087ff] p-4 flex flex-col justify-between shadow-xs"
                 >
                   <div>
-                    <span className="text-xs font-mono uppercase bg-[#0082FC] text-white font-bold px-2 py-0.5 inline-block mb-2">
+                    <span className="text-xs font-mono uppercase bg-[#3087ff] text-white font-bold px-2 py-0.5 inline-block mb-2">
                       {cert.code}
                     </span>
-                    <h4 className="text-sm sm:text-base font-extrabold text-[#0082FC] mb-1 leading-snug">
+                    <h4 className="text-sm sm:text-base font-extrabold text-[#3087ff] mb-1 leading-snug">
                       {cert.title}
                     </h4>
-                    <p className="text-xs sm:text-sm text-[#0082FC]/90 leading-relaxed font-normal">
+                    <p className="text-xs sm:text-sm text-[#3087ff]/90 leading-relaxed font-normal">
                       {cert.detail}
                     </p>
                   </div>
@@ -124,7 +124,7 @@ export function DomesticStandards() {
             {/* Symmetrical Left Bottom Action Strip */}
             <a
               href="#quote-form"
-              className="w-full py-3 px-6 bg-white hover:bg-[#0565d6] text-[#0082FC] font-black text-xs sm:text-sm uppercase tracking-wider text-center border-2 border-white transition-colors duration-150 flex items-center justify-center gap-2 min-h-[48px] shadow-md cursor-pointer"
+              className="w-full py-3 px-6 bg-white hover:bg-[#3087ff] text-[#3087ff] font-black text-xs sm:text-sm uppercase tracking-wider text-center border-2 border-white transition-colors duration-150 flex items-center justify-center gap-2 min-h-[48px] shadow-md cursor-pointer"
             >
               <span>Request Certified Mill Test Reports (MTR)</span>
               <svg
@@ -147,29 +147,29 @@ export function DomesticStandards() {
           {/* Right Column: Physical Metallurgical Properties & Hydro Gauge Graphic (5 cols) */}
           <div className="lg:col-span-5 flex flex-col justify-between h-full">
             {/* Synchronized Right Header Bar matching Left Header Height */}
-            <div className="bg-white text-[#0082FC] px-4 py-2.5 border-2 border-[#0565d6] flex items-center justify-between min-h-[44px]">
+            <div className="bg-white text-[#3087ff] px-4 py-2.5 border-2 border-[#3087ff] flex items-center justify-between min-h-[44px]">
               <div className="flex items-center gap-2 text-xs font-black uppercase tracking-wider">
-                <span className="w-2 h-2 bg-[#0082FC]" />
+                <span className="w-2 h-2 bg-[#3087ff]" />
                 <span>Certified Metallurgical Test Report</span>
               </div>
-              <span className="text-[10px] font-bold bg-[#0082FC] text-white px-2 py-0.5 uppercase tracking-wider">
+              <span className="text-[10px] font-bold bg-[#3087ff] text-white px-2 py-0.5 uppercase tracking-wider">
                 ASTM A536 Verified
               </span>
             </div>
 
             {/* Test Report Card Frame - Flex-1 stretches to match left column */}
-            <div className="bg-white border-2 border-[#0565d6] p-5 sm:p-6 text-[#0082FC] flex-1 flex flex-col justify-between my-3 shadow-xl">
+            <div className="bg-white border-2 border-[#3087ff] p-5 sm:p-6 text-[#3087ff] flex-1 flex flex-col justify-between my-3 shadow-xl">
               <div>
-                <div className="border-b border-[#0082FC]/30 pb-3 mb-4 flex items-center justify-between">
+                <div className="border-b border-[#3087ff]/30 pb-3 mb-4 flex items-center justify-between">
                   <div>
-                    <span className="text-[10px] font-mono uppercase text-[#0082FC] font-bold tracking-wider block">
+                    <span className="text-[10px] font-mono uppercase text-[#3087ff] font-bold tracking-wider block">
                       LABORATORY PHYSICAL PROPERTIES
                     </span>
-                    <div className="text-sm sm:text-base font-extrabold text-[#0082FC]">
+                    <div className="text-sm sm:text-base font-extrabold text-[#3087ff]">
                       Ductile Iron Tensile &amp; Hydro Specs
                     </div>
                   </div>
-                  <span className="text-[10px] font-mono uppercase px-2 py-0.5 bg-[#0082FC] text-white font-bold">
+                  <span className="text-[10px] font-mono uppercase px-2 py-0.5 bg-[#3087ff] text-white font-bold">
                     PASS 100%
                   </span>
                 </div>
@@ -178,59 +178,59 @@ export function DomesticStandards() {
                 <div className="space-y-3.5 my-4">
                   <div>
                     <div className="flex justify-between text-xs sm:text-sm font-mono font-bold mb-1">
-                      <span className="text-[#0082FC] uppercase">
+                      <span className="text-[#3087ff] uppercase">
                         Tensile Strength
                       </span>
-                      <span className="text-[#0082FC]">65,000 PSI MIN</span>
+                      <span className="text-[#3087ff]">65,000 PSI MIN</span>
                     </div>
-                    <div className="w-full h-3.5 bg-white border border-[#0082FC] p-0.5">
-                      <div className="h-full bg-[#0082FC] w-full" />
+                    <div className="w-full h-3.5 bg-white border border-[#3087ff] p-0.5">
+                      <div className="h-full bg-[#3087ff] w-full" />
                     </div>
                   </div>
 
                   <div>
                     <div className="flex justify-between text-xs sm:text-sm font-mono font-bold mb-1">
-                      <span className="text-[#0082FC] uppercase">
+                      <span className="text-[#3087ff] uppercase">
                         Yield Strength
                       </span>
-                      <span className="text-[#0082FC]">45,000 PSI MIN</span>
+                      <span className="text-[#3087ff]">45,000 PSI MIN</span>
                     </div>
-                    <div className="w-full h-3.5 bg-white border border-[#0082FC] p-0.5">
-                      <div className="h-full bg-[#0082FC] w-4/5" />
+                    <div className="w-full h-3.5 bg-white border border-[#3087ff] p-0.5">
+                      <div className="h-full bg-[#3087ff] w-4/5" />
                     </div>
                   </div>
 
                   <div>
                     <div className="flex justify-between text-xs sm:text-sm font-mono font-bold mb-1">
-                      <span className="text-[#0082FC] uppercase">
+                      <span className="text-[#3087ff] uppercase">
                         Elongation Ductility
                       </span>
-                      <span className="text-[#0082FC]">12% IN 2 INCHES</span>
+                      <span className="text-[#3087ff]">12% IN 2 INCHES</span>
                     </div>
-                    <div className="w-full h-3.5 bg-white border border-[#0082FC] p-0.5">
-                      <div className="h-full bg-[#0565d6] w-3/4" />
+                    <div className="w-full h-3.5 bg-white border border-[#3087ff] p-0.5">
+                      <div className="h-full bg-[#3087ff] w-3/4" />
                     </div>
                   </div>
 
                   <div>
                     <div className="flex justify-between text-xs sm:text-sm font-mono font-bold mb-1">
-                      <span className="text-[#0082FC] uppercase">
+                      <span className="text-[#3087ff] uppercase">
                         Hydrostatic Burst Proof
                       </span>
-                      <span className="text-[#0082FC]">500 PSI PROOF</span>
+                      <span className="text-[#3087ff]">500 PSI PROOF</span>
                     </div>
-                    <div className="w-full h-3.5 bg-white border border-[#0082FC] p-0.5">
-                      <div className="h-full bg-[#0082FC] w-full" />
+                    <div className="w-full h-3.5 bg-white border border-[#3087ff] p-0.5">
+                      <div className="h-full bg-[#3087ff] w-full" />
                     </div>
                   </div>
                 </div>
 
                 {/* Chemical Spectrometry Breakdown */}
-                <div className="bg-[#0082FC]/5 border border-[#0565d6]/60 p-2.5 my-3">
-                  <span className="text-[10px] font-black uppercase text-[#0082FC] tracking-wider block mb-1">
+                <div className="bg-[#3087ff]/5 border border-[#3087ff]/60 p-2.5 my-3">
+                  <span className="text-[10px] font-black uppercase text-[#3087ff] tracking-wider block mb-1">
                     Induction Melt Chemistry Spectrometry:
                   </span>
-                  <div className="grid grid-cols-3 gap-1 text-[11px] font-mono font-bold text-[#0082FC]">
+                  <div className="grid grid-cols-3 gap-1 text-[11px] font-mono font-bold text-[#3087ff]">
                     <span>Carbon: 3.6%</span>
                     <span>Silicon: 2.4%</span>
                     <span>Magnesium: 0.04%</span>
@@ -239,25 +239,25 @@ export function DomesticStandards() {
               </div>
 
               {/* Stamp of Quality Assurance */}
-              <div className="border-t border-[#0082FC]/30 pt-3 flex items-center justify-between text-xs font-mono">
+              <div className="border-t border-[#3087ff]/30 pt-3 flex items-center justify-between text-xs font-mono">
                 <div className="space-y-0.5">
-                  <div className="text-[10px] text-[#0082FC] uppercase font-bold">
+                  <div className="text-[10px] text-[#3087ff] uppercase font-bold">
                     TRACEABLE HEAT NO.
                   </div>
-                  <div className="text-xs sm:text-sm font-black text-[#0082FC]">
+                  <div className="text-xs sm:text-sm font-black text-[#3087ff]">
                     AQ-2026-HT-8841B
                   </div>
                 </div>
-                <div className="px-2.5 py-1 bg-[#0082FC] text-white text-[11px] font-bold uppercase">
+                <div className="px-2.5 py-1 bg-[#3087ff] text-white text-[11px] font-bold uppercase">
                   100% HYDRO TESTED
                 </div>
               </div>
             </div>
 
             {/* Symmetrical Right Bottom Action Strip */}
-            <div className="w-full py-3 px-4 bg-white text-[#0082FC] font-black text-xs sm:text-sm uppercase tracking-wider border-2 border-[#0565d6] flex items-center justify-between min-h-[48px]">
+            <div className="w-full py-3 px-4 bg-white text-[#3087ff] font-black text-xs sm:text-sm uppercase tracking-wider border-2 border-[#3087ff] flex items-center justify-between min-h-[48px]">
               <span>Quality Assurance</span>
-              <span className="bg-[#0565d6]/30 px-2 py-0.5 text-[#0082FC] text-[11px] font-black">
+              <span className="bg-[#3087ff]/30 px-2 py-0.5 text-[#3087ff] text-[11px] font-black">
                 Permanent Heat Numbers Cast
               </span>
             </div>
@@ -265,9 +265,9 @@ export function DomesticStandards() {
         </div>
 
         {/* Industry Associations Ribbon from SIP Industries */}
-        <div className="mt-14 pt-8 border-t border-[#0565d6]">
+        <div className="mt-14 pt-8 border-t border-[#3087ff]">
           <div className="text-center mb-4">
-            <span className="text-xs sm:text-sm font-mono font-bold uppercase tracking-widest text-[#0565d6] whitespace-nowrap">
+            <span className="text-xs sm:text-sm font-mono font-bold uppercase tracking-widest text-[#3087ff] whitespace-nowrap">
               Approved &amp; Certified Across North American Waterworks
               Infrastructure Organizations
             </span>
@@ -276,7 +276,7 @@ export function DomesticStandards() {
             {INDUSTRY_ASSOCIATIONS.map((assoc) => (
               <span
                 key={assoc}
-                className="px-3.5 py-1.5 bg-white text-[#0082FC] text-sm font-bold whitespace-nowrap border-2 border-[#0565d6]"
+                className="px-3.5 py-1.5 bg-white text-[#3087ff] text-sm font-bold whitespace-nowrap border-2 border-[#3087ff]"
               >
                 {assoc}
               </span>

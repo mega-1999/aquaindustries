@@ -50,14 +50,14 @@ export const FloatingQuickActions: React.FC = () => {
       {/* 1. Direct Hotline Call Button */}
       <div className="relative flex items-center group">
         {/* Tooltip Label (Senior-Readable High Contrast) */}
-        <div className="absolute right-full mr-3 px-3 py-1.5 bg-white text-[#0082FC] border-2 border-[#0082FC] shadow-lg rounded-none text-xs font-bold whitespace-nowrap opacity-0 group-hover:opacity-100 transition-all duration-200 pointer-events-none transform translate-x-2 group-hover:translate-x-0">
+        <div className="absolute right-full mr-3 px-3 py-1.5 bg-white text-[#3087ff] border-2 border-[#3087ff] shadow-lg rounded-none text-xs font-bold whitespace-nowrap opacity-0 group-hover:opacity-100 transition-all duration-200 pointer-events-none transform translate-x-2 group-hover:translate-x-0">
           Direct Dispatch: +1 (516) 252-1111
         </div>
 
         <a
           href="tel:+15162521111"
           aria-label="Call Direct Dispatch at +1 (516) 252-1111"
-          className="w-12 h-12 bg-[#0082FC] hover:bg-[#0565d6] text-white hover:text-[#0082FC] border-2 border-white shadow-xl rounded-none flex items-center justify-center transition-all duration-200 hover:scale-105 active:scale-95 cursor-pointer"
+          className="w-12 h-12 bg-[#3087ff] hover:bg-[#3087ff] text-white hover:text-[#3087ff] border-2 border-white shadow-xl rounded-none flex items-center justify-center transition-all duration-200 hover:scale-105 active:scale-95 cursor-pointer"
         >
           <PhoneCall className="w-5 h-5 shrink-0" />
         </a>
@@ -66,14 +66,14 @@ export const FloatingQuickActions: React.FC = () => {
       {/* 2. Direct Material Quote Email Button */}
       <div className="relative flex items-center group">
         {/* Tooltip Label */}
-        <div className="absolute right-full mr-3 px-3 py-1.5 bg-white text-[#0082FC] border-2 border-[#0082FC] shadow-lg rounded-none text-xs font-bold whitespace-nowrap opacity-0 group-hover:opacity-100 transition-all duration-200 pointer-events-none transform translate-x-2 group-hover:translate-x-0">
+        <div className="absolute right-full mr-3 px-3 py-1.5 bg-white text-[#3087ff] border-2 border-[#3087ff] shadow-lg rounded-none text-xs font-bold whitespace-nowrap opacity-0 group-hover:opacity-100 transition-all duration-200 pointer-events-none transform translate-x-2 group-hover:translate-x-0">
           Email Engineering: dispatch.ny@aquaindustries.com
         </div>
 
         <a
           href="mailto:dispatch.ny@aquaindustries.com?subject=Material%20Quote%20Request%20-%20Aqua%20Industries"
           aria-label="Email Aqua Industries Engineering & Dispatch"
-          className="w-12 h-12 bg-[#0082FC] hover:bg-[#0565d6] text-white hover:text-[#0082FC] border-2 border-white shadow-xl rounded-none flex items-center justify-center transition-all duration-200 hover:scale-105 active:scale-95 cursor-pointer"
+          className="w-12 h-12 bg-[#3087ff] hover:bg-[#3087ff] text-white hover:text-[#3087ff] border-2 border-white shadow-xl rounded-none flex items-center justify-center transition-all duration-200 hover:scale-105 active:scale-95 cursor-pointer"
         >
           <Mail className="w-5 h-5 shrink-0" />
         </a>
@@ -82,7 +82,7 @@ export const FloatingQuickActions: React.FC = () => {
       {/* 3. YouTube Foundry & Manufacturing Tour Button */}
       <div className="relative flex items-center group">
         {/* Tooltip Label */}
-        <div className="absolute right-full mr-3 px-3 py-1.5 bg-white text-[#0082FC] border-2 border-[#0082FC] shadow-lg rounded-none text-xs font-bold whitespace-nowrap opacity-0 group-hover:opacity-100 transition-all duration-200 pointer-events-none transform translate-x-2 group-hover:translate-x-0">
+        <div className="absolute right-full mr-3 px-3 py-1.5 bg-white text-[#3087ff] border-2 border-[#3087ff] shadow-lg rounded-none text-xs font-bold whitespace-nowrap opacity-0 group-hover:opacity-100 transition-all duration-200 pointer-events-none transform translate-x-2 group-hover:translate-x-0">
           Watch Foundry &amp; Hydro-Testing Video Tour
         </div>
 
@@ -91,9 +91,9 @@ export const FloatingQuickActions: React.FC = () => {
           target="_blank"
           rel="noopener noreferrer"
           aria-label="Watch Aqua Industries YouTube Foundry Video Tour"
-          className="w-12 h-12 bg-[#0082FC] hover:bg-[#0565d6] text-white hover:text-[#0082FC] border-2 border-white shadow-xl rounded-none flex items-center justify-center transition-all duration-200 hover:scale-105 active:scale-95 cursor-pointer"
+          className="w-12 h-12 bg-[#3087ff] hover:bg-[#3087ff] text-white hover:text-[#3087ff] border-2 border-white shadow-xl rounded-none flex items-center justify-center transition-all duration-200 hover:scale-105 active:scale-95 cursor-pointer"
         >
-          {/* YouTube Brand Icon strictly adhering to #0082FC / #0565d6 / #FFFFFF */}
+          {/* YouTube Brand Icon strictly adhering to #3087ff / #3087ff / #FFFFFF */}
           <svg
             className="w-5 h-5 fill-current shrink-0"
             viewBox="0 0 24 24"
@@ -105,14 +105,14 @@ export const FloatingQuickActions: React.FC = () => {
       </div>
 
       {/* 4. Top & Bottom Scroll Action ("topbtm ion") */}
-      <div className="relative flex flex-col bg-white border-2 border-[#0082FC] shadow-2xl rounded-none overflow-hidden">
+      <div className="relative flex flex-col bg-white border-2 border-[#3087ff] shadow-2xl rounded-none overflow-hidden">
         {/* Scroll to Top */}
         <button
           type="button"
           onClick={handleScrollToTop}
           title="Scroll to Top of Page"
           aria-label="Scroll to Top of Page"
-          className="w-12 h-11 bg-white hover:bg-[#0082FC] text-[#0082FC] hover:text-white flex items-center justify-center transition-colors border-b border-[#0082FC]/30 cursor-pointer group/top"
+          className="w-12 h-11 bg-white hover:bg-[#3087ff] text-[#3087ff] hover:text-white flex items-center justify-center transition-colors border-b border-[#3087ff]/30 cursor-pointer group/top"
         >
           <ChevronsUp className="w-5 h-5 group-hover/top:-translate-y-0.5 transition-transform" />
         </button>
@@ -123,7 +123,7 @@ export const FloatingQuickActions: React.FC = () => {
           onClick={handleScrollToBottom}
           title="Scroll to Bottom of Page"
           aria-label="Scroll to Bottom of Page"
-          className="w-12 h-11 bg-white hover:bg-[#0082FC] text-[#0082FC] hover:text-white flex items-center justify-center transition-colors cursor-pointer group/bottom"
+          className="w-12 h-11 bg-white hover:bg-[#3087ff] text-[#3087ff] hover:text-white flex items-center justify-center transition-colors cursor-pointer group/bottom"
         >
           <ChevronsDown className="w-5 h-5 group-hover/bottom:translate-y-0.5 transition-transform" />
         </button>

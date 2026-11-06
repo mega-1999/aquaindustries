@@ -68,7 +68,7 @@ export default function RootLayout({
           }}
         />
       </head>
-      <body className="min-h-full flex flex-col bg-white text-[#0082fc] font-sans selection:bg-[#0565d6] selection:text-[#0082fc]">
+      <body className="min-h-full flex flex-col bg-white text-[#3087ff] font-sans selection:bg-[#3087ff] selection:text-[#3087ff]">
         <AuthProvider>{children}</AuthProvider>
       </body>
     </html>

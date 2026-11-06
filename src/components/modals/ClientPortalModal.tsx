@@ -131,39 +131,39 @@ export const ClientPortalModal: React.FC<ClientPortalModalProps> = ({
       role="dialog"
       aria-modal="true"
       aria-labelledby="portal-modal-title"
-      className="fixed inset-0 z-50 flex items-center justify-center p-3 sm:p-4 bg-[#0082FC]/80 backdrop-blur-sm overflow-y-auto"
+      className="fixed inset-0 z-50 flex items-center justify-center p-3 sm:p-4 bg-[#3087ff]/80 backdrop-blur-sm overflow-y-auto"
     >
-      <div className="bg-white border-4 border-[#0082FC] rounded-none max-w-xl w-full p-6 sm:p-8 shadow-2xl text-[#0082FC] relative my-auto">
+      <div className="bg-white border-4 border-[#3087ff] rounded-none max-w-xl w-full p-6 sm:p-8 shadow-2xl text-[#3087ff] relative my-auto">
         {/* Close Button */}
         <button
           type="button"
           onClick={onClose}
-          className="absolute top-5 right-5 p-1 rounded-none text-[#0082FC] hover:bg-[#0565d6]/20 transition-colors cursor-pointer"
+          className="absolute top-5 right-5 p-1 rounded-none text-[#3087ff] hover:bg-[#3087ff]/20 transition-colors cursor-pointer"
           aria-label="Close Portal Modal"
         >
           <X className="w-5 h-5" />
         </button>
 
         {/* Modal Header */}
-        <div className="flex items-center gap-3 mb-6 pb-4 border-b-2 border-[#0565d6]/40">
-          <div className="w-12 h-12 bg-[#0082FC] text-white border-2 border-[#0565d6] flex items-center justify-center shrink-0">
-            <Lock className="w-6 h-6 text-[#0565d6]" />
+        <div className="flex items-center gap-3 mb-6 pb-4 border-b-2 border-[#3087ff]/40">
+          <div className="w-12 h-12 bg-[#3087ff] text-white border-2 border-[#3087ff] flex items-center justify-center shrink-0">
+            <Lock className="w-6 h-6 text-[#3087ff]" />
           </div>
           <div>
             <div className="flex items-center gap-2">
               <h3
                 id="portal-modal-title"
-                className="text-xl sm:text-2xl font-black text-[#0082FC] uppercase tracking-tight"
+                className="text-xl sm:text-2xl font-black text-[#3087ff] uppercase tracking-tight"
               >
                 Aqua Industries Client Portal
               </h3>
               {currentUser?.role === "super-admin" && (
-                <span className="px-2 py-0.5 bg-[#0082FC] text-white text-[10px] font-black uppercase">
+                <span className="px-2 py-0.5 bg-[#3087ff] text-white text-[10px] font-black uppercase">
                   Super-Admin Active
                 </span>
               )}
             </div>
-            <p className="text-xs sm:text-sm text-[#0082FC]/90 font-medium mt-0.5">
+            <p className="text-xs sm:text-sm text-[#3087ff]/90 font-medium mt-0.5">
               Wholesale Pricing, Certified MTR Archive &amp; Order Tracking
             </p>
           </div>
@@ -210,9 +210,9 @@ export const ClientPortalModal: React.FC<ClientPortalModalProps> = ({
 
             {/* If Super-Admin, show Super-Admin Approval Button */}
             {currentUser.role === "super-admin" ? (
-              <div className="p-4 bg-[#0082FC] text-white border-2 border-[#0565d6] space-y-3">
+              <div className="p-4 bg-[#3087ff] text-white border-2 border-[#3087ff] space-y-3">
                 <div className="flex items-center gap-2">
-                  <ShieldCheck className="w-5 h-5 text-[#0565d6]" />
+                  <ShieldCheck className="w-5 h-5 text-[#3087ff]" />
                   <h5 className="font-black text-sm uppercase">
                     Super-Admin Approval Controls
                   </h5>
@@ -226,14 +226,14 @@ export const ClientPortalModal: React.FC<ClientPortalModalProps> = ({
                   <Link
                     href="/admin"
                     onClick={onClose}
-                    className="w-full py-2.5 px-3 bg-white hover:bg-[#0565d6] text-[#0082FC] font-black text-xs uppercase tracking-wider shadow-md transition-all cursor-pointer text-center block"
+                    className="w-full py-2.5 px-3 bg-white hover:bg-[#3087ff] text-[#3087ff] font-black text-xs uppercase tracking-wider shadow-md transition-all cursor-pointer text-center block"
                   >
                     Approvals Desk &rsaquo;
                   </Link>
                   <Link
                     href="/profile"
                     onClick={onClose}
-                    className="w-full py-2.5 px-3 bg-[#0565d6] hover:bg-white text-[#0082FC] font-black text-xs uppercase tracking-wider shadow-md transition-all cursor-pointer text-center block"
+                    className="w-full py-2.5 px-3 bg-[#3087ff] hover:bg-white text-[#3087ff] font-black text-xs uppercase tracking-wider shadow-md transition-all cursor-pointer text-center block"
                   >
                     Profile Dashboard &rsaquo;
                   </Link>
@@ -242,33 +242,33 @@ export const ClientPortalModal: React.FC<ClientPortalModalProps> = ({
             ) : (
               /* Contractor Portal Tools */
               <div className="space-y-3">
-                <h5 className="text-xs font-black uppercase tracking-wider text-[#0082FC]">
+                <h5 className="text-xs font-black uppercase tracking-wider text-[#3087ff]">
                   Contractor Resources &amp; Active Jobs
                 </h5>
 
                 <div className="grid grid-cols-2 gap-2 text-xs">
-                  <div className="p-3 bg-white border-2 border-[#0082FC] shadow-xs">
-                    <span className="text-[10px] text-[#0082FC]/70 uppercase font-bold block">
+                  <div className="p-3 bg-white border-2 border-[#3087ff] shadow-xs">
+                    <span className="text-[10px] text-[#3087ff]/70 uppercase font-bold block">
                       Assigned Logistics Hub
                     </span>
-                    <strong className="font-black uppercase text-[#0082FC]">
+                    <strong className="font-black uppercase text-[#3087ff]">
                       {currentUser.assignedYard.replace("-", " ")}
                     </strong>
                   </div>
-                  <div className="p-3 bg-white border-2 border-[#0082FC] shadow-xs">
-                    <span className="text-[10px] text-[#0082FC]/70 uppercase font-bold block">
+                  <div className="p-3 bg-white border-2 border-[#3087ff] shadow-xs">
+                    <span className="text-[10px] text-[#3087ff]/70 uppercase font-bold block">
                       Verified Tax ID / License
                     </span>
-                    <strong className="font-mono font-bold text-[#0082FC]">
+                    <strong className="font-mono font-bold text-[#3087ff]">
                       {currentUser.taxIdOrLicense}
                     </strong>
                   </div>
                 </div>
 
                 {/* BOL Tracking Widget */}
-                <div className="p-3.5 bg-white border-2 border-[#0565d6] space-y-2">
-                  <span className="text-xs font-bold uppercase text-[#0082FC] flex items-center gap-1.5">
-                    <Truck className="w-4 h-4 text-[#0082FC]" />
+                <div className="p-3.5 bg-white border-2 border-[#3087ff] space-y-2">
+                  <span className="text-xs font-bold uppercase text-[#3087ff] flex items-center gap-1.5">
+                    <Truck className="w-4 h-4 text-[#3087ff]" />
                     <span>Quick Flatbed BOL Shipment Lookup</span>
                   </span>
                   <div className="flex gap-2">
@@ -277,18 +277,18 @@ export const ClientPortalModal: React.FC<ClientPortalModalProps> = ({
                       placeholder="e.g. BOL-88410"
                       value={bolNumber}
                       onChange={(e) => setBolNumber(e.target.value)}
-                      className="flex-1 bg-white border border-[#0082FC] px-2.5 py-1.5 text-xs font-mono font-bold focus:outline-none"
+                      className="flex-1 bg-white border border-[#3087ff] px-2.5 py-1.5 text-xs font-mono font-bold focus:outline-none"
                     />
                     <button
                       type="button"
                       onClick={handleBolLookup}
-                      className="px-3 py-1.5 bg-[#0082FC] text-white hover:bg-[#0565d6] hover:text-[#0082FC] text-xs font-black uppercase cursor-pointer"
+                      className="px-3 py-1.5 bg-[#3087ff] text-white hover:bg-[#3087ff] hover:text-[#3087ff] text-xs font-black uppercase cursor-pointer"
                     >
                       Track
                     </button>
                   </div>
                   {bolResult && (
-                    <div className="p-2 bg-[#0565d6]/20 border border-[#0082FC] text-[11px] text-[#0082FC] leading-snug">
+                    <div className="p-2 bg-[#3087ff]/20 border border-[#3087ff] text-[11px] text-[#3087ff] leading-snug">
                       {bolResult}
                     </div>
                   )}
@@ -296,18 +296,18 @@ export const ClientPortalModal: React.FC<ClientPortalModalProps> = ({
               </div>
             )}
 
-            <div className="pt-2 flex flex-col sm:flex-row items-stretch sm:items-center justify-between gap-2 border-t border-[#0082FC]/20">
+            <div className="pt-2 flex flex-col sm:flex-row items-stretch sm:items-center justify-between gap-2 border-t border-[#3087ff]/20">
               <Link
                 href="/profile"
                 onClick={onClose}
-                className="px-4 py-2 bg-[#0082FC] hover:bg-[#0565d6] text-white hover:text-[#0082FC] font-black text-xs uppercase tracking-wider text-center transition-colors"
+                className="px-4 py-2 bg-[#3087ff] hover:bg-[#3087ff] text-white hover:text-[#3087ff] font-black text-xs uppercase tracking-wider text-center transition-colors"
               >
                 Go to Profile Dashboard &rsaquo;
               </Link>
               <button
                 type="button"
                 onClick={onClose}
-                className="px-5 py-2 bg-white text-[#0082FC] border-2 border-[#0082FC] font-bold text-xs uppercase hover:bg-[#0565d6]/20"
+                className="px-5 py-2 bg-white text-[#3087ff] border-2 border-[#3087ff] font-bold text-xs uppercase hover:bg-[#3087ff]/20"
               >
                 Close Portal
               </button>
@@ -348,12 +348,12 @@ export const ClientPortalModal: React.FC<ClientPortalModalProps> = ({
             <div>
               <label
                 htmlFor="login-email"
-                className="block text-xs font-bold text-[#0082FC] uppercase mb-1"
+                className="block text-xs font-bold text-[#3087ff] uppercase mb-1"
               >
                 Business Email Address *
               </label>
               <div className="relative">
-                <Mail className="w-4 h-4 text-[#0082FC] absolute left-3 top-3" />
+                <Mail className="w-4 h-4 text-[#3087ff] absolute left-3 top-3" />
                 <input
                   id="login-email"
                   type="email"
@@ -361,7 +361,7 @@ export const ClientPortalModal: React.FC<ClientPortalModalProps> = ({
                   placeholder="contractor@company.com"
                   value={email}
                   onChange={(e) => setEmail(e.target.value)}
-                  className="w-full bg-white border-2 border-[#0082FC] pl-9 pr-3 py-2 text-xs sm:text-sm font-bold text-[#0082FC] focus:outline-none focus:border-[#0565d6]"
+                  className="w-full bg-white border-2 border-[#3087ff] pl-9 pr-3 py-2 text-xs sm:text-sm font-bold text-[#3087ff] focus:outline-none focus:border-[#3087ff]"
                 />
               </div>
 
@@ -369,17 +369,17 @@ export const ClientPortalModal: React.FC<ClientPortalModalProps> = ({
               {detectedProfile && (
                 <>
                   {detectedProfile.role === "super-admin" && (
-                    <div className="mt-2.5 p-3.5 bg-[#0082FC] text-white border-2 border-[#0565d6] shadow-xs animate-in fade-in slide-in-from-top-1 duration-150">
+                    <div className="mt-2.5 p-3.5 bg-[#3087ff] text-white border-2 border-[#3087ff] shadow-xs animate-in fade-in slide-in-from-top-1 duration-150">
                       <div className="flex items-start gap-3">
-                        <div className="w-8 h-8 bg-white text-[#0082FC] border border-[#0565d6] flex items-center justify-center shrink-0">
-                          <ShieldCheck className="w-5 h-5 text-[#0082FC]" />
+                        <div className="w-8 h-8 bg-white text-[#3087ff] border border-[#3087ff] flex items-center justify-center shrink-0">
+                          <ShieldCheck className="w-5 h-5 text-[#3087ff]" />
                         </div>
                         <div className="flex-1 min-w-0">
                           <div className="flex items-center gap-2 flex-wrap">
-                            <span className="px-2 py-0.5 bg-[#0565d6] text-[#0082FC] text-[10px] font-black uppercase tracking-wider">
+                            <span className="px-2 py-0.5 bg-[#3087ff] text-[#3087ff] text-[10px] font-black uppercase tracking-wider">
                               Super-Admin Profile Detected
                             </span>
-                            <span className="text-[11px] font-mono text-[#0565d6] font-bold">
+                            <span className="text-[11px] font-mono text-[#3087ff] font-bold">
                               Level 1 Clearance
                             </span>
                           </div>
@@ -497,9 +497,9 @@ export const ClientPortalModal: React.FC<ClientPortalModalProps> = ({
 
               {/* Unregistered indicator if email format is complete but no profile matches */}
               {!detectedProfile && isEmailFormatted && (
-                <div className="mt-2.5 p-3 bg-[#0565d6]/15 border border-[#0082FC] text-[#0082FC] text-xs flex flex-col sm:flex-row items-start sm:items-center justify-between gap-2 animate-in fade-in duration-150">
+                <div className="mt-2.5 p-3 bg-[#3087ff]/15 border border-[#3087ff] text-[#3087ff] text-xs flex flex-col sm:flex-row items-start sm:items-center justify-between gap-2 animate-in fade-in duration-150">
                   <div className="flex items-center gap-2 min-w-0">
-                    <Building className="w-4 h-4 text-[#0082FC] shrink-0" />
+                    <Building className="w-4 h-4 text-[#3087ff] shrink-0" />
                     <span className="text-[11px] font-bold">
                       No active profile found for this email address.
                     </span>
@@ -511,7 +511,7 @@ export const ClientPortalModal: React.FC<ClientPortalModalProps> = ({
                         onClose();
                         onOpenRegisterModal();
                       }}
-                      className="px-2.5 py-1 bg-[#0082FC] hover:bg-[#0565d6] text-white hover:text-[#0082FC] text-[10px] font-black uppercase tracking-wider shrink-0 cursor-pointer"
+                      className="px-2.5 py-1 bg-[#3087ff] hover:bg-[#3087ff] text-white hover:text-[#3087ff] text-[10px] font-black uppercase tracking-wider shrink-0 cursor-pointer"
                     >
                       Register Company &rsaquo;
                     </button>
@@ -525,7 +525,7 @@ export const ClientPortalModal: React.FC<ClientPortalModalProps> = ({
               <div className="flex items-center justify-between mb-1">
                 <label
                   htmlFor="login-password"
-                  className="block text-xs font-bold text-[#0082FC] uppercase"
+                  className="block text-xs font-bold text-[#3087ff] uppercase"
                 >
                   Account Password *
                 </label>
@@ -535,7 +535,7 @@ export const ClientPortalModal: React.FC<ClientPortalModalProps> = ({
                     setShowResetBox(!showResetBox);
                     setResetEmail(email);
                   }}
-                  className="text-[11px] text-[#0082FC] hover:underline font-semibold cursor-pointer"
+                  className="text-[11px] text-[#3087ff] hover:underline font-semibold cursor-pointer"
                 >
                   Need password reset?
                 </button>
@@ -543,15 +543,15 @@ export const ClientPortalModal: React.FC<ClientPortalModalProps> = ({
 
               {/* Inline Self-Service Password Reset Panel */}
               {showResetBox && (
-                <div className="mb-3 p-3.5 bg-[#0082FC]/5 border-2 border-[#0082FC] space-y-2.5 animate-in fade-in duration-150">
+                <div className="mb-3 p-3.5 bg-[#3087ff]/5 border-2 border-[#3087ff] space-y-2.5 animate-in fade-in duration-150">
                   <div className="flex items-center justify-between">
-                    <span className="text-xs font-black uppercase text-[#0082FC]">
+                    <span className="text-xs font-black uppercase text-[#3087ff]">
                       Instant Account Password Reset
                     </span>
                     <button
                       type="button"
                       onClick={() => setShowResetBox(false)}
-                      className="text-xs text-[#0082FC] hover:underline cursor-pointer"
+                      className="text-xs text-[#3087ff] hover:underline cursor-pointer"
                     >
                       Close
                     </button>
@@ -575,19 +575,19 @@ export const ClientPortalModal: React.FC<ClientPortalModalProps> = ({
                       placeholder="Enter registered account email"
                       value={resetEmail || email}
                       onChange={(e) => setResetEmail(e.target.value)}
-                      className="w-full bg-white border border-[#0082FC] px-2.5 py-1.5 text-xs font-bold text-[#0082FC] focus:outline-none"
+                      className="w-full bg-white border border-[#3087ff] px-2.5 py-1.5 text-xs font-bold text-[#3087ff] focus:outline-none"
                     />
                     <input
                       type="password"
                       placeholder="Enter new password (min 6 characters)"
                       value={resetNewPass}
                       onChange={(e) => setResetNewPass(e.target.value)}
-                      className="w-full bg-white border border-[#0082FC] px-2.5 py-1.5 text-xs font-bold text-[#0082FC] focus:outline-none"
+                      className="w-full bg-white border border-[#3087ff] px-2.5 py-1.5 text-xs font-bold text-[#3087ff] focus:outline-none"
                     />
                     <button
                       type="button"
                       onClick={handleResetSubmit}
-                      className="w-full py-2 bg-[#0082FC] hover:bg-[#0565d6] text-white hover:text-[#0082FC] font-black text-xs uppercase tracking-wider transition-colors cursor-pointer"
+                      className="w-full py-2 bg-[#3087ff] hover:bg-[#3087ff] text-white hover:text-[#3087ff] font-black text-xs uppercase tracking-wider transition-colors cursor-pointer"
                     >
                       Reset &amp; Save New Password
                     </button>
@@ -595,7 +595,7 @@ export const ClientPortalModal: React.FC<ClientPortalModalProps> = ({
                 </div>
               )}
               <div className="relative">
-                <Lock className="w-4 h-4 text-[#0082FC] absolute left-3 top-3" />
+                <Lock className="w-4 h-4 text-[#3087ff] absolute left-3 top-3" />
                 <input
                   id="login-password"
                   type={showPassword ? "text" : "password"}
@@ -603,12 +603,12 @@ export const ClientPortalModal: React.FC<ClientPortalModalProps> = ({
                   placeholder="••••••••••••"
                   value={password}
                   onChange={(e) => setPassword(e.target.value)}
-                  className="w-full bg-white border-2 border-[#0082FC] pl-9 pr-10 py-2 text-xs sm:text-sm font-bold text-[#0082FC] focus:outline-none focus:border-[#0565d6]"
+                  className="w-full bg-white border-2 border-[#3087ff] pl-9 pr-10 py-2 text-xs sm:text-sm font-bold text-[#3087ff] focus:outline-none focus:border-[#3087ff]"
                 />
                 <button
                   type="button"
                   onClick={() => setShowPassword(!showPassword)}
-                  className="absolute right-2.5 top-1/2 -translate-y-1/2 p-1 text-[#0082FC] hover:text-[#0565d6] transition-colors cursor-pointer"
+                  className="absolute right-2.5 top-1/2 -translate-y-1/2 p-1 text-[#3087ff] hover:text-[#3087ff] transition-colors cursor-pointer"
                   title={showPassword ? "Hide password" : "Show password"}
                   aria-label={showPassword ? "Hide password" : "Show password"}
                 >
@@ -625,14 +625,14 @@ export const ClientPortalModal: React.FC<ClientPortalModalProps> = ({
             <div className="pt-2">
               <button
                 type="submit"
-                className="w-full py-3 px-4 bg-[#0082FC] hover:bg-[#0565d6] text-white hover:text-[#0082FC] font-black text-xs sm:text-sm uppercase tracking-wider rounded-none shadow-md transition-all cursor-pointer"
+                className="w-full py-3 px-4 bg-[#3087ff] hover:bg-[#3087ff] text-white hover:text-[#3087ff] font-black text-xs sm:text-sm uppercase tracking-wider rounded-none shadow-md transition-all cursor-pointer"
               >
                 Sign In
               </button>
             </div>
 
             {/* Register Option */}
-            <div className="pt-3 border-t-2 border-[#0565d6]/30 flex flex-col sm:flex-row items-center justify-between gap-2 text-xs text-[#0082FC]">
+            <div className="pt-3 border-t-2 border-[#3087ff]/30 flex flex-col sm:flex-row items-center justify-between gap-2 text-xs text-[#3087ff]">
               <span className="font-medium">
                 Don&apos;t have an approved account yet?
               </span>
@@ -643,7 +643,7 @@ export const ClientPortalModal: React.FC<ClientPortalModalProps> = ({
                     onClose();
                     onOpenRegisterModal();
                   }}
-                  className="font-black text-[#0082FC] hover:text-[#0565d6] underline uppercase cursor-pointer"
+                  className="font-black text-[#3087ff] hover:text-[#3087ff] underline uppercase cursor-pointer"
                 >
                   Register Commercial Account &rsaquo;
                 </button>
