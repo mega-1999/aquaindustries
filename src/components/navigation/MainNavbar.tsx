@@ -517,25 +517,7 @@ export const MainNavbar: React.FC<MainNavbarProps> = ({
               )}
             </div>
 
-            {/* 5. Yard Locations & Freight */}
-            <button
-              type="button"
-              onClick={onOpenYardModal}
-              className="px-2 2xl:px-3 py-2 rounded-none text-[#0082fc] hover:bg-[#5fd4fd]/20 transition-colors whitespace-nowrap font-bold inline-flex items-center gap-1 cursor-pointer"
-            >
-              <Truck className="w-3.5 h-3.5 text-[#0082fc] shrink-0" />
-              <span>Yards</span>
-            </button>
-
-            {/* 6. Projects & Case Studies */}
-            <a
-              href="/projects"
-              className="px-2 2xl:px-3 py-2 rounded-none text-[#0082fc] hover:bg-[#5fd4fd]/20 transition-colors whitespace-nowrap font-bold"
-            >
-              Projects
-            </a>
-
-            {/* 7. About Aqua Industries (Foundry) */}
+            {/* 5. About Aqua Industries (Foundry) */}
             <a
               href="/#foundry-walkthrough"
               onClick={() => handleNavClick("/#foundry-walkthrough")}
@@ -680,6 +662,16 @@ export const MainNavbar: React.FC<MainNavbarProps> = ({
               <FileText className="w-4 h-4 shrink-0" />
               <span className="whitespace-nowrap">Request Quote</span>
             </a>
+
+            {/* Yards - Last Right */}
+            <button
+              type="button"
+              onClick={onOpenYardModal}
+              className="inline-flex items-center gap-1.5 px-3 2xl:px-3.5 py-2 text-xs 2xl:text-sm font-bold transition-all whitespace-nowrap border-2 border-[#5fd4fd] bg-white text-[#0082fc] hover:bg-[#5fd4fd]/20 rounded-none shadow-xs cursor-pointer"
+            >
+              <Truck className="w-3.5 h-3.5 shrink-0" />
+              <span className="whitespace-nowrap">Yards</span>
+            </button>
           </div>
 
           {/* Mobile & Tablet (< xl) Action Buttons & Hamburger */}
@@ -855,6 +847,22 @@ export const MainNavbar: React.FC<MainNavbarProps> = ({
               <span className="whitespace-nowrap">Thrust Calculator</span>
             </a>
 
+            <a
+              href="/#foundry-walkthrough"
+              onClick={() => handleNavClick("/#foundry-walkthrough")}
+              className="block text-sm sm:text-base font-bold text-[#0082fc] py-2.5 border-b border-[#0082fc]/20 whitespace-nowrap"
+            >
+              Foundry &amp; Yard Walkthrough
+            </a>
+
+            <a
+              href="#quality-standards"
+              onClick={() => handleNavClick("#quality-standards")}
+              className="block text-sm sm:text-base font-bold text-[#0082fc] py-2.5 border-b border-[#0082fc]/20 whitespace-nowrap"
+            >
+              Quality Standards &amp; MTRs
+            </a>
+
             <button
               type="button"
               onClick={() => {
@@ -871,30 +879,6 @@ export const MainNavbar: React.FC<MainNavbarProps> = ({
                 4 Hubs
               </span>
             </button>
-
-            <a
-              href="/projects"
-              onClick={() => setMobileMenuOpen(false)}
-              className="block text-sm sm:text-base font-bold text-[#0082fc] py-2.5 border-b border-[#0082fc]/20 whitespace-nowrap"
-            >
-              Our Projects &bull; Case Studies
-            </a>
-
-            <a
-              href="/#foundry-walkthrough"
-              onClick={() => handleNavClick("/#foundry-walkthrough")}
-              className="block text-sm sm:text-base font-bold text-[#0082fc] py-2.5 border-b border-[#0082fc]/20 whitespace-nowrap"
-            >
-              Foundry &amp; Yard Walkthrough
-            </a>
-
-            <a
-              href="#quality-standards"
-              onClick={() => handleNavClick("#quality-standards")}
-              className="block text-sm sm:text-base font-bold text-[#0082fc] py-2.5 border-b border-[#0082fc]/20 whitespace-nowrap"
-            >
-              Quality Standards &amp; MTRs
-            </a>
           </div>
 
           {/* Mobile Footer Buttons */}
