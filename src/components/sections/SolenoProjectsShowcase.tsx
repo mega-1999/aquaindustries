@@ -264,7 +264,7 @@ export const SolenoProjectsShowcase: React.FC<SolenoProjectsShowcaseProps> = ({
               </h2>
 
               <div className="flex flex-wrap items-center gap-2 text-xs font-bold text-[#3087ff]">
-                <span className="bg-white/10 px-2.5 py-1 border border-[#3087ff]/60 text-white uppercase">
+                <span className="bg-white/10 px-2.5 py-1 border border-[#3087ff] text-white uppercase">
                   {featuredProject.sectorTag}
                 </span>
                 <span>&bull;</span>
@@ -279,7 +279,7 @@ export const SolenoProjectsShowcase: React.FC<SolenoProjectsShowcaseProps> = ({
 
               {/* Key Technical Metric Chips */}
               <div className="grid grid-cols-2 sm:grid-cols-3 gap-3 pt-2">
-                <div className="p-3 bg-white/10 border border-[#3087ff]/50 rounded-none">
+                <div className="p-3 bg-white/10 border border-[#3087ff] rounded-none">
                   <span className="text-[10px] text-[#3087ff] uppercase font-bold block">
                     Diameter Spec
                   </span>
@@ -288,7 +288,7 @@ export const SolenoProjectsShowcase: React.FC<SolenoProjectsShowcaseProps> = ({
                   </span>
                 </div>
 
-                <div className="p-3 bg-white/10 border border-[#3087ff]/50 rounded-none">
+                <div className="p-3 bg-white/10 border border-[#3087ff] rounded-none">
                   <span className="text-[10px] text-[#3087ff] uppercase font-bold block">
                     Hydrostatic Test
                   </span>
@@ -297,7 +297,7 @@ export const SolenoProjectsShowcase: React.FC<SolenoProjectsShowcaseProps> = ({
                   </span>
                 </div>
 
-                <div className="p-3 bg-white/10 border border-[#3087ff]/50 rounded-none col-span-2 sm:col-span-1">
+                <div className="p-3 bg-white/10 border border-[#3087ff] rounded-none col-span-2 sm:col-span-1">
                   <span className="text-[10px] text-[#3087ff] uppercase font-bold block">
                     Delivery Method
                   </span>
@@ -323,11 +323,11 @@ export const SolenoProjectsShowcase: React.FC<SolenoProjectsShowcaseProps> = ({
             {/* Right Column: Soleno news_hero_img Visual Showcase */}
             <div className="lg:col-span-5 flex justify-center">
               <div className="relative w-full max-w-md bg-white border-4 border-[#3087ff] p-6 sm:p-8 shadow-2xl text-[#3087ff] group">
-                <div className="flex items-center justify-between border-b border-[#3087ff]/20 pb-3 mb-4 text-xs font-bold">
+                <div className="flex items-center justify-between border-b border-[#3087ff] pb-3 mb-4 text-xs font-bold">
                   <span className="uppercase tracking-widest text-[#3087ff]">
                     Project Record ID
                   </span>
-                  <span className="bg-[#3087ff]/20 px-2 py-0.5 border border-[#3087ff]">
+                  <span className="bg-white px-2 py-0.5 border border-[#3087ff]">
                     AWWA C153 / C110
                   </span>
                 </div>
@@ -340,7 +340,7 @@ export const SolenoProjectsShowcase: React.FC<SolenoProjectsShowcaseProps> = ({
                   />
                 </div>
 
-                <div className="mt-4 pt-3 border-t border-[#3087ff]/20 flex items-center justify-between text-xs font-bold">
+                <div className="mt-4 pt-3 border-t border-[#3087ff] flex items-center justify-between text-xs font-bold">
                   <span className="text-[#3087ff]">
                     ASTM A536 Grade 65-45-12
                   </span>
@@ -370,7 +370,7 @@ export const SolenoProjectsShowcase: React.FC<SolenoProjectsShowcaseProps> = ({
                 onClick={() => setSelectedSector(tab.id)}
                 className={`px-3 py-1.5 text-xs font-bold uppercase tracking-wider rounded-none transition-all whitespace-nowrap border-2 cursor-pointer ${selectedSector === tab.id
                   ? "bg-[#3087ff] text-white border-[#3087ff] shadow-xs"
-                  : "bg-white text-[#3087ff] border-[#3087ff] hover:bg-[#3087ff]/20"
+                  : "bg-white text-[#3087ff] border-[#3087ff] hover:bg-[#3087ff] hover:text-white"
                   }`}
               >
                 {tab.label}
@@ -378,7 +378,7 @@ export const SolenoProjectsShowcase: React.FC<SolenoProjectsShowcaseProps> = ({
             ))}
           </div>
 
-          <div className="text-xs font-bold text-[#3087ff]/80 hidden md:block whitespace-nowrap">
+          <div className="text-xs font-bold text-[#3087ff] hidden md:block whitespace-nowrap">
             Showing {filteredProjects.length} Infrastructure Projects
           </div>
         </div>
@@ -415,7 +415,7 @@ export const SolenoProjectsShowcase: React.FC<SolenoProjectsShowcaseProps> = ({
                 <div className="p-5 flex-1 flex flex-col justify-between">
                   <div>
                     {/* Location Tag */}
-                    <div className="flex items-center gap-1.5 text-xs font-bold text-[#3087ff]/75 mb-2 truncate">
+                    <div className="flex items-center gap-1.5 text-xs font-bold text-[#3087ff] mb-2 truncate">
                       <MapPin className="w-3.5 h-3.5 shrink-0 text-[#3087ff]" />
                       <span className="truncate">{project.agencyLocation}</span>
                     </div>
@@ -426,14 +426,14 @@ export const SolenoProjectsShowcase: React.FC<SolenoProjectsShowcaseProps> = ({
                     </h3>
 
                     {/* Summary */}
-                    <p className="text-xs sm:text-sm text-[#3087ff]/90 font-normal leading-relaxed mb-4 line-clamp-3">
+                    <p className="text-xs sm:text-sm text-[#3087ff] font-normal leading-relaxed mb-4 line-clamp-3">
                       {project.summary}
                     </p>
 
                     {/* Technical Parameter Ledger */}
-                    <div className="space-y-1.5 border-t border-[#3087ff]/20 pt-3 mb-5 text-xs font-bold">
+                    <div className="space-y-1.5 border-t border-[#3087ff] pt-3 mb-5 text-xs font-bold">
                       <div className="flex justify-between">
-                        <span className="text-[#3087ff]/75 font-normal">
+                        <span className="text-[#3087ff] font-normal">
                           Spec:
                         </span>
                         <span className="text-[#3087ff] uppercase">
@@ -441,7 +441,7 @@ export const SolenoProjectsShowcase: React.FC<SolenoProjectsShowcaseProps> = ({
                         </span>
                       </div>
                       <div className="flex justify-between">
-                        <span className="text-[#3087ff]/75 font-normal">
+                        <span className="text-[#3087ff] font-normal">
                           Pressure:
                         </span>
                         <span className="text-[#3087ff] uppercase">
@@ -449,7 +449,7 @@ export const SolenoProjectsShowcase: React.FC<SolenoProjectsShowcaseProps> = ({
                         </span>
                       </div>
                       <div className="flex justify-between">
-                        <span className="text-[#3087ff]/75 font-normal">
+                        <span className="text-[#3087ff] font-normal">
                           Transit:
                         </span>
                         <span className="text-[#3087ff] truncate max-w-[180px]">
@@ -460,7 +460,7 @@ export const SolenoProjectsShowcase: React.FC<SolenoProjectsShowcaseProps> = ({
                   </div>
 
                   {/* Action Button */}
-                  <div className="pt-2 border-t-2 border-[#3087ff]/20">
+                  <div className="pt-2 border-t-2 border-[#3087ff]">
                     <button
                       type="button"
                       onClick={() => setActiveProjectModal(project)}
@@ -484,7 +484,7 @@ export const SolenoProjectsShowcase: React.FC<SolenoProjectsShowcaseProps> = ({
         <div className="fixed inset-0 z-60 flex items-center justify-center p-4 sm:p-6">
           <button
             type="button"
-            className="fixed inset-0 bg-[#3087ff]/85 backdrop-blur-sm cursor-default w-full h-full border-0"
+            className="fixed inset-0 bg-black/80 backdrop-blur-sm cursor-default w-full h-full border-0"
             onClick={() => setActiveProjectModal(null)}
             aria-label="Close Project Study Modal"
           />
@@ -493,20 +493,20 @@ export const SolenoProjectsShowcase: React.FC<SolenoProjectsShowcaseProps> = ({
             {/* Modal Header */}
             <div className="flex items-center justify-between border-b-2 border-[#3087ff] pb-4 mb-5">
               <div>
-                <span className="text-xs font-black uppercase bg-[#3087ff]/30 px-2.5 py-0.5 border border-[#3087ff] text-[#3087ff] block mb-1 w-max">
+                <span className="text-xs font-black uppercase bg-white px-2.5 py-0.5 border border-[#3087ff] text-[#3087ff] block mb-1 w-max">
                   {activeProjectModal.sectorTag}
                 </span>
                 <h3 className="text-xl sm:text-2xl font-black uppercase text-[#3087ff] leading-tight">
                   {activeProjectModal.title}
                 </h3>
-                <span className="text-xs font-bold text-[#3087ff]/80">
+                <span className="text-xs font-bold text-[#3087ff]">
                   {activeProjectModal.agencyLocation}
                 </span>
               </div>
               <button
                 type="button"
                 onClick={() => setActiveProjectModal(null)}
-                className="p-1.5 text-[#3087ff] hover:bg-[#3087ff]/20 border border-[#3087ff] cursor-pointer"
+                className="p-1.5 text-[#3087ff] hover:bg-[#3087ff] hover:text-white border border-[#3087ff] cursor-pointer"
                 aria-label="Close Modal"
               >
                 <X className="w-6 h-6" />
@@ -527,25 +527,25 @@ export const SolenoProjectsShowcase: React.FC<SolenoProjectsShowcaseProps> = ({
                 <h4 className="font-black text-sm uppercase text-[#3087ff]">
                   Engineering Challenge &amp; Solution
                 </h4>
-                <p className="text-xs sm:text-sm text-[#3087ff]/90 leading-relaxed font-normal">
+                <p className="text-xs sm:text-sm text-[#3087ff] leading-relaxed font-normal">
                   {activeProjectModal.challengeSolved}
                 </p>
 
-                <div className="bg-[#3087ff]/15 border border-[#3087ff] p-3 space-y-1.5 text-xs font-bold text-[#3087ff]">
+                <div className="bg-white border border-[#3087ff] p-3 space-y-1.5 text-xs font-bold text-[#3087ff]">
                   <div>
-                    <span className="text-[#3087ff]/75 font-normal">
+                    <span className="text-[#3087ff] font-normal">
                       Standard:{" "}
                     </span>
                     <span>{activeProjectModal.specs.standard}</span>
                   </div>
                   <div>
-                    <span className="text-[#3087ff]/75 font-normal">
+                    <span className="text-[#3087ff] font-normal">
                       Metallurgy:{" "}
                     </span>
                     <span>{activeProjectModal.specs.metallurgy}</span>
                   </div>
                   <div>
-                    <span className="text-[#3087ff]/75 font-normal">
+                    <span className="text-[#3087ff] font-normal">
                       Quantity:{" "}
                     </span>
                     <span>{activeProjectModal.specs.quantity}</span>

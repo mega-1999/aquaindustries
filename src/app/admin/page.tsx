@@ -259,7 +259,7 @@ export default function SuperAdminPage() {
         {/* Stats Metrics Grid */}
         <div className="grid grid-cols-2 lg:grid-cols-5 gap-4 mb-8">
           <div className="p-4 bg-white border-2 border-[#3087ff] shadow-sm">
-            <span className="text-xs font-bold uppercase tracking-wider text-[#3087ff]/70 block">
+            <span className="text-xs font-bold uppercase tracking-wider text-[#3087ff] block">
               Total Registrations
             </span>
             <strong className="text-2xl font-black text-[#3087ff]">
@@ -303,7 +303,7 @@ export default function SuperAdminPage() {
             </strong>
           </div>
 
-          <div className="p-4 bg-[#3087ff]/10 border-2 border-[#3087ff] shadow-sm col-span-2 lg:col-span-1">
+          <div className="p-4 bg-white border-2 border-[#3087ff] shadow-sm col-span-2 lg:col-span-1">
             <div className="flex items-center justify-between">
               <span className="text-xs font-bold uppercase tracking-wider text-[#3087ff] block">
                 Quote Takeoffs
@@ -318,13 +318,13 @@ export default function SuperAdminPage() {
 
         {/* Search & Tabs */}
         <div className="flex flex-col md:flex-row items-stretch md:items-center justify-between gap-4 mb-6">
-          <div className="flex flex-wrap bg-[#3087ff]/10 border-2 border-[#3087ff] p-1 gap-1">
+          <div className="flex flex-wrap bg-white border-2 border-[#3087ff] p-1 gap-1">
             <button
               type="button"
               onClick={() => setActiveTab("pending")}
               className={`py-2 px-4 text-xs font-black uppercase tracking-wider transition-all rounded-none cursor-pointer flex items-center gap-1.5 ${activeTab === "pending"
                   ? "bg-[#3087ff] text-white shadow-xs"
-                  : "text-[#3087ff] hover:bg-[#3087ff]/30"
+                  : "text-[#3087ff] hover:bg-[#3087ff] hover:text-white"
                 }`}
             >
               <span>Pending Approvals</span>
@@ -340,7 +340,7 @@ export default function SuperAdminPage() {
               onClick={() => setActiveTab("approved")}
               className={`py-2 px-4 text-xs font-black uppercase tracking-wider transition-all rounded-none cursor-pointer ${activeTab === "approved"
                   ? "bg-[#3087ff] text-white shadow-xs"
-                  : "text-[#3087ff] hover:bg-[#3087ff]/30"
+                  : "text-[#3087ff] hover:bg-[#3087ff] hover:text-white"
                 }`}
             >
               Approved ({approvedCount})
@@ -351,7 +351,7 @@ export default function SuperAdminPage() {
               onClick={() => setActiveTab("rejected")}
               className={`py-2 px-4 text-xs font-black uppercase tracking-wider transition-all rounded-none cursor-pointer ${activeTab === "rejected"
                   ? "bg-[#3087ff] text-white shadow-xs"
-                  : "text-[#3087ff] hover:bg-[#3087ff]/30"
+                  : "text-[#3087ff] hover:bg-[#3087ff] hover:text-white"
                 }`}
             >
               Rejected ({rejectedCount})
@@ -362,7 +362,7 @@ export default function SuperAdminPage() {
               onClick={() => setActiveTab("all")}
               className={`py-2 px-4 text-xs font-black uppercase tracking-wider transition-all rounded-none cursor-pointer ${activeTab === "all"
                   ? "bg-[#3087ff] text-white shadow-xs"
-                  : "text-[#3087ff] hover:bg-[#3087ff]/30"
+                  : "text-[#3087ff] hover:bg-[#3087ff] hover:text-white"
                 }`}
             >
               All Users ({allUsers.length})
@@ -373,7 +373,7 @@ export default function SuperAdminPage() {
               onClick={() => setActiveTab("quotes")}
               className={`py-2 px-4 text-xs font-black uppercase tracking-wider transition-all rounded-none cursor-pointer flex items-center gap-1.5 ${activeTab === "quotes"
                   ? "bg-[#3087ff] text-white shadow-xs"
-                  : "text-[#3087ff] hover:bg-[#3087ff]/30"
+                  : "text-[#3087ff] hover:bg-[#3087ff] hover:text-white"
                 }`}
             >
               <span>Quote Requests</span>
@@ -390,7 +390,7 @@ export default function SuperAdminPage() {
               placeholder="Search company, contact, email..."
               value={searchQuery}
               onChange={(e) => setSearchQuery(e.target.value)}
-              className="w-full bg-white border-2 border-[#3087ff] pl-9 pr-3 py-2 text-xs text-[#3087ff] font-bold placeholder-[#3087ff]/50 focus:outline-none focus:border-[#3087ff]"
+              className="w-full bg-white border-2 border-[#3087ff] pl-9 pr-3 py-2 text-xs text-[#3087ff] font-bold placeholder-[#3087ff] focus:outline-none focus:border-[#3087ff]"
             />
           </div>
         </div>
@@ -404,7 +404,7 @@ export default function SuperAdminPage() {
                 <h3 className="font-black text-base uppercase">
                   No Commercial Quote Requests Found
                 </h3>
-                <p className="text-xs text-[#3087ff]/80 mt-1">
+                <p className="text-xs text-[#3087ff] mt-1">
                   Quote requests submitted through the quote builder will appear
                   here.
                 </p>
@@ -415,7 +415,7 @@ export default function SuperAdminPage() {
                   key={rfq.id}
                   className="border-2 border-[#3087ff] bg-white p-5 shadow-sm space-y-3"
                 >
-                  <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-3 pb-3 border-b border-[#3087ff]/20">
+                  <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-3 pb-3 border-b border-[#3087ff]">
                     <div>
                       <div className="flex items-center gap-2">
                         <span className="px-2 py-0.5 bg-[#3087ff] text-white text-[10px] font-mono font-bold">
@@ -430,7 +430,7 @@ export default function SuperAdminPage() {
                           </span>
                         )}
                       </div>
-                      <div className="text-xs text-[#3087ff]/80 mt-1">
+                      <div className="text-xs text-[#3087ff] mt-1">
                         Primary Estimator: <strong>{rfq.contactName}</strong>{" "}
                         &bull; <span className="font-mono">{rfq.email}</span>{" "}
                         &bull; {rfq.phone}
@@ -438,7 +438,7 @@ export default function SuperAdminPage() {
                     </div>
 
                     <div className="text-right">
-                      <span className="text-[10px] font-bold uppercase text-[#3087ff]/70 block">
+                      <span className="text-[10px] font-bold uppercase text-[#3087ff] block">
                         Received Date
                       </span>
                       <strong className="text-xs font-mono text-[#3087ff]">
@@ -448,20 +448,20 @@ export default function SuperAdminPage() {
                   </div>
 
                   <div className="grid grid-cols-1 sm:grid-cols-3 gap-3 text-xs text-[#3087ff]">
-                    <div className="p-2.5 bg-[#3087ff]/5 border border-[#3087ff]/20">
-                      <span className="text-[10px] font-bold uppercase text-[#3087ff]/70 block">
+                    <div className="p-2.5 bg-white border border-[#3087ff]">
+                      <span className="text-[10px] font-bold uppercase text-[#3087ff] block">
                         Project Sector
                       </span>
                       <strong>{rfq.projectType}</strong>
                     </div>
-                    <div className="p-2.5 bg-[#3087ff]/5 border border-[#3087ff]/20">
-                      <span className="text-[10px] font-bold uppercase text-[#3087ff]/70 block">
+                    <div className="p-2.5 bg-white border border-[#3087ff]">
+                      <span className="text-[10px] font-bold uppercase text-[#3087ff] block">
                         Jobsite Destination
                       </span>
                       <strong>{rfq.deliveryLocation}</strong>
                     </div>
-                    <div className="p-2.5 bg-[#3087ff]/5 border border-[#3087ff]/20">
-                      <span className="text-[10px] font-bold uppercase text-[#3087ff]/70 block">
+                    <div className="p-2.5 bg-white border border-[#3087ff]">
+                      <span className="text-[10px] font-bold uppercase text-[#3087ff] block">
                         Target Delivery
                       </span>
                       <strong>{rfq.targetDeliveryDate}</strong>
@@ -470,7 +470,7 @@ export default function SuperAdminPage() {
 
                   {rfq.notes && (
                     <div className="p-3 bg-slate-50 border border-slate-300 text-xs text-[#3087ff]">
-                      <strong className="block text-[10px] uppercase font-bold text-[#3087ff]/70 mb-1">
+                      <strong className="block text-[10px] uppercase font-bold text-[#3087ff] mb-1">
                         Takeoff &amp; Specification Notes:
                       </strong>
                       <p className="leading-relaxed">{rfq.notes}</p>
@@ -489,7 +489,7 @@ export default function SuperAdminPage() {
                 <h3 className="font-black text-base uppercase">
                   No Registrations in this View
                 </h3>
-                <p className="text-xs text-[#3087ff]/80 mt-1">
+                <p className="text-xs text-[#3087ff] mt-1">
                   Try switching tabs or resetting the search filter.
                 </p>
               </div>
@@ -575,7 +575,7 @@ export default function SuperAdminPage() {
                         </div>
 
                         {/* Compliance & Audit Line */}
-                        <div className="flex flex-wrap items-center gap-3 text-xs text-[#3087ff]/80 pt-1">
+                        <div className="flex flex-wrap items-center gap-3 text-xs text-[#3087ff] pt-1">
                           <span>
                             Tax ID / License:{" "}
                             <strong className="font-mono text-[#3087ff]">
@@ -622,7 +622,7 @@ export default function SuperAdminPage() {
 
                       {/* Action Triggers */}
                       {!isUserAdmin && (
-                        <div className="flex flex-wrap sm:flex-nowrap items-center gap-2 shrink-0 pt-3 lg:pt-0 border-t lg:border-t-0 border-[#3087ff]/20">
+                        <div className="flex flex-wrap sm:flex-nowrap items-center gap-2 shrink-0 pt-3 lg:pt-0 border-t lg:border-t-0 border-[#3087ff]">
                           {!isApproved && (
                             <button
                               type="button"
@@ -657,7 +657,7 @@ export default function SuperAdminPage() {
                                 showFeedback(`Removed ${user.companyName}.`);
                               }
                             }}
-                            className="p-2.5 text-[#3087ff]/60 hover:text-rose-700 hover:bg-rose-100 transition-colors cursor-pointer"
+                            className="p-2.5 text-[#3087ff] hover:text-rose-700 hover:bg-rose-100 transition-colors cursor-pointer"
                             title="Delete User Record"
                           >
                             <Trash2 className="w-4 h-4" />

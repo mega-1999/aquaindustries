@@ -56,7 +56,7 @@ export default function ProfilePage() {
                 onClick={() => setActiveTab("overview")}
                 className={`py-3 px-4 sm:px-6 text-xs sm:text-sm font-black uppercase tracking-wider border-b-2 -mb-[2px] transition-colors cursor-pointer ${activeTab === "overview"
                     ? "border-[#3087ff] bg-[#3087ff] text-white"
-                    : "border-transparent text-[#3087ff] hover:bg-[#3087ff]/20"
+                    : "border-transparent text-[#3087ff] hover:bg-[#3087ff] hover:text-white"
                   }`}
               >
                 Profile Overview
@@ -66,7 +66,7 @@ export default function ProfilePage() {
                 onClick={() => setActiveTab("commercial")}
                 className={`py-3 px-4 sm:px-6 text-xs sm:text-sm font-black uppercase tracking-wider border-b-2 -mb-[2px] transition-colors cursor-pointer ${activeTab === "commercial"
                     ? "border-[#3087ff] bg-[#3087ff] text-white"
-                    : "border-transparent text-[#3087ff] hover:bg-[#3087ff]/20"
+                    : "border-transparent text-[#3087ff] hover:bg-[#3087ff] hover:text-white"
                   }`}
               >
                 Commercial Privileges
@@ -76,7 +76,7 @@ export default function ProfilePage() {
                 onClick={() => setActiveTab("bol")}
                 className={`py-3 px-4 sm:px-6 text-xs sm:text-sm font-black uppercase tracking-wider border-b-2 -mb-[2px] transition-colors cursor-pointer ${activeTab === "bol"
                     ? "border-[#3087ff] bg-[#3087ff] text-white"
-                    : "border-transparent text-[#3087ff] hover:bg-[#3087ff]/20"
+                    : "border-transparent text-[#3087ff] hover:bg-[#3087ff] hover:text-white"
                   }`}
               >
                 BOL Shipment &amp; MTRs
@@ -87,13 +87,13 @@ export default function ProfilePage() {
             {activeTab === "overview" && (
               <div className="bg-white border-2 border-[#3087ff] p-6 sm:p-8 space-y-6 shadow-md">
                 <div>
-                  <h3 className="text-base sm:text-lg font-black uppercase tracking-wide text-[#3087ff] mb-4 pb-2 border-b border-[#3087ff]/20">
+                  <h3 className="text-base sm:text-lg font-black uppercase tracking-wide text-[#3087ff] mb-4 pb-2 border-b border-[#3087ff]">
                     Corporate Identity &amp; Licensure
                   </h3>
 
                   <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 text-xs">
-                    <div className="p-3.5 bg-[#3087ff]/5 border border-[#3087ff]/30">
-                      <span className="text-[10px] font-black uppercase text-[#3087ff]/70 block">
+                    <div className="p-3.5 bg-white border border-[#3087ff]">
+                      <span className="text-[10px] font-black uppercase text-[#3087ff] block">
                         Registered Entity
                       </span>
                       <strong className="text-sm font-black text-[#3087ff] block truncate">
@@ -101,8 +101,8 @@ export default function ProfilePage() {
                       </strong>
                     </div>
 
-                    <div className="p-3.5 bg-[#3087ff]/5 border border-[#3087ff]/30">
-                      <span className="text-[10px] font-black uppercase text-[#3087ff]/70 block">
+                    <div className="p-3.5 bg-white border border-[#3087ff]">
+                      <span className="text-[10px] font-black uppercase text-[#3087ff] block">
                         Account Classification
                       </span>
                       <strong className="text-sm font-black text-[#3087ff] block">
@@ -110,8 +110,8 @@ export default function ProfilePage() {
                       </strong>
                     </div>
 
-                    <div className="p-3.5 bg-[#3087ff]/5 border border-[#3087ff]/30">
-                      <span className="text-[10px] font-black uppercase text-[#3087ff]/70 block">
+                    <div className="p-3.5 bg-white border border-[#3087ff]">
+                      <span className="text-[10px] font-black uppercase text-[#3087ff] block">
                         Primary Authorized Contact
                       </span>
                       <strong className="text-sm font-black text-[#3087ff] block">
@@ -119,8 +119,8 @@ export default function ProfilePage() {
                       </strong>
                     </div>
 
-                    <div className="p-3.5 bg-[#3087ff]/5 border border-[#3087ff]/30">
-                      <span className="text-[10px] font-black uppercase text-[#3087ff]/70 block">
+                    <div className="p-3.5 bg-white border border-[#3087ff]">
+                      <span className="text-[10px] font-black uppercase text-[#3087ff] block">
                         Direct Business Email
                       </span>
                       <strong className="text-sm font-mono font-bold text-[#3087ff] block truncate">
@@ -128,8 +128,8 @@ export default function ProfilePage() {
                       </strong>
                     </div>
 
-                    <div className="p-3.5 bg-[#3087ff]/5 border border-[#3087ff]/30">
-                      <span className="text-[10px] font-black uppercase text-[#3087ff]/70 block">
+                    <div className="p-3.5 bg-white border border-[#3087ff]">
+                      <span className="text-[10px] font-black uppercase text-[#3087ff] block">
                         Dispatch Phone
                       </span>
                       <strong className="text-sm font-mono font-bold text-[#3087ff] block">
@@ -137,8 +137,8 @@ export default function ProfilePage() {
                       </strong>
                     </div>
 
-                    <div className="p-3.5 bg-[#3087ff]/5 border border-[#3087ff]/30">
-                      <span className="text-[10px] font-black uppercase text-[#3087ff]/70 block">
+                    <div className="p-3.5 bg-white border border-[#3087ff]">
+                      <span className="text-[10px] font-black uppercase text-[#3087ff] block">
                         Federal Tax ID / License #
                       </span>
                       <strong className="text-sm font-mono font-bold text-[#3087ff] block">
@@ -150,7 +150,7 @@ export default function ProfilePage() {
 
                 {/* Compliance Vault */}
                 <div>
-                  <h3 className="text-base sm:text-lg font-black uppercase tracking-wide text-[#3087ff] mb-4 pb-2 border-b border-[#3087ff]/20">
+                  <h3 className="text-base sm:text-lg font-black uppercase tracking-wide text-[#3087ff] mb-4 pb-2 border-b border-[#3087ff]">
                     Compliance Certificates &amp; Tax Documents
                   </h3>
 
@@ -219,35 +219,35 @@ export default function ProfilePage() {
             {activeTab === "commercial" && (
               <div className="bg-white border-2 border-[#3087ff] p-6 sm:p-8 space-y-6 shadow-md">
                 <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
-                  <div className="p-5 bg-[#3087ff]/5 border-2 border-[#3087ff]">
-                    <span className="text-xs font-black uppercase text-[#3087ff]/70 block">
+                  <div className="p-5 bg-white border-2 border-[#3087ff]">
+                    <span className="text-xs font-black uppercase text-[#3087ff] block">
                       Commercial Pricing Tier
                     </span>
                     <strong className="text-xl font-black text-[#3087ff] block mt-1">
                       Tier-1 Direct Contractor
                     </strong>
-                    <p className="text-xs text-[#3087ff]/80 mt-2 leading-relaxed">
+                    <p className="text-xs text-[#3087ff] mt-2 leading-relaxed">
                       Wholesale direct discount (28% off list pricing) applied
                       automatically to all AWWA C110/C153 mechanical joint
                       fittings and wedge restraint assemblies.
                     </p>
                   </div>
 
-                  <div className="p-5 bg-[#3087ff]/5 border-2 border-[#3087ff]">
-                    <span className="text-xs font-black uppercase text-[#3087ff]/70 block">
+                  <div className="p-5 bg-white border-2 border-[#3087ff]">
+                    <span className="text-xs font-black uppercase text-[#3087ff] block">
                       Assigned Logistics Hub
                     </span>
                     <strong className="text-xl font-black text-[#3087ff] block mt-1 uppercase">
                       {currentUser.assignedYard.replace("-", " ")}
                     </strong>
-                    <p className="text-xs text-[#3087ff]/80 mt-2 leading-relaxed">
+                    <p className="text-xs text-[#3087ff] mt-2 leading-relaxed">
                       Priority flatbed loading dock allocation, 24/7 emergency
                       watermain break dispatch, and will-call express pickup.
                     </p>
                   </div>
                 </div>
 
-                <div className="p-4 bg-[#3087ff]/20 border border-[#3087ff] space-y-2">
+                <div className="p-4 bg-white border border-[#3087ff] space-y-2">
                   <div className="flex items-center gap-2">
                     <Truck className="w-5 h-5 text-[#3087ff]" />
                     <span className="font-black text-sm uppercase text-[#3087ff]">
@@ -268,7 +268,7 @@ export default function ProfilePage() {
               <div className="bg-white border-2 border-[#3087ff] p-6 sm:p-8 space-y-6 shadow-md">
                 <form
                   onSubmit={handleTrackBol}
-                  className="p-5 bg-[#3087ff]/5 border-2 border-[#3087ff] space-y-3"
+                  className="p-5 bg-white border-2 border-[#3087ff] space-y-3"
                 >
                   <span className="font-black text-sm uppercase text-[#3087ff] block">
                     Live Flatbed Bill of Lading (BOL) Tracking
@@ -302,7 +302,7 @@ export default function ProfilePage() {
                       Certified Mill Test Reports (MTR Vault)
                     </span>
                   </div>
-                  <p className="text-xs text-[#3087ff]/90 leading-relaxed">
+                  <p className="text-xs text-[#3087ff] leading-relaxed">
                     Physical and chemical certifications per ASTM A536 Grade
                     65-45-12 are archived digitally for every pour heat number.
                     Enter heat numbers stamped on fitting bells to download

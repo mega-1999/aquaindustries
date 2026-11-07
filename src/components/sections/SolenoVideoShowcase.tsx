@@ -133,7 +133,7 @@ export const SolenoVideoShowcase: React.FC<SolenoVideoShowcaseProps> = ({
 
       {/* Floating Fluid Ambient Water Blobs */}
       <div
-        className="absolute -top-24 -left-24 w-96 h-96 bg-[#3087ff]/20 blur-3xl pointer-events-none fluid-wave"
+        className="absolute -top-24 -left-24 w-96 h-96 hidden pointer-events-none fluid-wave"
         aria-hidden="true"
       />
       <div
@@ -150,7 +150,7 @@ export const SolenoVideoShowcase: React.FC<SolenoVideoShowcaseProps> = ({
           </div>
 
           <h2 className="text-3xl sm:text-4xl lg:text-5xl font-black uppercase tracking-tight text-white leading-[1.05] mb-3">
-            Waterworks <span className="text-[#3087ff]">Video Showcases</span>
+            Waterworks <span className="">Video Showcases</span>
           </h2>
 
           {/* Animated Hydrodynamic Water Wave Stream Indicator */}
@@ -244,7 +244,7 @@ export const SolenoVideoShowcase: React.FC<SolenoVideoShowcaseProps> = ({
                 {/* Card Body */}
                 <div className="p-4 flex-1 flex flex-col justify-between text-[#3087ff]">
                   <div>
-                    <span className="text-[10px] font-bold text-[#3087ff]/75 uppercase block mb-1">
+                    <span className="text-[10px] font-bold text-[#3087ff] uppercase block mb-1">
                       {item.standard}
                     </span>
 
@@ -252,13 +252,13 @@ export const SolenoVideoShowcase: React.FC<SolenoVideoShowcaseProps> = ({
                       {item.title}
                     </h3>
 
-                    <p className="text-xs text-[#3087ff]/90 leading-relaxed mb-4 line-clamp-3">
+                    <p className="text-xs text-[#3087ff] leading-relaxed mb-4 line-clamp-3">
                       {item.summary}
                     </p>
                   </div>
 
                   {/* Dual Action Buttons */}
-                  <div className="pt-2 border-t border-[#3087ff]/20 space-y-2">
+                  <div className="pt-2 border-t border-[#3087ff] space-y-2">
                     <button
                       type="button"
                       onClick={() => setActiveVideo(item)}
@@ -273,7 +273,7 @@ export const SolenoVideoShowcase: React.FC<SolenoVideoShowcaseProps> = ({
                       onClick={() => handleAdd(item.product)}
                       className={`w-full py-2 px-3 text-xs font-black uppercase tracking-wider rounded-none border border-[#3087ff] transition-all flex items-center justify-center gap-1.5 cursor-pointer ${isAdded
                         ? "bg-[#3087ff] text-white"
-                        : "bg-white hover:bg-[#3087ff]/30 text-[#3087ff]"
+                        : "bg-white hover:bg-[#3087ff] hover:text-white text-[#3087ff]"
                         }`}
                     >
                       {isAdded ? (
@@ -301,7 +301,7 @@ export const SolenoVideoShowcase: React.FC<SolenoVideoShowcaseProps> = ({
         <div className="fixed inset-0 z-60 flex items-center justify-center p-4 sm:p-6">
           <button
             type="button"
-            className="fixed inset-0 bg-[#3087ff]/85 backdrop-blur-sm cursor-default w-full h-full border-0"
+            className="fixed inset-0 bg-black/80 backdrop-blur-sm cursor-default w-full h-full border-0"
             onClick={() => setActiveVideo(null)}
             aria-label="Close Video Player"
           />
@@ -320,7 +320,7 @@ export const SolenoVideoShowcase: React.FC<SolenoVideoShowcaseProps> = ({
               <button
                 type="button"
                 onClick={() => setActiveVideo(null)}
-                className="p-1 text-[#3087ff] hover:bg-[#3087ff]/20 border border-[#3087ff] cursor-pointer"
+                className="p-1 text-[#3087ff] hover:bg-[#3087ff] hover:text-white border border-[#3087ff] cursor-pointer"
                 aria-label="Close Modal"
               >
                 <X className="w-5 h-5" />
@@ -345,22 +345,22 @@ export const SolenoVideoShowcase: React.FC<SolenoVideoShowcaseProps> = ({
             </div>
 
             {/* Video Specifications & Overview */}
-            <div className="mt-4 pt-3 border-t border-[#3087ff]/20">
+            <div className="mt-4 pt-3 border-t border-[#3087ff]">
               <div className="flex items-center justify-between gap-2 mb-2">
                 <span className="text-xs font-bold text-[#3087ff] uppercase">
                   Standard: {activeVideo.standard}
                 </span>
-                <span className="text-xs bg-[#3087ff]/30 px-2 py-0.5 font-extrabold text-[#3087ff] border border-[#3087ff]">
+                <span className="text-xs bg-white px-2 py-0.5 font-extrabold text-[#3087ff] border border-[#3087ff]">
                   Duration: {activeVideo.duration}
                 </span>
               </div>
-              <p className="text-xs sm:text-sm text-[#3087ff]/90 font-medium leading-relaxed">
+              <p className="text-xs sm:text-sm text-[#3087ff] font-medium leading-relaxed">
                 {activeVideo.summary}
               </p>
             </div>
 
             {/* Action Buttons */}
-            <div className="mt-4 pt-3 border-t-2 border-[#3087ff]/20 flex flex-col sm:flex-row gap-3">
+            <div className="mt-4 pt-3 border-t-2 border-[#3087ff] flex flex-col sm:flex-row gap-3">
               <button
                 type="button"
                 onClick={() => {

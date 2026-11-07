@@ -109,7 +109,7 @@ export const SolenoFlagshipProducts: React.FC<SolenoFlagshipProductsProps> = ({
           </div>
 
           <h2 className="text-3xl sm:text-4xl lg:text-5xl font-black uppercase tracking-tight text-white leading-[1.05] mb-3">
-            Our Flagship <span className="text-[#3087ff]">Products</span>
+            Our Flagship <span className="]">Products</span>
           </h2>
 
           <p className="text-sm sm:text-base text-white/95 font-normal leading-relaxed">
@@ -131,17 +131,17 @@ export const SolenoFlagshipProducts: React.FC<SolenoFlagshipProductsProps> = ({
               >
                 <div>
                   {/* Top Category Tag */}
-                  <div className="flex items-center justify-between mb-3 border-b-2 border-[#3087ff]/15 pb-2.5 min-h-[28px]">
-                    <span className="text-[10px] font-black uppercase tracking-wider bg-[#3087ff]/20 text-[#3087ff] px-2.5 py-0.5 border border-[#3087ff]">
+                  <div className="flex items-center justify-between mb-3 border-b-2 border-[#3087ff] pb-2.5 min-h-[28px]">
+                    <span className="text-[10px] font-black uppercase tracking-wider bg-white text-[#3087ff] px-2.5 py-0.5 border border-[#3087ff]">
                       {item.tag}
                     </span>
-                    <span className="text-[10px] font-bold text-[#3087ff]/80 uppercase">
+                    <span className="text-[10px] font-bold text-[#3087ff] uppercase">
                       In Stock
                     </span>
                   </div>
 
                   {/* Centered Compact Image */}
-                  <div className="relative w-full h-36 sm:h-40 flex items-center justify-center p-3 overflow-hidden my-1 bg-gradient-to-b from-[#3087ff]/10 to-transparent border border-[#3087ff]/20">
+                  <div className="relative w-full h-36 sm:h-40 flex items-center justify-center p-3 overflow-hidden my-1 bg-gradient-to-b from-[#3087ff] to-transparent border border-[#3087ff]">
                     <img
                       src={item.image}
                       alt={item.label}
@@ -154,11 +154,11 @@ export const SolenoFlagshipProducts: React.FC<SolenoFlagshipProductsProps> = ({
                     {item.label}
                   </h3>
 
-                  <p className="text-[11px] font-bold text-[#3087ff]/75 uppercase tracking-wider mb-2 truncate">
+                  <p className="text-[11px] font-bold text-[#3087ff] uppercase tracking-wider mb-2 truncate">
                     {item.sublabel}
                   </p>
 
-                  <p className="text-xs text-[#3087ff]/90 font-normal leading-relaxed line-clamp-2 mb-3 min-h-[34px]">
+                  <p className="text-xs text-[#3087ff] font-normal leading-relaxed line-clamp-2 mb-3 min-h-[34px]">
                     {item.summary}
                   </p>
 
@@ -167,7 +167,7 @@ export const SolenoFlagshipProducts: React.FC<SolenoFlagshipProductsProps> = ({
                     {item.specs.map((spec) => (
                       <span
                         key={spec}
-                        className="inline-flex items-center gap-1 text-[10px] font-bold text-white bg-[#3087ff]/15 border border-[#3087ff] px-2 py-0.5 rounded-none max-w-full"
+                        className="inline-flex items-center gap-1 text-[10px] font-bold text-white bg-[#3087ff] border border-[#3087ff] px-2 py-0.5 rounded-none max-w-full"
                       >
                         <CheckCircle2 className="w-3 h-3 text-[#3087ff] shrink-0" />
                         <span className="truncate">{spec}</span>
@@ -177,7 +177,7 @@ export const SolenoFlagshipProducts: React.FC<SolenoFlagshipProductsProps> = ({
                 </div>
 
                 {/* 100% Contained Single-Line Flex Action Buttons */}
-                <div className="w-full flex items-center gap-2 pt-3 border-t-2 border-[#3087ff]/15 mt-auto">
+                <div className="w-full flex items-center gap-2 pt-3 border-t-2 border-[#3087ff] mt-auto">
                   <button
                     type="button"
                     onClick={() => handleAdd(item.product)}

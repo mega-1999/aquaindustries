@@ -378,7 +378,7 @@ export const EngineeringInnovationSpotlight: React.FC<
 
             <h2 className="text-2xl sm:text-4xl lg:text-5xl font-black uppercase tracking-tight text-white leading-[1.05] mb-3">
               {currentProduct.name.split(" ")[0]}{" "}
-              <span className="text-[#3087ff]">
+              <span className="text-white">
                 {currentProduct.name.split(" ").slice(1).join(" ")}
               </span>
             </h2>
@@ -414,16 +414,16 @@ export const EngineeringInnovationSpotlight: React.FC<
                 type="button"
                 onClick={() => handleSelectProduct(idx)}
                 className={`p-3 sm:p-4 text-left border-2 rounded-none transition-all flex flex-col justify-between cursor-pointer ${isSelected
-                    ? "bg-white text-[#3087ff] border-[#3087ff] shadow-lg ring-2 ring-white"
-                    : "bg-white/10 text-white border-white/30 hover:border-[#3087ff] hover:bg-white/20"
+                  ? "bg-white text-[#3087ff] border-[#3087ff] shadow-lg ring-2 ring-white"
+                  : "bg-white/10 text-white border-white/30 hover:border-[#3087ff] hover:bg-white/20"
                   }`}
               >
                 <div>
                   <div className="flex items-center justify-between gap-1 mb-1.5">
                     <span
                       className={`text-[10px] font-black uppercase tracking-wider px-1.5 py-0.5 ${isSelected
-                          ? "bg-[#3087ff] text-white"
-                          : "bg-white/20 text-white"
+                        ? "bg-[#3087ff] text-white"
+                        : "bg-white/20 text-white"
                         }`}
                     >
                       Innovation 0{idx + 1}
@@ -443,7 +443,7 @@ export const EngineeringInnovationSpotlight: React.FC<
                   </h3>
                 </div>
                 <p
-                  className={`text-[11px] mt-2 font-medium line-clamp-1 ${isSelected ? "text-[#3087ff]/75" : "text-white/75"
+                  className={`text-[11px] mt-2 font-medium line-clamp-1 ${isSelected ? "text-[#3087ff]" : "text-white/75"
                     }`}
                 >
                   {prod.subtitle}
@@ -467,8 +467,8 @@ export const EngineeringInnovationSpotlight: React.FC<
                 type="button"
                 onClick={() => setViewMode("photo")}
                 className={`flex-1 py-2 px-3 text-xs font-black uppercase tracking-wider transition-all rounded-none cursor-pointer flex items-center justify-center gap-1.5 ${viewMode === "photo"
-                    ? "bg-white text-[#3087ff] shadow-sm"
-                    : "text-white hover:bg-white/10"
+                  ? "bg-white text-[#3087ff] shadow-sm"
+                  : "text-white hover:bg-white/10"
                   }`}
               >
                 <Sparkles className="w-3.5 h-3.5" />
@@ -479,8 +479,8 @@ export const EngineeringInnovationSpotlight: React.FC<
                 type="button"
                 onClick={() => setViewMode("simulation")}
                 className={`flex-1 py-2 px-3 text-xs font-black uppercase tracking-wider transition-all rounded-none cursor-pointer flex items-center justify-center gap-1.5 ${viewMode === "simulation"
-                    ? "bg-white text-[#3087ff] shadow-sm"
-                    : "text-white hover:bg-white/10"
+                  ? "bg-white text-[#3087ff] shadow-sm"
+                  : "text-white hover:bg-white/10"
                   }`}
               >
                 <Sliders className="w-3.5 h-3.5" />
@@ -491,8 +491,8 @@ export const EngineeringInnovationSpotlight: React.FC<
                 type="button"
                 onClick={() => setViewMode("torque")}
                 className={`flex-1 py-2 px-3 text-xs font-black uppercase tracking-wider transition-all rounded-none cursor-pointer flex items-center justify-center gap-1.5 ${viewMode === "torque"
-                    ? "bg-white text-[#3087ff] shadow-sm"
-                    : "text-white hover:bg-white/10"
+                  ? "bg-white text-[#3087ff] shadow-sm"
+                  : "text-white hover:bg-white/10"
                   }`}
               >
                 <Wrench className="w-3.5 h-3.5" />
@@ -525,7 +525,7 @@ export const EngineeringInnovationSpotlight: React.FC<
                       <button
                         type="button"
                         onClick={() => setActiveHotspot(null)}
-                        className="w-6 h-6 bg-[#3087ff]/10 hover:bg-[#3087ff] text-white hover:text-white flex items-center justify-center font-bold text-xs transition-colors cursor-pointer"
+                        className="w-6 h-6 bg-[#3087ff] hover:bg-[#3087ff] text-white hover:text-white flex items-center justify-center font-bold text-xs transition-colors cursor-pointer"
                         title="Close Popup"
                       >
                         ✕
@@ -533,12 +533,12 @@ export const EngineeringInnovationSpotlight: React.FC<
                     </div>
                   </div>
 
-                  <p className="text-xs sm:text-sm text-[#3087ff]/90 font-medium leading-relaxed mb-3">
+                  <p className="text-xs sm:text-sm text-[#3087ff] font-medium leading-relaxed mb-3">
                     {activeSpotData.desc}
                   </p>
 
-                  <div className="flex items-center justify-between border-t border-[#3087ff]/20 pt-2 text-xs">
-                    <span className="font-bold text-[#3087ff]/70 uppercase text-[10px]">
+                  <div className="flex items-center justify-between border-t border-[#3087ff] pt-2 text-xs">
+                    <span className="font-bold text-[#3087ff] uppercase text-[10px]">
                       Field Inspection Hotspot {activeSpotData.id} of{" "}
                       {currentProduct.hotspots.length} &bull;{" "}
                       {currentProduct.name}
@@ -555,7 +555,7 @@ export const EngineeringInnovationSpotlight: React.FC<
               )}
               {/* Corner Waterworks Badge */}
               <div className="absolute top-4 left-4 z-20">
-                <span className="text-[10px] font-black uppercase tracking-widest text-white bg-[#3087ff]/30 px-2.5 py-1 border border-[#3087ff]">
+                <span className="text-[10px] font-black uppercase tracking-widest text-white bg-[#3087ff] px-2.5 py-1 border border-[#3087ff]">
                   {currentProduct.categoryLabel}
                 </span>
               </div>
@@ -602,8 +602,8 @@ export const EngineeringInnovationSpotlight: React.FC<
                           {/* Numbered Hotspot Pill */}
                           <span
                             className={`relative w-8 h-8 rounded-none border-2 font-black text-xs flex items-center justify-center shadow-lg transition-transform duration-200 group-hover:scale-110 ${isActive
-                                ? "bg-[#3087ff] text-white border-white scale-110 ring-2 ring-[#3087ff]"
-                                : "bg-white text-[#3087ff] border-[#3087ff] hover:bg-[#3087ff]"
+                              ? "bg-[#3087ff] text-white border-white scale-110 ring-2 ring-[#3087ff]"
+                              : "bg-white text-[#3087ff] border-[#3087ff] hover:bg-[#3087ff]"
                               }`}
                           >
                             {spot.id}
@@ -633,8 +633,8 @@ export const EngineeringInnovationSpotlight: React.FC<
                         type="button"
                         onClick={() => setSelectedPsi(step.psi)}
                         className={`px-3 py-1.5 text-xs font-black uppercase rounded-none border transition-all cursor-pointer ${selectedPsi === step.psi
-                            ? "bg-[#3087ff] text-white border-[#3087ff] shadow-md"
-                            : "bg-white text-[#3087ff] border-[#3087ff] hover:bg-[#3087ff]/20"
+                          ? "bg-[#3087ff] text-white border-[#3087ff] shadow-md"
+                          : "bg-white text-[#3087ff] border-[#3087ff] hover:bg-[#3087ff] hover:text-white"
                           }`}
                       >
                         {step.label}
@@ -696,12 +696,12 @@ export const EngineeringInnovationSpotlight: React.FC<
                       <g
                         style={{
                           transform: `translateY(${selectedPsi === 100
-                              ? 2
-                              : selectedPsi === 250
-                                ? 6
-                                : selectedPsi === 350
-                                  ? 10
-                                  : 14
+                            ? 2
+                            : selectedPsi === 250
+                              ? 6
+                              : selectedPsi === 350
+                                ? 10
+                                : 14
                             }px)`,
                           transition:
                             "transform 0.5s cubic-bezier(0.4, 0, 0.2, 1)",
@@ -728,12 +728,12 @@ export const EngineeringInnovationSpotlight: React.FC<
                       <g
                         style={{
                           transform: `translateY(${selectedPsi === 100
-                              ? 2
-                              : selectedPsi === 250
-                                ? 6
-                                : selectedPsi === 350
-                                  ? 10
-                                  : 14
+                            ? 2
+                            : selectedPsi === 250
+                              ? 6
+                              : selectedPsi === 350
+                                ? 10
+                                : 14
                             }px)`,
                           transition:
                             "transform 0.5s cubic-bezier(0.4, 0, 0.2, 1)",
@@ -770,9 +770,9 @@ export const EngineeringInnovationSpotlight: React.FC<
                   </div>
 
                   {/* Telemetry Indicator Readout */}
-                  <div className="w-full grid grid-cols-3 gap-2 border-t border-[#3087ff]/20 pt-3 text-xs">
+                  <div className="w-full grid grid-cols-3 gap-2 border-t border-[#3087ff] pt-3 text-xs">
                     <div className="text-left font-bold text-[#3087ff]">
-                      <span className="text-[10px] text-[#3087ff]/70 uppercase block">
+                      <span className="text-[10px] text-[#3087ff] uppercase block">
                         Radial Bite Depth
                       </span>
                       <strong className="text-sm font-black text-[#3087ff]">
@@ -781,7 +781,7 @@ export const EngineeringInnovationSpotlight: React.FC<
                     </div>
 
                     <div className="text-center font-bold text-[#3087ff]">
-                      <span className="text-[10px] text-[#3087ff]/70 uppercase block">
+                      <span className="text-[10px] text-[#3087ff] uppercase block">
                         Safety Margin
                       </span>
                       <strong className="text-sm font-black text-[#3087ff]">
@@ -790,10 +790,10 @@ export const EngineeringInnovationSpotlight: React.FC<
                     </div>
 
                     <div className="text-right font-bold text-[#3087ff]">
-                      <span className="text-[10px] text-[#3087ff]/70 uppercase block">
+                      <span className="text-[10px] text-[#3087ff] uppercase block">
                         Operating State
                       </span>
-                      <span className="inline-block bg-[#3087ff]/30 px-2 py-0.5 border border-[#3087ff] font-extrabold text-[11px]">
+                      <span className="inline-block bg-white px-2 py-0.5 border border-[#3087ff] font-extrabold text-[11px]">
                         {currentStep.state}
                       </span>
                     </div>
@@ -810,7 +810,7 @@ export const EngineeringInnovationSpotlight: React.FC<
                     <h4 className="text-sm font-black uppercase text-[#3087ff] mb-1">
                       Calibrated Breakaway Bolt Demonstration
                     </h4>
-                    <p className="text-xs text-[#3087ff]/80 max-w-md mx-auto">
+                    <p className="text-xs text-[#3087ff] max-w-md mx-auto">
                       Drag the torque wrench slider to simulate bolt tightening.
                       At 75-90 ft-lbs, the upper hex nut shears cleanly off to
                       prevent pipe wall pinching.
@@ -823,8 +823,8 @@ export const EngineeringInnovationSpotlight: React.FC<
                       {/* Upper Breakaway Hex Nut */}
                       <div
                         className={`w-14 h-8 border-2 border-[#3087ff] font-black text-xs flex items-center justify-center transition-all duration-300 ${isTorqueSheared
-                            ? "translate-x-12 -translate-y-6 rotate-45 opacity-0 bg-red-100"
-                            : "bg-[#3087ff] text-white"
+                          ? "translate-x-12 -translate-y-6 rotate-45 opacity-0 bg-red-100"
+                          : "bg-[#3087ff] text-white"
                           }`}
                       >
                         {isTorqueSheared ? "SHEARED" : "TORQUE"}

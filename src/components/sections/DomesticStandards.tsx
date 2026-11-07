@@ -113,7 +113,7 @@ export function DomesticStandards() {
                     <h4 className="text-sm sm:text-base font-extrabold text-[#3087ff] mb-1 leading-snug">
                       {cert.title}
                     </h4>
-                    <p className="text-xs sm:text-sm text-[#3087ff]/90 leading-relaxed font-normal">
+                    <p className="text-xs sm:text-sm text-[#3087ff] leading-relaxed font-normal">
                       {cert.detail}
                     </p>
                   </div>
@@ -160,7 +160,7 @@ export function DomesticStandards() {
             {/* Test Report Card Frame - Flex-1 stretches to match left column */}
             <div className="bg-white border-2 border-[#3087ff] p-5 sm:p-6 text-[#3087ff] flex-1 flex flex-col justify-between my-3 shadow-xl">
               <div>
-                <div className="border-b border-[#3087ff]/30 pb-3 mb-4 flex items-center justify-between">
+                <div className="border-b border-[#3087ff] pb-3 mb-4 flex items-center justify-between">
                   <div>
                     <span className="text-[10px] font-mono uppercase text-[#3087ff] font-bold tracking-wider block">
                       LABORATORY PHYSICAL PROPERTIES
@@ -226,7 +226,7 @@ export function DomesticStandards() {
                 </div>
 
                 {/* Chemical Spectrometry Breakdown */}
-                <div className="bg-[#3087ff]/5 border border-[#3087ff]/60 p-2.5 my-3">
+                <div className="bg-white border border-[#3087ff] p-2.5 my-3">
                   <span className="text-[10px] font-black uppercase text-[#3087ff] tracking-wider block mb-1">
                     Induction Melt Chemistry Spectrometry:
                   </span>
@@ -239,7 +239,7 @@ export function DomesticStandards() {
               </div>
 
               {/* Stamp of Quality Assurance */}
-              <div className="border-t border-[#3087ff]/30 pt-3 flex items-center justify-between text-xs font-mono">
+              <div className="border-t border-[#3087ff] pt-3 flex items-center justify-between text-xs font-mono">
                 <div className="space-y-0.5">
                   <div className="text-[10px] text-[#3087ff] uppercase font-bold">
                     TRACEABLE HEAT NO.
@@ -257,7 +257,7 @@ export function DomesticStandards() {
             {/* Symmetrical Right Bottom Action Strip */}
             <div className="w-full py-3 px-4 bg-white text-[#3087ff] font-black text-xs sm:text-sm uppercase tracking-wider border-2 border-[#3087ff] flex items-center justify-between min-h-[48px]">
               <span>Quality Assurance</span>
-              <span className="bg-[#3087ff]/30 px-2 py-0.5 text-[#3087ff] text-[11px] font-black">
+              <span className="bg-white px-2 py-0.5 text-[#3087ff] text-[11px] font-black">
                 Permanent Heat Numbers Cast
               </span>
             </div>

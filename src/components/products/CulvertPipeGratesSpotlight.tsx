@@ -333,7 +333,7 @@ Standards: ${activeVariant.standards}
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
         {/* Section Header */}
         <div className="text-center max-w-3xl mx-auto mb-10">
-          <div className="inline-flex items-center gap-2 px-3 py-1 bg-[#3087ff]/20 text-[#3087ff] text-xs font-black uppercase tracking-widest border border-[#3087ff] mb-3">
+          <div className="inline-flex items-center gap-2 px-3 py-1 bg-white text-[#3087ff] text-xs font-black uppercase tracking-widest border border-[#3087ff] mb-3">
             <ShieldCheck className="w-4 h-4 text-[#3087ff]" />
             <span>
               SECTION 2: END-OF-PIPE &amp; CULVERT SAFETY GRATES
@@ -344,7 +344,7 @@ Standards: ${activeVariant.standards}
             Pipe Grates
           </h2>
 
-          <p className="text-xs sm:text-sm text-[#3087ff]/90 font-medium leading-relaxed">
+          <p className="text-xs sm:text-sm text-[#3087ff] font-medium leading-relaxed">
             Engineered for circular pipe outfalls, stormwater risers, roadside
             trenches, and civil drainage vaults. Manufactured in heavy-duty
             ASTM A536 ductile iron and ASTM A48 gray iron with AASHTO H-20 and
@@ -353,13 +353,13 @@ Standards: ${activeVariant.standards}
         </div>
 
         {/* Subvariant Switcher Bar */}
-        <div className="bg-[#3087ff]/10 border-2 border-[#3087ff] p-3 sm:p-4 mb-8 shadow-sm">
+        <div className="bg-white border-2 border-[#3087ff] p-3 sm:p-4 mb-8 shadow-sm">
           <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-2 mb-3">
             <span className="text-xs font-black uppercase tracking-wider text-[#3087ff] flex items-center gap-2">
               <Filter className="w-3.5 h-3.5" />
               <span>Select Pipe Grate Configuration:</span>
             </span>
-            <span className="text-[10px] font-bold text-[#3087ff]/70 uppercase">
+            <span className="text-[10px] font-bold text-[#3087ff] uppercase">
               {PIPE_GRATE_VARIANTS.length} Cast Patterns Available
             </span>
           </div>
@@ -374,7 +374,7 @@ Standards: ${activeVariant.standards}
                   onClick={() => handleSelectVariant(variant)}
                   className={`px-4 py-2 text-xs font-black uppercase tracking-wider rounded-none border-2 transition-all flex items-center gap-2 cursor-pointer ${isActive
                       ? "bg-[#3087ff] text-white border-[#3087ff] shadow-md scale-102"
-                      : "bg-white text-[#3087ff] border-[#3087ff] hover:border-[#3087ff] hover:bg-[#3087ff]/10"
+                      : "bg-white text-[#3087ff] border-[#3087ff] hover:border-[#3087ff] hover:bg-[#3087ff] hover:text-white"
                     }`}
                 >
                   {isActive && <Check className="w-3.5 h-3.5 stroke-[3]" />}
@@ -382,7 +382,7 @@ Standards: ${activeVariant.standards}
                   <span
                     className={`text-[9px] font-mono px-1 py-0.2 border ${isActive
                         ? "bg-white/20 border-white text-white"
-                        : "bg-[#3087ff]/15 border-[#3087ff] text-[#3087ff]"
+                        : "bg-white border-[#3087ff] text-[#3087ff]"
                       }`}
                   >
                     {variant.catNumber}
@@ -405,7 +405,7 @@ Standards: ${activeVariant.standards}
                   <span>Real Pipe Grate Photography ({REAL_PIPE_GRATE_PHOTOS.length} Views)</span>
                 </span>
 
-                <span className="text-[10px] font-bold text-[#3087ff]/80 uppercase">
+                <span className="text-[10px] font-bold text-[#3087ff] uppercase">
                   Photo {activePhotoIndex + 1} of {REAL_PIPE_GRATE_PHOTOS.length}
                 </span>
               </div>
@@ -445,7 +445,7 @@ Standards: ${activeVariant.standards}
                   <span className="bg-[#3087ff] text-white px-2 py-0.5 text-[9px] font-black uppercase tracking-wider border border-white/50 shadow-md">
                     {currentPhoto.badge}
                   </span>
-                  <span className="bg-black/80 backdrop-blur-xs text-[#3087ff] px-2 py-0.5 text-[9px] font-mono font-bold border border-[#3087ff]/50">
+                  <span className="bg-black/80 backdrop-blur-xs text-[#3087ff] px-2 py-0.5 text-[9px] font-mono font-bold border border-[#3087ff]">
                     Pattern: {activeVariant.catNumber}
                   </span>
                 </div>
@@ -456,7 +456,7 @@ Standards: ${activeVariant.standards}
               </div>
 
               {/* Real Photo Caption Bar */}
-              <div className="w-full bg-[#3087ff]/15 border-2 border-[#3087ff] p-2 mt-2 text-left">
+              <div className="w-full bg-white border-2 border-[#3087ff] p-2 mt-2 text-left">
                 <p className="text-[11px] text-[#3087ff] font-semibold leading-tight">
                   <span className="font-black uppercase text-[#3087ff] mr-1.5">
                     {currentPhoto.title}:
@@ -511,10 +511,10 @@ Standards: ${activeVariant.standards}
                   <span className="bg-[#3087ff] text-white px-2.5 py-0.5 text-[10px] font-black uppercase tracking-wider">
                     {activeVariant.tag}
                   </span>
-                  <span className="bg-[#3087ff]/20 border border-[#3087ff] text-[#3087ff] px-2 py-0.5 text-[10px] font-black uppercase tracking-wider">
+                  <span className="bg-white border border-[#3087ff] text-[#3087ff] px-2 py-0.5 text-[10px] font-black uppercase tracking-wider">
                     {activeVariant.catNumber}
                   </span>
-                  <span className="text-[10px] font-bold text-[#3087ff]/80 uppercase">
+                  <span className="text-[10px] font-bold text-[#3087ff] uppercase">
                     ASTM A536 / A48 HEAVY CASTING
                   </span>
                 </div>
@@ -523,14 +523,14 @@ Standards: ${activeVariant.standards}
                   {activeVariant.name}
                 </h3>
 
-                <p className="text-xs sm:text-[13px] text-[#3087ff]/90 font-medium leading-relaxed mb-4">
+                <p className="text-xs sm:text-[13px] text-[#3087ff] font-medium leading-relaxed mb-4">
                   {activeVariant.description}
                 </p>
 
                 {/* Technical Specifications Grid */}
-                <div className="grid grid-cols-1 sm:grid-cols-2 gap-2 text-xs border-y-2 border-[#3087ff]/20 py-3 mb-4">
+                <div className="grid grid-cols-1 sm:grid-cols-2 gap-2 text-xs border-y-2 border-[#3087ff] py-3 mb-4">
                   <div>
-                    <span className="font-bold text-[#3087ff]/70 uppercase text-[10px] block">
+                    <span className="font-bold text-[#3087ff] uppercase text-[10px] block">
                       Application / Fit:
                     </span>
                     <span className="font-black text-[#3087ff]">
@@ -538,7 +538,7 @@ Standards: ${activeVariant.standards}
                     </span>
                   </div>
                   <div>
-                    <span className="font-bold text-[#3087ff]/70 uppercase text-[10px] block">
+                    <span className="font-bold text-[#3087ff] uppercase text-[10px] block">
                       Hydraulic Intake Efficiency:
                     </span>
                     <span className="font-black text-[#3087ff]">
@@ -546,7 +546,7 @@ Standards: ${activeVariant.standards}
                     </span>
                   </div>
                   <div>
-                    <span className="font-bold text-[#3087ff]/70 uppercase text-[10px] block">
+                    <span className="font-bold text-[#3087ff] uppercase text-[10px] block">
                       Metallurgical Grade:
                     </span>
                     <span className="font-black text-[#3087ff]">
@@ -554,7 +554,7 @@ Standards: ${activeVariant.standards}
                     </span>
                   </div>
                   <div>
-                    <span className="font-bold text-[#3087ff]/70 uppercase text-[10px] block">
+                    <span className="font-bold text-[#3087ff] uppercase text-[10px] block">
                       Load / Traffic Rating:
                     </span>
                     <span className="font-black text-[#3087ff]">
@@ -562,7 +562,7 @@ Standards: ${activeVariant.standards}
                     </span>
                   </div>
                   <div>
-                    <span className="font-bold text-[#3087ff]/70 uppercase text-[10px] block">
+                    <span className="font-bold text-[#3087ff] uppercase text-[10px] block">
                       Dimensions &amp; Unit Weight:
                     </span>
                     <span className="font-black text-[#3087ff]">
@@ -570,7 +570,7 @@ Standards: ${activeVariant.standards}
                     </span>
                   </div>
                   <div>
-                    <span className="font-bold text-[#3087ff]/70 uppercase text-[10px] block">
+                    <span className="font-bold text-[#3087ff] uppercase text-[10px] block">
                       Standard Compliance:
                     </span>
                     <span className="font-black text-[#3087ff]">
@@ -580,11 +580,11 @@ Standards: ${activeVariant.standards}
                 </div>
 
                 {/* Engineering Advantage Highlights */}
-                <div className="bg-[#3087ff]/10 border border-[#3087ff] p-3 mb-6">
+                <div className="bg-white border border-[#3087ff] p-3 mb-6">
                   <div className="text-[10px] font-black uppercase tracking-wider text-[#3087ff] mb-1.5">
                     Municipal &amp; Civil Engineering Advantages:
                   </div>
-                  <ul className="text-xs text-[#3087ff]/90 space-y-1">
+                  <ul className="text-xs text-[#3087ff] space-y-1">
                     <li className="flex items-center gap-1.5">
                       <span className="text-[#3087ff] font-black">✓</span>
                       <span>
@@ -608,13 +608,13 @@ Standards: ${activeVariant.standards}
               </div>
 
               {/* Action Buttons */}
-              <div className="flex flex-col sm:flex-row gap-3 pt-4 border-t-2 border-[#3087ff]/20">
+              <div className="flex flex-col sm:flex-row gap-3 pt-4 border-t-2 border-[#3087ff]">
                 <button
                   type="button"
                   onClick={handleAdd}
                   className={`flex-1 py-3 px-4 text-xs font-black uppercase tracking-wider border-2 transition-all flex items-center justify-center gap-2 cursor-pointer ${added
                       ? "bg-green-600 text-white border-green-600"
-                      : "bg-[#3087ff] text-white border-[#3087ff] hover:bg-[#3087ff]/90 shadow-md"
+                      : "bg-[#3087ff] text-white border-[#3087ff] hover:bg-[#3087ff] hover:text-white shadow-md"
                     }`}
                 >
                   {added ? (
@@ -633,7 +633,7 @@ Standards: ${activeVariant.standards}
                 <button
                   type="button"
                   onClick={handleSubmittal}
-                  className="py-3 px-4 bg-white text-[#3087ff] text-xs font-black uppercase tracking-wider border-2 border-[#3087ff] hover:bg-[#3087ff]/15 transition-all flex items-center justify-center gap-2 cursor-pointer"
+                  className="py-3 px-4 bg-white text-[#3087ff] text-xs font-black uppercase tracking-wider border-2 border-[#3087ff] hover:bg-[#3087ff] hover:text-white transition-all flex items-center justify-center gap-2 cursor-pointer"
                 >
                   <Download className="w-4 h-4" />
                   <span>SUBMITTAL PDF</span>
@@ -642,7 +642,7 @@ Standards: ${activeVariant.standards}
                 <button
                   type="button"
                   onClick={handleCopySpecs}
-                  className="py-3 px-3 bg-white text-[#3087ff] text-xs font-black uppercase tracking-wider border-2 border-[#3087ff] hover:border-[#3087ff] hover:bg-[#3087ff]/15 transition-all flex items-center justify-center gap-1.5 cursor-pointer"
+                  className="py-3 px-3 bg-white text-[#3087ff] text-xs font-black uppercase tracking-wider border-2 border-[#3087ff] hover:border-[#3087ff] hover:bg-[#3087ff] hover:text-white transition-all flex items-center justify-center gap-1.5 cursor-pointer"
                   title="Copy Engineering Spec Text"
                 >
                   {copied ? (

@@ -23,7 +23,7 @@ export const ClearJobsitePolicies: React.FC = () => {
           <div className="absolute top-0 inset-x-0 h-1.5 bg-[#3087ff]" />
 
           {/* Header */}
-          <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-4 mb-8 pb-6 border-b-2 border-[#3087ff]/30">
+          <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-4 mb-8 pb-6 border-b-2 border-[#3087ff]">
             <div className="flex items-center gap-3.5">
               <span className="p-3 rounded-none bg-white border-2 border-[#3087ff] text-[#3087ff] shrink-0 shadow-sm">
                 <ShieldCheck className="w-7 h-7 text-[#3087ff]" />

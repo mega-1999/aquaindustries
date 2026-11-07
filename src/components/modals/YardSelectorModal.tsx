@@ -25,20 +25,20 @@ export const YardSelectorModal: React.FC<YardSelectorModalProps> = ({
       role="dialog"
       aria-modal="true"
       aria-labelledby="yard-modal-title"
-      className="fixed inset-0 z-50 flex items-center justify-center p-4 bg-[#3087ff]/80 backdrop-blur-sm"
+      className="fixed inset-0 z-50 flex items-center justify-center p-4 bg-white backdrop-blur-sm"
     >
       <div className="bg-white border-2 border-[#3087ff] rounded-none max-w-3xl w-full p-6 sm:p-8 shadow-2xl text-[#3087ff] relative max-h-[90vh] overflow-y-auto">
         {/* Close Button */}
         <button
           type="button"
           onClick={onClose}
-          className="absolute top-5 right-5 p-1 rounded-none text-[#3087ff] hover:bg-[#3087ff]/20 transition-colors"
+          className="absolute top-5 right-5 p-1 rounded-none text-[#3087ff] hover:bg-[#3087ff] hover:text-white transition-colors"
         >
           <X className="w-5 h-5" />
         </button>
 
         {/* Modal Header */}
-        <div className="flex items-center gap-3 mb-6 pb-4 border-b-2 border-[#3087ff]/30">
+        <div className="flex items-center gap-3 mb-6 pb-4 border-b-2 border-[#3087ff]">
           <div className="w-12 h-12 rounded-none bg-white text-[#3087ff] border-2 border-[#3087ff] flex items-center justify-center shrink-0">
             <Truck className="w-6 h-6 text-[#3087ff]" />
           </div>
@@ -64,7 +64,7 @@ export const YardSelectorModal: React.FC<YardSelectorModalProps> = ({
                 key={yard.id}
                 className={`p-5 rounded-none border-2 transition-all flex flex-col justify-between ${isSelected
                     ? "bg-white border-[#3087ff] shadow-sm"
-                    : "bg-white border-[#3087ff] hover:bg-[#3087ff]/10"
+                    : "bg-white border-[#3087ff] hover:bg-[#3087ff] hover:text-white"
                   }`}
               >
                 <div>
@@ -117,7 +117,7 @@ export const YardSelectorModal: React.FC<YardSelectorModalProps> = ({
                 </div>
 
                 {/* Yard Select Button */}
-                <div className="mt-4 pt-3 border-t-2 border-[#3087ff]/30">
+                <div className="mt-4 pt-3 border-t-2 border-[#3087ff]">
                   <button
                     type="button"
                     onClick={() => {
@@ -126,7 +126,7 @@ export const YardSelectorModal: React.FC<YardSelectorModalProps> = ({
                     }}
                     className={`w-full py-2.5 px-4 rounded-none text-xs sm:text-sm font-extrabold transition-colors whitespace-nowrap border-2 ${isSelected
                         ? "bg-[#3087ff] text-white border-[#3087ff] shadow-sm"
-                        : "bg-white hover:bg-[#3087ff]/20 text-[#3087ff] border-[#3087ff]"
+                        : "bg-white hover:bg-[#3087ff] hover:text-white text-[#3087ff] border-[#3087ff]"
                       }`}
                   >
                     {isSelected
@@ -140,7 +140,7 @@ export const YardSelectorModal: React.FC<YardSelectorModalProps> = ({
         </div>
 
         {/* Footer Note */}
-        <div className="mt-6 pt-4 border-t-2 border-[#3087ff]/30 text-xs sm:text-sm text-[#3087ff] text-center font-medium leading-relaxed">
+        <div className="mt-6 pt-4 border-t-2 border-[#3087ff] text-xs sm:text-sm text-[#3087ff] text-center font-medium leading-relaxed">
           Flatbed trucks depart all stocking hubs Monday through Friday at 06:00
           CST. Jobsite offloading remains the customer’s responsibility.
         </div>

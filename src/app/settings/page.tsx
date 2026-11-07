@@ -165,7 +165,7 @@ export default function SettingsPage() {
                 onClick={() => setActiveTab("security")}
                 className={`py-3 px-4 sm:px-6 text-xs sm:text-sm font-black uppercase tracking-wider border-b-2 -mb-[2px] transition-colors cursor-pointer flex items-center gap-1.5 ${activeTab === "security"
                     ? "border-[#3087ff] bg-[#3087ff] text-white"
-                    : "border-transparent text-[#3087ff] hover:bg-[#3087ff]/20"
+                    : "border-transparent text-[#3087ff] hover:bg-[#3087ff] hover:text-white"
                   }`}
               >
                 <KeyRound className="w-4 h-4" />
@@ -176,7 +176,7 @@ export default function SettingsPage() {
                 onClick={() => setActiveTab("company")}
                 className={`py-3 px-4 sm:px-6 text-xs sm:text-sm font-black uppercase tracking-wider border-b-2 -mb-[2px] transition-colors cursor-pointer flex items-center gap-1.5 ${activeTab === "company"
                     ? "border-[#3087ff] bg-[#3087ff] text-white"
-                    : "border-transparent text-[#3087ff] hover:bg-[#3087ff]/20"
+                    : "border-transparent text-[#3087ff] hover:bg-[#3087ff] hover:text-white"
                   }`}
               >
                 <User className="w-4 h-4" />
@@ -187,7 +187,7 @@ export default function SettingsPage() {
                 onClick={() => setActiveTab("notifications")}
                 className={`py-3 px-4 sm:px-6 text-xs sm:text-sm font-black uppercase tracking-wider border-b-2 -mb-[2px] transition-colors cursor-pointer flex items-center gap-1.5 ${activeTab === "notifications"
                     ? "border-[#3087ff] bg-[#3087ff] text-white"
-                    : "border-transparent text-[#3087ff] hover:bg-[#3087ff]/20"
+                    : "border-transparent text-[#3087ff] hover:bg-[#3087ff] hover:text-white"
                   }`}
               >
                 <Bell className="w-4 h-4" />
@@ -233,7 +233,7 @@ export default function SettingsPage() {
                   <h3 className="text-base sm:text-lg font-black uppercase tracking-wide text-[#3087ff] mb-2">
                     Change Account Password
                   </h3>
-                  <p className="text-xs text-[#3087ff]/80 mb-4">
+                  <p className="text-xs text-[#3087ff] mb-4">
                     Enter your current password and specify a new secure
                     passphrase (minimum 6 characters).
                   </p>
@@ -483,7 +483,7 @@ export default function SettingsPage() {
             {activeTab === "notifications" && (
               <div className="bg-white border-2 border-[#3087ff] p-6 sm:p-8 space-y-6 shadow-md">
                 <div className="space-y-4">
-                  <label className="flex items-start gap-3 p-3.5 bg-[#3087ff]/5 border border-[#3087ff] cursor-pointer">
+                  <label className="flex items-start gap-3 p-3.5 bg-white border border-[#3087ff] cursor-pointer">
                     <input
                       type="checkbox"
                       checked={bolSmsAlerts}
@@ -494,14 +494,14 @@ export default function SettingsPage() {
                       <strong className="text-xs sm:text-sm font-black text-[#3087ff] block">
                         SMS Flatbed Staging &amp; Driver Departure Alerts
                       </strong>
-                      <p className="text-xs text-[#3087ff]/80 mt-0.5">
+                      <p className="text-xs text-[#3087ff] mt-0.5">
                         Receive instant automated text notifications when your
                         flatbed leaves the loading bay.
                       </p>
                     </div>
                   </label>
 
-                  <label className="flex items-start gap-3 p-3.5 bg-[#3087ff]/5 border border-[#3087ff] cursor-pointer">
+                  <label className="flex items-start gap-3 p-3.5 bg-white border border-[#3087ff] cursor-pointer">
                     <input
                       type="checkbox"
                       checked={mtrEmailAlerts}
@@ -512,14 +512,14 @@ export default function SettingsPage() {
                       <strong className="text-xs sm:text-sm font-black text-[#3087ff] block">
                         Certified Mill Test Report (MTR) Auto-Delivery
                       </strong>
-                      <p className="text-xs text-[#3087ff]/80 mt-0.5">
+                      <p className="text-xs text-[#3087ff] mt-0.5">
                         Automatically generate and email signed ASTM A536
                         chemical and tensile test submittals upon BOL creation.
                       </p>
                     </div>
                   </label>
 
-                  <label className="flex items-start gap-3 p-3.5 bg-[#3087ff]/5 border border-[#3087ff] cursor-pointer">
+                  <label className="flex items-start gap-3 p-3.5 bg-white border border-[#3087ff] cursor-pointer">
                     <input
                       type="checkbox"
                       checked={quoteUpdates}
@@ -530,7 +530,7 @@ export default function SettingsPage() {
                       <strong className="text-xs sm:text-sm font-black text-[#3087ff] block">
                         Wholesale Price Lock &amp; Index Bulletins
                       </strong>
-                      <p className="text-xs text-[#3087ff]/80 mt-0.5">
+                      <p className="text-xs text-[#3087ff] mt-0.5">
                         Receive 48-hour advance notice prior to monthly ductile
                         iron scrap index price adjustments.
                       </p>

@@ -131,21 +131,21 @@ export const ClientPortalModal: React.FC<ClientPortalModalProps> = ({
       role="dialog"
       aria-modal="true"
       aria-labelledby="portal-modal-title"
-      className="fixed inset-0 z-50 flex items-center justify-center p-3 sm:p-4 bg-[#3087ff]/80 backdrop-blur-sm overflow-y-auto"
+      className="fixed inset-0 z-50 flex items-center justify-center p-3 sm:p-4 bg-white backdrop-blur-sm overflow-y-auto"
     >
       <div className="bg-white border-4 border-[#3087ff] rounded-none max-w-xl w-full p-6 sm:p-8 shadow-2xl text-[#3087ff] relative my-auto">
         {/* Close Button */}
         <button
           type="button"
           onClick={onClose}
-          className="absolute top-5 right-5 p-1 rounded-none text-[#3087ff] hover:bg-[#3087ff]/20 transition-colors cursor-pointer"
+          className="absolute top-5 right-5 p-1 rounded-none text-[#3087ff] hover:bg-[#3087ff] hover:text-white transition-colors cursor-pointer"
           aria-label="Close Portal Modal"
         >
           <X className="w-5 h-5" />
         </button>
 
         {/* Modal Header */}
-        <div className="flex items-center gap-3 mb-6 pb-4 border-b-2 border-[#3087ff]/40">
+        <div className="flex items-center gap-3 mb-6 pb-4 border-b-2 border-[#3087ff]">
           <div className="w-12 h-12 bg-[#3087ff] text-white border-2 border-[#3087ff] flex items-center justify-center shrink-0">
             <Lock className="w-6 h-6 text-[#3087ff]" />
           </div>
@@ -163,7 +163,7 @@ export const ClientPortalModal: React.FC<ClientPortalModalProps> = ({
                 </span>
               )}
             </div>
-            <p className="text-xs sm:text-sm text-[#3087ff]/90 font-medium mt-0.5">
+            <p className="text-xs sm:text-sm text-[#3087ff] font-medium mt-0.5">
               Wholesale Pricing, Certified MTR Archive &amp; Order Tracking
             </p>
           </div>
@@ -248,7 +248,7 @@ export const ClientPortalModal: React.FC<ClientPortalModalProps> = ({
 
                 <div className="grid grid-cols-2 gap-2 text-xs">
                   <div className="p-3 bg-white border-2 border-[#3087ff] shadow-xs">
-                    <span className="text-[10px] text-[#3087ff]/70 uppercase font-bold block">
+                    <span className="text-[10px] text-[#3087ff] uppercase font-bold block">
                       Assigned Logistics Hub
                     </span>
                     <strong className="font-black uppercase text-[#3087ff]">
@@ -256,7 +256,7 @@ export const ClientPortalModal: React.FC<ClientPortalModalProps> = ({
                     </strong>
                   </div>
                   <div className="p-3 bg-white border-2 border-[#3087ff] shadow-xs">
-                    <span className="text-[10px] text-[#3087ff]/70 uppercase font-bold block">
+                    <span className="text-[10px] text-[#3087ff] uppercase font-bold block">
                       Verified Tax ID / License
                     </span>
                     <strong className="font-mono font-bold text-[#3087ff]">
@@ -288,7 +288,7 @@ export const ClientPortalModal: React.FC<ClientPortalModalProps> = ({
                     </button>
                   </div>
                   {bolResult && (
-                    <div className="p-2 bg-[#3087ff]/20 border border-[#3087ff] text-[11px] text-[#3087ff] leading-snug">
+                    <div className="p-2 bg-white border border-[#3087ff] text-[11px] text-[#3087ff] leading-snug">
                       {bolResult}
                     </div>
                   )}
@@ -296,7 +296,7 @@ export const ClientPortalModal: React.FC<ClientPortalModalProps> = ({
               </div>
             )}
 
-            <div className="pt-2 flex flex-col sm:flex-row items-stretch sm:items-center justify-between gap-2 border-t border-[#3087ff]/20">
+            <div className="pt-2 flex flex-col sm:flex-row items-stretch sm:items-center justify-between gap-2 border-t border-[#3087ff]">
               <Link
                 href="/profile"
                 onClick={onClose}
@@ -307,7 +307,7 @@ export const ClientPortalModal: React.FC<ClientPortalModalProps> = ({
               <button
                 type="button"
                 onClick={onClose}
-                className="px-5 py-2 bg-white text-[#3087ff] border-2 border-[#3087ff] font-bold text-xs uppercase hover:bg-[#3087ff]/20"
+                className="px-5 py-2 bg-white text-[#3087ff] border-2 border-[#3087ff] font-bold text-xs uppercase hover:bg-[#3087ff] hover:text-white"
               >
                 Close Portal
               </button>
@@ -497,7 +497,7 @@ export const ClientPortalModal: React.FC<ClientPortalModalProps> = ({
 
               {/* Unregistered indicator if email format is complete but no profile matches */}
               {!detectedProfile && isEmailFormatted && (
-                <div className="mt-2.5 p-3 bg-[#3087ff]/15 border border-[#3087ff] text-[#3087ff] text-xs flex flex-col sm:flex-row items-start sm:items-center justify-between gap-2 animate-in fade-in duration-150">
+                <div className="mt-2.5 p-3 bg-white border border-[#3087ff] text-[#3087ff] text-xs flex flex-col sm:flex-row items-start sm:items-center justify-between gap-2 animate-in fade-in duration-150">
                   <div className="flex items-center gap-2 min-w-0">
                     <Building className="w-4 h-4 text-[#3087ff] shrink-0" />
                     <span className="text-[11px] font-bold">
@@ -543,7 +543,7 @@ export const ClientPortalModal: React.FC<ClientPortalModalProps> = ({
 
               {/* Inline Self-Service Password Reset Panel */}
               {showResetBox && (
-                <div className="mb-3 p-3.5 bg-[#3087ff]/5 border-2 border-[#3087ff] space-y-2.5 animate-in fade-in duration-150">
+                <div className="mb-3 p-3.5 bg-white border-2 border-[#3087ff] space-y-2.5 animate-in fade-in duration-150">
                   <div className="flex items-center justify-between">
                     <span className="text-xs font-black uppercase text-[#3087ff]">
                       Instant Account Password Reset
@@ -632,7 +632,7 @@ export const ClientPortalModal: React.FC<ClientPortalModalProps> = ({
             </div>
 
             {/* Register Option */}
-            <div className="pt-3 border-t-2 border-[#3087ff]/30 flex flex-col sm:flex-row items-center justify-between gap-2 text-xs text-[#3087ff]">
+            <div className="pt-3 border-t-2 border-[#3087ff] flex flex-col sm:flex-row items-center justify-between gap-2 text-xs text-[#3087ff]">
               <span className="font-medium">
                 Don&apos;t have an approved account yet?
               </span>

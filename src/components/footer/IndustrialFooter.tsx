@@ -27,7 +27,7 @@ export const IndustrialFooter: React.FC<IndustrialFooterProps> = ({
       {/* ========================================================
           1. TOP BAR: EMERGENCY WATERMAIN DISPATCH HOTLINE
       ======================================================== */}
-      <div className="bg-[#3087ff] border-b-2 border-[#3087ff]/40 py-6 sm:py-8">
+      <div className="bg-[#3087ff] border-b-2 border-[#3087ff] py-6 sm:py-8">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="flex flex-col lg:flex-row items-start lg:items-center justify-between gap-6">
             {/* Left: Hotline Identity */}
@@ -403,12 +403,12 @@ export const IndustrialFooter: React.FC<IndustrialFooterProps> = ({
         </video>
 
         {/* Ambient Gradient Overlay for Contrast & Visual Polish */}
-        <div className="absolute inset-0 bg-gradient-to-r from-[#3087ff]/75 via-transparent to-[#3087ff]/75 pointer-events-none" />
-        <div className="absolute inset-0 bg-[#3087ff]/15 pointer-events-none" />
+        <div className="absolute inset-0 bg-gradient-to-r from-[#3087ff] via-transparent to-[#3087ff] pointer-events-none" />
+        <div className="absolute inset-0 bg-white pointer-events-none" />
 
         {/* Floating Architectural Ribbon Badges */}
         <div className="absolute inset-0 flex items-center justify-between px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto pointer-events-none">
-          <div className="flex items-center gap-2.5 bg-[#3087ff]/85 backdrop-blur-xs px-3.5 py-1.5 border border-[#3087ff]/70 shadow-md">
+          <div className="flex items-center gap-2.5 bg-white backdrop-blur-xs px-3.5 py-1.5 border border-[#3087ff] shadow-md">
             <img
               src="/images/AI_Fevicon.png"
               alt="Watermark"
@@ -419,7 +419,7 @@ export const IndustrialFooter: React.FC<IndustrialFooterProps> = ({
             </span>
           </div>
 
-          <div className="hidden sm:flex items-center gap-2 bg-[#3087ff]/85 backdrop-blur-xs px-3.5 py-1.5 border border-[#3087ff]/70 shadow-md">
+          <div className="hidden sm:flex items-center gap-2 bg-white backdrop-blur-xs px-3.5 py-1.5 border border-[#3087ff] shadow-md">
             <span className="w-2 h-2 bg-[#3087ff] rounded-none animate-pulse shrink-0" />
             <span className="text-[10px] sm:text-[11px] font-mono font-bold uppercase tracking-wider text-white/95">
               Ecological Water Infrastructure &bull; 100% Recycled Iron
@@ -431,7 +431,7 @@ export const IndustrialFooter: React.FC<IndustrialFooterProps> = ({
       {/* ========================================================
           3. BOTTOM BAR: LEGAL COPYRIGHT & ANTI-THEFT SCRAP REGISTRY
       ======================================================== */}
-      <div className="border-t-2 border-[#3087ff]/40 bg-[#3087ff] py-6 sm:py-8 text-xs text-white">
+      <div className="border-t-2 border-[#3087ff] bg-[#3087ff] py-6 sm:py-8 text-xs text-white">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 space-y-4">
           <div className="flex flex-col md:flex-row items-center justify-between gap-4">
             <div className="font-semibold text-white/90 text-center md:text-left">
@@ -457,7 +457,7 @@ export const IndustrialFooter: React.FC<IndustrialFooterProps> = ({
           </div>
 
           {/* Enclosed Anti-Theft Scrap Registry Notice Box */}
-          <div className="p-3.5 bg-white/10 border-2 border-[#3087ff]/40 text-[11px] text-white/90 leading-relaxed shadow-sm">
+          <div className="p-3.5 bg-white/10 border-2 border-[#3087ff] text-[11px] text-white/90 leading-relaxed shadow-sm">
             <strong className="text-white uppercase tracking-wider font-black">
               Anti-Theft Scrap Registry Notice:{" "}
             </strong>

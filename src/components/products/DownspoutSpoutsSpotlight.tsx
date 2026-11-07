@@ -240,7 +240,7 @@ Compliance: ${activeVariant.standards}
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
         {/* Section Header */}
         <div className="text-center max-w-3xl mx-auto mb-10">
-          <div className="inline-flex items-center gap-2 px-3 py-1 bg-[#3087ff]/20 text-[#3087ff] text-xs font-black uppercase tracking-widest border border-[#3087ff] mb-3">
+          <div className="inline-flex items-center gap-2 px-3 py-1 bg-white text-[#3087ff] text-xs font-black uppercase tracking-widest border border-[#3087ff] mb-3">
             <ShieldCheck className="w-4 h-4 text-[#3087ff]" />
             <span>
               SECTION 4: ARCHITECTURAL CAST IRON DOWNSPOUT BOOTS &amp; SPOUTS
@@ -251,7 +251,7 @@ Compliance: ${activeVariant.standards}
             Sprouts
           </h2>
 
-          <p className="text-xs sm:text-sm text-[#3087ff]/90 font-medium leading-relaxed">
+          <p className="text-xs sm:text-sm text-[#3087ff] font-medium leading-relaxed">
             Heavy-duty Class 35B gray iron conductor boots, parapet wall
             overflow scuppers, and bridge deck drainage spouts. Protects
             exterior building facades from mower strikes, vehicular collisions,
@@ -260,13 +260,13 @@ Compliance: ${activeVariant.standards}
         </div>
 
         {/* Subvariant Switcher Bar */}
-        <div className="bg-[#3087ff]/10 border-2 border-[#3087ff] p-3 sm:p-4 mb-8 shadow-sm">
+        <div className="bg-white border-2 border-[#3087ff] p-3 sm:p-4 mb-8 shadow-sm">
           <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-2 mb-3">
             <span className="text-xs font-black uppercase tracking-wider text-[#3087ff] flex items-center gap-2">
               <Filter className="w-3.5 h-3.5" />
               <span>Select Downspout Boot or Scupper Spout:</span>
             </span>
-            <span className="text-[10px] font-bold text-[#3087ff]/70 uppercase">
+            <span className="text-[10px] font-bold text-[#3087ff] uppercase">
               {SPOUT_VARIANTS.length} Cast Patterns Available
             </span>
           </div>
@@ -284,7 +284,7 @@ Compliance: ${activeVariant.standards}
                   }}
                   className={`px-4 py-2 text-xs font-black uppercase tracking-wider rounded-none border-2 transition-all flex items-center gap-2 cursor-pointer ${isActive
                       ? "bg-[#3087ff] text-white border-[#3087ff] shadow-md scale-102"
-                      : "bg-white text-[#3087ff] border-[#3087ff] hover:border-[#3087ff] hover:bg-[#3087ff]/10"
+                      : "bg-white text-[#3087ff] border-[#3087ff] hover:border-[#3087ff] hover:bg-[#3087ff] hover:text-white"
                     }`}
                 >
                   {isActive && <Check className="w-3.5 h-3.5 stroke-[3]" />}
@@ -292,7 +292,7 @@ Compliance: ${activeVariant.standards}
                   <span
                     className={`text-[9px] font-mono px-1 py-0.2 border ${isActive
                         ? "bg-white/20 border-white text-white"
-                        : "bg-[#3087ff]/15 border-[#3087ff] text-[#3087ff]"
+                        : "bg-white border-[#3087ff] text-[#3087ff]"
                       }`}
                   >
                     {variant.catNumber}
@@ -323,7 +323,7 @@ Compliance: ${activeVariant.standards}
                     onClick={() => setViewMode("cad")}
                     className={`px-2 py-0.5 text-[10px] font-black uppercase border transition-colors cursor-pointer ${viewMode === "cad"
                         ? "bg-[#3087ff] text-white border-[#3087ff]"
-                        : "bg-white text-[#3087ff] border-[#3087ff] hover:bg-[#3087ff]/10"
+                        : "bg-white text-[#3087ff] border-[#3087ff] hover:bg-[#3087ff] hover:text-white"
                       }`}
                   >
                     CAD Simulator
@@ -333,7 +333,7 @@ Compliance: ${activeVariant.standards}
                     onClick={() => setViewMode("photo")}
                     className={`px-2 py-0.5 text-[10px] font-black uppercase border transition-colors cursor-pointer ${viewMode === "photo"
                         ? "bg-[#3087ff] text-white border-[#3087ff]"
-                        : "bg-white text-[#3087ff] border-[#3087ff] hover:bg-[#3087ff]/10"
+                        : "bg-white text-[#3087ff] border-[#3087ff] hover:bg-[#3087ff] hover:text-white"
                       }`}
                   >
                     Foundry Image
@@ -592,7 +592,7 @@ Compliance: ${activeVariant.standards}
               </div>
 
               {/* Interactive Controls Ribbon */}
-              <div className="w-full bg-[#3087ff]/15 border-2 border-[#3087ff] p-2.5 mt-3 flex flex-wrap items-center justify-between gap-2">
+              <div className="w-full bg-white border-2 border-[#3087ff] p-2.5 mt-3 flex flex-wrap items-center justify-between gap-2">
                 <button
                   type="button"
                   onClick={handleImpactTest}
@@ -639,10 +639,10 @@ Compliance: ${activeVariant.standards}
                   <span className="bg-[#3087ff] text-white px-2.5 py-0.5 text-[10px] font-black uppercase tracking-wider">
                     {activeVariant.tag}
                   </span>
-                  <span className="bg-[#3087ff]/20 border border-[#3087ff] text-[#3087ff] px-2 py-0.5 text-[10px] font-black uppercase tracking-wider">
+                  <span className="bg-white border border-[#3087ff] text-[#3087ff] px-2 py-0.5 text-[10px] font-black uppercase tracking-wider">
                     {activeVariant.catNumber}
                   </span>
-                  <span className="text-[10px] font-bold text-[#3087ff]/80 uppercase">
+                  <span className="text-[10px] font-bold text-[#3087ff] uppercase">
                     MASTERSPEC 077100
                   </span>
                 </div>
@@ -651,14 +651,14 @@ Compliance: ${activeVariant.standards}
                   {activeVariant.name}
                 </h3>
 
-                <p className="text-xs sm:text-[13px] text-[#3087ff]/90 font-medium leading-relaxed mb-4">
+                <p className="text-xs sm:text-[13px] text-[#3087ff] font-medium leading-relaxed mb-4">
                   {activeVariant.description}
                 </p>
 
                 {/* Technical Specifications Grid */}
-                <div className="grid grid-cols-1 sm:grid-cols-2 gap-2 text-xs border-y-2 border-[#3087ff]/20 py-3 mb-4">
+                <div className="grid grid-cols-1 sm:grid-cols-2 gap-2 text-xs border-y-2 border-[#3087ff] py-3 mb-4">
                   <div>
-                    <span className="font-bold text-[#3087ff]/70 uppercase text-[10px] block">
+                    <span className="font-bold text-[#3087ff] uppercase text-[10px] block">
                       Downspout Leader Fit:
                     </span>
                     <span className="font-black text-[#3087ff]">
@@ -666,7 +666,7 @@ Compliance: ${activeVariant.standards}
                     </span>
                   </div>
                   <div>
-                    <span className="font-bold text-[#3087ff]/70 uppercase text-[10px] block">
+                    <span className="font-bold text-[#3087ff] uppercase text-[10px] block">
                       Conductor Hydraulic Area:
                     </span>
                     <span className="font-black text-[#3087ff]">
@@ -674,7 +674,7 @@ Compliance: ${activeVariant.standards}
                     </span>
                   </div>
                   <div>
-                    <span className="font-bold text-[#3087ff]/70 uppercase text-[10px] block">
+                    <span className="font-bold text-[#3087ff] uppercase text-[10px] block">
                       Shell Metallurgy:
                     </span>
                     <span className="font-black text-[#3087ff]">
@@ -682,7 +682,7 @@ Compliance: ${activeVariant.standards}
                     </span>
                   </div>
                   <div>
-                    <span className="font-bold text-[#3087ff]/70 uppercase text-[10px] block">
+                    <span className="font-bold text-[#3087ff] uppercase text-[10px] block">
                       Cleanout Access Door:
                     </span>
                     <span className="font-black text-[#3087ff]">
@@ -690,7 +690,7 @@ Compliance: ${activeVariant.standards}
                     </span>
                   </div>
                   <div>
-                    <span className="font-bold text-[#3087ff]/70 uppercase text-[10px] block">
+                    <span className="font-bold text-[#3087ff] uppercase text-[10px] block">
                       Factory Coating Finish:
                     </span>
                     <span className="font-black text-[#3087ff]">
@@ -698,7 +698,7 @@ Compliance: ${activeVariant.standards}
                     </span>
                   </div>
                   <div>
-                    <span className="font-bold text-[#3087ff]/70 uppercase text-[10px] block">
+                    <span className="font-bold text-[#3087ff] uppercase text-[10px] block">
                       Architectural Standard:
                     </span>
                     <span className="font-black text-[#3087ff]">
@@ -708,7 +708,7 @@ Compliance: ${activeVariant.standards}
                 </div>
 
                 {/* Dimensions Metric Ribbon */}
-                <div className="bg-[#3087ff]/10 border border-[#3087ff] p-2.5 mb-5 flex flex-wrap items-center justify-between gap-3 text-xs font-mono font-bold text-[#3087ff]">
+                <div className="bg-white border border-[#3087ff] p-2.5 mb-5 flex flex-wrap items-center justify-between gap-3 text-xs font-mono font-bold text-[#3087ff]">
                   <span>Height: {activeVariant.dimensions.height}</span>
                   <span>Width: {activeVariant.dimensions.width}</span>
                   <span>Depth: {activeVariant.dimensions.depth}</span>
@@ -754,7 +754,7 @@ Compliance: ${activeVariant.standards}
                   type="button"
                   onClick={handleCopySpecs}
                   title="Copy engineering specifications"
-                  className="py-3 px-3 bg-[#3087ff]/20 hover:bg-[#3087ff] text-white hover:text-white border-2 border-[#3087ff] text-xs font-black uppercase transition-all flex items-center justify-center gap-1.5 cursor-pointer shadow-xs"
+                  className="py-3 px-3 bg-[#3087ff] hover:bg-[#3087ff] text-white hover:text-white border-2 border-[#3087ff] text-xs font-black uppercase transition-all flex items-center justify-center gap-1.5 cursor-pointer shadow-xs"
                 >
                   {copied ? (
                     <>

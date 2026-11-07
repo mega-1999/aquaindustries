@@ -48,11 +48,11 @@ export const CinematicHero: React.FC<CinematicHeroProps> = ({
 
         {/* Soft Fluid Waves */}
         <div
-          className={`absolute -top-24 -left-24 w-[500px] h-[500px] rounded-none blur-3xl fluid-wave ${isBlue ? "bg-[#3087ff]/25" : "bg-[#3087ff]/15"
+          className={`absolute -top-24 -left-24 w-[500px] h-[500px] rounded-none blur-3xl fluid-wave ${isBlue ? "bg-white" : "bg-white"
             }`}
         />
         <div
-          className={`absolute -bottom-32 -right-24 w-[600px] h-[600px] rounded-none blur-3xl fluid-wave ${isBlue ? "bg-white/15" : "bg-[#3087ff]/5"
+          className={`absolute -bottom-32 -right-24 w-[600px] h-[600px] rounded-none blur-3xl fluid-wave ${isBlue ? "bg-white/15" : "bg-white"
             }`}
         />
 
@@ -129,7 +129,7 @@ export const CinematicHero: React.FC<CinematicHeroProps> = ({
 
         {/* Grounded, Human US Copy */}
         <p
-          className={`text-sm sm:text-base max-w-2xl leading-relaxed mb-6 font-normal ${isBlue ? "text-white" : "text-[#3087ff]/90"
+          className={`text-sm sm:text-base max-w-2xl leading-relaxed mb-6 font-normal ${isBlue ? "text-white" : "text-[#3087ff]"
             }`}
         >
           Heavy-duty AWWA and NSF certified fittings, wedge restraints, and
@@ -209,7 +209,7 @@ export const CinematicHero: React.FC<CinematicHeroProps> = ({
         <div
           className={`mt-10 pt-5 border-t flex flex-wrap items-center justify-center gap-4 sm:gap-8 text-xs sm:text-sm font-normal ${isBlue
               ? "border-white/20 text-white"
-              : "border-[#3087ff]/20 text-[#3087ff]"
+              : "border-[#3087ff] text-[#3087ff]"
             }`}
         >
           <div className="flex items-center gap-2 whitespace-nowrap">

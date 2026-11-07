@@ -77,7 +77,7 @@ export const SolenoSamplingHero: React.FC = () => {
         {/* Infinite Seamless Looping Water Background Animation */}
         <InfiniteWaterBackground opacity="opacity-25" />
 
-        <div className="absolute -top-32 -left-32 w-[600px] h-[600px] bg-[#3087ff]/20 rounded-none blur-3xl fluid-wave" />
+        <div className="absolute -top-32 -left-32 w-[600px] h-[600px] bg-white rounded-none blur-3xl fluid-wave" />
         <div className="absolute -bottom-40 -right-32 w-[700px] h-[700px] bg-white/10 rounded-none blur-3xl fluid-wave" />
 
         {/* Ambient Technical Coordinate Grid Lines */}
@@ -105,7 +105,7 @@ export const SolenoSamplingHero: React.FC = () => {
 
             {/* Soleno-Style Headline (Balanced Scale) */}
             <h1 className="text-3xl sm:text-5xl lg:text-6xl font-black text-white tracking-tight leading-[0.96] uppercase font-sans">
-              <span className="text-[#3087ff] block">CONNECTING YOU</span>
+              <span className="text-white block">CONNECTING YOU</span>
               TO THE FUTURE OF
               <br />
               WATER MANAGEMENT
@@ -236,17 +236,17 @@ export const SolenoSamplingHero: React.FC = () => {
                       <button
                         type="button"
                         onClick={() => setActiveHotspot(null)}
-                        className="w-6 h-6 bg-[#3087ff]/10 hover:bg-[#3087ff] text-white hover:text-white flex items-center justify-center font-bold text-xs transition-colors cursor-pointer"
+                        className="w-6 h-6 bg-[#3087ff] hover:bg-[#3087ff] text-white hover:text-white flex items-center justify-center font-bold text-xs transition-colors cursor-pointer"
                         title="Close Popup"
                       >
                         ✕
                       </button>
                     </div>
                   </div>
-                  <p className="text-xs leading-relaxed text-[#3087ff]/90 font-medium mb-2">
+                  <p className="text-xs leading-relaxed text-[#3087ff] font-medium mb-2">
                     {HOTSPOTS.find((h) => h.id === activeHotspot)?.desc}
                   </p>
-                  <div className="flex items-center justify-between border-t border-[#3087ff]/15 pt-1.5 text-[10px] text-[#3087ff]/70 font-bold uppercase">
+                  <div className="flex items-center justify-between border-t border-[#3087ff] pt-1.5 text-[10px] text-[#3087ff] font-bold uppercase">
                     <span>
                       Specification ID AQUA-WSS-2026 &bull; Point{" "}
                       {activeHotspot} of 4
@@ -263,7 +263,7 @@ export const SolenoSamplingHero: React.FC = () => {
               )}
               {/* Outer Rotating Dashed Ring */}
               <div
-                className="absolute inset-0 rounded-full border-2 border-dashed border-[#3087ff]/60 soleno-rotate-ring pointer-events-none"
+                className="absolute inset-0 rounded-full border-2 border-dashed border-[#3087ff] soleno-rotate-ring pointer-events-none"
                 style={{
                   boxShadow: "0 0 50px rgba(48, 135, 255, 0.25)",
                 }}
@@ -306,10 +306,10 @@ export const SolenoSamplingHero: React.FC = () => {
                     {/* Radial Water Glow Background */}
                     <div
                       className={`absolute inset-0 transition-opacity duration-700 ${activeMode === "thermal"
-                          ? "bg-radial from-[#3087ff]/40 via-white to-white"
+                          ? "bg-radial from-[#3087ff] via-white to-white"
                           : activeMode === "pressure"
-                            ? "bg-radial from-[#3087ff]/20 via-white to-white"
-                            : "bg-radial from-[#3087ff]/30 via-white to-white"
+                            ? "bg-radial from-[#3087ff] via-white to-white"
+                            : "bg-radial from-[#3087ff] via-white to-white"
                         }`}
                     />
 
@@ -347,7 +347,7 @@ export const SolenoSamplingHero: React.FC = () => {
                     )}
 
                     {/* Floating Wave Texture */}
-                    <div className="absolute -bottom-10 inset-x-0 h-32 bg-[#3087ff]/20 rounded-full blur-xl pointer-events-none" />
+                    <div className="absolute -bottom-10 inset-x-0 h-32 bg-white rounded-full blur-xl pointer-events-none" />
 
                     {/* Central Flagship Product: Water Sampling Station (100% visible inside circle) */}
                     <img
@@ -369,7 +369,7 @@ export const SolenoSamplingHero: React.FC = () => {
                         style={{ left: spot.x, top: spot.y }}
                         className={`absolute z-30 w-7 h-7 -translate-x-1/2 -translate-y-1/2 rounded-none border-2 flex items-center justify-center font-black text-xs shadow-xl transition-all hover:scale-125 cursor-pointer ${activeHotspot === spot.id
                             ? "bg-[#3087ff] text-white border-white scale-125 ring-4 ring-[#3087ff]"
-                            : "bg-white text-[#3087ff] border-[#3087ff] hover:bg-[#3087ff]/30"
+                            : "bg-white text-[#3087ff] border-[#3087ff] hover:bg-[#3087ff] hover:text-white"
                           }`}
                         title={spot.title}
                         aria-label={spot.title}
@@ -451,7 +451,7 @@ export const SolenoSamplingHero: React.FC = () => {
 
           <a
             href="tel:+15162521111"
-            className="inline-flex items-center gap-2 text-xs sm:text-sm font-bold text-white hover:text-[#3087ff] transition-colors whitespace-nowrap bg-white/10 px-3.5 py-1.5 border border-[#3087ff]/50"
+            className="inline-flex items-center gap-2 text-xs sm:text-sm font-bold text-white hover:text-[#3087ff] transition-colors whitespace-nowrap bg-white/10 px-3.5 py-1.5 border border-[#3087ff]"
           >
             <PhoneCall className="w-3.5 h-3.5 text-[#3087ff]" />
             <span>Direct Dispatch: +1 (516) 252-1111</span>

@@ -373,7 +373,7 @@ export const OurNewInnovations: React.FC<OurNewInnovationsProps> = ({
             </div>
 
             <h2 className="text-2xl sm:text-4xl lg:text-5xl font-black uppercase tracking-tight text-white leading-[1.05] mb-2">
-              OUR NEW <span className="text-[#3087ff]">INNOVATIONS</span>
+              OUR NEW <span className="">INNOVATIONS</span>
             </h2>
 
             <p className="text-xs sm:text-sm text-white/90 font-normal leading-relaxed">
@@ -426,7 +426,7 @@ export const OurNewInnovations: React.FC<OurNewInnovationsProps> = ({
                 </span>
                 <span
                   className={`text-[9px] font-bold uppercase px-1.5 py-0.5 hidden md:inline-block shrink-0 ${isSelected
-                      ? "bg-[#3087ff]/10 text-[#3087ff]"
+                      ? "bg-white text-[#3087ff]"
                       : "bg-white/10 text-[#3087ff]"
                     }`}
                 >
@@ -502,7 +502,7 @@ export const OurNewInnovations: React.FC<OurNewInnovationsProps> = ({
 
             {/* Floating Upper Detail Popup (Absolute Overlay - Zero Layout Displacement) */}
             {activeHotspot !== null && activeSpotData && (
-              <div className="absolute inset-x-4 sm:inset-x-6 top-16 z-30 bg-[#3087ff]/95 border-2 border-[#3087ff] p-4 text-left shadow-2xl text-white backdrop-blur-md animate-in fade-in zoom-in-95 duration-200">
+              <div className="absolute inset-x-4 sm:inset-x-6 top-16 z-30 bg-[#3087ff] border-2 border-[#3087ff] p-4 text-left shadow-2xl text-white backdrop-blur-md animate-in fade-in zoom-in-95 duration-200">
                 <div className="flex items-center justify-between gap-3 mb-2">
                   <div className="flex items-center gap-2">
                     <span className="w-6 h-6 bg-white text-[#3087ff] flex items-center justify-center font-black text-xs shadow-sm">
@@ -565,7 +565,7 @@ export const OurNewInnovations: React.FC<OurNewInnovationsProps> = ({
                       style={{ left: spot.x, top: spot.y }}
                       className={`absolute z-30 w-7 h-7 -translate-x-1/2 -translate-y-1/2 rounded-none border-2 flex items-center justify-center font-black text-xs shadow-xl transition-all hover:scale-125 cursor-pointer ${activeHotspot === spot.id
                           ? "bg-[#3087ff] text-white border-white scale-125 ring-4 ring-[#3087ff]"
-                          : "bg-white text-[#3087ff] border-[#3087ff] hover:bg-[#3087ff]/30"
+                          : "bg-white text-[#3087ff] border-[#3087ff] hover:bg-[#3087ff] hover:text-white"
                         }`}
                       title={spot.title}
                       aria-label={spot.title}
@@ -657,9 +657,9 @@ export const OurNewInnovations: React.FC<OurNewInnovationsProps> = ({
                     </svg>
                   </div>
 
-                  <div className="w-full flex items-center justify-between border-t border-[#3087ff]/20 pt-2 text-xs font-bold text-[#3087ff]">
+                  <div className="w-full flex items-center justify-between border-t border-[#3087ff] pt-2 text-xs font-bold text-[#3087ff]">
                     <span>Metallurgy: {currentItem.metallurgy}</span>
-                    <span className="bg-[#3087ff]/30 px-2 py-0.5 border border-[#3087ff]">
+                    <span className="bg-white px-2 py-0.5 border border-[#3087ff]">
                       AASHTO M306 Proof
                     </span>
                   </div>
@@ -668,7 +668,7 @@ export const OurNewInnovations: React.FC<OurNewInnovationsProps> = ({
             </div>
 
             {/* Bottom Strip of Left Card */}
-            <div className="w-full mt-3 pt-3 border-t border-[#3087ff]/20 flex flex-wrap items-center justify-between gap-2 text-xs font-bold text-[#3087ff]">
+            <div className="w-full mt-3 pt-3 border-t border-[#3087ff] flex flex-wrap items-center justify-between gap-2 text-xs font-bold text-[#3087ff]">
               <span className="flex items-center gap-1.5">
                 <CheckCircle2 className="w-4 h-4 text-[#3087ff]" />
                 ASTM A48 Class 35B Heavy Casting
@@ -687,7 +687,7 @@ export const OurNewInnovations: React.FC<OurNewInnovationsProps> = ({
               {currentItem.features.map((feat) => (
                 <div
                   key={feat}
-                  className="p-3 bg-white/10 border border-[#3087ff]/60 flex items-start gap-2 shadow-xs backdrop-blur-sm"
+                  className="p-3 bg-white/10 border border-[#3087ff] flex items-start gap-2 shadow-xs backdrop-blur-sm"
                 >
                   <CheckCircle2 className="w-4 h-4 text-[#3087ff] shrink-0 mt-0.5" />
                   <span className="text-xs font-medium text-white/95 leading-snug">
@@ -802,7 +802,7 @@ export const OurNewInnovations: React.FC<OurNewInnovationsProps> = ({
 
           <a
             href="tel:+15162521111"
-            className="inline-flex items-center gap-2 text-xs sm:text-sm font-bold text-white hover:text-[#3087ff] transition-colors whitespace-nowrap bg-white/10 px-3.5 py-1.5 border border-[#3087ff]/50"
+            className="inline-flex items-center gap-2 text-xs sm:text-sm font-bold text-white hover:text-[#3087ff] transition-colors whitespace-nowrap bg-white/10 px-3.5 py-1.5 border border-[#3087ff]"
           >
             <PhoneCall className="w-3.5 h-3.5 text-[#3087ff]" />
             <span>Foundry Dispatch: +1 (516) 252-1111</span>

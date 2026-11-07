@@ -127,7 +127,7 @@ export function MasteringInfrastructureTabs() {
           <h2 className="text-2xl sm:text-3xl lg:text-4xl font-black text-[#3087ff] tracking-tight">
             Building America's Water Solutions Today
           </h2>
-          <p className="mt-3 text-sm sm:text-base text-[#3087ff]/90 font-normal leading-relaxed">
+          <p className="mt-3 text-sm sm:text-base text-[#3087ff] font-normal leading-relaxed">
             From deep municipal water transmission corridors to high-velocity
             stormwater collection, Aqua Industries provides utility contractors
             with certified ductile iron fittings and castings tailored to every
@@ -169,7 +169,7 @@ export function MasteringInfrastructureTabs() {
                 </h3>
               </div>
 
-              <p className="text-sm sm:text-base text-[#3087ff]/90 leading-relaxed font-normal">
+              <p className="text-sm sm:text-base text-[#3087ff] leading-relaxed font-normal">
                 {current.description}
               </p>
 
@@ -195,7 +195,7 @@ export function MasteringInfrastructureTabs() {
             {/* 4 Technical Indicators Matrix (No Overflow, Self-Wrapping Grid) */}
             <div className="mt-6 pt-5 border-t-2 border-[#3087ff] grid grid-cols-2 md:grid-cols-4 gap-2.5 sm:gap-3 text-center">
               <div className="border-2 border-[#3087ff] p-2.5 sm:p-3 bg-white flex flex-col justify-between min-h-[76px] shadow-xs">
-                <div className="text-[10px] sm:text-[11px] font-mono uppercase text-[#3087ff]/75 font-bold tracking-wider">
+                <div className="text-[10px] sm:text-[11px] font-mono uppercase text-[#3087ff] font-bold tracking-wider">
                   Standard
                 </div>
                 <div className="text-xs sm:text-[13px] font-extrabold text-[#3087ff] mt-1 leading-snug break-words">
@@ -204,7 +204,7 @@ export function MasteringInfrastructureTabs() {
               </div>
 
               <div className="border-2 border-[#3087ff] p-2.5 sm:p-3 bg-white flex flex-col justify-between min-h-[76px] shadow-xs">
-                <div className="text-[10px] sm:text-[11px] font-mono uppercase text-[#3087ff]/75 font-bold tracking-wider">
+                <div className="text-[10px] sm:text-[11px] font-mono uppercase text-[#3087ff] font-bold tracking-wider">
                   Rating
                 </div>
                 <div className="text-xs sm:text-[13px] font-extrabold text-[#3087ff] mt-1 leading-snug break-words">
@@ -213,7 +213,7 @@ export function MasteringInfrastructureTabs() {
               </div>
 
               <div className="border-2 border-[#3087ff] p-2.5 sm:p-3 bg-white flex flex-col justify-between min-h-[76px] shadow-xs">
-                <div className="text-[10px] sm:text-[11px] font-mono uppercase text-[#3087ff]/75 font-bold tracking-wider">
+                <div className="text-[10px] sm:text-[11px] font-mono uppercase text-[#3087ff] font-bold tracking-wider">
                   Metallurgy
                 </div>
                 <div className="text-xs sm:text-[13px] font-extrabold text-[#3087ff] mt-1 leading-snug break-words">
@@ -222,7 +222,7 @@ export function MasteringInfrastructureTabs() {
               </div>
 
               <div className="border-2 border-[#3087ff] p-2.5 sm:p-3 bg-white flex flex-col justify-between min-h-[76px] shadow-xs">
-                <div className="text-[10px] sm:text-[11px] font-mono uppercase text-[#3087ff]/75 font-bold tracking-wider">
+                <div className="text-[10px] sm:text-[11px] font-mono uppercase text-[#3087ff] font-bold tracking-wider">
                   Lining
                 </div>
                 <div className="text-xs sm:text-[13px] font-extrabold text-[#3087ff] mt-1 leading-snug break-words">

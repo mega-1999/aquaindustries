@@ -818,7 +818,7 @@ const FittingCardImage: React.FC<{ fitting: FittingItemData }> = ({
   const src = fitting.imageUrl || `/images/fittings/${fitting.id}.png`;
 
   return (
-    <div className="relative w-full h-32 sm:h-36 flex items-center justify-center p-3 overflow-hidden my-1 bg-gradient-to-b from-[#3087ff]/10 to-transparent border border-[#3087ff]/25">
+    <div className="relative w-full h-32 sm:h-36 flex items-center justify-center p-3 overflow-hidden my-1 bg-gradient-to-b from-[#3087ff] to-transparent border border-[#3087ff]">
       {!imgError ? (
         <img
           src={src}
@@ -855,7 +855,7 @@ const FittingCardImage: React.FC<{ fitting: FittingItemData }> = ({
       )}
 
       {/* Stock Status Badge */}
-      <span className="absolute bottom-1.5 right-1.5 text-[9px] font-bold bg-[#3087ff]/20 text-[#3087ff] px-1.5 py-0.2 border border-[#3087ff]">
+      <span className="absolute bottom-1.5 right-1.5 text-[9px] font-bold bg-white text-[#3087ff] px-1.5 py-0.2 border border-[#3087ff]">
         Foundry Stock
       </span>
     </div>
@@ -1149,7 +1149,7 @@ export const MechanicalJointFittingsSchedule: React.FC<
             <span className="text-[#3087ff]">Mechanical Joint</span> Fittings
           </h2>
 
-          <p className="text-sm sm:text-base text-[#3087ff]/90 font-normal leading-relaxed">
+          <p className="text-sm sm:text-base text-[#3087ff] font-normal leading-relaxed">
             Explore ductile iron mechanical joint compact fittings by product
             family. Select any fitting category below to browse specific
             subvariant angles (90°, 60°, 45°, 30°, 22.5°, 11.25°, 5.625°), tees,
@@ -1187,7 +1187,7 @@ export const MechanicalJointFittingsSchedule: React.FC<
             {/* Header of the Blueprint Sheet */}
             <div className="flex flex-col md:flex-row md:items-center justify-between gap-4 border-b-2 border-[#3087ff] pb-5 mb-6">
               <div>
-                <div className="inline-flex items-center gap-1.5 px-2.5 py-0.5 bg-[#3087ff]/20 border border-[#3087ff] text-[10px] font-black uppercase tracking-wider text-[#3087ff] mb-2">
+                <div className="inline-flex items-center gap-1.5 px-2.5 py-0.5 bg-white border border-[#3087ff] text-[10px] font-black uppercase tracking-wider text-[#3087ff] mb-2">
                   <FileCheck2 className="w-3.5 h-3.5 text-[#3087ff] shrink-0" />
                   <span>Official Foundry Catalog Standard Sheet</span>
                 </div>
@@ -1195,7 +1195,7 @@ export const MechanicalJointFittingsSchedule: React.FC<
                   2&quot; - 64&quot; Ductile Iron Mechanical Joint Compact
                   Fittings
                 </h3>
-                <h4 className="text-sm sm:text-base font-black uppercase tracking-widest text-[#3087ff]/90 mt-1">
+                <h4 className="text-sm sm:text-base font-black uppercase tracking-widest text-[#3087ff] mt-1">
                   General Specifications
                 </h4>
               </div>
@@ -1234,10 +1234,10 @@ export const MechanicalJointFittingsSchedule: React.FC<
               {GENERAL_SPECIFICATIONS_DATA.map((item) => (
                 <div
                   key={item.id}
-                  className="p-3.5 sm:p-4 bg-white hover:bg-[#3087ff]/10 border-2 border-[#3087ff] transition-colors flex flex-col justify-between"
+                  className="p-3.5 sm:p-4 bg-white hover:bg-[#3087ff] hover:text-white border-2 border-[#3087ff] transition-colors flex flex-col justify-between"
                 >
                   <div>
-                    <div className="flex items-center justify-between gap-2 mb-1.5 border-b border-[#3087ff]/15 pb-1.5">
+                    <div className="flex items-center justify-between gap-2 mb-1.5 border-b border-[#3087ff] pb-1.5">
                       <span className="font-black uppercase tracking-wider text-xs text-[#3087ff]">
                         {item.label}:
                       </span>
@@ -1247,7 +1247,7 @@ export const MechanicalJointFittingsSchedule: React.FC<
                         </span>
                       )}
                     </div>
-                    <p className="leading-relaxed text-[#3087ff]/95 font-medium text-xs sm:text-[13px]">
+                    <p className="leading-relaxed text-[#3087ff] font-medium text-xs sm:text-[13px]">
                       {item.value}
                     </p>
                   </div>
@@ -1256,7 +1256,7 @@ export const MechanicalJointFittingsSchedule: React.FC<
             </div>
 
             {/* Footer Notes & Installation Guidance */}
-            <div className="mt-6 pt-4 border-t-2 border-[#3087ff] flex flex-col sm:flex-row items-center justify-between gap-3 text-[11px] font-bold text-[#3087ff]/85">
+            <div className="mt-6 pt-4 border-t-2 border-[#3087ff] flex flex-col sm:flex-row items-center justify-between gap-3 text-[11px] font-bold text-[#3087ff]">
               <span>
                 Standard Compliance: ANSI/AWWA C153 &bull; ANSI/AWWA C111 &bull;
                 ANSI/AWWA C104 &bull; ANSI/AWWA C115 &bull; ASTM A536
@@ -1277,7 +1277,7 @@ export const MechanicalJointFittingsSchedule: React.FC<
               placeholder="Search all fittings (e.g. 45 bend, 90, Cat. 1280, eccentric, swivel ell)..."
               value={searchQuery}
               onChange={(e) => setSearchQuery(e.target.value)}
-              className="w-full bg-white border-2 border-[#3087ff] text-[#3087ff] rounded-none pl-10 pr-4 py-2.5 text-xs sm:text-sm font-bold focus:border-[#3087ff] focus:outline-none placeholder-[#3087ff]/40"
+              className="w-full bg-white border-2 border-[#3087ff] text-[#3087ff] rounded-none pl-10 pr-4 py-2.5 text-xs sm:text-sm font-bold focus:border-[#3087ff] focus:outline-none placeholder-[#3087ff]"
             />
             {searchQuery && (
               <button
@@ -1294,7 +1294,7 @@ export const MechanicalJointFittingsSchedule: React.FC<
         {/* VIEW 1: SEARCH RESULTS (IF USER TYPED IN SEARCH BOX) */}
         {searchQuery ? (
           <div>
-            <div className="mb-6 flex items-center justify-between text-xs font-bold text-[#3087ff] border-b-2 border-[#3087ff]/30 pb-2">
+            <div className="mb-6 flex items-center justify-between text-xs font-bold text-[#3087ff] border-b-2 border-[#3087ff] pb-2">
               <span>
                 Search Results for &quot;<strong>{searchQuery}</strong>&quot; (
                 {searchResults.length} matches)
@@ -1319,11 +1319,11 @@ export const MechanicalJointFittingsSchedule: React.FC<
                     >
                       <div>
                         {/* Top Bar */}
-                        <div className="flex items-center justify-between gap-1.5 mb-2 border-b-2 border-[#3087ff]/15 pb-2 min-h-[26px] flex-nowrap">
+                        <div className="flex items-center justify-between gap-1.5 mb-2 border-b-2 border-[#3087ff] pb-2 min-h-[26px] flex-nowrap">
                           <span className="text-[10px] font-black uppercase tracking-tight bg-[#3087ff] text-white px-1.5 py-0.5 border border-[#3087ff] shrink-0 whitespace-nowrap">
                             {fitting.catNumber}
                           </span>
-                          <span className="text-[10px] font-bold text-[#3087ff]/80 uppercase tracking-tight truncate text-right shrink min-w-0 whitespace-nowrap">
+                          <span className="text-[10px] font-bold text-[#3087ff] uppercase tracking-tight truncate text-right shrink min-w-0 whitespace-nowrap">
                             {fitting.categoryLabel}
                           </span>
                         </div>
@@ -1336,22 +1336,22 @@ export const MechanicalJointFittingsSchedule: React.FC<
                           {fitting.name}
                         </h3>
 
-                        <p className="text-[10px] font-bold text-[#3087ff]/75 uppercase tracking-wider mb-2 truncate">
+                        <p className="text-[10px] font-bold text-[#3087ff] uppercase tracking-wider mb-2 truncate">
                           {fitting.jointType}
                         </p>
 
-                        <p className="text-xs text-[#3087ff]/90 font-normal leading-relaxed line-clamp-2 mb-3 min-h-[34px]">
+                        <p className="text-xs text-[#3087ff] font-normal leading-relaxed line-clamp-2 mb-3 min-h-[34px]">
                           {fitting.description}
                         </p>
 
                         <div className="flex flex-wrap gap-1 mb-3">
-                          <span className="inline-flex items-center gap-1 text-[9px] font-bold text-white bg-[#3087ff]/15 border border-[#3087ff] px-1.5 py-0.5 rounded-none max-w-full">
+                          <span className="inline-flex items-center gap-1 text-[9px] font-bold text-white bg-[#3087ff] border border-[#3087ff] px-1.5 py-0.5 rounded-none max-w-full">
                             <ShieldCheck className="w-2.5 h-2.5 text-[#3087ff] shrink-0" />
                             <span className="truncate">
                               {fitting.pressureRating.split(" ")[0]} PSI
                             </span>
                           </span>
-                          <span className="inline-flex items-center gap-1 text-[9px] font-bold text-white bg-[#3087ff]/15 border border-[#3087ff] px-1.5 py-0.5 rounded-none max-w-full">
+                          <span className="inline-flex items-center gap-1 text-[9px] font-bold text-white bg-[#3087ff] border border-[#3087ff] px-1.5 py-0.5 rounded-none max-w-full">
                             <CheckCircle2 className="w-2.5 h-2.5 text-[#3087ff] shrink-0" />
                             <span className="truncate">
                               {fitting.standards.split(" ")[0]}
@@ -1361,7 +1361,7 @@ export const MechanicalJointFittingsSchedule: React.FC<
                       </div>
 
                       {/* Action Bar */}
-                      <div className="w-full flex items-center gap-2 pt-3 border-t-2 border-[#3087ff]/15 mt-auto">
+                      <div className="w-full flex items-center gap-2 pt-3 border-t-2 border-[#3087ff] mt-auto">
                         <button
                           type="button"
                           onClick={() => handleAddFitting(fitting)}
@@ -1402,7 +1402,7 @@ export const MechanicalJointFittingsSchedule: React.FC<
                 <h4 className="text-base font-bold text-[#3087ff]">
                   No fittings found matching &quot;{searchQuery}&quot;
                 </h4>
-                <p className="text-xs text-[#3087ff]/75 mt-1">
+                <p className="text-xs text-[#3087ff] mt-1">
                   Try searching by angle (e.g. 90, 45, 22.5), fitting type (tee,
                   bend, reducer), or catalog code.
                 </p>
@@ -1434,7 +1434,7 @@ export const MechanicalJointFittingsSchedule: React.FC<
                 <button
                   type="button"
                   onClick={() => setSpecDrawerOpen((prev) => !prev)}
-                  className="inline-flex items-center gap-1.5 px-3 py-2 bg-[#3087ff]/15 hover:bg-[#3087ff] text-white hover:text-white border-2 border-[#3087ff] text-xs font-black uppercase tracking-wider rounded-none transition-all shadow-xs cursor-pointer"
+                  className="inline-flex items-center gap-1.5 px-3 py-2 bg-[#3087ff] hover:bg-[#3087ff] text-white hover:text-white border-2 border-[#3087ff] text-xs font-black uppercase tracking-wider rounded-none transition-all shadow-xs cursor-pointer"
                 >
                   <FileCheck2 className="w-3.5 h-3.5 shrink-0" />
                   <span>
@@ -1446,7 +1446,7 @@ export const MechanicalJointFittingsSchedule: React.FC<
               </div>
 
               <div className="text-left sm:text-right">
-                <span className="text-[10px] font-black uppercase tracking-wider bg-[#3087ff]/20 text-[#3087ff] px-2 py-0.5 border border-[#3087ff]">
+                <span className="text-[10px] font-black uppercase tracking-wider bg-white text-[#3087ff] px-2 py-0.5 border border-[#3087ff]">
                   {activeFamily.tag}
                 </span>
                 <h3 className="text-base sm:text-lg font-black uppercase tracking-tight text-[#3087ff] mt-0.5">
@@ -1462,7 +1462,7 @@ export const MechanicalJointFittingsSchedule: React.FC<
                   <Compass className="w-3.5 h-3.5 text-[#3087ff] shrink-0" />
                   <span>{activeFamily.subvariantTypeLabel}:</span>
                 </div>
-                <span className="text-[10px] font-bold text-[#3087ff]/70 uppercase tracking-wider">
+                <span className="text-[10px] font-bold text-[#3087ff] uppercase tracking-wider">
                   {familySubvariants.length} Options Available
                 </span>
               </div>
@@ -1482,7 +1482,7 @@ export const MechanicalJointFittingsSchedule: React.FC<
                       onClick={() => setActiveSubvariantId(variant.id)}
                       className={`px-3 py-1.5 text-xs font-black uppercase tracking-wider rounded-none border-2 transition-all flex items-center gap-1.5 cursor-pointer ${isActive
                           ? "bg-[#3087ff] text-white border-[#3087ff] shadow-sm"
-                          : "bg-white text-[#3087ff] border-[#3087ff] hover:border-[#3087ff] hover:bg-[#3087ff]/10"
+                          : "bg-white text-[#3087ff] border-[#3087ff] hover:border-[#3087ff] hover:bg-[#3087ff] hover:text-white"
                         }`}
                     >
                       {isActive && (
@@ -1492,7 +1492,7 @@ export const MechanicalJointFittingsSchedule: React.FC<
                       <span
                         className={`text-[9px] font-mono px-1 py-0.2 border ${isActive
                             ? "bg-white/20 border-white text-white"
-                            : "bg-[#3087ff]/15 border-[#3087ff] text-[#3087ff]"
+                            : "bg-white border-[#3087ff] text-[#3087ff]"
                           }`}
                       >
                         {variant.catNumber}
@@ -1509,7 +1509,7 @@ export const MechanicalJointFittingsSchedule: React.FC<
                 <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 items-center">
                   {/* Left: Subvariant Image & Blueprint Frame */}
                   <div className="lg:col-span-5 flex flex-col items-center">
-                    <div className="relative w-full h-56 sm:h-64 flex items-center justify-center p-4 bg-gradient-to-b from-[#3087ff]/10 to-transparent border-2 border-[#3087ff]">
+                    <div className="relative w-full h-56 sm:h-64 flex items-center justify-center p-4 bg-gradient-to-b from-[#3087ff] to-transparent border-2 border-[#3087ff]">
                       <FittingCardImage fitting={activeSubvariant} />
                     </div>
                     <div className="mt-3 flex items-center justify-between w-full text-xs font-bold text-[#3087ff]">
@@ -1525,7 +1525,7 @@ export const MechanicalJointFittingsSchedule: React.FC<
                   {/* Right: Technical Specifications & Actions */}
                   <div className="lg:col-span-7 flex flex-col justify-between h-full space-y-4">
                     <div>
-                      <div className="inline-flex items-center gap-1.5 text-[11px] font-black uppercase tracking-wider bg-[#3087ff]/20 text-[#3087ff] px-2.5 py-0.5 border border-[#3087ff] mb-2">
+                      <div className="inline-flex items-center gap-1.5 text-[11px] font-black uppercase tracking-wider bg-white text-[#3087ff] px-2.5 py-0.5 border border-[#3087ff] mb-2">
                         <span>{activeFamily.title}</span>
                         <span>&bull;</span>
                         <span>
@@ -1537,19 +1537,19 @@ export const MechanicalJointFittingsSchedule: React.FC<
                         {activeSubvariant.name}
                       </h3>
 
-                      <p className="text-xs font-bold text-[#3087ff]/75 uppercase tracking-wider mt-1 mb-3">
+                      <p className="text-xs font-bold text-[#3087ff] uppercase tracking-wider mt-1 mb-3">
                         {activeSubvariant.jointType} &bull;{" "}
                         {activeSubvariant.standards}
                       </p>
 
-                      <p className="text-xs sm:text-sm text-[#3087ff]/90 font-normal leading-relaxed mb-4">
+                      <p className="text-xs sm:text-sm text-[#3087ff] font-normal leading-relaxed mb-4">
                         {activeSubvariant.description}
                       </p>
 
                       {/* 4 Technical Parameter Boxes */}
                       <div className="grid grid-cols-2 sm:grid-cols-2 gap-3 text-xs text-[#3087ff] mb-6">
-                        <div className="p-3 bg-[#3087ff]/10 border border-[#3087ff]/40">
-                          <span className="text-[10px] font-bold uppercase tracking-wider text-[#3087ff]/70 block">
+                        <div className="p-3 bg-white border border-[#3087ff]">
+                          <span className="text-[10px] font-bold uppercase tracking-wider text-[#3087ff] block">
                             Size Range
                           </span>
                           <span className="font-black text-sm text-[#3087ff]">
@@ -1557,8 +1557,8 @@ export const MechanicalJointFittingsSchedule: React.FC<
                           </span>
                         </div>
 
-                        <div className="p-3 bg-[#3087ff]/10 border border-[#3087ff]/40">
-                          <span className="text-[10px] font-bold uppercase tracking-wider text-[#3087ff]/70 block">
+                        <div className="p-3 bg-white border border-[#3087ff]">
+                          <span className="text-[10px] font-bold uppercase tracking-wider text-[#3087ff] block">
                             Working Pressure
                           </span>
                           <span className="font-black text-sm text-[#3087ff]">
@@ -1567,8 +1567,8 @@ export const MechanicalJointFittingsSchedule: React.FC<
                           </span>
                         </div>
 
-                        <div className="p-3 bg-[#3087ff]/10 border border-[#3087ff]/40">
-                          <span className="text-[10px] font-bold uppercase tracking-wider text-[#3087ff]/70 block">
+                        <div className="p-3 bg-white border border-[#3087ff]">
+                          <span className="text-[10px] font-bold uppercase tracking-wider text-[#3087ff] block">
                             Joint Deflection Limit
                           </span>
                           <span className="font-bold text-xs text-[#3087ff]">
@@ -1576,8 +1576,8 @@ export const MechanicalJointFittingsSchedule: React.FC<
                           </span>
                         </div>
 
-                        <div className="p-3 bg-[#3087ff]/10 border border-[#3087ff]/40">
-                          <span className="text-[10px] font-bold uppercase tracking-wider text-[#3087ff]/70 block">
+                        <div className="p-3 bg-white border border-[#3087ff]">
+                          <span className="text-[10px] font-bold uppercase tracking-wider text-[#3087ff] block">
                             Sanitary Linings
                           </span>
                           <span className="font-bold text-xs text-[#3087ff]">
@@ -1588,7 +1588,7 @@ export const MechanicalJointFittingsSchedule: React.FC<
                     </div>
 
                     {/* Dual Action Buttons */}
-                    <div className="flex flex-col sm:flex-row items-center gap-3 pt-4 border-t-2 border-[#3087ff]/20">
+                    <div className="flex flex-col sm:flex-row items-center gap-3 pt-4 border-t-2 border-[#3087ff]">
                       <button
                         type="button"
                         onClick={() => handleAddFitting(activeSubvariant)}
@@ -1627,12 +1627,12 @@ export const MechanicalJointFittingsSchedule: React.FC<
         ) : (
           /* VIEW 3: CLEAN CATEGORY FRONT VIEW (SHOW ONLY CATEGORIES IN FRONT) */
           <div>
-            <div className="mb-6 flex items-center justify-between text-xs font-bold text-[#3087ff] border-b-2 border-[#3087ff]/30 pb-2">
+            <div className="mb-6 flex items-center justify-between text-xs font-bold text-[#3087ff] border-b-2 border-[#3087ff] pb-2">
               <span>
                 Showing <strong>{FITTING_FAMILIES.length}</strong> Mechanical
                 Joint Product Families
               </span>
-              <span className="text-[11px] uppercase tracking-wider text-[#3087ff]/75">
+              <span className="text-[11px] uppercase tracking-wider text-[#3087ff]">
                 Click any category to explore subvariant angles
               </span>
             </div>
@@ -1651,17 +1651,17 @@ export const MechanicalJointFittingsSchedule: React.FC<
                   >
                     <div>
                       {/* Top Category Tag */}
-                      <div className="flex items-center justify-between mb-3 border-b-2 border-[#3087ff]/15 pb-2.5 min-h-[28px]">
-                        <span className="text-[10px] font-black uppercase tracking-wider bg-[#3087ff]/20 text-[#3087ff] px-2.5 py-0.5 border border-[#3087ff]">
+                      <div className="flex items-center justify-between mb-3 border-b-2 border-[#3087ff] pb-2.5 min-h-[28px]">
+                        <span className="text-[10px] font-black uppercase tracking-wider bg-white text-[#3087ff] px-2.5 py-0.5 border border-[#3087ff]">
                           {family.tag}
                         </span>
-                        <span className="text-[10px] font-bold text-[#3087ff]/80 uppercase">
+                        <span className="text-[10px] font-bold text-[#3087ff] uppercase">
                           AWWA C153
                         </span>
                       </div>
 
                       {/* Family Image Frame */}
-                      <div className="relative w-full h-44 sm:h-48 flex items-center justify-center p-3 overflow-hidden my-2 bg-gradient-to-b from-[#3087ff]/10 to-transparent border border-[#3087ff]/30">
+                      <div className="relative w-full h-44 sm:h-48 flex items-center justify-center p-3 overflow-hidden my-2 bg-gradient-to-b from-[#3087ff] to-transparent border border-[#3087ff]">
                         <FittingCardImage fitting={sampleFitting} />
                       </div>
 
@@ -1670,17 +1670,17 @@ export const MechanicalJointFittingsSchedule: React.FC<
                         {family.title}
                       </h3>
 
-                      <p className="text-[11px] font-bold text-[#3087ff]/75 uppercase tracking-wider mb-2.5">
+                      <p className="text-[11px] font-bold text-[#3087ff] uppercase tracking-wider mb-2.5">
                         {family.subtitle}
                       </p>
 
-                      <p className="text-xs text-[#3087ff]/90 font-normal leading-relaxed line-clamp-2 mb-4">
+                      <p className="text-xs text-[#3087ff] font-normal leading-relaxed line-clamp-2 mb-4">
                         {family.description}
                       </p>
 
                       {/* Interactive Subvariant Angle Preview Chips */}
-                      <div className="space-y-1.5 border-t border-[#3087ff]/15 pt-3 mb-5">
-                        <span className="text-[10px] font-bold uppercase tracking-wider text-[#3087ff]/70 block">
+                      <div className="space-y-1.5 border-t border-[#3087ff] pt-3 mb-5">
+                        <span className="text-[10px] font-bold uppercase tracking-wider text-[#3087ff] block">
                           Available Subvariants:
                         </span>
                         <div className="flex flex-wrap gap-1.5">
@@ -1692,7 +1692,7 @@ export const MechanicalJointFittingsSchedule: React.FC<
                                 e.stopPropagation();
                                 handleOpenFamily(family.id, ang.subvariantId);
                               }}
-                              className="px-2 py-0.5 text-[10px] font-black uppercase bg-[#3087ff]/15 hover:bg-[#3087ff] hover:text-white text-[#3087ff] border border-[#3087ff] rounded-none transition-colors cursor-pointer"
+                              className="px-2 py-0.5 text-[10px] font-black uppercase bg-[#3087ff] hover:bg-[#3087ff] hover:text-white text-[#3087ff] border border-[#3087ff] rounded-none transition-colors cursor-pointer"
                               title={`View ${ang.label} subvariant specifications`}
                             >
                               {ang.label}

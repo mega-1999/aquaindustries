@@ -97,7 +97,7 @@ export const CurbBoxSpotlight: React.FC<CurbBoxSpotlightProps> = ({
             BISON <span className="text-[#3087ff]">CURB SERVICE BOX</span>
           </h2>
 
-          <p className="text-sm sm:text-base text-[#3087ff]/90 font-normal leading-relaxed">
+          <p className="text-sm sm:text-base text-[#3087ff] font-normal leading-relaxed">
             The proven American municipal waterworks benchmark. Provides secure
             street-level shut-off access to underground service lines,
             engineered with authentic PR-branded foundry tooling, heavy AASHTO
@@ -116,7 +116,7 @@ export const CurbBoxSpotlight: React.FC<CurbBoxSpotlightProps> = ({
                 onClick={() => setViewMode("video")}
                 className={`flex-1 py-1.5 px-3 text-xs font-black uppercase tracking-wider transition-all rounded-none cursor-pointer flex items-center justify-center gap-1.5 ${viewMode === "video"
                   ? "bg-[#3087ff] text-white shadow-xs"
-                  : "text-[#3087ff] hover:bg-[#3087ff]/20"
+                  : "text-[#3087ff] hover:bg-[#3087ff] hover:text-white"
                   }`}
               >
                 <Play className="w-3 h-3 fill-current shrink-0" />
@@ -127,7 +127,7 @@ export const CurbBoxSpotlight: React.FC<CurbBoxSpotlightProps> = ({
                 onClick={() => setViewMode("photo")}
                 className={`flex-1 py-1.5 px-3 text-xs font-black uppercase tracking-wider transition-all rounded-none cursor-pointer text-center ${viewMode === "photo"
                   ? "bg-[#3087ff] text-white shadow-xs"
-                  : "text-[#3087ff] hover:bg-[#3087ff]/20"
+                  : "text-[#3087ff] hover:bg-[#3087ff] hover:text-white"
                   }`}
               >
                 <span>Full Product Photographs</span>
@@ -137,7 +137,7 @@ export const CurbBoxSpotlight: React.FC<CurbBoxSpotlightProps> = ({
             <div className="relative bg-white border-4 border-[#3087ff] p-5 sm:p-8 shadow-2xl flex flex-col items-center justify-center min-h-[440px] sm:min-h-[500px] overflow-hidden">
               {/* Corner Waterworks Badge */}
               <div className="absolute top-4 left-4 z-20">
-                <span className="text-[11px] font-black uppercase tracking-widest text-white bg-[#3087ff]/20 px-2.5 py-1 border border-[#3087ff]">
+                <span className="text-[11px] font-black uppercase tracking-widest text-white bg-[#3087ff] px-2.5 py-1 border border-[#3087ff]">
                   AASHTO H-20 Traffic Rated
                 </span>
               </div>
@@ -186,7 +186,7 @@ export const CurbBoxSpotlight: React.FC<CurbBoxSpotlightProps> = ({
                     <p className="text-base sm:text-lg font-black uppercase text-[#3087ff] tracking-tight">
                       {CURB_BOX_IMAGES[activeImageIndex].label}
                     </p>
-                    <p className="text-xs sm:text-sm font-semibold text-[#3087ff]/80">
+                    <p className="text-xs sm:text-sm font-semibold text-[#3087ff]">
                       {CURB_BOX_IMAGES[activeImageIndex].sublabel}
                     </p>
                   </div>
@@ -203,8 +203,8 @@ export const CurbBoxSpotlight: React.FC<CurbBoxSpotlightProps> = ({
                     key={vid.id}
                     onClick={() => setActiveVideoIndex(idx)}
                     className={`p-2 sm:p-2.5 border-2 rounded-none transition-all text-center flex flex-col items-center justify-center bg-white cursor-pointer ${activeVideoIndex === idx
-                      ? "border-[#3087ff] bg-[#3087ff]/20 shadow-md ring-2 ring-[#3087ff]"
-                      : "border-[#3087ff]/50 hover:border-[#3087ff] hover:bg-[#3087ff]/10"
+                      ? "border-[#3087ff] bg-white shadow-md ring-2 ring-[#3087ff]"
+                      : "border-[#3087ff] hover:border-[#3087ff] hover:bg-[#3087ff] hover:text-white"
                       }`}
                   >
                     <div className="flex items-center gap-1.5 mb-0.5">
@@ -213,7 +213,7 @@ export const CurbBoxSpotlight: React.FC<CurbBoxSpotlightProps> = ({
                         Video 0{idx + 1}
                       </span>
                     </div>
-                    <span className="text-[9px] sm:text-[10px] font-bold text-[#3087ff]/80 truncate">
+                    <span className="text-[9px] sm:text-[10px] font-bold text-[#3087ff] truncate">
                       {vid.badge}
                     </span>
                   </button>
@@ -230,8 +230,8 @@ export const CurbBoxSpotlight: React.FC<CurbBoxSpotlightProps> = ({
                     key={img.label}
                     onClick={() => setActiveImageIndex(idx)}
                     className={`p-2 border-2 rounded-none transition-all text-left flex flex-col items-center justify-center bg-white cursor-pointer ${activeImageIndex === idx
-                      ? "border-[#3087ff] bg-[#3087ff]/15 shadow-md"
-                      : "border-[#3087ff]/50 hover:border-[#3087ff]"
+                      ? "border-[#3087ff] bg-white shadow-md"
+                      : "border-[#3087ff] hover:border-[#3087ff]"
                       }`}
                   >
                     <img
@@ -261,7 +261,7 @@ export const CurbBoxSpotlight: React.FC<CurbBoxSpotlightProps> = ({
                     Bison Cast Durability
                   </h3>
                 </div>
-                <p className="text-xs sm:text-sm text-[#3087ff]/85 font-medium leading-snug">
+                <p className="text-xs sm:text-sm text-[#3087ff] font-medium leading-snug">
                   Heavy-wall ductile and gray iron outlasts surrounding pavement
                   with 100+ years projected service life.
                 </p>
@@ -276,7 +276,7 @@ export const CurbBoxSpotlight: React.FC<CurbBoxSpotlightProps> = ({
                     Vandal-Proof Pentagon Lock
                   </h3>
                 </div>
-                <p className="text-xs sm:text-sm text-[#3087ff]/85 font-medium leading-snug">
+                <p className="text-xs sm:text-sm text-[#3087ff] font-medium leading-snug">
                   Proprietary recessed brass pentagon bolt prevents unauthorized
                   tampering while allowing rapid utility tool access.
                 </p>
@@ -291,7 +291,7 @@ export const CurbBoxSpotlight: React.FC<CurbBoxSpotlightProps> = ({
                     AASHTO H-20 Heavy Traffic
                   </h3>
                 </div>
-                <p className="text-xs sm:text-sm text-[#3087ff]/85 font-medium leading-snug">
+                <p className="text-xs sm:text-sm text-[#3087ff] font-medium leading-snug">
                   Engineered to absorb 40,000+ LBS highway axle wheel loads
                   without fracturing or dislodging subgrade pipework.
                 </p>
@@ -306,7 +306,7 @@ export const CurbBoxSpotlight: React.FC<CurbBoxSpotlightProps> = ({
                     Arch Base Fitment
                   </h3>
                 </div>
-                <p className="text-xs sm:text-sm text-[#3087ff]/85 font-medium leading-snug">
+                <p className="text-xs sm:text-sm text-[#3087ff] font-medium leading-snug">
                   Traditional wide arched footing securely straddles 3/4&quot;
                   through 2&quot; municipal curb stops without direct pipe
                   contact.
@@ -326,24 +326,24 @@ export const CurbBoxSpotlight: React.FC<CurbBoxSpotlightProps> = ({
               </div>
 
               <div className="p-4 sm:p-5 space-y-3 text-xs sm:text-sm">
-                <div className="flex justify-between border-b border-[#3087ff]/15 pb-2">
-                  <span className="font-bold text-[#3087ff]/75 uppercase">
+                <div className="flex justify-between border-b border-[#3087ff] pb-2">
+                  <span className="font-bold text-[#3087ff] uppercase">
                     Casting Standard
                   </span>
                   <span className="font-extrabold text-[#3087ff]">
                     ASTM A48 Class 35B / ASTM A536 Ductile
                   </span>
                 </div>
-                <div className="flex justify-between border-b border-[#3087ff]/15 pb-2">
-                  <span className="font-bold text-[#3087ff]/75 uppercase">
+                <div className="flex justify-between border-b border-[#3087ff] pb-2">
+                  <span className="font-bold text-[#3087ff] uppercase">
                     Load Rating
                   </span>
                   <span className="font-extrabold text-[#3087ff]">
                     AASHTO H-20 &amp; HS-20 Traffic Certified
                   </span>
                 </div>
-                <div className="flex justify-between border-b border-[#3087ff]/15 pb-2">
-                  <span className="font-bold text-[#3087ff]/75 uppercase">
+                <div className="flex justify-between border-b border-[#3087ff] pb-2">
+                  <span className="font-bold text-[#3087ff] uppercase">
                     Service Range
                   </span>
                   <span className="font-extrabold text-[#3087ff]">
@@ -351,7 +351,7 @@ export const CurbBoxSpotlight: React.FC<CurbBoxSpotlightProps> = ({
                   </span>
                 </div>
                 <div className="flex justify-between">
-                  <span className="font-bold text-[#3087ff]/75 uppercase">
+                  <span className="font-bold text-[#3087ff] uppercase">
                     Coating Protection
                   </span>
                   <span className="font-extrabold text-[#3087ff]">
@@ -383,7 +383,7 @@ export const CurbBoxSpotlight: React.FC<CurbBoxSpotlightProps> = ({
             </div>
 
             {/* Quick Dispatch Strip */}
-            <div className="pt-2 flex items-center justify-between border-t border-[#3087ff]/20 text-xs font-semibold text-[#3087ff]">
+            <div className="pt-2 flex items-center justify-between border-t border-[#3087ff] text-xs font-semibold text-[#3087ff]">
               <span>In-Stock at Melville, NY &amp; FL Logistics Hubs</span>
               <a
                 href="tel:+15162521111"

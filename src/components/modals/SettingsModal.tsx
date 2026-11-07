@@ -165,21 +165,21 @@ export const SettingsModal: React.FC<SettingsModalProps> = ({
       role="dialog"
       aria-modal="true"
       aria-labelledby="settings-modal-title"
-      className="fixed inset-0 z-50 flex items-center justify-center p-3 sm:p-4 bg-[#3087ff]/80 backdrop-blur-sm overflow-y-auto"
+      className="fixed inset-0 z-50 flex items-center justify-center p-3 sm:p-4 bg-white backdrop-blur-sm overflow-y-auto"
     >
       <div className="bg-white border-4 border-[#3087ff] rounded-none max-w-xl w-full p-6 sm:p-8 shadow-2xl text-[#3087ff] relative my-auto">
         {/* Close Button */}
         <button
           type="button"
           onClick={onClose}
-          className="absolute top-5 right-5 p-1 rounded-none text-[#3087ff] hover:bg-[#3087ff]/20 transition-colors cursor-pointer"
+          className="absolute top-5 right-5 p-1 rounded-none text-[#3087ff] hover:bg-[#3087ff] hover:text-white transition-colors cursor-pointer"
           aria-label="Close Settings Modal"
         >
           <X className="w-5 h-5" />
         </button>
 
         {/* Modal Header */}
-        <div className="flex items-center gap-3.5 mb-5 pb-4 border-b-2 border-[#3087ff]/40">
+        <div className="flex items-center gap-3.5 mb-5 pb-4 border-b-2 border-[#3087ff]">
           <div className="w-12 h-12 bg-[#3087ff] text-white border-2 border-[#3087ff] flex items-center justify-center shrink-0">
             <Settings className="w-6 h-6 text-[#3087ff]" />
           </div>
@@ -190,7 +190,7 @@ export const SettingsModal: React.FC<SettingsModalProps> = ({
             >
               Account Settings
             </h2>
-            <p className="text-xs sm:text-sm text-[#3087ff]/90 font-medium mt-0.5">
+            <p className="text-xs sm:text-sm text-[#3087ff] font-medium mt-0.5">
               Password Security, Dispatch Preferences &amp; Profile Information
             </p>
           </div>
@@ -203,7 +203,7 @@ export const SettingsModal: React.FC<SettingsModalProps> = ({
             onClick={() => setActiveSection("security")}
             className={`py-2 px-3 text-xs font-black uppercase tracking-wider border-b-2 -mb-[2px] transition-colors cursor-pointer flex items-center gap-1.5 ${activeSection === "security"
                 ? "border-[#3087ff] bg-[#3087ff] text-white"
-                : "border-transparent text-[#3087ff] hover:bg-[#3087ff]/20"
+                : "border-transparent text-[#3087ff] hover:bg-[#3087ff] hover:text-white"
               }`}
           >
             <KeyRound className="w-3.5 h-3.5" />
@@ -214,7 +214,7 @@ export const SettingsModal: React.FC<SettingsModalProps> = ({
             onClick={() => setActiveSection("company")}
             className={`py-2 px-3 text-xs font-black uppercase tracking-wider border-b-2 -mb-[2px] transition-colors cursor-pointer flex items-center gap-1.5 ${activeSection === "company"
                 ? "border-[#3087ff] bg-[#3087ff] text-white"
-                : "border-transparent text-[#3087ff] hover:bg-[#3087ff]/20"
+                : "border-transparent text-[#3087ff] hover:bg-[#3087ff] hover:text-white"
               }`}
           >
             <User className="w-3.5 h-3.5" />
@@ -225,7 +225,7 @@ export const SettingsModal: React.FC<SettingsModalProps> = ({
             onClick={() => setActiveSection("notifications")}
             className={`py-2 px-3 text-xs font-black uppercase tracking-wider border-b-2 -mb-[2px] transition-colors cursor-pointer flex items-center gap-1.5 ${activeSection === "notifications"
                 ? "border-[#3087ff] bg-[#3087ff] text-white"
-                : "border-transparent text-[#3087ff] hover:bg-[#3087ff]/20"
+                : "border-transparent text-[#3087ff] hover:bg-[#3087ff] hover:text-white"
               }`}
           >
             <Bell className="w-3.5 h-3.5" />
@@ -496,7 +496,7 @@ export const SettingsModal: React.FC<SettingsModalProps> = ({
         {activeSection === "notifications" && (
           <div className="space-y-4">
             <div className="space-y-3">
-              <label className="flex items-start gap-2.5 cursor-pointer p-2.5 bg-[#3087ff]/5 border border-[#3087ff]">
+              <label className="flex items-start gap-2.5 cursor-pointer p-2.5 bg-white border border-[#3087ff]">
                 <input
                   type="checkbox"
                   checked={bolSmsAlerts}
@@ -505,14 +505,14 @@ export const SettingsModal: React.FC<SettingsModalProps> = ({
                 />
                 <span className="text-xs font-bold text-[#3087ff]">
                   SMS Trailer Staging Alerts{" "}
-                  <span className="block font-normal text-[11px] text-[#3087ff]/80 mt-0.5">
+                  <span className="block font-normal text-[11px] text-[#3087ff] mt-0.5">
                     Receive instant texts when flatbed loads depart the foundry
                     gate.
                   </span>
                 </span>
               </label>
 
-              <label className="flex items-start gap-2.5 cursor-pointer p-2.5 bg-[#3087ff]/5 border border-[#3087ff]">
+              <label className="flex items-start gap-2.5 cursor-pointer p-2.5 bg-white border border-[#3087ff]">
                 <input
                   type="checkbox"
                   checked={mtrEmailAlerts}
@@ -521,14 +521,14 @@ export const SettingsModal: React.FC<SettingsModalProps> = ({
                 />
                 <span className="text-xs font-bold text-[#3087ff]">
                   Automated Certified MTR Submittals{" "}
-                  <span className="block font-normal text-[11px] text-[#3087ff]/80 mt-0.5">
+                  <span className="block font-normal text-[11px] text-[#3087ff] mt-0.5">
                     Attach certified mill test reports automatically to digital
                     bills of lading.
                   </span>
                 </span>
               </label>
 
-              <label className="flex items-start gap-2.5 cursor-pointer p-2.5 bg-[#3087ff]/5 border border-[#3087ff]">
+              <label className="flex items-start gap-2.5 cursor-pointer p-2.5 bg-white border border-[#3087ff]">
                 <input
                   type="checkbox"
                   checked={quoteUpdates}
@@ -537,7 +537,7 @@ export const SettingsModal: React.FC<SettingsModalProps> = ({
                 />
                 <span className="text-xs font-bold text-[#3087ff]">
                   Direct Wholesale Quotation Updates{" "}
-                  <span className="block font-normal text-[11px] text-[#3087ff]/80 mt-0.5">
+                  <span className="block font-normal text-[11px] text-[#3087ff] mt-0.5">
                     Receive price-lock notifications 48 hours prior to scrap
                     iron index adjustments.
                   </span>
@@ -552,7 +552,7 @@ export const SettingsModal: React.FC<SettingsModalProps> = ({
         )}
 
         {/* Footer Navigation */}
-        <div className="pt-4 mt-6 border-t-2 border-[#3087ff]/40 flex items-center justify-between gap-3">
+        <div className="pt-4 mt-6 border-t-2 border-[#3087ff] flex items-center justify-between gap-3">
           {onOpenProfile && (
             <button
               type="button"
@@ -569,7 +569,7 @@ export const SettingsModal: React.FC<SettingsModalProps> = ({
           <button
             type="button"
             onClick={onClose}
-            className="ml-auto px-5 py-2 bg-white text-[#3087ff] border-2 border-[#3087ff] hover:bg-[#3087ff]/20 font-bold text-xs uppercase cursor-pointer rounded-none"
+            className="ml-auto px-5 py-2 bg-white text-[#3087ff] border-2 border-[#3087ff] hover:bg-[#3087ff] hover:text-white font-bold text-xs uppercase cursor-pointer rounded-none"
           >
             Close Settings
           </button>

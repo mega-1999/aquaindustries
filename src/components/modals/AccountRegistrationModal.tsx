@@ -158,21 +158,21 @@ export const AccountRegistrationModal: React.FC<
       role="dialog"
       aria-modal="true"
       aria-labelledby="reg-modal-title"
-      className="fixed inset-0 z-50 flex items-center justify-center p-3 sm:p-4 bg-[#3087ff]/80 backdrop-blur-sm overflow-y-auto"
+      className="fixed inset-0 z-50 flex items-center justify-center p-3 sm:p-4 bg-white backdrop-blur-sm overflow-y-auto"
     >
       <div className="bg-white border-4 border-[#3087ff] rounded-none max-w-xl w-full p-6 sm:p-8 shadow-2xl text-[#3087ff] relative my-auto">
         {/* Close Button */}
         <button
           type="button"
           onClick={handleResetAndClose}
-          className="absolute top-5 right-5 p-1 rounded-none text-[#3087ff] hover:bg-[#3087ff]/20 transition-colors cursor-pointer"
+          className="absolute top-5 right-5 p-1 rounded-none text-[#3087ff] hover:bg-[#3087ff] hover:text-white transition-colors cursor-pointer"
           aria-label="Close Registration"
         >
           <X className="w-5 h-5" />
         </button>
 
         {/* Modal Header */}
-        <div className="flex items-center gap-3 mb-6 pb-4 border-b-2 border-[#3087ff]/40">
+        <div className="flex items-center gap-3 mb-6 pb-4 border-b-2 border-[#3087ff]">
           <div className="w-12 h-12 bg-[#3087ff] text-white border-2 border-[#3087ff] flex items-center justify-center shrink-0">
             <UserCheck className="w-6 h-6 text-[#3087ff]" />
           </div>
@@ -183,7 +183,7 @@ export const AccountRegistrationModal: React.FC<
             >
               Commercial Account Registration
             </h3>
-            <p className="text-xs sm:text-sm text-[#3087ff]/90 font-medium mt-0.5">
+            <p className="text-xs sm:text-sm text-[#3087ff] font-medium mt-0.5">
               Wholesale Pricing, MTR Documentation &amp; Yard Allocation
             </p>
           </div>
@@ -223,26 +223,26 @@ export const AccountRegistrationModal: React.FC<
 
             {/* Registration Summary Card */}
             <div className="p-4 bg-white border-2 border-[#3087ff] space-y-2 text-xs">
-              <div className="flex justify-between border-b border-[#3087ff]/20 pb-1.5">
-                <span className="text-[#3087ff]/80">Registration ID:</span>
+              <div className="flex justify-between border-b border-[#3087ff] pb-1.5">
+                <span className="text-[#3087ff]">Registration ID:</span>
                 <span className="font-mono font-bold text-[#3087ff]">
                   {registeredUser.id}
                 </span>
               </div>
-              <div className="flex justify-between border-b border-[#3087ff]/20 pb-1.5">
-                <span className="text-[#3087ff]/80">Account Email:</span>
+              <div className="flex justify-between border-b border-[#3087ff] pb-1.5">
+                <span className="text-[#3087ff]">Account Email:</span>
                 <span className="font-mono font-bold text-[#3087ff]">
                   {registeredUser.email}
                 </span>
               </div>
-              <div className="flex justify-between border-b border-[#3087ff]/20 pb-1.5">
-                <span className="text-[#3087ff]/80">Tax ID / License:</span>
+              <div className="flex justify-between border-b border-[#3087ff] pb-1.5">
+                <span className="text-[#3087ff]">Tax ID / License:</span>
                 <span className="font-mono font-bold text-[#3087ff]">
                   {registeredUser.taxIdOrLicense}
                 </span>
               </div>
               <div className="flex justify-between">
-                <span className="text-[#3087ff]/80">
+                <span className="text-[#3087ff]">
                   Primary Stocking Yard:
                 </span>
                 <span className="font-bold uppercase text-[#3087ff]">
@@ -251,7 +251,7 @@ export const AccountRegistrationModal: React.FC<
               </div>
             </div>
 
-            <div className="p-3 bg-[#3087ff]/10 border border-[#3087ff] text-[11px] text-[#3087ff] leading-relaxed">
+            <div className="p-3 bg-white border border-[#3087ff] text-[11px] text-[#3087ff] leading-relaxed">
               <strong className="block font-black uppercase text-[#3087ff] mb-0.5">
                 Pending Administrator Authorization:
               </strong>
@@ -290,8 +290,8 @@ export const AccountRegistrationModal: React.FC<
                   className={`p-2 text-center border-2 transition-all ${currentStep === item.step
                       ? "bg-[#3087ff] border-[#3087ff] text-white font-black shadow-xs"
                       : currentStep > item.step
-                        ? "bg-[#3087ff]/20 border-[#3087ff] text-[#3087ff] font-bold"
-                        : "bg-white border-[#3087ff]/50 text-[#3087ff]/60 font-semibold"
+                        ? "bg-white border-[#3087ff] text-[#3087ff] font-bold"
+                        : "bg-white border-[#3087ff] text-[#3087ff] font-semibold"
                     }`}
                 >
                   <span className="text-[11px] block">{item.title}</span>
@@ -419,7 +419,7 @@ export const AccountRegistrationModal: React.FC<
                       className="w-full bg-white border-2 border-[#3087ff] pl-9 pr-3 py-2 text-xs sm:text-sm font-mono font-bold text-[#3087ff] focus:outline-none focus:border-[#3087ff]"
                     />
                   </div>
-                  <span className="text-[11px] text-[#3087ff]/75 mt-0.5 block">
+                  <span className="text-[11px] text-[#3087ff] mt-0.5 block">
                     Used by Super-Admin to verify contractor qualification
                     before approval.
                   </span>
@@ -447,7 +447,7 @@ export const AccountRegistrationModal: React.FC<
                   </select>
                 </div>
 
-                <div className="p-3 bg-[#3087ff]/20 border border-[#3087ff] text-xs text-[#3087ff]">
+                <div className="p-3 bg-white border border-[#3087ff] text-xs text-[#3087ff]">
                   <strong>Dispatch Policy:</strong> Your designated hub
                   determines shipping transit time, rail siding access, and
                   flatbed freight rates.
@@ -516,7 +516,7 @@ export const AccountRegistrationModal: React.FC<
                 </div>
 
                 {/* Document Verification Checkboxes */}
-                <div className="space-y-2 pt-1 border-t border-[#3087ff]/20">
+                <div className="space-y-2 pt-1 border-t border-[#3087ff]">
                   <label className="flex items-start gap-2.5 cursor-pointer">
                     <input
                       type="checkbox"
@@ -559,12 +559,12 @@ export const AccountRegistrationModal: React.FC<
             )}
 
             {/* Modal Controls */}
-            <div className="flex items-center justify-between pt-4 border-t-2 border-[#3087ff]/30">
+            <div className="flex items-center justify-between pt-4 border-t-2 border-[#3087ff]">
               {currentStep > 1 ? (
                 <button
                   type="button"
                   onClick={handlePrevStep}
-                  className="inline-flex items-center gap-1.5 px-4 py-2.5 bg-white text-[#3087ff] border-2 border-[#3087ff] text-xs font-bold uppercase hover:bg-[#3087ff]/20 transition-colors cursor-pointer"
+                  className="inline-flex items-center gap-1.5 px-4 py-2.5 bg-white text-[#3087ff] border-2 border-[#3087ff] text-xs font-bold uppercase hover:bg-[#3087ff] hover:text-white transition-colors cursor-pointer"
                 >
                   <ArrowLeft className="w-3.5 h-3.5" />
                   <span>Previous</span>

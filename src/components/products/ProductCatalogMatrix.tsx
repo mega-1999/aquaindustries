@@ -111,7 +111,7 @@ export const ProductCatalogMatrix: React.FC<ProductCatalogMatrixProps> = ({
             <h2 className="text-2xl sm:text-3xl font-extrabold text-[#3087ff] tracking-tight leading-tight">
               Product Showcase Grid
             </h2>
-            <p className="mt-1.5 text-[#3087ff]/90 text-sm sm:text-base max-w-xl leading-relaxed font-normal">
+            <p className="mt-1.5 text-[#3087ff] text-sm sm:text-base max-w-xl leading-relaxed font-normal">
               Standardized American waterworks castings, wedge joint restraints,
               linings, and municipal castings engineered to AWWA, ASTM, and
               AASHTO specifications.
@@ -153,7 +153,7 @@ export const ProductCatalogMatrix: React.FC<ProductCatalogMatrixProps> = ({
                 className="bg-white border-2 border-[#3087ff] rounded-none overflow-hidden shadow-sm hover:border-[#3087ff] transition-all duration-300 flex flex-col justify-between group hover:-translate-y-1"
               >
                 {/* Card Top Metadata Ribbon (Separated from image, never overlapping) */}
-                <div className="px-4 py-2 bg-white border-b border-[#3087ff]/40 flex items-center justify-between gap-2">
+                <div className="px-4 py-2 bg-white border-b border-[#3087ff] flex items-center justify-between gap-2">
                   <div className="flex items-center gap-1.5 flex-wrap min-w-0">
                     <span className="px-2 py-0.5 rounded-none bg-white text-[#3087ff] border border-[#3087ff] text-[11px] font-bold whitespace-nowrap shadow-xs">
                       {product.standard}
@@ -166,7 +166,7 @@ export const ProductCatalogMatrix: React.FC<ProductCatalogMatrixProps> = ({
                   </div>
 
                   <div className="shrink-0">
-                    <span className="px-2 py-0.5 rounded-none bg-[#3087ff]/20 text-[#3087ff] border border-[#3087ff]/30 text-[10px] font-bold uppercase tracking-wider whitespace-nowrap">
+                    <span className="px-2 py-0.5 rounded-none bg-white text-[#3087ff] border border-[#3087ff] text-[10px] font-bold uppercase tracking-wider whitespace-nowrap">
                       {product.pressureRating
                         .split("/")[0]
                         .split("(")[0]
@@ -190,20 +190,20 @@ export const ProductCatalogMatrix: React.FC<ProductCatalogMatrixProps> = ({
                 {/* Card Content */}
                 <div className="p-5 sm:p-6 flex-1 flex flex-col justify-between">
                   <div>
-                    <div className="text-xs font-bold uppercase tracking-wider text-[#3087ff]/80 mb-1 whitespace-nowrap truncate">
+                    <div className="text-xs font-bold uppercase tracking-wider text-[#3087ff] mb-1 whitespace-nowrap truncate">
                       {product.jointType} &bull; {product.diameterRange}
                     </div>
                     <h3 className="font-black text-[#3087ff] text-base sm:text-lg uppercase leading-snug mb-2 transition-colors">
                       {product.name}
                     </h3>
-                    <p className="text-xs sm:text-sm text-[#3087ff]/90 leading-relaxed mb-3 line-clamp-2 font-normal">
+                    <p className="text-xs sm:text-sm text-[#3087ff] leading-relaxed mb-3 line-clamp-2 font-normal">
                       {product.description}
                     </p>
 
                     {/* Key Technical Parameters */}
-                    <div className="grid grid-cols-2 gap-2 py-2.5 my-3 border-y border-[#3087ff]/40 text-[11px] font-bold text-[#3087ff]">
+                    <div className="grid grid-cols-2 gap-2 py-2.5 my-3 border-y border-[#3087ff] text-[11px] font-bold text-[#3087ff]">
                       <div>
-                        <span className="text-[#3087ff]/70 uppercase block text-[10px]">
+                        <span className="text-[#3087ff] uppercase block text-[10px]">
                           Standard
                         </span>
                         <span className="truncate block">
@@ -211,7 +211,7 @@ export const ProductCatalogMatrix: React.FC<ProductCatalogMatrixProps> = ({
                         </span>
                       </div>
                       <div>
-                        <span className="text-[#3087ff]/70 uppercase block text-[10px]">
+                        <span className="text-[#3087ff] uppercase block text-[10px]">
                           Rating
                         </span>
                         <span className="truncate block">

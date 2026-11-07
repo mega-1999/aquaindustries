@@ -80,7 +80,7 @@ export const MainNavbar: React.FC<MainNavbarProps> = ({
     <header
       className={`sticky top-0 z-50 w-full transition-all duration-200 ${isScrolled
           ? "bg-white shadow-md border-b-2 border-[#3087ff] py-2"
-          : "bg-white border-b-2 border-[#3087ff]/20 py-2.5 sm:py-3"
+          : "bg-white border-b-2 border-[#3087ff] py-2.5 sm:py-3"
         }`}
     >
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative">
@@ -90,7 +90,7 @@ export const MainNavbar: React.FC<MainNavbarProps> = ({
             <button
               type="button"
               onClick={() => setMobileMenuOpen(true)}
-              className="p-2 text-[#3087ff] hover:bg-[#3087ff]/20 rounded-none border-2 border-[#3087ff] focus:outline-none focus:ring-2 focus:ring-[#3087ff] cursor-pointer"
+              className="p-2 text-[#3087ff] hover:bg-[#3087ff] hover:text-white rounded-none border-2 border-[#3087ff] focus:outline-none focus:ring-2 focus:ring-[#3087ff] cursor-pointer"
               aria-label="Open Navigation Menu"
             >
               <Menu className="w-6 h-6" />
@@ -112,7 +112,7 @@ export const MainNavbar: React.FC<MainNavbarProps> = ({
                 type="button"
                 className={`inline-flex items-center gap-1 px-2.5 2xl:px-3 py-2 rounded-none transition-colors whitespace-nowrap ${activeMenu === "fittings"
                     ? "text-white bg-[#3087ff] font-bold hover:font-black hover:text-white"
-                    : "text-[#3087ff] hover:bg-[#3087ff]/20 font-bold"
+                    : "text-[#3087ff] hover:bg-[#3087ff] hover:text-white font-bold"
                   }`}
               >
                 <span className="whitespace-nowrap">Fittings</span>
@@ -234,7 +234,7 @@ export const MainNavbar: React.FC<MainNavbarProps> = ({
                 type="button"
                 className={`inline-flex items-center gap-1 px-2.5 2xl:px-3 py-2 rounded-none transition-colors whitespace-nowrap ${activeMenu === "restraints"
                     ? "text-white bg-[#3087ff] font-bold hover:font-black hover:text-white"
-                    : "text-[#3087ff] hover:bg-[#3087ff]/20 font-bold"
+                    : "text-[#3087ff] hover:bg-[#3087ff] hover:text-white font-bold"
                   }`}
               >
                 <span className="whitespace-nowrap">Restraints</span>
@@ -320,7 +320,7 @@ export const MainNavbar: React.FC<MainNavbarProps> = ({
                 type="button"
                 className={`inline-flex items-center gap-1 px-2.5 2xl:px-3 py-2 rounded-none transition-colors whitespace-nowrap ${activeMenu === "castings"
                     ? "text-white bg-[#3087ff] font-bold hover:font-black hover:text-white"
-                    : "text-[#3087ff] hover:bg-[#3087ff]/20 font-bold"
+                    : "text-[#3087ff] hover:bg-[#3087ff] hover:text-white font-bold"
                   }`}
               >
                 <span className="whitespace-nowrap">Castings</span>
@@ -352,7 +352,7 @@ export const MainNavbar: React.FC<MainNavbarProps> = ({
                     <a
                       href="#trash-racks"
                       onClick={() => handleNavClick("#trash-racks")}
-                      className="block p-2.5 rounded-none hover:bg-[#3087ff] hover:text-white transition-colors group bg-[#3087ff]/10 border-l-2 border-[#3087ff]"
+                      className="block p-2.5 rounded-none hover:bg-[#3087ff] hover:text-white transition-colors group bg-[#3087ff] border-l-2 border-[#3087ff]"
                     >
                       <div className="font-bold text-sm leading-tight flex items-center justify-between group-hover:text-white group-hover:font-black">
                         <span>Trash Racks</span>
@@ -438,7 +438,7 @@ export const MainNavbar: React.FC<MainNavbarProps> = ({
                 type="button"
                 className={`inline-flex items-center gap-1 px-2.5 2xl:px-3 py-2 rounded-none transition-colors whitespace-nowrap ${activeMenu === "tools"
                     ? "text-white bg-[#3087ff] font-bold hover:font-black hover:text-white"
-                    : "text-[#3087ff] hover:bg-[#3087ff]/20 font-bold"
+                    : "text-[#3087ff] hover:bg-[#3087ff] hover:text-white font-bold"
                   }`}
               >
                 <span className="whitespace-nowrap">Tools</span>
@@ -512,7 +512,7 @@ export const MainNavbar: React.FC<MainNavbarProps> = ({
             <a
               href="/#foundry-walkthrough"
               onClick={() => handleNavClick("/#foundry-walkthrough")}
-              className="px-2 2xl:px-3 py-2 rounded-none text-[#3087ff] hover:bg-[#3087ff]/20 transition-colors whitespace-nowrap font-bold"
+              className="px-2 2xl:px-3 py-2 rounded-none text-[#3087ff] hover:bg-[#3087ff] hover:text-white transition-colors whitespace-nowrap font-bold"
             >
               Foundry
             </a>
@@ -553,7 +553,7 @@ export const MainNavbar: React.FC<MainNavbarProps> = ({
                     }}
                     className={`inline-flex items-center gap-2 px-3 py-2 text-xs 2xl:text-sm font-bold transition-all whitespace-nowrap border-2 rounded-none shadow-xs cursor-pointer ${activeMenu === "user-menu"
                         ? "bg-[#3087ff] text-white border-[#3087ff] hover:text-white hover:font-black"
-                        : "bg-white text-[#3087ff] hover:bg-[#3087ff]/20 border-[#3087ff]"
+                        : "bg-white text-[#3087ff] hover:bg-[#3087ff] hover:text-white border-[#3087ff]"
                       }`}
                     aria-label="User Account Menu"
                   >
@@ -573,11 +573,11 @@ export const MainNavbar: React.FC<MainNavbarProps> = ({
                     <div className="absolute top-full right-0 w-60 pt-2 z-50 animate-in fade-in slide-in-from-top-1 duration-150">
                       <div className="bg-white border-2 border-[#3087ff] shadow-2xl p-1.5 text-[#3087ff] rounded-none">
                         {/* User Identity Mini Chip */}
-                        <div className="px-3 py-2 border-b border-[#3087ff]/20 mb-1 bg-[#3087ff]/15">
+                        <div className="px-3 py-2 border-b border-[#3087ff] mb-1 bg-white">
                           <div className="font-black text-xs text-[#3087ff] truncate">
                             {currentUser.fullName}
                           </div>
-                          <div className="text-[10px] text-[#3087ff]/80 font-bold uppercase truncate">
+                          <div className="text-[10px] text-[#3087ff] font-bold uppercase truncate">
                             {currentUser.companyName}
                           </div>
                         </div>
@@ -636,7 +636,7 @@ export const MainNavbar: React.FC<MainNavbarProps> = ({
               <button
                 type="button"
                 onClick={onOpenLoginModal}
-                className="inline-flex items-center gap-1.5 px-3 2xl:px-3.5 py-2 text-xs 2xl:text-sm font-bold transition-all whitespace-nowrap border-2 border-[#3087ff] bg-white text-[#3087ff] hover:bg-[#3087ff]/20 rounded-none shadow-xs cursor-pointer"
+                className="inline-flex items-center gap-1.5 px-3 2xl:px-3.5 py-2 text-xs 2xl:text-sm font-bold transition-all whitespace-nowrap border-2 border-[#3087ff] bg-white text-[#3087ff] hover:bg-[#3087ff] hover:text-white rounded-none shadow-xs cursor-pointer"
               >
                 <Lock className="w-3.5 h-3.5 shrink-0" />
                 <span className="whitespace-nowrap">Client Portal</span>
@@ -646,7 +646,7 @@ export const MainNavbar: React.FC<MainNavbarProps> = ({
             {/* Primary CTA: Request a Job Quote */}
             <a
               href="#quote-form"
-              className="inline-flex items-center gap-1.5 px-4 2xl:px-5 py-2 text-xs 2xl:text-sm font-bold hover:font-black text-white hover:text-white bg-[#3087ff] hover:bg-[#3087ff] border-2 border-white rounded-none shadow-md shadow-[#3087ff]/30 transition-all transform hover:-translate-y-0.5 active:translate-y-0 whitespace-nowrap"
+              className="inline-flex items-center gap-1.5 px-4 2xl:px-5 py-2 text-xs 2xl:text-sm font-bold hover:font-black text-white hover:text-white bg-[#3087ff] hover:bg-[#3087ff] border-2 border-white rounded-none shadow-md shadow-md transition-all transform hover:-translate-y-0.5 active:translate-y-0 whitespace-nowrap"
             >
               <FileText className="w-4 h-4 shrink-0 text-white" />
               <span className="whitespace-nowrap">Request Quote</span>
@@ -656,7 +656,7 @@ export const MainNavbar: React.FC<MainNavbarProps> = ({
             <button
               type="button"
               onClick={onOpenYardModal}
-              className="inline-flex items-center gap-1.5 px-3 2xl:px-3.5 py-2 text-xs 2xl:text-sm font-bold transition-all whitespace-nowrap border-2 border-[#3087ff] bg-white text-[#3087ff] hover:bg-[#3087ff]/20 rounded-none shadow-xs cursor-pointer"
+              className="inline-flex items-center gap-1.5 px-3 2xl:px-3.5 py-2 text-xs 2xl:text-sm font-bold transition-all whitespace-nowrap border-2 border-[#3087ff] bg-white text-[#3087ff] hover:bg-[#3087ff] hover:text-white rounded-none shadow-xs cursor-pointer"
             >
               <Truck className="w-3.5 h-3.5 shrink-0" />
               <span className="whitespace-nowrap">Yards</span>
@@ -679,7 +679,7 @@ export const MainNavbar: React.FC<MainNavbarProps> = ({
           {/* Blue Tinted Backdrop (NO BLACK) */}
           <button
             type="button"
-            className="fixed inset-0 bg-[#3087ff]/80 backdrop-blur-xs transition-opacity w-full h-full border-0 cursor-default"
+            className="fixed inset-0 bg-black/80 backdrop-blur-xs transition-opacity w-full h-full border-0 cursor-default"
             onClick={() => setMobileMenuOpen(false)}
             aria-label="Close Navigation Backdrop"
           />
@@ -688,7 +688,7 @@ export const MainNavbar: React.FC<MainNavbarProps> = ({
           <div className="relative w-full max-w-sm sm:max-w-md bg-white h-full shadow-2xl flex flex-col justify-between p-6 z-10 overflow-y-auto border-l-2 border-[#3087ff]">
             <div className="space-y-4">
               {/* Drawer Header */}
-              <div className="flex items-center justify-between pb-4 border-b-2 border-[#3087ff]/20">
+              <div className="flex items-center justify-between pb-4 border-b-2 border-[#3087ff]">
                 <Link
                   href="/"
                   onClick={() => setMobileMenuOpen(false)}
@@ -704,7 +704,7 @@ export const MainNavbar: React.FC<MainNavbarProps> = ({
                 <button
                   type="button"
                   onClick={() => setMobileMenuOpen(false)}
-                  className="p-1.5 rounded-none text-[#3087ff] hover:bg-[#3087ff]/20"
+                  className="p-1.5 rounded-none text-[#3087ff] hover:bg-[#3087ff] hover:text-white"
                   aria-label="Close Navigation Menu"
                 >
                   <X className="w-6 h-6" />
@@ -712,7 +712,7 @@ export const MainNavbar: React.FC<MainNavbarProps> = ({
               </div>
 
               {/* Waterworks Fittings Accordion */}
-              <div className="border-b border-[#3087ff]/20 pb-2">
+              <div className="border-b border-[#3087ff] pb-2">
                 <button
                   type="button"
                   onClick={() =>
@@ -773,7 +773,7 @@ export const MainNavbar: React.FC<MainNavbarProps> = ({
               </div>
 
               {/* Restraints Accordion */}
-              <div className="border-b border-[#3087ff]/20 pb-2">
+              <div className="border-b border-[#3087ff] pb-2">
                 <button
                   type="button"
                   onClick={() =>
@@ -828,7 +828,7 @@ export const MainNavbar: React.FC<MainNavbarProps> = ({
               <a
                 href="#thrust-calculator"
                 onClick={() => handleNavClick("#thrust-calculator")}
-                className="flex items-center gap-2 text-sm sm:text-base font-bold text-[#3087ff] py-2.5 border-b border-[#3087ff]/20"
+                className="flex items-center gap-2 text-sm sm:text-base font-bold text-[#3087ff] py-2.5 border-b border-[#3087ff]"
               >
                 <Calculator className="w-4 h-4 text-[#3087ff] shrink-0" />
                 <span className="whitespace-nowrap">Thrust Calculator</span>
@@ -837,7 +837,7 @@ export const MainNavbar: React.FC<MainNavbarProps> = ({
               <a
                 href="/#foundry-walkthrough"
                 onClick={() => handleNavClick("/#foundry-walkthrough")}
-                className="block text-sm sm:text-base font-bold text-[#3087ff] py-2.5 border-b border-[#3087ff]/20 whitespace-nowrap"
+                className="block text-sm sm:text-base font-bold text-[#3087ff] py-2.5 border-b border-[#3087ff] whitespace-nowrap"
               >
                 Foundry &amp; Yard Walkthrough
               </a>
@@ -845,7 +845,7 @@ export const MainNavbar: React.FC<MainNavbarProps> = ({
               <a
                 href="#quality-standards"
                 onClick={() => handleNavClick("#quality-standards")}
-                className="block text-sm sm:text-base font-bold text-[#3087ff] py-2.5 border-b border-[#3087ff]/20 whitespace-nowrap"
+                className="block text-sm sm:text-base font-bold text-[#3087ff] py-2.5 border-b border-[#3087ff] whitespace-nowrap"
               >
                 Quality Standards &amp; MTRs
               </a>
@@ -856,13 +856,13 @@ export const MainNavbar: React.FC<MainNavbarProps> = ({
                   setMobileMenuOpen(false);
                   onOpenYardModal();
                 }}
-                className="w-full flex items-center justify-between text-sm sm:text-base font-bold text-[#3087ff] py-2.5 border-b border-[#3087ff]/20"
+                className="w-full flex items-center justify-between text-sm sm:text-base font-bold text-[#3087ff] py-2.5 border-b border-[#3087ff]"
               >
                 <span className="flex items-center gap-2 whitespace-nowrap">
                   <Truck className="w-4 h-4 text-[#3087ff] shrink-0" />
                   <span>Stocking Yard Finder</span>
                 </span>
-                <span className="text-xs bg-[#3087ff]/20 text-[#3087ff] px-2 py-0.5 rounded-none font-bold border border-[#3087ff] whitespace-nowrap">
+                <span className="text-xs bg-white text-[#3087ff] px-2 py-0.5 rounded-none font-bold border border-[#3087ff] whitespace-nowrap">
                   4 Hubs
                 </span>
               </button>
@@ -880,9 +880,9 @@ export const MainNavbar: React.FC<MainNavbarProps> = ({
 
               {currentUser ? (
                 /* Mobile Logged-in Select Options: Profile, Settings */
-                <div className="space-y-2 pt-2 border-t-2 border-[#3087ff]/20">
-                  <div className="px-3 py-2 bg-[#3087ff]/15 border border-[#3087ff] mb-2">
-                    <span className="text-[10px] font-black uppercase text-[#3087ff]/70 block">
+                <div className="space-y-2 pt-2 border-t-2 border-[#3087ff]">
+                  <div className="px-3 py-2 bg-white border border-[#3087ff] mb-2">
+                    <span className="text-[10px] font-black uppercase text-[#3087ff] block">
                       Signed In
                     </span>
                     <strong className="text-xs text-[#3087ff] block truncate">
@@ -943,7 +943,7 @@ export const MainNavbar: React.FC<MainNavbarProps> = ({
                       setMobileMenuOpen(false);
                       onOpenRegisterModal();
                     }}
-                    className="py-3 px-3 bg-[#3087ff]/20 text-[#3087ff] font-bold rounded-none text-center text-xs sm:text-sm whitespace-nowrap border-2 border-[#3087ff]"
+                    className="py-3 px-3 bg-white text-[#3087ff] font-bold rounded-none text-center text-xs sm:text-sm whitespace-nowrap border-2 border-[#3087ff]"
                   >
                     Register Account
                   </button>

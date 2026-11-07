@@ -138,7 +138,7 @@ export function EngineeringSubmittalLibrary({
             <h2 className="text-2xl sm:text-3xl lg:text-4xl font-black text-[#3087ff] tracking-tight">
               Certified Technical Cut Sheets &amp; Submittal Packages
             </h2>
-            <p className="text-sm sm:text-base text-[#3087ff]/90 font-normal leading-relaxed">
+            <p className="text-sm sm:text-base text-[#3087ff] font-normal leading-relaxed">
               Equip civil design engineers, municipal inspectors, and utility
               project managers with verifiable product cut sheets, laboratory
               physical test reports, and CAD BIM families.
@@ -277,7 +277,7 @@ export function EngineeringSubmittalLibrary({
                     {doc.title}
                   </h3>
 
-                  <p className="text-xs sm:text-sm text-[#3087ff]/90 leading-relaxed font-normal">
+                  <p className="text-xs sm:text-sm text-[#3087ff] leading-relaxed font-normal">
                     {doc.description}
                   </p>
 
@@ -296,7 +296,7 @@ export function EngineeringSubmittalLibrary({
               </div>
 
               {/* Action Button at bottom */}
-              <div className="p-4 pt-0 border-t border-[#3087ff]/20 mt-3 pt-3">
+              <div className="p-4 pt-0 border-t border-[#3087ff] mt-3 pt-3">
                 <button
                   type="button"
                   onClick={() => handleDownload(doc)}

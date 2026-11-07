@@ -59,21 +59,21 @@ export const ProfileDashboardModal: React.FC<ProfileDashboardModalProps> = ({
       role="dialog"
       aria-modal="true"
       aria-labelledby="profile-dashboard-title"
-      className="fixed inset-0 z-50 flex items-center justify-center p-3 sm:p-4 bg-[#3087ff]/80 backdrop-blur-sm overflow-y-auto"
+      className="fixed inset-0 z-50 flex items-center justify-center p-3 sm:p-4 bg-white backdrop-blur-sm overflow-y-auto"
     >
       <div className="bg-white border-4 border-[#3087ff] rounded-none max-w-2xl w-full p-6 sm:p-8 shadow-2xl text-[#3087ff] relative my-auto">
         {/* Close Button */}
         <button
           type="button"
           onClick={onClose}
-          className="absolute top-5 right-5 p-1 rounded-none text-[#3087ff] hover:bg-[#3087ff]/20 transition-colors cursor-pointer"
+          className="absolute top-5 right-5 p-1 rounded-none text-[#3087ff] hover:bg-[#3087ff] hover:text-white transition-colors cursor-pointer"
           aria-label="Close Profile Dashboard"
         >
           <X className="w-5 h-5" />
         </button>
 
         {/* Modal Header */}
-        <div className="flex items-start gap-3.5 mb-6 pb-4 border-b-2 border-[#3087ff]/40">
+        <div className="flex items-start gap-3.5 mb-6 pb-4 border-b-2 border-[#3087ff]">
           <div className="w-12 h-12 bg-[#3087ff] text-white border-2 border-[#3087ff] flex items-center justify-center shrink-0">
             {currentUser.role === "super-admin" ? (
               <ShieldCheck className="w-6 h-6 text-[#3087ff]" />
@@ -102,7 +102,7 @@ export const ProfileDashboardModal: React.FC<ProfileDashboardModalProps> = ({
                   : `Status: ${currentUser.status}`}
               </span>
             </div>
-            <p className="text-xs sm:text-sm text-[#3087ff]/90 font-medium mt-0.5 truncate">
+            <p className="text-xs sm:text-sm text-[#3087ff] font-medium mt-0.5 truncate">
               {currentUser.companyName} &bull; Primary Contact:{" "}
               {currentUser.fullName}
             </p>
@@ -116,7 +116,7 @@ export const ProfileDashboardModal: React.FC<ProfileDashboardModalProps> = ({
             onClick={() => setActiveTab("overview")}
             className={`py-2 px-3 sm:px-4 text-xs font-black uppercase tracking-wider border-b-2 -mb-[2px] transition-colors cursor-pointer ${activeTab === "overview"
                 ? "border-[#3087ff] bg-[#3087ff] text-white"
-                : "border-transparent text-[#3087ff] hover:bg-[#3087ff]/20"
+                : "border-transparent text-[#3087ff] hover:bg-[#3087ff] hover:text-white"
               }`}
           >
             Profile Overview
@@ -126,7 +126,7 @@ export const ProfileDashboardModal: React.FC<ProfileDashboardModalProps> = ({
             onClick={() => setActiveTab("commercial")}
             className={`py-2 px-3 sm:px-4 text-xs font-black uppercase tracking-wider border-b-2 -mb-[2px] transition-colors cursor-pointer ${activeTab === "commercial"
                 ? "border-[#3087ff] bg-[#3087ff] text-white"
-                : "border-transparent text-[#3087ff] hover:bg-[#3087ff]/20"
+                : "border-transparent text-[#3087ff] hover:bg-[#3087ff] hover:text-white"
               }`}
           >
             Commercial Privileges
@@ -136,7 +136,7 @@ export const ProfileDashboardModal: React.FC<ProfileDashboardModalProps> = ({
             onClick={() => setActiveTab("bol")}
             className={`py-2 px-3 sm:px-4 text-xs font-black uppercase tracking-wider border-b-2 -mb-[2px] transition-colors cursor-pointer ${activeTab === "bol"
                 ? "border-[#3087ff] bg-[#3087ff] text-white"
-                : "border-transparent text-[#3087ff] hover:bg-[#3087ff]/20"
+                : "border-transparent text-[#3087ff] hover:bg-[#3087ff] hover:text-white"
               }`}
           >
             BOL Tracking &amp; MTRs
@@ -147,10 +147,10 @@ export const ProfileDashboardModal: React.FC<ProfileDashboardModalProps> = ({
         {activeTab === "overview" && (
           <div className="space-y-4">
             {/* Identity Card */}
-            <div className="p-4 bg-[#3087ff]/5 border-2 border-[#3087ff]">
+            <div className="p-4 bg-white border-2 border-[#3087ff]">
               <div className="grid grid-cols-1 sm:grid-cols-2 gap-3 text-xs">
                 <div>
-                  <span className="text-[10px] font-black uppercase text-[#3087ff]/70 block">
+                  <span className="text-[10px] font-black uppercase text-[#3087ff] block">
                     Commercial Entity
                   </span>
                   <span className="font-extrabold text-sm text-[#3087ff] block truncate">
@@ -158,7 +158,7 @@ export const ProfileDashboardModal: React.FC<ProfileDashboardModalProps> = ({
                   </span>
                 </div>
                 <div>
-                  <span className="text-[10px] font-black uppercase text-[#3087ff]/70 block">
+                  <span className="text-[10px] font-black uppercase text-[#3087ff] block">
                     Account Type &amp; Role
                   </span>
                   <span className="font-extrabold text-sm text-[#3087ff] block">
@@ -166,7 +166,7 @@ export const ProfileDashboardModal: React.FC<ProfileDashboardModalProps> = ({
                   </span>
                 </div>
                 <div>
-                  <span className="text-[10px] font-black uppercase text-[#3087ff]/70 block">
+                  <span className="text-[10px] font-black uppercase text-[#3087ff] block">
                     Primary Authorized Contact
                   </span>
                   <span className="font-bold text-xs text-[#3087ff] block">
@@ -174,7 +174,7 @@ export const ProfileDashboardModal: React.FC<ProfileDashboardModalProps> = ({
                   </span>
                 </div>
                 <div>
-                  <span className="text-[10px] font-black uppercase text-[#3087ff]/70 block">
+                  <span className="text-[10px] font-black uppercase text-[#3087ff] block">
                     Business Email
                   </span>
                   <span className="font-mono font-bold text-xs text-[#3087ff] block truncate">
@@ -182,7 +182,7 @@ export const ProfileDashboardModal: React.FC<ProfileDashboardModalProps> = ({
                   </span>
                 </div>
                 <div>
-                  <span className="text-[10px] font-black uppercase text-[#3087ff]/70 block">
+                  <span className="text-[10px] font-black uppercase text-[#3087ff] block">
                     Direct Phone / Dispatch
                   </span>
                   <span className="font-mono font-bold text-xs text-[#3087ff] block">
@@ -190,7 +190,7 @@ export const ProfileDashboardModal: React.FC<ProfileDashboardModalProps> = ({
                   </span>
                 </div>
                 <div>
-                  <span className="text-[10px] font-black uppercase text-[#3087ff]/70 block">
+                  <span className="text-[10px] font-black uppercase text-[#3087ff] block">
                     Federal Tax ID / State License
                   </span>
                   <span className="font-mono font-bold text-xs text-[#3087ff] block">
@@ -272,33 +272,33 @@ export const ProfileDashboardModal: React.FC<ProfileDashboardModalProps> = ({
           <div className="space-y-4">
             <div className="grid grid-cols-1 sm:grid-cols-2 gap-3 text-xs">
               <div className="p-3.5 bg-white border-2 border-[#3087ff]">
-                <span className="text-[10px] font-black uppercase text-[#3087ff]/70 block">
+                <span className="text-[10px] font-black uppercase text-[#3087ff] block">
                   Wholesale Pricing Tier
                 </span>
                 <span className="font-black text-base text-[#3087ff] block mt-1">
                   Tier-1 Direct Contractor
                 </span>
-                <p className="text-[11px] text-[#3087ff]/80 mt-1">
+                <p className="text-[11px] text-[#3087ff] mt-1">
                   28% wholesale discount applied automatically on all AWWA
                   fittings and wedge restraints.
                 </p>
               </div>
 
               <div className="p-3.5 bg-white border-2 border-[#3087ff]">
-                <span className="text-[10px] font-black uppercase text-[#3087ff]/70 block">
+                <span className="text-[10px] font-black uppercase text-[#3087ff] block">
                   Assigned Logistics Hub
                 </span>
                 <span className="font-black text-base text-[#3087ff] block mt-1 uppercase">
                   {currentUser.assignedYard.replace("-", " ")}
                 </span>
-                <p className="text-[11px] text-[#3087ff]/80 mt-1">
+                <p className="text-[11px] text-[#3087ff] mt-1">
                   Priority flatbed trailer allocation and same-day will-call
                   loading dock access.
                 </p>
               </div>
             </div>
 
-            <div className="p-4 bg-[#3087ff]/20 border border-[#3087ff] space-y-2">
+            <div className="p-4 bg-white border border-[#3087ff] space-y-2">
               <div className="flex items-center gap-2">
                 <Truck className="w-4 h-4 text-[#3087ff]" />
                 <span className="font-extrabold text-xs uppercase tracking-wider text-[#3087ff]">
@@ -346,12 +346,12 @@ export const ProfileDashboardModal: React.FC<ProfileDashboardModalProps> = ({
               )}
             </form>
 
-            <div className="p-4 bg-[#3087ff]/5 border border-[#3087ff] space-y-2">
+            <div className="p-4 bg-white border border-[#3087ff] space-y-2">
               <span className="font-black text-xs uppercase text-[#3087ff] flex items-center gap-2">
                 <Download className="w-4 h-4 text-[#3087ff]" />
                 <span>Certified Mill Test Reports (MTR Vault)</span>
               </span>
-              <p className="text-xs text-[#3087ff]/90 leading-relaxed">
+              <p className="text-xs text-[#3087ff] leading-relaxed">
                 Every shipment includes digital chemical &amp; physical
                 certification per ASTM A536 Grade 65-45-12. Need historical
                 records? Call New York Foundry dispatch at +1 (516) 252-1111.
@@ -361,7 +361,7 @@ export const ProfileDashboardModal: React.FC<ProfileDashboardModalProps> = ({
         )}
 
         {/* Footer Actions */}
-        <div className="pt-5 mt-6 border-t-2 border-[#3087ff]/40 flex flex-wrap items-center justify-between gap-3">
+        <div className="pt-5 mt-6 border-t-2 border-[#3087ff] flex flex-wrap items-center justify-between gap-3">
           <div className="flex items-center gap-2">
             {onOpenSettings && (
               <button
@@ -370,7 +370,7 @@ export const ProfileDashboardModal: React.FC<ProfileDashboardModalProps> = ({
                   onClose();
                   onOpenSettings();
                 }}
-                className="px-3.5 py-2 bg-white hover:bg-[#3087ff]/20 text-[#3087ff] border-2 border-[#3087ff] font-bold text-xs uppercase tracking-wider flex items-center gap-1.5 transition-colors cursor-pointer"
+                className="px-3.5 py-2 bg-white hover:bg-[#3087ff] hover:text-white text-[#3087ff] border-2 border-[#3087ff] font-bold text-xs uppercase tracking-wider flex items-center gap-1.5 transition-colors cursor-pointer"
               >
                 <Settings className="w-3.5 h-3.5" />
                 <span>Account Settings</span>

@@ -78,7 +78,7 @@ export const PlainQualityStandards: React.FC = () => {
                   </p>
                 </div>
 
-                <div className="mt-6 pt-4 border-t-2 border-[#3087ff]/30 flex items-center gap-2 text-sm sm:text-base font-bold text-[#3087ff]">
+                <div className="mt-6 pt-4 border-t-2 border-[#3087ff] flex items-center gap-2 text-sm sm:text-base font-bold text-[#3087ff]">
                   <CheckCircle2 className="w-4 h-4 text-[#3087ff] shrink-0" />
                   <span>Standard Foundry Checkpoint Passed</span>
                 </div>

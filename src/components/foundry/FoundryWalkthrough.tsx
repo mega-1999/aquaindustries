@@ -127,7 +127,7 @@ export const FoundryWalkthrough: React.FC = () => {
           <h2 className="text-2xl sm:text-3xl lg:text-4xl font-black text-[#3087ff] tracking-tight leading-tight uppercase">
             Real Foundry &amp; Yard Walkthrough
           </h2>
-          <p className="mt-2 text-[#3087ff]/90 text-sm sm:text-base leading-relaxed font-normal">
+          <p className="mt-2 text-[#3087ff] text-sm sm:text-base leading-relaxed font-normal">
             Take a look inside our manufacturing and yard operations. See how
             clean molds, sharp machining, and tested metallurgy produce
             consistent waterworks fittings ready for immediate flatbed delivery.
@@ -145,7 +145,7 @@ export const FoundryWalkthrough: React.FC = () => {
               >
                 <div>
                   {/* Top Badge & Metric */}
-                  <div className="flex items-center justify-between mb-4 pb-3 border-b-2 border-[#3087ff]/30">
+                  <div className="flex items-center justify-between mb-4 pb-3 border-b-2 border-[#3087ff]">
                     <span className="inline-flex items-center gap-1.5 px-3 py-1 rounded-none bg-white border-2 border-[#3087ff] text-sm font-bold text-[#3087ff] shadow-sm">
                       <Icon className="w-4 h-4 text-[#3087ff]" />
                       <span>{item.tagline}</span>
@@ -165,7 +165,7 @@ export const FoundryWalkthrough: React.FC = () => {
                 </div>
 
                 {/* Bottom Verified Spec Pill */}
-                <div className="mt-4 pt-4 border-t-2 border-[#3087ff]/30 flex items-center justify-between text-sm sm:text-base text-[#3087ff]">
+                <div className="mt-4 pt-4 border-t-2 border-[#3087ff] flex items-center justify-between text-sm sm:text-base text-[#3087ff]">
                   <span className="font-bold text-[#3087ff] flex items-center gap-2 whitespace-nowrap">
                     <CheckCircle2 className="w-4 h-4 text-[#3087ff] shrink-0" />
                     <span>Quality Benchmark:</span>
@@ -222,7 +222,7 @@ export const FoundryWalkthrough: React.FC = () => {
               <h3 className="text-2xl sm:text-3xl lg:text-4xl font-black text-[#3087ff] uppercase tracking-tight">
                 Strategic Foundries &amp; Rail Terminals
               </h3>
-              <p className="text-sm sm:text-base text-[#3087ff]/90 font-medium mt-1 max-w-2xl">
+              <p className="text-sm sm:text-base text-[#3087ff] font-medium mt-1 max-w-2xl">
                 Direct manufacturer fulfillment from 4 regional hubs —
                 eliminating distributor markups and delivering certified ductile
                 iron fittings and pipe restraints directly to municipal
@@ -233,7 +233,7 @@ export const FoundryWalkthrough: React.FC = () => {
             {/* Live National Capacity Indicators */}
             <div className="grid grid-cols-2 sm:grid-cols-3 gap-3 shrink-0">
               <div className="bg-white border-2 border-[#3087ff] p-2.5 text-center">
-                <span className="block text-[10px] font-bold text-[#3087ff]/75 uppercase">
+                <span className="block text-[10px] font-bold text-[#3087ff] uppercase">
                   Total Staged Iron
                 </span>
                 <span className="text-base sm:text-lg font-black text-[#3087ff]">
@@ -241,7 +241,7 @@ export const FoundryWalkthrough: React.FC = () => {
                 </span>
               </div>
               <div className="bg-white border-2 border-[#3087ff] p-2.5 text-center">
-                <span className="block text-[10px] font-bold text-[#3087ff]/75 uppercase">
+                <span className="block text-[10px] font-bold text-[#3087ff] uppercase">
                   Class-1 Rail Spurs
                 </span>
                 <span className="text-base sm:text-lg font-black text-[#3087ff]">
@@ -289,7 +289,7 @@ export const FoundryWalkthrough: React.FC = () => {
                       onClick={() => setSelectedYardId(yard.id)}
                       className={`text-left p-3.5 rounded-none border-2 transition-all cursor-pointer relative flex-1 flex flex-col justify-between ${isSelected
                           ? "bg-[#3087ff] text-white border-[#3087ff] shadow-lg"
-                          : "bg-white text-[#3087ff] border-[#3087ff] hover:border-[#3087ff] hover:bg-[#3087ff]/10"
+                          : "bg-white text-[#3087ff] border-[#3087ff] hover:border-[#3087ff] hover:bg-[#3087ff] hover:text-white"
                         }`}
                     >
                       {/* Top Row: City & State + Classification Tag */}
@@ -335,7 +335,7 @@ export const FoundryWalkthrough: React.FC = () => {
                         </h4>
 
                         <p
-                          className={`text-[11px] sm:text-xs line-clamp-1 ${isSelected ? "text-white/90" : "text-[#3087ff]/80"
+                          className={`text-[11px] sm:text-xs line-clamp-1 ${isSelected ? "text-white/90" : "text-[#3087ff]"
                             }`}
                         >
                           {ext.role}
@@ -346,7 +346,7 @@ export const FoundryWalkthrough: React.FC = () => {
                       <div
                         className={`pt-1.5 mt-1 border-t flex items-center justify-between text-[11px] font-bold ${isSelected
                             ? "border-white/20 text-white/95"
-                            : "border-[#3087ff]/30 text-[#3087ff]"
+                            : "border-[#3087ff] text-[#3087ff]"
                           }`}
                       >
                         <span className="flex items-center gap-1">
@@ -419,7 +419,7 @@ export const FoundryWalkthrough: React.FC = () => {
               </div>
 
               {/* Map Canvas Frame - mt-2.5 matches left cards mt-2.5, flex-1 ensures bottom alignment matches 4th card */}
-              <div className="relative w-full flex-1 min-h-[380px] mt-2.5 bg-[#3087ff]/5 border-2 border-[#3087ff] overflow-hidden flex flex-col items-center justify-center">
+              <div className="relative w-full flex-1 min-h-[380px] mt-2.5 bg-white border-2 border-[#3087ff] overflow-hidden flex flex-col items-center justify-center">
                 {/* CORNER RETICLES FOR INDUSTRIAL HUD FEEL */}
                 <div className="absolute top-2 left-2 w-3 h-3 border-t-2 border-l-2 border-[#3087ff] pointer-events-none z-20" />
                 <div className="absolute top-2 right-2 w-3 h-3 border-t-2 border-r-2 border-[#3087ff] pointer-events-none z-20" />
@@ -588,7 +588,7 @@ export const FoundryWalkthrough: React.FC = () => {
                   </div>
                 ) : (
                   /* MODE B: LIVE SATELLITE & STREET MAP (EMBEDDED GOOGLE MAPS) */
-                  <div className="relative w-full h-full bg-[#3087ff]/10">
+                  <div className="relative w-full h-full bg-white">
                     <iframe
                       title={`Interactive Location Map for ${activeYard.name}`}
                       src={`https://maps.google.com/maps?q=${encodeURIComponent(
@@ -617,7 +617,7 @@ export const FoundryWalkthrough: React.FC = () => {
           {/* ========================================================
               COMPREHENSIVE FACILITY INTELLIGENCE DOSSIER (4-GRID)
               ======================================================== */}
-          <div className="bg-[#3087ff]/5 border-2 border-[#3087ff] p-6 lg:p-8">
+          <div className="bg-white border-2 border-[#3087ff] p-6 lg:p-8">
             {/* Header of Dossier */}
             <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-4 pb-4 mb-6 border-b-2 border-[#3087ff]">
               <div>
@@ -634,7 +634,7 @@ export const FoundryWalkthrough: React.FC = () => {
                 <button
                   type="button"
                   onClick={() => handleCopyAddress(activeYard.address)}
-                  className="px-3.5 py-2 bg-white text-[#3087ff] hover:bg-[#3087ff]/30 border-2 border-[#3087ff] font-black text-xs uppercase tracking-wider transition-all flex items-center gap-1.5 cursor-pointer shadow-xs"
+                  className="px-3.5 py-2 bg-white text-[#3087ff] hover:bg-[#3087ff] hover:text-white border-2 border-[#3087ff] font-black text-xs uppercase tracking-wider transition-all flex items-center gap-1.5 cursor-pointer shadow-xs"
                 >
                   {copiedAddress ? (
                     <>
@@ -668,7 +668,7 @@ export const FoundryWalkthrough: React.FC = () => {
               {/* 1. Physical Location & Coordinates */}
               <div className="bg-white border-2 border-[#3087ff] p-4 flex flex-col justify-between">
                 <div>
-                  <div className="flex items-center gap-1.5 text-xs font-black uppercase text-[#3087ff] mb-2 pb-1.5 border-b border-[#3087ff]/30">
+                  <div className="flex items-center gap-1.5 text-xs font-black uppercase text-[#3087ff] mb-2 pb-1.5 border-b border-[#3087ff]">
                     <MapPin className="w-4 h-4 text-[#3087ff]" />
                     <span>Physical Yard Address</span>
                   </div>
@@ -676,8 +676,8 @@ export const FoundryWalkthrough: React.FC = () => {
                     {activeYard.address}
                   </p>
                 </div>
-                <div className="pt-2 border-t border-[#3087ff]/30">
-                  <span className="text-[11px] font-mono text-[#3087ff]/80 block">
+                <div className="pt-2 border-t border-[#3087ff]">
+                  <span className="text-[11px] font-mono text-[#3087ff] block">
                     Coordinates: {activeExtended.gps}
                   </span>
                 </div>
@@ -686,7 +686,7 @@ export const FoundryWalkthrough: React.FC = () => {
               {/* 2. Direct Communications & Dispatch Desk */}
               <div className="bg-white border-2 border-[#3087ff] p-4 flex flex-col justify-between">
                 <div>
-                  <div className="flex items-center gap-1.5 text-xs font-black uppercase text-[#3087ff] mb-2 pb-1.5 border-b border-[#3087ff]/30">
+                  <div className="flex items-center gap-1.5 text-xs font-black uppercase text-[#3087ff] mb-2 pb-1.5 border-b border-[#3087ff]">
                     <PhoneCall className="w-4 h-4 text-[#3087ff]" />
                     <span>Direct Dispatch Line</span>
                   </div>
@@ -703,7 +703,7 @@ export const FoundryWalkthrough: React.FC = () => {
                     {activeYard.dispatchEmail}
                   </a>
                 </div>
-                <div className="pt-2 border-t border-[#3087ff]/30">
+                <div className="pt-2 border-t border-[#3087ff]">
                   <span className="text-[11px] font-bold text-[#3087ff] block leading-tight">
                     {activeExtended.operatingHours}
                   </span>
@@ -713,20 +713,20 @@ export const FoundryWalkthrough: React.FC = () => {
               {/* 3. Rail Spur & Logistics Capability */}
               <div className="bg-white border-2 border-[#3087ff] p-4 flex flex-col justify-between">
                 <div>
-                  <div className="flex items-center gap-1.5 text-xs font-black uppercase text-[#3087ff] mb-2 pb-1.5 border-b border-[#3087ff]/30">
+                  <div className="flex items-center gap-1.5 text-xs font-black uppercase text-[#3087ff] mb-2 pb-1.5 border-b border-[#3087ff]">
                     <Train className="w-4 h-4 text-[#3087ff]" />
                     <span>Intermodal Rail Siding</span>
                   </div>
                   <p className="text-xs font-bold text-[#3087ff] leading-snug mb-2">
                     {activeExtended.furnaceOrSiding}
                   </p>
-                  <span className="text-xs text-[#3087ff]/90 block">
+                  <span className="text-xs text-[#3087ff] block">
                     Coverage: {activeYard.coverageRadius}
                   </span>
                 </div>
-                <div className="pt-2 border-t border-[#3087ff]/30 flex items-center justify-between text-xs font-black">
+                <div className="pt-2 border-t border-[#3087ff] flex items-center justify-between text-xs font-black">
                   <span className="text-[#3087ff]">Fulfillment:</span>
-                  <span className="text-white bg-[#3087ff]/20 px-2 py-0.5">
+                  <span className="text-white bg-[#3087ff] px-2 py-0.5">
                     {activeYard.transitHours}
                   </span>
                 </div>
@@ -735,24 +735,24 @@ export const FoundryWalkthrough: React.FC = () => {
               {/* 4. Staged Inventory & Jobsite Allocation */}
               <div className="bg-white border-2 border-[#3087ff] p-4 flex flex-col justify-between">
                 <div>
-                  <div className="flex items-center gap-1.5 text-xs font-black uppercase text-[#3087ff] mb-2 pb-1.5 border-b border-[#3087ff]/30">
+                  <div className="flex items-center gap-1.5 text-xs font-black uppercase text-[#3087ff] mb-2 pb-1.5 border-b border-[#3087ff]">
                     <Truck className="w-4 h-4 text-[#3087ff]" />
                     <span>Staged Yard Inventory</span>
                   </div>
                   <div className="grid grid-cols-2 gap-2 text-center mb-3">
-                    <div className="bg-[#3087ff]/5 p-1.5 border border-[#3087ff]/40">
+                    <div className="bg-white p-1.5 border border-[#3087ff]">
                       <span className="text-lg font-black text-[#3087ff] block">
                         {activeYard.inventoryFittingsTons} T
                       </span>
-                      <span className="text-[9px] font-bold text-[#3087ff]/75 uppercase">
+                      <span className="text-[9px] font-bold text-[#3087ff] uppercase">
                         Fittings
                       </span>
                     </div>
-                    <div className="bg-[#3087ff]/5 p-1.5 border border-[#3087ff]/40">
+                    <div className="bg-white p-1.5 border border-[#3087ff]">
                       <span className="text-lg font-black text-[#3087ff] block">
                         {activeYard.inventoryRestraintsUnits.toLocaleString()}
                       </span>
-                      <span className="text-[9px] font-bold text-[#3087ff]/75 uppercase">
+                      <span className="text-[9px] font-bold text-[#3087ff] uppercase">
                         Restraints
                       </span>
                     </div>

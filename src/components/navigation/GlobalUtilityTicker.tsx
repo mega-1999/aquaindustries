@@ -42,7 +42,7 @@ export const GlobalUtilityTicker: React.FC<GlobalUtilityTickerProps> = ({
   return (
     <aside
       aria-label="Live municipal specifications and quick actions"
-      className="bg-[#3087ff] border-b border-[#3087ff]/30 text-xs sm:text-sm text-white select-none relative z-50"
+      className="bg-[#3087ff] border-b border-[#3087ff] text-xs sm:text-sm text-white select-none relative z-50"
     >
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex items-center justify-between h-11 gap-4 overflow-hidden">
@@ -56,7 +56,7 @@ export const GlobalUtilityTicker: React.FC<GlobalUtilityTickerProps> = ({
             </div>
 
             {currentTime && (
-              <span className="hidden md:inline-block font-mono text-[11px] font-bold  bg-black/20 px-2 py-0.5 bg-white text-[#3087ff] border border-[#3087ff]/30 mr-3 shrink-0">
+              <span className="hidden md:inline-block font-mono text-[11px] font-bold  bg-black/20 px-2 py-0.5 bg-white text-[#3087ff] border border-[#3087ff] mr-3 shrink-0">
                 {currentTime}
               </span>
             )}

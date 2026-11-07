@@ -164,11 +164,11 @@ export const SamplingStationSpotlight: React.FC<
                     }
                   </span>
                 </div>
-                <p className="text-xs leading-relaxed text-[#3087ff]/90 font-medium">
+                <p className="text-xs leading-relaxed text-[#3087ff] font-medium">
                   {STATION_HOTSPOTS.find((h) => h.id === activeHotspot)?.desc}
                 </p>
-                <div className="mt-2 flex items-center justify-between border-t border-[#3087ff]/15 pt-1.5">
-                  <span className="text-[10px] text-[#3087ff]/70 font-bold uppercase">
+                <div className="mt-2 flex items-center justify-between border-t border-[#3087ff] pt-1.5">
+                  <span className="text-[10px] text-[#3087ff] font-bold uppercase">
                     Specification ID AQUA-WSS-2026 &bull; Point {activeHotspot}{" "}
                     of 4
                   </span>
@@ -205,11 +205,11 @@ export const SamplingStationSpotlight: React.FC<
                     }
                   </span>
                 </div>
-                <p className="text-xs leading-relaxed text-[#3087ff]/90 font-medium">
+                <p className="text-xs leading-relaxed text-[#3087ff] font-medium">
                   {STATION_HOTSPOTS.find((h) => h.id === activeHotspot)?.desc}
                 </p>
-                <div className="mt-2 flex items-center justify-between border-t border-[#3087ff]/15 pt-1.5">
-                  <span className="text-[10px] text-[#3087ff]/70 font-bold uppercase">
+                <div className="mt-2 flex items-center justify-between border-t border-[#3087ff] pt-1.5">
+                  <span className="text-[10px] text-[#3087ff] font-bold uppercase">
                     Specification ID AQUA-WSS-2026 &bull; Point {activeHotspot}{" "}
                     of 4
                   </span>
@@ -227,7 +227,7 @@ export const SamplingStationSpotlight: React.FC<
             <div className="bg-white border-4 border-[#3087ff] p-6 sm:p-10 shadow-2xl relative flex flex-col items-center justify-center text-[#3087ff] min-h-[440px] sm:min-h-[500px]">
               {/* Corner Serial & Standard Tag */}
               <div className="absolute top-4 left-4 z-10 flex flex-col gap-1">
-                <span className="text-xs font-bold text-[#3087ff]/80 uppercase tracking-wider">
+                <span className="text-xs font-bold text-[#3087ff] uppercase tracking-wider">
                   Specification ID
                 </span>
                 <span className="text-sm sm:text-base font-black text-[#3087ff]">
@@ -264,7 +264,7 @@ export const SamplingStationSpotlight: React.FC<
                         style={{ left: spot.x, top: spot.y }}
                         className={`absolute z-30 w-7 h-7 -translate-x-1/2 -translate-y-1/2 rounded-none border-2 flex items-center justify-center font-black text-xs shadow-xl transition-all hover:scale-125 cursor-pointer ${activeHotspot === spot.id
                             ? "bg-[#3087ff] text-white border-white scale-125 ring-4 ring-[#3087ff]"
-                            : "bg-white text-[#3087ff] border-[#3087ff] hover:bg-[#3087ff]/30"
+                            : "bg-white text-[#3087ff] border-[#3087ff] hover:bg-[#3087ff] hover:text-white"
                           }`}
                         title={spot.title}
                         aria-label={spot.title}
@@ -275,7 +275,7 @@ export const SamplingStationSpotlight: React.FC<
                   </div>
 
                   {/* Bottom Caption Strip */}
-                  <div className="w-full mt-4 pt-4 border-t border-[#3087ff]/20 flex flex-wrap items-center justify-between gap-3 text-xs sm:text-sm font-bold text-[#3087ff]">
+                  <div className="w-full mt-4 pt-4 border-t border-[#3087ff] flex flex-wrap items-center justify-between gap-3 text-xs sm:text-sm font-bold text-[#3087ff]">
                     <span className="flex items-center gap-1.5">
                       <CheckCircle2 className="w-4 h-4 text-[#3087ff]" />
                       100% Lead-Free Brass Waterway
@@ -296,7 +296,7 @@ export const SamplingStationSpotlight: React.FC<
                       onClick={() => setActiveMode("flow")}
                       className={`px-2.5 py-1 text-[11px] font-black uppercase rounded-none border transition-all cursor-pointer ${activeMode === "flow"
                           ? "bg-[#3087ff] text-white border-[#3087ff] shadow-sm"
-                          : "bg-white text-[#3087ff] border-[#3087ff] hover:bg-[#3087ff]/20"
+                          : "bg-white text-[#3087ff] border-[#3087ff] hover:bg-[#3087ff] hover:text-white"
                         }`}
                     >
                       Active Water Flow
@@ -306,7 +306,7 @@ export const SamplingStationSpotlight: React.FC<
                       onClick={() => setActiveMode("thermal")}
                       className={`px-2.5 py-1 text-[11px] font-black uppercase rounded-none border transition-all cursor-pointer ${activeMode === "thermal"
                           ? "bg-[#3087ff] text-white border-[#3087ff] shadow-sm"
-                          : "bg-white text-[#3087ff] border-[#3087ff] hover:bg-[#3087ff]/20"
+                          : "bg-white text-[#3087ff] border-[#3087ff] hover:bg-[#3087ff] hover:text-white"
                         }`}
                     >
                       -20°F Frost Defense
@@ -316,7 +316,7 @@ export const SamplingStationSpotlight: React.FC<
                       onClick={() => setActiveMode("pressure")}
                       className={`px-2.5 py-1 text-[11px] font-black uppercase rounded-none border transition-all cursor-pointer ${activeMode === "pressure"
                           ? "bg-[#3087ff] text-white border-[#3087ff] shadow-sm"
-                          : "bg-white text-[#3087ff] border-[#3087ff] hover:bg-[#3087ff]/20"
+                          : "bg-white text-[#3087ff] border-[#3087ff] hover:bg-[#3087ff] hover:text-white"
                         }`}
                     >
                       300 PSI Hydrostatic
@@ -440,7 +440,7 @@ export const SamplingStationSpotlight: React.FC<
                   </div>
 
                   {/* Telemetry Strip */}
-                  <div className="w-full flex items-center justify-between border-t border-[#3087ff]/20 pt-2 px-1 text-xs font-bold text-[#3087ff]">
+                  <div className="w-full flex items-center justify-between border-t border-[#3087ff] pt-2 px-1 text-xs font-bold text-[#3087ff]">
                     <span>
                       {activeMode === "flow"
                         ? "Sampling Stream: 4.2 GPM (EPA Lead/Copper Verified)"
@@ -448,7 +448,7 @@ export const SamplingStationSpotlight: React.FC<
                           ? "Frost Protection: -20°F Sub-Zero Stable"
                           : "Hydrostatic Seal: 300 PSI Hydro-Proof Tested"}
                     </span>
-                    <span className="bg-[#3087ff]/30 px-2 py-0.5 border border-[#3087ff]">
+                    <span className="bg-white px-2 py-0.5 border border-[#3087ff]">
                       Continuous Flow
                     </span>
                   </div>

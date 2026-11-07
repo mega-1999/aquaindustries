@@ -77,12 +77,12 @@ export const CertifiedMetricsBar: React.FC = () => {
                   </div>
                 </div>
 
-                <p className="text-xs text-[#3087ff]/90 leading-relaxed mt-2 font-normal">
+                <p className="text-xs text-[#3087ff] leading-relaxed mt-2 font-normal">
                   {item.description}
                 </p>
               </div>
 
-              <div className="mt-4 pt-3 border-t border-[#3087ff]/40 flex items-center justify-between text-xs text-[#3087ff]">
+              <div className="mt-4 pt-3 border-t border-[#3087ff] flex items-center justify-between text-xs text-[#3087ff]">
                 <span className="font-bold text-[#3087ff] whitespace-nowrap">
                   Aqua Verified
                 </span>

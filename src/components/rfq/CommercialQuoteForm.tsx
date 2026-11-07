@@ -147,12 +147,12 @@ export const CommercialQuoteForm: React.FC<CommercialQuoteFormProps> = ({
           {/* Form Column (8 cols) */}
           <div className="lg:col-span-8 bg-white border-2 border-[#3087ff] rounded-none p-6 sm:p-8 shadow-sm flex flex-col justify-between h-full">
             {/* Synchronized Top Header */}
-            <div className="flex flex-wrap items-center justify-between gap-3 pb-4 border-b-2 border-[#3087ff]/30 mb-6 min-h-[46px]">
+            <div className="flex flex-wrap items-center justify-between gap-3 pb-4 border-b-2 border-[#3087ff] mb-6 min-h-[46px]">
               <div className="flex items-center gap-2 text-sm sm:text-base font-extrabold uppercase tracking-tight text-[#3087ff]">
                 <FileCheck2 className="w-5 h-5 text-[#3087ff] shrink-0" />
                 <span>Project Material Take-Off &amp; Sizing Specs</span>
               </div>
-              <span className="text-xs font-bold text-white bg-[#3087ff]/20 border border-[#3087ff] px-2.5 py-1 uppercase tracking-wider">
+              <span className="text-xs font-bold text-white bg-[#3087ff] border border-[#3087ff] px-2.5 py-1 uppercase tracking-wider">
                 Direct Foundry Pricing
               </span>
             </div>
@@ -204,7 +204,7 @@ export const CommercialQuoteForm: React.FC<CommercialQuoteFormProps> = ({
                         onClick={() => setSelectedCategory(cat)}
                         className={`px-4 py-2.5 rounded-none text-sm font-bold border-2 transition-all whitespace-nowrap cursor-pointer ${selectedCategory === cat
                             ? "bg-[#3087ff] text-white border-[#3087ff] shadow-sm"
-                            : "bg-white text-[#3087ff] border-[#3087ff] hover:bg-[#3087ff]/20"
+                            : "bg-white text-[#3087ff] border-[#3087ff] hover:bg-[#3087ff] hover:text-white"
                           }`}
                       >
                         <span className="whitespace-nowrap">{cat}</span>
@@ -229,7 +229,7 @@ export const CommercialQuoteForm: React.FC<CommercialQuoteFormProps> = ({
                             onClick={() => toggleSize(size)}
                             className={`w-12 h-10 rounded-none text-sm font-bold border-2 transition-all cursor-pointer ${isSelected
                                 ? "bg-[#3087ff] text-white border-[#3087ff]"
-                                : "bg-white text-[#3087ff] border-[#3087ff] hover:bg-[#3087ff]/20"
+                                : "bg-white text-[#3087ff] border-[#3087ff] hover:bg-[#3087ff] hover:text-white"
                               }`}
                           >
                             {size}
@@ -299,7 +299,7 @@ export const CommercialQuoteForm: React.FC<CommercialQuoteFormProps> = ({
                 </div>
 
                 {/* 4. Company & Jobsite Details */}
-                <div className="space-y-4 pt-4 border-t-2 border-[#3087ff]/30">
+                <div className="space-y-4 pt-4 border-t-2 border-[#3087ff]">
                   <div className="text-sm sm:text-base font-bold uppercase tracking-wider text-[#3087ff] flex items-center gap-2">
                     <Building className="w-5 h-5 text-[#3087ff]" />
                     <span>3. Contractor &amp; Jobsite Destination</span>
@@ -322,7 +322,7 @@ export const CommercialQuoteForm: React.FC<CommercialQuoteFormProps> = ({
                           placeholder="e.g. Great Lakes Utility Contractors"
                           value={companyName}
                           onChange={(e) => setCompanyName(e.target.value)}
-                          className="w-full bg-white border-2 border-[#3087ff] text-[#3087ff] rounded-none pl-10 pr-3 py-2.5 text-sm sm:text-base font-bold focus:border-[#3087ff] focus:outline-none placeholder-[#3087ff]/40"
+                          className="w-full bg-white border-2 border-[#3087ff] text-[#3087ff] rounded-none pl-10 pr-3 py-2.5 text-sm sm:text-base font-bold focus:border-[#3087ff] focus:outline-none placeholder-[#3087ff]"
                         />
                       </div>
                     </div>
@@ -343,7 +343,7 @@ export const CommercialQuoteForm: React.FC<CommercialQuoteFormProps> = ({
                           placeholder="e.g. Dan Miller, Project Estimator"
                           value={contactName}
                           onChange={(e) => setContactName(e.target.value)}
-                          className="w-full bg-white border-2 border-[#3087ff] text-[#3087ff] rounded-none pl-10 pr-3 py-2.5 text-sm sm:text-base font-bold focus:border-[#3087ff] focus:outline-none placeholder-[#3087ff]/40"
+                          className="w-full bg-white border-2 border-[#3087ff] text-[#3087ff] rounded-none pl-10 pr-3 py-2.5 text-sm sm:text-base font-bold focus:border-[#3087ff] focus:outline-none placeholder-[#3087ff]"
                         />
                       </div>
                     </div>
@@ -364,7 +364,7 @@ export const CommercialQuoteForm: React.FC<CommercialQuoteFormProps> = ({
                           placeholder="dmiller@contracting.com"
                           value={email}
                           onChange={(e) => setEmail(e.target.value)}
-                          className="w-full bg-white border-2 border-[#3087ff] text-[#3087ff] rounded-none pl-10 pr-3 py-2.5 text-sm sm:text-base font-bold focus:border-[#3087ff] focus:outline-none placeholder-[#3087ff]/40"
+                          className="w-full bg-white border-2 border-[#3087ff] text-[#3087ff] rounded-none pl-10 pr-3 py-2.5 text-sm sm:text-base font-bold focus:border-[#3087ff] focus:outline-none placeholder-[#3087ff]"
                         />
                       </div>
                     </div>
@@ -385,7 +385,7 @@ export const CommercialQuoteForm: React.FC<CommercialQuoteFormProps> = ({
                           placeholder="(555) 014-2900"
                           value={phone}
                           onChange={(e) => setPhone(e.target.value)}
-                          className="w-full bg-white border-2 border-[#3087ff] text-[#3087ff] rounded-none pl-10 pr-3 py-2.5 text-sm sm:text-base font-bold focus:border-[#3087ff] focus:outline-none placeholder-[#3087ff]/40"
+                          className="w-full bg-white border-2 border-[#3087ff] text-[#3087ff] rounded-none pl-10 pr-3 py-2.5 text-sm sm:text-base font-bold focus:border-[#3087ff] focus:outline-none placeholder-[#3087ff]"
                         />
                       </div>
                     </div>
@@ -406,7 +406,7 @@ export const CommercialQuoteForm: React.FC<CommercialQuoteFormProps> = ({
                           placeholder="e.g. Chicago, IL 60638 (Jobsite or Yard address)"
                           value={deliveryLocation}
                           onChange={(e) => setDeliveryLocation(e.target.value)}
-                          className="w-full bg-white border-2 border-[#3087ff] text-[#3087ff] rounded-none pl-10 pr-3 py-2.5 text-sm sm:text-base font-bold focus:border-[#3087ff] focus:outline-none placeholder-[#3087ff]/40"
+                          className="w-full bg-white border-2 border-[#3087ff] text-[#3087ff] rounded-none pl-10 pr-3 py-2.5 text-sm sm:text-base font-bold focus:border-[#3087ff] focus:outline-none placeholder-[#3087ff]"
                         />
                       </div>
                     </div>
@@ -414,7 +414,7 @@ export const CommercialQuoteForm: React.FC<CommercialQuoteFormProps> = ({
                 </div>
 
                 {/* Submit Button & Assurance Strip */}
-                <div className="pt-4 border-t-2 border-[#3087ff]/30 mt-auto">
+                <div className="pt-4 border-t-2 border-[#3087ff] mt-auto">
                   <button
                     type="submit"
                     className="w-full py-4 px-8 bg-[#3087ff] hover:bg-[#3087ff] hover:text-white text-white font-extrabold rounded-none text-base border-2 border-[#3087ff] shadow-lg transition-all transform hover:-translate-y-0.5 active:translate-y-0 whitespace-nowrap flex items-center justify-center gap-2 cursor-pointer"
@@ -440,7 +440,7 @@ export const CommercialQuoteForm: React.FC<CommercialQuoteFormProps> = ({
           <div className="lg:col-span-4 bg-white border-2 border-[#3087ff] rounded-none p-6 sm:p-8 shadow-sm flex flex-col justify-between h-full text-[#3087ff]">
             <div className="flex-1 flex flex-col">
               {/* Synchronized Top Header */}
-              <div className="flex items-center justify-between pb-4 border-b-2 border-[#3087ff]/30 mb-6 min-h-[46px]">
+              <div className="flex items-center justify-between pb-4 border-b-2 border-[#3087ff] mb-6 min-h-[46px]">
                 <div className="flex items-center gap-2 text-sm sm:text-base font-extrabold uppercase tracking-tight text-[#3087ff]">
                   <Package className="w-5 h-5 text-[#3087ff] shrink-0" />
                   <span>Selected Quote Items</span>
@@ -459,7 +459,7 @@ export const CommercialQuoteForm: React.FC<CommercialQuoteFormProps> = ({
                     Clear All
                   </button>
                 ) : (
-                  <span className="text-[11px] font-bold text-[#3087ff]/70 uppercase tracking-wider">
+                  <span className="text-[11px] font-bold text-[#3087ff] uppercase tracking-wider">
                     Live Staging
                   </span>
                 )}
@@ -495,7 +495,7 @@ export const CommercialQuoteForm: React.FC<CommercialQuoteFormProps> = ({
                       <button
                         type="button"
                         onClick={() => onRemoveItem(item.id)}
-                        className="p-1.5 text-[#3087ff] hover:bg-[#3087ff]/20 rounded-none cursor-pointer"
+                        className="p-1.5 text-[#3087ff] hover:bg-[#3087ff] hover:text-white rounded-none cursor-pointer"
                         title="Remove item"
                       >
                         <Trash2 className="w-4 h-4" />
@@ -509,17 +509,17 @@ export const CommercialQuoteForm: React.FC<CommercialQuoteFormProps> = ({
               <div className="space-y-2 text-sm bg-white p-4 rounded-none border-2 border-[#3087ff] mb-4">
                 <div className="text-xs sm:text-sm uppercase tracking-wider text-[#3087ff] font-bold flex items-center justify-between">
                   <span>Order Summary</span>
-                  <span className="text-[10px] bg-[#3087ff]/20 border border-[#3087ff] px-2 py-0.5">
+                  <span className="text-[10px] bg-white border border-[#3087ff] px-2 py-0.5">
                     Live Params
                   </span>
                 </div>
-                <div className="flex justify-between border-b border-[#3087ff]/30 pb-2">
+                <div className="flex justify-between border-b border-[#3087ff] pb-2">
                   <span className="text-[#3087ff]">Category:</span>
                   <span className="text-[#3087ff] font-bold truncate max-w-[170px]">
                     {selectedCategory}
                   </span>
                 </div>
-                <div className="flex justify-between border-b border-[#3087ff]/30 pb-2">
+                <div className="flex justify-between border-b border-[#3087ff] pb-2">
                   <span className="text-[#3087ff]">Selected Sizes:</span>
                   <span className="text-[#3087ff] font-bold">
                     {selectedSizes.join(", ")}
@@ -559,7 +559,7 @@ export const CommercialQuoteForm: React.FC<CommercialQuoteFormProps> = ({
             </div>
 
             {/* Urgent Jobsite Dispatch Call Card - 100% Contained, Zero Overflow, matching bottom alignment */}
-            <div className="pt-4 border-t-2 border-[#3087ff]/30 mt-auto">
+            <div className="pt-4 border-t-2 border-[#3087ff] mt-auto">
               <div className="bg-[#3087ff] text-white p-3.5 sm:p-4 border-2 border-[#3087ff] rounded-none shadow-md flex flex-col items-center text-center gap-1.5">
                 <div className="flex items-center justify-center gap-1.5 text-xs font-black uppercase tracking-wider text-[#3087ff]">
                   <PhoneCall className="w-3.5 h-3.5 text-[#3087ff] shrink-0" />

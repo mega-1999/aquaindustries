@@ -347,7 +347,7 @@ const SideAdCard: React.FC<SideAdCardProps> = ({
       {/* Card Content Strip */}
       <div className="p-2 flex-1 flex flex-col justify-between">
         <div>
-          <div className="flex items-center gap-1 text-[9px] font-bold text-[#3087ff]/75 uppercase truncate mb-0.5">
+          <div className="flex items-center gap-1 text-[9px] font-bold text-[#3087ff] uppercase truncate mb-0.5">
             <span>{ad.standard}</span>
           </div>
 
@@ -355,13 +355,13 @@ const SideAdCard: React.FC<SideAdCardProps> = ({
             {ad.title}
           </h4>
 
-          <p className="text-[10px] text-[#3087ff]/80 leading-tight line-clamp-1 min-[1720px]:line-clamp-2 mt-0.5">
+          <p className="text-[10px] text-[#3087ff] leading-tight line-clamp-1 min-[1720px]:line-clamp-2 mt-0.5">
             {ad.description}
           </p>
         </div>
 
         {/* Action CTAs */}
-        <div className="mt-1.5 pt-1.5 border-t border-[#3087ff]/20 flex items-center gap-1">
+        <div className="mt-1.5 pt-1.5 border-t border-[#3087ff] flex items-center gap-1">
           <button
             type="button"
             onClick={() => onPlay(ad)}
@@ -589,7 +589,7 @@ export const VerticalSideVideoAds: React.FC<VerticalSideVideoAdsProps> = ({
         <div className="fixed inset-0 z-50 flex">
           <button
             type="button"
-            className="fixed inset-0 bg-[#3087ff]/75 backdrop-blur-xs cursor-default w-full h-full border-0"
+            className="fixed inset-0 bg-black/80 backdrop-blur-xs cursor-default w-full h-full border-0"
             onClick={() => setLeftDrawerOpen(false)}
             aria-label="Close Left Video Ads"
           />
@@ -602,7 +602,7 @@ export const VerticalSideVideoAds: React.FC<VerticalSideVideoAdsProps> = ({
                 <button
                   type="button"
                   onClick={() => setLeftDrawerOpen(false)}
-                  className="p-1 text-[#3087ff] hover:bg-[#3087ff]/30 cursor-pointer"
+                  className="p-1 text-[#3087ff] hover:bg-[#3087ff] hover:text-white cursor-pointer"
                 >
                   <X className="w-4 h-4" />
                 </button>
@@ -628,7 +628,7 @@ export const VerticalSideVideoAds: React.FC<VerticalSideVideoAdsProps> = ({
         <div className="fixed inset-0 z-50 flex justify-end">
           <button
             type="button"
-            className="fixed inset-0 bg-[#3087ff]/75 backdrop-blur-xs cursor-default w-full h-full border-0"
+            className="fixed inset-0 bg-black/80 backdrop-blur-xs cursor-default w-full h-full border-0"
             onClick={() => setRightDrawerOpen(false)}
             aria-label="Close Right Video Ads"
           />
@@ -641,7 +641,7 @@ export const VerticalSideVideoAds: React.FC<VerticalSideVideoAdsProps> = ({
                 <button
                   type="button"
                   onClick={() => setRightDrawerOpen(false)}
-                  className="p-1 text-[#3087ff] hover:bg-[#3087ff]/30 cursor-pointer"
+                  className="p-1 text-[#3087ff] hover:bg-[#3087ff] hover:text-white cursor-pointer"
                 >
                   <X className="w-4 h-4" />
                 </button>
@@ -668,7 +668,7 @@ export const VerticalSideVideoAds: React.FC<VerticalSideVideoAdsProps> = ({
         <div className="fixed inset-0 z-60 flex items-center justify-center p-4 sm:p-6">
           <button
             type="button"
-            className="fixed inset-0 bg-[#3087ff]/85 backdrop-blur-sm cursor-default w-full h-full border-0"
+            className="fixed inset-0 bg-black/80 backdrop-blur-sm cursor-default w-full h-full border-0"
             onClick={() => setActiveVideoModal(null)}
             aria-label="Close Video Player"
           />
@@ -687,7 +687,7 @@ export const VerticalSideVideoAds: React.FC<VerticalSideVideoAdsProps> = ({
               <button
                 type="button"
                 onClick={() => setActiveVideoModal(null)}
-                className="p-1 text-[#3087ff] hover:bg-[#3087ff]/20 border border-[#3087ff] cursor-pointer"
+                className="p-1 text-[#3087ff] hover:bg-[#3087ff] hover:text-white border border-[#3087ff] cursor-pointer"
                 aria-label="Close Modal"
               >
                 <X className="w-5 h-5" />
@@ -712,22 +712,22 @@ export const VerticalSideVideoAds: React.FC<VerticalSideVideoAdsProps> = ({
             </div>
 
             {/* Video Specifications & Overview */}
-            <div className="mt-4 pt-3 border-t border-[#3087ff]/20">
+            <div className="mt-4 pt-3 border-t border-[#3087ff]">
               <div className="flex items-center justify-between gap-2 mb-2">
                 <span className="text-xs font-bold text-[#3087ff] uppercase">
                   Standard: {activeVideoModal.standard}
                 </span>
-                <span className="text-xs bg-[#3087ff]/30 px-2 py-0.5 font-extrabold text-[#3087ff] border border-[#3087ff]">
+                <span className="text-xs bg-white px-2 py-0.5 font-extrabold text-[#3087ff] border border-[#3087ff]">
                   Duration: {activeVideoModal.duration}
                 </span>
               </div>
-              <p className="text-xs sm:text-sm text-[#3087ff]/90 font-medium leading-relaxed">
+              <p className="text-xs sm:text-sm text-[#3087ff] font-medium leading-relaxed">
                 {activeVideoModal.description}
               </p>
             </div>
 
             {/* Action Buttons */}
-            <div className="mt-4 pt-3 border-t-2 border-[#3087ff]/20 flex flex-col sm:flex-row gap-3">
+            <div className="mt-4 pt-3 border-t-2 border-[#3087ff] flex flex-col sm:flex-row gap-3">
               <button
                 type="button"
                 onClick={() => {

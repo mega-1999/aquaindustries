@@ -155,16 +155,16 @@ export default function Home() {
         <CertifiedMetricsBar />
 
         {/* Section 4: Civil Call to Action (Soleno call_to_action split pattern) */}
-        <CivilCallToAction
+        {/* <CivilCallToAction
           onExploreCatalog={() => handleSelectProductCategory("all")}
           onRequestQuote={() => {
             const el = document.getElementById("quote-builder");
             if (el) el.scrollIntoView({ behavior: "smooth" });
           }}
-        />
+        /> */}
 
         {/* Section 4: Civil Sector Interactive Tabs (Soleno mastering_water pattern) */}
-        <MasteringInfrastructureTabs />
+        {/* <MasteringInfrastructureTabs /> */}
 
         {/* Section 5: Flagship Engineered Products Showcase (Soleno other_drainage 4-card pattern - Blue #3087ff - Alternating) */}
         <SolenoFlagshipProducts
@@ -210,15 +210,15 @@ export default function Home() {
         />
 
         {/* Section 6: Engineering Submittal & Cut Sheet Library (Soleno ressources_single carousel pattern) */}
-        <EngineeringSubmittalLibrary
+        {/* <EngineeringSubmittalLibrary
           onPreviewSubmittal={handlePreviewSubmittalDoc}
-        />
+        /> */}
 
         {/* Section 7: Soleno-Cloned Municipal Infrastructure Projects & Case Studies Showcase */}
-        <SolenoProjectsShowcase
+        {/* <SolenoProjectsShowcase
           onAddToRfq={handleAddToRfq}
           onPreviewSubmittal={(product) => setSubmittalModalProduct(product)}
-        />
+        /> */}
 
         {/* Section 8: Waterworks Video Demonstrations & Field Proofs (Soleno video pattern - Blue #3087ff - Alternating) */}
         <SolenoVideoShowcase
@@ -227,23 +227,23 @@ export default function Home() {
         />
 
         {/* Section 9: Interactive Thrust Restraint Calculator (Civil Engineering Field Tool - White #FFFFFF - Alternating) */}
-        <EngineeringThrustCalculator />
+        {/* <EngineeringThrustCalculator /> */}
 
         {/* Section 9: Real Foundry & Yard Walkthrough (Physical Process & Quality Control) */}
-        <FoundryWalkthrough />
+        {/* <FoundryWalkthrough /> */}
 
         {/* Section 10: Domestic Standards & Testing Integrity (Soleno mission pattern) */}
-        <DomesticStandards />
+        {/* <DomesticStandards /> */}
 
         {/* Section 11: Clear Jobsite & Order Policies (Honest & Direct Insurance Terms) */}
-        <ClearJobsitePolicies />
+        {/* <ClearJobsitePolicies /> */}
 
         {/* Section 12: Commercial Quote Request & Submittal Builder (Soleno start project pattern) */}
-        <CommercialQuoteForm
+        {/* <CommercialQuoteForm
           rfqItems={rfqItems}
           onRemoveItem={handleRemoveRfqItem}
           onClearItems={handleClearRfqItems}
-        />
+        /> */}
       </main>
 
       {/* Section 13: Footer & Company Directory (24/7 Dispatch Hotline & Yard Directory) */}
