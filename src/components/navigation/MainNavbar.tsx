@@ -111,8 +111,8 @@ export const MainNavbar: React.FC<MainNavbarProps> = ({
               <button
                 type="button"
                 className={`inline-flex items-center gap-1 px-2.5 2xl:px-3 py-2 rounded-none transition-colors whitespace-nowrap ${activeMenu === "fittings"
-                    ? "text-white bg-[#3087ff]"
-                    : "text-[#3087ff] hover:bg-[#3087ff]/20"
+                    ? "text-white bg-[#3087ff] font-bold hover:font-black hover:text-white"
+                    : "text-[#3087ff] hover:bg-[#3087ff]/20 font-bold"
                   }`}
               >
                 <span className="whitespace-nowrap">Fittings</span>
@@ -136,10 +136,10 @@ export const MainNavbar: React.FC<MainNavbarProps> = ({
                           }
                           className="p-3 rounded-none hover:bg-[#3087ff] hover:text-white border border-[#3087ff] transition-all group block text-[#3087ff]"
                         >
-                          <div className="font-extrabold text-sm mb-1 group-hover:text-[#3087ff] leading-tight">
+                          <div className="font-bold text-sm mb-1 group-hover:text-white group-hover:font-black leading-tight">
                             C153 Compact MJ Fittings
                           </div>
-                          <p className="text-xs sm:text-[13px] leading-relaxed group-hover:text-white font-medium">
+                          <p className="text-xs sm:text-[13px] leading-relaxed group-hover:text-white group-hover:font-bold font-medium">
                             2&quot; to 64&quot; MJ bends, tees, and reducers.
                             350 PSI rated.
                           </p>
@@ -152,10 +152,10 @@ export const MainNavbar: React.FC<MainNavbarProps> = ({
                           }
                           className="p-3 rounded-none hover:bg-[#3087ff] hover:text-white border border-[#3087ff] transition-all group block text-[#3087ff]"
                         >
-                          <div className="font-extrabold text-sm mb-1 group-hover:text-[#3087ff] leading-tight">
+                          <div className="font-bold text-sm mb-1 group-hover:text-white group-hover:font-black leading-tight">
                             C110 Full Body MJ Fittings
                           </div>
-                          <p className="text-xs sm:text-[13px] leading-relaxed group-hover:text-white font-medium">
+                          <p className="text-xs sm:text-[13px] leading-relaxed group-hover:text-white group-hover:font-bold font-medium">
                             Heavy full-body branch tees &amp; crosses for
                             high-surge mains.
                           </p>
@@ -168,10 +168,10 @@ export const MainNavbar: React.FC<MainNavbarProps> = ({
                           }
                           className="p-3 rounded-none hover:bg-[#3087ff] hover:text-white border border-[#3087ff] transition-all group block text-[#3087ff]"
                         >
-                          <div className="font-extrabold text-sm mb-1 group-hover:text-[#3087ff] leading-tight">
+                          <div className="font-bold text-sm mb-1 group-hover:text-white group-hover:font-black leading-tight">
                             C110 Flange Fittings
                           </div>
-                          <p className="text-xs sm:text-[13px] leading-relaxed group-hover:text-white font-medium">
+                          <p className="text-xs sm:text-[13px] leading-relaxed group-hover:text-white group-hover:font-bold font-medium">
                             Class 125 &amp; 250 flanged spools &amp; reducers
                             for pump stations.
                           </p>
@@ -184,10 +184,10 @@ export const MainNavbar: React.FC<MainNavbarProps> = ({
                           }
                           className="p-3 rounded-none hover:bg-[#3087ff] hover:text-white border border-[#3087ff] transition-all group block text-[#3087ff]"
                         >
-                          <div className="font-extrabold text-sm mb-1 group-hover:text-[#3087ff] leading-tight">
+                          <div className="font-bold text-sm mb-1 group-hover:text-white group-hover:font-black leading-tight">
                             C153 Push-On Fittings
                           </div>
-                          <p className="text-xs sm:text-[13px] leading-relaxed group-hover:text-white font-medium">
+                          <p className="text-xs sm:text-[13px] leading-relaxed group-hover:text-white group-hover:font-bold font-medium">
                             Tyton-compatible socket fittings for rapid trench
                             assembly.
                           </p>
@@ -196,13 +196,13 @@ export const MainNavbar: React.FC<MainNavbarProps> = ({
 
                       <div className="col-span-4 bg-[#3087ff] text-white border-2 border-[#3087ff] rounded-none p-4 flex flex-col justify-between">
                         <div>
-                          <span className="text-xs font-bold uppercase tracking-wider text-white bg-[#3087ff] px-2 py-0.5 rounded-none whitespace-nowrap">
+                          <span className="text-xs font-bold uppercase tracking-wider text-white bg-white/20 px-2 py-0.5 rounded-none whitespace-nowrap">
                             Foundry Certified
                           </span>
                           <h4 className="font-extrabold text-white text-sm sm:text-base mt-2.5 mb-1">
                             Grade 65-45-12
                           </h4>
-                          <p className="text-xs text-white/95 leading-relaxed font-medium">
+                          <p className="text-xs text-white leading-relaxed font-medium">
                             Certified ductile iron proof-tested to 500 PSI
                             hydrostatic pressure.
                           </p>
@@ -212,7 +212,7 @@ export const MainNavbar: React.FC<MainNavbarProps> = ({
                           onClick={() =>
                             handleNavClick("#product-matrix", "fittings")
                           }
-                          className="inline-flex items-center gap-1.5 text-xs sm:text-sm font-bold text-[#3087ff] hover:text-white mt-3 whitespace-nowrap"
+                          className="inline-flex items-center gap-1.5 text-xs sm:text-sm font-bold text-white hover:text-white hover:font-black mt-3 whitespace-nowrap"
                         >
                           <span>All Fittings</span>
                           <ArrowRight className="w-3.5 h-3.5" />
@@ -233,8 +233,8 @@ export const MainNavbar: React.FC<MainNavbarProps> = ({
               <button
                 type="button"
                 className={`inline-flex items-center gap-1 px-2.5 2xl:px-3 py-2 rounded-none transition-colors whitespace-nowrap ${activeMenu === "restraints"
-                    ? "text-white bg-[#3087ff]"
-                    : "text-[#3087ff] hover:bg-[#3087ff]/20"
+                    ? "text-white bg-[#3087ff] font-bold hover:font-black hover:text-white"
+                    : "text-[#3087ff] hover:bg-[#3087ff]/20 font-bold"
                   }`}
               >
                 <span className="whitespace-nowrap">Restraints</span>
@@ -256,10 +256,10 @@ export const MainNavbar: React.FC<MainNavbarProps> = ({
                       }
                       className="block p-2.5 rounded-none hover:bg-[#3087ff] hover:text-white transition-colors group"
                     >
-                      <div className="font-extrabold text-sm leading-tight">
+                      <div className="font-bold text-sm leading-tight group-hover:text-white group-hover:font-black">
                         ULTRA PVC Restraints
                       </div>
-                      <div className="text-xs text-[#3087ff] group-hover:text-white mt-1 font-medium leading-relaxed">
+                      <div className="text-xs text-[#3087ff] group-hover:text-white group-hover:font-bold mt-1 font-medium leading-relaxed">
                         Highest certified pressure rating for C900 PVC.
                       </div>
                     </a>
@@ -270,10 +270,10 @@ export const MainNavbar: React.FC<MainNavbarProps> = ({
                       }
                       className="block p-2.5 rounded-none hover:bg-[#3087ff] hover:text-white transition-colors group"
                     >
-                      <div className="font-extrabold text-sm leading-tight">
+                      <div className="font-bold text-sm leading-tight group-hover:text-white group-hover:font-black">
                         Series 3000 Wedge-Action Glands
                       </div>
-                      <div className="text-xs text-[#3087ff] group-hover:text-white mt-1 font-medium leading-relaxed">
+                      <div className="text-xs text-[#3087ff] group-hover:text-white group-hover:font-bold mt-1 font-medium leading-relaxed">
                         For Ductile Iron &amp; PVC with auto-torque screws.
                       </div>
                     </a>
@@ -284,10 +284,10 @@ export const MainNavbar: React.FC<MainNavbarProps> = ({
                       }
                       className="block p-2.5 rounded-none hover:bg-[#3087ff] hover:text-white transition-colors group"
                     >
-                      <div className="font-extrabold text-sm leading-tight">
+                      <div className="font-bold text-sm leading-tight group-hover:text-white group-hover:font-black">
                         Series 1500 &amp; 1900 Harnesses
                       </div>
-                      <div className="text-xs text-[#3087ff] group-hover:text-white mt-1 font-medium leading-relaxed">
+                      <div className="text-xs text-[#3087ff] group-hover:text-white group-hover:font-bold mt-1 font-medium leading-relaxed">
                         Bell harness tie-rods for existing push-on joints.
                       </div>
                     </a>
@@ -298,10 +298,10 @@ export const MainNavbar: React.FC<MainNavbarProps> = ({
                       }
                       className="block p-2.5 rounded-none hover:bg-[#3087ff] hover:text-white transition-colors group"
                     >
-                      <div className="font-extrabold text-sm leading-tight">
+                      <div className="font-bold text-sm leading-tight group-hover:text-white group-hover:font-black">
                         Series 2100 Split MJ Restraints
                       </div>
-                      <div className="text-xs text-[#3087ff] group-hover:text-white mt-1 font-medium leading-relaxed">
+                      <div className="text-xs text-[#3087ff] group-hover:text-white group-hover:font-bold mt-1 font-medium leading-relaxed">
                         Two-piece retrofit restraint for live or existing lines.
                       </div>
                     </a>
@@ -319,8 +319,8 @@ export const MainNavbar: React.FC<MainNavbarProps> = ({
               <button
                 type="button"
                 className={`inline-flex items-center gap-1 px-2.5 2xl:px-3 py-2 rounded-none transition-colors whitespace-nowrap ${activeMenu === "castings"
-                    ? "text-white bg-[#3087ff]"
-                    : "text-[#3087ff] hover:bg-[#3087ff]/20"
+                    ? "text-white bg-[#3087ff] font-bold hover:font-black hover:text-white"
+                    : "text-[#3087ff] hover:bg-[#3087ff]/20 font-bold"
                   }`}
               >
                 <span className="whitespace-nowrap">Castings</span>
@@ -342,10 +342,10 @@ export const MainNavbar: React.FC<MainNavbarProps> = ({
                       }
                       className="block p-2.5 rounded-none hover:bg-[#3087ff] hover:text-white transition-colors group"
                     >
-                      <div className="font-extrabold text-sm leading-tight">
+                      <div className="font-bold text-sm leading-tight group-hover:text-white group-hover:font-black">
                         AASHTO M306 Manhole Covers
                       </div>
-                      <div className="text-xs text-[#3087ff] group-hover:text-white mt-1 font-medium leading-relaxed">
+                      <div className="text-xs text-[#3087ff] group-hover:text-white group-hover:font-bold mt-1 font-medium leading-relaxed">
                         40,000 lb proof-load machined heavy traffic lids.
                       </div>
                     </a>
@@ -354,13 +354,13 @@ export const MainNavbar: React.FC<MainNavbarProps> = ({
                       onClick={() => handleNavClick("#trash-racks")}
                       className="block p-2.5 rounded-none hover:bg-[#3087ff] hover:text-white transition-colors group bg-[#3087ff]/10 border-l-2 border-[#3087ff]"
                     >
-                      <div className="font-extrabold text-sm leading-tight flex items-center justify-between">
+                      <div className="font-bold text-sm leading-tight flex items-center justify-between group-hover:text-white group-hover:font-black">
                         <span>Trash Racks</span>
                         <span className="text-[9px] bg-[#3087ff] group-hover:bg-white text-white group-hover:text-[#3087ff] px-1.5 py-0.2 font-mono font-black">
                           FEATURED
                         </span>
                       </div>
-                      <div className="text-xs text-[#3087ff] group-hover:text-white mt-1 font-medium leading-relaxed">
+                      <div className="text-xs text-[#3087ff] group-hover:text-white group-hover:font-bold mt-1 font-medium leading-relaxed">
                         360° pyramidal anti-vortex risers &amp; inclined
                         self-cleaning screens.
                       </div>
@@ -370,13 +370,13 @@ export const MainNavbar: React.FC<MainNavbarProps> = ({
                       onClick={() => handleNavClick("#pipe-grates")}
                       className="block p-2.5 rounded-none hover:bg-[#3087ff] hover:text-white transition-colors group border-l-2 border-[#3087ff] pl-3"
                     >
-                      <div className="font-extrabold text-sm leading-tight flex items-center justify-between">
+                      <div className="font-bold text-sm leading-tight flex items-center justify-between group-hover:text-white group-hover:font-black">
                         <span>Pipe Grates</span>
                         <span className="text-[9px] bg-[#3087ff] group-hover:bg-white text-white group-hover:text-[#3087ff] px-1.5 py-0.2 font-mono font-black">
                           SIMULATOR
                         </span>
                       </div>
-                      <div className="text-xs text-[#3087ff] group-hover:text-white mt-1 font-medium leading-relaxed">
+                      <div className="text-xs text-[#3087ff] group-hover:text-white group-hover:font-bold mt-1 font-medium leading-relaxed">
                         Hinged cleanout end grates &amp; 4:1 highway traversable
                         safety slopes.
                       </div>
@@ -388,10 +388,10 @@ export const MainNavbar: React.FC<MainNavbarProps> = ({
                       }
                       className="block p-2.5 rounded-none hover:bg-[#3087ff] hover:text-white transition-colors group"
                     >
-                      <div className="font-extrabold text-sm leading-tight">
+                      <div className="font-bold text-sm leading-tight group-hover:text-white group-hover:font-black">
                         Drainage Grates &amp; Curb Inlets
                       </div>
-                      <div className="text-xs text-[#3087ff] group-hover:text-white mt-1 font-medium leading-relaxed">
+                      <div className="text-xs text-[#3087ff] group-hover:text-white group-hover:font-bold mt-1 font-medium leading-relaxed">
                         Highway vane grates and bicycle-safe catch basin hoods.
                       </div>
                     </a>
@@ -402,10 +402,10 @@ export const MainNavbar: React.FC<MainNavbarProps> = ({
                       }
                       className="block p-2.5 rounded-none hover:bg-[#3087ff] hover:text-white transition-colors group"
                     >
-                      <div className="font-extrabold text-sm leading-tight">
+                      <div className="font-bold text-sm leading-tight group-hover:text-white group-hover:font-black">
                         Trench Grates &amp; Warning Plates
                       </div>
-                      <div className="text-xs text-[#3087ff] group-hover:text-white mt-1 font-medium leading-relaxed">
+                      <div className="text-xs text-[#3087ff] group-hover:text-white group-hover:font-bold mt-1 font-medium leading-relaxed">
                         ADA heel-proof grates &amp; truncated dome tiles.
                       </div>
                     </a>
@@ -416,10 +416,10 @@ export const MainNavbar: React.FC<MainNavbarProps> = ({
                       }
                       className="block p-2.5 rounded-none hover:bg-[#3087ff] hover:text-white transition-colors group"
                     >
-                      <div className="font-extrabold text-sm leading-tight">
+                      <div className="font-bold text-sm leading-tight group-hover:text-white group-hover:font-black">
                         Valve &amp; Meter Service Boxes
                       </div>
-                      <div className="text-xs text-[#3087ff] group-hover:text-white mt-1 font-medium leading-relaxed">
+                      <div className="text-xs text-[#3087ff] group-hover:text-white group-hover:font-bold mt-1 font-medium leading-relaxed">
                         Screw &amp; slip adjustable boxes &amp; extension rings.
                       </div>
                     </a>
@@ -437,8 +437,8 @@ export const MainNavbar: React.FC<MainNavbarProps> = ({
               <button
                 type="button"
                 className={`inline-flex items-center gap-1 px-2.5 2xl:px-3 py-2 rounded-none transition-colors whitespace-nowrap ${activeMenu === "tools"
-                    ? "text-white bg-[#3087ff]"
-                    : "text-[#3087ff] hover:bg-[#3087ff]/20"
+                    ? "text-white bg-[#3087ff] font-bold hover:font-black hover:text-white"
+                    : "text-[#3087ff] hover:bg-[#3087ff]/20 font-bold"
                   }`}
               >
                 <span className="whitespace-nowrap">Tools</span>
@@ -460,13 +460,13 @@ export const MainNavbar: React.FC<MainNavbarProps> = ({
                     >
                       <Calculator className="w-4 h-4 text-[#3087ff] group-hover:text-white shrink-0 mt-0.5" />
                       <div>
-                        <div className="font-extrabold text-sm mb-0.5 leading-tight flex items-center gap-1.5">
+                        <div className="font-bold text-sm mb-0.5 leading-tight flex items-center gap-1.5 group-hover:text-white group-hover:font-black">
                           <span>Thrust Calculator</span>
-                          <span className="px-2 py-0.5 rounded-none bg-[#3087ff] text-white text-xs font-bold whitespace-nowrap">
+                          <span className="px-2 py-0.5 rounded-none bg-[#3087ff] group-hover:bg-white text-white group-hover:text-[#3087ff] text-xs font-bold whitespace-nowrap">
                             Live
                           </span>
                         </div>
-                        <div className="text-xs text-[#3087ff] group-hover:text-white font-medium leading-relaxed">
+                        <div className="text-xs text-[#3087ff] group-hover:text-white group-hover:font-bold font-medium leading-relaxed">
                           Calculate restrained footage per AWWA C600.
                         </div>
                       </div>
@@ -479,10 +479,10 @@ export const MainNavbar: React.FC<MainNavbarProps> = ({
                     >
                       <FileText className="w-4 h-4 text-[#3087ff] group-hover:text-white shrink-0 mt-0.5" />
                       <div>
-                        <div className="font-extrabold text-sm mb-0.5 leading-tight">
+                        <div className="font-bold text-sm mb-0.5 leading-tight group-hover:text-white group-hover:font-black">
                           Submittal Package Builder
                         </div>
-                        <div className="text-xs text-[#3087ff] group-hover:text-white font-medium leading-relaxed">
+                        <div className="text-xs text-[#3087ff] group-hover:text-white group-hover:font-bold font-medium leading-relaxed">
                           Compile cut sheets, MTR records, and DWGs.
                         </div>
                       </div>
@@ -495,10 +495,10 @@ export const MainNavbar: React.FC<MainNavbarProps> = ({
                     >
                       <Shield className="w-4 h-4 text-[#3087ff] group-hover:text-white shrink-0 mt-0.5" />
                       <div>
-                        <div className="font-extrabold text-sm mb-0.5 leading-tight">
+                        <div className="font-bold text-sm mb-0.5 leading-tight group-hover:text-white group-hover:font-black">
                           Linings &amp; Coating Specs
                         </div>
-                        <div className="text-xs text-[#3087ff] group-hover:text-white font-medium leading-relaxed">
+                        <div className="text-xs text-[#3087ff] group-hover:text-white group-hover:font-bold font-medium leading-relaxed">
                           AWWA C104 cement &amp; C116 fusion epoxy.
                         </div>
                       </div>
@@ -528,7 +528,7 @@ export const MainNavbar: React.FC<MainNavbarProps> = ({
               <img
                 src="/images/AI_Waterdrop.png"
                 alt="Aqua Industries"
-                className="h-14 sm:h-16 lg:h-20 w-auto object-contain group-hover:scale-105 transition-transform duration-200 shrink-0 filter drop-shadow-xs"
+                className="h-18 24:h-30 lg:h-36 w-auto object-contain group-hover:scale-105 transition-transform duration-200 shrink-0 filter drop-shadow-xs"
               />
             </a>
           </div>
@@ -551,8 +551,8 @@ export const MainNavbar: React.FC<MainNavbarProps> = ({
                         activeMenu === "user-menu" ? null : "user-menu",
                       );
                     }}
-                    className={`inline-flex items-center gap-2 px-3 py-2 text-xs 2xl:text-sm font-black transition-all whitespace-nowrap border-2 rounded-none shadow-xs cursor-pointer ${activeMenu === "user-menu"
-                        ? "bg-[#3087ff] text-white border-[#3087ff]"
+                    className={`inline-flex items-center gap-2 px-3 py-2 text-xs 2xl:text-sm font-bold transition-all whitespace-nowrap border-2 rounded-none shadow-xs cursor-pointer ${activeMenu === "user-menu"
+                        ? "bg-[#3087ff] text-white border-[#3087ff] hover:text-white hover:font-black"
                         : "bg-white text-[#3087ff] hover:bg-[#3087ff]/20 border-[#3087ff]"
                       }`}
                     aria-label="User Account Menu"
@@ -588,10 +588,10 @@ export const MainNavbar: React.FC<MainNavbarProps> = ({
                           onClick={() => {
                             setActiveMenu(null);
                           }}
-                          className="w-full text-left flex items-center gap-2.5 px-3 py-2.5 hover:bg-[#3087ff] hover:text-white transition-colors font-bold text-xs uppercase tracking-wider group cursor-pointer rounded-none"
+                          className="w-full text-left flex items-center gap-2.5 px-3 py-2.5 hover:bg-[#3087ff] hover:text-white transition-colors font-bold hover:font-black text-xs uppercase tracking-wider group cursor-pointer rounded-none"
                         >
                           <User className="w-4 h-4 text-[#3087ff] group-hover:text-white shrink-0" />
-                          <span>Profile Dashboard</span>
+                          <span className="group-hover:text-white group-hover:font-black">Profile Dashboard</span>
                         </Link>
 
                         {/* 2. Account Settings Link */}
@@ -600,10 +600,10 @@ export const MainNavbar: React.FC<MainNavbarProps> = ({
                           onClick={() => {
                             setActiveMenu(null);
                           }}
-                          className="w-full text-left flex items-center gap-2.5 px-3 py-2.5 hover:bg-[#3087ff] hover:text-white transition-colors font-bold text-xs uppercase tracking-wider group cursor-pointer rounded-none"
+                          className="w-full text-left flex items-center gap-2.5 px-3 py-2.5 hover:bg-[#3087ff] hover:text-white transition-colors font-bold hover:font-black text-xs uppercase tracking-wider group cursor-pointer rounded-none"
                         >
                           <Settings className="w-4 h-4 text-[#3087ff] group-hover:text-white shrink-0" />
-                          <span>Account Settings</span>
+                          <span className="group-hover:text-white group-hover:font-black">Account Settings</span>
                         </Link>
 
                         {/* 3. Approvals Desk Link (If Super Admin) */}
@@ -646,9 +646,9 @@ export const MainNavbar: React.FC<MainNavbarProps> = ({
             {/* Primary CTA: Request a Job Quote */}
             <a
               href="#quote-form"
-              className="inline-flex items-center gap-1.5 px-4 2xl:px-5 py-2 text-xs 2xl:text-sm font-extrabold text-white bg-[#3087ff] hover:bg-[#3087ff] hover:text-white border-2 border-[#3087ff] rounded-none shadow-md shadow-[#3087ff]/30 transition-all transform hover:-translate-y-0.5 active:translate-y-0 whitespace-nowrap"
+              className="inline-flex items-center gap-1.5 px-4 2xl:px-5 py-2 text-xs 2xl:text-sm font-bold hover:font-black text-white hover:text-white bg-[#3087ff] hover:bg-[#3087ff] border-2 border-white rounded-none shadow-md shadow-[#3087ff]/30 transition-all transform hover:-translate-y-0.5 active:translate-y-0 whitespace-nowrap"
             >
-              <FileText className="w-4 h-4 shrink-0" />
+              <FileText className="w-4 h-4 shrink-0 text-white" />
               <span className="whitespace-nowrap">Request Quote</span>
             </a>
 
@@ -667,7 +667,7 @@ export const MainNavbar: React.FC<MainNavbarProps> = ({
           <div className="flex items-center gap-2 xl:hidden shrink-0">
             <a
               href="#quote-form"
-              className="inline-flex items-center gap-1.5 px-3.5 py-2 text-sm font-bold text-white bg-[#3087ff] hover:bg-[#3087ff] hover:text-white rounded-none shadow-sm whitespace-nowrap border border-[#3087ff]"
+              className="inline-flex items-center gap-1.5 px-3.5 py-2 text-sm font-bold hover:font-black text-white hover:text-white bg-[#3087ff] hover:bg-[#3087ff] rounded-none shadow-sm whitespace-nowrap border border-white"
             >
               <span>Quote</span>
             </a>
@@ -873,7 +873,7 @@ export const MainNavbar: React.FC<MainNavbarProps> = ({
               <a
                 href="#quote-form"
                 onClick={() => setMobileMenuOpen(false)}
-                className="w-full py-3.5 px-4 bg-[#3087ff] text-white font-extrabold rounded-none text-center shadow-md block whitespace-nowrap text-sm sm:text-base border-2 border-[#3087ff]"
+                className="w-full py-3.5 px-4 bg-[#3087ff] hover:bg-[#3087ff] text-white hover:text-white font-bold hover:font-black rounded-none text-center shadow-md block whitespace-nowrap text-sm sm:text-base border-2 border-white"
               >
                 Request a Job Quote
               </a>
@@ -895,9 +895,9 @@ export const MainNavbar: React.FC<MainNavbarProps> = ({
                     onClick={() => {
                       setMobileMenuOpen(false);
                     }}
-                    className="w-full py-2.5 px-3 bg-[#3087ff] text-white font-black text-xs uppercase tracking-wider flex items-center justify-center gap-2 rounded-none cursor-pointer"
+                    className="w-full py-2.5 px-3 bg-[#3087ff] hover:bg-[#3087ff] text-white hover:text-white font-bold hover:font-black text-xs uppercase tracking-wider flex items-center justify-center gap-2 rounded-none cursor-pointer"
                   >
-                    <User className="w-4 h-4" />
+                    <User className="w-4 h-4 text-white" />
                     <span>Profile Dashboard</span>
                   </Link>
 

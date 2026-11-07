@@ -56,7 +56,7 @@ export const GlobalUtilityTicker: React.FC<GlobalUtilityTickerProps> = ({
             </div>
 
             {currentTime && (
-              <span className="hidden md:inline-block font-mono text-[11px] font-bold text-[#3087ff] bg-black/20 px-2 py-0.5 border border-[#3087ff]/30 mr-3 shrink-0">
+              <span className="hidden md:inline-block font-mono text-[11px] font-bold  bg-black/20 px-2 py-0.5 bg-white text-[#3087ff] border border-[#3087ff]/30 mr-3 shrink-0">
                 {currentTime}
               </span>
             )}
@@ -64,29 +64,29 @@ export const GlobalUtilityTicker: React.FC<GlobalUtilityTickerProps> = ({
             <div className="relative overflow-hidden w-full whitespace-nowrap">
               <div className="animate-ticker inline-flex items-center gap-8 text-xs sm:text-sm text-white font-semibold">
                 <span className="whitespace-nowrap text-white flex items-center gap-1.5">
-                  <Activity className="w-3.5 h-3.5 text-[#3087ff]" />
+                  <Activity className="w-3.5 h-3.5 text-white" />
                   <span>Foundry Melt Heat #8492-B:</span>
-                  <strong className="text-[#3087ff] font-extrabold">
+                  <strong className="font-extrabold text-white">
                     ASTM A536 65-45-12 Verified
                   </strong>
                 </span>
-                <span className="text-[#3087ff]">•</span>
+                <span className="text-white font-bold">•</span>
                 <span className="whitespace-nowrap text-white">
                   Flatbed Dispatch Queue:{" "}
-                  <strong className="text-[#3087ff] font-extrabold">
+                  <strong className="font-extrabold text-white">
                     14 Loads In-Transit Today
                   </strong>
                 </span>
-                <span className="text-[#3087ff]">•</span>
+                <span className="text-white font-bold">•</span>
                 <span className="whitespace-nowrap text-white">
                   AWWA C153 Compact Fittings: In Stock for Immediate Jobsite
                   Delivery
                 </span>
-                <span className="text-[#3087ff]">•</span>
+                <span className="text-white font-bold">•</span>
                 <span className="whitespace-nowrap text-white">
                   NSF/ANSI 61 Annex G Certified Lead-Free (&lt;0.25% Pb)
                 </span>
-                <span className="text-[#3087ff]">•</span>
+                <span className="text-white font-bold">•</span>
                 <span className="whitespace-nowrap text-white">
                   Hydrostatic Testing Rig: 350 PSI Continuous Working Pressure
                   Proof
@@ -107,7 +107,7 @@ export const GlobalUtilityTicker: React.FC<GlobalUtilityTickerProps> = ({
           <div className="flex items-center gap-3 shrink-0 text-xs sm:text-sm">
             <a
               href="tel:+15162521111"
-              className="inline-flex items-center gap-1.5 text-white hover:text-[#3087ff] transition-colors whitespace-nowrap font-bold"
+              className="inline-flex items-center gap-1.5 text-white hover:text-white font-bold hover:font-black transition-all whitespace-nowrap"
               title="Speak with Aqua Industries New York Foundry dispatch"
             >
               <PhoneCall className="w-3.5 h-3.5 text-white shrink-0" />
@@ -121,7 +121,7 @@ export const GlobalUtilityTicker: React.FC<GlobalUtilityTickerProps> = ({
             <button
               type="button"
               onClick={onOpenYardModal}
-              className="inline-flex items-center gap-1.5 text-white hover:text-[#3087ff] transition-colors whitespace-nowrap font-bold bg-white/10 px-2.5 py-1 rounded-none border border-white/50"
+              className="inline-flex items-center gap-1.5 text-white hover:text-white font-bold hover:font-black transition-all whitespace-nowrap bg-white/10 hover:bg-white/25 px-2.5 py-1 rounded-none border border-white/50 hover:border-white cursor-pointer"
             >
               <MapPin className="w-3.5 h-3.5 text-white shrink-0" />
               <span className="whitespace-nowrap">
@@ -133,7 +133,7 @@ export const GlobalUtilityTicker: React.FC<GlobalUtilityTickerProps> = ({
 
             <a
               href="#quote-form"
-              className="hidden md:inline-flex items-center gap-1.5 text-white hover:text-[#3087ff] transition-colors whitespace-nowrap font-bold"
+              className="hidden md:inline-flex items-center gap-1.5 text-white hover:text-white font-bold hover:font-black transition-all whitespace-nowrap"
             >
               <FileCheck2 className="w-3.5 h-3.5 text-white shrink-0" />
               <span className="whitespace-nowrap">Spec Sheet Portal</span>

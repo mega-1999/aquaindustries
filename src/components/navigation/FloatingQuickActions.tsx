@@ -57,7 +57,7 @@ export const FloatingQuickActions: React.FC = () => {
         <a
           href="tel:+15162521111"
           aria-label="Call Direct Dispatch at +1 (516) 252-1111"
-          className="w-12 h-12 bg-[#3087ff] hover:bg-[#3087ff] text-white hover:text-white border-2 border-white shadow-xl rounded-none flex items-center justify-center transition-all duration-200 hover:scale-105 active:scale-95 cursor-pointer"
+          className="w-12 h-12 bg-[#3087ff] hover:bg-[#3087ff] text-white hover:text-white hover:font-black border-2 border-white shadow-xl rounded-none flex items-center justify-center transition-all duration-200 hover:scale-105 active:scale-95 cursor-pointer font-bold"
         >
           <PhoneCall className="w-5 h-5 shrink-0" />
         </a>
@@ -73,7 +73,7 @@ export const FloatingQuickActions: React.FC = () => {
         <a
           href="mailto:dispatch.ny@aquaindustries.com?subject=Material%20Quote%20Request%20-%20Aqua%20Industries"
           aria-label="Email Aqua Industries Engineering & Dispatch"
-          className="w-12 h-12 bg-[#3087ff] hover:bg-[#3087ff] text-white hover:text-white border-2 border-white shadow-xl rounded-none flex items-center justify-center transition-all duration-200 hover:scale-105 active:scale-95 cursor-pointer"
+          className="w-12 h-12 bg-[#3087ff] hover:bg-[#3087ff] text-white hover:text-white hover:font-black border-2 border-white shadow-xl rounded-none flex items-center justify-center transition-all duration-200 hover:scale-105 active:scale-95 cursor-pointer font-bold"
         >
           <Mail className="w-5 h-5 shrink-0" />
         </a>
@@ -91,7 +91,7 @@ export const FloatingQuickActions: React.FC = () => {
           target="_blank"
           rel="noopener noreferrer"
           aria-label="Watch Aqua Industries YouTube Foundry Video Tour"
-          className="w-12 h-12 bg-[#3087ff] hover:bg-[#3087ff] text-white hover:text-white border-2 border-white shadow-xl rounded-none flex items-center justify-center transition-all duration-200 hover:scale-105 active:scale-95 cursor-pointer"
+          className="w-12 h-12 bg-[#3087ff] hover:bg-[#3087ff] text-white hover:text-white hover:font-black border-2 border-white shadow-xl rounded-none flex items-center justify-center transition-all duration-200 hover:scale-105 active:scale-95 cursor-pointer font-bold"
         >
           {/* YouTube Brand Icon strictly adhering to #3087ff / #3087ff / #FFFFFF */}
           <svg
@@ -112,7 +112,7 @@ export const FloatingQuickActions: React.FC = () => {
           onClick={handleScrollToTop}
           title="Scroll to Top of Page"
           aria-label="Scroll to Top of Page"
-          className="w-12 h-11 bg-white hover:bg-[#3087ff] text-[#3087ff] hover:text-white flex items-center justify-center transition-colors border-b border-[#3087ff]/30 cursor-pointer group/top"
+          className="w-12 h-11 bg-white hover:bg-[#3087ff] text-[#3087ff] hover:text-white hover:font-black flex items-center justify-center transition-colors border-b border-[#3087ff]/30 cursor-pointer group/top"
         >
           <ChevronsUp className="w-5 h-5 group-hover/top:-translate-y-0.5 transition-transform" />
         </button>
@@ -123,7 +123,7 @@ export const FloatingQuickActions: React.FC = () => {
           onClick={handleScrollToBottom}
           title="Scroll to Bottom of Page"
           aria-label="Scroll to Bottom of Page"
-          className="w-12 h-11 bg-white hover:bg-[#3087ff] text-[#3087ff] hover:text-white flex items-center justify-center transition-colors cursor-pointer group/bottom"
+          className="w-12 h-11 bg-white hover:bg-[#3087ff] text-[#3087ff] hover:text-white hover:font-black flex items-center justify-center transition-colors cursor-pointer group/bottom"
         >
           <ChevronsDown className="w-5 h-5 group-hover/bottom:translate-y-0.5 transition-transform" />
         </button>

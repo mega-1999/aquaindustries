@@ -365,13 +365,13 @@ const SideAdCard: React.FC<SideAdCardProps> = ({
           <button
             type="button"
             onClick={() => onPlay(ad)}
-            className="flex-1 py-0.5 px-1 bg-white hover:bg-[#3087ff] text-[#3087ff] hover:text-white border border-[#3087ff] text-[9px] font-black uppercase tracking-wider transition-colors flex items-center justify-center gap-0.5 cursor-pointer"
+            className="flex-1 py-0.5 px-1 bg-white hover:bg-[#3087ff] text-[#3087ff] hover:text-white font-bold hover:font-black border border-[#3087ff] text-[9px] uppercase tracking-wider transition-colors flex items-center justify-center gap-0.5 cursor-pointer"
           >
             <Play className="w-2 h-2" />
             <span>Go to product</span>
           </button>
 
-          <button
+          {/* <button
             type="button"
             onClick={() => onAdd(ad.product)}
             className={`py-0.5 px-1.5 border border-[#3087ff] text-[9px] font-black uppercase tracking-wider transition-all cursor-pointer flex items-center justify-center ${isAdded
@@ -385,7 +385,7 @@ const SideAdCard: React.FC<SideAdCardProps> = ({
             ) : (
               <Plus className="w-2.5 h-2.5 stroke-[2.5]" />
             )}
-          </button>
+          </button> */}
         </div>
       </div>
     </div>
@@ -555,7 +555,7 @@ export const VerticalSideVideoAds: React.FC<VerticalSideVideoAdsProps> = ({
         <button
           type="button"
           onClick={() => setLeftDrawerOpen(true)}
-          className="bg-[#3087ff] hover:bg-[#3087ff] text-white hover:text-white border-y-2 border-r-2 border-white px-1.5 py-3 text-[9px] font-black uppercase tracking-widest shadow-2xl flex items-center gap-1 cursor-pointer transition-all [writing-mode:vertical-lr]"
+          className="bg-[#3087ff] hover:bg-[#3087ff] text-white hover:text-white font-bold hover:font-black border-y-2 border-r-2 border-white px-1.5 py-3 text-[9px] uppercase tracking-widest shadow-2xl flex items-center gap-1 cursor-pointer transition-all [writing-mode:vertical-lr]"
           title="Open Waterworks Video Reels"
         >
           <Play className="w-2.5 h-2.5 fill-current rotate-90" />
@@ -733,7 +733,7 @@ export const VerticalSideVideoAds: React.FC<VerticalSideVideoAdsProps> = ({
                 onClick={() => {
                   handleAddProduct(activeVideoModal.product);
                 }}
-                className="flex-1 py-2.5 px-4 bg-[#3087ff] hover:bg-[#3087ff] text-white hover:text-white font-black text-xs uppercase tracking-wider transition-all border-2 border-[#3087ff] cursor-pointer text-center"
+                className="flex-1 py-2.5 px-4 bg-[#3087ff] hover:bg-[#3087ff] text-white hover:text-white font-bold hover:font-black text-xs uppercase tracking-wider transition-all border-2 border-white cursor-pointer text-center"
               >
                 + Add {activeVideoModal.product.name} to RFQ
               </button>
@@ -744,7 +744,7 @@ export const VerticalSideVideoAds: React.FC<VerticalSideVideoAdsProps> = ({
                   onPreviewSubmittal(activeVideoModal.product);
                   setActiveVideoModal(null);
                 }}
-                className="flex-1 py-2.5 px-4 bg-white hover:bg-[#3087ff] text-[#3087ff] hover:text-white font-black text-xs uppercase tracking-wider transition-all border-2 border-[#3087ff] cursor-pointer text-center"
+                className="flex-1 py-2.5 px-4 bg-white hover:bg-[#3087ff] text-[#3087ff] hover:text-white font-bold hover:font-black text-xs uppercase tracking-wider transition-all border-2 border-[#3087ff] cursor-pointer text-center"
               >
                 Download Submittal PDF
               </button>
