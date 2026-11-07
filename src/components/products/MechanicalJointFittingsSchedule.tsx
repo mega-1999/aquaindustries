@@ -6,8 +6,6 @@ import {
   ArrowRight,
   Check,
   CheckCircle2,
-  ChevronDown,
-  ChevronUp,
   Compass,
   Copy,
   FileCheck2,
@@ -977,7 +975,6 @@ export const MechanicalJointFittingsSchedule: React.FC<
     null,
   );
   const [searchQuery, setSearchQuery] = useState<string>("");
-  const [specDrawerOpen, setSpecDrawerOpen] = useState<boolean>(false);
   const [copiedSpecs, setCopiedSpecs] = useState<boolean>(false);
   const [addedIds, setAddedIds] = useState<Record<string, boolean>>({});
 
@@ -1155,118 +1152,87 @@ export const MechanicalJointFittingsSchedule: React.FC<
             subvariant angles (90°, 60°, 45°, 30°, 22.5°, 11.25°, 5.625°), tees,
             reducers, and swivel hardware.
           </p>
-
-          {/* Quick Specifications Blueprint Bar Toggle */}
-          <div className="mt-6 flex flex-col sm:flex-row items-center justify-center gap-3">
-            <button
-              type="button"
-              onClick={() => setSpecDrawerOpen((prev) => !prev)}
-              className="inline-flex items-center gap-2 px-5 py-2.5 bg-[#3087ff] hover:bg-[#3087ff] text-white hover:text-white text-xs font-black uppercase tracking-wider rounded-none border-2 border-[#3087ff] transition-all shadow-md cursor-pointer"
-            >
-              <FileCheck2 className="w-4 h-4 shrink-0" />
-              <span>
-                {specDrawerOpen
-                  ? "Hide General Specifications Blueprint"
-                  : 'View Official General Specifications Sheet (2" - 64")'}
-              </span>
-              <span className="px-1.5 py-0.2 text-[10px] bg-white text-[#3087ff] font-black border border-[#3087ff]">
-                14 Certified Specs
-              </span>
-              {specDrawerOpen ? (
-                <ChevronUp className="w-4 h-4 shrink-0" />
-              ) : (
-                <ChevronDown className="w-4 h-4 shrink-0" />
-              )}
-            </button>
-          </div>
         </div>
 
-        {/* Official Specifications Sheet Blueprint (From User Catalog Document) */}
-        {specDrawerOpen && (
-          <div className="mb-12 bg-white border-4 border-[#3087ff] p-6 sm:p-8 shadow-2xl relative animate-in fade-in duration-300">
-            {/* Header of the Blueprint Sheet */}
-            <div className="flex flex-col md:flex-row md:items-center justify-between gap-4 border-b-2 border-[#3087ff] pb-5 mb-6">
-              <div>
-                <div className="inline-flex items-center gap-1.5 px-2.5 py-0.5 bg-white border border-[#3087ff] text-[10px] font-black uppercase tracking-wider text-[#3087ff] mb-2">
-                  <FileCheck2 className="w-3.5 h-3.5 text-[#3087ff] shrink-0" />
-                  <span>Official Foundry Catalog Standard Sheet</span>
-                </div>
-                <h3 className="text-xl sm:text-2xl lg:text-3xl font-black uppercase tracking-tight text-[#3087ff]">
-                  2&quot; - 64&quot; Ductile Iron Mechanical Joint Compact
-                  Fittings
-                </h3>
-                <h4 className="text-sm sm:text-base font-black uppercase tracking-widest text-[#3087ff] mt-1">
-                  General Specifications
-                </h4>
+        {/* Official Specifications Sheet Blueprint (From User Catalog Document) - ALWAYS VISIBLE */}
+        <div id="general-specifications-blueprint" className="mb-12 bg-white border-4 border-[#3087ff] p-6 sm:p-8 shadow-2xl relative">
+          {/* Header of the Blueprint Sheet */}
+          <div className="flex flex-col md:flex-row md:items-center justify-between gap-4 border-b-2 border-[#3087ff] pb-5 mb-6">
+            <div>
+              <div className="inline-flex items-center gap-1.5 px-2.5 py-0.5 bg-white border border-[#3087ff] text-[10px] font-black uppercase tracking-wider text-[#3087ff] mb-2">
+                <FileCheck2 className="w-3.5 h-3.5 text-[#3087ff] shrink-0" />
+                <span>Official Foundry Catalog Standard Sheet</span>
+                <span className="ml-2 px-1.5 py-0.2 text-[10px] bg-[#3087ff] text-white font-black border border-[#3087ff]">
+                  14 Certified Specs
+                </span>
               </div>
-
-              <div className="flex flex-wrap items-center gap-2">
-                <button
-                  type="button"
-                  onClick={handleCopyAllSpecs}
-                  className="px-3.5 py-2 bg-white hover:bg-[#3087ff] text-[#3087ff] hover:text-white border-2 border-[#3087ff] text-xs font-black uppercase tracking-wider rounded-none transition-all flex items-center gap-1.5 cursor-pointer shadow-xs"
-                >
-                  {copiedSpecs ? (
-                    <>
-                      <Check className="w-3.5 h-3.5 stroke-[3] text-[#3087ff]" />
-                      <span>Copied All Specs!</span>
-                    </>
-                  ) : (
-                    <>
-                      <Copy className="w-3.5 h-3.5" />
-                      <span>Copy All Specs</span>
-                    </>
-                  )}
-                </button>
-
-                <button
-                  type="button"
-                  onClick={() => setSpecDrawerOpen(false)}
-                  className="px-3.5 py-2 bg-[#3087ff] hover:bg-[#3087ff] text-white hover:text-white border-2 border-[#3087ff] text-xs font-black uppercase tracking-wider rounded-none transition-all cursor-pointer shadow-xs"
-                >
-                  Close Sheet &times;
-                </button>
-              </div>
+              <h3 className="text-xl sm:text-2xl lg:text-3xl font-black uppercase tracking-tight text-[#3087ff]">
+                2&quot; - 64&quot; Ductile Iron Mechanical Joint Compact
+                Fittings
+              </h3>
+              <h4 className="text-sm sm:text-base font-black uppercase tracking-widest text-[#3087ff] mt-1">
+                General Specifications
+              </h4>
             </div>
 
-            {/* 14 Specifications Structured Grid */}
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-3 sm:gap-4 text-xs sm:text-sm text-[#3087ff]">
-              {GENERAL_SPECIFICATIONS_DATA.map((item) => (
-                <div
-                  key={item.id}
-                  className="p-3.5 sm:p-4 bg-white hover:bg-[#3087ff] hover:text-white border-2 border-[#3087ff] transition-colors flex flex-col justify-between"
-                >
-                  <div>
-                    <div className="flex items-center justify-between gap-2 mb-1.5 border-b border-[#3087ff] pb-1.5">
-                      <span className="font-black uppercase tracking-wider text-xs text-[#3087ff]">
-                        {item.label}:
-                      </span>
-                      {item.badge && (
-                        <span className="text-[10px] font-bold uppercase tracking-tight bg-[#3087ff] text-white px-1.5 py-0.2 shrink-0">
-                          {item.badge}
-                        </span>
-                      )}
-                    </div>
-                    <p className="leading-relaxed text-[#3087ff] font-medium text-xs sm:text-[13px]">
-                      {item.value}
-                    </p>
-                  </div>
-                </div>
-              ))}
-            </div>
-
-            {/* Footer Notes & Installation Guidance */}
-            <div className="mt-6 pt-4 border-t-2 border-[#3087ff] flex flex-col sm:flex-row items-center justify-between gap-3 text-[11px] font-bold text-[#3087ff]">
-              <span>
-                Standard Compliance: ANSI/AWWA C153 &bull; ANSI/AWWA C111 &bull;
-                ANSI/AWWA C104 &bull; ANSI/AWWA C115 &bull; ASTM A536
-              </span>
-              <span className="font-mono">
-                Catalog Rev: 2026.1 &bull; 100% Domestic AIS / Buy America Ready
-              </span>
+            <div className="flex flex-wrap items-center gap-2">
+              <button
+                type="button"
+                onClick={handleCopyAllSpecs}
+                className="px-3.5 py-2 bg-white hover:bg-[#3087ff] text-[#3087ff] hover:text-white border-2 border-[#3087ff] text-xs font-black uppercase tracking-wider rounded-none transition-all flex items-center gap-1.5 cursor-pointer shadow-xs group"
+              >
+                {copiedSpecs ? (
+                  <>
+                    <Check className="w-3.5 h-3.5 stroke-[3] text-[#3087ff] group-hover:text-white" />
+                    <span>Copied All Specs!</span>
+                  </>
+                ) : (
+                  <>
+                    <Copy className="w-3.5 h-3.5 text-[#3087ff] group-hover:text-white" />
+                    <span>Copy All Specs</span>
+                  </>
+                )}
+              </button>
             </div>
           </div>
-        )}
+
+          {/* 14 Specifications Structured Grid */}
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-3 sm:gap-4 text-xs sm:text-sm text-[#3087ff]">
+            {GENERAL_SPECIFICATIONS_DATA.map((item) => (
+              <div
+                key={item.id}
+                className="p-3.5 sm:p-4 bg-white hover:bg-[#3087ff] text-[#3087ff] hover:text-white border-2 border-[#3087ff] transition-colors flex flex-col justify-between group"
+              >
+                <div>
+                  <div className="flex items-center justify-between gap-2 mb-1.5 border-b border-[#3087ff] pb-1.5">
+                    <span className="font-black uppercase tracking-wider text-xs text-[#3087ff] group-hover:text-white">
+                      {item.label}:
+                    </span>
+                    {item.badge && (
+                      <span className="text-[10px] font-bold uppercase tracking-tight bg-[#3087ff] text-white group-hover:bg-white group-hover:text-[#3087ff] px-1.5 py-0.2 shrink-0">
+                        {item.badge}
+                      </span>
+                    )}
+                  </div>
+                  <p className="leading-relaxed text-[#3087ff] group-hover:text-white font-medium text-xs sm:text-[13px]">
+                    {item.value}
+                  </p>
+                </div>
+              </div>
+            ))}
+          </div>
+
+          {/* Footer Notes & Installation Guidance */}
+          <div className="mt-6 pt-4 border-t-2 border-[#3087ff] flex flex-col sm:flex-row items-center justify-between gap-3 text-[11px] font-bold text-[#3087ff]">
+            <span>
+              Standard Compliance: ANSI/AWWA C153 &bull; ANSI/AWWA C111 &bull;
+              ANSI/AWWA C104 &bull; ANSI/AWWA C115 &bull; ASTM A536
+            </span>
+            <span className="font-mono">
+              Catalog Rev: 2026.1 &bull; 100% Domestic AIS / Buy America Ready
+            </span>
+          </div>
+        </div>
 
         {/* Global Search Bar (Works Across All 36 Fittings) */}
         <div className="mb-10 max-w-xl mx-auto">
@@ -1433,15 +1399,14 @@ export const MechanicalJointFittingsSchedule: React.FC<
 
                 <button
                   type="button"
-                  onClick={() => setSpecDrawerOpen((prev) => !prev)}
-                  className="inline-flex items-center gap-1.5 px-3 py-2 bg-[#3087ff] hover:bg-[#3087ff] text-white hover:text-white border-2 border-[#3087ff] text-xs font-black uppercase tracking-wider rounded-none transition-all shadow-xs cursor-pointer"
+                  onClick={() => {
+                    const el = document.getElementById("general-specifications-blueprint");
+                    el?.scrollIntoView({ behavior: "smooth" });
+                  }}
+                  className="inline-flex items-center gap-1.5 px-3 py-2 bg-[#3087ff] hover:bg-white text-white hover:text-[#3087ff] border-2 border-[#3087ff] text-xs font-black uppercase tracking-wider rounded-none transition-all shadow-xs cursor-pointer"
                 >
                   <FileCheck2 className="w-3.5 h-3.5 shrink-0" />
-                  <span>
-                    {specDrawerOpen
-                      ? "Hide General Specs"
-                      : 'General Specs (2" - 64")'}
-                  </span>
+                  <span>General Specs Blueprint</span>
                 </button>
               </div>
 
