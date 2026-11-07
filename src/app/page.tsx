@@ -119,15 +119,6 @@ export default function Home() {
 
       {/* Main Single-Page Blueprint with Alternating Background Rhythm */}
       <main className="flex-1 relative">
-        {/* Top Headline Ribbon: Next Generation Water Works Products */}
-        <div className="bg-[#3087ff] border-b-2 border-white py-2 px-4 text-center select-none shadow-md">
-          <p className="text-xs sm:text-sm font-black text-white uppercase tracking-widest flex items-center justify-center gap-2.5">
-            <span className="w-2 h-2 rounded-none bg-white animate-pulse" />
-            <span>Next Generation Water Works Products</span>
-            <span className="w-2 h-2 rounded-none bg-white animate-pulse" />
-          </p>
-        </div>
-
         {/* Left (12 cards) and Right (3 cards) Vertical Video Ads (Scrolling along with website in side gutters) */}
         <VerticalSideVideoAds
           onAddToRfq={handleAddToRfq}
