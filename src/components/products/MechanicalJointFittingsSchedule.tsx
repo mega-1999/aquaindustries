@@ -1154,29 +1154,67 @@ export const MechanicalJointFittingsSchedule: React.FC<
           </p>
         </div>
 
-        {/* Official Specifications Sheet Blueprint (From User Catalog Document) - ALWAYS VISIBLE */}
-        <div id="general-specifications-blueprint" className="mb-12 bg-white border-4 border-[#3087ff] p-6 sm:p-8 shadow-2xl relative">
-    
+        {/* Official Specifications Matrix - ALWAYS VISIBLE */}
+        <div id="general-specifications-blueprint" className="mb-12 bg-white border-4 border-[#3087ff] shadow-2xl relative">
+          {/* Top Industrial Bar */}
+          <div className="bg-[#3087ff] text-white p-4 sm:p-5 flex flex-col md:flex-row md:items-center justify-between gap-4 border-b-4 border-[#3087ff]">
+            <div className="flex flex-wrap items-center gap-2 sm:gap-3">
+              <span className="px-3 py-1 bg-white text-[#3087ff] text-xs font-black uppercase tracking-wider border-2 border-white">
+                14 Certified Specifications
+              </span>
+              <span className="text-xs sm:text-sm font-black uppercase tracking-wider text-white">
+                Ductile Iron Compact Mechanical Joint Standards (2&quot; &ndash; 64&quot;)
+              </span>
+            </div>
 
-          {/* 14 Specifications Structured Grid */}
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-3 sm:gap-4 text-xs sm:text-sm text-[#3087ff]">
-            {GENERAL_SPECIFICATIONS_DATA.map((item) => (
+            <button
+              type="button"
+              onClick={handleCopyAllSpecs}
+              className="self-start md:self-auto px-4 py-2 bg-white hover:bg-[#3087ff] text-[#3087ff] hover:text-white border-2 border-white text-xs font-black uppercase tracking-wider rounded-none transition-all flex items-center gap-2 cursor-pointer shadow-md group"
+            >
+              {copiedSpecs ? (
+                <>
+                  <Check className="w-4 h-4 stroke-[3] text-[#3087ff] group-hover:text-white" />
+                  <span>Copied 14 Specs!</span>
+                </>
+              ) : (
+                <>
+                  <Copy className="w-4 h-4 text-[#3087ff] group-hover:text-white" />
+                  <span>Copy Complete Specification Matrix</span>
+                </>
+              )}
+            </button>
+          </div>
+
+          {/* Structured 14-Row Interactive Ledger */}
+          <div className="divide-y-2 divide-[#3087ff]">
+            {GENERAL_SPECIFICATIONS_DATA.map((item, idx) => (
               <div
                 key={item.id}
-                className="p-3.5 sm:p-4 bg-white hover:bg-[#3087ff] text-[#3087ff] hover:text-white border-2 border-[#3087ff] transition-colors flex flex-col justify-between group"
+                className="p-4 sm:p-5 hover:bg-[#3087ff] text-[#3087ff] hover:text-white transition-colors group flex flex-col lg:flex-row lg:items-center justify-between gap-3 sm:gap-4"
               >
-                <div>
-                  <div className="flex items-center justify-between gap-2 mb-1.5 border-b border-[#3087ff] pb-1.5">
-                    <span className="font-black uppercase tracking-wider text-xs text-[#3087ff] group-hover:text-white">
-                      {item.label}:
-                    </span>
-                    {item.badge && (
-                      <span className="text-[10px] font-bold uppercase tracking-tight bg-[#3087ff] text-white group-hover:bg-white group-hover:text-[#3087ff] px-1.5 py-0.2 shrink-0">
-                        {item.badge}
-                      </span>
-                    )}
+                {/* Left: Parameter Number & Label */}
+                <div className="flex items-center gap-3 lg:w-1/4 shrink-0">
+                  <span className="w-7 h-7 bg-[#3087ff] text-white group-hover:bg-white group-hover:text-[#3087ff] text-xs font-black flex items-center justify-center shrink-0 transition-colors">
+                    {String(idx + 1).padStart(2, "0")}
+                  </span>
+                  <div>
+                    <h4 className="text-xs sm:text-sm font-black uppercase tracking-wider group-hover:text-white">
+                      {item.label}
+                    </h4>
                   </div>
-                  <p className="leading-relaxed text-[#3087ff] group-hover:text-white font-medium text-xs sm:text-[13px]">
+                </div>
+
+                {/* Middle: Key Certified Spec Badge */}
+                <div className="lg:w-1/4 shrink-0">
+                  <span className="inline-block px-3 py-1 bg-white text-[#3087ff] border-2 border-[#3087ff] group-hover:bg-white group-hover:text-[#3087ff] group-hover:border-white text-xs font-black uppercase tracking-tight shadow-xs">
+                    {item.badge}
+                  </span>
+                </div>
+
+                {/* Right: Technical Explanation */}
+                <div className="lg:w-1/2">
+                  <p className="text-xs sm:text-sm font-medium leading-relaxed group-hover:text-white">
                     {item.value}
                   </p>
                 </div>
@@ -1184,14 +1222,17 @@ export const MechanicalJointFittingsSchedule: React.FC<
             ))}
           </div>
 
-          {/* Footer Notes & Installation Guidance */}
-          <div className="mt-6 pt-4 border-t-2 border-[#3087ff] flex flex-col sm:flex-row items-center justify-between gap-3 text-[11px] font-bold text-[#3087ff]">
-            <span>
-              Standard Compliance: ANSI/AWWA C153 &bull; ANSI/AWWA C111 &bull;
-              ANSI/AWWA C104 &bull; ANSI/AWWA C115 &bull; ASTM A536
-            </span>
-            <span className="font-mono">
-              Catalog Rev: 2026.1 &bull; 100% Domestic AIS / Buy America Ready
+          {/* Bottom Compliance Strip */}
+          <div className="bg-white p-4 sm:p-5 border-t-4 border-[#3087ff] flex flex-col sm:flex-row items-center justify-between gap-3 text-xs font-bold text-[#3087ff]">
+            <div className="flex items-center gap-2">
+              <span className="w-2.5 h-2.5 bg-[#3087ff] animate-pulse shrink-0" />
+              <span>
+                Standard Compliance: ANSI/AWWA C153 &bull; ANSI/AWWA C111 &bull;
+                ANSI/AWWA C104 &bull; ANSI/AWWA C115 &bull; ASTM A536
+              </span>
+            </div>
+            <span className="font-mono bg-[#3087ff] text-white px-2.5 py-1 text-[11px] font-black uppercase tracking-wider shrink-0">
+              Catalog Rev: 2026.1 &bull; 100% AIS / Buy America Ready
             </span>
           </div>
         </div>
