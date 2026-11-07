@@ -135,10 +135,10 @@ export const SolenoPreloader: React.FC = () => {
 
         {/* Brand Name */}
         <div className="text-white font-extrabold text-2xl sm:text-3xl tracking-tight uppercase whitespace-nowrap mb-1">
-          Aqua <span className="text-[#3087ff]">Industries</span>
+          Aqua <span className="text-white">Industries</span>
         </div>
 
-        <div className="text-[#3087ff] text-xs sm:text-sm font-extrabold tracking-widest uppercase whitespace-nowrap mb-4">
+        <div className="text-white text-xs sm:text-sm font-extrabold tracking-widest uppercase whitespace-nowrap mb-4">
           Municipal Waterworks &bull; Domestic Foundries
         </div>
 
@@ -158,7 +158,7 @@ export const SolenoPreloader: React.FC = () => {
           }`}
       >
         <div
-          className="h-full bg-[#3087ff] transition-all duration-100 ease-out"
+          className="h-full bg-white transition-all duration-100 ease-out"
           style={{ width: `${progress}%` }}
         />
       </div>
