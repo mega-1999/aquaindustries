@@ -383,13 +383,6 @@ export const OurNewInnovations: React.FC<OurNewInnovationsProps> = ({
               elevation risers. Tested to AASHTO H-20 proof loads.
             </p>
           </div>
-
-          <div className="flex items-center gap-2 self-start lg:self-end">
-            <div className="px-3.5 py-2 bg-white/10 border-2 border-white/30 text-white text-xs font-bold uppercase tracking-wider flex items-center gap-2 backdrop-blur-sm shadow-sm whitespace-nowrap">
-              <Sliders className="w-4 h-4 text-[#3087ff]" />
-              <span>CAD Hotspot Inspector</span>
-            </div>
-          </div>
         </div>
 
         {/* ========================================================
