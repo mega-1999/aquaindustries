@@ -103,10 +103,12 @@ export const SolenoSamplingHero: React.FC = () => {
               </span>
             </div>
 
-            {/* Main Headline */}
+            {/* Soleno-Style Headline */}
             <h1 className="text-3xl sm:text-5xl lg:text-6xl font-black text-white tracking-tight leading-[0.96] uppercase font-sans">
-              <span className="text-white block">NEXT GENERATION</span>
-              WATER WORKS PRODUCTS
+              <span className="text-white block">CONNECTING YOU</span>
+              TO THE FUTURE OF
+              <br />
+              WATER MANAGEMENT
             </h1>
 
             {/* Grounded Subtitle */}
