@@ -97,43 +97,39 @@ export const SolenoSamplingHero: React.FC = () => {
           <div className="lg:col-span-7 text-left space-y-6">
             {/* Top Category Badge */}
             <div className="inline-flex items-center gap-2 px-3.5 py-1.5 bg-white text-[#3087ff] shadow-md border-2 border-[#3087ff] rounded-none">
-              <FlaskConical className="w-4 h-4 text-[#3087ff] shrink-0" />
-              <span className="text-xs font-bold uppercase tracking-wider whitespace-nowrap">
-                Flagship Product Showcase &bull; Laboratory Grade
+              <span className="w-2 h-2 rounded-none bg-[#3087ff] animate-ping shrink-0" />
+              <span className="text-xs font-black uppercase tracking-wider whitespace-nowrap">
+                Next Generation Water Works Products
               </span>
             </div>
 
-            {/* Soleno-Style Headline (Balanced Scale) */}
+            {/* Main Headline */}
             <h1 className="text-3xl sm:text-5xl lg:text-6xl font-black text-white tracking-tight leading-[0.96] uppercase font-sans">
-              <span className="text-white block">CONNECTING YOU</span>
-              TO THE FUTURE OF
-              <br />
-              WATER MANAGEMENT
+              <span className="text-white block">NEXT GENERATION</span>
+              WATER WORKS PRODUCTS
             </h1>
 
             {/* Grounded Subtitle */}
-            <p className="text-sm sm:text-base lg:text-lg text-white/95 max-w-xl leading-relaxed font-normal">
-              Engineering next-generation municipal water infrastructure and our
+            <p className="text-sm sm:text-base lg:text-lg text-white max-w-xl leading-relaxed font-normal">
+              Engineering advanced municipal water infrastructure, American ductile iron castings, and our
               flagship <strong>Water Sampling Station</strong>. Providing
-              secure, non-contaminated sampling points for real-time chlorine
-              residual, lead/copper compliance, and heavy ductile iron watermain
-              integrity.
+              secure, laboratory-grade utility points for pure watermain integrity.
             </p>
 
             {/* Single-Line Trust Badges */}
             <div className="flex flex-wrap items-center gap-2.5 pt-1">
-              <div className="px-3 py-1.5 bg-white/10 border border-[#3087ff] text-white text-xs font-semibold whitespace-nowrap inline-flex items-center gap-1.5 shadow-xs backdrop-blur-sm">
-                <ShieldCheck className="w-3.5 h-3.5 text-[#3087ff] shrink-0" />
+              <div className="px-3 py-1.5 bg-white/10 border border-white text-white text-xs font-semibold whitespace-nowrap inline-flex items-center gap-1.5 shadow-xs backdrop-blur-sm">
+                <ShieldCheck className="w-3.5 h-3.5 text-white shrink-0" />
                 <span>EPA Lead &amp; Copper Rule Approved</span>
               </div>
 
-              <div className="px-3 py-1.5 bg-white/10 border border-[#3087ff] text-white text-xs font-semibold whitespace-nowrap inline-flex items-center gap-1.5 shadow-xs backdrop-blur-sm">
-                <CheckCircle2 className="w-3.5 h-3.5 text-[#3087ff] shrink-0" />
+              <div className="px-3 py-1.5 bg-white/10 border border-white text-white text-xs font-semibold whitespace-nowrap inline-flex items-center gap-1.5 shadow-xs backdrop-blur-sm">
+                <CheckCircle2 className="w-3.5 h-3.5 text-white shrink-0" />
                 <span>NSF/ANSI 61 &amp; 372 Certified Lead-Free</span>
               </div>
 
-              <div className="px-3 py-1.5 bg-white/10 border border-[#3087ff] text-white text-xs font-semibold whitespace-nowrap inline-flex items-center gap-1.5 shadow-xs backdrop-blur-sm">
-                <Truck className="w-3.5 h-3.5 text-[#3087ff] shrink-0" />
+              <div className="px-3 py-1.5 bg-white/10 border border-white text-white text-xs font-semibold whitespace-nowrap inline-flex items-center gap-1.5 shadow-xs backdrop-blur-sm">
+                <Truck className="w-3.5 h-3.5 text-white shrink-0" />
                 <span>Melville, NY Foundry &amp; FL Logistics</span>
               </div>
             </div>
@@ -150,9 +146,9 @@ export const SolenoSamplingHero: React.FC = () => {
 
               <a
                 href="#product-matrix"
-                className="inline-flex items-center justify-center gap-2 px-6 py-3.5 text-sm sm:text-base font-bold text-white hover:text-[#3087ff] bg-transparent hover:bg-white border-2 border-white rounded-none shadow-md transition-all transform hover:-translate-y-0.5 active:translate-y-0 whitespace-nowrap"
+                className="inline-flex items-center justify-center gap-2 px-6 py-3.5 text-sm sm:text-base font-bold text-white hover:text-[#3087ff] bg-transparent hover:bg-white border-2 border-white rounded-none shadow-md transition-all transform hover:-translate-y-0.5 active:translate-y-0 whitespace-nowrap group"
               >
-                <FileCheck2 className="w-4 h-4 text-[#3087ff] group-hover:text-[#3087ff]" />
+                <FileCheck2 className="w-4 h-4 text-white group-hover:text-[#3087ff]" />
                 <span>Browse Complete Catalog</span>
               </a>
             </div>
