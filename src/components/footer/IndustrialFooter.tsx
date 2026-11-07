@@ -390,38 +390,38 @@ export const IndustrialFooter: React.FC<IndustrialFooterProps> = ({
       {/* ========================================================
           THIN SWAN PANORAMIC VIDEO FOOTER RIBBON
       ======================================================== */}
-      <div className="relative w-full h-40 sm:h-52 md:h-64 lg:h-72 overflow-hidden border-t-2 border-b-2 border-[#3087ff] bg-[#3087ff]">
+      <div className="relative w-full h-44 sm:h-56 md:h-72 lg:h-80 overflow-hidden border-t-2 border-b-2 border-[#3087ff] bg-[#3087ff]">
         <video
           autoPlay
           loop
           muted
           playsInline
           preload="auto"
-          className="w-full h-full object-cover object-center filter brightness-95"
+          onCanPlay={(e) => {
+            e.currentTarget.muted = true;
+            e.currentTarget.play().catch(() => {});
+          }}
+          className="w-full h-full object-cover object-center"
         >
           <source src="/videos/swan_vidoe.mp4" type="video/mp4" />
         </video>
 
-        {/* Ambient Gradient Overlay for Contrast & Visual Polish */}
-        <div className="absolute inset-0 bg-gradient-to-r from-[#3087ff] via-transparent to-[#3087ff] pointer-events-none" />
-        <div className="absolute inset-0 bg-white pointer-events-none" />
-
         {/* Floating Architectural Ribbon Badges */}
         <div className="absolute inset-0 flex items-center justify-between px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto pointer-events-none">
-          <div className="flex items-center gap-2.5 bg-white backdrop-blur-xs px-3.5 py-1.5 border border-[#3087ff] shadow-md">
+          <div className="flex items-center gap-2.5 bg-white px-3.5 py-1.5 border-2 border-[#3087ff] shadow-lg pointer-events-auto">
             <img
               src="/images/AI_Fevicon.png"
               alt="Watermark"
-              className="w-3.5 h-3.5 object-contain shrink-0"
+              className="w-4 h-4 object-contain shrink-0"
             />
-            <span className="text-[10px] sm:text-xs font-black uppercase tracking-wider text-white">
+            <span className="text-[10px] sm:text-xs font-black uppercase tracking-wider text-[#3087ff]">
               Sustaining America&apos;s Clean Waterways
             </span>
           </div>
 
-          <div className="hidden sm:flex items-center gap-2 bg-white backdrop-blur-xs px-3.5 py-1.5 border border-[#3087ff] shadow-md">
-            <span className="w-2 h-2 bg-[#3087ff] rounded-none animate-pulse shrink-0" />
-            <span className="text-[10px] sm:text-[11px] font-mono font-bold uppercase tracking-wider text-white/95">
+          <div className="hidden sm:flex items-center gap-2 bg-[#3087ff] px-3.5 py-1.5 border-2 border-white shadow-lg pointer-events-auto">
+            <span className="w-2 h-2 bg-white rounded-none animate-pulse shrink-0" />
+            <span className="text-[10px] sm:text-[11px] font-mono font-black uppercase tracking-wider text-white">
               Ecological Water Infrastructure &bull; 100% Recycled Iron
             </span>
           </div>
