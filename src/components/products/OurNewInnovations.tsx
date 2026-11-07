@@ -386,11 +386,16 @@ export const OurNewInnovations: React.FC<OurNewInnovationsProps> = ({
         </div>
 
         {/* ========================================================
-            1. HORIZONTAL 4-ITEM SELECTOR BAR (NO SCROLLBAR, Grid)
+            1. HORIZONTAL 4-ITEM SELECTOR CARDS (ALL TEXT 100% VISIBLE)
         ======================================================== */}
-        <div className="w-full mb-6 bg-white/10 p-1.5 border-2 border-[#3087ff] backdrop-blur-md grid grid-cols-2 md:grid-cols-4 gap-1.5 sm:gap-2">
+        <div className="w-full mb-8 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-3 sm:gap-4">
           {INNOVATIONS.map((item, idx) => {
             const isSelected = selectedIndex === idx;
+            const displayName = item.name
+              .replace("Multi-Tier Cast Iron ", "")
+              .replace("Heavy Cast Iron ", "Heavy ")
+              .replace("Cast Iron ", "");
+
             return (
               <button
                 key={item.id}
@@ -399,32 +404,49 @@ export const OurNewInnovations: React.FC<OurNewInnovationsProps> = ({
                   setSelectedIndex(idx);
                   setActiveHotspot(null);
                 }}
-                className={`flex-1 py-2 sm:py-2.5 px-2 sm:px-3 text-center transition-all rounded-none cursor-pointer border-2 whitespace-nowrap flex-nowrap shrink-0 flex items-center justify-center gap-1.5 sm:gap-2 ${isSelected
-                    ? "bg-white text-[#3087ff] border-white shadow-lg"
-                    : "bg-transparent text-white border-transparent hover:bg-white/10 hover:border-white/30"
-                  }`}
+                className={`p-4 text-left transition-all rounded-none cursor-pointer border-2 flex flex-col justify-between gap-3 group relative ${
+                  isSelected
+                    ? "bg-white text-[#3087ff] border-white shadow-2xl"
+                    : "bg-[#3087ff] text-white border-white/80 hover:bg-white hover:text-[#3087ff] hover:border-white shadow-md"
+                }`}
               >
-                <span
-                  className={`text-[10px] font-black uppercase px-1.5 py-0.5 shrink-0 ${isSelected
-                      ? "bg-[#3087ff] text-white"
-                      : "bg-white/20 text-white"
+                {/* Top Row: Number & Status Badge */}
+                <div className="flex items-center justify-between gap-2 w-full">
+                  <span
+                    className={`text-xs font-black uppercase px-2.5 py-1 tracking-wider ${
+                      isSelected
+                        ? "bg-[#3087ff] text-white"
+                        : "bg-white text-[#3087ff] group-hover:bg-[#3087ff] group-hover:text-white"
                     }`}
-                >
-                  {item.number}
-                </span>
-                <span className="text-xs sm:text-sm font-black uppercase tracking-wider truncate">
-                  {item.name
-                    .replace("Cast Iron ", "")
-                    .replace("Multi-Tier ", "")}
-                </span>
-                <span
-                  className={`text-[9px] font-bold uppercase px-1.5 py-0.5 hidden md:inline-block shrink-0 ${isSelected
-                      ? "bg-white text-[#3087ff]"
-                      : "bg-white/10 text-[#3087ff]"
+                  >
+                    {item.number}
+                  </span>
+                  <span
+                    className={`text-[10px] font-bold uppercase px-2 py-0.5 tracking-wider border ${
+                      isSelected
+                        ? "bg-[#3087ff] text-white border-[#3087ff]"
+                        : "bg-white text-[#3087ff] border-white group-hover:bg-[#3087ff] group-hover:text-white"
                     }`}
-                >
-                  {item.badge}
-                </span>
+                  >
+                    {item.badge}
+                  </span>
+                </div>
+
+                {/* Main Product Title - Never Hidden, Never Truncated */}
+                <div className="mt-1">
+                  <h4 className="text-sm sm:text-base font-black uppercase tracking-tight leading-snug break-words">
+                    {displayName}
+                  </h4>
+                </div>
+
+                {/* Bottom Active Indicator Bar */}
+                <div
+                  className={`w-full h-1 mt-1 transition-all ${
+                    isSelected
+                      ? "bg-[#3087ff]"
+                      : "bg-white/40 group-hover:bg-[#3087ff]"
+                  }`}
+                />
               </button>
             );
           })}
