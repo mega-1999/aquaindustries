@@ -1,6 +1,6 @@
 "use client";
 
-import { Check, CheckCircle2, FileText, Layers, Plus } from "lucide-react";
+import { ArrowDown, Check, CheckCircle2, FileText, Layers, Plus } from "lucide-react";
 import type React from "react";
 import { useState } from "react";
 import { PRODUCTS_CATALOG } from "../../data/waterworks-data";
@@ -16,6 +16,7 @@ export const SolenoFlagshipProducts: React.FC<SolenoFlagshipProductsProps> = ({
   onPreviewSubmittal,
 }) => {
   const [addedIds, setAddedIds] = useState<Record<string, boolean>>({});
+  const [showAll, setShowAll] = useState<boolean>(false);
 
   // Match the genuine flagship products from the catalog with their exact photographs
   const flagshipItems = [
@@ -75,6 +76,103 @@ export const SolenoFlagshipProducts: React.FC<SolenoFlagshipProductsProps> = ({
       ],
       tag: "JOINT RESTRAINT",
     },
+    {
+      product:
+        PRODUCTS_CATALOG.find((p) => p.id === "drainage-grates-curb-inlets") ||
+        PRODUCTS_CATALOG[4],
+      label: "Drainage Grates & Inlets",
+      sublabel: "AASHTO M306 Highway Catch Basins",
+      image: "/images/our-images/curb_inlet_riser_heavy_iron.png",
+      summary:
+        "High-inflow storm sewer castings engineered with directional vane bars that capture storm runoff along curbs while preventing bicycle trapping.",
+      specs: [
+        "40,000 LB Proof Load",
+        "High Hydraulic Capacity",
+        "DOT State Highway Approved",
+      ],
+      tag: "STORMWATER DRAIN",
+    },
+    {
+      product:
+        PRODUCTS_CATALOG.find((p) => p.id === "trench-grates") ||
+        PRODUCTS_CATALOG[5],
+      label: "Architectural Trench Grates",
+      sublabel: "High-Inflow Chevron Linear Channels",
+      image: "/images/our-images/trench-grates.png",
+      summary:
+        "Heavy modular cast iron trench grates designed for continuous linear drainage channels along airport taxiways, loading docks, and plazas.",
+      specs: [
+        '8" to 24" Width Modules',
+        "ADA Heel-Proof Slots",
+        "Interlocking Tongue & Groove",
+      ],
+      tag: "LINEAR TRENCH",
+    },
+    {
+      product:
+        PRODUCTS_CATALOG.find((p) => p.id === "detectable-warning-plates") ||
+        PRODUCTS_CATALOG[6],
+      label: "Detectable Warning Plates",
+      sublabel: "Solid Cast Iron ADA Tactile Armor",
+      image: "/images/our-images/warning-plate.png",
+      summary:
+        "Cast iron truncated dome tactile warning tiles with monolithic underside concrete anchors. Snowplow indestructible, never fractures or lifts.",
+      specs: [
+        "ADAAG Section R305",
+        "Snowplow Indestructible",
+        "Wet-Set Concrete Cleats",
+      ],
+      tag: "ADA COMPLIANCE",
+    },
+    {
+      product:
+        PRODUCTS_CATALOG.find((p) => p.id === "cleanout-monument-boxes") ||
+        PRODUCTS_CATALOG[7],
+      label: "Cleanout & Monument Boxes",
+      sublabel: "Heavy Traffic Subgrade Access",
+      image: "/images/our-images/cleanout.png",
+      summary:
+        "Heavy duty cast iron cleanout and monument boxes engineered for sanitary sewer cleanout and protecting municipal land survey monuments.",
+      specs: [
+        "AASHTO H-20 Highway Rated",
+        "Machined 360° Seating Rim",
+        "Stackable Modular Risers",
+      ],
+      tag: "MUNICIPAL ACCESS",
+    },
+    {
+      product:
+        PRODUCTS_CATALOG.find(
+          (p) => p.id === "ornamental-architectural-castings",
+        ) || PRODUCTS_CATALOG[8],
+      label: "Ornamental Tree Grates",
+      sublabel: "Architectural Downtown Streetscape",
+      image: "/images/our-images/Ornamental_Castings.jpeg",
+      summary:
+        "Decorative municipal tree grates and custom architectural streetscape castings meeting city streetscape aesthetics and ADA pedestrian mandates.",
+      specs: [
+        '36" to 72" Round & Square',
+        "Expanding Tree Center",
+        "ADA Narrow Heel-Proof",
+      ],
+      tag: "STREETSCAPE",
+    },
+    {
+      product:
+        PRODUCTS_CATALOG.find((p) => p.id === "culvert-pipe-grates") ||
+        PRODUCTS_CATALOG[9],
+      label: "Culvert Safety Pipe Grates",
+      sublabel: "Debris & Trash Defense Armor",
+      image: "/images/pipe_GRATE/NON_SIFTING.15.png",
+      summary:
+        "Heavy welded steel bar culvert pipe safety grates. Bars watercraft, debris, and wildlife from entering while maximizing stormwater discharge.",
+      specs: [
+        '12" to 72" Culvert Sizes',
+        "Hot-Dip Galvanized Bar",
+        "AIS Buy America Ready",
+      ],
+      tag: "SAFETY GRATE",
+    },
   ];
 
   const handleAdd = (product: ProductItem) => {
@@ -109,7 +207,7 @@ export const SolenoFlagshipProducts: React.FC<SolenoFlagshipProductsProps> = ({
           </div>
 
           <h2 className="text-3xl sm:text-4xl lg:text-5xl font-black uppercase tracking-tight text-white leading-[1.05] mb-3">
-            Our Flagship <span className="]">Products</span>
+            Our Flagship Products
           </h2>
 
           <p className="text-sm sm:text-base text-white/95 font-normal leading-relaxed">
@@ -120,9 +218,9 @@ export const SolenoFlagshipProducts: React.FC<SolenoFlagshipProductsProps> = ({
           </p>
         </div>
 
-        {/* 4-Column Compact Flagship Card Grid (Proportional, Height-Capped) */}
+        {/* 4-Column Compact Flagship Card Grid (Initially 8, Expands to All 10) */}
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-5 sm:gap-6 items-stretch">
-          {flagshipItems.map((item) => {
+          {(showAll ? flagshipItems : flagshipItems.slice(0, 8)).map((item) => {
             const isAdded = addedIds[item.product.id];
             return (
               <div
@@ -211,6 +309,26 @@ export const SolenoFlagshipProducts: React.FC<SolenoFlagshipProductsProps> = ({
               </div>
             );
           })}
+        </div>
+
+        {/* Load More Button: Initially 8, Expands to All 10 */}
+        <div className="mt-10 sm:mt-12 flex justify-center">
+          <button
+            type="button"
+            onClick={() => setShowAll((prev) => !prev)}
+            className="px-8 py-3.5 bg-white hover:bg-[#3087ff] text-[#3087ff] hover:text-white border-2 border-white text-xs sm:text-sm font-black uppercase tracking-wider rounded-none transition-all shadow-xl flex items-center gap-2.5 cursor-pointer group"
+          >
+            <span>
+              {showAll
+                ? "Show Less (8 Products)"
+                : "Load More Products (Show All 10)"}
+            </span>
+            <ArrowDown
+              className={`w-4 h-4 transition-transform duration-300 ${
+                showAll ? "rotate-180" : ""
+              }`}
+            />
+          </button>
         </div>
       </div>
     </section>
