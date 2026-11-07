@@ -1644,8 +1644,8 @@ export const MechanicalJointFittingsSchedule: React.FC<
                       </p>
 
                       {/* Interactive Subvariant Angle Preview Chips */}
-                      <div className="space-y-1.5 border-t border-[#3087ff] pt-3 mb-5">
-                        <span className="text-[10px] font-bold uppercase tracking-wider text-[#3087ff] block">
+                      <div className="space-y-2 border-t-2 border-[#3087ff] pt-3 mb-5">
+                        <span className="text-xs font-black uppercase tracking-wider text-[#3087ff] block">
                           Available Subvariants:
                         </span>
                         <div className="flex flex-wrap gap-1.5">
@@ -1657,7 +1657,7 @@ export const MechanicalJointFittingsSchedule: React.FC<
                                 e.stopPropagation();
                                 handleOpenFamily(family.id, ang.subvariantId);
                               }}
-                              className="px-2 py-0.5 text-[10px] font-black uppercase bg-[#3087ff] hover:bg-[#3087ff] hover:text-white text-[#3087ff] border border-[#3087ff] rounded-none transition-colors cursor-pointer"
+                              className="px-2.5 py-1 text-xs font-black uppercase bg-[#3087ff] hover:bg-white text-white hover:text-[#3087ff] border-2 border-[#3087ff] rounded-none transition-all shadow-xs cursor-pointer"
                               title={`View ${ang.label} subvariant specifications`}
                             >
                               {ang.label}
