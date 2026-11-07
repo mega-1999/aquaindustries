@@ -1156,45 +1156,7 @@ export const MechanicalJointFittingsSchedule: React.FC<
 
         {/* Official Specifications Sheet Blueprint (From User Catalog Document) - ALWAYS VISIBLE */}
         <div id="general-specifications-blueprint" className="mb-12 bg-white border-4 border-[#3087ff] p-6 sm:p-8 shadow-2xl relative">
-          {/* Header of the Blueprint Sheet */}
-          <div className="flex flex-col md:flex-row md:items-center justify-between gap-4 border-b-2 border-[#3087ff] pb-5 mb-6">
-            <div>
-              <div className="inline-flex items-center gap-1.5 px-2.5 py-0.5 bg-white border border-[#3087ff] text-[10px] font-black uppercase tracking-wider text-[#3087ff] mb-2">
-                <FileCheck2 className="w-3.5 h-3.5 text-[#3087ff] shrink-0" />
-                <span>Official Foundry Catalog Standard Sheet</span>
-                <span className="ml-2 px-1.5 py-0.2 text-[10px] bg-[#3087ff] text-white font-black border border-[#3087ff]">
-                  14 Certified Specs
-                </span>
-              </div>
-              <h3 className="text-xl sm:text-2xl lg:text-3xl font-black uppercase tracking-tight text-[#3087ff]">
-                2&quot; - 64&quot; Ductile Iron Mechanical Joint Compact
-                Fittings
-              </h3>
-              <h4 className="text-sm sm:text-base font-black uppercase tracking-widest text-[#3087ff] mt-1">
-                General Specifications
-              </h4>
-            </div>
-
-            <div className="flex flex-wrap items-center gap-2">
-              <button
-                type="button"
-                onClick={handleCopyAllSpecs}
-                className="px-3.5 py-2 bg-white hover:bg-[#3087ff] text-[#3087ff] hover:text-white border-2 border-[#3087ff] text-xs font-black uppercase tracking-wider rounded-none transition-all flex items-center gap-1.5 cursor-pointer shadow-xs group"
-              >
-                {copiedSpecs ? (
-                  <>
-                    <Check className="w-3.5 h-3.5 stroke-[3] text-[#3087ff] group-hover:text-white" />
-                    <span>Copied All Specs!</span>
-                  </>
-                ) : (
-                  <>
-                    <Copy className="w-3.5 h-3.5 text-[#3087ff] group-hover:text-white" />
-                    <span>Copy All Specs</span>
-                  </>
-                )}
-              </button>
-            </div>
-          </div>
+    
 
           {/* 14 Specifications Structured Grid */}
           <div className="grid grid-cols-1 md:grid-cols-2 gap-3 sm:gap-4 text-xs sm:text-sm text-[#3087ff]">

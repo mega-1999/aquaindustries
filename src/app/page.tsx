@@ -202,12 +202,7 @@ export default function Home() {
           onPreviewSubmittal={(product) => setSubmittalModalProduct(product)}
         />
 
-        {/* Section 11: Product Catalog Matrix (Soleno categorie pattern - White #FFFFFF - Alternating) */}
-        <ProductCatalogMatrix
-          onAddToRfq={handleAddToRfq}
-          onPreviewSubmittal={(product) => setSubmittalModalProduct(product)}
-          selectedCategory={productCategoryFilter}
-        />
+
 
         {/* Section 6: Engineering Submittal & Cut Sheet Library (Soleno ressources_single carousel pattern) */}
         {/* <EngineeringSubmittalLibrary
@@ -225,7 +220,12 @@ export default function Home() {
           onAddToRfq={handleAddToRfq}
           onPreviewSubmittal={(product) => setSubmittalModalProduct(product)}
         />
-
+        {/* Section 11: Product Catalog Matrix (Soleno categorie pattern - White #FFFFFF - Alternating) */}
+        <ProductCatalogMatrix
+          onAddToRfq={handleAddToRfq}
+          onPreviewSubmittal={(product) => setSubmittalModalProduct(product)}
+          selectedCategory={productCategoryFilter}
+        />
         {/* Section 9: Interactive Thrust Restraint Calculator (Civil Engineering Field Tool - White #FFFFFF - Alternating) */}
         {/* <EngineeringThrustCalculator /> */}
 
