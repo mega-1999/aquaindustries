@@ -24,16 +24,6 @@ interface CulvertPipeGratesSpotlightProps {
 const REAL_PIPE_GRATE_PHOTOS = [
   {
     id: "pipe-grate-photo-1",
-    src: "/images/pipe_GRATE/8016_2.1.png",
-    alt: "Aqua Model 8016 Heavy Cast Pipe Aperture Catch Basin Grate",
-    title: "Model 8016 Circular Pipe Aperture Grate",
-    badge: "AASHTO H-20 / ASTM A48",
-    shortTag: "8016 PLAN",
-    caption:
-      "Heavy-duty cast/ductile iron circular pipe aperture grate engineered with concentric intake slots for stormwater catch basins and culvert drop inlets.",
-  },
-  {
-    id: "pipe-grate-photo-2",
     src: "/images/pipe_GRATE/NON_SIFTING.15.png",
     alt: "Aqua Non-Sifting ADA Compliant Heel-Proof Pipe Grate",
     title: "Model NS-15 Non-Sifting ADA Pipe Grate",
@@ -43,7 +33,7 @@ const REAL_PIPE_GRATE_PHOTOS = [
       "Non-sifting slotted profile engineered for high-pedestrian civil culvert intakes, preventing heel entrapment while maintaining maximum hydraulic inflow.",
   },
   {
-    id: "pipe-grate-photo-3",
+    id: "pipe-grate-photo-2",
     src: "/images/pipe_GRATE/4x24.1.png",
     alt: "Aqua 4x24 Heavy-Duty Linear Trench & Culvert Drop Grate",
     title: "Model 4x24 Linear Culvert Drainage Grate",
@@ -52,73 +42,9 @@ const REAL_PIPE_GRATE_PHOTOS = [
     caption:
       "High-load cast iron linear drainage grate engineered for culvert drop inlets, roadside flumes, and heavy municipal stormwater trenches.",
   },
-  {
-    id: "pipe-grate-photo-4",
-    src: "/images/pipe_GRATE/8016_2.2.png",
-    alt: "Aqua Model 8016 Radial Casting & Inner Pipe Collar Ring",
-    title: "Model 8016 Radial Section & Inner Collar Detail",
-    badge: "EXPANDABLE COLLAR",
-    shortTag: "8016 RADIAL",
-    caption:
-      "Concentric inner collar rings allowing precision fitment and incremental opening sizing for varying pipe diameters and cleanout access.",
-  },
-  {
-    id: "pipe-grate-photo-5",
-    src: "/images/pipe_GRATE/8016_2.3.png",
-    alt: "Aqua Model 8016 Slotted Flow Grid Texture Detail",
-    title: "Model 8016 Flow Geometry & Anti-Slip Surface",
-    badge: "TEXTURED ANTI-SLIP",
-    shortTag: "8016 TEXTURE",
-    caption:
-      "Heavy cast metallurgical grain structure and hydrodynamic drainage slot geometry engineered for zero vehicle or pedestrian slippage.",
-  },
-  {
-    id: "pipe-grate-photo-6",
-    src: "/images/pipe_GRATE/8016_2.4.png",
-    alt: "Aqua Model 8016 Underside Structural Reinforcement Ribs",
-    title: "Model 8016 Underside Heavy Load Ribbing",
-    badge: "STRUCTURAL WEBS",
-    shortTag: "8016 RIBS",
-    caption:
-      "Deep cast reinforcement webs along the underside distribute heavy wheel impacts directly into supporting angle frames and concrete pipe risers.",
-  },
-  {
-    id: "pipe-grate-photo-7",
-    src: "/images/pipe_GRATE/8016_2.5.png",
-    alt: "Aqua Model 8016 Complete Two-Piece Interlocking Assembly",
-    title: "Model 8016 Matched Dual-Hemisphere Assembly",
-    badge: "FACTORY MATCHED SET",
-    shortTag: "8016 FULL SET",
-    caption:
-      "Complete 2-piece split circular pipe grate assembly with precision interlocking alignment lugs and concealed stainless steel bolt connections.",
-  },
 ];
 
 const PIPE_GRATE_VARIANTS = [
-  {
-    id: "pg-8016-circ",
-    catNumber: "Cat. PG-8016-A",
-    name: 'Model 8016 Circular Heavy Cast Pipe Aperture Grate',
-    tag: '8016 CIRCULAR GRATE',
-    sizeLabel: '48" / 60" Diameter (16" Center Aperture)',
-    pipeFit: 'Circular Culvert Vaults, Storm Inlets & Concrete Pipe Risers',
-    dimensions: {
-      height: '48.00" - 60.00" OD',
-      width: '16.00" Center ID',
-      depth: '1.50" - 2.00" Rim',
-      weightLbs: 285,
-      flowArea: "42% Open Hydraulic Area",
-    },
-    material: "ASTM A48 Class 35B Gray Iron / ASTM A536 65-45-12 Ductile Iron",
-    coating: "Uncoated Raw Natural Cast / Asphaltic Black Dip per AASHTO M306",
-    cleanoutType: "Two-Piece Split Interlocking Halves with Tamper-Proof Fasteners",
-    trafficRating: "AASHTO H-20 / HS-20 Heavy Traffic Rated",
-    standards: "ASTM A48 • ASTM A536 • AASHTO M306 • Buy America Compliant",
-    description:
-      'Heavy-duty cast iron circular grate assembly featuring concentric radial drainage slots and an expandable center pipe aperture. Designed for municipal stormwater basins, culvert vaults, and round precast pipe structures.',
-    photoUrl: "/images/pipe_GRATE/8016_2.1.png",
-    photoIndex: 0,
-  },
   {
     id: "pg-ns-15-ada",
     catNumber: "Cat. PG-NS-15",
@@ -141,7 +67,7 @@ const PIPE_GRATE_VARIANTS = [
     description:
       "Architectural non-sifting pipe safety grate engineered specifically with narrow 1/4\" maximum slot dimensions. Prevents pedestrian shoe heel entrapment and debris passage while sustaining rapid stormwater inflow.",
     photoUrl: "/images/pipe_GRATE/NON_SIFTING.15.png",
-    photoIndex: 1,
+    photoIndex: 0,
   },
   {
     id: "pg-4x24-lin",
@@ -165,38 +91,14 @@ const PIPE_GRATE_VARIANTS = [
     description:
       'Heavy transverse bar channel grate manufactured for continuous trench drains, roadside drainage channels, and highway culvert inlet aprons. Withstands repetitive high-speed wheel impacts without displacement.',
     photoUrl: "/images/pipe_GRATE/4x24.1.png",
-    photoIndex: 2,
-  },
-  {
-    id: "pg-8016-mod",
-    catNumber: "Cat. PG-8016-MOD",
-    name: 'Model 8016-M Interlocking Modular Split Pipe Grate Assembly',
-    tag: '8016-M MODULAR SPLIT',
-    sizeLabel: '60" OD Outer Diameter Set',
-    pipeFit: 'Retrofit Round Pipe Catch Basins, Culverts & Riser Shafts',
-    dimensions: {
-      height: '60.00" Outer Dia',
-      width: '24.00" Center Aperture',
-      depth: '2.00" Seat Flange',
-      weightLbs: 345,
-      flowArea: "45% Hydraulic Infiltration Area",
-    },
-    material: "ASTM A536 Heavy Ductile Iron with Underside Truss Ribs",
-    coating: "Industrial Hot-Dip Galvanized or Standard Black Bituminous",
-    cleanoutType: "Dual Radial Lugs with Stainless Socket-Head Hardware",
-    trafficRating: "AASHTO H-20 Heavy Traffic Loading",
-    standards: "ASTM A536 • AASHTO M306 • Buy America Compliant",
-    description:
-      "Two-piece matched radial hemisphere system engineered for effortless retrofit installation over existing culvert pipes, stormwater risers, and drainage chambers without excavation or structural disruption.",
-    photoUrl: "/images/pipe_GRATE/8016_2.5.png",
-    photoIndex: 6,
+    photoIndex: 1,
   },
 ];
 
 export const CulvertPipeGratesSpotlight: React.FC<
   CulvertPipeGratesSpotlightProps
 > = ({ onAddToRfq, onPreviewSubmittal }) => {
-  const [activeVariantId, setActiveVariantId] = useState<string>("pg-8016-circ");
+  const [activeVariantId, setActiveVariantId] = useState<string>("pg-ns-15-ada");
   const [activePhotoIndex, setActivePhotoIndex] = useState<number>(0);
   const [added, setAdded] = useState(false);
   const [copied, setCopied] = useState(false);

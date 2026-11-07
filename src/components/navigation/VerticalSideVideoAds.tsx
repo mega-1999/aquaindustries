@@ -77,7 +77,7 @@ const LEFT_VIDEO_ADS: VideoAdItem[] = [
     standard: "AASHTO H-20 Proof",
     duration: "1:05",
     videoUrl: "https://soleno.com/wp-content/uploads/2024/12/bkg_water111.mp4",
-    posterUrl: "/images/pipe_GRATE/8016_2.1.png",
+    posterUrl: "/images/pipe_GRATE/NON_SIFTING.15.png",
     description:
       "Heavy-duty circular pipe grates, flared end hinged bar grates, and traversable ditch safety slope grates.",
     product:
