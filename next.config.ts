@@ -7,7 +7,7 @@ const nextConfig: NextConfig = {
   },
   // Dynamic build ID guarantees Vercel CDN and browser caches are completely busted on every deploy
   generateBuildId: async () => {
-    return `aqua-deploy-${Date.now()}`;
+    return `aqua-fresh-release-${Date.now()}`;
   },
   async headers() {
     return [
@@ -16,7 +16,7 @@ const nextConfig: NextConfig = {
         headers: [
           {
             key: "Cache-Control",
-            value: "no-cache, no-store, must-revalidate",
+            value: "no-cache, no-store, must-revalidate, max-age=0, s-maxage=0",
           },
           {
             key: "Pragma",
@@ -25,6 +25,10 @@ const nextConfig: NextConfig = {
           {
             key: "Expires",
             value: "0",
+          },
+          {
+            key: "Clear-Site-Data",
+            value: '"cache", "storage"',
           },
         ],
       },
