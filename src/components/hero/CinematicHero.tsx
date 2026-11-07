@@ -181,50 +181,77 @@ export const CinematicHero: React.FC<CinematicHeroProps> = ({
           {/* Button 1 */}
           <a
             href="#product-matrix"
-            className={`w-full sm:w-auto inline-flex items-center justify-center gap-2 px-6 py-3.5 text-sm sm:text-base font-bold rounded-none shadow-lg transition-all transform hover:-translate-y-0.5 active:translate-y-0 whitespace-nowrap ${isBlue
-                ? "text-[#3087ff] bg-white hover:bg-[#3087ff] hover:text-white"
-                : "text-white bg-[#3087ff] hover:bg-[#3087ff] hover:text-white"
-              }`}
+            className={`w-full sm:w-auto inline-flex items-center justify-center gap-2 px-6 py-3.5 text-sm sm:text-base font-bold rounded-none shadow-lg transition-all transform hover:-translate-y-0.5 active:translate-y-0 whitespace-nowrap border-2 group ${
+              isBlue
+                ? "text-[#3087ff] bg-white hover:bg-[#3087ff] hover:text-white border-white"
+                : "text-white bg-[#3087ff] hover:bg-white hover:text-[#3087ff] border-[#3087ff]"
+            }`}
           >
             <span>Browse Waterworks Catalog</span>
             <ArrowRight
-              className={`w-4 h-4 ${isBlue ? "text-[#3087ff]" : "text-white group-hover:text-[#3087ff]"}`}
+              className={`w-4 h-4 transition-colors ${
+                isBlue
+                  ? "text-[#3087ff] group-hover:text-white"
+                  : "text-white group-hover:text-[#3087ff]"
+              }`}
             />
           </a>
 
           {/* Button 2 */}
           <a
             href="#submittal-builder"
-            className={`w-full sm:w-auto inline-flex items-center justify-center gap-2 px-6 py-3.5 text-sm sm:text-base font-bold rounded-none shadow-md transition-all transform hover:-translate-y-0.5 active:translate-y-0 whitespace-nowrap border-2 ${isBlue
-                ? "text-[#3087ff] hover:text-white bg-[#3087ff] hover:bg-[#3087ff] border-[#3087ff]"
-                : "text-[#3087ff] hover:text-white bg-white hover:bg-[#3087ff] border-[#3087ff]"
-              }`}
+            className={`w-full sm:w-auto inline-flex items-center justify-center gap-2 px-6 py-3.5 text-sm sm:text-base font-bold rounded-none shadow-md transition-all transform hover:-translate-y-0.5 active:translate-y-0 whitespace-nowrap border-2 group ${
+              isBlue
+                ? "text-white hover:text-[#3087ff] bg-transparent hover:bg-white border-white"
+                : "text-[#3087ff] hover:text-white bg-transparent hover:bg-[#3087ff] border-[#3087ff]"
+            }`}
           >
-            <FileCheck2 className="w-4 h-4 text-[#3087ff]" />
+            <FileCheck2
+              className={`w-4 h-4 transition-colors ${
+                isBlue
+                  ? "text-white group-hover:text-[#3087ff]"
+                  : "text-[#3087ff] group-hover:text-white"
+              }`}
+            />
             <span>Build Submittal Package</span>
           </a>
         </div>
 
         {/* Bottom Trust Indicators */}
         <div
-          className={`mt-10 pt-5 border-t flex flex-wrap items-center justify-center gap-4 sm:gap-8 text-xs sm:text-sm font-normal ${isBlue
+          className={`mt-10 pt-5 border-t flex flex-wrap items-center justify-center gap-4 sm:gap-8 text-xs sm:text-sm font-normal ${
+            isBlue
               ? "border-white/20 text-white"
               : "border-[#3087ff] text-[#3087ff]"
-            }`}
+          }`}
         >
           <div className="flex items-center gap-2 whitespace-nowrap">
-            <span className="w-2.5 h-2.5 rounded-full bg-[#3087ff]" />
+            <span
+              className={`w-2.5 h-2.5 rounded-full ${
+                isBlue ? "bg-white" : "bg-[#3087ff]"
+              }`}
+            />
             <span>Quotes Valid for 30 Calendar Days</span>
           </div>
           <div className="flex items-center gap-2 whitespace-nowrap">
-            <span className="w-2.5 h-2.5 rounded-full bg-[#3087ff]" />
+            <span
+              className={`w-2.5 h-2.5 rounded-full ${
+                isBlue ? "bg-white" : "bg-[#3087ff]"
+              }`}
+            />
             <span>Traceable Mill Heat Number on Every Body</span>
           </div>
           <a
             href="tel:+15162521111"
-            className="flex items-center gap-2 whitespace-nowrap hover:text-[#3087ff] transition-colors"
+            className={`flex items-center gap-2 whitespace-nowrap transition-colors ${
+              isBlue ? "text-white hover:underline" : "text-[#3087ff] hover:underline"
+            }`}
           >
-            <PhoneCall className="w-4 h-4 text-[#3087ff]" />
+            <PhoneCall
+              className={`w-4 h-4 ${
+                isBlue ? "text-white" : "text-[#3087ff]"
+              }`}
+            />
             <span>Melville Dispatch: +1 (516) 252-1111</span>
           </a>
         </div>
