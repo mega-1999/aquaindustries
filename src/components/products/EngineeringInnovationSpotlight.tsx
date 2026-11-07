@@ -351,14 +351,14 @@ export const EngineeringInnovationSpotlight: React.FC<
     <section
       id="innovation-spotlight"
       aria-label="4th Showcase: Next-Gen Mechanical Joint Innovations"
-      className="py-14 sm:py-20 bg-[#3087ff] text-white border-b-4 border-[#3087ff] relative overflow-hidden"
+      className="py-14 sm:py-20 bg-white text-[#3087ff] border-b-4 border-[#3087ff] relative overflow-hidden"
     >
       {/* Background Architectural Grid Lines */}
       <div
-        className="absolute inset-0 opacity-10 pointer-events-none"
+        className="absolute inset-0 opacity-5 pointer-events-none"
         style={{
           backgroundImage:
-            "linear-gradient(to right, #ffffff 1px, transparent 1px), linear-gradient(to bottom, #ffffff 1px, transparent 1px)",
+            "linear-gradient(to right, #3087ff 1px, transparent 1px), linear-gradient(to bottom, #3087ff 1px, transparent 1px)",
           backgroundSize: "48px 48px",
         }}
       />
@@ -367,36 +367,36 @@ export const EngineeringInnovationSpotlight: React.FC<
         {/* ========================================================
             TOP SECTION HEADER
         ======================================================== */}
-        <div className="flex flex-col md:flex-row md:items-end justify-between gap-6 mb-10 sm:mb-12 border-b-2 border-white/20 pb-8">
+        <div className="flex flex-col md:flex-row md:items-end justify-between gap-6 mb-10 sm:mb-12 border-b-2 border-[#3087ff] pb-8">
           <div className="max-w-3xl">
-            <div className="inline-flex items-center gap-2 px-3.5 py-1.5 bg-white text-[#3087ff] text-xs font-bold uppercase tracking-wider rounded-none mb-4 shadow-md border-2 border-[#3087ff]">
-              <Sparkles className="w-4 h-4 text-[#3087ff] shrink-0" />
+            <div className="inline-flex items-center gap-2 px-3.5 py-1.5 bg-[#3087ff] text-white text-xs font-bold uppercase tracking-wider rounded-none mb-4 shadow-md border-2 border-[#3087ff]">
+              <Sparkles className="w-4 h-4 text-white shrink-0" />
               <span>
                 4th Product Showcase &bull; Mechanical Joint Engineering
               </span>
             </div>
 
-            <h2 className="text-2xl sm:text-4xl lg:text-5xl font-black uppercase tracking-tight text-white leading-[1.05] mb-3">
+            <h2 className="text-2xl sm:text-4xl lg:text-5xl font-black uppercase tracking-tight text-[#3087ff] leading-[1.05] mb-3">
               {currentProduct.name.split(" ")[0]}{" "}
-              <span className="text-white">
+              <span className="text-[#3087ff]">
                 {currentProduct.name.split(" ").slice(1).join(" ")}
               </span>
             </h2>
 
-            <p className="text-sm sm:text-base text-white/95 font-normal leading-relaxed">
+            <p className="text-sm sm:text-base text-[#3087ff] font-normal leading-relaxed">
               {currentProduct.summary}
             </p>
           </div>
 
           {/* Quick Action Badges */}
           <div className="flex flex-wrap md:flex-col items-start md:items-end gap-2 shrink-0">
-            <span className="px-3 py-1 bg-white text-[#3087ff] text-xs font-black uppercase tracking-wider border-2 border-[#3087ff] shadow-sm">
+            <span className="px-3 py-1 bg-[#3087ff] text-white text-xs font-black uppercase tracking-wider border-2 border-[#3087ff] shadow-sm">
               {currentProduct.badge}
             </span>
-            <span className="px-3 py-1 bg-[#3087ff] text-white text-xs font-bold uppercase tracking-wider">
+            <span className="px-3 py-1 bg-white text-[#3087ff] text-xs font-black uppercase tracking-wider border-2 border-[#3087ff]">
               {currentProduct.spec}
             </span>
-            <span className="text-[11px] text-white/80 font-mono">
+            <span className="text-[11px] text-[#3087ff] font-mono font-bold">
               Melville, NY &amp; Dallas Hub Stock
             </span>
           </div>
@@ -413,37 +413,37 @@ export const EngineeringInnovationSpotlight: React.FC<
                 key={prod.id}
                 type="button"
                 onClick={() => handleSelectProduct(idx)}
-                className={`p-3 sm:p-4 text-left border-2 rounded-none transition-all flex flex-col justify-between cursor-pointer ${isSelected
-                  ? "bg-white text-[#3087ff] border-[#3087ff] shadow-lg ring-2 ring-white"
-                  : "bg-white/10 text-white border-white/30 hover:border-[#3087ff] hover:bg-white/20"
+                className={`p-3 sm:p-4 text-left border-2 rounded-none transition-all flex flex-col justify-between cursor-pointer group ${isSelected
+                  ? "bg-[#3087ff] text-white border-[#3087ff] shadow-xl"
+                  : "bg-white text-[#3087ff] border-[#3087ff] hover:bg-[#3087ff] hover:text-white shadow-sm"
                   }`}
               >
                 <div>
                   <div className="flex items-center justify-between gap-1 mb-1.5">
                     <span
                       className={`text-[10px] font-black uppercase tracking-wider px-1.5 py-0.5 ${isSelected
-                        ? "bg-[#3087ff] text-white"
-                        : "bg-white/20 text-white"
+                        ? "bg-white text-[#3087ff]"
+                        : "bg-[#3087ff] text-white group-hover:bg-white group-hover:text-[#3087ff]"
                         }`}
                     >
                       Innovation 0{idx + 1}
                     </span>
                     <span
-                      className={`text-[10px] font-bold ${isSelected ? "text-[#3087ff]" : "text-[#3087ff]"
+                      className={`text-[10px] font-black uppercase ${isSelected ? "text-white" : "text-[#3087ff] group-hover:text-white"
                         }`}
                     >
                       AWWA
                     </span>
                   </div>
                   <h3
-                    className={`text-xs sm:text-sm font-black uppercase leading-snug line-clamp-2 ${isSelected ? "text-[#3087ff]" : "text-white"
+                    className={`text-xs sm:text-sm font-black uppercase leading-snug line-clamp-2 ${isSelected ? "text-white" : "text-[#3087ff] group-hover:text-white"
                       }`}
                   >
                     {prod.name}
                   </h3>
                 </div>
                 <p
-                  className={`text-[11px] mt-2 font-medium line-clamp-1 ${isSelected ? "text-[#3087ff]" : "text-white/75"
+                  className={`text-[11px] mt-2 font-medium line-clamp-1 ${isSelected ? "text-white" : "text-[#3087ff] group-hover:text-white"
                     }`}
                 >
                   {prod.subtitle}
@@ -462,13 +462,13 @@ export const EngineeringInnovationSpotlight: React.FC<
           ======================================================== */}
           <div className="lg:col-span-7 flex flex-col gap-4">
             {/* View Mode Controller */}
-            <div className="flex items-center justify-between gap-1 border-2 border-white/60 p-1 bg-[#3087ff]">
+            <div className="flex items-center justify-between gap-1 border-2 border-[#3087ff] p-1 bg-white">
               <button
                 type="button"
                 onClick={() => setViewMode("photo")}
                 className={`flex-1 py-2 px-3 text-xs font-black uppercase tracking-wider transition-all rounded-none cursor-pointer flex items-center justify-center gap-1.5 ${viewMode === "photo"
-                  ? "bg-white text-[#3087ff] shadow-sm"
-                  : "text-white hover:bg-white/10"
+                  ? "bg-[#3087ff] text-white shadow-sm"
+                  : "bg-white text-[#3087ff] hover:bg-[#3087ff] hover:text-white"
                   }`}
               >
                 <Sparkles className="w-3.5 h-3.5" />
@@ -479,8 +479,8 @@ export const EngineeringInnovationSpotlight: React.FC<
                 type="button"
                 onClick={() => setViewMode("simulation")}
                 className={`flex-1 py-2 px-3 text-xs font-black uppercase tracking-wider transition-all rounded-none cursor-pointer flex items-center justify-center gap-1.5 ${viewMode === "simulation"
-                  ? "bg-white text-[#3087ff] shadow-sm"
-                  : "text-white hover:bg-white/10"
+                  ? "bg-[#3087ff] text-white shadow-sm"
+                  : "bg-white text-[#3087ff] hover:bg-[#3087ff] hover:text-white"
                   }`}
               >
                 <Sliders className="w-3.5 h-3.5" />
@@ -491,8 +491,8 @@ export const EngineeringInnovationSpotlight: React.FC<
                 type="button"
                 onClick={() => setViewMode("torque")}
                 className={`flex-1 py-2 px-3 text-xs font-black uppercase tracking-wider transition-all rounded-none cursor-pointer flex items-center justify-center gap-1.5 ${viewMode === "torque"
-                  ? "bg-white text-[#3087ff] shadow-sm"
-                  : "text-white hover:bg-white/10"
+                  ? "bg-[#3087ff] text-white shadow-sm"
+                  : "bg-white text-[#3087ff] hover:bg-[#3087ff] hover:text-white"
                   }`}
               >
                 <Wrench className="w-3.5 h-3.5" />
@@ -877,13 +877,13 @@ export const EngineeringInnovationSpotlight: React.FC<
             </div>
 
             {/* Instruction Banner */}
-            <div className="bg-white/10 border border-[#3087ff] p-2.5 flex items-center justify-between text-xs text-white">
-              <span className="font-semibold flex items-center gap-1.5">
+            <div className="bg-white border-2 border-[#3087ff] p-2.5 flex items-center justify-between text-xs text-[#3087ff] shadow-xs">
+              <span className="font-bold flex items-center gap-1.5">
                 <Sparkles className="w-3.5 h-3.5 text-[#3087ff]" />
                 Click numbered dots (1-4) on the active product to inspect
                 engineering specs.
               </span>
-              <span className="text-[11px] font-mono text-[#3087ff]">
+              <span className="text-[11px] font-mono font-bold text-[#3087ff]">
                 100% AIS / Buy America
               </span>
             </div>
@@ -895,61 +895,61 @@ export const EngineeringInnovationSpotlight: React.FC<
           <div className="lg:col-span-5 space-y-6">
             {/* 4 Feature Cards */}
             <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
-              <div className="p-3.5 bg-white/10 border-2 border-[#3087ff] shadow-xs backdrop-blur-sm">
+              <div className="p-3.5 bg-white border-2 border-[#3087ff] shadow-sm">
                 <div className="flex items-center gap-2 mb-1.5">
-                  <div className="w-7 h-7 bg-white text-[#3087ff] flex items-center justify-center shrink-0">
-                    <Zap className="w-3.5 h-3.5 text-[#3087ff]" />
+                  <div className="w-7 h-7 bg-[#3087ff] text-white flex items-center justify-center shrink-0">
+                    <Zap className="w-3.5 h-3.5 text-white" />
                   </div>
-                  <h4 className="text-xs font-black uppercase text-white">
+                  <h4 className="text-xs font-black uppercase text-[#3087ff]">
                     Dynamic Grip
                   </h4>
                 </div>
-                <p className="text-[11px] text-white/90 leading-snug">
+                <p className="text-[11px] text-[#3087ff] font-medium leading-snug">
                   Independent heat-treated wedges bite radially deeper as line
                   pressure surges.
                 </p>
               </div>
 
-              <div className="p-3.5 bg-white/10 border-2 border-[#3087ff] shadow-xs backdrop-blur-sm">
+              <div className="p-3.5 bg-white border-2 border-[#3087ff] shadow-sm">
                 <div className="flex items-center gap-2 mb-1.5">
-                  <div className="w-7 h-7 bg-white text-[#3087ff] flex items-center justify-center shrink-0">
-                    <Wrench className="w-3.5 h-3.5 text-[#3087ff]" />
+                  <div className="w-7 h-7 bg-[#3087ff] text-white flex items-center justify-center shrink-0">
+                    <Wrench className="w-3.5 h-3.5 text-white" />
                   </div>
-                  <h4 className="text-xs font-black uppercase text-white">
+                  <h4 className="text-xs font-black uppercase text-[#3087ff]">
                     Torque Shear
                   </h4>
                 </div>
-                <p className="text-[11px] text-white/90 leading-snug">
+                <p className="text-[11px] text-[#3087ff] font-medium leading-snug">
                   Breakaway hex nuts eliminate torque wrench guesswork and pipe
                   crushing.
                 </p>
               </div>
 
-              <div className="p-3.5 bg-white/10 border-2 border-[#3087ff] shadow-xs backdrop-blur-sm">
+              <div className="p-3.5 bg-white border-2 border-[#3087ff] shadow-sm">
                 <div className="flex items-center gap-2 mb-1.5">
-                  <div className="w-7 h-7 bg-white text-[#3087ff] flex items-center justify-center shrink-0">
-                    <Activity className="w-3.5 h-3.5 text-[#3087ff]" />
+                  <div className="w-7 h-7 bg-[#3087ff] text-white flex items-center justify-center shrink-0">
+                    <Activity className="w-3.5 h-3.5 text-white" />
                   </div>
-                  <h4 className="text-xs font-black uppercase text-white">
+                  <h4 className="text-xs font-black uppercase text-[#3087ff]">
                     5° Flex Deflection
                   </h4>
                 </div>
-                <p className="text-[11px] text-white/90 leading-snug">
+                <p className="text-[11px] text-[#3087ff] font-medium leading-snug">
                   Accommodates seismic movement and trench settling without
                   compromising seal.
                 </p>
               </div>
 
-              <div className="p-3.5 bg-white/10 border-2 border-[#3087ff] shadow-xs backdrop-blur-sm">
+              <div className="p-3.5 bg-white border-2 border-[#3087ff] shadow-sm">
                 <div className="flex items-center gap-2 mb-1.5">
-                  <div className="w-7 h-7 bg-white text-[#3087ff] flex items-center justify-center shrink-0">
-                    <ShieldCheck className="w-3.5 h-3.5 text-[#3087ff]" />
+                  <div className="w-7 h-7 bg-[#3087ff] text-white flex items-center justify-center shrink-0">
+                    <ShieldCheck className="w-3.5 h-3.5 text-white" />
                   </div>
-                  <h4 className="text-xs font-black uppercase text-white">
+                  <h4 className="text-xs font-black uppercase text-[#3087ff]">
                     UL &amp; FM Rated
                   </h4>
                 </div>
-                <p className="text-[11px] text-white/90 leading-snug">
+                <p className="text-[11px] text-[#3087ff] font-medium leading-snug">
                   Rated up to 350 PSI continuous service for potable and fire
                   protection mains.
                 </p>
@@ -957,58 +957,58 @@ export const EngineeringInnovationSpotlight: React.FC<
             </div>
 
             {/* Submittal Specification Ledger */}
-            <div className="border-2 border-[#3087ff] bg-white/10 shadow-md backdrop-blur-sm">
-              <div className="bg-white text-[#3087ff] px-4 py-2.5 flex items-center justify-between">
+            <div className="border-2 border-[#3087ff] bg-white shadow-md">
+              <div className="bg-[#3087ff] text-white px-4 py-2.5 flex items-center justify-between">
                 <span className="text-xs font-black uppercase tracking-wider">
                   {currentProduct.name} Spec Ledger
                 </span>
-                <span className="text-xs font-mono font-bold text-[#3087ff]">
+                <span className="text-xs font-mono font-bold text-white">
                   {currentProduct.standards.split("/")[0].trim()}
                 </span>
               </div>
 
-              <div className="p-4 space-y-2.5 text-xs text-white">
-                <div className="flex justify-between border-b border-white/20 pb-2">
-                  <span className="text-white/80 font-normal">
+              <div className="p-4 space-y-2.5 text-xs text-[#3087ff]">
+                <div className="flex justify-between border-b border-[#3087ff] pb-2">
+                  <span className="text-[#3087ff] font-bold">
                     Standards Compliance:
                   </span>
-                  <span className="text-white font-bold text-right">
+                  <span className="text-[#3087ff] font-extrabold text-right">
                     {currentProduct.standards}
                   </span>
                 </div>
 
-                <div className="flex justify-between border-b border-white/20 pb-2">
-                  <span className="text-white/80 font-normal">
+                <div className="flex justify-between border-b border-[#3087ff] pb-2">
+                  <span className="text-[#3087ff] font-bold">
                     Metallurgy &amp; Material:
                   </span>
-                  <span className="text-white font-bold text-right">
+                  <span className="text-[#3087ff] font-extrabold text-right">
                     {currentProduct.metallurgy}
                   </span>
                 </div>
 
-                <div className="flex justify-between border-b border-white/20 pb-2">
-                  <span className="text-white/80 font-normal">
+                <div className="flex justify-between border-b border-[#3087ff] pb-2">
+                  <span className="text-[#3087ff] font-bold">
                     Continuous Pressure:
                   </span>
-                  <span className="text-[#3087ff] font-bold text-right">
+                  <span className="text-[#3087ff] font-extrabold text-right">
                     {currentProduct.pressure}
                   </span>
                 </div>
 
-                <div className="flex justify-between border-b border-white/20 pb-2">
-                  <span className="text-white/80 font-normal">
+                <div className="flex justify-between border-b border-[#3087ff] pb-2">
+                  <span className="text-[#3087ff] font-bold">
                     Coating &amp; Lining:
                   </span>
-                  <span className="text-white font-bold text-right">
+                  <span className="text-[#3087ff] font-extrabold text-right">
                     {currentProduct.coating}
                   </span>
                 </div>
 
                 <div className="flex justify-between">
-                  <span className="text-white/80 font-normal">
+                  <span className="text-[#3087ff] font-bold">
                     Pipe Compatibility:
                   </span>
-                  <span className="text-white font-bold text-right">
+                  <span className="text-[#3087ff] font-extrabold text-right">
                     {currentProduct.pipeCompatibility}
                   </span>
                 </div>
@@ -1020,30 +1020,30 @@ export const EngineeringInnovationSpotlight: React.FC<
               <button
                 type="button"
                 onClick={() => onAddToRfq(product)}
-                className="flex-1 inline-flex items-center justify-center gap-2 px-5 py-3 text-xs sm:text-sm font-bold text-[#3087ff] bg-white hover:bg-[#3087ff] rounded-none shadow-md transition-all uppercase tracking-wide cursor-pointer"
+                className="flex-1 inline-flex items-center justify-center gap-2 px-5 py-3 text-xs sm:text-sm font-black text-white bg-[#3087ff] hover:bg-white hover:text-[#3087ff] border-2 border-[#3087ff] rounded-none shadow-md transition-all uppercase tracking-wide cursor-pointer group"
               >
-                <CheckCircle2 className="w-4 h-4 text-[#3087ff]" />
+                <CheckCircle2 className="w-4 h-4 text-white group-hover:text-[#3087ff]" />
                 <span>Add {currentProduct.name.split(" ")[0]} to RFQ</span>
               </button>
 
               <button
                 type="button"
                 onClick={() => onPreviewSubmittal(product)}
-                className="flex-1 inline-flex items-center justify-center gap-2 px-5 py-3 text-xs sm:text-sm font-bold text-white hover:text-[#3087ff] bg-transparent hover:bg-white border-2 border-white rounded-none shadow-xs transition-all uppercase tracking-wide cursor-pointer"
+                className="flex-1 inline-flex items-center justify-center gap-2 px-5 py-3 text-xs sm:text-sm font-black text-[#3087ff] hover:text-white bg-white hover:bg-[#3087ff] border-2 border-[#3087ff] rounded-none shadow-md transition-all uppercase tracking-wide cursor-pointer group"
               >
-                <FileCheck2 className="w-4 h-4 text-[#3087ff] group-hover:text-[#3087ff]" />
+                <FileCheck2 className="w-4 h-4 text-[#3087ff] group-hover:text-white" />
                 <span>Download Submittal</span>
               </button>
             </div>
 
             {/* Quick Dispatch Strip */}
-            <div className="pt-2 flex items-center justify-between border-t border-white/20 text-xs font-semibold text-white">
+            <div className="pt-2 flex items-center justify-between border-t-2 border-[#3087ff] text-xs font-bold text-[#3087ff]">
               <span>
                 Next-Day Flatbed Dispatch &bull; Melville, NY &amp; FL
               </span>
               <a
                 href="tel:+15162521111"
-                className="inline-flex items-center gap-1 hover:text-[#3087ff] transition-colors"
+                className="inline-flex items-center gap-1 hover:underline text-[#3087ff] transition-colors"
               >
                 <PhoneCall className="w-3.5 h-3.5 text-[#3087ff]" />
                 <span>+1 (516) 252-1111</span>
