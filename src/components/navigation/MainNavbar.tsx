@@ -234,7 +234,7 @@ export const MainNavbar: React.FC<MainNavbarProps> = ({
           : "bg-white border-b-2 border-[#3087ff] py-[1px]"
         }`}
     >
-      <div className="w-full px-[5px] relative">
+      <div className="w-full px-4 relative">
         <div className="w-full flex items-center justify-between gap-2 xl:gap-4 py-[1px]">
           {/* 1. H2O: Far Left Logo (and Mobile Hamburger) */}
           <div className="flex items-center gap-2 sm:gap-3 shrink-0">
