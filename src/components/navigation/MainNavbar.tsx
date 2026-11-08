@@ -880,111 +880,105 @@ export const MainNavbar: React.FC<MainNavbarProps> = ({
             </a>
           </div>
 
-          {/* 3. RIGHT HEADER ACTIONS (Desktop >= xl): 2 Rows */}
-          <div className="hidden xl:flex flex-col justify-center items-end gap-1.5 shrink-0">
+          {/* 3. RIGHT HEADER ACTIONS (Desktop >= xl): 2 Rows with identical button sizing */}
+          <div className="hidden xl:flex flex-col justify-center items-end gap-1.5 shrink-0 w-[145px] 2xl:w-[155px]">
             {/* 1st Row: Client Portal / User Session Menu */}
-            <div className="flex items-center justify-end">
+            <div className="w-full flex items-center justify-end">
               {currentUser ? (
                 /* User Session Menu */
-                <div className="flex items-center gap-1.5">
-                  <div
-                    className="relative"
-                    onMouseEnter={() => setActiveMenu("user-menu")}
-                    onMouseLeave={() => setActiveMenu(null)}
+                <div className="w-full relative">
+                  <button
+                    type="button"
+                    onClick={() => {
+                      setActiveMenu(
+                        activeMenu === "user-menu" ? null : "user-menu",
+                      );
+                    }}
+                    className={`w-full h-8 inline-flex items-center justify-center gap-1.5 px-2.5 text-xs 2xl:text-sm font-bold transition-all whitespace-nowrap border-2 rounded-none shadow-xs cursor-pointer ${activeMenu === "user-menu"
+                        ? "bg-[#3087ff] text-white border-[#3087ff] hover:text-white hover:font-black"
+                        : "bg-white text-[#3087ff] hover:bg-[#3087ff] hover:text-white border-[#3087ff]"
+                      }`}
+                    aria-label="User Account Menu"
                   >
-                    <button
-                      type="button"
-                      onClick={() => {
-                        setActiveMenu(
-                          activeMenu === "user-menu" ? null : "user-menu",
-                        );
-                      }}
-                      className={`inline-flex items-center gap-1.5 px-2.5 py-1 text-xs font-bold transition-all whitespace-nowrap border-2 rounded-none shadow-xs cursor-pointer ${activeMenu === "user-menu"
-                          ? "bg-[#3087ff] text-white border-[#3087ff] hover:text-white hover:font-black"
-                          : "bg-white text-[#3087ff] hover:bg-[#3087ff] hover:text-white border-[#3087ff]"
+                    <div className="w-4 h-4 bg-[#3087ff] text-white flex items-center justify-center text-[10px] font-black border border-[#3087ff]">
+                      <User className="w-3 h-3" />
+                    </div>
+                    <span className="truncate max-w-[80px]">
+                      {currentUser.fullName.split(" ")[0]}
+                    </span>
+                    <ChevronDown
+                      className={`w-3 h-3 transition-transform duration-200 ${activeMenu === "user-menu" ? "rotate-180" : ""
                         }`}
-                      aria-label="User Account Menu"
-                    >
-                      <div className="w-4 h-4 bg-[#3087ff] text-white flex items-center justify-center text-[10px] font-black border border-[#3087ff]">
-                        <User className="w-3 h-3" />
-                      </div>
-                      <span className="truncate max-w-[110px]">
-                        {currentUser.fullName.split(" ")[0]}
-                      </span>
-                      <ChevronDown
-                        className={`w-3 h-3 transition-transform duration-200 ${activeMenu === "user-menu" ? "rotate-180" : ""
-                          }`}
-                      />
-                    </button>
+                    />
+                  </button>
 
-                    {activeMenu === "user-menu" && (
-                      <div className="absolute top-full right-0 w-60 pt-2 z-50 animate-in fade-in slide-in-from-top-1 duration-150">
-                        <div className="bg-white border-2 border-[#3087ff] shadow-2xl p-1.5 text-[#3087ff] rounded-none">
-                          {/* User Identity Mini Chip */}
-                          <div className="px-3 py-2 border-b border-[#3087ff] mb-1 bg-white">
-                            <div className="font-black text-xs text-[#3087ff] truncate">
-                              {currentUser.fullName}
-                            </div>
-                            <div className="text-[10px] text-[#3087ff] font-bold uppercase truncate">
-                              {currentUser.companyName}
-                            </div>
+                  {activeMenu === "user-menu" && (
+                    <div className="absolute top-full right-0 w-60 pt-2 z-50 animate-in fade-in slide-in-from-top-1 duration-150">
+                      <div className="bg-white border-2 border-[#3087ff] shadow-2xl p-1.5 text-[#3087ff] rounded-none">
+                        {/* User Identity Mini Chip */}
+                        <div className="px-3 py-2 border-b border-[#3087ff] mb-1 bg-white">
+                          <div className="font-black text-xs text-[#3087ff] truncate">
+                            {currentUser.fullName}
                           </div>
-
-                          {/* 1. Profile Dashboard Link (Direct navigation to Dashboard with Sidebar) */}
-                          <Link
-                            href="/profile"
-                            onClick={() => {
-                              setActiveMenu(null);
-                            }}
-                            className="w-full text-left flex items-center gap-2.5 px-3 py-2 hover:bg-[#3087ff] hover:text-white transition-colors font-bold hover:font-black text-xs uppercase tracking-wider group cursor-pointer rounded-none"
-                          >
-                            <User className="w-4 h-4 text-[#3087ff] group-hover:text-white shrink-0" />
-                            <span className="group-hover:text-white group-hover:font-black">Profile Dashboard</span>
-                          </Link>
-
-                          {/* 2. Account Settings Link */}
-                          <Link
-                            href="/settings"
-                            onClick={() => {
-                              setActiveMenu(null);
-                            }}
-                            className="w-full text-left flex items-center gap-2.5 px-3 py-2 hover:bg-[#3087ff] hover:text-white transition-colors font-bold hover:font-black text-xs uppercase tracking-wider group cursor-pointer rounded-none"
-                          >
-                            <Settings className="w-4 h-4 text-[#3087ff] group-hover:text-white shrink-0" />
-                            <span className="group-hover:text-white group-hover:font-black">Account Settings</span>
-                          </Link>
-
-                          {/* 3. Approvals Desk Link (If Super Admin) */}
-                          {isSuperAdmin && (
-                            <Link
-                              href="/admin"
-                              onClick={() => {
-                                setActiveMenu(null);
-                              }}
-                              className="w-full text-left flex items-center gap-2.5 px-3 py-2 hover:bg-amber-500 hover:text-white transition-colors font-bold text-xs uppercase tracking-wider group cursor-pointer rounded-none bg-amber-50 text-amber-800 border-t border-amber-200"
-                            >
-                              <ShieldCheck className="w-4 h-4 text-amber-600 group-hover:text-white shrink-0" />
-                              <div className="flex items-center justify-between flex-1">
-                                <span>Approvals Desk</span>
-                                {pendingCount > 0 && (
-                                  <span className="bg-amber-500 group-hover:bg-white text-white group-hover:text-amber-800 text-[10px] font-black px-1.5 py-0.5">
-                                    {pendingCount}
-                                  </span>
-                                )}
-                              </div>
-                            </Link>
-                          )}
+                          <div className="text-[10px] text-[#3087ff] font-bold uppercase truncate">
+                            {currentUser.companyName}
+                          </div>
                         </div>
+
+                        {/* 1. Profile Dashboard Link (Direct navigation to Dashboard with Sidebar) */}
+                        <Link
+                          href="/profile"
+                          onClick={() => {
+                            setActiveMenu(null);
+                          }}
+                          className="w-full text-left flex items-center gap-2.5 px-3 py-2 hover:bg-[#3087ff] hover:text-white transition-colors font-bold hover:font-black text-xs uppercase tracking-wider group cursor-pointer rounded-none"
+                        >
+                          <User className="w-4 h-4 text-[#3087ff] group-hover:text-white shrink-0" />
+                          <span className="group-hover:text-white group-hover:font-black">Profile Dashboard</span>
+                        </Link>
+
+                        {/* 2. Account Settings Link */}
+                        <Link
+                          href="/settings"
+                          onClick={() => {
+                            setActiveMenu(null);
+                          }}
+                          className="w-full text-left flex items-center gap-2.5 px-3 py-2 hover:bg-[#3087ff] hover:text-white transition-colors font-bold hover:font-black text-xs uppercase tracking-wider group cursor-pointer rounded-none"
+                        >
+                          <Settings className="w-4 h-4 text-[#3087ff] group-hover:text-white shrink-0" />
+                          <span className="group-hover:text-white group-hover:font-black">Account Settings</span>
+                        </Link>
+
+                        {/* 3. Approvals Desk Link (If Super Admin) */}
+                        {isSuperAdmin && (
+                          <Link
+                            href="/admin"
+                            onClick={() => {
+                              setActiveMenu(null);
+                            }}
+                            className="w-full text-left flex items-center gap-2.5 px-3 py-2 hover:bg-amber-500 hover:text-white transition-colors font-bold text-xs uppercase tracking-wider group cursor-pointer rounded-none bg-amber-50 text-amber-800 border-t border-amber-200"
+                          >
+                            <ShieldCheck className="w-4 h-4 text-amber-600 group-hover:text-white shrink-0" />
+                            <div className="flex items-center justify-between flex-1">
+                              <span>Approvals Desk</span>
+                              {pendingCount > 0 && (
+                                <span className="bg-amber-500 group-hover:bg-white text-white group-hover:text-amber-800 text-[10px] font-black px-1.5 py-0.5">
+                                  {pendingCount}
+                                </span>
+                              )}
+                            </div>
+                          </Link>
+                        )}
                       </div>
-                    )}
-                  </div>
+                    </div>
+                  )}
                 </div>
               ) : (
                 /* If Not Logged In: Client Portal Button */
                 <button
                   type="button"
                   onClick={onOpenLoginModal}
-                  className="w-full inline-flex items-center justify-center gap-1.5 px-3 py-1 text-xs font-bold transition-all whitespace-nowrap border-2 border-[#3087ff] bg-white text-[#3087ff] hover:bg-[#3087ff] hover:text-white rounded-none shadow-xs cursor-pointer"
+                  className="w-full h-8 inline-flex items-center justify-center gap-1.5 px-3 text-xs 2xl:text-sm font-bold transition-all whitespace-nowrap border-2 border-[#3087ff] bg-white text-[#3087ff] hover:bg-[#3087ff] hover:text-white rounded-none shadow-xs cursor-pointer"
                 >
                   <Lock className="w-3.5 h-3.5 shrink-0" />
                   <span className="whitespace-nowrap">Client Portal</span>
@@ -992,11 +986,11 @@ export const MainNavbar: React.FC<MainNavbarProps> = ({
               )}
             </div>
 
-            {/* 2nd Row: Request Quote Button */}
+            {/* 2nd Row: Request Quote Button (Same Size as Row 1) */}
             <div className="w-full flex items-center justify-end">
               <a
                 href="#quote-form"
-                className="w-full inline-flex items-center justify-center gap-1.5 px-3 py-1.5 text-xs 2xl:text-sm font-black text-white hover:text-white bg-[#3087ff] hover:bg-[#3087ff] border-2 border-[#3087ff] rounded-none shadow-sm transition-all transform hover:-translate-y-0.5 active:translate-y-0 whitespace-nowrap"
+                className="w-full h-8 inline-flex items-center justify-center gap-1.5 px-3 text-xs 2xl:text-sm font-bold text-white hover:text-white bg-[#3087ff] hover:bg-[#3087ff] border-2 border-[#3087ff] rounded-none shadow-xs transition-all transform hover:-translate-y-0.5 active:translate-y-0 whitespace-nowrap"
               >
                 <FileText className="w-3.5 h-3.5 shrink-0 text-white" />
                 <span className="whitespace-nowrap">Request Quote</span>
