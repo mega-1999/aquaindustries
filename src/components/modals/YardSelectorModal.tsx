@@ -62,17 +62,28 @@ export const YardSelectorModal: React.FC<YardSelectorModalProps> = ({
             return (
               <div
                 key={yard.id}
-                className={`p-5 rounded-none border-2 transition-all flex flex-col justify-between ${isSelected
-                    ? "bg-white border-[#3087ff] shadow-sm"
-                    : "bg-white border-[#3087ff] hover:bg-[#3087ff] hover:text-white"
-                  }`}
+                onClick={() => {
+                  onSelectYard(yard);
+                  onClose();
+                }}
+                className={`p-5 rounded-none border-2 transition-all flex flex-col justify-between cursor-pointer group ${
+                  isSelected
+                    ? "bg-white border-2 border-[#3087ff] shadow-md ring-2 ring-[#3087ff]"
+                    : "bg-white border-2 border-[#3087ff] hover:shadow-xl hover:-translate-y-1"
+                }`}
               >
                 <div>
                   <div className="flex items-center justify-between mb-2">
                     <span className="text-xs sm:text-sm font-extrabold text-[#3087ff] uppercase tracking-wider">
                       {yard.city}, {yard.state}
                     </span>
-                    <span className="text-xs font-bold px-2.5 py-1 rounded-none bg-white text-[#3087ff] border border-[#3087ff] whitespace-nowrap">
+                    <span
+                      className={`text-xs font-bold px-2.5 py-1 rounded-none whitespace-nowrap border ${
+                        isSelected
+                          ? "bg-[#3087ff] text-white border-[#3087ff]"
+                          : "bg-white text-[#3087ff] border-[#3087ff] group-hover:bg-[#3087ff] group-hover:text-white transition-colors"
+                      }`}
+                    >
                       {yard.stockStatus}
                     </span>
                   </div>
@@ -120,14 +131,16 @@ export const YardSelectorModal: React.FC<YardSelectorModalProps> = ({
                 <div className="mt-4 pt-3 border-t-2 border-[#3087ff]">
                   <button
                     type="button"
-                    onClick={() => {
+                    onClick={(e) => {
+                      e.stopPropagation();
                       onSelectYard(yard);
                       onClose();
                     }}
-                    className={`w-full py-2.5 px-4 rounded-none text-xs sm:text-sm font-extrabold transition-colors whitespace-nowrap border-2 ${isSelected
+                    className={`w-full py-2.5 px-4 rounded-none text-xs sm:text-sm font-extrabold transition-colors whitespace-nowrap border-2 cursor-pointer ${
+                      isSelected
                         ? "bg-[#3087ff] text-white border-[#3087ff] shadow-sm"
-                        : "bg-white hover:bg-[#3087ff] hover:text-white text-[#3087ff] border-[#3087ff]"
-                      }`}
+                        : "bg-white group-hover:bg-[#3087ff] group-hover:text-white hover:bg-[#3087ff] hover:text-white text-[#3087ff] border-[#3087ff]"
+                    }`}
                   >
                     {isSelected
                       ? "✓ Active Primary Hub"
