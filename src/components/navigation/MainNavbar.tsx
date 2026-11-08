@@ -251,9 +251,11 @@ export const MainNavbar: React.FC<MainNavbarProps> = ({
           {/* 1. ALL MENU ON LEFT (Desktop >= xl) */}
           <nav
             aria-label="Main Navigation"
-            className="hidden xl:flex items-center gap-0.5 2xl:gap-1.5 text-xs 2xl:text-sm font-bold text-[#3087ff]"
+            className="hidden xl:flex flex-col justify-center gap-1 text-xs 2xl:text-sm font-bold text-[#3087ff]"
           >
-            {/* 1. Waterworks Fittings Mega Menu */}
+            {/* Row 1: Fittings, Restraints, Castings */}
+            <div className="flex items-center gap-0.5 2xl:gap-1.5">
+              {/* 1. Waterworks Fittings Mega Menu */}
             <div
               className="relative"
               onMouseEnter={() => setActiveMenu("fittings")}
@@ -748,31 +750,34 @@ export const MainNavbar: React.FC<MainNavbarProps> = ({
                 </div>
               )}
             </div>
+            </div>
 
-            {/* 4. Engineering & Submittal Tools */}
-            <div
-              className="relative"
-              onMouseEnter={() => setActiveMenu("tools")}
-              onMouseLeave={() => setActiveMenu(null)}
-            >
-              <button
-                type="button"
-                className={`inline-flex items-center gap-1 px-2.5 2xl:px-3 py-2 rounded-none transition-colors whitespace-nowrap ${activeMenu === "tools"
-                    ? "text-white bg-[#3087ff] font-bold hover:font-black hover:text-white"
-                    : "text-[#3087ff] hover:bg-[#3087ff] hover:text-white font-bold"
-                  }`}
+            {/* Row 2: Tools, Foundry */}
+            <div className="flex items-center gap-0.5 2xl:gap-1.5">
+              {/* 4. Engineering & Submittal Tools */}
+              <div
+                className="relative"
+                onMouseEnter={() => setActiveMenu("tools")}
+                onMouseLeave={() => setActiveMenu(null)}
               >
-                <span className="whitespace-nowrap">Tools</span>
-                <ChevronDown
-                  className={`w-3.5 h-3.5 transition-transform duration-200 ${activeMenu === "tools"
-                      ? "rotate-180 text-white"
-                      : "text-[#3087ff]"
+                <button
+                  type="button"
+                  className={`inline-flex items-center gap-1 px-2.5 2xl:px-3 py-1.5 rounded-none transition-colors whitespace-nowrap ${activeMenu === "tools"
+                      ? "text-white bg-[#3087ff] font-bold hover:font-black hover:text-white"
+                      : "text-[#3087ff] hover:bg-[#3087ff] hover:text-white font-bold"
                     }`}
-                />
-              </button>
+                >
+                  <span className="whitespace-nowrap">Tools</span>
+                  <ChevronDown
+                    className={`w-3.5 h-3.5 transition-transform duration-200 ${activeMenu === "tools"
+                        ? "rotate-180 text-white"
+                        : "text-[#3087ff]"
+                      }`}
+                  />
+                </button>
 
-              {activeMenu === "tools" && (
-                <div className="absolute top-full right-0 w-80 max-w-[calc(100vw-2rem)] pt-2 z-50">
+                {activeMenu === "tools" && (
+                  <div className="absolute top-full left-0 w-80 max-w-[calc(100vw-2rem)] pt-2 z-50">
                   <div className="bg-white border-2 border-[#3087ff] rounded-none shadow-2xl p-3 text-[#3087ff]">
                     <a
                       href="#thrust-calculator"
@@ -837,6 +842,7 @@ export const MainNavbar: React.FC<MainNavbarProps> = ({
             >
               Foundry
             </a>
+            </div>
           </nav>
 
           {/* 2. THEN LOGO: Three Brand Logos (H2O, Aqua Waterdrop, Waterworks Industries) */}
@@ -864,134 +870,138 @@ export const MainNavbar: React.FC<MainNavbarProps> = ({
             </a>
           </div>
 
-          {/* 3. THEN OTHER THINGS: Desktop Right Header Actions (>= xl) */}
-          <div className="hidden xl:flex items-center gap-2 shrink-0">
-
-            {currentUser ? (
-              /* User Session Menu */
-              <div className="flex items-center gap-1.5">
-                <div
-                  className="relative"
-                  onMouseEnter={() => setActiveMenu("user-menu")}
-                  onMouseLeave={() => setActiveMenu(null)}
-                >
-                  <button
-                    type="button"
-                    onClick={() => {
-                      setActiveMenu(
-                        activeMenu === "user-menu" ? null : "user-menu",
-                      );
-                    }}
-                    className={`inline-flex items-center gap-2 px-3 py-2 text-xs 2xl:text-sm font-bold transition-all whitespace-nowrap border-2 rounded-none shadow-xs cursor-pointer ${activeMenu === "user-menu"
-                        ? "bg-[#3087ff] text-white border-[#3087ff] hover:text-white hover:font-black"
-                        : "bg-white text-[#3087ff] hover:bg-[#3087ff] hover:text-white border-[#3087ff]"
-                      }`}
-                    aria-label="User Account Menu"
+          {/* 3. RIGHT HEADER ACTIONS (Desktop >= xl): 2 Rows */}
+          <div className="hidden xl:flex flex-col justify-center items-end gap-1.5 shrink-0">
+            {/* 1st Row: Client Portal / User Session Menu & Yards */}
+            <div className="flex items-center gap-1.5 2xl:gap-2">
+              {currentUser ? (
+                /* User Session Menu */
+                <div className="flex items-center gap-1.5">
+                  <div
+                    className="relative"
+                    onMouseEnter={() => setActiveMenu("user-menu")}
+                    onMouseLeave={() => setActiveMenu(null)}
                   >
-                    <div className="w-5 h-5 bg-[#3087ff] text-white flex items-center justify-center text-[10px] font-black border border-[#3087ff]">
-                      <User className="w-3.5 h-3.5" />
-                    </div>
-                    <span className="truncate max-w-[130px]">
-                      {currentUser.fullName.split(" ")[0]}
-                    </span>
-                    <ChevronDown
-                      className={`w-3.5 h-3.5 transition-transform duration-200 ${activeMenu === "user-menu" ? "rotate-180" : ""
+                    <button
+                      type="button"
+                      onClick={() => {
+                        setActiveMenu(
+                          activeMenu === "user-menu" ? null : "user-menu",
+                        );
+                      }}
+                      className={`inline-flex items-center gap-1.5 px-2.5 py-1 text-xs font-bold transition-all whitespace-nowrap border-2 rounded-none shadow-xs cursor-pointer ${activeMenu === "user-menu"
+                          ? "bg-[#3087ff] text-white border-[#3087ff] hover:text-white hover:font-black"
+                          : "bg-white text-[#3087ff] hover:bg-[#3087ff] hover:text-white border-[#3087ff]"
                         }`}
-                    />
-                  </button>
+                      aria-label="User Account Menu"
+                    >
+                      <div className="w-4 h-4 bg-[#3087ff] text-white flex items-center justify-center text-[10px] font-black border border-[#3087ff]">
+                        <User className="w-3 h-3" />
+                      </div>
+                      <span className="truncate max-w-[110px]">
+                        {currentUser.fullName.split(" ")[0]}
+                      </span>
+                      <ChevronDown
+                        className={`w-3 h-3 transition-transform duration-200 ${activeMenu === "user-menu" ? "rotate-180" : ""
+                          }`}
+                      />
+                    </button>
 
-                  {activeMenu === "user-menu" && (
-                    <div className="absolute top-full right-0 w-60 pt-2 z-50 animate-in fade-in slide-in-from-top-1 duration-150">
-                      <div className="bg-white border-2 border-[#3087ff] shadow-2xl p-1.5 text-[#3087ff] rounded-none">
-                        {/* User Identity Mini Chip */}
-                        <div className="px-3 py-2 border-b border-[#3087ff] mb-1 bg-white">
-                          <div className="font-black text-xs text-[#3087ff] truncate">
-                            {currentUser.fullName}
+                    {activeMenu === "user-menu" && (
+                      <div className="absolute top-full right-0 w-60 pt-2 z-50 animate-in fade-in slide-in-from-top-1 duration-150">
+                        <div className="bg-white border-2 border-[#3087ff] shadow-2xl p-1.5 text-[#3087ff] rounded-none">
+                          {/* User Identity Mini Chip */}
+                          <div className="px-3 py-2 border-b border-[#3087ff] mb-1 bg-white">
+                            <div className="font-black text-xs text-[#3087ff] truncate">
+                              {currentUser.fullName}
+                            </div>
+                            <div className="text-[10px] text-[#3087ff] font-bold uppercase truncate">
+                              {currentUser.companyName}
+                            </div>
                           </div>
-                          <div className="text-[10px] text-[#3087ff] font-bold uppercase truncate">
-                            {currentUser.companyName}
-                          </div>
-                        </div>
 
-                        {/* 1. Profile Dashboard Link (Direct navigation to Dashboard with Sidebar) */}
-                        <Link
-                          href="/profile"
-                          onClick={() => {
-                            setActiveMenu(null);
-                          }}
-                          className="w-full text-left flex items-center gap-2.5 px-3 py-2.5 hover:bg-[#3087ff] hover:text-white transition-colors font-bold hover:font-black text-xs uppercase tracking-wider group cursor-pointer rounded-none"
-                        >
-                          <User className="w-4 h-4 text-[#3087ff] group-hover:text-white shrink-0" />
-                          <span className="group-hover:text-white group-hover:font-black">Profile Dashboard</span>
-                        </Link>
-
-                        {/* 2. Account Settings Link */}
-                        <Link
-                          href="/settings"
-                          onClick={() => {
-                            setActiveMenu(null);
-                          }}
-                          className="w-full text-left flex items-center gap-2.5 px-3 py-2.5 hover:bg-[#3087ff] hover:text-white transition-colors font-bold hover:font-black text-xs uppercase tracking-wider group cursor-pointer rounded-none"
-                        >
-                          <Settings className="w-4 h-4 text-[#3087ff] group-hover:text-white shrink-0" />
-                          <span className="group-hover:text-white group-hover:font-black">Account Settings</span>
-                        </Link>
-
-                        {/* 3. Approvals Desk Link (If Super Admin) */}
-                        {isSuperAdmin && (
+                          {/* 1. Profile Dashboard Link (Direct navigation to Dashboard with Sidebar) */}
                           <Link
-                            href="/admin"
+                            href="/profile"
                             onClick={() => {
                               setActiveMenu(null);
                             }}
-                            className="w-full text-left flex items-center gap-2.5 px-3 py-2.5 hover:bg-amber-500 hover:text-white transition-colors font-bold text-xs uppercase tracking-wider group cursor-pointer rounded-none bg-amber-50 text-amber-800 border-t border-amber-200"
+                            className="w-full text-left flex items-center gap-2.5 px-3 py-2 hover:bg-[#3087ff] hover:text-white transition-colors font-bold hover:font-black text-xs uppercase tracking-wider group cursor-pointer rounded-none"
                           >
-                            <ShieldCheck className="w-4 h-4 text-amber-600 group-hover:text-white shrink-0" />
-                            <div className="flex items-center justify-between flex-1">
-                              <span>Approvals Desk</span>
-                              {pendingCount > 0 && (
-                                <span className="bg-amber-500 group-hover:bg-white text-white group-hover:text-amber-800 text-[10px] font-black px-1.5 py-0.5">
-                                  {pendingCount}
-                                </span>
-                              )}
-                            </div>
+                            <User className="w-4 h-4 text-[#3087ff] group-hover:text-white shrink-0" />
+                            <span className="group-hover:text-white group-hover:font-black">Profile Dashboard</span>
                           </Link>
-                        )}
+
+                          {/* 2. Account Settings Link */}
+                          <Link
+                            href="/settings"
+                            onClick={() => {
+                              setActiveMenu(null);
+                            }}
+                            className="w-full text-left flex items-center gap-2.5 px-3 py-2 hover:bg-[#3087ff] hover:text-white transition-colors font-bold hover:font-black text-xs uppercase tracking-wider group cursor-pointer rounded-none"
+                          >
+                            <Settings className="w-4 h-4 text-[#3087ff] group-hover:text-white shrink-0" />
+                            <span className="group-hover:text-white group-hover:font-black">Account Settings</span>
+                          </Link>
+
+                          {/* 3. Approvals Desk Link (If Super Admin) */}
+                          {isSuperAdmin && (
+                            <Link
+                              href="/admin"
+                              onClick={() => {
+                                setActiveMenu(null);
+                              }}
+                              className="w-full text-left flex items-center gap-2.5 px-3 py-2 hover:bg-amber-500 hover:text-white transition-colors font-bold text-xs uppercase tracking-wider group cursor-pointer rounded-none bg-amber-50 text-amber-800 border-t border-amber-200"
+                            >
+                              <ShieldCheck className="w-4 h-4 text-amber-600 group-hover:text-white shrink-0" />
+                              <div className="flex items-center justify-between flex-1">
+                                <span>Approvals Desk</span>
+                                {pendingCount > 0 && (
+                                  <span className="bg-amber-500 group-hover:bg-white text-white group-hover:text-amber-800 text-[10px] font-black px-1.5 py-0.5">
+                                    {pendingCount}
+                                  </span>
+                                )}
+                              </div>
+                            </Link>
+                          )}
+                        </div>
                       </div>
-                    </div>
-                  )}
+                    )}
+                  </div>
                 </div>
-              </div>
-            ) : (
-              /* If Not Logged In: Client Portal Button */
+              ) : (
+                /* If Not Logged In: Client Portal Button */
+                <button
+                  type="button"
+                  onClick={onOpenLoginModal}
+                  className="inline-flex items-center gap-1 px-2.5 2xl:px-3 py-1 text-xs font-bold transition-all whitespace-nowrap border-2 border-[#3087ff] bg-white text-[#3087ff] hover:bg-[#3087ff] hover:text-white rounded-none shadow-xs cursor-pointer"
+                >
+                  <Lock className="w-3.5 h-3.5 shrink-0" />
+                  <span className="whitespace-nowrap">Client Portal</span>
+                </button>
+              )}
+
+              {/* Yards Button */}
               <button
                 type="button"
-                onClick={onOpenLoginModal}
-                className="inline-flex items-center gap-1.5 px-3 2xl:px-3.5 py-2 text-xs 2xl:text-sm font-bold transition-all whitespace-nowrap border-2 border-[#3087ff] bg-white text-[#3087ff] hover:bg-[#3087ff] hover:text-white rounded-none shadow-xs cursor-pointer"
+                onClick={onOpenYardModal}
+                className="inline-flex items-center gap-1 px-2.5 2xl:px-3 py-1 text-xs font-bold transition-all whitespace-nowrap border-2 border-[#3087ff] bg-white text-[#3087ff] hover:bg-[#3087ff] hover:text-white rounded-none shadow-xs cursor-pointer"
               >
-                <Lock className="w-3.5 h-3.5 shrink-0" />
-                <span className="whitespace-nowrap">Client Portal</span>
+                <Truck className="w-3.5 h-3.5 shrink-0" />
+                <span className="whitespace-nowrap">Yards</span>
               </button>
-            )}
+            </div>
 
-            {/* Primary CTA: Request a Job Quote */}
-            <a
-              href="#quote-form"
-              className="inline-flex items-center gap-1.5 px-4 2xl:px-5 py-2 text-xs 2xl:text-sm font-bold hover:font-black text-white hover:text-white bg-[#3087ff] hover:bg-[#3087ff] border-2 border-white rounded-none shadow-md shadow-md transition-all transform hover:-translate-y-0.5 active:translate-y-0 whitespace-nowrap"
-            >
-              <FileText className="w-4 h-4 shrink-0 text-white" />
-              <span className="whitespace-nowrap">Request Quote</span>
-            </a>
-
-            {/* Yards - Last Right */}
-            <button
-              type="button"
-              onClick={onOpenYardModal}
-              className="inline-flex items-center gap-1.5 px-3 2xl:px-3.5 py-2 text-xs 2xl:text-sm font-bold transition-all whitespace-nowrap border-2 border-[#3087ff] bg-white text-[#3087ff] hover:bg-[#3087ff] hover:text-white rounded-none shadow-xs cursor-pointer"
-            >
-              <Truck className="w-3.5 h-3.5 shrink-0" />
-              <span className="whitespace-nowrap">Yards</span>
-            </button>
+            {/* 2nd Row: Request Quote Button */}
+            <div className="w-full flex items-center justify-end">
+              <a
+                href="#quote-form"
+                className="w-full inline-flex items-center justify-center gap-1.5 px-3 py-1.5 text-xs 2xl:text-sm font-black text-white hover:text-white bg-[#3087ff] hover:bg-[#3087ff] border-2 border-[#3087ff] rounded-none shadow-sm transition-all transform hover:-translate-y-0.5 active:translate-y-0 whitespace-nowrap"
+              >
+                <FileText className="w-3.5 h-3.5 shrink-0 text-white" />
+                <span className="whitespace-nowrap">Request Quote</span>
+              </a>
+            </div>
           </div>
 
           {/* Mobile & Tablet (< xl) Action Buttons & Hamburger */}
