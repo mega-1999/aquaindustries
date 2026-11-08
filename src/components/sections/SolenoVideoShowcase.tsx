@@ -36,7 +36,7 @@ const VIDEO_SHOWCASES: VideoShowcaseCard[] = [
   {
     id: "video-1",
     badge: "FLAGSHIP INNOVATION",
-    title: "Municipal Water Sampling Station",
+    title: "Samping Station",
     sublabel: "Non-Contaminating Direct Mainline Sampling",
     standard: "ANSI/NSF 61 & 372 Certified",
     duration: "0:45",
@@ -49,7 +49,7 @@ const VIDEO_SHOWCASES: VideoShowcaseCard[] = [
   {
     id: "video-2",
     badge: "100+ YR BENCHMARK",
-    title: "The Century Curb Service Box",
+    title: "bison curb box",
     sublabel: "AASHTO H-20 Heavy Traffic & Authentic PR Tooling",
     standard: "AASHTO H-20 • ASTM A48 35B",
     duration: "0:52",
@@ -62,7 +62,7 @@ const VIDEO_SHOWCASES: VideoShowcaseCard[] = [
   {
     id: "video-3",
     badge: "MECHANICAL RESTRAINT",
-    title: "Series 3000 Cam-Action Restraint",
+    title: "Valves",
     sublabel: "Concrete-Free Radial Cam Wedge Leverage",
     standard: "UL Listed & FM Approved",
     duration: "1:05",
@@ -75,7 +75,7 @@ const VIDEO_SHOWCASES: VideoShowcaseCard[] = [
   {
     id: "video-4",
     badge: "DOMESTIC FOUNDRY",
-    title: "2,500°F Ductile Iron Induction Melt",
+    title: "MJ Fittings",
     sublabel: "Electric Furnace Pouring & Spectrometry",
     standard: "ASTM A536 Grade 65-45-12",
     duration: "1:12",

@@ -21,8 +21,8 @@ export const SolenoFlagshipProducts: React.FC<SolenoFlagshipProductsProps> = ({
   // Match the genuine flagship products from the catalog with their exact photographs
   const flagshipItems = [
     {
-      product: PRODUCTS_CATALOG[0], // Municipal Water Sampling Station (id: water-sampling-station)
-      label: "Municipal Sampling Station",
+      product: PRODUCTS_CATALOG[0],
+      label: "Samping Station",
       sublabel: "ANSI/NSF 61 Sanitary Potable Compliance",
       image: "/images/our-images/sampling-station.png",
       summary:
@@ -35,22 +35,8 @@ export const SolenoFlagshipProducts: React.FC<SolenoFlagshipProductsProps> = ({
       tag: "EPA COMPLIANCE",
     },
     {
-      product: PRODUCTS_CATALOG[3], // C153 Compact MJ Fittings (id: c153-compact-mj-fittings)
-      label: "C153 Compact MJ Fittings",
-      sublabel: "AWWA C153 & C110 Ductile Iron",
-      image: "/images/our-images/MJ_Fittings.jpeg",
-      summary:
-        "High-strength ASTM A536 Grade 65-45-12 compact mechanical joint fittings. 350 PSI rated with double cement mortar lining per AWWA C104.",
-      specs: [
-        '2" to 64" Diameter Range',
-        "350 PSI Working Pressure",
-        "NSF/ANSI 61 Lead-Free Certified",
-      ],
-      tag: "CORE DISTRIBUTION",
-    },
-    {
-      product: PRODUCTS_CATALOG[1], // The Century Curb Box (id: century-curb-box)
-      label: "Bison Curb Box",
+      product: PRODUCTS_CATALOG[1],
+      label: "bison curb box",
       sublabel: "AASHTO H-20 Heavy Highway Traffic",
       image: "/images/our-images/curb-box-ultimate.png",
       summary:
@@ -63,8 +49,133 @@ export const SolenoFlagshipProducts: React.FC<SolenoFlagshipProductsProps> = ({
       tag: "HIGHWAY TRAFFIC",
     },
     {
-      product: PRODUCTS_CATALOG[2], // Series 3000 Cam Restraint (id: series-3000-wedge-restraint)
-      label: "Series 3000 Cam Restraint",
+      product: PRODUCTS_CATALOG[0],
+      label: "Water Works Tools",
+      sublabel: "ANSI/NSF 61 Field Utility Standard",
+      image: "/images/our-images/sampling-station.png",
+      summary:
+        "Municipal water quality sampling stations, valve operating keys, and field service utility equipment engineered for water mains.",
+      specs: [
+        "ASTM Certified Toughness",
+        "Precision Machined Keys",
+        "Field Ready Heavy Tooling",
+      ],
+      tag: "UTILITY TOOLS",
+    },
+    {
+      product:
+        PRODUCTS_CATALOG.find((p) => p.id === "cast-iron-downspout-spouts") ||
+        PRODUCTS_CATALOG[1],
+      label: "Downspouts",
+      sublabel: "Heavy Cast Iron Facade Protection",
+      image: "/images/products/Cleanout-Monument-Box.jpg",
+      summary:
+        "Heavy cast iron conductor boots, parapet overflow scuppers, and highway bridge deck spouts protecting building foundations.",
+      specs: [
+        "ASTM A48 Class 35B",
+        "Impact & Snowplow Proof",
+        "Anti-Splash Scupper Lip",
+      ],
+      tag: "ARCHITECTURAL",
+    },
+    {
+      product:
+        PRODUCTS_CATALOG.find((p) => p.id === "catch-basin-traps") ||
+        PRODUCTS_CATALOG[1],
+      label: "Catch Basin Traps",
+      sublabel: "Gas & Siphon Water Seal Hood",
+      image: "/images/traps/traps.png",
+      summary:
+        "Cast iron gas and siphon water-seal traps stopping floatable debris, oils, and sewer gases in municipal storm catch basins.",
+      specs: [
+        "Siphon Gas Seal Barrier",
+        "ASTM A48 Heavy Iron",
+        "Cleanout Access Hood",
+      ],
+      tag: "STORMWATER SEAL",
+    },
+    {
+      product:
+        PRODUCTS_CATALOG.find((p) => p.id === "culvert-pipe-grates") ||
+        PRODUCTS_CATALOG[9],
+      label: "Pipe Grates",
+      sublabel: "AASHTO H-20 Heavy Culvert Protection",
+      image: "/images/pipe_GRATE/NON_SIFTING.15.png",
+      summary:
+        "Heavy-duty circular pipe grates, flared end hinged bar grates, and traversable ditch safety slope grates for stormwater.",
+      specs: [
+        '12" to 72" Diameter Range',
+        "Hot-Dip Galvanized Bar",
+        "Hinged Cleanout Access",
+      ],
+      tag: "SAFETY GRATE",
+    },
+    {
+      product:
+        PRODUCTS_CATALOG.find((p) => p.id === "drainage-grates-curb-inlets") ||
+        PRODUCTS_CATALOG[4],
+      label: "Water Works Castings",
+      sublabel: "AASHTO M306 40,000 LB Proof Load",
+      image: "/images/our-images/curb_inlet_riser_heavy_iron.png",
+      summary:
+        "Proof-tested roadway manhole frames, curb inlets, catch basin covers, and high-velocity stormwater directional grates.",
+      specs: [
+        "40,000 LB Proof Load",
+        "High Hydraulic Inflow",
+        "State DOT Approved",
+      ],
+      tag: "MUNICIPAL CASTING",
+    },
+    {
+      product: PRODUCTS_CATALOG[3],
+      label: "MJ Fittings",
+      sublabel: "AWWA C153 & C110 Ductile Iron",
+      image: "/images/our-images/MJ_Fittings.jpeg",
+      summary:
+        "High-strength ASTM A536 Grade 65-45-12 compact mechanical joint fittings. 350 PSI rated with double cement mortar lining per AWWA C104.",
+      specs: [
+        '2" to 64" Diameter Range',
+        "350 PSI Working Pressure",
+        "NSF/ANSI 61 Lead-Free Certified",
+      ],
+      tag: "CORE DISTRIBUTION",
+    },
+    {
+      product:
+        PRODUCTS_CATALOG.find((p) => p.id === "threaded-ductile-iron-flanges") ||
+        PRODUCTS_CATALOG[0],
+      label: "Flanges",
+      sublabel: "ANSI/AWWA C115 Class 125 & 250",
+      image: "/images/products/Fabricator-Flanges.jpg",
+      summary:
+        "Precision-machined threaded ductile iron flanges, blind flanges, and drilled tapped reducing flanges for pump station piping.",
+      specs: [
+        "Class 125 & 250 Standard",
+        "CNC Precision Threaded",
+        "ASTM A536 Ductile Iron",
+      ],
+      tag: "PLANT PIPING",
+    },
+    {
+      product:
+        PRODUCTS_CATALOG.find(
+          (p) => p.id === "mechanical-joint-follower-glands",
+        ) || PRODUCTS_CATALOG[2],
+      label: "Glands",
+      sublabel: "AWWA C111 High-Strength Follower",
+      image: "/images/products/MJ-Accessories.jpg",
+      summary:
+        "High-strength ductile iron follower glands and mechanical joint accessories engineered for positive gasket sealing under high pressures.",
+      specs: [
+        "AWWA C111 Standard",
+        "High-Tensile Ductile Iron",
+        "Precision Bolt Circle",
+      ],
+      tag: "MJ ACCESSORY",
+    },
+    {
+      product: PRODUCTS_CATALOG[2],
+      label: "Valves",
       sublabel: "Concrete-Free Mechanical Joint Restraint",
       image: "/images/products/Joint-Restraints.jpg",
       summary:
@@ -72,106 +183,42 @@ export const SolenoFlagshipProducts: React.FC<SolenoFlagshipProductsProps> = ({
       specs: [
         "UL Listed & FM Approved",
         "350 PSI Continuous Rating",
-        "Breakaway Torque-Head Bolts",
+        "Breakaway Torque Bolts",
       ],
-      tag: "JOINT RESTRAINT",
+      tag: "VALVES & RESTRAINT",
     },
     {
       product:
-        PRODUCTS_CATALOG.find((p) => p.id === "drainage-grates-curb-inlets") ||
-        PRODUCTS_CATALOG[4],
-      label: "Drainage Grates & Inlets",
-      sublabel: "AASHTO M306 Highway Catch Basins",
-      image: "/images/our-images/curb_inlet_riser_heavy_iron.png",
+        PRODUCTS_CATALOG.find((p) => p.id === "detention-trash-racks") ||
+        PRODUCTS_CATALOG[0],
+      label: "Trash Racks",
+      sublabel: "Anti-Vortex Basin Safety Risers",
+      image: "/images/trash_racks/trash_rack_type_1.png",
       summary:
-        "High-inflow storm sewer castings engineered with directional vane bars that capture storm runoff along curbs while preventing bicycle trapping.",
+        "360-degree pyramidal anti-vortex trash racks and self-cleaning inclined screens for stormwater detention basin outlet risers.",
       specs: [
-        "40,000 LB Proof Load",
-        "High Hydraulic Capacity",
-        "DOT State Highway Approved",
+        "360° Anti-Vortex Design",
+        "ASTM A123 Galvanized",
+        "Self-Cleaning Bars",
       ],
-      tag: "STORMWATER DRAIN",
-    },
-    {
-      product:
-        PRODUCTS_CATALOG.find((p) => p.id === "trench-grates") ||
-        PRODUCTS_CATALOG[5],
-      label: "Architectural Trench Grates",
-      sublabel: "High-Inflow Chevron Linear Channels",
-      image: "/images/our-images/trench-grates.png",
-      summary:
-        "Heavy modular cast iron trench grates designed for continuous linear drainage channels along airport taxiways, loading docks, and plazas.",
-      specs: [
-        '8" to 24" Width Modules',
-        "ADA Heel-Proof Slots",
-        "Interlocking Tongue & Groove",
-      ],
-      tag: "LINEAR TRENCH",
-    },
-    {
-      product:
-        PRODUCTS_CATALOG.find((p) => p.id === "detectable-warning-plates") ||
-        PRODUCTS_CATALOG[6],
-      label: "Detectable Warning Plates",
-      sublabel: "Solid Cast Iron ADA Tactile Armor",
-      image: "/images/our-images/warning-plate.png",
-      summary:
-        "Cast iron truncated dome tactile warning tiles with monolithic underside concrete anchors. Snowplow indestructible, never fractures or lifts.",
-      specs: [
-        "ADAAG Section R305",
-        "Snowplow Indestructible",
-        "Wet-Set Concrete Cleats",
-      ],
-      tag: "ADA COMPLIANCE",
-    },
-    {
-      product:
-        PRODUCTS_CATALOG.find((p) => p.id === "cleanout-monument-boxes") ||
-        PRODUCTS_CATALOG[7],
-      label: "Cleanout & Monument Boxes",
-      sublabel: "Heavy Traffic Subgrade Access",
-      image: "/images/our-images/cleanout.png",
-      summary:
-        "Heavy duty cast iron cleanout and monument boxes engineered for sanitary sewer cleanout and protecting municipal land survey monuments.",
-      specs: [
-        "AASHTO H-20 Highway Rated",
-        "Machined 360° Seating Rim",
-        "Stackable Modular Risers",
-      ],
-      tag: "MUNICIPAL ACCESS",
+      tag: "BASIN PROTECTION",
     },
     {
       product:
         PRODUCTS_CATALOG.find(
           (p) => p.id === "ornamental-architectural-castings",
         ) || PRODUCTS_CATALOG[8],
-      label: "Ornamental Tree Grates",
-      sublabel: "Architectural Downtown Streetscape",
+      label: "Marine Castings",
+      sublabel: "Heavy Waterfront & Ornamental Castings",
       image: "/images/our-images/Ornamental_Castings.jpeg",
       summary:
-        "Decorative municipal tree grates and custom architectural streetscape castings meeting city streetscape aesthetics and ADA pedestrian mandates.",
+        "Ductile iron mooring bollards, dock bitts, marine cleats, and custom heavy waterfront bulkhead iron infrastructure.",
       specs: [
-        '36" to 72" Round & Square',
-        "Expanding Tree Center",
-        "ADA Narrow Heel-Proof",
+        "ASTM A536 Heavy Marine",
+        "High Tensile Bollards",
+        "Corrosion Resistant Iron",
       ],
-      tag: "STREETSCAPE",
-    },
-    {
-      product:
-        PRODUCTS_CATALOG.find((p) => p.id === "culvert-pipe-grates") ||
-        PRODUCTS_CATALOG[9],
-      label: "Culvert Safety Pipe Grates",
-      sublabel: "Debris & Trash Defense Armor",
-      image: "/images/pipe_GRATE/NON_SIFTING.15.png",
-      summary:
-        "Heavy welded steel bar culvert pipe safety grates. Bars watercraft, debris, and wildlife from entering while maximizing stormwater discharge.",
-      specs: [
-        '12" to 72" Culvert Sizes',
-        "Hot-Dip Galvanized Bar",
-        "AIS Buy America Ready",
-      ],
-      tag: "SAFETY GRATE",
+      tag: "MARINE & BULKHEAD",
     },
   ];
 
@@ -311,7 +358,7 @@ export const SolenoFlagshipProducts: React.FC<SolenoFlagshipProductsProps> = ({
           })}
         </div>
 
-        {/* Load More Button: Initially 8, Expands to All 10 */}
+        {/* Load More Button: Initially 8, Expands to All 13 */}
         <div className="mt-10 sm:mt-12 flex justify-center">
           <button
             type="button"
@@ -321,7 +368,7 @@ export const SolenoFlagshipProducts: React.FC<SolenoFlagshipProductsProps> = ({
             <span>
               {showAll
                 ? "Show Less (8 Products)"
-                : "Load More Products (Show All 10)"}
+                : "Load More Products (Show All 13)"}
             </span>
             <ArrowDown
               className={`w-4 h-4 transition-transform duration-300 ${

@@ -81,7 +81,7 @@ export const PRODUCTS_CATALOG: ProductItem[] = [
   // 1. PRIMARY FLAGSHIP PRODUCTS (FEATURED FIRST)
   {
     id: "water-sampling-station",
-    name: "Municipal Water Sampling Station",
+    name: "Samping Station",
     category: "accessories",
     categoryLabel: "Flagship Products",
     standard: "ANSI/NSF 61",
@@ -116,7 +116,7 @@ export const PRODUCTS_CATALOG: ProductItem[] = [
   },
   {
     id: "century-curb-box",
-    name: "Bison Heavy-Duty Curb Service Box",
+    name: "bison curb box",
     category: "valve-meter-boxes",
     categoryLabel: "Curb & Valve Boxes",
     standard: "ASTM A48",
@@ -151,7 +151,7 @@ export const PRODUCTS_CATALOG: ProductItem[] = [
   },
   {
     id: "series-3000-wedge-restraint",
-    name: "Series 3000 Cam-Action MJ Restraint",
+    name: "Valves",
     category: "restraints",
     categoryLabel: "Joint Restraints",
     standard: "ASTM A536",
@@ -184,7 +184,7 @@ export const PRODUCTS_CATALOG: ProductItem[] = [
   },
   {
     id: "c153-compact-mj-fittings",
-    name: "C153 Compact MJ Fittings",
+    name: "MJ Fittings",
     category: "fittings",
     categoryLabel: "Ductile Iron Fittings",
     standard: "AWWA C153",
@@ -217,7 +217,7 @@ export const PRODUCTS_CATALOG: ProductItem[] = [
   },
   {
     id: "drainage-grates-curb-inlets",
-    name: "Drainage Grates & Curb Inlets",
+    name: "Water Works Castings",
     category: "municipal-castings",
     categoryLabel: "Municipal Castings",
     standard: "AASHTO M306",
@@ -349,7 +349,7 @@ export const PRODUCTS_CATALOG: ProductItem[] = [
   },
   {
     id: "ornamental-architectural-castings",
-    name: "Ornamental & Architectural Castings",
+    name: "Marine Castings",
     category: "municipal-castings",
     categoryLabel: "Municipal Castings",
     standard: "AASHTO M306",
@@ -717,7 +717,7 @@ export const PRODUCTS_CATALOG: ProductItem[] = [
   // 3. MJ ACCESSORIES & ADAPTERS
   {
     id: "mechanical-joint-follower-glands",
-    name: "Mechanical Joint Follower Glands",
+    name: "Glands",
     category: "accessories",
     categoryLabel: "MJ Accessories",
     standard: "AWWA C111",
@@ -1117,7 +1117,7 @@ export const PRODUCTS_CATALOG: ProductItem[] = [
   },
   {
     id: "threaded-ductile-iron-flanges",
-    name: "Threaded Ductile Iron Flanges",
+    name: "Flanges",
     category: "hydrants-flanges",
     categoryLabel: "Hydrants & Flanges",
     standard: "AWWA C115",
@@ -1354,7 +1354,7 @@ export const PRODUCTS_CATALOG: ProductItem[] = [
   // 8. STORMWATER SPECIALTIES: CATCH BASIN TRAPS, PIPE GRATES, TRASH RACKS, SPOUTS
   {
     id: "catch-basin-traps",
-    name: "Municipal Catch Basin Gas & Siphon Traps",
+    name: "Catch Basin Traps",
     category: "municipal-castings",
     categoryLabel: "Municipal Castings",
     standard: "ASTM A48",
@@ -1388,7 +1388,7 @@ export const PRODUCTS_CATALOG: ProductItem[] = [
   },
   {
     id: "culvert-pipe-grates",
-    name: "Culvert Safety Pipe Grates & Flared End Grates",
+    name: "Pipe Grates",
     category: "municipal-castings",
     categoryLabel: "Municipal Castings",
     standard: "ASTM A48",
@@ -1421,7 +1421,7 @@ export const PRODUCTS_CATALOG: ProductItem[] = [
   },
   {
     id: "detention-trash-racks",
-    name: "Stormwater Detention Basin Anti-Vortex Trash Racks",
+    name: "Trash Racks",
     category: "municipal-castings",
     categoryLabel: "Municipal Castings",
     standard: "ASTM A48",
@@ -1454,7 +1454,7 @@ export const PRODUCTS_CATALOG: ProductItem[] = [
   },
   {
     id: "cast-iron-downspout-spouts",
-    name: "Cast Iron Downspout Boots & Architectural Scupper Spouts",
+    name: "Downspouts",
     category: "municipal-castings",
     categoryLabel: "Municipal Castings",
     standard: "ASTM A48",
