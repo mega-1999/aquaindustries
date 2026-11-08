@@ -752,7 +752,7 @@ export const MainNavbar: React.FC<MainNavbarProps> = ({
             </div>
             </div>
 
-            {/* Row 2: Tools, Foundry */}
+            {/* Row 2: Tools, Foundry, Yards */}
             <div className="flex items-center gap-0.5 2xl:gap-1.5">
               {/* 4. Engineering & Submittal Tools */}
               <div
@@ -838,10 +838,20 @@ export const MainNavbar: React.FC<MainNavbarProps> = ({
             <a
               href="/#foundry-walkthrough"
               onClick={() => handleNavClick("/#foundry-walkthrough")}
-              className="px-2 2xl:px-3 py-2 rounded-none text-[#3087ff] hover:bg-[#3087ff] hover:text-white transition-colors whitespace-nowrap font-bold"
+              className="px-2 2xl:px-3 py-1.5 rounded-none text-[#3087ff] hover:bg-[#3087ff] hover:text-white transition-colors whitespace-nowrap font-bold"
             >
               Foundry
             </a>
+
+            {/* 6. Stock Yards */}
+            <button
+              type="button"
+              onClick={onOpenYardModal}
+              className="inline-flex items-center gap-1 px-2 2xl:px-3 py-1.5 rounded-none text-[#3087ff] hover:bg-[#3087ff] hover:text-white transition-colors whitespace-nowrap font-bold cursor-pointer"
+            >
+              <Truck className="w-3.5 h-3.5 shrink-0" />
+              <span>Yards</span>
+            </button>
             </div>
           </nav>
 
@@ -872,8 +882,8 @@ export const MainNavbar: React.FC<MainNavbarProps> = ({
 
           {/* 3. RIGHT HEADER ACTIONS (Desktop >= xl): 2 Rows */}
           <div className="hidden xl:flex flex-col justify-center items-end gap-1.5 shrink-0">
-            {/* 1st Row: Client Portal / User Session Menu & Yards */}
-            <div className="flex items-center gap-1.5 2xl:gap-2">
+            {/* 1st Row: Client Portal / User Session Menu */}
+            <div className="flex items-center justify-end">
               {currentUser ? (
                 /* User Session Menu */
                 <div className="flex items-center gap-1.5">
@@ -974,22 +984,12 @@ export const MainNavbar: React.FC<MainNavbarProps> = ({
                 <button
                   type="button"
                   onClick={onOpenLoginModal}
-                  className="inline-flex items-center gap-1 px-2.5 2xl:px-3 py-1 text-xs font-bold transition-all whitespace-nowrap border-2 border-[#3087ff] bg-white text-[#3087ff] hover:bg-[#3087ff] hover:text-white rounded-none shadow-xs cursor-pointer"
+                  className="w-full inline-flex items-center justify-center gap-1.5 px-3 py-1 text-xs font-bold transition-all whitespace-nowrap border-2 border-[#3087ff] bg-white text-[#3087ff] hover:bg-[#3087ff] hover:text-white rounded-none shadow-xs cursor-pointer"
                 >
                   <Lock className="w-3.5 h-3.5 shrink-0" />
                   <span className="whitespace-nowrap">Client Portal</span>
                 </button>
               )}
-
-              {/* Yards Button */}
-              <button
-                type="button"
-                onClick={onOpenYardModal}
-                className="inline-flex items-center gap-1 px-2.5 2xl:px-3 py-1 text-xs font-bold transition-all whitespace-nowrap border-2 border-[#3087ff] bg-white text-[#3087ff] hover:bg-[#3087ff] hover:text-white rounded-none shadow-xs cursor-pointer"
-              >
-                <Truck className="w-3.5 h-3.5 shrink-0" />
-                <span className="whitespace-nowrap">Yards</span>
-              </button>
             </div>
 
             {/* 2nd Row: Request Quote Button */}
