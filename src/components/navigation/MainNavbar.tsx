@@ -870,7 +870,7 @@ export const MainNavbar: React.FC<MainNavbarProps> = ({
               <img
                 src="/images/AI_Waterdrop.png"
                 alt="Aqua Industries"
-                className="h-10 sm:h-12 md:h-14 lg:h-16 xl:h-20 w-auto object-contain group-hover:scale-105 transition-transform duration-200 shrink-0 filter drop-shadow-xs"
+                className="h-12 sm:h-14 md:h-16 lg:h-20 xl:h-24 w-auto object-contain group-hover:scale-105 transition-transform duration-200 shrink-0 filter drop-shadow-xs"
               />
               <img
                 src="/images/waterworks Industries.png"
@@ -1038,7 +1038,7 @@ export const MainNavbar: React.FC<MainNavbarProps> = ({
                   <img
                     src="/images/AI_Waterdrop.png"
                     alt="Aqua Industries"
-                    className="h-8 w-auto object-contain shrink-0"
+                    className="h-9.5 w-auto object-contain shrink-0"
                   />
                   <img
                     src="/images/waterworks Industries.png"
