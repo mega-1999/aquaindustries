@@ -839,17 +839,27 @@ export const MainNavbar: React.FC<MainNavbarProps> = ({
             </a>
           </nav>
 
-          {/* 2. THEN LOGO: Large Aqua Industries Brand Logo */}
+          {/* 2. THEN LOGO: Three Brand Logos (H2O, Aqua Waterdrop, Waterworks Industries) */}
           <div className="flex items-center justify-center shrink-0 px-2 sm:px-4">
             <a
               href="/"
-              className="flex items-center justify-center shrink-0 group focus:outline-none focus-visible:ring-2 focus-visible:ring-[#3087ff] rounded-none p-1"
+              className="flex items-center justify-center gap-2 sm:gap-3 lg:gap-4 shrink-0 group focus:outline-none focus-visible:ring-2 focus-visible:ring-[#3087ff] rounded-none p-1"
               title="Aqua Industries"
             >
               <img
+                src="/images/h2o LOGO NEW UPDATED.png"
+                alt="H2O"
+                className="h-10 sm:h-12 md:h-14 lg:h-16 xl:h-20 w-auto object-contain group-hover:scale-105 transition-transform duration-200 shrink-0 filter drop-shadow-xs"
+              />
+              <img
                 src="/images/AI_Waterdrop.png"
                 alt="Aqua Industries"
-                className="h-18 24:h-30 lg:h-36 w-auto object-contain group-hover:scale-105 transition-transform duration-200 shrink-0 filter drop-shadow-xs"
+                className="h-10 sm:h-12 md:h-14 lg:h-16 xl:h-20 w-auto object-contain group-hover:scale-105 transition-transform duration-200 shrink-0 filter drop-shadow-xs"
+              />
+              <img
+                src="/images/waterworks Industries.png"
+                alt="Waterworks Industries"
+                className="h-10 sm:h-12 md:h-14 lg:h-16 xl:h-20 w-auto object-contain group-hover:scale-105 transition-transform duration-200 shrink-0 filter drop-shadow-xs"
               />
             </a>
           </div>
@@ -1013,13 +1023,23 @@ export const MainNavbar: React.FC<MainNavbarProps> = ({
                 <Link
                   href="/"
                   onClick={() => setMobileMenuOpen(false)}
-                  className="flex items-center justify-center shrink-0"
+                  className="flex items-center gap-2 shrink-0"
                   title="Aqua Industries"
                 >
                   <img
+                    src="/images/h2o LOGO NEW UPDATED.png"
+                    alt="H2O"
+                    className="h-8 w-auto object-contain shrink-0"
+                  />
+                  <img
                     src="/images/AI_Waterdrop.png"
                     alt="Aqua Industries"
-                    className="h-10 w-auto object-contain shrink-0"
+                    className="h-8 w-auto object-contain shrink-0"
+                  />
+                  <img
+                    src="/images/waterworks Industries.png"
+                    alt="Waterworks Industries"
+                    className="h-8 w-auto object-contain shrink-0"
                   />
                 </Link>
                 <button
