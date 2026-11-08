@@ -847,10 +847,9 @@ export const MainNavbar: React.FC<MainNavbarProps> = ({
             <button
               type="button"
               onClick={onOpenYardModal}
-              className="inline-flex items-center gap-1 px-2 2xl:px-3 py-1.5 rounded-none text-[#3087ff] hover:bg-[#3087ff] hover:text-white transition-colors whitespace-nowrap font-bold cursor-pointer"
+              className="px-2 2xl:px-3 py-1.5 rounded-none text-[#3087ff] hover:bg-[#3087ff] hover:text-white transition-colors whitespace-nowrap font-bold cursor-pointer"
             >
-              <Truck className="w-3.5 h-3.5 shrink-0" />
-              <span>Yards</span>
+              Yards
             </button>
             </div>
           </nav>
