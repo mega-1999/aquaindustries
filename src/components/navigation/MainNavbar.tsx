@@ -269,299 +269,190 @@ export const MainNavbar: React.FC<MainNavbarProps> = ({
             aria-label="Main Navigation"
             className="hidden xl:flex flex-col justify-center gap-0.5 2xl:gap-1 text-xs 2xl:text-sm font-extrabold text-[#3087ff] shrink-0"
           >
-            {/* Row 1: Fittings, Restraints, Castings */}
+            {/* Row 1: View All Categories, Fittings, Restraints, Castings */}
             <div className="flex items-center gap-0.5 2xl:gap-1.5">
-              {/* 1. Waterworks Fittings Mega Menu */}
-            <div
-              className="relative"
-              onMouseEnter={() => setActiveMenu("fittings")}
-              onMouseLeave={() => {
-                setActiveMenu(null);
-                setShowCategoryVideos(false);
-              }}
-            >
-              <button
-                type="button"
-                className={`inline-flex items-center gap-1 px-2.5 2xl:px-3 py-2 rounded-none transition-colors whitespace-nowrap ${activeMenu === "fittings"
-                    ? "text-white bg-[#3087ff] font-bold hover:font-black hover:text-white"
-                    : "text-[#3087ff] hover:bg-[#3087ff] hover:text-white font-bold"
-                  }`}
+              {/* 0. View All Categories (FIRST MENU) */}
+              <div
+                className="relative"
+                onMouseEnter={() => setActiveMenu("all-categories")}
+                onMouseLeave={() => setActiveMenu(null)}
               >
-                <span className="whitespace-nowrap">Fittings</span>
-                <ChevronDown
-                  className={`w-3.5 h-3.5 transition-transform duration-200 ${activeMenu === "fittings"
-                      ? "rotate-180 text-white"
-                      : "text-[#3087ff]"
-                    }`}
-                />
-              </button>
-
-              {activeMenu === "fittings" && (
-                <div
-                  className={`absolute top-full left-0 pt-2 z-50 transition-all duration-200 ${showCategoryVideos
-                      ? "w-[min(1140px,calc(100vw-2rem))]"
-                      : "w-[min(640px,calc(100vw-2.5rem))]"
-                    }`}
+                <button
+                  type="button"
+                  onClick={() => setShowCategoryVideosModal(true)}
+                  className={`inline-flex items-center gap-1 px-2 2xl:px-2.5 py-1 rounded-none transition-colors whitespace-nowrap cursor-pointer ${
+                    activeMenu === "all-categories"
+                      ? "text-white bg-[#3087ff] font-black"
+                      : "text-[#3087ff] hover:bg-[#3087ff] hover:text-white font-extrabold"
+                  }`}
                 >
-                  <div className="bg-white border-2 border-[#3087ff] rounded-none shadow-2xl p-4 text-[#3087ff]">
-                    {!showCategoryVideos ? (
-                      /* Standard Fittings Dropdown View */
-                      <>
-                        <div className="grid grid-cols-12 gap-4">
-                          <div className="col-span-8 grid grid-cols-2 gap-2.5">
-                            <a
-                              href="#product-matrix"
-                              onClick={() =>
-                                handleNavClick("#product-matrix", "fittings")
-                              }
-                              className="p-3 rounded-none hover:bg-[#3087ff] hover:text-white border border-[#3087ff] transition-all group block text-[#3087ff]"
-                            >
-                              <div className="font-bold text-sm mb-1 group-hover:text-white group-hover:font-black leading-tight">
-                                C153 Compact MJ Fittings
-                              </div>
-                              <p className="text-xs sm:text-[13px] leading-relaxed group-hover:text-white group-hover:font-bold font-medium">
-                                2&quot; to 64&quot; MJ bends, tees, and reducers.
-                                350 PSI rated.
-                              </p>
-                            </a>
+                  <span className="whitespace-nowrap">View All Categories</span>
+                  <ChevronDown
+                    className={`w-3.5 h-3.5 transition-transform duration-200 ${
+                      activeMenu === "all-categories"
+                        ? "rotate-180 text-white"
+                        : "text-[#3087ff]"
+                    }`}
+                  />
+                </button>
 
-                            <a
-                              href="#product-matrix"
-                              onClick={() =>
-                                handleNavClick("#product-matrix", "fittings")
-                              }
-                              className="p-3 rounded-none hover:bg-[#3087ff] hover:text-white border border-[#3087ff] transition-all group block text-[#3087ff]"
-                            >
-                              <div className="font-bold text-sm mb-1 group-hover:text-white group-hover:font-black leading-tight">
-                                C110 Full Body MJ Fittings
-                              </div>
-                              <p className="text-xs sm:text-[13px] leading-relaxed group-hover:text-white group-hover:font-bold font-medium">
-                                Heavy full-body branch tees &amp; crosses for
-                                high-surge mains.
-                              </p>
-                            </a>
-
-                            <a
-                              href="#product-matrix"
-                              onClick={() =>
-                                handleNavClick("#product-matrix", "fittings")
-                              }
-                              className="p-3 rounded-none hover:bg-[#3087ff] hover:text-white border border-[#3087ff] transition-all group block text-[#3087ff]"
-                            >
-                              <div className="font-bold text-sm mb-1 group-hover:text-white group-hover:font-black leading-tight">
-                                C110 Flange Fittings
-                              </div>
-                              <p className="text-xs sm:text-[13px] leading-relaxed group-hover:text-white group-hover:font-bold font-medium">
-                                Class 125 &amp; 250 flanged spools &amp; reducers
-                                for pump stations.
-                              </p>
-                            </a>
-
-                            <a
-                              href="#product-matrix"
-                              onClick={() =>
-                                handleNavClick("#product-matrix", "fittings")
-                              }
-                              className="p-3 rounded-none hover:bg-[#3087ff] hover:text-white border border-[#3087ff] transition-all group block text-[#3087ff]"
-                            >
-                              <div className="font-bold text-sm mb-1 group-hover:text-white group-hover:font-black leading-tight">
-                                C153 Push-On Fittings
-                              </div>
-                              <p className="text-xs sm:text-[13px] leading-relaxed group-hover:text-white group-hover:font-bold font-medium">
-                                Tyton-compatible socket fittings for rapid trench
-                                assembly.
-                              </p>
-                            </a>
-                          </div>
-
-                          <div className="col-span-4 bg-[#3087ff] text-white border-2 border-[#3087ff] rounded-none p-4 flex flex-col justify-between">
-                            <div>
-                              <span className="text-xs font-bold uppercase tracking-wider text-white bg-white/20 px-2 py-0.5 rounded-none whitespace-nowrap">
-                                Foundry Certified
-                              </span>
-                              <h4 className="font-extrabold text-white text-sm sm:text-base mt-2.5 mb-1">
-                                Grade 65-45-12
-                              </h4>
-                              <p className="text-xs text-white leading-relaxed font-medium">
-                                Certified ductile iron proof-tested to 500 PSI
-                                hydrostatic pressure.
-                              </p>
-                            </div>
-                            <a
-                              href="#product-matrix"
-                              onClick={() =>
-                                handleNavClick("#product-matrix", "fittings")
-                              }
-                              className="inline-flex items-center gap-1.5 text-xs sm:text-sm font-bold text-white hover:text-white hover:font-black mt-3 whitespace-nowrap"
-                            >
-                              <span>All Fittings</span>
-                              <ArrowRight className="w-3.5 h-3.5" />
-                            </a>
-                          </div>
+                {activeMenu === "all-categories" && (
+                  <div className="absolute top-full left-0 w-[min(1140px,calc(100vw-2rem))] pt-2 z-50">
+                    <div className="bg-white border-2 border-[#3087ff] rounded-none shadow-2xl p-4 text-[#3087ff]">
+                      {/* Header */}
+                      <div className="flex items-center justify-between pb-3 mb-3 border-b-2 border-[#3087ff]">
+                        <div className="flex items-center gap-2">
+                          <Play className="w-4 h-4 text-[#3087ff] fill-[#3087ff]" />
+                          <h4 className="font-black text-sm uppercase tracking-wider text-[#3087ff]">
+                            All Product Categories — Total Products Videos
+                          </h4>
                         </div>
+                        <span className="text-[11px] font-mono font-bold text-[#3087ff]">
+                          13 Total Products • Titles Only
+                        </span>
+                      </div>
 
-                        {/* Bottom: View All Categories Button */}
-                        <div className="mt-3 pt-3 border-t-2 border-[#3087ff]">
-                          <button
-                            type="button"
-                            onMouseEnter={() => setShowCategoryVideos(true)}
+                      {/* Videos Grid with Title Only */}
+                      <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 gap-3 max-h-[60vh] overflow-y-auto p-1">
+                        {ALL_PRODUCT_VIDEOS.map((item) => (
+                          <ProductVideoCard
+                            key={item.id}
+                            item={item}
                             onClick={() => {
-                              setShowCategoryVideos(true);
-                              setShowCategoryVideosModal(true);
+                              setActiveMenu(null);
+                              handleNavClick(item.target, item.category);
                             }}
-                            className="w-full py-2.5 px-4 bg-[#3087ff] text-white hover:bg-white hover:text-[#3087ff] border-2 border-[#3087ff] font-extrabold text-xs sm:text-sm uppercase tracking-wider flex items-center justify-between transition-colors group cursor-pointer shadow-xs"
+                          />
+                        ))}
+                      </div>
+                    </div>
+                  </div>
+                )}
+              </div>
+
+              {/* 1. Waterworks Fittings Mega Menu */}
+              <div
+                className="relative"
+                onMouseEnter={() => setActiveMenu("fittings")}
+                onMouseLeave={() => setActiveMenu(null)}
+              >
+                <button
+                  type="button"
+                  className={`inline-flex items-center gap-1 px-2 2xl:px-2.5 py-1 rounded-none transition-colors whitespace-nowrap ${
+                    activeMenu === "fittings"
+                      ? "text-white bg-[#3087ff] font-bold hover:font-black hover:text-white"
+                      : "text-[#3087ff] hover:bg-[#3087ff] hover:text-white font-bold"
+                  }`}
+                >
+                  <span className="whitespace-nowrap">Fittings</span>
+                  <ChevronDown
+                    className={`w-3.5 h-3.5 transition-transform duration-200 ${
+                      activeMenu === "fittings"
+                        ? "rotate-180 text-white"
+                        : "text-[#3087ff]"
+                    }`}
+                  />
+                </button>
+
+                {activeMenu === "fittings" && (
+                  <div className="absolute top-full left-0 w-[min(640px,calc(100vw-2.5rem))] pt-2 z-50">
+                    <div className="bg-white border-2 border-[#3087ff] rounded-none shadow-2xl p-4 text-[#3087ff]">
+                      <div className="grid grid-cols-12 gap-4">
+                        <div className="col-span-8 grid grid-cols-2 gap-2.5">
+                          <a
+                            href="#product-matrix"
+                            onClick={() =>
+                              handleNavClick("#product-matrix", "fittings")
+                            }
+                            className="p-3 rounded-none hover:bg-[#3087ff] hover:text-white border border-[#3087ff] transition-all group block text-[#3087ff]"
                           >
-                            <span className="flex items-center gap-2">
-                              <Play className="w-4 h-4 fill-current group-hover:scale-110 transition-transform" />
-                              View All Categories
-                            </span>
-                            <span className="text-[11px] font-mono tracking-tight flex items-center gap-1.5">
-                              All Product Videos Only →
-                            </span>
-                          </button>
-                        </div>
-                      </>
-                    ) : (
-                      /* Expanded View: All Total Products Videos With Title Only */
-                      <div className="grid grid-cols-12 gap-5 animate-in fade-in duration-200">
-                        {/* Left Side: Core Fittings Links + Indicator */}
-                        <div className="col-span-12 lg:col-span-4 flex flex-col justify-between border-b-2 lg:border-b-0 lg:border-r-2 border-[#3087ff] pb-4 lg:pb-0 lg:pr-4">
-                          <div>
-                            <div className="flex items-center justify-between pb-2 mb-2 border-b border-[#3087ff]">
-                              <h4 className="font-extrabold text-xs uppercase tracking-wider text-[#3087ff]">
-                                Fittings Standards
-                              </h4>
-                              <span className="text-[10px] font-mono font-bold bg-[#3087ff] text-white px-1.5 py-0.5">
-                                AWWA C153 / C110
-                              </span>
+                            <div className="font-bold text-sm mb-1 group-hover:text-white group-hover:font-black leading-tight">
+                              C153 Compact MJ Fittings
                             </div>
-                            <div className="grid grid-cols-1 gap-1.5">
-                              <a
-                                href="#product-matrix"
-                                onClick={() =>
-                                  handleNavClick("#product-matrix", "fittings")
-                                }
-                                className="p-2 rounded-none hover:bg-[#3087ff] hover:text-white border border-[#3087ff] transition-all group block text-[#3087ff]"
-                              >
-                                <div className="font-bold text-xs uppercase group-hover:text-white leading-tight">
-                                  C153 Compact MJ Fittings
-                                </div>
-                                <p className="text-[11px] leading-tight group-hover:text-white font-medium mt-0.5">
-                                  2&quot; to 64&quot; MJ bends, tees, and reducers.
-                                </p>
-                              </a>
+                            <p className="text-xs sm:text-[13px] leading-relaxed group-hover:text-white group-hover:font-bold font-medium">
+                              2&quot; to 64&quot; MJ bends, tees, and reducers.
+                              350 PSI rated.
+                            </p>
+                          </a>
 
-                              <a
-                                href="#product-matrix"
-                                onClick={() =>
-                                  handleNavClick("#product-matrix", "fittings")
-                                }
-                                className="p-2 rounded-none hover:bg-[#3087ff] hover:text-white border border-[#3087ff] transition-all group block text-[#3087ff]"
-                              >
-                                <div className="font-bold text-xs uppercase group-hover:text-white leading-tight">
-                                  C110 Full Body MJ Fittings
-                                </div>
-                                <p className="text-[11px] leading-tight group-hover:text-white font-medium mt-0.5">
-                                  Heavy branch tees &amp; crosses for high surges.
-                                </p>
-                              </a>
-
-                              <a
-                                href="#product-matrix"
-                                onClick={() =>
-                                  handleNavClick("#product-matrix", "fittings")
-                                }
-                                className="p-2 rounded-none hover:bg-[#3087ff] hover:text-white border border-[#3087ff] transition-all group block text-[#3087ff]"
-                              >
-                                <div className="font-bold text-xs uppercase group-hover:text-white leading-tight">
-                                  C110 Flange Fittings
-                                </div>
-                                <p className="text-[11px] leading-tight group-hover:text-white font-medium mt-0.5">
-                                  Class 125 &amp; 250 flanged spools &amp; reducers.
-                                </p>
-                              </a>
-
-                              <a
-                                href="#product-matrix"
-                                onClick={() =>
-                                  handleNavClick("#product-matrix", "fittings")
-                                }
-                                className="p-2 rounded-none hover:bg-[#3087ff] hover:text-white border border-[#3087ff] transition-all group block text-[#3087ff]"
-                              >
-                                <div className="font-bold text-xs uppercase group-hover:text-white leading-tight">
-                                  C153 Push-On Fittings
-                                </div>
-                                <p className="text-[11px] leading-tight group-hover:text-white font-medium mt-0.5">
-                                  Tyton socket fittings for rapid assembly.
-                                </p>
-                              </a>
+                          <a
+                            href="#product-matrix"
+                            onClick={() =>
+                              handleNavClick("#product-matrix", "fittings")
+                            }
+                            className="p-3 rounded-none hover:bg-[#3087ff] hover:text-white border border-[#3087ff] transition-all group block text-[#3087ff]"
+                          >
+                            <div className="font-bold text-sm mb-1 group-hover:text-white group-hover:font-black leading-tight">
+                              C110 Full Body MJ Fittings
                             </div>
-                          </div>
+                            <p className="text-xs sm:text-[13px] leading-relaxed group-hover:text-white group-hover:font-bold font-medium">
+                              Heavy full-body branch tees &amp; crosses for
+                              high-surge mains.
+                            </p>
+                          </a>
 
-                          {/* Active View All Categories Tab */}
-                          <div className="mt-3 pt-3 border-t-2 border-[#3087ff]">
-                            <button
-                              type="button"
-                              onClick={() => setShowCategoryVideosModal(true)}
-                              className="w-full py-2.5 px-3 bg-white text-[#3087ff] hover:bg-[#3087ff] hover:text-white border-2 border-[#3087ff] font-extrabold text-xs uppercase tracking-wider flex items-center justify-between transition-colors group cursor-pointer shadow-xs"
-                            >
-                              <span className="flex items-center gap-1.5">
-                                <Play className="w-4 h-4 fill-current" />
-                                View All Categories
-                              </span>
-                              <span className="text-[10px] font-mono font-black bg-[#3087ff] text-white group-hover:bg-white group-hover:text-[#3087ff] px-2 py-0.5">
-                                VIDEOS ACTIVE
-                              </span>
-                            </button>
-                          </div>
+                          <a
+                            href="#product-matrix"
+                            onClick={() =>
+                              handleNavClick("#product-matrix", "fittings")
+                            }
+                            className="p-3 rounded-none hover:bg-[#3087ff] hover:text-white border border-[#3087ff] transition-all group block text-[#3087ff]"
+                          >
+                            <div className="font-bold text-sm mb-1 group-hover:text-white group-hover:font-black leading-tight">
+                              C110 Flange Fittings
+                            </div>
+                            <p className="text-xs sm:text-[13px] leading-relaxed group-hover:text-white group-hover:font-bold font-medium">
+                              Class 125 &amp; 250 flanged spools &amp; reducers
+                              for pump stations.
+                            </p>
+                          </a>
+
+                          <a
+                            href="#product-matrix"
+                            onClick={() =>
+                              handleNavClick("#product-matrix", "fittings")
+                            }
+                            className="p-3 rounded-none hover:bg-[#3087ff] hover:text-white border border-[#3087ff] transition-all group block text-[#3087ff]"
+                          >
+                            <div className="font-bold text-sm mb-1 group-hover:text-white group-hover:font-black leading-tight">
+                              C153 Push-On Fittings
+                            </div>
+                            <p className="text-xs sm:text-[13px] leading-relaxed group-hover:text-white group-hover:font-bold font-medium">
+                              Tyton-compatible socket fittings for rapid trench
+                              assembly.
+                            </p>
+                          </a>
                         </div>
 
-                        {/* Right Side: Total Products Videos With Title Only */}
-                        <div className="col-span-12 lg:col-span-8 flex flex-col justify-between">
+                        <div className="col-span-4 bg-[#3087ff] text-white border-2 border-[#3087ff] rounded-none p-4 flex flex-col justify-between">
                           <div>
-                            <div className="flex items-center justify-between pb-2 mb-3 border-b-2 border-[#3087ff]">
-                              <div className="flex items-center gap-2">
-                                <Play className="w-4 h-4 text-[#3087ff] fill-[#3087ff]" />
-                                <h4 className="font-black text-sm uppercase tracking-wider text-[#3087ff]">
-                                  All Total Products Videos
-                                </h4>
-                              </div>
-                              <span className="text-[11px] font-mono font-bold text-[#3087ff]">
-                                13 Total Products • Titles Only
-                              </span>
-                            </div>
-
-                            {/* Videos Grid with Title Only */}
-                            <div className="grid grid-cols-2 sm:grid-cols-3 xl:grid-cols-4 gap-2.5 max-h-[55vh] overflow-y-auto pr-1">
-                              {ALL_PRODUCT_VIDEOS.map((item) => (
-                                <ProductVideoCard
-                                  key={item.id}
-                                  item={item}
-                                  onClick={() =>
-                                    handleNavClick(item.target, item.category)
-                                  }
-                                />
-                              ))}
-                            </div>
+                            <span className="text-xs font-bold uppercase tracking-wider text-white bg-white/20 px-2 py-0.5 rounded-none whitespace-nowrap">
+                              Foundry Certified
+                            </span>
+                            <h4 className="font-extrabold text-white text-sm sm:text-base mt-2.5 mb-1">
+                              Grade 65-45-12
+                            </h4>
+                            <p className="text-xs text-white leading-relaxed font-medium">
+                              Certified ductile iron proof-tested to 500 PSI
+                              hydrostatic pressure.
+                            </p>
                           </div>
-
-                          <div className="pt-2 mt-2 border-t border-[#3087ff] flex items-center justify-between text-[11px] font-bold text-[#3087ff]">
-                            <span>Click any video to jump to live engineering specs</span>
-                            <button
-                              type="button"
-                              onClick={() => setShowCategoryVideos(false)}
-                              className="text-xs uppercase font-extrabold text-[#3087ff] hover:underline cursor-pointer"
-                            >
-                              Collapse Videos ✕
-                            </button>
-                          </div>
+                          <a
+                            href="#product-matrix"
+                            onClick={() =>
+                              handleNavClick("#product-matrix", "fittings")
+                            }
+                            className="inline-flex items-center gap-1.5 text-xs sm:text-sm font-bold text-white hover:text-white hover:font-black mt-3 whitespace-nowrap"
+                          >
+                            <span>All Fittings</span>
+                            <ArrowRight className="w-3.5 h-3.5" />
+                          </a>
                         </div>
                       </div>
-                    )}
+                    </div>
                   </div>
-                </div>
-              )}
-            </div>
+                )}
+              </div>
 
             {/* 2. Restraints Dropdown */}
             <div
@@ -1077,6 +968,24 @@ export const MainNavbar: React.FC<MainNavbarProps> = ({
                 </button>
               </div>
 
+              {/* 0. First Menu: View All Categories */}
+              <div className="border-b border-[#3087ff] pb-2">
+                <button
+                  type="button"
+                  onClick={() => {
+                    setShowCategoryVideosModal(true);
+                    setMobileMenuOpen(false);
+                  }}
+                  className="w-full py-2.5 px-3 bg-[#3087ff] text-white hover:bg-white hover:text-[#3087ff] border-2 border-[#3087ff] font-extrabold text-xs uppercase tracking-wider flex items-center justify-between transition-colors cursor-pointer shadow-xs"
+                >
+                  <span className="flex items-center gap-2">
+                    <Play className="w-4 h-4 fill-current" />
+                    View All Categories
+                  </span>
+                  <span className="text-[10px] font-mono">13 Videos →</span>
+                </button>
+              </div>
+
               {/* Waterworks Fittings Accordion */}
               <div className="border-b border-[#3087ff] pb-2">
                 <button
@@ -1134,23 +1043,6 @@ export const MainNavbar: React.FC<MainNavbarProps> = ({
                     >
                       • C153 Push-On Fittings
                     </a>
-
-                    <div className="pt-2">
-                      <button
-                        type="button"
-                        onClick={() => {
-                          setShowCategoryVideosModal(true);
-                          setMobileMenuOpen(false);
-                        }}
-                        className="w-full py-2 px-3 bg-[#3087ff] text-white hover:bg-white hover:text-[#3087ff] border border-[#3087ff] font-extrabold text-xs uppercase tracking-wider flex items-center justify-between transition-colors cursor-pointer"
-                      >
-                        <span className="flex items-center gap-1.5">
-                          <Play className="w-3.5 h-3.5 fill-current" />
-                          View All Categories
-                        </span>
-                        <span className="text-[10px] font-mono">Videos Only →</span>
-                      </button>
-                    </div>
                   </div>
                 )}
               </div>
