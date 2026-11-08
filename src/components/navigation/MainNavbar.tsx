@@ -675,7 +675,7 @@ export const MainNavbar: React.FC<MainNavbarProps> = ({
                     <a
                       href="#trash-racks"
                       onClick={() => handleNavClick("#trash-racks")}
-                      className="block p-2.5 rounded-none hover:bg-[#3087ff] hover:text-white transition-colors group bg-[#3087ff] border-l-2 border-[#3087ff]"
+                      className="block p-2.5 rounded-none hover:bg-[#3087ff] hover:text-white transition-colors group border-l-2 border-[#3087ff] pl-3"
                     >
                       <div className="font-bold text-sm leading-tight flex items-center justify-between group-hover:text-white group-hover:font-black">
                         <span>Trash Racks</span>
