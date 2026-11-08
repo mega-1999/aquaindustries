@@ -288,6 +288,65 @@ const INNOVATIONS: InnovationItem[] = [
       },
     ],
   },
+  {
+    id: "catch-basin",
+    catalogId: "catch-basin-traps",
+    number: "05",
+    name: "Heavy-Duty Cast Iron Catch Basin & Riser Assembly",
+    subtitle: "High-Inflow Stormwater Basin Frame with Elevation Riser",
+    categoryLabel: "Stormwater Catch Basins",
+    badge: "DOT Approved",
+    spec: "AASHTO H-20 Highway Proof",
+    imageUrl: "/images/catch_basin_riser/10022_catch_basin_with_riser.png",
+    summary:
+      "Engineered for municipal storm drainage networks, highway collector systems, and commercial parking basins. Features a heavy-duty ASTM A48 Class 35B cast iron basin frame with integrated elevation riser and precision-machined bearing seat. Captures maximum surface runoff while resisting severe 40,000+ LBS highway wheel impacts.",
+    standards: "ASTM A48 Class 35B • AASHTO M306 • State DOT Approved",
+    metallurgy: "ASTM A48 Class 35B High-Strength Gray Cast Iron",
+    loadRating: "AASHTO H-20 / HS-20 Traffic Rated (40,000+ LBS Wheel Load)",
+    coating: "Heavy Asphaltic Corrosion Barrier per AWWA Standards",
+    application:
+      "Municipal stormwater collection, street curb catch basins, parking lot storm runoff, and highway inlets",
+    features: [
+      "Heavy-gauge Class 35B cast iron frame withstands continuous dynamic highway impact loads",
+      "Integrated elevation riser allows quick grade adjustments during street repaving without jackhammering",
+      "Precision-machined grate bearing seat eliminates traffic rattle and dynamic impact wear",
+      "High hydraulic open area captures maximum stormwater volume while filtering large floatable debris",
+    ],
+    hotspots: [
+      {
+        id: 1,
+        x: "50%",
+        y: "22%",
+        title: "High-Inflow Directional Grate",
+        badge: "AASHTO H-20 Proof",
+        desc: "Heavy directional inflow grate provides maximum stormwater intake velocity while meeting municipal bicycle safety ordinances.",
+      },
+      {
+        id: 2,
+        x: "50%",
+        y: "44%",
+        title: "Machined Bearing Seat Rim",
+        badge: "Anti-Chatter Seal",
+        desc: "Full 360-degree CNC-machined bearing surface ensures flush, rattle-free contact between grate and frame under high-speed traffic.",
+      },
+      {
+        id: 3,
+        x: "28%",
+        y: "65%",
+        title: "Precision Elevation Riser Ring",
+        badge: "Asphalt Overlay Ready",
+        desc: "Interlocking stackable riser allows road crews to elevate catch basin frames flush with new asphalt wear courses without concrete demolition.",
+      },
+      {
+        id: 4,
+        x: "72%",
+        y: "82%",
+        title: "Flanged Load-Bearing Base",
+        badge: "Concrete Subgrade Cleat",
+        desc: "Wide structural perimeter flange beds securely into precast concrete basin structures, distributing axle loads into the foundation.",
+      },
+    ],
+  },
 ];
 
 export const OurNewInnovations: React.FC<OurNewInnovationsProps> = ({
@@ -377,22 +436,23 @@ export const OurNewInnovations: React.FC<OurNewInnovationsProps> = ({
             </h2>
 
             <p className="text-xs sm:text-sm text-white/90 font-normal leading-relaxed">
-              Four specialized, high-tensile iron castings engineered for
+              Five specialized, high-tensile iron castings engineered for
               municipal cleanouts, ADA truncated-dome sidewalk armor,
-              high-inflow chevron trench channels, and asphalt resurfacing
-              elevation risers. Tested to AASHTO H-20 proof loads.
+              high-inflow chevron trench channels, asphalt resurfacing
+              elevation risers, and heavy-duty catch basin assemblies. Tested to AASHTO H-20 proof loads.
             </p>
           </div>
         </div>
 
         {/* ========================================================
-            1. HORIZONTAL 4-ITEM SELECTOR CARDS (ALL TEXT 100% VISIBLE)
+            1. HORIZONTAL 5-ITEM SELECTOR CARDS (ALL TEXT 100% VISIBLE)
         ======================================================== */}
-        <div className="w-full mb-8 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-3 sm:gap-4">
+        <div className="w-full mb-8 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-5 gap-3 sm:gap-4">
           {INNOVATIONS.map((item, idx) => {
             const isSelected = selectedIndex === idx;
             const displayName = item.name
               .replace("Multi-Tier Cast Iron ", "")
+              .replace("Heavy-Duty Cast Iron ", "Heavy ")
               .replace("Heavy Cast Iron ", "Heavy ")
               .replace("Cast Iron ", "");
 
@@ -544,7 +604,7 @@ export const OurNewInnovations: React.FC<OurNewInnovationsProps> = ({
                 <p className="text-xs leading-relaxed text-white/95 font-medium mb-2.5">
                   {activeSpotData.desc}
                 </p>
-                <div className="flex items-center justify-between border-t border-white/20 pt-2 text-[10px] text-[#3087ff] font-bold uppercase">
+                <div className="flex items-center justify-between border-t border-white/20 pt-2 text-[10px] text-white font-bold uppercase">
                   <span>Feature Point {activeHotspot} of 4</span>
                   <button
                     type="button"
