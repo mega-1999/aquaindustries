@@ -230,12 +230,12 @@ export const MainNavbar: React.FC<MainNavbarProps> = ({
   return (
     <header
       className={`sticky top-0 z-50 w-full transition-all duration-200 ${isScrolled
-          ? "bg-white shadow-md border-b-2 border-[#3087ff] py-2"
-          : "bg-white border-b-2 border-[#3087ff] py-2.5 sm:py-3"
+          ? "bg-white shadow-md border-b-2 border-[#3087ff] py-[1px]"
+          : "bg-white border-b-2 border-[#3087ff] py-[1px]"
         }`}
     >
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative">
-        <div className="flex items-center justify-between gap-2 xl:gap-3 min-h-[3.75rem] sm:min-h-[4.25rem] lg:min-h-[5rem]">
+      <div className="max-w-[98%] 2xl:max-w-7xl mx-auto px-2 sm:px-4 lg:px-6 relative">
+        <div className="flex items-center justify-between gap-2 xl:gap-3 py-[1px]">
           {/* 1. H2O: Far Left Logo (and Mobile Hamburger) */}
           <div className="flex items-center gap-2 sm:gap-3 shrink-0">
             {/* Mobile Left: Menu Hamburger (< xl) */}
@@ -243,23 +243,23 @@ export const MainNavbar: React.FC<MainNavbarProps> = ({
               <button
                 type="button"
                 onClick={() => setMobileMenuOpen(true)}
-                className="p-2 text-[#3087ff] hover:bg-[#3087ff] hover:text-white rounded-none border-2 border-[#3087ff] focus:outline-none focus:ring-2 focus:ring-[#3087ff] cursor-pointer"
+                className="p-1.5 text-[#3087ff] hover:bg-[#3087ff] hover:text-white rounded-none border-2 border-[#3087ff] focus:outline-none focus:ring-2 focus:ring-[#3087ff] cursor-pointer"
                 aria-label="Open Navigation Menu"
               >
-                <Menu className="w-6 h-6" />
+                <Menu className="w-5 h-5 sm:w-6 sm:h-6" />
               </button>
             </div>
 
-            {/* H2O Logo on Far Left */}
+            {/* H2O Logo on Far Left (Increased Size) */}
             <a
               href="/"
-              className="flex items-center shrink-0 group focus:outline-none focus-visible:ring-2 focus-visible:ring-[#3087ff] rounded-none p-1"
+              className="flex items-center shrink-0 group focus:outline-none focus-visible:ring-2 focus-visible:ring-[#3087ff] rounded-none p-0.5"
               title="H2O"
             >
               <img
                 src="/images/h2o LOGO NEW UPDATED.png"
                 alt="H2O"
-                className="h-8 sm:h-10 md:h-12 lg:h-13 xl:h-15 w-auto object-contain group-hover:scale-105 transition-transform duration-200 shrink-0 filter drop-shadow-xs"
+                className="h-10 sm:h-12 md:h-14 lg:h-16 xl:h-20 2xl:h-22 w-auto object-contain group-hover:scale-105 transition-transform duration-200 shrink-0 filter drop-shadow-xs"
               />
             </a>
           </div>
@@ -267,7 +267,7 @@ export const MainNavbar: React.FC<MainNavbarProps> = ({
           {/* 2. MENUS: Desktop Navigation Menus (2 Rows) */}
           <nav
             aria-label="Main Navigation"
-            className="hidden xl:flex flex-col justify-center gap-0.5 2xl:gap-1 text-xs 2xl:text-sm font-bold text-[#3087ff] shrink-0"
+            className="hidden xl:flex flex-col justify-center gap-0.5 2xl:gap-1 text-xs 2xl:text-sm font-extrabold text-[#3087ff] shrink-0"
           >
             {/* Row 1: Fittings, Restraints, Castings */}
             <div className="flex items-center gap-0.5 2xl:gap-1.5">
@@ -870,23 +870,23 @@ export const MainNavbar: React.FC<MainNavbarProps> = ({
             </div>
           </nav>
 
-          {/* 3. AQUA: Center Main Aqua Industries Logo */}
+          {/* 3. AQUA: Center Main Aqua Industries Logo (Increased Size) */}
           <div className="flex items-center justify-center shrink-0 px-1 sm:px-2">
             <a
               href="/"
-              className="flex items-center justify-center shrink-0 group focus:outline-none focus-visible:ring-2 focus-visible:ring-[#3087ff] rounded-none p-1"
+              className="flex items-center justify-center shrink-0 group focus:outline-none focus-visible:ring-2 focus-visible:ring-[#3087ff] rounded-none p-0.5"
               title="Aqua Industries"
             >
               <img
                 src="/images/AI_Waterdrop.png"
                 alt="Aqua Industries"
-                className="h-10 sm:h-12 md:h-14 lg:h-16 xl:h-18 w-auto object-contain group-hover:scale-105 transition-transform duration-200 shrink-0 filter drop-shadow-xs"
+                className="h-13 sm:h-15 md:h-18 lg:h-22 xl:h-26 2xl:h-28 w-auto object-contain group-hover:scale-105 transition-transform duration-200 shrink-0 filter drop-shadow-xs"
               />
             </a>
           </div>
 
           {/* 4. BTN: Action Buttons (Client Portal & Request Quote) */}
-          <div className="hidden xl:flex flex-col justify-center items-end gap-1.5 shrink-0 w-[130px] 2xl:w-[145px]">
+          <div className="hidden xl:flex flex-col justify-center items-end gap-1 shrink-0 w-[135px] 2xl:w-[150px]">
             {/* 1st Row: Client Portal / User Session Menu */}
             <div className="w-full flex items-center justify-end">
               {currentUser ? (
@@ -899,7 +899,7 @@ export const MainNavbar: React.FC<MainNavbarProps> = ({
                         activeMenu === "user-menu" ? null : "user-menu",
                       );
                     }}
-                    className={`w-full h-8 inline-flex items-center justify-center gap-1.5 px-2 text-xs 2xl:text-sm font-bold transition-all whitespace-nowrap border-2 rounded-none shadow-xs cursor-pointer ${activeMenu === "user-menu"
+                    className={`w-full h-8.5 inline-flex items-center justify-center gap-1.5 px-2 text-xs 2xl:text-sm font-black transition-all whitespace-nowrap border-2 rounded-none shadow-xs cursor-pointer ${activeMenu === "user-menu"
                         ? "bg-[#3087ff] text-white border-[#3087ff] hover:text-white hover:font-black"
                         : "bg-white text-[#3087ff] hover:bg-[#3087ff] hover:text-white border-[#3087ff]"
                       }`}
@@ -983,7 +983,7 @@ export const MainNavbar: React.FC<MainNavbarProps> = ({
                 <button
                   type="button"
                   onClick={onOpenLoginModal}
-                  className="w-full h-8 inline-flex items-center justify-center gap-1.5 px-2 text-xs font-bold transition-all whitespace-nowrap border-2 border-[#3087ff] bg-white text-[#3087ff] hover:bg-[#3087ff] hover:text-white rounded-none shadow-xs cursor-pointer"
+                  className="w-full h-8.5 inline-flex items-center justify-center gap-1.5 px-2 text-xs 2xl:text-sm font-black transition-all whitespace-nowrap border-2 border-[#3087ff] bg-white text-[#3087ff] hover:bg-[#3087ff] hover:text-white rounded-none shadow-xs cursor-pointer"
                 >
                   <Lock className="w-3.5 h-3.5 shrink-0" />
                   <span className="whitespace-nowrap">Client Portal</span>
@@ -995,7 +995,7 @@ export const MainNavbar: React.FC<MainNavbarProps> = ({
             <div className="w-full flex items-center justify-end">
               <a
                 href="#quote-form"
-                className="w-full h-8 inline-flex items-center justify-center gap-1.5 px-2 text-xs font-bold text-white hover:text-white bg-[#3087ff] hover:bg-[#3087ff] border-2 border-[#3087ff] rounded-none shadow-xs transition-all transform hover:-translate-y-0.5 active:translate-y-0 whitespace-nowrap"
+                className="w-full h-8.5 inline-flex items-center justify-center gap-1.5 px-2 text-xs 2xl:text-sm font-black text-white hover:text-white bg-[#3087ff] hover:bg-[#3087ff] border-2 border-[#3087ff] rounded-none shadow-xs transition-all transform hover:-translate-y-0.5 active:translate-y-0 whitespace-nowrap"
               >
                 <FileText className="w-3.5 h-3.5 shrink-0 text-white" />
                 <span className="whitespace-nowrap">Request Quote</span>
@@ -1003,18 +1003,18 @@ export const MainNavbar: React.FC<MainNavbarProps> = ({
             </div>
           </div>
 
-          {/* 5. WATER WORKS: Far Right Logo (and Mobile Quote Button) */}
+          {/* 5. WATER WORKS: Far Right Logo (Increased Size) */}
           <div className="flex items-center gap-2 sm:gap-3 shrink-0 justify-end">
             {/* Waterworks Industries Logo on Far Right */}
             <a
               href="/"
-              className="flex items-center justify-end shrink-0 group focus:outline-none focus-visible:ring-2 focus-visible:ring-[#3087ff] rounded-none p-1"
+              className="flex items-center justify-end shrink-0 group focus:outline-none focus-visible:ring-2 focus-visible:ring-[#3087ff] rounded-none p-0.5"
               title="Waterworks Industries"
             >
               <img
                 src="/images/waterworks Industries.png"
                 alt="Waterworks Industries"
-                className="h-7 sm:h-8 md:h-10 lg:h-12 xl:h-14 w-auto object-contain group-hover:scale-105 transition-transform duration-200 shrink-0 filter drop-shadow-xs"
+                className="h-8 sm:h-10 md:h-12 lg:h-14 xl:h-16 2xl:h-18 w-auto object-contain group-hover:scale-105 transition-transform duration-200 shrink-0 filter drop-shadow-xs"
               />
             </a>
 
