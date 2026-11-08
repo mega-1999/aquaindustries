@@ -227,9 +227,6 @@ export const MainNavbar: React.FC<MainNavbarProps> = ({
     }
   };
 
-  // Detailed menu toggle - currently disabled per instruction: "just the logos for now, will redesign a detailed menu later"
-  const SHOW_DETAILED_MENU = false;
-
   return (
     <header
       className={`sticky top-0 z-50 w-full transition-all duration-200 ${isScrolled
@@ -238,8 +235,8 @@ export const MainNavbar: React.FC<MainNavbarProps> = ({
         }`}
     >
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative">
-        <div className="flex items-center justify-between gap-4 min-h-[3.75rem] sm:min-h-[4.25rem] lg:min-h-[5rem]">
-          {/* 1. LEFT: H2O Logo (and Mobile Hamburger) */}
+        <div className="flex items-center justify-between gap-2 xl:gap-3 min-h-[3.75rem] sm:min-h-[4.25rem] lg:min-h-[5rem]">
+          {/* 1. H2O: Far Left Logo (and Mobile Hamburger) */}
           <div className="flex items-center gap-2 sm:gap-3 shrink-0">
             {/* Mobile Left: Menu Hamburger (< xl) */}
             <div className="flex items-center xl:hidden shrink-0">
@@ -253,7 +250,7 @@ export const MainNavbar: React.FC<MainNavbarProps> = ({
               </button>
             </div>
 
-            {/* H2O Logo on Left */}
+            {/* H2O Logo on Far Left */}
             <a
               href="/"
               className="flex items-center shrink-0 group focus:outline-none focus-visible:ring-2 focus-visible:ring-[#3087ff] rounded-none p-1"
@@ -262,17 +259,16 @@ export const MainNavbar: React.FC<MainNavbarProps> = ({
               <img
                 src="/images/h2o LOGO NEW UPDATED.png"
                 alt="H2O"
-                className="h-9 sm:h-11 md:h-13 lg:h-16 xl:h-20 w-auto object-contain group-hover:scale-105 transition-transform duration-200 shrink-0 filter drop-shadow-xs"
+                className="h-8 sm:h-10 md:h-12 lg:h-13 xl:h-15 w-auto object-contain group-hover:scale-105 transition-transform duration-200 shrink-0 filter drop-shadow-xs"
               />
             </a>
           </div>
 
-          {/* Desktop Navigation Menus (Preserved for upcoming redesign) */}
-          {SHOW_DETAILED_MENU && (
-            <nav
-              aria-label="Main Navigation"
-              className="hidden xl:flex flex-col justify-center gap-1 text-xs 2xl:text-sm font-bold text-[#3087ff]"
-            >
+          {/* 2. MENUS: Desktop Navigation Menus (2 Rows) */}
+          <nav
+            aria-label="Main Navigation"
+            className="hidden xl:flex flex-col justify-center gap-0.5 2xl:gap-1 text-xs 2xl:text-sm font-bold text-[#3087ff] shrink-0"
+          >
             {/* Row 1: Fittings, Restraints, Castings */}
             <div className="flex items-center gap-0.5 2xl:gap-1.5">
               {/* 1. Waterworks Fittings Mega Menu */}
@@ -873,10 +869,9 @@ export const MainNavbar: React.FC<MainNavbarProps> = ({
             </button>
             </div>
           </nav>
-          )}
 
-          {/* 2. CENTER: Main Aqua Industries Logo */}
-          <div className="flex items-center justify-center shrink-0 px-2 sm:px-4">
+          {/* 3. AQUA: Center Main Aqua Industries Logo */}
+          <div className="flex items-center justify-center shrink-0 px-1 sm:px-2">
             <a
               href="/"
               className="flex items-center justify-center shrink-0 group focus:outline-none focus-visible:ring-2 focus-visible:ring-[#3087ff] rounded-none p-1"
@@ -885,12 +880,130 @@ export const MainNavbar: React.FC<MainNavbarProps> = ({
               <img
                 src="/images/AI_Waterdrop.png"
                 alt="Aqua Industries"
-                className="h-11 sm:h-13 md:h-16 lg:h-20 xl:h-24 w-auto object-contain group-hover:scale-105 transition-transform duration-200 shrink-0 filter drop-shadow-xs"
+                className="h-10 sm:h-12 md:h-14 lg:h-16 xl:h-18 w-auto object-contain group-hover:scale-105 transition-transform duration-200 shrink-0 filter drop-shadow-xs"
               />
             </a>
           </div>
 
-          {/* 3. RIGHT: Waterworks Industries Logo (and Mobile Quote Button) */}
+          {/* 4. BTN: Action Buttons (Client Portal & Request Quote) */}
+          <div className="hidden xl:flex flex-col justify-center items-end gap-1.5 shrink-0 w-[130px] 2xl:w-[145px]">
+            {/* 1st Row: Client Portal / User Session Menu */}
+            <div className="w-full flex items-center justify-end">
+              {currentUser ? (
+                /* User Session Menu */
+                <div className="w-full relative">
+                  <button
+                    type="button"
+                    onClick={() => {
+                      setActiveMenu(
+                        activeMenu === "user-menu" ? null : "user-menu",
+                      );
+                    }}
+                    className={`w-full h-8 inline-flex items-center justify-center gap-1.5 px-2 text-xs 2xl:text-sm font-bold transition-all whitespace-nowrap border-2 rounded-none shadow-xs cursor-pointer ${activeMenu === "user-menu"
+                        ? "bg-[#3087ff] text-white border-[#3087ff] hover:text-white hover:font-black"
+                        : "bg-white text-[#3087ff] hover:bg-[#3087ff] hover:text-white border-[#3087ff]"
+                      }`}
+                    aria-label="User Account Menu"
+                  >
+                    <div className="w-4 h-4 bg-[#3087ff] text-white flex items-center justify-center text-[10px] font-black border border-[#3087ff]">
+                      <User className="w-3 h-3" />
+                    </div>
+                    <span className="truncate max-w-[70px]">
+                      {currentUser.fullName.split(" ")[0]}
+                    </span>
+                    <ChevronDown
+                      className={`w-3 h-3 transition-transform duration-200 ${activeMenu === "user-menu" ? "rotate-180" : ""
+                        }`}
+                    />
+                  </button>
+
+                  {activeMenu === "user-menu" && (
+                    <div className="absolute top-full right-0 w-60 pt-2 z-50 animate-in fade-in slide-in-from-top-1 duration-150">
+                      <div className="bg-white border-2 border-[#3087ff] shadow-2xl p-1.5 text-[#3087ff] rounded-none">
+                        {/* User Identity Mini Chip */}
+                        <div className="px-3 py-2 border-b border-[#3087ff] mb-1 bg-white">
+                          <div className="font-black text-xs text-[#3087ff] truncate">
+                            {currentUser.fullName}
+                          </div>
+                          <div className="text-[10px] text-[#3087ff] font-bold uppercase truncate">
+                            {currentUser.companyName}
+                          </div>
+                        </div>
+
+                        {/* 1. Profile Dashboard Link (Direct navigation to Dashboard with Sidebar) */}
+                        <Link
+                          href="/profile"
+                          onClick={() => {
+                            setActiveMenu(null);
+                          }}
+                          className="w-full text-left flex items-center gap-2.5 px-3 py-2 hover:bg-[#3087ff] hover:text-white transition-colors font-bold hover:font-black text-xs uppercase tracking-wider group cursor-pointer rounded-none"
+                        >
+                          <User className="w-4 h-4 text-[#3087ff] group-hover:text-white shrink-0" />
+                          <span className="group-hover:text-white group-hover:font-black">Profile Dashboard</span>
+                        </Link>
+
+                        {/* 2. Account Settings Link */}
+                        <Link
+                          href="/settings"
+                          onClick={() => {
+                            setActiveMenu(null);
+                          }}
+                          className="w-full text-left flex items-center gap-2.5 px-3 py-2 hover:bg-[#3087ff] hover:text-white transition-colors font-bold hover:font-black text-xs uppercase tracking-wider group cursor-pointer rounded-none"
+                        >
+                          <Settings className="w-4 h-4 text-[#3087ff] group-hover:text-white shrink-0" />
+                          <span className="group-hover:text-white group-hover:font-black">Account Settings</span>
+                        </Link>
+
+                        {/* 3. Approvals Desk Link (If Super Admin) */}
+                        {isSuperAdmin && (
+                          <Link
+                            href="/admin"
+                            onClick={() => {
+                              setActiveMenu(null);
+                            }}
+                            className="w-full text-left flex items-center gap-2.5 px-3 py-2 hover:bg-amber-500 hover:text-white transition-colors font-bold text-xs uppercase tracking-wider group cursor-pointer rounded-none bg-amber-50 text-amber-800 border-t border-amber-200"
+                          >
+                            <ShieldCheck className="w-4 h-4 text-amber-600 group-hover:text-white shrink-0" />
+                            <div className="flex items-center justify-between flex-1">
+                              <span>Approvals Desk</span>
+                              {pendingCount > 0 && (
+                                <span className="bg-amber-500 group-hover:bg-white text-white group-hover:text-amber-800 text-[10px] font-black px-1.5 py-0.5">
+                                  {pendingCount}
+                                </span>
+                              )}
+                            </div>
+                          </Link>
+                        )}
+                      </div>
+                    </div>
+                  )}
+                </div>
+              ) : (
+                /* If Not Logged In: Client Portal Button */
+                <button
+                  type="button"
+                  onClick={onOpenLoginModal}
+                  className="w-full h-8 inline-flex items-center justify-center gap-1.5 px-2 text-xs font-bold transition-all whitespace-nowrap border-2 border-[#3087ff] bg-white text-[#3087ff] hover:bg-[#3087ff] hover:text-white rounded-none shadow-xs cursor-pointer"
+                >
+                  <Lock className="w-3.5 h-3.5 shrink-0" />
+                  <span className="whitespace-nowrap">Client Portal</span>
+                </button>
+              )}
+            </div>
+
+            {/* 2nd Row: Request Quote Button (Same Size as Row 1) */}
+            <div className="w-full flex items-center justify-end">
+              <a
+                href="#quote-form"
+                className="w-full h-8 inline-flex items-center justify-center gap-1.5 px-2 text-xs font-bold text-white hover:text-white bg-[#3087ff] hover:bg-[#3087ff] border-2 border-[#3087ff] rounded-none shadow-xs transition-all transform hover:-translate-y-0.5 active:translate-y-0 whitespace-nowrap"
+              >
+                <FileText className="w-3.5 h-3.5 shrink-0 text-white" />
+                <span className="whitespace-nowrap">Request Quote</span>
+              </a>
+            </div>
+          </div>
+
+          {/* 5. WATER WORKS: Far Right Logo (and Mobile Quote Button) */}
           <div className="flex items-center gap-2 sm:gap-3 shrink-0 justify-end">
             {/* Waterworks Industries Logo on Far Right */}
             <a
@@ -901,149 +1014,19 @@ export const MainNavbar: React.FC<MainNavbarProps> = ({
               <img
                 src="/images/waterworks Industries.png"
                 alt="Waterworks Industries"
-                className="h-7 sm:h-9 md:h-11 lg:h-13 xl:h-16 w-auto object-contain group-hover:scale-105 transition-transform duration-200 shrink-0 filter drop-shadow-xs"
+                className="h-7 sm:h-8 md:h-10 lg:h-12 xl:h-14 w-auto object-contain group-hover:scale-105 transition-transform duration-200 shrink-0 filter drop-shadow-xs"
               />
             </a>
 
-            {/* Desktop Right Header Actions (Preserved for upcoming redesign) */}
-            {SHOW_DETAILED_MENU && (
-              <div className="hidden xl:flex flex-col justify-center items-end gap-1.5 shrink-0 w-[145px] 2xl:w-[155px]">
-                {/* 1st Row: Client Portal / User Session Menu */}
-                <div className="w-full flex items-center justify-end">
-                  {currentUser ? (
-                    /* User Session Menu */
-                    <div className="w-full relative">
-                      <button
-                        type="button"
-                        onClick={() => {
-                          setActiveMenu(
-                            activeMenu === "user-menu" ? null : "user-menu",
-                          );
-                        }}
-                        className={`w-full h-8 inline-flex items-center justify-center gap-1.5 px-2.5 text-xs 2xl:text-sm font-bold transition-all whitespace-nowrap border-2 rounded-none shadow-xs cursor-pointer ${activeMenu === "user-menu"
-                            ? "bg-[#3087ff] text-white border-[#3087ff] hover:text-white hover:font-black"
-                            : "bg-white text-[#3087ff] hover:bg-[#3087ff] hover:text-white border-[#3087ff]"
-                          }`}
-                        aria-label="User Account Menu"
-                      >
-                        <div className="w-4 h-4 bg-[#3087ff] text-white flex items-center justify-center text-[10px] font-black border border-[#3087ff]">
-                          <User className="w-3 h-3" />
-                        </div>
-                        <span className="truncate max-w-[80px]">
-                          {currentUser.fullName.split(" ")[0]}
-                        </span>
-                        <ChevronDown
-                          className={`w-3 h-3 transition-transform duration-200 ${activeMenu === "user-menu" ? "rotate-180" : ""
-                            }`}
-                        />
-                      </button>
-
-                      {activeMenu === "user-menu" && (
-                        <div className="absolute top-full right-0 w-60 pt-2 z-50 animate-in fade-in slide-in-from-top-1 duration-150">
-                          <div className="bg-white border-2 border-[#3087ff] shadow-2xl p-1.5 text-[#3087ff] rounded-none">
-                            {/* User Identity Mini Chip */}
-                            <div className="px-3 py-2 border-b border-[#3087ff] mb-1 bg-white">
-                              <div className="font-black text-xs text-[#3087ff] truncate">
-                                {currentUser.fullName}
-                              </div>
-                              <div className="text-[10px] text-[#3087ff] font-bold uppercase truncate">
-                                {currentUser.companyName}
-                              </div>
-                            </div>
-
-                            {/* 1. Profile Dashboard Link (Direct navigation to Dashboard with Sidebar) */}
-                            <Link
-                              href="/profile"
-                              onClick={() => {
-                                setActiveMenu(null);
-                              }}
-                              className="w-full text-left flex items-center gap-2.5 px-3 py-2 hover:bg-[#3087ff] hover:text-white transition-colors font-bold hover:font-black text-xs uppercase tracking-wider group cursor-pointer rounded-none"
-                            >
-                              <User className="w-4 h-4 text-[#3087ff] group-hover:text-white shrink-0" />
-                              <span className="group-hover:text-white group-hover:font-black">Profile Dashboard</span>
-                            </Link>
-
-                            {/* 2. Account Settings Link */}
-                            <Link
-                              href="/settings"
-                              onClick={() => {
-                                setActiveMenu(null);
-                              }}
-                              className="w-full text-left flex items-center gap-2.5 px-3 py-2 hover:bg-[#3087ff] hover:text-white transition-colors font-bold hover:font-black text-xs uppercase tracking-wider group cursor-pointer rounded-none"
-                            >
-                              <Settings className="w-4 h-4 text-[#3087ff] group-hover:text-white shrink-0" />
-                              <span className="group-hover:text-white group-hover:font-black">Account Settings</span>
-                            </Link>
-
-                            {/* 3. Approvals Desk Link (If Super Admin) */}
-                            {isSuperAdmin && (
-                              <Link
-                                href="/admin"
-                                onClick={() => {
-                                  setActiveMenu(null);
-                                }}
-                                className="w-full text-left flex items-center gap-2.5 px-3 py-2 hover:bg-amber-500 hover:text-white transition-colors font-bold text-xs uppercase tracking-wider group cursor-pointer rounded-none bg-amber-50 text-amber-800 border-t border-amber-200"
-                              >
-                                <ShieldCheck className="w-4 h-4 text-amber-600 group-hover:text-white shrink-0" />
-                                <div className="flex items-center justify-between flex-1">
-                                  <span>Approvals Desk</span>
-                                  {pendingCount > 0 && (
-                                    <span className="bg-amber-500 group-hover:bg-white text-white group-hover:text-amber-800 text-[10px] font-black px-1.5 py-0.5">
-                                      {pendingCount}
-                                    </span>
-                                  )}
-                                </div>
-                              </Link>
-                            )}
-                          </div>
-                        </div>
-                      )}
-                    </div>
-                  ) : (
-                    /* If Not Logged In: Client Portal Button */
-                    <button
-                      type="button"
-                      onClick={onOpenLoginModal}
-                      className="w-full h-8 inline-flex items-center justify-center gap-1.5 px-3 text-xs 2xl:text-sm font-bold transition-all whitespace-nowrap border-2 border-[#3087ff] bg-white text-[#3087ff] hover:bg-[#3087ff] hover:text-white rounded-none shadow-xs cursor-pointer"
-                    >
-                      <Lock className="w-3.5 h-3.5 shrink-0" />
-                      <span className="whitespace-nowrap">Client Portal</span>
-                    </button>
-                  )}
-                </div>
-
-                {/* 2nd Row: Request Quote Button (Same Size as Row 1) */}
-                <div className="w-full flex items-center justify-end">
-                  <a
-                    href="#quote-form"
-                    className="w-full h-8 inline-flex items-center justify-center gap-1.5 px-3 text-xs 2xl:text-sm font-bold text-white hover:text-white bg-[#3087ff] hover:bg-[#3087ff] border-2 border-[#3087ff] rounded-none shadow-xs transition-all transform hover:-translate-y-0.5 active:translate-y-0 whitespace-nowrap"
-                  >
-                    <FileText className="w-3.5 h-3.5 shrink-0 text-white" />
-                    <span className="whitespace-nowrap">Request Quote</span>
-                  </a>
-                </div>
-              </div>
-            )}
-
-            {/* Mobile & Tablet (< xl) Action Buttons & Hamburger */}
+            {/* Mobile & Tablet (< xl) Action Buttons */}
             <div className="flex items-center gap-2 xl:hidden shrink-0">
               <a
                 href="#quote-form"
-                className="inline-flex items-center gap-1.5 px-3.5 py-2 text-sm font-bold hover:font-black text-white hover:text-white bg-[#3087ff] hover:bg-[#3087ff] rounded-none shadow-sm whitespace-nowrap border border-white"
+                className="inline-flex items-center gap-1.5 px-3 py-1.5 text-xs sm:text-sm font-bold hover:font-black text-white hover:text-white bg-[#3087ff] hover:bg-[#3087ff] rounded-none shadow-sm whitespace-nowrap border border-white"
               >
                 <span>Quote</span>
               </a>
             </div>
-          </div>
-
-          {/* Mobile & Tablet (< xl) Action Buttons & Hamburger */}
-          <div className="flex items-center gap-2 xl:hidden shrink-0">
-            <a
-              href="#quote-form"
-              className="inline-flex items-center gap-1.5 px-3.5 py-2 text-sm font-bold hover:font-black text-white hover:text-white bg-[#3087ff] hover:bg-[#3087ff] rounded-none shadow-sm whitespace-nowrap border border-white"
-            >
-              <span>Quote</span>
-            </a>
           </div>
         </div>
       </div>
