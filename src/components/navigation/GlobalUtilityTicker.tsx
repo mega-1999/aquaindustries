@@ -44,7 +44,7 @@ export const GlobalUtilityTicker: React.FC<GlobalUtilityTickerProps> = ({
       aria-label="Live municipal specifications and quick actions"
       className="bg-[#3087ff] border-b border-[#3087ff] text-xs sm:text-sm text-white select-none relative z-50"
     >
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div className="w-full px-4">
         <div className="flex items-center justify-between h-11 gap-4 overflow-hidden">
           {/* Left: Direct Mill & Stocking Yard Availability */}
           <div className="flex-1 flex items-center min-w-0 overflow-hidden pr-3">
