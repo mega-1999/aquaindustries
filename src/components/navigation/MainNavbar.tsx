@@ -269,7 +269,7 @@ export const MainNavbar: React.FC<MainNavbarProps> = ({
             aria-label="Main Navigation"
             className="hidden xl:flex flex-col justify-center gap-0.5 2xl:gap-1 text-xs 2xl:text-sm font-extrabold text-[#3087ff] shrink-0"
           >
-            {/* Row 1: View All Categories, Fittings, Restraints, Castings */}
+            {/* Row 1: View All Categories, Fittings, Restraints */}
             <div className="flex items-center gap-0.5 2xl:gap-1.5">
               {/* 0. View All Categories (FIRST MENU) */}
               <div
@@ -539,124 +539,127 @@ export const MainNavbar: React.FC<MainNavbarProps> = ({
                 </div>
               )}
             </div>
-
-            {/* 3. Municipal Castings */}
-            <div
-              className="relative"
-              onMouseEnter={() => setActiveMenu("castings")}
-              onMouseLeave={() => setActiveMenu(null)}
-            >
-              <button
-                type="button"
-                className={`inline-flex items-center gap-1 px-2.5 2xl:px-3 py-2 rounded-none transition-colors whitespace-nowrap ${activeMenu === "castings"
-                    ? "text-white bg-[#3087ff] font-bold hover:font-black hover:text-white"
-                    : "text-[#3087ff] hover:bg-[#3087ff] hover:text-white font-bold"
-                  }`}
-              >
-                <span className="whitespace-nowrap">Castings</span>
-                <ChevronDown
-                  className={`w-3.5 h-3.5 transition-transform duration-200 ${activeMenu === "castings"
-                      ? "rotate-180 text-white"
-                      : "text-[#3087ff]"
-                    }`}
-                />
-              </button>
-
-              {activeMenu === "castings" && (
-                <div className="absolute top-full left-0 w-80 max-w-[calc(100vw-2rem)] pt-2 z-50">
-                  <div className="bg-white border-2 border-[#3087ff] rounded-none shadow-2xl p-3 text-[#3087ff]">
-                    <a
-                      href="#product-matrix"
-                      onClick={() =>
-                        handleNavClick("#product-matrix", "municipal-castings")
-                      }
-                      className="block p-2.5 rounded-none hover:bg-[#3087ff] hover:text-white transition-colors group"
-                    >
-                      <div className="font-bold text-sm leading-tight group-hover:text-white group-hover:font-black">
-                        AASHTO M306 Manhole Covers
-                      </div>
-                      <div className="text-xs text-[#3087ff] group-hover:text-white group-hover:font-bold mt-1 font-medium leading-relaxed">
-                        40,000 lb proof-load machined heavy traffic lids.
-                      </div>
-                    </a>
-                    <a
-                      href="#trash-racks"
-                      onClick={() => handleNavClick("#trash-racks")}
-                      className="block p-2.5 rounded-none hover:bg-[#3087ff] hover:text-white transition-colors group border-l-2 border-[#3087ff] pl-3"
-                    >
-                      <div className="font-bold text-sm leading-tight flex items-center justify-between group-hover:text-white group-hover:font-black">
-                        <span>Trash Racks</span>
-                        <span className="text-[9px] bg-[#3087ff] group-hover:bg-white text-white group-hover:text-[#3087ff] px-1.5 py-0.2 font-mono font-black">
-                          FEATURED
-                        </span>
-                      </div>
-                      <div className="text-xs text-[#3087ff] group-hover:text-white group-hover:font-bold mt-1 font-medium leading-relaxed">
-                        360° pyramidal anti-vortex risers &amp; inclined
-                        self-cleaning screens.
-                      </div>
-                    </a>
-                    <a
-                      href="#pipe-grates"
-                      onClick={() => handleNavClick("#pipe-grates")}
-                      className="block p-2.5 rounded-none hover:bg-[#3087ff] hover:text-white transition-colors group border-l-2 border-[#3087ff] pl-3"
-                    >
-                      <div className="font-bold text-sm leading-tight flex items-center justify-between group-hover:text-white group-hover:font-black">
-                        <span>Pipe Grates</span>
-                        <span className="text-[9px] bg-[#3087ff] group-hover:bg-white text-white group-hover:text-[#3087ff] px-1.5 py-0.2 font-mono font-black">
-                          SIMULATOR
-                        </span>
-                      </div>
-                      <div className="text-xs text-[#3087ff] group-hover:text-white group-hover:font-bold mt-1 font-medium leading-relaxed">
-                        Hinged cleanout end grates &amp; 4:1 highway traversable
-                        safety slopes.
-                      </div>
-                    </a>
-                    <a
-                      href="#product-matrix"
-                      onClick={() =>
-                        handleNavClick("#product-matrix", "municipal-castings")
-                      }
-                      className="block p-2.5 rounded-none hover:bg-[#3087ff] hover:text-white transition-colors group"
-                    >
-                      <div className="font-bold text-sm leading-tight group-hover:text-white group-hover:font-black">
-                        Drainage Grates &amp; Curb Inlets
-                      </div>
-                      <div className="text-xs text-[#3087ff] group-hover:text-white group-hover:font-bold mt-1 font-medium leading-relaxed">
-                        Highway vane grates and bicycle-safe catch basin hoods.
-                      </div>
-                    </a>
-                    <a
-                      href="#product-matrix"
-                      onClick={() =>
-                        handleNavClick("#product-matrix", "municipal-castings")
-                      }
-                      className="block p-2.5 rounded-none hover:bg-[#3087ff] hover:text-white transition-colors group"
-                    >
-                      <div className="font-bold text-sm leading-tight group-hover:text-white group-hover:font-black">
-                        Trench Grates &amp; Warning Plates
-                      </div>
-                      <div className="text-xs text-[#3087ff] group-hover:text-white group-hover:font-bold mt-1 font-medium leading-relaxed">
-                        ADA heel-proof grates &amp; truncated dome tiles.
-                      </div>
-                    </a>
-                    <a
-                      href="#product-matrix"
-                      onClick={() =>
-                        handleNavClick("#product-matrix", "valve-meter-boxes")
-                      }
-                      className="block p-2.5 rounded-none hover:bg-[#3087ff] hover:text-white transition-colors group"
-                    >
-                      <div className="font-bold text-sm leading-tight group-hover:text-white group-hover:font-black">
-                        Valve &amp; Meter Service Boxes
-                      </div>
-                      <div className="text-xs text-[#3087ff] group-hover:text-white group-hover:font-bold mt-1 font-medium leading-relaxed">
-                        Screw &amp; slip adjustable boxes &amp; extension rings.
-                      </div>
-                    </a>
-                  </div>
-                </div>
-              )}
             </div>
+
+            {/* Row 2: Castings, Tools, Foundry, Yards */}
+            <div className="flex items-center gap-0.5 2xl:gap-1.5">
+              {/* 3. Municipal Castings */}
+              <div
+                className="relative"
+                onMouseEnter={() => setActiveMenu("castings")}
+                onMouseLeave={() => setActiveMenu(null)}
+              >
+                <button
+                  type="button"
+                  className={`inline-flex items-center gap-1 px-2.5 2xl:px-3 py-1.5 rounded-none transition-colors whitespace-nowrap ${activeMenu === "castings"
+                      ? "text-white bg-[#3087ff] font-bold hover:font-black hover:text-white"
+                      : "text-[#3087ff] hover:bg-[#3087ff] hover:text-white font-bold"
+                    }`}
+                >
+                  <span className="whitespace-nowrap">Castings</span>
+                  <ChevronDown
+                    className={`w-3.5 h-3.5 transition-transform duration-200 ${activeMenu === "castings"
+                        ? "rotate-180 text-white"
+                        : "text-[#3087ff]"
+                      }`}
+                  />
+                </button>
+
+                {activeMenu === "castings" && (
+                  <div className="absolute top-full left-0 w-80 max-w-[calc(100vw-2rem)] pt-2 z-50">
+                    <div className="bg-white border-2 border-[#3087ff] rounded-none shadow-2xl p-3 text-[#3087ff]">
+                      <a
+                        href="#product-matrix"
+                        onClick={() =>
+                          handleNavClick("#product-matrix", "municipal-castings")
+                        }
+                        className="block p-2.5 rounded-none hover:bg-[#3087ff] hover:text-white transition-colors group"
+                      >
+                        <div className="font-bold text-sm leading-tight group-hover:text-white group-hover:font-black">
+                          AASHTO M306 Manhole Covers
+                        </div>
+                        <div className="text-xs text-[#3087ff] group-hover:text-white group-hover:font-bold mt-1 font-medium leading-relaxed">
+                          40,000 lb proof-load machined heavy traffic lids.
+                        </div>
+                      </a>
+                      <a
+                        href="#trash-racks"
+                        onClick={() => handleNavClick("#trash-racks")}
+                        className="block p-2.5 rounded-none hover:bg-[#3087ff] hover:text-white transition-colors group border-l-2 border-[#3087ff] pl-3"
+                      >
+                        <div className="font-bold text-sm leading-tight flex items-center justify-between group-hover:text-white group-hover:font-black">
+                          <span>Trash Racks</span>
+                          <span className="text-[9px] bg-[#3087ff] group-hover:bg-white text-white group-hover:text-[#3087ff] px-1.5 py-0.2 font-mono font-black">
+                            FEATURED
+                          </span>
+                        </div>
+                        <div className="text-xs text-[#3087ff] group-hover:text-white group-hover:font-bold mt-1 font-medium leading-relaxed">
+                          360° pyramidal anti-vortex risers &amp; inclined
+                          self-cleaning screens.
+                        </div>
+                      </a>
+                      <a
+                        href="#pipe-grates"
+                        onClick={() => handleNavClick("#pipe-grates")}
+                        className="block p-2.5 rounded-none hover:bg-[#3087ff] hover:text-white transition-colors group border-l-2 border-[#3087ff] pl-3"
+                      >
+                        <div className="font-bold text-sm leading-tight flex items-center justify-between group-hover:text-white group-hover:font-black">
+                          <span>Pipe Grates</span>
+                          <span className="text-[9px] bg-[#3087ff] group-hover:bg-white text-white group-hover:text-[#3087ff] px-1.5 py-0.2 font-mono font-black">
+                            SIMULATOR
+                          </span>
+                        </div>
+                        <div className="text-xs text-[#3087ff] group-hover:text-white group-hover:font-bold mt-1 font-medium leading-relaxed">
+                          Hinged cleanout end grates &amp; 4:1 highway traversable
+                          safety slopes.
+                        </div>
+                      </a>
+                      <a
+                        href="#product-matrix"
+                        onClick={() =>
+                          handleNavClick("#product-matrix", "municipal-castings")
+                        }
+                        className="block p-2.5 rounded-none hover:bg-[#3087ff] hover:text-white transition-colors group"
+                      >
+                        <div className="font-bold text-sm leading-tight group-hover:text-white group-hover:font-black">
+                          Drainage Grates &amp; Curb Inlets
+                        </div>
+                        <div className="text-xs text-[#3087ff] group-hover:text-white group-hover:font-bold mt-1 font-medium leading-relaxed">
+                          Highway vane grates and bicycle-safe catch basin hoods.
+                        </div>
+                      </a>
+                      <a
+                        href="#product-matrix"
+                        onClick={() =>
+                          handleNavClick("#product-matrix", "municipal-castings")
+                        }
+                        className="block p-2.5 rounded-none hover:bg-[#3087ff] hover:text-white transition-colors group"
+                      >
+                        <div className="font-bold text-sm leading-tight group-hover:text-white group-hover:font-black">
+                          Trench Grates &amp; Warning Plates
+                        </div>
+                        <div className="text-xs text-[#3087ff] group-hover:text-white group-hover:font-bold mt-1 font-medium leading-relaxed">
+                          ADA heel-proof grates &amp; truncated dome tiles.
+                        </div>
+                      </a>
+                      <a
+                        href="#product-matrix"
+                        onClick={() =>
+                          handleNavClick("#product-matrix", "valve-meter-boxes")
+                        }
+                        className="block p-2.5 rounded-none hover:bg-[#3087ff] hover:text-white transition-colors group"
+                      >
+                        <div className="font-bold text-sm leading-tight group-hover:text-white group-hover:font-black">
+                          Valve &amp; Meter Service Boxes
+                        </div>
+                        <div className="text-xs text-[#3087ff] group-hover:text-white group-hover:font-bold mt-1 font-medium leading-relaxed">
+                          Screw &amp; slip adjustable boxes &amp; extension rings.
+                        </div>
+                      </a>
+                    </div>
+                  </div>
+                )}
+              </div>
             </div>
 
             {/* Row 2: Tools, Foundry, Yards */}
