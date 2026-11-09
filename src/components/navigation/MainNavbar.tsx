@@ -660,10 +660,7 @@ export const MainNavbar: React.FC<MainNavbarProps> = ({
                   </div>
                 )}
               </div>
-            </div>
 
-            {/* Row 2: Tools, Foundry, Yards */}
-            <div className="flex items-center gap-0.5 2xl:gap-1.5">
               {/* 4. Engineering & Submittal Tools */}
               <div
                 className="relative"
