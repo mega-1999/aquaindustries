@@ -1744,32 +1744,9 @@ export const MechanicalJointFittingsSchedule: React.FC<
                         {family.subtitle}
                       </p>
 
-                      <p className="text-xs text-[#3087ff] font-normal leading-relaxed line-clamp-2 mb-4">
+                      <p className="text-xs text-[#3087ff] font-normal leading-relaxed line-clamp-3 mb-6">
                         {family.description}
                       </p>
-
-                      {/* Interactive Subvariant Angle Preview Chips */}
-                      <div className="space-y-2 border-t-2 border-[#3087ff] pt-3 mb-5">
-                        <span className="text-xs font-black uppercase tracking-wider text-[#3087ff] block">
-                          Available Subvariants:
-                        </span>
-                        <div className="flex flex-wrap gap-1.5">
-                          {family.sampleAngles.map((ang) => (
-                            <button
-                              key={ang.label}
-                              type="button"
-                              onClick={(e) => {
-                                e.stopPropagation();
-                                handleOpenFamily(family.id, ang.subvariantId);
-                              }}
-                              className="px-2.5 py-1 text-xs font-black uppercase bg-[#3087ff] hover:bg-white text-white hover:text-[#3087ff] border-2 border-[#3087ff] rounded-none transition-all shadow-xs cursor-pointer"
-                              title={`View ${ang.label} subvariant specifications`}
-                            >
-                              {ang.label}
-                            </button>
-                          ))}
-                        </div>
-                      </div>
                     </div>
 
                     {/* Main Category Action Button */}
