@@ -36,7 +36,11 @@ export interface FittingItemData {
   | "mj-fe-bends"
   | "tees-crosses"
   | "reducers-sleeves"
-  | "swivel-hydrant";
+  | "swivel-hydrant"
+  | "c153-compact"
+  | "c110-full-body"
+  | "c110-flange"
+  | "c153-push-on";
   categoryLabel: string;
   sizeRange: string;
   pressureRating: string;
@@ -57,7 +61,11 @@ export interface FittingFamily {
   | "mj-fe-bends"
   | "tees-crosses"
   | "reducers-sleeves"
-  | "swivel-hydrant";
+  | "swivel-hydrant"
+  | "c153-compact"
+  | "c110-full-body"
+  | "c110-flange"
+  | "c153-push-on";
   title: string;
   subtitle: string;
   shortName: string;
@@ -68,6 +76,67 @@ export interface FittingFamily {
   defaultSubvariantId: string;
   iconType: "bend" | "tee" | "cross" | "reducer" | "sleeve" | "swivel";
 }
+
+// Fittings Families Comparison Table Data (from AWWA standards)
+export interface FittingsFamilyComparison {
+  id: string;
+  standard: string;
+  profileType: string;
+  primaryEndConnection: string;
+  typicalApplication: string;
+  keyBenefit: string;
+}
+
+export const FITTINGS_FAMILIES_COMPARISON: FittingsFamilyComparison[] = [
+  {
+    id: "c153",
+    standard: "AWWA C153",
+    profileType: "Compact Body",
+    primaryEndConnection: "Mechanical Joint (MJ)",
+    typicalApplication: "Buried municipal distribution",
+    keyBenefit: "Lightweight, lower cost, easy underground handling",
+  },
+  {
+    id: "c110",
+    standard: "AWWA C110",
+    profileType: "Full-Body",
+    primaryEndConnection: "MJ, Push-On, or Flanged",
+    typicalApplication: "High structural external loads, legacy alignments",
+    keyBenefit: "Maximum wall thickness, safety factor against external stress",
+  },
+  {
+    id: "c115",
+    standard: "AWWA C115",
+    profileType: "Rigid Flanged",
+    primaryEndConnection: "Class 125/150 Flange",
+    typicalApplication: "Treatment plants, pump stations, open vaults",
+    keyBenefit: "Rigid, non-yielding joints, self-supporting structural load",
+  },
+  {
+    id: "poj",
+    standard: "Push-On (POJ)",
+    profileType: "Bell Socket",
+    primaryEndConnection: "Internal Gasket (Tyton)",
+    typicalApplication: "Cross-country open transmission mains",
+    keyBenefit: "Extremely rapid tool-free assembly",
+  },
+  {
+    id: "rj",
+    standard: "Restrained Joint (R.J.)",
+    profileType: "Reinforced Bell",
+    primaryEndConnection: "Boltless Locking Ring / Wedges",
+    typicalApplication: "High-pressure lines, directional drilling, trenchless lines",
+    keyBenefit: "Eliminates the need for massive concrete thrust blocks",
+  },
+  {
+    id: "c606",
+    standard: "AWWA C606",
+    profileType: "Grooved Ends",
+    primaryEndConnection: "Split Mechanical Couplings",
+    typicalApplication: "Plant interiors, bypass lines, temporary waterworks",
+    keyBenefit: "Easy component removal and line maintenance access",
+  },
+];
 
 export const FITTINGS_SCHEDULE_DATA: FittingItemData[] = [
   // 1. MJ x MJ Bends
@@ -679,133 +748,93 @@ export const FITTINGS_SCHEDULE_DATA: FittingItemData[] = [
 
 export const FITTING_FAMILIES: FittingFamily[] = [
   {
-    id: "fam-mj-mj-bends",
-    categoryKey: "mj-mj-bends",
-    title: "MJ x MJ Bends",
-    subtitle: "Mechanical Joint x Mechanical Joint",
-    shortName: "MJ x MJ Elbows",
-    tag: "7 SUBVARIANTS (90° TO 5.625°)",
+    id: "fam-c153-compact",
+    categoryKey: "c153-compact",
+    title: "C153 Compact MJ Fittings",
+    subtitle: "AWWA C153 — Lightweight Compact Body Mechanical Joint",
+    shortName: "C153 Compact MJ",
+    tag: "AWWA C153 • COMPACT BODY",
     description:
-      "Ductile iron directional elbows with twin mechanical joint bells. Full range of deflection angles for water main redirection.",
-    subvariantTypeLabel: "Select Bend Angle",
+      "Compact-profile ductile iron mechanical joint fittings rated up to 350 PSI. Lightweight design for buried municipal distribution with full AWWA C111 joint deflection.",
+    subvariantTypeLabel: "Select Fitting Type",
     sampleAngles: [
-      { label: "90°", subvariantId: "mj-mj-bend-90" },
-      { label: "60°", subvariantId: "mj-mj-bend-60" },
-      { label: "45°", subvariantId: "mj-mj-bend-45" },
-      { label: "30°", subvariantId: "mj-mj-bend-30" },
-      { label: "22.5°", subvariantId: "mj-mj-bend-22-5" },
-      { label: "11.25°", subvariantId: "mj-mj-bend-11-25" },
-      { label: "5.625°", subvariantId: "mj-mj-bend-5-625" },
+      { label: "90° Bend", subvariantId: "mj-mj-bend-90" },
+      { label: "45° Bend", subvariantId: "mj-mj-bend-45" },
+      { label: "22.5° Bend", subvariantId: "mj-mj-bend-22-5" },
+      { label: "11.25° Bend", subvariantId: "mj-mj-bend-11-25" },
+      { label: "MJ Tee", subvariantId: "mj-mj-tee" },
+      { label: "MJ Cross", subvariantId: "mj-mj-cross" },
+      { label: "Reducer", subvariantId: "mj-mj-reducer" },
     ],
     defaultSubvariantId: "mj-mj-bend-90",
     iconType: "bend",
   },
   {
-    id: "fam-mj-pe-bends",
-    categoryKey: "mj-pe-bends",
-    title: "MJ x PE Bends",
-    subtitle: "Mechanical Joint Bell x Plain End Spigot",
-    shortName: "MJ x PE Spigot Elbows",
-    tag: "7 SUBVARIANTS (90° TO 5.625°)",
+    id: "fam-c110-full-body",
+    categoryKey: "c110-full-body",
+    title: "C110 Full Body MJ Fittings",
+    subtitle: "AWWA C110 — Maximum Wall Thickness Full-Body MJ",
+    shortName: "C110 Full Body MJ",
+    tag: "AWWA C110 • FULL BODY",
     description:
-      "Bell-by-spigot elbows engineered to plug directly into push-on pipe bells or gate valves, eliminating extra spool pieces.",
-    subvariantTypeLabel: "Select Bend Angle",
+      "Full-body ductile iron MJ fittings with maximum wall thickness for high structural loads, legacy alignments, and applications requiring additional safety factor against external stress.",
+    subvariantTypeLabel: "Select Fitting Type",
     sampleAngles: [
-      { label: "90°", subvariantId: "mj-pe-bend-90" },
-      { label: "60°", subvariantId: "mj-pe-bend-60" },
-      { label: "45°", subvariantId: "mj-pe-bend-45" },
-      { label: "30°", subvariantId: "mj-pe-bend-30" },
-      { label: "22.5°", subvariantId: "mj-pe-bend-22-5" },
-      { label: "11.25°", subvariantId: "mj-pe-bend-11-25" },
-      { label: "5.625°", subvariantId: "mj-pe-bend-5-625" },
+      { label: "90° Bend", subvariantId: "mj-mj-bend-90" },
+      { label: "60° Bend", subvariantId: "mj-mj-bend-60" },
+      { label: "45° Bend", subvariantId: "mj-mj-bend-45" },
+      { label: "30° Bend", subvariantId: "mj-mj-bend-30" },
+      { label: "Standard Tee", subvariantId: "mj-mj-tee" },
+      { label: "Reducing Tee", subvariantId: "mj-fe-tee" },
+      { label: "Concentric Reducer", subvariantId: "mj-mj-reducer" },
+      { label: "Eccentric Reducer", subvariantId: "eccentric-reducer" },
     ],
-    defaultSubvariantId: "mj-pe-bend-90",
+    defaultSubvariantId: "mj-mj-bend-90",
     iconType: "bend",
   },
   {
-    id: "fam-mj-fe-bends",
-    categoryKey: "mj-fe-bends",
-    title: "MJ x FE Bends",
-    subtitle: "Mechanical Joint x Class 125 Flange",
-    shortName: "MJ x Flanged Elbows",
-    tag: "4 SUBVARIANTS (90°, 45°, 22.5°, 11.25°)",
+    id: "fam-c110-flange",
+    categoryKey: "c110-flange",
+    title: "C110 Flange Fittings",
+    subtitle: "AWWA C110/C115 — Class 125 Rigid Flanged Connections",
+    shortName: "C110 Flange",
+    tag: "AWWA C110/C115 • FLANGED",
     description:
-      "Direct transition elbows converting underground mechanical joint mains to ANSI Class 125 flanged meter vaults and pump stations.",
-    subvariantTypeLabel: "Select Bend Angle",
+      "Rigid flanged ductile iron fittings with Class 125/150 bolt-up connections for treatment plants, pump stations, open vaults, and applications requiring non-yielding self-supporting joints.",
+    subvariantTypeLabel: "Select Flanged Fitting",
     sampleAngles: [
-      { label: "90°", subvariantId: "mj-fe-bend-90" },
-      { label: "45°", subvariantId: "mj-fe-bend-45" },
-      { label: "22.5°", subvariantId: "mj-fe-bend-22-5" },
-      { label: "11.25°", subvariantId: "mj-fe-bend-11-25" },
+      { label: "90° MJ×FE Bend", subvariantId: "mj-fe-bend-90" },
+      { label: "45° MJ×FE Bend", subvariantId: "mj-fe-bend-45" },
+      { label: "22.5° MJ×FE Bend", subvariantId: "mj-fe-bend-22-5" },
+      { label: "11.25° MJ×FE Bend", subvariantId: "mj-fe-bend-11-25" },
+      { label: "MJ×FE Tee", subvariantId: "mj-fe-tee" },
+      { label: "MJ×FE Cross", subvariantId: "mj-fe-cross" },
+      { label: "MJ×FE Reducer", subvariantId: "mj-fe-reducer" },
     ],
     defaultSubvariantId: "mj-fe-bend-90",
     iconType: "bend",
   },
   {
-    id: "fam-tees-crosses",
-    categoryKey: "tees-crosses",
-    title: "MJ Tees & 4-Way Crosses",
-    subtitle: "Branch Distribution & Grid Junctions",
-    shortName: "Tees & Crosses",
-    tag: "7 CONFIGURATIONS",
+    id: "fam-c153-push-on",
+    categoryKey: "c153-push-on",
+    title: "C153 Push-On Fittings",
+    subtitle: "AWWA C153 — Internal Gasket Push-On Joint (Tyton)",
+    shortName: "C153 Push-On",
+    tag: "AWWA C153 • PUSH-ON (POJ)",
     description:
-      "Full and reducing branch tees, flanged branch valve tees, tapped sample tees, tangential drainage tees, and 4-way distribution crosses.",
-    subvariantTypeLabel: "Select Fitting Pattern",
+      "Bell-socket push-on joint fittings using internal Tyton gaskets for extremely rapid tool-free assembly on cross-country open transmission mains and large-diameter lines.",
+    subvariantTypeLabel: "Select Push-On Fitting",
     sampleAngles: [
-      { label: "MJ x MJ Tee", subvariantId: "mj-mj-tee" },
-      { label: "MJ x FE Tee", subvariantId: "mj-fe-tee" },
-      { label: "Plain End Run", subvariantId: "mj-pe-mj-tee" },
-      { label: '2" NPT Tap', subvariantId: "mj-mj-tapped-tee-cross" },
-      { label: "Tangential", subvariantId: "mj-mj-tangential-tee" },
-      { label: "MJ Cross", subvariantId: "mj-mj-cross" },
-      { label: "FE Cross", subvariantId: "mj-fe-cross" },
+      { label: "90° MJ×PE Bend", subvariantId: "mj-pe-bend-90" },
+      { label: "60° MJ×PE Bend", subvariantId: "mj-pe-bend-60" },
+      { label: "45° MJ×PE Bend", subvariantId: "mj-pe-bend-45" },
+      { label: "30° MJ×PE Bend", subvariantId: "mj-pe-bend-30" },
+      { label: "22.5° MJ×PE Bend", subvariantId: "mj-pe-bend-22-5" },
+      { label: "11.25° MJ×PE Bend", subvariantId: "mj-pe-bend-11-25" },
+      { label: "PE Run Tee", subvariantId: "mj-pe-mj-tee" },
     ],
-    defaultSubvariantId: "mj-mj-tee",
-    iconType: "tee",
-  },
-  {
-    id: "fam-reducers-sleeves",
-    categoryKey: "reducers-sleeves",
-    title: "Reducers, Offsets & Sleeves",
-    subtitle: "Concentric, Eccentric, SEB, LEB & Cut-In",
-    shortName: "Reducers & Sleeves",
-    tag: "7 SPECIALTY FITTINGS",
-    description:
-      "Diameter transitions maintaining uniform flow lines, flat-line eccentric reducers, repair cutting-in sleeves, and double-bend S-curve offsets.",
-    subvariantTypeLabel: "Select Reducer / Sleeve",
-    sampleAngles: [
-      { label: "Concentric", subvariantId: "mj-mj-reducer" },
-      { label: "SEB (Small Bell)", subvariantId: "seb-reducer" },
-      { label: "LEB (Large Bell)", subvariantId: "leb-reducer" },
-      { label: "MJ x FE", subvariantId: "mj-fe-reducer" },
-      { label: "Eccentric", subvariantId: "eccentric-reducer" },
-      { label: "Cutting-In", subvariantId: "cutting-in-sleeve" },
-      { label: "Line Offset", subvariantId: "mj-offset" },
-    ],
-    defaultSubvariantId: "mj-mj-reducer",
-    iconType: "reducer",
-  },
-  {
-    id: "fam-swivel-hydrant",
-    categoryKey: "swivel-hydrant",
-    title: "Swivel Hydrant Fittings",
-    subtitle: "360° Rotating Fire Hydrant Hardware",
-    shortName: "Hydrant Swivels",
-    tag: "4 HYDRANT ACCESSORIES",
-    description:
-      "Dual-swivel adapters, twin-gland 90° hydrant elbows, solid adapters, and locking swivel retainer glands for precision vertical hydrant plumbing.",
-    subvariantTypeLabel: "Select Hydrant Part",
-    sampleAngles: [
-      {
-        label: "Swivel Adapter",
-        subvariantId: "swivel-swivel-hydrant-adapter",
-      },
-      { label: "Swivel 90° Ell", subvariantId: "swivel-swivel-hydrant-ell" },
-      { label: "Solid Adapter", subvariantId: "swivel-solid-hydrant-adapter" },
-      { label: "Swivel Glands", subvariantId: "swivel-glands" },
-    ],
-    defaultSubvariantId: "swivel-swivel-hydrant-adapter",
-    iconType: "swivel",
+    defaultSubvariantId: "mj-pe-bend-90",
+    iconType: "bend",
   },
 ];
 
@@ -995,11 +1024,11 @@ export const MechanicalJointFittingsSchedule: React.FC<
   }, [selectedFamilyId]);
 
   // Subvariants of currently selected family
+  // New families reference fittings by sampleAngles subvariantIds, not by category key
   const familySubvariants = useMemo(() => {
     if (!activeFamily) return [];
-    return FITTINGS_SCHEDULE_DATA.filter(
-      (item) => item.category === activeFamily.categoryKey,
-    );
+    const subvariantIds = new Set(activeFamily.sampleAngles.map((a) => a.subvariantId));
+    return FITTINGS_SCHEDULE_DATA.filter((item) => subvariantIds.has(item.id));
   }, [activeFamily]);
 
   // Currently focused subvariant
@@ -1135,23 +1164,97 @@ export const MechanicalJointFittingsSchedule: React.FC<
     >
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         {/* Section Header */}
-        <div className="text-center max-w-3xl mx-auto mb-10">
+        <div className="text-center max-w-4xl mx-auto mb-10">
           <div className="inline-flex items-center gap-2 px-3 py-1 bg-white text-[#3087ff] text-xs font-bold uppercase tracking-wider rounded-none mb-3 shadow-sm border-2 border-[#3087ff]">
             <Compass className="w-3.5 h-3.5 text-[#3087ff] shrink-0" />
-            <span>ANSI/AWWA C153 &bull; ANSI/AWWA C111 &bull; ASTM A536</span>
+            <span>AWWA C153 &bull; AWWA C110 &bull; AWWA C115 &bull; ASTM A536</span>
           </div>
 
           <h2 className="text-3xl sm:text-4xl lg:text-5xl font-black uppercase tracking-tight text-[#3087ff] leading-[1.05] mb-3">
-            2&quot; - 64&quot; Ductile Iron{" "}
-            <span className="text-[#3087ff]">Mechanical Joint</span> Fittings
+            Waterworks <span className="text-[#3087ff]">Fittings Families</span>
           </h2>
 
-          <p className="text-sm sm:text-base text-[#3087ff] font-normal leading-relaxed">
-            Explore ductile iron mechanical joint compact fittings by product
-            family. Select any fitting category below to browse specific
-            subvariant angles (90°, 60°, 45°, 30°, 22.5°, 11.25°, 5.625°), tees,
-            reducers, and swivel hardware.
+          <p className="text-sm sm:text-base text-[#3087ff] font-normal leading-relaxed mb-6">
+            Complete municipal engineered fittings catalog covering <strong>C153 Compact MJ Fittings</strong>, <strong>C110 Full Body MJ Fittings</strong>, <strong>C110 Flange Fittings</strong>, and <strong>C153 Push-On Fittings</strong> for ductile iron waterworks systems.
           </p>
+
+          {/* Quick Filter Badges for the 4 Core Families */}
+          <div className="flex flex-wrap items-center justify-center gap-2 sm:gap-3">
+            {FITTING_FAMILIES.map((family) => (
+              <button
+                key={family.id}
+                type="button"
+                onClick={() => handleOpenFamily(family.id)}
+                className="px-3.5 py-1.5 text-xs font-black uppercase tracking-wider bg-white hover:bg-[#3087ff] text-[#3087ff] hover:text-white border-2 border-[#3087ff] transition-all shadow-xs cursor-pointer flex items-center gap-1.5"
+              >
+                <Layers className="w-3.5 h-3.5 shrink-0" />
+                <span>{family.title}</span>
+              </button>
+            ))}
+          </div>
+        </div>
+
+        {/* Standards / Profiles Engineering Comparison Table */}
+        <div className="mb-12 bg-white border-4 border-[#3087ff] shadow-xl overflow-hidden">
+          <div className="bg-[#3087ff] text-white p-3 sm:p-4 flex flex-col sm:flex-row items-start sm:items-center justify-between gap-2 border-b-2 border-[#3087ff]">
+            <div className="flex items-center gap-2">
+              <ShieldCheck className="w-4 h-4 shrink-0" />
+              <h3 className="text-xs sm:text-sm font-black uppercase tracking-wider">
+                Fittings Profiles &amp; Application Specification Ledger
+              </h3>
+            </div>
+            <span className="text-[10px] font-mono font-bold bg-white text-[#3087ff] px-2 py-0.5 border border-white uppercase">
+              ANSI / AWWA Standards
+            </span>
+          </div>
+
+          <div className="overflow-x-auto">
+            <table className="w-full text-left border-collapse text-xs">
+              <thead>
+                <tr className="bg-white border-b-2 border-[#3087ff] text-[#3087ff]">
+                  <th className="py-2.5 px-3 sm:px-4 font-black uppercase tracking-wider border-r border-[#3087ff]">
+                    Standard / Style
+                  </th>
+                  <th className="py-2.5 px-3 sm:px-4 font-black uppercase tracking-wider border-r border-[#3087ff]">
+                    Profile Type
+                  </th>
+                  <th className="py-2.5 px-3 sm:px-4 font-black uppercase tracking-wider border-r border-[#3087ff]">
+                    Primary End Connection
+                  </th>
+                  <th className="py-2.5 px-3 sm:px-4 font-black uppercase tracking-wider border-r border-[#3087ff]">
+                    Typical Application Environment
+                  </th>
+                  <th className="py-2.5 px-3 sm:px-4 font-black uppercase tracking-wider">
+                    Key Distinct Benefit
+                  </th>
+                </tr>
+              </thead>
+              <tbody className="divide-y border-b border-[#3087ff] divide-[#3087ff]">
+                {FITTINGS_FAMILIES_COMPARISON.map((row) => (
+                  <tr
+                    key={row.id}
+                    className="hover:bg-[#3087ff] hover:text-white transition-colors text-[#3087ff] group"
+                  >
+                    <td className="py-3 px-3 sm:px-4 font-black uppercase tracking-tight border-r border-[#3087ff] group-hover:border-white whitespace-nowrap">
+                      {row.standard}
+                    </td>
+                    <td className="py-3 px-3 sm:px-4 font-bold border-r border-[#3087ff] group-hover:border-white whitespace-nowrap">
+                      {row.profileType}
+                    </td>
+                    <td className="py-3 px-3 sm:px-4 border-r border-[#3087ff] group-hover:border-white font-medium">
+                      {row.primaryEndConnection}
+                    </td>
+                    <td className="py-3 px-3 sm:px-4 border-r border-[#3087ff] group-hover:border-white font-normal">
+                      {row.typicalApplication}
+                    </td>
+                    <td className="py-3 px-3 sm:px-4 font-bold">
+                      {row.keyBenefit}
+                    </td>
+                  </tr>
+                ))}
+              </tbody>
+            </table>
+          </div>
         </div>
 
         {/* Global Search Bar (Works Across All 36 Fittings) */}
@@ -1597,15 +1700,14 @@ export const MechanicalJointFittingsSchedule: React.FC<
           <div>
             <div className="mb-6 flex items-center justify-between text-xs font-bold text-[#3087ff] border-b-2 border-[#3087ff] pb-2">
               <span>
-                Showing <strong>{FITTING_FAMILIES.length}</strong> Mechanical
-                Joint Product Families
+                Showing <strong>{FITTING_FAMILIES.length}</strong> Core Waterworks Fittings Families
               </span>
               <span className="text-[11px] uppercase tracking-wider text-[#3087ff]">
-                Click any category to explore subvariant angles
+                Click any family to explore certified subvariants &amp; specs
               </span>
             </div>
 
-            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 sm:gap-8 items-stretch">
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 sm:gap-6 items-stretch">
               {FITTING_FAMILIES.map((family) => {
                 const sampleFitting =
                   FITTINGS_SCHEDULE_DATA.find(
@@ -1615,16 +1717,16 @@ export const MechanicalJointFittingsSchedule: React.FC<
                 return (
                   <div
                     key={family.id}
-                    className="bg-white border-4 border-[#3087ff] hover:border-[#3087ff] rounded-none p-5 sm:p-6 flex flex-col justify-between shadow-xl transition-all duration-300 group hover:-translate-y-1 relative text-[#3087ff] h-full"
+                    className="bg-white border-4 border-[#3087ff] hover:border-[#3087ff] rounded-none p-5 sm:p-5 flex flex-col justify-between shadow-xl transition-all duration-300 group hover:-translate-y-1 relative text-[#3087ff] h-full"
                   >
                     <div>
                       {/* Top Category Tag */}
                       <div className="flex items-center justify-between mb-3 border-b-2 border-[#3087ff] pb-2.5 min-h-[28px]">
-                        <span className="text-[10px] font-black uppercase tracking-wider bg-white text-[#3087ff] px-2.5 py-0.5 border border-[#3087ff]">
+                        <span className="text-[10px] font-black uppercase tracking-wider bg-white text-[#3087ff] px-2 py-0.5 border border-[#3087ff] truncate max-w-[170px]">
                           {family.tag}
                         </span>
-                        <span className="text-[10px] font-bold text-[#3087ff] uppercase">
-                          AWWA C153
+                        <span className="text-[10px] font-bold text-[#3087ff] uppercase shrink-0">
+                          AWWA Certified
                         </span>
                       </div>
 

@@ -35,6 +35,7 @@ import { EngineeringSubmittalLibrary } from "../components/sections/EngineeringS
 import { MasteringInfrastructureTabs } from "../components/sections/MasteringInfrastructureTabs";
 import { SolenoProjectsShowcase } from "../components/sections/SolenoProjectsShowcase";
 import { SolenoVideoShowcase } from "../components/sections/SolenoVideoShowcase";
+import { UmbrellaShowcase } from "../components/sections/UmbrellaShowcase";
 
 import { DISTRIBUTION_YARDS, PRODUCTS_CATALOG } from "../data/waterworks-data";
 import type { ProductItem, YardLocation } from "../types";
@@ -202,7 +203,8 @@ export default function Home() {
           onPreviewSubmittal={(product) => setSubmittalModalProduct(product)}
         />
 
-
+        {/* Section 11: "We Have You Covered" Umbrella Showcase (Blue #3087ff - Alternating) */}
+        <UmbrellaShowcase />
 
         {/* Section 6: Engineering Submittal & Cut Sheet Library (Soleno ressources_single carousel pattern) */}
         {/* <EngineeringSubmittalLibrary
