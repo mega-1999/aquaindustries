@@ -16,6 +16,7 @@ import { SuperAdminApprovalModal } from "../components/modals/SuperAdminApproval
 import { YardSelectorModal } from "../components/modals/YardSelectorModal";
 import { FloatingQuickActions } from "../components/navigation/FloatingQuickActions";
 import { GlobalUtilityTicker } from "../components/navigation/GlobalUtilityTicker";
+import { HeaderUmbrellasTicker } from "../components/navigation/HeaderUmbrellasTicker";
 import { MainNavbar } from "../components/navigation/MainNavbar";
 import { VerticalSideVideoAds } from "../components/navigation/VerticalSideVideoAds";
 import { CatchBasinTrapsSpotlight } from "../components/products/CatchBasinTrapsSpotlight";
@@ -117,6 +118,9 @@ export default function Home() {
         onOpenSuperAdminModal={() => setSuperAdminModalOpen(true)}
         onSelectProductCategory={handleSelectProductCategory}
       />
+
+      {/* Individual Rotating Umbrellas Under Header Ribbon (Ben Mega Foundries US) */}
+      <HeaderUmbrellasTicker onSelectCategory={handleSelectProductCategory} />
 
       {/* Main Single-Page Blueprint with Alternating Background Rhythm */}
       <main className="flex-1 relative">
