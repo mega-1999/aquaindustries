@@ -36,7 +36,6 @@ import { MasteringInfrastructureTabs } from "../components/sections/MasteringInf
 import { SolenoProjectsShowcase } from "../components/sections/SolenoProjectsShowcase";
 import { SolenoVideoShowcase } from "../components/sections/SolenoVideoShowcase";
 import { UmbrellaShowcase } from "../components/sections/UmbrellaShowcase";
-import { ScrollVideoShowcase } from "../components/ScrollVideoShowcase";
 
 import { DISTRIBUTION_YARDS, PRODUCTS_CATALOG } from "../data/waterworks-data";
 import type { ProductItem, YardLocation } from "../types";
@@ -204,8 +203,8 @@ export default function Home() {
           onPreviewSubmittal={(product) => setSubmittalModalProduct(product)}
         />
 
-        {/* Section 11: Apple-Style Interactive Scroll-Bound Video Scrubbing Showcase */}
-        <ScrollVideoShowcase />
+        {/* Section 11: "We Have You Covered" Umbrella Video Showcase (Blue #3087ff - Alternating) */}
+        <UmbrellaShowcase />
 
         {/* Section 6: Engineering Submittal & Cut Sheet Library (Soleno ressources_single carousel pattern) */}
         {/* <EngineeringSubmittalLibrary
