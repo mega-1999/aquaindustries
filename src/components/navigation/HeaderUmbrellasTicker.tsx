@@ -182,3 +182,4 @@ export const HeaderUmbrellasTicker: React.FC<HeaderUmbrellasTickerProps> = ({
     </div>
   );
 };
+
