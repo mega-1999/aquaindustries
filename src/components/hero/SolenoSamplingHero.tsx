@@ -386,8 +386,8 @@ export const SolenoSamplingHero: React.FC = () => {
                 title="Start a project with Aqua Industries"
               >
                 <span className="text-[10px] sm:text-[11px] font-black tracking-wider uppercase leading-tight">
-                  START A<br />
-                  PROJECT
+                  Explore Sampling <br />
+                  Stations
                 </span>
                 <span className="text-lg sm:text-xl font-black mt-0.5 text-white group-hover:text-[#3087ff] transition-transform duration-300 group-hover:rotate-90">
                   +
