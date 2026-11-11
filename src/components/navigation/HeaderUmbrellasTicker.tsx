@@ -208,12 +208,12 @@ export const HeaderUmbrellasTicker: React.FC<HeaderUmbrellasTickerProps> = ({
         </div>
 
         {/* Right Call-to-Action Mini Badge */}
-        <div className="shrink-0 pl-2 border-l-2 border-white/30 hidden lg:flex items-center gap-1.5">
+        {/* <div className="shrink-0 pl-2 border-l-2 border-white/30 hidden lg:flex items-center gap-1.5">
           <span className="w-1.5 h-1.5 rounded-full bg-white animate-pulse" />
           <span className="text-[9px] font-mono font-bold tracking-wider uppercase text-white whitespace-nowrap">
             10 Product Lines
           </span>
-        </div>
+        </div> */}
       </div>
     </div>
   );
