@@ -61,6 +61,15 @@ const UMBRELLA_PRODUCTS: UmbrellaProductItem[] = [
     badge: "Highway Heavy Duty",
   },
   {
+    id: "flangs",
+    title: "Flanges & Adapters",
+    shortLabel: "Flanges",
+    videoSrc: "/videos/umbrellas/flangs.mp4",
+    targetId: "#c153-fittings-schedule",
+    categoryFilter: "fittings",
+    badge: "Class 125/150",
+  },
+  {
     id: "valves",
     title: "Valves & Flow Controls",
     shortLabel: "Valves",
@@ -68,6 +77,24 @@ const UMBRELLA_PRODUCTS: UmbrellaProductItem[] = [
     targetId: "#engineering-spotlight",
     categoryFilter: "valves",
     badge: "AWWA Gate & Check",
+  },
+  {
+    id: "construction-casting",
+    title: "Construction Castings",
+    shortLabel: "Castings",
+    videoSrc: "/videos/umbrellas/construction_casting.mp4",
+    targetId: "#catch-basin-traps",
+    categoryFilter: "castings",
+    badge: "ASTM A48 Class 35B",
+  },
+  {
+    id: "pumps",
+    title: "Waterworks Pumps & Stations",
+    shortLabel: "Pumps",
+    videoSrc: "/videos/umbrellas/pumps.mp4",
+    targetId: "#infrastructure-hero",
+    categoryFilter: "accessories",
+    badge: "Heavy Duty Municipal",
   },
   {
     id: "water-works",
@@ -184,7 +211,7 @@ export const HeaderUmbrellasTicker: React.FC<HeaderUmbrellasTickerProps> = ({
         <div className="shrink-0 pl-2 border-l-2 border-white/30 hidden lg:flex items-center gap-1.5">
           <span className="w-1.5 h-1.5 rounded-full bg-white animate-pulse" />
           <span className="text-[9px] font-mono font-bold tracking-wider uppercase text-white whitespace-nowrap">
-            7 Product Lines
+            10 Product Lines
           </span>
         </div>
       </div>
