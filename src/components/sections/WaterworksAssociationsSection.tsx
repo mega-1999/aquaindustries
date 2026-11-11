@@ -24,6 +24,7 @@ export interface AssociationItem {
   domain: string;
   category: string;
   badge: string;
+  logoSrc: string;
   description: string;
   complianceImpact: string;
   standardCodes: string[];
@@ -38,6 +39,7 @@ export const WATERWORKS_ASSOCIATIONS: AssociationItem[] = [
     domain: "awwa.org",
     category: "Technical Standards Authority",
     badge: "Standards & Compliance",
+    logoSrc: "/images/associations/awwa.svg",
     description:
       "The authoritative global leader in water management, establishing mandatory technical manufacturing standards (C153, C110, C111, C104) across all potable water networks.",
     complianceImpact:
@@ -52,6 +54,7 @@ export const WATERWORKS_ASSOCIATIONS: AssociationItem[] = [
     domain: "nrwa.org",
     category: "Rural & Small Utility Alliance",
     badge: "Rural Infrastructure",
+    logoSrc: "/images/associations/nrwa.jpg",
     description:
       "America's largest utility membership association representing over 31,000 small and rural community water and wastewater systems nationwide.",
     complianceImpact:
@@ -66,6 +69,7 @@ export const WATERWORKS_ASSOCIATIONS: AssociationItem[] = [
     domain: "asdwa.org",
     category: "State Regulatory Leadership",
     badge: "State Safe Drinking Water",
+    logoSrc: "/images/associations/asdwa.svg",
     description:
       "Professional non-profit representing the collective leadership of state and territorial drinking water programs responsible for implementing the Safe Drinking Water Act.",
     complianceImpact:
@@ -80,6 +84,7 @@ export const WATERWORKS_ASSOCIATIONS: AssociationItem[] = [
     domain: "nawc.org",
     category: "Private Water Enterprise",
     badge: "Regulated Utilities",
+    logoSrc: "/images/associations/nawc.svg",
     description:
       "The voice of the private water service industry, representing investor-owned water and wastewater utilities providing safe water to over 73 million Americans.",
     complianceImpact:
@@ -94,6 +99,7 @@ export const WATERWORKS_ASSOCIATIONS: AssociationItem[] = [
     domain: "amwa.net",
     category: "Metropolitan Megasystems",
     badge: "Large Metro Systems",
+    logoSrc: "/images/associations/amwa.svg",
     description:
       "The organization of the largest publicly owned drinking water systems in the United States, serving populations of hundreds of thousands across major metropolitan hubs.",
     complianceImpact:
@@ -108,6 +114,7 @@ export const WATERWORKS_ASSOCIATIONS: AssociationItem[] = [
     domain: "nacwa.org",
     category: "Wastewater & Stormwater",
     badge: "Clean Water Agencies",
+    logoSrc: "/images/associations/nacwa.png",
     description:
       "The recognized leader in clean water advocacy, representing municipal clean water utilities dedicated to environmental stewardship and sustainable watershed management.",
     complianceImpact:
@@ -188,28 +195,39 @@ export const WaterworksAssociationsSection: React.FC = () => {
                     </span>
                   </div>
 
-                  {/* Association Emblem Badge & Acronym */}
-                  <div className="flex items-center gap-3.5 mb-3">
+                  {/* Real Logo Container */}
+                  <div className="flex items-center gap-3.5 mb-3.5">
                     <div
-                      className={`w-12 h-12 flex items-center justify-center font-black text-base uppercase shrink-0 border-2 transition-transform duration-300 group-hover:scale-105 ${
-                        isSelected
-                          ? "bg-white text-[#3087ff] border-white shadow-md"
-                          : "bg-[#3087ff] text-white border-[#3087ff]"
+                      className={`w-16 h-14 p-1.5 flex items-center justify-center shrink-0 border-2 transition-transform duration-300 group-hover:scale-105 bg-white ${
+                        isSelected ? "border-white shadow-md" : "border-[#3087ff]"
                       }`}
                     >
-                      {assoc.acronym}
+                      <img
+                        src={assoc.logoSrc}
+                        alt={`${assoc.name} (${assoc.acronym}) Official Logo`}
+                        className="max-w-full max-h-full object-contain"
+                      />
                     </div>
 
                     <div className="min-w-0 flex-1">
+                      <div className="flex items-center gap-1.5">
+                        <span
+                          className={`text-xs font-mono font-black uppercase tracking-wider ${
+                            isSelected ? "text-[#5FD4FD]" : "text-[#3087ff]"
+                          }`}
+                        >
+                          {assoc.acronym}
+                        </span>
+                      </div>
                       <h3
-                        className={`text-sm sm:text-base font-black uppercase tracking-tight leading-tight line-clamp-2 ${
+                        className={`text-xs sm:text-sm font-black uppercase tracking-tight leading-tight line-clamp-2 ${
                           isSelected ? "text-white" : "text-[#3087ff]"
                         }`}
                       >
                         {assoc.name}
                       </h3>
                       <span
-                        className={`text-[11px] font-mono ${
+                        className={`text-[10px] font-mono block mt-0.5 ${
                           isSelected ? "text-white/80" : "text-[#3087ff]/80"
                         }`}
                       >
@@ -263,8 +281,12 @@ export const WaterworksAssociationsSection: React.FC = () => {
         <div className="bg-white border-4 border-[#3087ff] p-5 sm:p-8 shadow-xl">
           <div className="flex flex-col lg:flex-row lg:items-center justify-between gap-6 border-b-2 border-[#3087ff] pb-6 mb-6">
             <div className="flex items-center gap-4">
-              <div className="w-14 h-14 bg-[#3087ff] text-white flex items-center justify-center font-black text-xl shrink-0 border-2 border-[#3087ff] shadow-sm">
-                {selectedAssoc.acronym}
+              <div className="w-20 h-16 p-2 bg-white flex items-center justify-center shrink-0 border-2 border-[#3087ff] shadow-sm">
+                <img
+                  src={selectedAssoc.logoSrc}
+                  alt={`${selectedAssoc.name} Logo`}
+                  className="max-w-full max-h-full object-contain"
+                />
               </div>
               <div>
                 <span className="text-[10px] font-mono font-black uppercase bg-[#3087ff] text-white px-2 py-0.5 border border-[#3087ff]">
@@ -338,3 +360,4 @@ export const WaterworksAssociationsSection: React.FC = () => {
     </section>
   );
 };
+
