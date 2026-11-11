@@ -61,6 +61,15 @@ const UMBRELLA_PRODUCTS: UmbrellaProductItem[] = [
     badge: "Highway Heavy Duty",
   },
   {
+    id: "valves",
+    title: "Valves & Flow Controls",
+    shortLabel: "Valves",
+    videoSrc: "/videos/umbrellas/valves.mp4",
+    targetId: "#engineering-spotlight",
+    categoryFilter: "valves",
+    badge: "AWWA Gate & Check",
+  },
+  {
     id: "water-works",
     title: "Municipal Water Works",
     shortLabel: "Water Works",
@@ -175,7 +184,7 @@ export const HeaderUmbrellasTicker: React.FC<HeaderUmbrellasTickerProps> = ({
         <div className="shrink-0 pl-2 border-l-2 border-white/30 hidden lg:flex items-center gap-1.5">
           <span className="w-1.5 h-1.5 rounded-full bg-white animate-pulse" />
           <span className="text-[9px] font-mono font-bold tracking-wider uppercase text-white whitespace-nowrap">
-            6 Product Lines
+            7 Product Lines
           </span>
         </div>
       </div>
