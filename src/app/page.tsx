@@ -37,6 +37,7 @@ import { MasteringInfrastructureTabs } from "../components/sections/MasteringInf
 import { SolenoProjectsShowcase } from "../components/sections/SolenoProjectsShowcase";
 import { SolenoVideoShowcase } from "../components/sections/SolenoVideoShowcase";
 import { UmbrellaShowcase } from "../components/sections/UmbrellaShowcase";
+import { WaterworksAssociationsSection } from "../components/sections/WaterworksAssociationsSection";
 
 import { DISTRIBUTION_YARDS, PRODUCTS_CATALOG } from "../data/waterworks-data";
 import type { ProductItem, YardLocation } from "../types";
@@ -250,6 +251,8 @@ export default function Home() {
           onRemoveItem={handleRemoveRfqItem}
           onClearItems={handleClearRfqItems}
         /> */}
+        {/* Section 12: National Waterworks & Water Infrastructure Associations (White #FFFFFF - Alternating) */}
+        <WaterworksAssociationsSection />
       </main>
 
       {/* Section 13: Footer & Company Directory (24/7 Dispatch Hotline & Yard Directory) */}
