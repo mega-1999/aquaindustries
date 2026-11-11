@@ -27,19 +27,19 @@ export const IndustrialFooter: React.FC<IndustrialFooterProps> = ({
       {/* ========================================================
           1. TOP BAR: EMERGENCY WATERMAIN DISPATCH HOTLINE
       ======================================================== */}
-      <div className="bg-[#3087ff] border-b-2 border-[#3087ff] py-6 sm:py-8">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="flex flex-col lg:flex-row items-start lg:items-center justify-between gap-6">
+      <div className="bg-[#3087ff] border-b-2 border-white/20 py-4 sm:py-5">
+        <div className="w-full px-4">
+          <div className="flex flex-col lg:flex-row items-start lg:items-center justify-between gap-4">
             {/* Left: Hotline Identity */}
             <div className="flex items-start sm:items-center gap-3.5 max-w-2xl">
-              <span className="p-3 bg-white text-[#3087ff] shrink-0 shadow-md border-2 border-[#3087ff]">
-                <PhoneCall className="w-6 h-6 animate-pulse text-[#3087ff]" />
+              <span className="p-2.5 bg-white text-[#3087ff] shrink-0 shadow-md border-2 border-white">
+                <PhoneCall className="w-5 h-5 animate-pulse text-[#3087ff]" />
               </span>
               <div className="min-w-0">
-                <h3 className="text-white font-black text-base sm:text-lg tracking-tight uppercase leading-snug break-words">
+                <h3 className="text-white font-black text-sm sm:text-base tracking-tight uppercase leading-snug break-words">
                   Regional Warehouse Emergency Watermain Dispatch Line
                 </h3>
-                <p className="text-white/90 text-xs sm:text-sm mt-1 leading-relaxed">
+                <p className="text-white/90 text-xs mt-0.5 leading-relaxed">
                   24/7 direct flatbed dispatch of AWWA C153 compact fittings,
                   repair sleeves, mechanical joint restraints, and service
                   boxes.
@@ -48,10 +48,10 @@ export const IndustrialFooter: React.FC<IndustrialFooterProps> = ({
             </div>
 
             {/* Right: Hotline Actions */}
-            <div className="flex flex-col sm:flex-row items-stretch sm:items-center gap-3 w-full lg:w-auto shrink-0">
+            <div className="flex flex-col sm:flex-row items-stretch sm:items-center gap-2.5 w-full lg:w-auto shrink-0">
               <a
                 href="tel:+15162521111"
-                className="inline-flex items-center justify-center gap-2.5 px-6 py-3.5 bg-white hover:bg-[#3087ff] text-[#3087ff] hover:text-white font-black text-sm uppercase tracking-wider shadow-lg transition-all text-center cursor-pointer"
+                className="inline-flex items-center justify-center gap-2 px-5 py-2.5 bg-white hover:bg-[#3087ff] text-[#3087ff] hover:text-white border-2 border-white font-black text-xs sm:text-sm uppercase tracking-wider shadow-md transition-all text-center cursor-pointer"
               >
                 <PhoneCall className="w-4 h-4 text-[#3087ff] shrink-0" />
                 <span>+1 (516) 252-1111</span>
@@ -60,9 +60,9 @@ export const IndustrialFooter: React.FC<IndustrialFooterProps> = ({
               <button
                 type="button"
                 onClick={onOpenYardModal}
-                className="inline-flex items-center justify-center gap-2 px-5 py-3.5 bg-[#3087ff] hover:bg-white text-white hover:text-[#3087ff] font-black text-sm uppercase tracking-wider border-2 border-[#3087ff] transition-all text-center cursor-pointer"
+                className="inline-flex items-center justify-center gap-2 px-4 py-2.5 bg-transparent hover:bg-white text-white hover:text-[#3087ff] font-black text-xs sm:text-sm uppercase tracking-wider border-2 border-white transition-all text-center cursor-pointer"
               >
-                <MapPin className="w-4 h-4 text-[#3087ff] group-hover:text-[#3087ff] shrink-0" />
+                <MapPin className="w-4 h-4 shrink-0" />
                 <span>View All Yards</span>
               </button>
             </div>
@@ -71,26 +71,36 @@ export const IndustrialFooter: React.FC<IndustrialFooterProps> = ({
       </div>
 
       {/* ========================================================
-          2. MAIN 4-COLUMN INDUSTRIAL DIRECTORY (PERFECTLY CONSTRAINED)
+          2. MAIN 4-COLUMN INDUSTRIAL DIRECTORY (SAME WIDTH & PADDING AS NAVBAR)
       ======================================================== */}
-      <div className="py-12 sm:py-16 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div className="py-10 sm:py-12 w-full px-4">
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-12 gap-8 lg:gap-8 items-start">
           {/* ========================================================
-              COLUMN 1 (3.5 cols): FOUNDRY HQ & CREDENTIALS
+              COLUMN 1 (3.5 cols): BIG LOGO & FOUNDRY HQ
           ======================================================== */}
           <div className="lg:col-span-3 min-w-0 space-y-4">
-            <div className="flex items-center gap-2.5">
-              <div className="h-9 px-1.5 bg-white flex items-center justify-center border border-[#3087ff] shrink-0 shadow-sm">
+            {/* Big Footer Logo */}
+            <a
+              href="/"
+              className="inline-flex items-center gap-3 group focus:outline-none"
+              title="Aqua Industries / H2O Waterworks"
+            >
+              <div className="p-2 bg-white flex items-center justify-center border-2 border-white shadow-md transition-transform duration-300 group-hover:scale-105">
                 <img
-                  src="/images/AI_Waterdrop.png"
-                  alt="Aqua Industries Logo"
-                  className="h-7 w-auto object-contain"
+                  src="/images/h2o LOGO NEW UPDATED.png"
+                  alt="Aqua Industries H2O Logo"
+                  className="h-14 sm:h-16 w-auto object-contain"
                 />
               </div>
-              <span className="font-black text-white text-lg tracking-tight uppercase">
-                Aqua Industries
-              </span>
-            </div>
+              <div className="flex flex-col">
+                <span className="font-black text-white text-xl sm:text-2xl tracking-tight uppercase leading-none">
+                  Aqua Industries
+                </span>
+                <span className="text-[10px] font-mono tracking-widest uppercase text-white/90 mt-1">
+                  Waterworks Infrastructure
+                </span>
+              </div>
+            </a>
 
             <p className="text-xs sm:text-sm text-white/90 leading-relaxed break-words">
               Primary domestic distributor and manufacturer of ASTM A536 ductile
@@ -407,7 +417,7 @@ export const IndustrialFooter: React.FC<IndustrialFooterProps> = ({
         </video>
 
         {/* Floating Architectural Ribbon Badges */}
-        <div className="absolute inset-0 flex items-center justify-between px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto pointer-events-none">
+        <div className="absolute inset-0 flex items-center justify-between px-4 w-full pointer-events-none">
           <div className="flex items-center gap-2.5 bg-white px-3.5 py-1.5 border-2 border-[#3087ff] shadow-lg pointer-events-auto">
             <img
               src="/images/AI_Fevicon.png"
@@ -431,8 +441,8 @@ export const IndustrialFooter: React.FC<IndustrialFooterProps> = ({
       {/* ========================================================
           3. BOTTOM BAR: LEGAL COPYRIGHT & ANTI-THEFT SCRAP REGISTRY
       ======================================================== */}
-      <div className="border-t-2 border-[#3087ff] bg-[#3087ff] py-6 sm:py-8 text-xs text-white">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 space-y-4">
+      <div className="border-t-2 border-white/20 bg-[#3087ff] py-6 sm:py-7 text-xs text-white">
+        <div className="w-full px-4 space-y-4">
           <div className="flex flex-col md:flex-row items-center justify-between gap-4">
             <div className="font-semibold text-white/90 text-center md:text-left">
               &copy; 2026 Aqua Industries, Inc. All Rights Reserved. Melville,
