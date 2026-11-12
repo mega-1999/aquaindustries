@@ -326,30 +326,16 @@ export const EngineeringInnovationSpotlight: React.FC<
   EngineeringInnovationSpotlightProps
 > = ({ onAddToRfq, onPreviewSubmittal, product }) => {
   const [selectedProductIndex, setSelectedProductIndex] = useState(0);
-  const [activeHotspot, setActiveHotspot] = useState<number | null>(null);
-  const [viewMode, setViewMode] = useState<"photo" | "simulation" | "torque">(
-    "photo",
-  );
-  const [selectedPsi, setSelectedPsi] = useState(350);
-  const [torqueValue, setTorqueValue] = useState(85);
 
   const currentProduct = INNOVATION_PRODUCTS[selectedProductIndex];
-  const activeSpotData = currentProduct.hotspots.find(
-    (h) => h.id === activeHotspot,
-  );
-  const currentStep =
-    PRESSURE_STEPS.find((p) => p.psi === selectedPsi) || PRESSURE_STEPS[2];
 
   const handleSelectProduct = (index: number) => {
     setSelectedProductIndex(index);
-    setActiveHotspot(null);
   };
-
-  const isTorqueSheared = torqueValue >= 75;
 
   return (
     <section
-      id="innovation-spotlight"
+      id="engineering-spotlight"
       aria-label="4th Showcase: Next-Gen Mechanical Joint Innovations"
       className="py-14 sm:py-20 bg-white text-[#3087ff] border-b-4 border-[#3087ff] relative overflow-hidden"
     >
@@ -458,432 +444,52 @@ export const EngineeringInnovationSpotlight: React.FC<
         ======================================================== */}
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-12 items-start">
           {/* ========================================================
-              LEFT 7 COLUMNS: INTERACTIVE VISUAL DISPLAY + HOTSPOTS
+              LEFT 7 COLUMNS: REAL PRODUCT IMAGE & TECHNICAL HIGHLIGHTS
           ======================================================== */}
           <div className="lg:col-span-7 flex flex-col gap-4">
-            {/* View Mode Controller */}
-            <div className="flex items-center justify-between gap-1 border-2 border-[#3087ff] p-1 bg-white">
-              <button
-                type="button"
-                onClick={() => setViewMode("photo")}
-                className={`flex-1 py-2 px-3 text-xs font-black uppercase tracking-wider transition-all rounded-none cursor-pointer flex items-center justify-center gap-1.5 ${viewMode === "photo"
-                  ? "bg-[#3087ff] text-white shadow-sm"
-                  : "bg-white text-[#3087ff] hover:bg-[#3087ff] hover:text-white"
-                  }`}
-              >
-                <Sparkles className="w-3.5 h-3.5" />
-                <span>Interactive Hotspots</span>
-              </button>
-
-              <button
-                type="button"
-                onClick={() => setViewMode("simulation")}
-                className={`flex-1 py-2 px-3 text-xs font-black uppercase tracking-wider transition-all rounded-none cursor-pointer flex items-center justify-center gap-1.5 ${viewMode === "simulation"
-                  ? "bg-[#3087ff] text-white shadow-sm"
-                  : "bg-white text-[#3087ff] hover:bg-[#3087ff] hover:text-white"
-                  }`}
-              >
-                <Sliders className="w-3.5 h-3.5" />
-                <span>Pressure Bite Simulation</span>
-              </button>
-
-              <button
-                type="button"
-                onClick={() => setViewMode("torque")}
-                className={`flex-1 py-2 px-3 text-xs font-black uppercase tracking-wider transition-all rounded-none cursor-pointer flex items-center justify-center gap-1.5 ${viewMode === "torque"
-                  ? "bg-[#3087ff] text-white shadow-sm"
-                  : "bg-white text-[#3087ff] hover:bg-[#3087ff] hover:text-white"
-                  }`}
-              >
-                <Wrench className="w-3.5 h-3.5" />
-                <span>Torque Shear Test</span>
-              </button>
-            </div>
-
-            {/* MAIN VISUAL CANVAS */}
-            <div className="relative bg-white border-4 border-[#3087ff] p-6 sm:p-8 shadow-2xl flex flex-col items-center justify-center min-h-[420px] sm:min-h-[480px] text-[#3087ff] overflow-hidden">
-              {/* Floating Upper Hotspot Detail Popup (Zero Layout Displacement) */}
-              {activeSpotData && viewMode === "photo" && (
-                <div
-                  role="region"
-                  aria-live="polite"
-                  className="absolute inset-x-4 sm:inset-x-6 top-14 z-30 bg-white text-[#3087ff] border-4 border-[#3087ff] p-4 shadow-2xl animate-in fade-in zoom-in-95 duration-200 backdrop-blur-md"
-                >
-                  <div className="flex items-start justify-between gap-4 mb-2">
-                    <div className="flex items-center gap-2">
-                      <span className="w-6 h-6 bg-[#3087ff] text-white text-xs font-black flex items-center justify-center shrink-0">
-                        {activeSpotData.id}
-                      </span>
-                      <h4 className="text-sm sm:text-base font-black uppercase text-[#3087ff]">
-                        {activeSpotData.title}
-                      </h4>
-                    </div>
-                    <div className="flex items-center gap-2">
-                      <span className="text-[11px] font-black uppercase bg-[#3087ff] text-white px-2.5 py-0.5 shrink-0">
-                        {activeSpotData.badge}
-                      </span>
-                      <button
-                        type="button"
-                        onClick={() => setActiveHotspot(null)}
-                        className="w-6 h-6 bg-[#3087ff] hover:bg-[#3087ff] text-white hover:text-white flex items-center justify-center font-bold text-xs transition-colors cursor-pointer"
-                        title="Close Popup"
-                      >
-                        ✕
-                      </button>
-                    </div>
-                  </div>
-
-                  <p className="text-xs sm:text-sm text-[#3087ff] font-medium leading-relaxed mb-3">
-                    {activeSpotData.desc}
-                  </p>
-
-                  <div className="flex items-center justify-between border-t border-[#3087ff] pt-2 text-xs">
-                    <span className="font-bold text-[#3087ff] uppercase text-[10px]">
-                      Field Inspection Hotspot {activeSpotData.id} of{" "}
-                      {currentProduct.hotspots.length} &bull;{" "}
-                      {currentProduct.name}
-                    </span>
-                    <button
-                      type="button"
-                      onClick={() => setActiveHotspot(null)}
-                      className="font-black text-[#3087ff] hover:text-[#3087ff] uppercase cursor-pointer"
-                    >
-                      &times; Close Inspection
-                    </button>
-                  </div>
-                </div>
-              )}
+            {/* MAIN REAL PRODUCT VISUAL CANVAS */}
+            <div className="relative bg-white border-4 border-[#3087ff] p-6 sm:p-8 shadow-2xl flex flex-col items-center justify-center min-h-[440px] sm:min-h-[500px] text-[#3087ff] overflow-hidden group">
               {/* Corner Waterworks Badge */}
               <div className="absolute top-4 left-4 z-20">
-                <span className="text-[10px] font-black uppercase tracking-widest text-white bg-[#3087ff] px-2.5 py-1 border border-[#3087ff]">
+                <span className="text-[10px] font-black uppercase tracking-widest text-white bg-[#3087ff] px-2.5 py-1 border border-[#3087ff] shadow-sm">
                   {currentProduct.categoryLabel}
                 </span>
               </div>
 
               {/* Top Right Spec Tag */}
               <div className="absolute top-4 right-4 z-20 hidden sm:block">
-                <span className="text-[11px] font-extrabold uppercase tracking-wider text-[#3087ff] bg-white border border-[#3087ff] px-2 py-1 shadow-xs">
+                <span className="text-[11px] font-extrabold uppercase tracking-wider text-[#3087ff] bg-white border-2 border-[#3087ff] px-2.5 py-1 shadow-xs">
                   {currentProduct.standards.split("/")[0].trim()}
                 </span>
               </div>
 
-              {/* --------------------------------------------------------
-                  MODE A: PRODUCT PHOTOGRAPH + INTERACTIVE HOTSPOT DOTS
-              -------------------------------------------------------- */}
-              {viewMode === "photo" && (
-                <div className="relative w-full h-[340px] sm:h-[400px] flex items-center justify-center select-none">
-                  {/* Real Waterworks Innovation Image */}
-                  <img
-                    src={currentProduct.imageUrl}
-                    alt={currentProduct.name}
-                    className="max-h-full max-w-full object-contain filter drop-shadow-xl transition-all duration-300"
-                  />
+              {/* Pure Real Waterworks Product Photo Display */}
+              <div className="relative w-full h-[360px] sm:h-[420px] flex items-center justify-center p-2 select-none">
+                <img
+                  src={currentProduct.imageUrl}
+                  alt={currentProduct.name}
+                  className="max-h-full max-w-full object-contain filter drop-shadow-2xl transition-transform duration-500 group-hover:scale-105"
+                />
+              </div>
 
-                  {/* Hotspot Markers (Clickable Dots 1, 2, 3, 4) */}
-                  {currentProduct.hotspots.map((spot) => {
-                    const isActive = activeHotspot === spot.id;
-                    return (
-                      <div
-                        key={spot.id}
-                        className="absolute z-20"
-                        style={{ top: spot.y, left: spot.x }}
-                      >
-                        <button
-                          type="button"
-                          onClick={() =>
-                            setActiveHotspot(isActive ? null : spot.id)
-                          }
-                          aria-label={`Inspect ${spot.title}`}
-                          className="relative flex items-center justify-center cursor-pointer group"
-                        >
-                          {/* Pulsing Radar Ring */}
-                          <span className="absolute -inset-2 rounded-full border-2 border-[#3087ff] opacity-75 animate-ping" />
-
-                          {/* Numbered Hotspot Pill */}
-                          <span
-                            className={`relative w-8 h-8 rounded-none border-2 font-black text-xs flex items-center justify-center shadow-lg transition-transform duration-200 group-hover:scale-110 ${isActive
-                              ? "bg-[#3087ff] text-white border-white scale-110 ring-2 ring-[#3087ff]"
-                              : "bg-white text-[#3087ff] border-[#3087ff] hover:bg-[#3087ff]"
-                              }`}
-                          >
-                            {spot.id}
-                          </span>
-
-                          {/* Hover Tooltip Label */}
-                          <span className="absolute bottom-full mb-1 left-1/2 -translate-x-1/2 hidden group-hover:block whitespace-nowrap bg-[#3087ff] text-white text-[10px] font-black uppercase px-2 py-0.5 border border-[#3087ff] shadow-md z-30 pointer-events-none">
-                            {spot.title}
-                          </span>
-                        </button>
-                      </div>
-                    );
-                  })}
-                </div>
-              )}
-
-              {/* --------------------------------------------------------
-                  MODE B: HYDROSTATIC CAM PRESSURE BITE SIMULATOR
-              -------------------------------------------------------- */}
-              {viewMode === "simulation" && (
-                <div className="w-full flex flex-col items-center justify-between h-[360px] sm:h-[420px] relative py-2">
-                  {/* Pressure Steps Selector */}
-                  <div className="w-full flex flex-wrap items-center justify-center gap-2 pt-2 z-10">
-                    {PRESSURE_STEPS.map((step) => (
-                      <button
-                        key={step.psi}
-                        type="button"
-                        onClick={() => setSelectedPsi(step.psi)}
-                        className={`px-3 py-1.5 text-xs font-black uppercase rounded-none border transition-all cursor-pointer ${selectedPsi === step.psi
-                          ? "bg-[#3087ff] text-white border-[#3087ff] shadow-md"
-                          : "bg-white text-[#3087ff] border-[#3087ff] hover:bg-[#3087ff] hover:text-white"
-                          }`}
-                      >
-                        {step.label}
-                      </button>
-                    ))}
-                  </div>
-
-                  {/* Interactive Cross-Section SVG Diagram */}
-                  <div className="relative w-full flex-1 flex items-center justify-center my-3">
-                    <svg
-                      viewBox="0 0 360 220"
-                      className="w-full h-full max-h-[220px]"
-                      fill="none"
-                      aria-label="Cam Action Wedge Bite Cross-Section"
-                    >
-                      {/* Ductile Iron Pipe Outer Wall */}
-                      <rect
-                        x="30"
-                        y="80"
-                        width="300"
-                        height="70"
-                        fill="#3087ff"
-                        fillOpacity="0.08"
-                        stroke="#3087ff"
-                        strokeWidth="3"
-                      />
-                      <text
-                        x="105"
-                        y="120"
-                        fill="#3087ff"
-                        fontSize="11"
-                        fontWeight="black"
-                        letterSpacing="1"
-                      >
-                        DUCTILE IRON PIPE BARREL (350 PSI)
-                      </text>
-
-                      {/* Top Restraint Gland Body */}
-                      <rect
-                        x="70"
-                        y="35"
-                        width="220"
-                        height="35"
-                        fill="#3087ff"
-                        stroke="#3087ff"
-                        strokeWidth="2"
-                      />
-                      <text
-                        x="110"
-                        y="57"
-                        fill="#FFFFFF"
-                        fontSize="10"
-                        fontWeight="bold"
-                      >
-                        SERIES 3000 MJ GLAND BODY
-                      </text>
-
-                      {/* Left Cam Wedge with Dynamic Penetration */}
-                      <g
-                        style={{
-                          transform: `translateY(${selectedPsi === 100
-                            ? 2
-                            : selectedPsi === 250
-                              ? 6
-                              : selectedPsi === 350
-                                ? 10
-                                : 14
-                            }px)`,
-                          transition:
-                            "transform 0.5s cubic-bezier(0.4, 0, 0.2, 1)",
-                        }}
-                      >
-                        <polygon
-                          points="95,65 125,65 120,85 100,85"
-                          fill="#3087ff"
-                          stroke="#3087ff"
-                          strokeWidth="2"
-                        />
-                        <line
-                          x1="110"
-                          y1="50"
-                          x2="110"
-                          y2="78"
-                          stroke="#3087ff"
-                          strokeWidth="2.5"
-                          strokeDasharray="4 2"
-                        />
-                      </g>
-
-                      {/* Right Cam Wedge with Dynamic Penetration */}
-                      <g
-                        style={{
-                          transform: `translateY(${selectedPsi === 100
-                            ? 2
-                            : selectedPsi === 250
-                              ? 6
-                              : selectedPsi === 350
-                                ? 10
-                                : 14
-                            }px)`,
-                          transition:
-                            "transform 0.5s cubic-bezier(0.4, 0, 0.2, 1)",
-                        }}
-                      >
-                        <polygon
-                          points="235,65 265,65 260,85 240,85"
-                          fill="#3087ff"
-                          stroke="#3087ff"
-                          strokeWidth="2"
-                        />
-                        <line
-                          x1="250"
-                          y1="50"
-                          x2="250"
-                          y2="78"
-                          stroke="#3087ff"
-                          strokeWidth="2.5"
-                          strokeDasharray="4 2"
-                        />
-                      </g>
-
-                      {/* Bottom Gland Collar */}
-                      <rect
-                        x="70"
-                        y="160"
-                        width="220"
-                        height="30"
-                        fill="#3087ff"
-                        stroke="#3087ff"
-                        strokeWidth="2"
-                      />
-                    </svg>
-                  </div>
-
-                  {/* Telemetry Indicator Readout */}
-                  <div className="w-full grid grid-cols-3 gap-2 border-t border-[#3087ff] pt-3 text-xs">
-                    <div className="text-left font-bold text-[#3087ff]">
-                      <span className="text-[10px] text-[#3087ff] uppercase block">
-                        Radial Bite Depth
-                      </span>
-                      <strong className="text-sm font-black text-[#3087ff]">
-                        {currentStep.bite}
-                      </strong>
-                    </div>
-
-                    <div className="text-center font-bold text-[#3087ff]">
-                      <span className="text-[10px] text-[#3087ff] uppercase block">
-                        Safety Margin
-                      </span>
-                      <strong className="text-sm font-black text-[#3087ff]">
-                        {currentStep.safety} Proof
-                      </strong>
-                    </div>
-
-                    <div className="text-right font-bold text-[#3087ff]">
-                      <span className="text-[10px] text-[#3087ff] uppercase block">
-                        Operating State
-                      </span>
-                      <span className="inline-block bg-white px-2 py-0.5 border border-[#3087ff] font-extrabold text-[11px]">
-                        {currentStep.state}
-                      </span>
-                    </div>
-                  </div>
-                </div>
-              )}
-
-              {/* --------------------------------------------------------
-                  MODE C: TORQUE BREAKAWAY SHEAR TEST
-              -------------------------------------------------------- */}
-              {viewMode === "torque" && (
-                <div className="w-full flex flex-col items-center justify-between h-[360px] sm:h-[420px] relative py-2">
-                  <div className="w-full text-center">
-                    <h4 className="text-sm font-black uppercase text-[#3087ff] mb-1">
-                      Calibrated Breakaway Bolt Demonstration
-                    </h4>
-                    <p className="text-xs text-[#3087ff] max-w-md mx-auto">
-                      Drag the torque wrench slider to simulate bolt tightening.
-                      At 75-90 ft-lbs, the upper hex nut shears cleanly off to
-                      prevent pipe wall pinching.
-                    </p>
-                  </div>
-
-                  {/* Visual Bolt Shear Demonstration */}
-                  <div className="my-4 flex flex-col items-center justify-center">
-                    <div className="relative w-32 h-44 flex flex-col items-center justify-center">
-                      {/* Upper Breakaway Hex Nut */}
-                      <div
-                        className={`w-14 h-8 border-2 border-[#3087ff] font-black text-xs flex items-center justify-center transition-all duration-300 ${isTorqueSheared
-                          ? "translate-x-12 -translate-y-6 rotate-45 opacity-0 bg-red-100"
-                          : "bg-[#3087ff] text-white"
-                          }`}
-                      >
-                        {isTorqueSheared ? "SHEARED" : "TORQUE"}
-                      </div>
-
-                      {/* Shear Plane Neck */}
-                      <div className="w-5 h-3 bg-[#3087ff] border border-white" />
-
-                      {/* Secondary Permanent Inspection Nut */}
-                      <div className="w-16 h-10 bg-[#3087ff] text-white font-black text-xs flex items-center justify-center border-2 border-[#3087ff]">
-                        REMOVAL
-                      </div>
-
-                      {/* Threaded Stud into Gland Body */}
-                      <div className="w-6 h-16 bg-stripes-blue border border-[#3087ff]" />
-                    </div>
-
-                    <div className="mt-2 text-center">
-                      {isTorqueSheared ? (
-                        <span className="px-3 py-1 bg-[#3087ff] text-white text-xs font-black uppercase tracking-wider border-2 border-[#3087ff] shadow-md inline-flex items-center gap-1.5">
-                          <CheckCircle2 className="w-3.5 h-3.5 text-[#3087ff]" />
-                          Shear Achieved @ {torqueValue} Ft-Lbs &bull; Certified
-                        </span>
-                      ) : (
-                        <span className="px-3 py-1 bg-white text-[#3087ff] text-xs font-black uppercase tracking-wider border border-[#3087ff]">
-                          Current Torque: {torqueValue} Ft-Lbs (Required: 75-90)
-                        </span>
-                      )}
-                    </div>
-                  </div>
-
-                  {/* Interactive Range Slider */}
-                  <div className="w-full max-w-sm px-4">
-                    <div className="flex justify-between text-[11px] font-bold text-[#3087ff] mb-1">
-                      <span>0 Ft-Lbs (Loose)</span>
-                      <span>Target: 75-90 Ft-Lbs</span>
-                      <span>110 Ft-Lbs (Max)</span>
-                    </div>
-                    <input
-                      type="range"
-                      min="0"
-                      max="110"
-                      value={torqueValue}
-                      onChange={(e) => setTorqueValue(Number(e.target.value))}
-                      className="w-full accent-[#3087ff] cursor-pointer"
-                    />
-                  </div>
-                </div>
-              )}
+              {/* Bottom Real Image Specification Bar */}
+              <div className="w-full flex items-center justify-between border-t-2 border-[#3087ff] pt-3 text-xs mt-2 font-bold text-[#3087ff]">
+                <span className="uppercase text-[11px] font-black">
+                  {currentProduct.spec}
+                </span>
+                <span className="font-mono text-[10px] bg-[#3087ff] text-white px-2 py-0.5 border border-[#3087ff]">
+                  Foundry Certified ASTM A536
+                </span>
+              </div>
             </div>
 
-            {/* Instruction Banner */}
-            <div className="bg-white border-2 border-[#3087ff] p-2.5 flex items-center justify-between text-xs text-[#3087ff] shadow-xs">
+            {/* Instruction / Compliance Banner */}
+            <div className="bg-white border-2 border-[#3087ff] p-3 flex items-center justify-between text-xs text-[#3087ff] shadow-xs">
               <span className="font-bold flex items-center gap-1.5">
-                <Sparkles className="w-3.5 h-3.5 text-[#3087ff]" />
-                Click numbered dots (1-4) on the active product to inspect
-                engineering specs.
+                <ShieldCheck className="w-4 h-4 text-[#3087ff]" />
+                Authentic American Waterworks Foundry Photography &bull; Zero Simulated Renderings
               </span>
-              <span className="text-[11px] font-mono font-bold text-[#3087ff]">
+              <span className="text-[11px] font-mono font-black text-[#3087ff] hidden sm:inline">
                 100% AIS / Buy America
               </span>
             </div>
