@@ -11,212 +11,276 @@ import {
   ChevronLeft,
   ChevronRight,
   Search,
-  ShoppingBag,
+  FileText,
+  FileCheck2,
   Menu,
-  X,
   Check,
-  Share2,
-  Heart,
-  Flame,
+  PhoneCall,
   CheckCircle2,
   ArrowRight,
-  ExternalLink,
+  Download,
   Info,
+  Droplets,
+  Layers,
+  ThermometerSnowflake,
+  Gauge,
+  Award,
 } from "lucide-react";
 
-// Exact Dataset Extracted from theartisanwalk.com
+// Aqua Industries Flagship Product Data & Authentic Photography
 const PRODUCT_DATA = {
-  title: "Men's Mid-Length Waterproof Casual Jacket – Comfortable Everyday Outdoor Wear",
-  salePrice: 69.99,
-  compareAtPrice: 151.96,
-  discountPercent: 54,
-  savingsAmount: 81.97,
-  sku: "XQY20397929",
+  title: "Aqua Industries Municipal Water Sampling Station – ANSI/NSF 61 Potable Water Standard",
+  modelSubtitle: "Dedicated Lead-Free Waterway for EPA Lead & Copper Rule (LCRR) Distribution Testing",
+  salePrice: 1249.0,
+  compareAtPrice: 1895.0,
+  discountPercent: 34,
+  savingsAmount: 646.0,
+  sku: "AI-WSS-695-LCRR",
   rating: 5.0,
-  reviewCount: 148,
-  stockLeft: 5,
-  deliveryWindow: "Nov/20 - Nov/25",
-  colors: [
+  reviewCount: 96,
+  stockLeft: 14,
+  deliveryWindow: "Immediate Dispatch from Melville, NY & Dallas, TX Hubs",
+  complianceBadges: [
+    "ANSI/NSF 61 & 372 Certified Lead-Free",
+    "100% AIS / Buy America Compliant",
+    "ASTM A536 Grade 65-45-12 Ductile Iron",
+    "EPA Lead & Copper Rule Revision Approved",
+  ],
+  models: [
     {
-      id: "khaki",
-      name: "Khaki (Padded for Warmth)",
-      colorHex: "#b89f7a",
-      images: [
-        "https://img-va.myshopline.com/image/store/1776758950476/SKU-04--43.jpg?h=1920&q=80&w=1920",
-        "https://img-va.myshopline.com/image/store/1776758950476/SKU-04--44.jpg?h=950&q=80&w=712",
-        "https://img-va.myshopline.com/image/store/1776758950476/--94.png?w=2048&h=2048",
-        "https://img-va.myshopline.com/image/store/1776758950476/--93.png?w=2048&h=2048",
+      id: "model-695",
+      name: "Model 695 – Standard Municipal Utility Base",
+      specTag: "300 PSI Working • All-Climate Ductile Housing",
+      colorHex: "#3087ff",
+      image: "/images/our-images/Sampling Station H20.695.png",
+      gallery: [
+        "/images/our-images/Sampling Station H20.695.png",
+        "/images/our-images/sampling-station.png",
+        "/images/SAMPLING-STATION/Sampling station with base.png",
+        "/images/SAMPLING-STATION/Sampling Station red Color.png",
       ],
+      description:
+        "Standard municipal water testing station with unthreaded NSF 61 certified lead-free brass sampling nozzle, padlock-ready protective hood, and 1\" subterranean watermain connection.",
     },
     {
-      id: "black",
-      name: "Black",
-      colorHex: "#1a1a1a",
-      images: [
-        "https://img-va.myshopline.com/image/store/1776758950476/SKU-03--43.jpg?h=1080&q=80&w=1080",
-        "https://img-va.myshopline.com/image/store/1776758950476/SKU-03--44.jpg?h=1920&q=80&w=1440",
+      id: "model-696",
+      name: "Model 696 – Heated & Insulated -20°F Frost Shield",
+      specTag: "-20°F Thermal Core • Cold Climate Shield",
+      colorHex: "#1d62c4",
+      image: "/images/our-images/Sampling Station H20.696.png",
+      gallery: [
+        "/images/our-images/Sampling Station H20.696.png",
+        "/images/our-images/Sampling Station H20.695.png",
+        "/images/SAMPLING-STATION/Sampling station with base.png",
       ],
+      description:
+        "Cold-climate freeze-proof sampling station engineered with R-14 polyurethane thermal insulation retaining geothermal ground heat without requiring external electrical tracing.",
     },
     {
-      id: "gray",
-      name: "Gray",
-      colorHex: "#7a7d81",
-      images: [
-        "https://img-va.myshopline.com/image/store/1776758950476/SKU-01--42.jpg?h=1080&q=80&w=1080",
-        "https://img-va.myshopline.com/image/store/1776758950476/SKU-01--43.jpg?h=950&q=80&w=712",
+      id: "model-697",
+      name: "Model 697 – Subterranean High-Deflection Mainline Feed",
+      specTag: "High-Deflection Mechanical Joint Tap",
+      colorHex: "#4f98ff",
+      image: "/images/our-images/Sampling Station H20.697.png",
+      gallery: [
+        "/images/our-images/Sampling Station H20.697.png",
+        "/images/our-images/Sampling Station H20.698.png",
+        "/images/our-images/sampling-station.png",
       ],
+      description:
+        "Equipped with an integrated mechanical joint flexible elbow at the subterranean inlet, eliminating pipe stress from ground shifting and seismic settlement.",
     },
     {
-      id: "navy",
-      name: "Navy",
-      colorHex: "#1e2a4a",
-      images: [
-        "https://img-va.myshopline.com/image/store/1776758950476/SKU-02--39.jpg?h=1080&q=80&w=1080",
-        "https://img-va.myshopline.com/image/store/1776758950476/SKU-02--40.jpg?h=950&q=80&w=712",
+      id: "model-698",
+      name: "Model 698 – Dual-Port High-Volume Sampling Header",
+      specTag: "Dual Sampling Ports • Emergency Flushing",
+      colorHex: "#0e4eb8",
+      image: "/images/our-images/Sampling Station H20.698.png",
+      gallery: [
+        "/images/our-images/Sampling Station H20.698.png",
+        "/images/our-images/Sampling Station H20.695.png",
+        "/images/SAMPLING-STATION/Sampling Station red Color.png",
       ],
+      description:
+        "High-capacity dual-outlet testing head allowing simultaneous coliform microbiological sampling and high-velocity line flushing without disconnecting sampling apparatus.",
+    },
+    {
+      id: "model-red",
+      name: "Model 695-RED – Safety High-Visibility Municipal Enclosure",
+      specTag: "Safety Red Epoxy • High-Traffic Right-of-Way",
+      colorHex: "#d9381e",
+      image: "/images/SAMPLING-STATION/Sampling Station red Color.png",
+      gallery: [
+        "/images/SAMPLING-STATION/Sampling Station red Color.png",
+        "/images/our-images/sampling-station.png",
+        "/images/our-images/Sampling Station H20.695.png",
+      ],
+      description:
+        "High-visibility UV-resistant safety red thermal powder coat, designated for rapid identification in DOT highway rights-of-way, airport aprons, and industrial parks.",
     },
   ],
-  sizes: ["Small", "Medium", "Large", "XL", "2XL", "3XL", "4XL", "5XL"],
-  sizeTable: [
-    { size: "Small", chest: "112 cm", length: "88 cm", shoulder: "51 cm", sleeve: "64 cm" },
-    { size: "Medium", chest: "116 cm", length: "89 cm", shoulder: "52 cm", sleeve: "65 cm" },
-    { size: "Large", chest: "120 cm", length: "90 cm", shoulder: "53 cm", sleeve: "66 cm" },
-    { size: "XL", chest: "124 cm", length: "91 cm", shoulder: "54 cm", sleeve: "67 cm" },
-    { size: "2XL", chest: "128 cm", length: "92 cm", shoulder: "55 cm", sleeve: "68 cm" },
-    { size: "3XL", chest: "132 cm", length: "93 cm", shoulder: "56 cm", sleeve: "69 cm" },
-    { size: "4XL", chest: "136 cm", length: "94 cm", shoulder: "57 cm", sleeve: "70 cm" },
-    { size: "5XL", chest: "140 cm", length: "95 cm", shoulder: "58 cm", sleeve: "71 cm" },
+  buryDepths: [
+    { label: "3.0 FT Bury", trenchDepth: "36 Inches", weight: "128 LBS" },
+    { label: "4.0 FT Bury", trenchDepth: "48 Inches", weight: "142 LBS" },
+    { label: "5.0 FT Bury", trenchDepth: "60 Inches", weight: "156 LBS" },
+    { label: "6.0 FT Bury", trenchDepth: "72 Inches", weight: "170 LBS" },
+    { label: "7.0 FT Bury", trenchDepth: "84 Inches", weight: "185 LBS" },
+    { label: "8.0 FT Bury", trenchDepth: "96 Inches", weight: "202 LBS" },
   ],
-  communityImages: [
-    "https://img-va.myshopline.com/image/store/1776758950476/488a56ae267088456ea285715d208838.jpg?w=850&h=1182",
-    "https://img-va.myshopline.com/image/store/1776758950476/01f9089152628860e9a8fe77c24796aa.jpg?w=850&h=1182",
-    "https://img-va.myshopline.com/image/store/1776758950476/e71990c5671871a604c85f7d490e4092.jpg?w=850&h=1182",
-    "https://img-va.myshopline.com/image/store/1776758950476/image-2304.jpg?w=1381&h=1825",
-    "https://img-va.myshopline.com/image/store/1776758950476/Rectangle-74-0.jpg?w=1275&h=1776",
-    "https://img-va.myshopline.com/image/store/1776758950476/image-2305.jpg?w=1381&h=1825",
+  engineeringTable: [
+    { bury: '3.0 FT (36")', inlet: '1" NPT (or MJ)', pressure: "300 PSI Working", flowRate: "35 GPM", weight: "128 LBS", standard: "NSF 61 / ASTM A536" },
+    { bury: '4.0 FT (48")', inlet: '1" NPT (or MJ)', pressure: "300 PSI Working", flowRate: "35 GPM", weight: "142 LBS", standard: "NSF 61 / ASTM A536" },
+    { bury: '5.0 FT (60")', inlet: '1" NPT (or MJ)', pressure: "300 PSI Working", flowRate: "35 GPM", weight: "156 LBS", standard: "NSF 61 / ASTM A536" },
+    { bury: '6.0 FT (72")', inlet: '1" NPT (or MJ)', pressure: "300 PSI Working", flowRate: "35 GPM", weight: "170 LBS", standard: "NSF 61 / ASTM A536" },
+    { bury: '7.0 FT (84")', inlet: '1" NPT (or MJ)', pressure: "300 PSI Working", flowRate: "35 GPM", weight: "185 LBS", standard: "NSF 61 / ASTM A536" },
+    { bury: '8.0 FT (96")', inlet: '1" NPT (or MJ)', pressure: "300 PSI Working", flowRate: "35 GPM", weight: "202 LBS", standard: "NSF 61 / ASTM A536" },
+  ],
+  jobsiteGallery: [
+    { img: "/images/our-images/Sampling Station H20.695.png", title: "Water Sampling Station", tag: "EPA Potable Main" },
+    { img: "/images/our-images/curb-box-ultimate.png", title: "Bison H-20 Curb Box", tag: "Heavy Highway Proof" },
+    { img: "/images/our-images/MJ_Fittings.jpeg", title: "Compact Ductile MJ Fittings", tag: "AWWA C153 350 PSI" },
+    { img: "/images/our-images/trench-grates.png", title: "Chevron Trench Grates", tag: "AASHTO High-Inflow" },
+    { img: "/images/our-images/curb_inlet_riser_heavy_iron.png", title: "Curb Inlet Extension Riser", tag: "DOT Resurfacing" },
+    { img: "/images/our-images/cleanout.png", title: "Modular Cleanout Box", tag: "PR Foundry Tooling" },
   ],
 };
 
-export default function ArtisanWalkJacketPage() {
-  const [selectedColor, setSelectedColor] = useState(PRODUCT_DATA.colors[0]);
-  const [selectedSize, setSelectedSize] = useState("Large");
+export default function AquaSamplingStationProductPage() {
+  const [selectedModel, setSelectedModel] = useState(PRODUCT_DATA.models[0]);
+  const [selectedBury, setSelectedBury] = useState(PRODUCT_DATA.buryDepths[2]); // 5.0 FT default
   const [selectedImageIndex, setSelectedImageIndex] = useState(0);
   const [quantity, setQuantity] = useState(1);
-  const [showSizeModal, setShowSizeModal] = useState(false);
-  const [cartCount, setCartCount] = useState(0);
+  const [showSubmittalModal, setShowSubmittalModal] = useState(false);
+  const [rfqCount, setRfqCount] = useState(0);
   const [addedToast, setAddedToast] = useState(false);
   const [announcementIdx, setAnnouncementIdx] = useState(0);
-  const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
 
   const announcements = [
-    "30-Day Hassle-Free Returns",
-    "Stable support for walking, all-day comfort with no tired feet.",
-    "Fast US Shipping & 256-Bit SSL Checkout",
+    "100% AIS & Buy America Compliant • Domestic Foundry Tooling",
+    "Melville, NY & Dallas Logistics Yards • Immediate Dispatch on Stocked Orders",
+    "Certified Mill Test Reports (MTRs) and Traceable Heat Numbers with Every Shipment",
+    "EPA Lead & Copper Rule Revision (LCRR) Approved Sampling Stations",
   ];
 
   useEffect(() => {
     const timer = setInterval(() => {
       setAnnouncementIdx((prev) => (prev + 1) % announcements.length);
-    }, 4000);
+    }, 4500);
     return () => clearInterval(timer);
   }, [announcements.length]);
 
-  const handleColorChange = (color: typeof PRODUCT_DATA.colors[0]) => {
-    setSelectedColor(color);
+  const handleModelChange = (model: typeof PRODUCT_DATA.models[0]) => {
+    setSelectedModel(model);
     setSelectedImageIndex(0);
   };
 
-  const handleAddToCart = () => {
-    setCartCount((c) => c + quantity);
+  const handleAddToRfq = () => {
+    setRfqCount((c) => c + quantity);
     setAddedToast(true);
     setTimeout(() => setAddedToast(false), 2500);
   };
 
-  const currentImages = selectedColor.images;
+  const currentGallery = selectedModel.gallery;
 
   return (
-    <div className="min-h-screen bg-white text-[#111827] font-sans antialiased selection:bg-[#153e20] selection:text-white">
+    <div className="min-h-screen bg-white text-[#3087ff] font-sans antialiased selection:bg-[#3087ff] selection:text-white">
       {/* ========================================================
-          1. TOP ANNOUNCEMENT BAR (Forest Green #153e20)
+          1. TOP UTILITY ANNOUNCEMENT BAR (#3087ff Blue)
       ======================================================== */}
-      <aside aria-label="Store announcement" className="bg-[#153e20] text-white text-xs py-2 px-4 sticky top-0 z-50 transition-colors">
+      <aside aria-label="Utility announcement" className="bg-[#3087ff] text-white text-xs py-2.5 px-4 sticky top-0 z-50 border-b border-white/20 shadow-sm">
         <div className="max-w-7xl mx-auto flex items-center justify-between">
-          {/* Social links (Desktop left) */}
-          <div className="hidden lg:flex items-center gap-4 text-white/80 text-[11px] font-medium">
-            <span className="hover:text-white cursor-pointer transition-colors">FB</span>
-            <span className="hover:text-white cursor-pointer transition-colors">IG</span>
-            <span className="hover:text-white cursor-pointer transition-colors">YT</span>
+          <div className="hidden lg:flex items-center gap-4 text-white text-[11px] font-bold">
+            <span className="flex items-center gap-1.5">
+              <Award className="w-3.5 h-3.5 text-white" />
+              FOUNDRY CERTIFIED ASTM A536
+            </span>
+            <span>&bull;</span>
+            <span className="flex items-center gap-1.5">
+              <ShieldCheck className="w-3.5 h-3.5 text-white" />
+              ANSI/NSF 61 POTABLE COMPLIANT
+            </span>
           </div>
 
-          {/* Center rotating announcement */}
-          <div className="flex-1 flex items-center justify-center text-center font-bold tracking-wide transition-opacity duration-300">
+          <div className="flex-1 flex items-center justify-center text-center font-black tracking-wide text-white text-xs px-2">
             <span>{announcements[announcementIdx]}</span>
           </div>
 
-          {/* Right currency selector (Desktop) */}
-          <div className="hidden lg:flex items-center gap-1 text-white/90 font-semibold cursor-pointer text-xs">
-            <span>USD $</span>
-            <ChevronDown className="w-3.5 h-3.5" />
+          <div className="hidden lg:flex items-center gap-3 text-white text-xs font-black">
+            <a href="tel:18005552782" className="flex items-center gap-1 hover:underline">
+              <PhoneCall className="w-3.5 h-3.5" />
+              <span>(800) 555-AQUA</span>
+            </a>
+            <span>&bull;</span>
+            <span className="bg-white text-[#3087ff] px-2 py-0.5 font-mono text-[10px] font-black border border-white">
+              AIS READY
+            </span>
           </div>
         </div>
       </aside>
 
       {/* ========================================================
-          2. MAIN HEADER & BRAND NAVIGATION
+          2. AQUA INDUSTRIES MAIN NAVBAR (#ffffff White with #3087ff Border)
       ======================================================== */}
-      <header className="border-b border-gray-200 bg-white sticky top-[33px] z-40 transition-shadow">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-20 flex items-center justify-between">
-          {/* Mobile hamburger & search */}
-          <div className="flex lg:hidden items-center gap-3 text-gray-800">
-            <button
-              type="button"
-              onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
-              className="p-1.5 hover:bg-gray-100 rounded-md transition-colors"
-              aria-label="Open menu"
-            >
-              <Menu className="w-6 h-6" />
-            </button>
-            <button type="button" className="p-1.5 hover:bg-gray-100 rounded-md transition-colors" aria-label="Search">
-              <Search className="w-5 h-5" />
-            </button>
-          </div>
-
-          {/* Brand Logo */}
-          <div className="flex items-center gap-2 cursor-pointer">
-            <a href="#" className="flex items-center gap-2">
-              <div className="w-8 h-8 rounded-full bg-[#153e20] text-white flex items-center justify-center font-serif font-black text-sm shadow-sm">
-                AW
+      <header className="border-b-4 border-[#3087ff] bg-white sticky top-[37px] z-40 transition-shadow shadow-md">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-20 sm:h-22 flex items-center justify-between">
+          {/* Brand Logo & Waterworks Title */}
+          <div className="flex items-center gap-3">
+            <a href="/" className="flex items-center gap-3 group">
+              <img
+                src="/images/AI_Fevicon.png"
+                alt="Aqua Industries Waterdrop"
+                className="w-10 h-10 sm:w-11 sm:h-11 object-contain filter drop-shadow-md transition-transform group-hover:scale-105"
+              />
+              <div className="flex flex-col">
+                <span className="text-xl sm:text-2xl font-black tracking-tight text-[#3087ff] uppercase leading-none font-serif">
+                  AQUA INDUSTRIES
+                </span>
+                <span className="text-[10px] sm:text-[11px] font-bold text-[#3087ff] tracking-widest uppercase mt-1">
+                  Waterworks Castings &bull; Domestic Foundry Tooling
+                </span>
               </div>
-              <span className="text-xl sm:text-2xl font-black tracking-tight text-black font-serif">
-                TheArtisanWalk
-              </span>
             </a>
           </div>
 
-          {/* Desktop Navigation */}
-          <nav className="hidden lg:flex items-center gap-8 text-sm font-semibold text-gray-800 tracking-wide">
-            <a href="#" className="hover:text-[#153e20] transition-colors">Home</a>
-            <a href="#" className="text-[#153e20] border-b-2 border-[#153e20] pb-1 transition-colors">Outerwear</a>
-            <a href="#" className="hover:text-[#153e20] transition-colors">Footwear</a>
-            <a href="#" className="hover:text-[#153e20] transition-colors">Best Sellers</a>
-            <a href="#" className="hover:text-[#153e20] transition-colors">Track Order</a>
+          {/* Navigation Links */}
+          <nav className="hidden xl:flex items-center gap-8 text-xs font-black text-[#3087ff] tracking-wider uppercase">
+            <a href="/" className="hover:underline transition-all">Overview</a>
+            <a href="/#engineering-spotlight" className="text-[#3087ff] border-b-2 border-[#3087ff] pb-1 transition-all">
+              MJ Engineering
+            </a>
+            <a href="/#our-new-innovations" className="hover:underline transition-all">
+              Innovations
+            </a>
+            <a href="/#bison-box" className="hover:underline transition-all">
+              Curb Boxes
+            </a>
+            <a href="/#submittal-library" className="hover:underline transition-all">
+              Submittal Library
+            </a>
           </nav>
 
-          {/* Right Action Icons */}
-          <div className="flex items-center gap-4 text-gray-800">
-            <button type="button" className="hidden lg:block p-1.5 hover:bg-gray-100 rounded-md transition-colors" aria-label="Search">
-              <Search className="w-5 h-5" />
-            </button>
+          {/* Right Action Icons & RFQ Counter */}
+          <div className="flex items-center gap-3">
             <button
               type="button"
-              onClick={handleAddToCart}
-              className="relative p-1.5 hover:bg-gray-100 rounded-md transition-colors"
-              aria-label="View Cart"
+              onClick={() => setShowSubmittalModal(true)}
+              className="hidden sm:inline-flex items-center gap-1.5 px-3 py-2 bg-white text-[#3087ff] border-2 border-[#3087ff] text-xs font-black uppercase tracking-wider hover:bg-[#3087ff] hover:text-white transition-all shadow-xs cursor-pointer"
             >
-              <ShoppingBag className="w-6 h-6" />
-              {cartCount > 0 && (
-                <span className="absolute -top-1 -right-1 bg-[#ee4700] text-white text-[10px] font-black w-5 h-5 rounded-full flex items-center justify-center shadow-sm animate-in zoom-in-75">
-                  {cartCount}
+              <Download className="w-3.5 h-3.5" />
+              <span>Submittals / CAD</span>
+            </button>
+
+            <button
+              type="button"
+              onClick={handleAddToRfq}
+              className="relative p-2.5 bg-[#3087ff] text-white hover:bg-[#1d62c4] transition-all shadow-md cursor-pointer border border-[#3087ff] flex items-center gap-2"
+              aria-label="View RFQ Cart"
+            >
+              <FileText className="w-5 h-5 text-white" />
+              <span className="text-xs font-black uppercase tracking-wider hidden sm:inline">RFQ Cart</span>
+              {rfqCount > 0 && (
+                <span className="bg-white text-[#3087ff] text-[11px] font-black w-5 h-5 flex items-center justify-center border border-[#3087ff] shadow-xs">
+                  {rfqCount}
                 </span>
               )}
             </button>
@@ -224,29 +288,31 @@ export default function ArtisanWalkJacketPage() {
         </div>
       </header>
 
-      {/* Added to cart toast notification */}
+      {/* Added to RFQ Toast Alert */}
       {addedToast && (
-        <div className="fixed top-24 right-4 z-50 bg-[#153e20] text-white px-5 py-3 rounded-lg shadow-2xl flex items-center gap-3 border border-emerald-400 animate-in fade-in slide-in-from-top-4">
-          <CheckCircle2 className="w-5 h-5 text-emerald-300" />
-          <div className="text-xs">
-            <p className="font-bold">Added to your cart!</p>
-            <p className="text-emerald-100">{PRODUCT_DATA.title.slice(0, 32)}... ({selectedSize})</p>
+        <div className="fixed top-24 right-4 z-50 bg-[#3087ff] text-white px-5 py-3.5 rounded-none shadow-2xl flex items-center gap-3 border-2 border-white animate-in fade-in slide-in-from-top-4">
+          <CheckCircle2 className="w-5 h-5 text-white" />
+          <div className="text-xs text-white">
+            <p className="font-black uppercase tracking-wider">Item Added to Municipal RFQ Cart!</p>
+            <p className="font-medium text-white/90">
+              {selectedModel.name.split("–")[0]} &bull; {selectedBury.label} (Qty: {quantity})
+            </p>
           </div>
         </div>
       )}
 
       {/* ========================================================
-          3. MAIN PRODUCT SHOWCASE (Above The Fold)
+          3. MAIN PRODUCT SHOWCASE (Above The Fold Workbench)
       ======================================================== */}
-      <main className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-6 sm:py-10">
-        {/* Breadcrumb Navigation */}
-        <nav aria-label="Breadcrumb" className="text-xs text-gray-500 mb-6 flex items-center gap-2">
-          <a href="#" className="hover:underline">Home</a>
+      <main className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8 sm:py-12">
+        {/* Breadcrumb Path */}
+        <nav aria-label="Breadcrumb" className="text-xs text-[#3087ff] font-bold mb-6 flex items-center gap-2">
+          <a href="/" className="hover:underline">Home</a>
           <span>/</span>
-          <a href="#" className="hover:underline">Outerwear</a>
+          <a href="/#catalog" className="hover:underline">Waterworks Catalog</a>
           <span>/</span>
-          <span className="text-gray-900 font-semibold truncate max-w-xs sm:max-w-md">
-            {PRODUCT_DATA.title}
+          <span className="text-[#3087ff] font-black truncate max-w-xs sm:max-w-md">
+            Municipal Water Sampling Station
           </span>
         </nav>
 
@@ -255,61 +321,71 @@ export default function ArtisanWalkJacketPage() {
               LEFT COLUMN: PRODUCT GALLERY (7 Cols)
           ======================================================== */}
           <div className="lg:col-span-7 flex flex-col-reverse md:flex-row gap-4">
-            {/* Thumbnail rail (Desktop) */}
-            <div className="flex md:flex-col gap-3 overflow-x-auto md:overflow-y-auto max-h-[620px] pb-2 md:pb-0 scrollbar-none shrink-0">
-              {currentImages.map((imgUrl, idx) => (
+            {/* Thumbnail rail (Left) */}
+            <div className="flex md:flex-col gap-3 overflow-x-auto md:overflow-y-auto max-h-[600px] pb-2 md:pb-0 scrollbar-none shrink-0">
+              {currentGallery.map((imgUrl, idx) => (
                 <button
                   key={idx}
                   type="button"
                   onClick={() => setSelectedImageIndex(idx)}
-                  className={`relative w-16 h-20 sm:w-20 sm:h-24 rounded-md overflow-hidden border-2 cursor-pointer transition-all shrink-0 ${
+                  className={`relative w-18 h-24 sm:w-22 sm:h-28 overflow-hidden border-2 cursor-pointer transition-all shrink-0 bg-white p-1 flex items-center justify-center ${
                     selectedImageIndex === idx
-                      ? "border-black ring-2 ring-black/20"
-                      : "border-gray-200 hover:border-gray-400 opacity-80 hover:opacity-100"
+                      ? "border-[#3087ff] ring-4 ring-[#3087ff]/20 shadow-md"
+                      : "border-gray-300 hover:border-[#3087ff] opacity-80 hover:opacity-100"
                   }`}
                 >
                   <img
                     src={imgUrl}
-                    alt={`Thumbnail ${idx + 1}`}
-                    className="w-full h-full object-cover object-center"
+                    alt={`Product angle ${idx + 1}`}
+                    className="w-full h-full object-contain filter drop-shadow-sm"
                   />
                 </button>
               ))}
             </div>
 
-            {/* Main Stage Image */}
-            <div className="relative flex-1 bg-[#f8f8f8] rounded-xl overflow-hidden border border-gray-200 group">
-              {/* Sale badge */}
-              <div className="absolute top-4 left-4 z-10 bg-[#ee4700] text-white text-xs font-black px-3 py-1 rounded-sm shadow-md uppercase tracking-wider">
-                SAVE {PRODUCT_DATA.discountPercent}%
+            {/* Main Stage Image Display */}
+            <div className="relative flex-1 bg-white rounded-none overflow-hidden border-4 border-[#3087ff] shadow-2xl p-6 sm:p-10 flex flex-col items-center justify-center group min-h-[460px] sm:min-h-[540px]">
+              {/* Top-left certification badge */}
+              <div className="absolute top-4 left-4 z-10 bg-[#3087ff] text-white text-xs font-black px-3 py-1 shadow-md uppercase tracking-wider border border-[#3087ff]">
+                ANSI/NSF 61 CERTIFIED
               </div>
 
-              {/* Verified quality tag */}
-              <div className="absolute top-4 right-4 z-10 bg-white/90 backdrop-blur-sm text-gray-800 text-[11px] font-bold px-2.5 py-1 rounded-full shadow-xs flex items-center gap-1 border border-gray-200">
-                <ShieldCheck className="w-3.5 h-3.5 text-[#153e20]" />
-                <span>Weatherproof DWR</span>
+              {/* Top-right lead-free tag */}
+              <div className="absolute top-4 right-4 z-10 bg-white text-[#3087ff] text-[11px] font-black px-3 py-1 shadow-xs flex items-center gap-1.5 border-2 border-[#3087ff]">
+                <ShieldCheck className="w-4 h-4 text-[#3087ff]" />
+                <span>LEAD-FREE NSF 372</span>
               </div>
 
-              <div className="w-full aspect-[4/5] sm:aspect-[1/1] md:aspect-[4/5] overflow-hidden flex items-center justify-center">
+              <div className="w-full h-[340px] sm:h-[420px] flex items-center justify-center select-none">
                 <img
-                  src={currentImages[selectedImageIndex] || currentImages[0]}
+                  src={currentGallery[selectedImageIndex] || currentGallery[0]}
                   alt={PRODUCT_DATA.title}
-                  className="w-full h-full object-cover object-center transition-transform duration-500 group-hover:scale-105 select-none"
+                  className="max-h-full max-w-full object-contain filter drop-shadow-2xl transition-transform duration-500 group-hover:scale-105"
                 />
               </div>
 
+              {/* Bottom spec ticker */}
+              <div className="w-full flex items-center justify-between border-t-2 border-[#3087ff] pt-3 text-xs font-bold text-[#3087ff] mt-4">
+                <span className="uppercase text-[11px] font-black">
+                  {selectedModel.specTag}
+                </span>
+                <span className="font-mono text-[10px] bg-[#3087ff] text-white px-2 py-0.5 border border-[#3087ff]">
+                  Foundry Poured ASTM A536
+                </span>
+              </div>
+
               {/* Prev / Next Controls */}
-              {currentImages.length > 1 && (
+              {currentGallery.length > 1 && (
                 <>
                   <button
                     type="button"
                     onClick={() =>
                       setSelectedImageIndex((prev) =>
-                        prev === 0 ? currentImages.length - 1 : prev - 1
+                        prev === 0 ? currentGallery.length - 1 : prev - 1
                       )
                     }
-                    className="absolute left-3 top-1/2 -translate-y-1/2 w-9 h-9 rounded-full bg-white/90 hover:bg-white text-gray-800 flex items-center justify-center shadow-md transition-all hover:scale-110 cursor-pointer"
-                    aria-label="Previous photo"
+                    className="absolute left-3 top-1/2 -translate-y-1/2 w-10 h-10 bg-white border-2 border-[#3087ff] text-[#3087ff] hover:bg-[#3087ff] hover:text-white flex items-center justify-center shadow-lg transition-all cursor-pointer"
+                    aria-label="Previous view"
                   >
                     <ChevronLeft className="w-5 h-5" />
                   </button>
@@ -317,11 +393,11 @@ export default function ArtisanWalkJacketPage() {
                     type="button"
                     onClick={() =>
                       setSelectedImageIndex((prev) =>
-                        prev === currentImages.length - 1 ? 0 : prev + 1
+                        prev === currentGallery.length - 1 ? 0 : prev + 1
                       )
                     }
-                    className="absolute right-3 top-1/2 -translate-y-1/2 w-9 h-9 rounded-full bg-white/90 hover:bg-white text-gray-800 flex items-center justify-center shadow-md transition-all hover:scale-110 cursor-pointer"
-                    aria-label="Next photo"
+                    className="absolute right-3 top-1/2 -translate-y-1/2 w-10 h-10 bg-white border-2 border-[#3087ff] text-[#3087ff] hover:bg-[#3087ff] hover:text-white flex items-center justify-center shadow-lg transition-all cursor-pointer"
+                    aria-label="Next view"
                   >
                     <ChevronRight className="w-5 h-5" />
                   </button>
@@ -333,121 +409,131 @@ export default function ArtisanWalkJacketPage() {
           {/* ========================================================
               RIGHT COLUMN: PRODUCT PURCHASE BOX (5 Cols)
           ======================================================== */}
-          <div id="buy-now" className="lg:col-span-5 flex flex-col gap-5">
-            {/* Product Title */}
+          <div id="buy-now" className="lg:col-span-5 flex flex-col gap-5 text-[#3087ff]">
+            {/* Category Eyebrow & Title */}
             <div>
-              <span className="text-[11px] font-extrabold uppercase tracking-widest text-[#153e20] bg-emerald-50 px-2 py-0.5 rounded-xs inline-block mb-2">
-                All-Weather Field Collection
-              </span>
-              <h1 className="text-2xl sm:text-3xl font-extrabold text-gray-950 leading-tight">
+              <div className="inline-flex items-center gap-1.5 px-3 py-1 bg-[#3087ff] text-white text-[11px] font-black uppercase tracking-wider border border-[#3087ff] mb-2 shadow-xs">
+                <span>Flagship Waterworks Utility Series</span>
+              </div>
+              <h1 className="text-2xl sm:text-3xl lg:text-4xl font-black text-[#3087ff] leading-tight tracking-tight uppercase">
                 {PRODUCT_DATA.title}
               </h1>
-            </div>
-
-            {/* Social Proof Stars & Verified Count */}
-            <div className="flex items-center gap-3 text-sm">
-              <div className="flex text-[#f59e0b]">
-                {[...Array(5)].map((_, i) => (
-                  <Star key={i} className="w-4 h-4 fill-current" />
-                ))}
-              </div>
-              <span className="font-bold text-gray-900">{PRODUCT_DATA.rating}.0</span>
-              <span className="text-gray-400">&bull;</span>
-              <a href="#reviews" className="text-gray-600 underline hover:text-black font-medium">
-                {PRODUCT_DATA.reviewCount} customer reviews
-              </a>
-            </div>
-
-            {/* Pricing Section */}
-            <div className="flex items-baseline gap-3 border-y border-gray-100 py-3.5">
-              <span className="text-3xl sm:text-4xl font-extrabold text-black tracking-tight">
-                ${PRODUCT_DATA.salePrice.toFixed(2)}
-              </span>
-              <span className="text-lg text-gray-400 line-through font-normal">
-                ${PRODUCT_DATA.compareAtPrice.toFixed(2)}
-              </span>
-              <span className="bg-[#ee4700]/10 text-[#ee4700] text-xs font-black px-2.5 py-1 rounded-sm">
-                Save ${PRODUCT_DATA.savingsAmount.toFixed(2)} ({PRODUCT_DATA.discountPercent}% OFF)
-              </span>
-            </div>
-
-            {/* Multi-Buy Promotion Banner */}
-            <div className="bg-[#faf7f0] border border-amber-200/80 rounded-md p-3 text-xs text-amber-950 flex flex-col gap-1">
-              <span className="font-black flex items-center gap-1.5 text-amber-900">
-                <Flame className="w-4 h-4 text-[#ee4700]" />
-                EXCLUSIVE MULTI-BUY OFFERS
-              </span>
-              <p className="font-medium text-gray-700">
-                Buy 2 get <strong className="text-black">10% OFF</strong> &bull; Buy 4 get{" "}
-                <strong className="text-black">15% OFF</strong>. Discount applied automatically in cart.
+              <p className="text-xs sm:text-sm text-[#3087ff] font-medium mt-1 leading-relaxed">
+                {PRODUCT_DATA.modelSubtitle}
               </p>
             </div>
 
-            {/* Color Swatch Selector */}
+            {/* Engineering Proof Ratings & Submittal Link */}
+            <div className="flex items-center gap-3 text-xs border-y-2 border-[#3087ff] py-3">
+              <div className="flex text-[#3087ff]">
+                {[...Array(5)].map((_, i) => (
+                  <Star key={i} className="w-4 h-4 fill-current text-[#3087ff]" />
+                ))}
+              </div>
+              <span className="font-black text-[#3087ff]">5.0 Civil Engineering Score</span>
+              <span className="text-[#3087ff]">&bull;</span>
+              <a href="#engineering-specs" className="text-[#3087ff] underline hover:font-black font-bold">
+                {PRODUCT_DATA.reviewCount} Municipal Approvals
+              </a>
+            </div>
+
+            {/* Direct Contractor / Municipal Bidding Pricing */}
+            <div className="flex items-baseline gap-3">
+              <span className="text-3xl sm:text-4xl font-black text-[#3087ff] tracking-tight">
+                ${PRODUCT_DATA.salePrice.toLocaleString("en-US", { minimumFractionDigits: 2 })}
+              </span>
+              <span className="text-base text-[#3087ff]/60 line-through font-bold">
+                ${PRODUCT_DATA.compareAtPrice.toLocaleString("en-US", { minimumFractionDigits: 2 })}
+              </span>
+              <span className="bg-[#3087ff] text-white text-xs font-black px-2.5 py-1 border border-[#3087ff] uppercase">
+                Save ${PRODUCT_DATA.savingsAmount.toFixed(0)} (Municipal Direct)
+              </span>
+            </div>
+
+            {/* Municipal Bid & Volume Rebate Banner */}
+            <div className="bg-white border-2 border-[#3087ff] p-3 text-xs text-[#3087ff] shadow-sm">
+              <span className="font-black flex items-center gap-1.5 text-[#3087ff] uppercase mb-1">
+                <Award className="w-4 h-4 text-[#3087ff]" />
+                Municipal Project Volume Schedule
+              </span>
+              <p className="font-medium text-[#3087ff] leading-relaxed">
+                Order <strong>5+ units: 10% Contractor Rebate</strong> &bull; Order <strong>20+ units: Municipal Bid Pricing &amp; Custom Agency Tooling Stamping</strong>. Applied automatically at submittal.
+              </p>
+            </div>
+
+            {/* Model / Configuration Swatch Selector */}
             <div className="space-y-2">
               <div className="flex items-center justify-between text-xs">
-                <span className="font-bold text-gray-900">
-                  Color: <span className="font-normal text-gray-700">{selectedColor.name}</span>
+                <span className="font-black text-[#3087ff] uppercase">
+                  Select Model Configuration:
+                </span>
+                <span className="text-[11px] font-mono text-[#3087ff] font-bold">
+                  SKU: {PRODUCT_DATA.sku}
                 </span>
               </div>
 
-              <div className="flex items-center gap-3">
-                {PRODUCT_DATA.colors.map((color) => {
-                  const isSelected = selectedColor.id === color.id;
+              <div className="grid grid-cols-1 sm:grid-cols-2 gap-2">
+                {PRODUCT_DATA.models.map((model) => {
+                  const isSelected = selectedModel.id === model.id;
                   return (
                     <button
-                      key={color.id}
+                      key={model.id}
                       type="button"
-                      onClick={() => handleColorChange(color)}
-                      className={`w-9 h-9 rounded-full relative p-0.5 border-2 transition-all cursor-pointer ${
-                        isSelected ? "border-black scale-110 shadow-sm" : "border-gray-300 hover:border-gray-500"
+                      onClick={() => handleModelChange(model)}
+                      className={`p-2.5 text-left border-2 rounded-none transition-all cursor-pointer flex items-center gap-2.5 ${
+                        isSelected
+                          ? "bg-[#3087ff] text-white border-[#3087ff] shadow-md"
+                          : "bg-white text-[#3087ff] border-[#3087ff] hover:bg-[#3087ff] hover:text-white"
                       }`}
-                      style={{ backgroundColor: color.colorHex }}
-                      title={color.name}
-                      aria-label={color.name}
                     >
-                      {isSelected && (
-                        <span className="absolute inset-0 m-auto w-3.5 h-3.5 rounded-full bg-white flex items-center justify-center">
-                          <Check className="w-2.5 h-2.5 text-black stroke-[3]" />
-                        </span>
-                      )}
+                      <span
+                        className="w-4 h-4 rounded-full border border-white shrink-0"
+                        style={{ backgroundColor: model.colorHex }}
+                      />
+                      <div className="min-w-0">
+                        <p className="text-xs font-black uppercase truncate">{model.name.split("–")[0]}</p>
+                        <p className={`text-[10px] truncate ${isSelected ? "text-white/90" : "text-[#3087ff]/80"}`}>
+                          {model.specTag}
+                        </p>
+                      </div>
                     </button>
                   );
                 })}
               </div>
             </div>
 
-            {/* Size Selector */}
+            {/* Trench Bury Depth Selector (Equivalent to Size Selection) */}
             <div className="space-y-2">
               <div className="flex items-center justify-between text-xs">
-                <span className="font-bold text-gray-900">
-                  Size: <span className="font-normal text-gray-700">{selectedSize}</span>
+                <span className="font-black text-[#3087ff] uppercase">
+                  Trench Bury Depth: <span className="font-mono text-[#3087ff]">{selectedBury.label}</span>
                 </span>
                 <button
                   type="button"
-                  onClick={() => setShowSizeModal(true)}
-                  className="text-xs font-bold text-[#153e20] underline hover:text-black flex items-center gap-1 cursor-pointer"
+                  onClick={() => setShowSubmittalModal(true)}
+                  className="text-xs font-black text-[#3087ff] underline hover:text-[#1d62c4] flex items-center gap-1 cursor-pointer"
                 >
                   <Info className="w-3.5 h-3.5" />
-                  Size Guide
+                  Bury Schedule
                 </button>
               </div>
 
-              <div className="grid grid-cols-4 gap-2">
-                {PRODUCT_DATA.sizes.map((size) => {
-                  const isSelected = selectedSize === size;
+              <div className="grid grid-cols-3 sm:grid-cols-6 gap-2">
+                {PRODUCT_DATA.buryDepths.map((bury) => {
+                  const isSelected = selectedBury.label === bury.label;
                   return (
                     <button
-                      key={size}
+                      key={bury.label}
                       type="button"
-                      onClick={() => setSelectedSize(size)}
-                      className={`h-11 rounded-md text-xs font-bold uppercase transition-all cursor-pointer border ${
+                      onClick={() => setSelectedBury(bury)}
+                      className={`h-11 border-2 text-xs font-black uppercase transition-all cursor-pointer flex flex-col items-center justify-center ${
                         isSelected
-                          ? "bg-black text-white border-black shadow-md"
-                          : "bg-white text-gray-900 border-gray-200 hover:border-black"
+                          ? "bg-[#3087ff] text-white border-[#3087ff] shadow-md"
+                          : "bg-white text-[#3087ff] border-[#3087ff] hover:bg-[#3087ff] hover:text-white"
                       }`}
                     >
-                      {size}
+                      <span>{bury.label.split(" ")[0]}</span>
+                      <span className="text-[9px] font-normal">{bury.label.split(" ")[1]}</span>
                     </button>
                   );
                 })}
@@ -456,23 +542,23 @@ export default function ArtisanWalkJacketPage() {
 
             {/* Quantity Selector */}
             <div className="space-y-1.5">
-              <span className="text-xs font-bold text-gray-900">Quantity</span>
-              <div className="flex items-center w-32 border border-gray-300 rounded-md overflow-hidden bg-white">
+              <span className="text-xs font-black text-[#3087ff] uppercase">Order Quantity (Units)</span>
+              <div className="flex items-center w-36 border-2 border-[#3087ff] bg-white">
                 <button
                   type="button"
                   onClick={() => setQuantity((q) => Math.max(1, q - 1))}
-                  className="w-10 h-10 flex items-center justify-center text-lg font-bold text-gray-700 hover:bg-gray-100 transition-colors"
+                  className="w-11 h-10 flex items-center justify-center text-lg font-black text-[#3087ff] hover:bg-[#3087ff] hover:text-white transition-colors cursor-pointer"
                   aria-label="Decrease quantity"
                 >
                   -
                 </button>
-                <span className="flex-1 text-center font-bold text-sm text-gray-900">
+                <span className="flex-1 text-center font-black text-sm text-[#3087ff]">
                   {quantity}
                 </span>
                 <button
                   type="button"
                   onClick={() => setQuantity((q) => q + 1)}
-                  className="w-10 h-10 flex items-center justify-center text-lg font-bold text-gray-700 hover:bg-gray-100 transition-colors"
+                  className="w-11 h-10 flex items-center justify-center text-lg font-black text-[#3087ff] hover:bg-[#3087ff] hover:text-white transition-colors cursor-pointer"
                   aria-label="Increase quantity"
                 >
                   +
@@ -480,67 +566,68 @@ export default function ArtisanWalkJacketPage() {
               </div>
             </div>
 
-            {/* Urgency Stock Indicator */}
-            <div className="flex items-center gap-2 text-xs font-bold text-[#ee4700] pt-1">
-              <span className="w-2 h-2 rounded-full bg-[#ee4700] animate-ping" />
-              <span>{PRODUCT_DATA.stockLeft} left in stock – order soon</span>
+            {/* Urgency / Stock Status Indicator */}
+            <div className="flex items-center gap-2 text-xs font-black text-[#3087ff] pt-1">
+              <span className="w-2.5 h-2.5 rounded-none bg-[#3087ff] animate-ping" />
+              <span>{PRODUCT_DATA.stockLeft} Units Assembled In Stock &bull; Certified for Immediate Field Dispatch</span>
             </div>
 
             {/* Primary Action Buttons */}
-            <div className="space-y-2.5 pt-2">
+            <div className="space-y-3 pt-2">
               <button
                 type="button"
-                onClick={handleAddToCart}
-                className="w-full h-13 rounded-md bg-white border-2 border-black text-black font-extrabold uppercase tracking-wider text-sm hover:bg-black hover:text-white transition-all shadow-xs cursor-pointer"
+                onClick={handleAddToRfq}
+                className="w-full h-13 bg-[#3087ff] text-white font-black uppercase tracking-wider text-sm hover:bg-[#1d62c4] transition-all shadow-md cursor-pointer border-2 border-[#3087ff] flex items-center justify-center gap-2"
               >
-                Add to cart
+                <FileText className="w-4 h-4 text-white" />
+                <span>Add to Municipal RFQ Cart</span>
               </button>
 
               <button
                 type="button"
-                onClick={handleAddToCart}
-                className="w-full h-13 rounded-md bg-black border-2 border-black text-white font-extrabold uppercase tracking-wider text-sm hover:bg-gray-800 transition-all shadow-md cursor-pointer"
+                onClick={handleAddToRfq}
+                className="w-full h-13 bg-white border-2 border-[#3087ff] text-[#3087ff] font-black uppercase tracking-wider text-sm hover:bg-[#3087ff] hover:text-white transition-all shadow-sm cursor-pointer flex items-center justify-center gap-2"
               >
-                Buy now
+                <PhoneCall className="w-4 h-4" />
+                <span>Request Formal Contractor Price Quote</span>
               </button>
 
-              {/* Express PayPal Button */}
               <button
                 type="button"
-                onClick={handleAddToCart}
-                className="w-full h-12 rounded-md bg-[#ffc439] hover:bg-[#f4ba34] text-[#003087] font-black text-sm tracking-wide transition-all shadow-xs flex items-center justify-center gap-2 cursor-pointer"
+                onClick={() => setShowSubmittalModal(true)}
+                className="w-full h-12 bg-white border-2 border-[#3087ff] text-[#3087ff] font-black text-xs uppercase tracking-wider transition-all shadow-xs flex items-center justify-center gap-2 cursor-pointer hover:bg-[#3087ff] hover:text-white"
               >
-                <span>Pay with</span>
-                <span className="font-serif italic font-black text-lg">PayPal</span>
+                <Download className="w-4 h-4" />
+                <span>Download Submittal Sheet &amp; AutoCAD (.DWG)</span>
               </button>
             </div>
 
-            {/* Shipping Promise */}
-            <div className="flex items-center gap-2.5 text-xs text-gray-700 bg-gray-50 p-3 rounded-md border border-gray-200">
-              <Truck className="w-4 h-4 text-[#153e20] shrink-0" />
+            {/* Logistics & Delivery Promise */}
+            <div className="flex items-center gap-2.5 text-xs text-[#3087ff] bg-white p-3 border-2 border-[#3087ff] shadow-xs">
+              <Truck className="w-4 h-4 text-[#3087ff] shrink-0" />
               <span>
-                <strong>{PRODUCT_DATA.deliveryWindow}</strong> guaranteed delivery with standard shipping.
+                <strong>{PRODUCT_DATA.deliveryWindow}</strong> with certified MTR packet.
               </span>
             </div>
 
-            {/* Guarantee Badges */}
-            <div className="grid grid-cols-3 gap-2 pt-2 border-t border-gray-100 text-center">
-              <div className="flex flex-col items-center p-2 rounded bg-gray-50">
-                <RotateCcw className="w-4 h-4 text-[#153e20] mb-1" />
-                <span className="text-[10px] font-bold text-gray-800 leading-tight">
-                  30-Day Risk-Free Returns
+            {/* Quality Certifications Strip */}
+            <div className="grid grid-cols-3 gap-2 pt-2 border-t-2 border-[#3087ff] text-center">
+              <div className="flex flex-col items-center p-2.5 border-2 border-[#3087ff] bg-white">
+                <ShieldCheck className="w-4 h-4 text-[#3087ff] mb-1" />
+                <span className="text-[10px] font-black uppercase tracking-wider leading-tight">
+                  ANSI/NSF 61 Potable
                 </span>
               </div>
-              <div className="flex flex-col items-center p-2 rounded bg-gray-50">
-                <Truck className="w-4 h-4 text-[#153e20] mb-1" />
-                <span className="text-[10px] font-bold text-gray-800 leading-tight">
-                  Fast Express US Delivery
+              <div className="flex flex-col items-center p-2.5 border-2 border-[#3087ff] bg-white">
+                <Award className="w-4 h-4 text-[#3087ff] mb-1" />
+                <span className="text-[10px] font-black uppercase tracking-wider leading-tight">
+                  100% AIS Certified
                 </span>
               </div>
-              <div className="flex flex-col items-center p-2 rounded bg-gray-50">
-                <Lock className="w-4 h-4 text-[#153e20] mb-1" />
-                <span className="text-[10px] font-bold text-gray-800 leading-tight">
-                  256-Bit SSL Encrypted
+              <div className="flex flex-col items-center p-2.5 border-2 border-[#3087ff] bg-white">
+                <Gauge className="w-4 h-4 text-[#3087ff] mb-1" />
+                <span className="text-[10px] font-black uppercase tracking-wider leading-tight">
+                  300 PSI Working Max
                 </span>
               </div>
             </div>
@@ -548,57 +635,58 @@ export default function ArtisanWalkJacketPage() {
         </div>
 
         {/* ========================================================
-            4. EDITORIAL STORY SECTION (#22252a Dark Slate Card)
+            4. EDITORIAL STORY BANNER (#3087ff Blue Card)
         ======================================================== */}
-        <section className="mt-16 sm:mt-24 bg-[#22252a] text-white rounded-2xl p-6 sm:p-12 shadow-2xl relative overflow-hidden">
-          <div className="max-w-3xl">
-            <span className="text-xs font-black uppercase tracking-widest text-amber-400 bg-amber-400/10 px-3 py-1 rounded-full border border-amber-400/30 inline-block mb-4">
-              US MEN&apos;S STYLE &amp; GEAR GUIDE
+        <section className="mt-16 sm:mt-24 bg-[#3087ff] text-white p-8 sm:p-14 shadow-2xl border-4 border-[#3087ff] relative overflow-hidden">
+          <div className="max-w-4xl">
+            <span className="text-xs font-black uppercase tracking-widest bg-white text-[#3087ff] px-3.5 py-1.5 border border-white inline-block mb-4 shadow-sm">
+              AMERICAN WATER INFRASTRUCTURE &bull; EPA LCRR MANDATE
             </span>
-            <h2 className="text-2xl sm:text-4xl lg:text-5xl font-black tracking-tight leading-tight mb-4">
-              Why American Men Over 40 Are Choosing This All-Weather Jacket Over Bulky Winter Coats
+            <h2 className="text-2xl sm:text-4xl lg:text-5xl font-black uppercase tracking-tight leading-tight mb-4">
+              Why Municipal Water Authorities &amp; Civil Engineers Specify Aqua Industries Sampling Stations
             </h2>
-            <p className="text-sm sm:text-base text-gray-300 leading-relaxed font-normal">
-              Engineered for unpredictable weather, clean tailoring, and all-day comfort—without
-              feeling stiff or restrictive. Whether you&apos;re commuting, running weekend errands, or
-              heading out into the woods, stay dry and warm with zero unnecessary bulk.
+            <p className="text-sm sm:text-base text-white/95 leading-relaxed font-medium">
+              Commercial fire hydrants, hose bibbs, and building taps harbor stagnant water and biofilm in threaded nozzles,
+              frequently triggering false-positive coliform tests that result in unnecessary EPA boil-water advisories.
+              Aqua Industries sampling stations provide an unthreaded, dedicated lead-free brass waterway directly tapped into
+              the municipal watermain, delivering true representative water quality samples in any climate.
             </p>
           </div>
         </section>
 
         {/* ========================================================
-            5. FRUSTRATION IDENTIFICATION CARD (#faf7f0 Cream)
+            5. FRUSTRATION CALLOUT CARD (White with #3087ff Border)
         ======================================================== */}
-        <section className="mt-10 bg-[#faf7f0] border border-amber-900/10 rounded-2xl p-6 sm:p-10 shadow-sm">
-          <h3 className="text-xl sm:text-2xl font-black text-gray-950 mb-6">
-            Frustrated with Jackets That Don&apos;t Live Up to Everyday Life?
+        <section className="mt-10 bg-white border-4 border-[#3087ff] p-6 sm:p-10 shadow-lg">
+          <h3 className="text-xl sm:text-2xl font-black text-[#3087ff] uppercase tracking-tight mb-6">
+            Frustrated with False Contamination Readings &amp; Frozen Winter Taps?
           </h3>
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
-            <div className="space-y-2">
-              <h4 className="font-bold text-sm text-[#ee4700] uppercase tracking-wide">
-                1. Stiff &amp; Restrictive Fit:
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-6 text-[#3087ff]">
+            <div className="space-y-2 border-l-4 border-[#3087ff] pl-3">
+              <h4 className="font-black text-sm uppercase tracking-wide">
+                1. False-Positive Bacterial Readings:
               </h4>
-              <p className="text-xs sm:text-sm text-gray-700 leading-relaxed">
-                Traditional heavy coats bind your shoulders when you&apos;re driving, reaching, or doing
-                weekend yard work, making every movement feel cumbersome.
+              <p className="text-xs sm:text-sm text-[#3087ff]/90 leading-relaxed font-medium">
+                Standard fire hydrants and hose bibbs with aerators trap debris and organic biofilms in threads,
+                causing false-positive coliform readings that require thousands of dollars in emergency lab re-testing.
               </p>
             </div>
-            <div className="space-y-2">
-              <h4 className="font-bold text-sm text-[#ee4700] uppercase tracking-wide">
-                2. False Waterproof Claims:
+            <div className="space-y-2 border-l-4 border-[#3087ff] pl-3">
+              <h4 className="font-black text-sm uppercase tracking-wide">
+                2. Subterranean Freeze-Ups:
               </h4>
-              <p className="text-xs sm:text-sm text-gray-700 leading-relaxed">
-                Jackets that look great in dry weather but soak right through after 15 minutes of
-                unexpected autumn drizzle, leaving your clothes damp.
+              <p className="text-xs sm:text-sm text-[#3087ff]/90 leading-relaxed font-medium">
+                Traditional utility risers lack heavy thermal cores, freezing solid during harsh winter storms and
+                bursting underground pipes without warning.
               </p>
             </div>
-            <div className="space-y-2">
-              <h4 className="font-bold text-sm text-[#ee4700] uppercase tracking-wide">
-                3. Poor Heat Regulation:
+            <div className="space-y-2 border-l-4 border-[#3087ff] pl-3">
+              <h4 className="font-black text-sm uppercase tracking-wide">
+                3. Tampering &amp; Water Contamination:
               </h4>
-              <p className="text-xs sm:text-sm text-gray-700 leading-relaxed">
-                Heavy synthetic materials that trap body heat without breathing, turning a simple
-                brisk walk into an uncomfortable, sweaty experience.
+              <p className="text-xs sm:text-sm text-[#3087ff]/90 leading-relaxed font-medium">
+                Unsecured water test points invite vandalism, cross-connection contamination, and unauthorized unmetered
+                water theft from city mainlines.
               </p>
             </div>
           </div>
@@ -608,301 +696,315 @@ export default function ArtisanWalkJacketPage() {
             6. FEATURE DEEP DIVES (3 Detailed Feature Blocks)
         ======================================================== */}
         <section className="mt-16 sm:mt-24 space-y-16">
-          {/* Feature 01 */}
+          {/* Feature 01: Lead-Free Potable Waterway */}
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 items-center">
             <div className="lg:col-span-6 space-y-4">
-              <span className="text-xs font-black uppercase tracking-widest text-[#153e20] bg-emerald-50 px-2.5 py-1 rounded">
-                FEATURE 01
+              <span className="text-xs font-black uppercase tracking-widest bg-[#3087ff] text-white px-3 py-1 border border-[#3087ff]">
+                FEATURE 01 &bull; SANITARY WATERWAY
               </span>
-              <h3 className="text-2xl sm:text-3xl font-extrabold text-gray-950">
-                Reliable All-Weather Outdoor Waterproofing
+              <h3 className="text-2xl sm:text-3xl font-black uppercase text-[#3087ff]">
+                Lead-Free Smooth-Bore Potable Waterway
               </h3>
-              <p className="text-sm text-gray-700 leading-relaxed">
-                Treated with a durable water-repellent (DWR) surface finish that causes rain and sleet
-                to bead up and roll right off. Designed to keep you dry and comfortable during sudden
-                downpours, morning commutes, or weekend hikes.
+              <p className="text-sm text-[#3087ff] font-medium leading-relaxed">
+                Treated with an unthreaded smooth-bore discharge nozzle that prevents laminar aeration and eliminates biofilm
+                growth. Tapped directly into the subterranean municipal main, bypassing all private premise plumbing to deliver
+                EPA-certified compliance readings.
               </p>
-              <ul className="text-xs space-y-2 text-gray-800 font-semibold pt-2">
+              <ul className="text-xs space-y-2 text-[#3087ff] font-black pt-2">
                 <li className="flex items-center gap-2">
-                  <Check className="w-4 h-4 text-[#153e20]" />
-                  Hydrophobic DWR coating sheds water instantly
+                  <Check className="w-4 h-4 text-[#3087ff]" />
+                  Zero thread crevices prevents bacteria colonization
                 </li>
                 <li className="flex items-center gap-2">
-                  <Check className="w-4 h-4 text-[#153e20]" />
-                  Sealed seams prevent moisture penetration in critical zones
+                  <Check className="w-4 h-4 text-[#3087ff]" />
+                  Meets strict EPA 40 CFR 141 &amp; NSF 61 potable purity
                 </li>
                 <li className="flex items-center gap-2">
-                  <Check className="w-4 h-4 text-[#153e20]" />
-                  Breathable membrane lets perspiration vapor escape
+                  <Check className="w-4 h-4 text-[#3087ff]" />
+                  Sanitary blow-off petcock purges standing water prior to testing
                 </li>
               </ul>
             </div>
-            <div className="lg:col-span-6 rounded-2xl overflow-hidden border border-gray-200 shadow-xl bg-gray-50">
+            <div className="lg:col-span-6 border-4 border-[#3087ff] p-6 shadow-xl bg-white flex items-center justify-center">
               <img
-                src="https://img-va.myshopline.com/image/store/1776758950476/--94.png?w=2048&h=2048"
-                alt="Reliable Waterproofing Demonstration"
-                className="w-full h-auto object-cover"
+                src="/images/our-images/sampling-station.png"
+                alt="Sanitary Potable Waterway"
+                className="max-h-[380px] object-contain filter drop-shadow-xl"
               />
             </div>
           </div>
 
-          {/* Feature 02 */}
+          {/* Feature 02: Thermal Frost Core */}
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 items-center lg:flex-row-reverse">
-            <div className="lg:col-span-6 rounded-2xl overflow-hidden border border-gray-200 shadow-xl bg-gray-50 lg:order-2">
+            <div className="lg:col-span-6 border-4 border-[#3087ff] p-6 shadow-xl bg-white flex items-center justify-center lg:order-2">
               <img
-                src="https://img-va.myshopline.com/image/store/1776758950476/--93.png?w=2048&h=2048"
-                alt="Windproof Shell with Micro-Fleece Interior"
-                className="w-full h-auto object-cover"
+                src="/images/SAMPLING-STATION/Sampling station with base.png"
+                alt="Thermal Frost Core Enclosure"
+                className="max-h-[380px] object-contain filter drop-shadow-xl"
               />
             </div>
             <div className="lg:col-span-6 space-y-4 lg:order-1">
-              <span className="text-xs font-black uppercase tracking-widest text-[#153e20] bg-emerald-50 px-2.5 py-1 rounded">
-                FEATURE 02
+              <span className="text-xs font-black uppercase tracking-widest bg-[#3087ff] text-white px-3 py-1 border border-[#3087ff]">
+                FEATURE 02 &bull; ALL-WEATHER CORE
               </span>
-              <h3 className="text-2xl sm:text-3xl font-extrabold text-gray-950">
-                Windproof Shell with Soft Micro-Fleece Lining
+              <h3 className="text-2xl sm:text-3xl font-black uppercase text-[#3087ff]">
+                -20°F Thermal Core &amp; Subterranean Tap
               </h3>
-              <p className="text-sm text-gray-700 leading-relaxed">
-                Features a tight-weave outer shell that completely blocks cold autumn and spring
-                gusts. Inside, a lightweight micro-fleece lining provides cozy, breathable warmth
-                without adding bulky weight or restricting your movement.
+              <p className="text-sm text-[#3087ff] font-medium leading-relaxed">
+                High-density R-14 polyurethane thermal insulation encases the vertical riser pipe, capturing rising geothermal
+                earth heat from below the regional frost line. Guarantees 24/7 water sampling readiness even during deep sub-zero
+                polar vortex freezes without costly electric heat tracing.
               </p>
-              <ul className="text-xs space-y-2 text-gray-800 font-semibold pt-2">
+              <ul className="text-xs space-y-2 text-[#3087ff] font-black pt-2">
                 <li className="flex items-center gap-2">
-                  <Check className="w-4 h-4 text-[#153e20]" />
-                  Thermal micro-fleece core traps body warmth effectively
+                  <Check className="w-4 h-4 text-[#3087ff]" />
+                  Operates reliably down to -20°F without electric heat
                 </li>
                 <li className="flex items-center gap-2">
-                  <Check className="w-4 h-4 text-[#153e20]" />
-                  Wind-breaking storm flap behind main heavy-duty zipper
+                  <Check className="w-4 h-4 text-[#3087ff]" />
+                  Subterranean weep hole auto-drains waterway below frost depth
                 </li>
                 <li className="flex items-center gap-2">
-                  <Check className="w-4 h-4 text-[#153e20]" />
-                  Comfort-lined collar protects neck from chafing and drafts
+                  <Check className="w-4 h-4 text-[#3087ff]" />
+                  Precision 1&quot; NPT or MJ flexible inlet adapts to any depth
                 </li>
               </ul>
             </div>
           </div>
 
-          {/* Feature 03 */}
+          {/* Feature 03: Vandal-Proof Shroud */}
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 items-center">
             <div className="lg:col-span-6 space-y-4">
-              <span className="text-xs font-black uppercase tracking-widest text-[#153e20] bg-emerald-50 px-2.5 py-1 rounded">
-                FEATURE 03
+              <span className="text-xs font-black uppercase tracking-widest bg-[#3087ff] text-white px-3 py-1 border border-[#3087ff]">
+                FEATURE 03 &bull; SECURITY ENCLOSURE
               </span>
-              <h3 className="text-2xl sm:text-3xl font-extrabold text-gray-950">
-                Ergonomic Motion Fit &amp; Secure Storage
+              <h3 className="text-2xl sm:text-3xl font-black uppercase text-[#3087ff]">
+                Vandal-Proof Lockable Ductile Shroud
               </h3>
-              <p className="text-sm text-gray-700 leading-relaxed">
-                Designed with articulated sleeves for natural arm movement. Equipped with deep
-                zippered hand pockets and a secure internal chest pocket to keep your phone, keys, and
-                wallet safe and dry on the go.
+              <p className="text-sm text-[#3087ff] font-medium leading-relaxed">
+                Poured from heavy ASTM A536 ductile iron, the protective outer housing features an integrated heavy-gauge padlock
+                hasp that shields internal valves from vehicle wheel impacts, lawnmower strikes, and unauthorized municipal tampering.
               </p>
-              <ul className="text-xs space-y-2 text-gray-800 font-semibold pt-2">
+              <ul className="text-xs space-y-2 text-[#3087ff] font-black pt-2">
                 <li className="flex items-center gap-2">
-                  <Check className="w-4 h-4 text-[#153e20]" />
-                  Full range of motion without the jacket pulling or riding up
+                  <Check className="w-4 h-4 text-[#3087ff]" />
+                  ASTM A536 Grade 65-45-12 ductile iron housing
                 </li>
                 <li className="flex items-center gap-2">
-                  <Check className="w-4 h-4 text-[#153e20]" />
-                  Water-resistant zipper pulls easy to operate with gloved hands
+                  <Check className="w-4 h-4 text-[#3087ff]" />
+                  Padlock shroud guards against street vandalism and theft
                 </li>
                 <li className="flex items-center gap-2">
-                  <Check className="w-4 h-4 text-[#153e20]" />
-                  Internal security pocket with headphone routing access
+                  <Check className="w-4 h-4 text-[#3087ff]" />
+                  Holiday-free fusion-bonded blue epoxy resists acidic soil
                 </li>
               </ul>
             </div>
-            <div className="lg:col-span-6 rounded-2xl overflow-hidden border border-gray-200 shadow-xl bg-gray-50">
+            <div className="lg:col-span-6 border-4 border-[#3087ff] p-6 shadow-xl bg-white flex items-center justify-center">
               <img
-                src="https://img-va.myshopline.com/image/store/1776758950476/--97.png?w=2048&h=2048"
-                alt="Ergonomic Pocket & Zipper Design"
-                className="w-full h-auto object-cover"
+                src="/images/our-images/Sampling Station H20.696.png"
+                alt="Ductile Iron Protective Housing"
+                className="max-h-[380px] object-contain filter drop-shadow-xl"
               />
             </div>
           </div>
         </section>
 
         {/* ========================================================
-            7. LIFESTYLE ACTIVITY PILLS
+            7. MUNICIPAL APPLICATION PILLS
         ======================================================== */}
-        <section className="mt-14 py-8 border-y border-gray-200 text-center">
-          <p className="text-xs font-black uppercase tracking-wider text-gray-500 mb-4">
-            PERFECT FOR EVERYDAY VERSATILITY
+        <section className="mt-14 py-8 border-y-2 border-[#3087ff] text-center">
+          <p className="text-xs font-black uppercase tracking-widest text-[#3087ff] mb-4">
+            APPROVED FOR MUNICIPAL &amp; INDUSTRIAL WATER DISTRIBUTION NETWORKS
           </p>
           <div className="flex flex-wrap items-center justify-center gap-3">
-            <span className="px-4 py-2 bg-gray-100 rounded-full text-xs font-bold text-gray-800 shadow-xs">
-              🌲 Weekend Hiking &amp; Camping
+            <span className="px-4 py-2 bg-[#3087ff] text-white text-xs font-black uppercase tracking-wider border border-[#3087ff] shadow-sm">
+              💧 EPA Lead &amp; Copper Rule (LCRR) Sampling
             </span>
-            <span className="px-4 py-2 bg-gray-100 rounded-full text-xs font-bold text-gray-800 shadow-xs">
-              🚗 Daily Commuting &amp; Driving
+            <span className="px-4 py-2 bg-white text-[#3087ff] text-xs font-black uppercase tracking-wider border-2 border-[#3087ff] shadow-sm">
+              🏙️ Municipal Potable Watermains
             </span>
-            <span className="px-4 py-2 bg-gray-100 rounded-full text-xs font-bold text-gray-800 shadow-xs">
-              🔧 Yard Work &amp; Garage Projects
+            <span className="px-4 py-2 bg-[#3087ff] text-white text-xs font-black uppercase tracking-wider border border-[#3087ff] shadow-sm">
+              🏥 Hospital &amp; School Dedicated Service Feeders
             </span>
-            <span className="px-4 py-2 bg-gray-100 rounded-full text-xs font-bold text-gray-800 shadow-xs">
-              🎣 Fishing &amp; Outdoor Leisure
+            <span className="px-4 py-2 bg-white text-[#3087ff] text-xs font-black uppercase tracking-wider border-2 border-[#3087ff] shadow-sm">
+              🏭 Industrial Treatment &amp; Backflow Monitoring
             </span>
           </div>
         </section>
 
         {/* ========================================================
-            8. US STANDARD SIZE GUIDE TABLE
+            8. ENGINEERING SPECIFICATIONS & BURY SCHEDULE TABLE
         ======================================================== */}
-        <section id="size-guide" className="mt-16 sm:mt-24">
+        <section id="engineering-specs" className="mt-16 sm:mt-24">
           <div className="text-center max-w-2xl mx-auto mb-8">
-            <span className="text-xs font-black uppercase tracking-widest text-[#153e20]">
-              ACCURATE SIZING
+            <span className="text-xs font-black uppercase tracking-widest bg-[#3087ff] text-white px-3 py-1 border border-[#3087ff]">
+              FOUNDRY SPECIFICATIONS
             </span>
-            <h3 className="text-2xl sm:text-3xl font-extrabold text-gray-950 mt-1">
-              Men&apos;s Standard Size Guide
+            <h3 className="text-2xl sm:text-3xl font-black uppercase text-[#3087ff] mt-2">
+              Trench Bury Depth &amp; Dimension Schedule
             </h3>
-            <p className="text-xs sm:text-sm text-gray-600 mt-2">
-              Measurements taken directly from garment laid flat. Follow our sizing tips below.
+            <p className="text-xs sm:text-sm text-[#3087ff] font-medium mt-1">
+              Engineered for standard regional frost depths across North America. Custom bury lengths available upon request.
             </p>
           </div>
 
-          <div className="max-w-4xl mx-auto border border-gray-200 rounded-xl overflow-hidden shadow-sm">
+          <div className="max-w-5xl mx-auto border-4 border-[#3087ff] shadow-xl overflow-hidden bg-white">
             <div className="overflow-x-auto">
               <table className="w-full text-left border-collapse text-xs sm:text-sm">
                 <thead>
-                  <tr className="bg-[#1c2826] text-white uppercase text-[11px] tracking-wider">
-                    <th className="py-3.5 px-4 font-extrabold">Size</th>
-                    <th className="py-3.5 px-4 font-extrabold">Chest</th>
-                    <th className="py-3.5 px-4 font-extrabold">Length</th>
-                    <th className="py-3.5 px-4 font-extrabold">Shoulder</th>
-                    <th className="py-3.5 px-4 font-extrabold">Sleeve</th>
+                  <tr className="bg-[#3087ff] text-white uppercase text-[11px] font-black tracking-wider border-b-2 border-white">
+                    <th className="py-3.5 px-4">Bury Depth</th>
+                    <th className="py-3.5 px-4">Inlet Connection</th>
+                    <th className="py-3.5 px-4">Max Pressure</th>
+                    <th className="py-3.5 px-4">Rated Flow</th>
+                    <th className="py-3.5 px-4">Total Weight</th>
+                    <th className="py-3.5 px-4">Standards</th>
                   </tr>
                 </thead>
-                <tbody className="divide-y divide-gray-200 bg-white">
-                  {PRODUCT_DATA.sizeTable.map((row, idx) => (
+                <tbody className="divide-y-2 divide-[#3087ff]/20 bg-white text-[#3087ff]">
+                  {PRODUCT_DATA.engineeringTable.map((row, idx) => (
                     <tr
-                      key={row.size}
-                      className={idx % 2 === 0 ? "bg-white" : "bg-[#faf7f0]/60"}
+                      key={row.bury}
+                      className={idx % 2 === 0 ? "bg-white" : "bg-blue-50/40"}
                     >
-                      <td className="py-3 px-4 font-bold text-gray-900">{row.size}</td>
-                      <td className="py-3 px-4 text-gray-700">{row.chest}</td>
-                      <td className="py-3 px-4 text-gray-700">{row.length}</td>
-                      <td className="py-3 px-4 text-gray-700">{row.shoulder}</td>
-                      <td className="py-3 px-4 text-gray-700">{row.sleeve}</td>
+                      <td className="py-3 px-4 font-black">{row.bury}</td>
+                      <td className="py-3 px-4 font-medium">{row.inlet}</td>
+                      <td className="py-3 px-4 font-bold">{row.pressure}</td>
+                      <td className="py-3 px-4 font-medium">{row.flowRate}</td>
+                      <td className="py-3 px-4 font-black">{row.weight}</td>
+                      <td className="py-3 px-4 font-mono text-[11px] font-bold">{row.standard}</td>
                     </tr>
                   ))}
                 </tbody>
               </table>
             </div>
 
-            <div className="bg-[#faf7f0] border-t border-amber-200/60 p-4 text-xs text-amber-950 font-medium flex items-center gap-2">
-              <span className="text-base">💡</span>
+            <div className="bg-white border-t-2 border-[#3087ff] p-4 text-xs text-[#3087ff] font-bold flex items-center justify-between">
               <span>
-                <strong>Fit Note:</strong> Standard Relaxed Fit. If you prefer room for heavy
-                layering or a thick sweater underneath, we recommend ordering 1 size up.
+                💡 <strong>AIS Compliance Note:</strong> Every sampling station is poured in American foundries and furnished with certified Mill Test Reports (MTRs) and permanent heat numbers.
               </span>
+              <button
+                type="button"
+                onClick={() => setShowSubmittalModal(true)}
+                className="underline uppercase font-black cursor-pointer hover:text-[#1d62c4] shrink-0 ml-4"
+              >
+                Download Submittal Packet (.PDF)
+              </button>
             </div>
           </div>
         </section>
 
         {/* ========================================================
-            9. MATERIAL & FABRIC CARE BLOCK
+            9. METALLURGY & MATERIAL STANDARDS BLOCK
         ======================================================== */}
-        <section className="mt-10 max-w-4xl mx-auto bg-gray-50 border border-gray-200 rounded-xl p-6 sm:p-8">
-          <h4 className="text-base font-extrabold text-gray-900 mb-2">Material &amp; Fabric Care</h4>
-          <p className="text-xs sm:text-sm text-gray-700 leading-relaxed mb-3">
-            <strong>Shell:</strong> 100% Durable High-Density Polyester with Weather-Resistant DWR
-            Water-Repellent Coating. <strong>Lining:</strong> Lightweight Breathable Micro-Fleece.
+        <section className="mt-10 max-w-5xl mx-auto bg-white border-4 border-[#3087ff] p-6 sm:p-8 text-[#3087ff] shadow-md">
+          <h4 className="text-base font-black uppercase tracking-wide mb-2">
+            Metallurgy &amp; Corrosion Resistance Standards
+          </h4>
+          <p className="text-xs sm:text-sm text-[#3087ff] leading-relaxed mb-3 font-medium">
+            <strong>Protective Enclosure:</strong> Heavy-wall ASTM A536 Grade 65-45-12 Ductile Iron with 65,000 PSI tensile strength and 12% elongation.
+            <strong> Waterway Core:</strong> Lead-Free Cast Bronze per ASTM B584 (Alloy C89833 / UNS C89833) with zero lead content exceeding ANSI/NSF 372.
           </p>
-          <p className="text-xs text-gray-600 leading-relaxed">
-            <strong>Care Instructions:</strong> Machine wash cold on gentle cycle with mild
-            detergent. Line dry or tumble dry low. Do NOT bleach or dry clean to preserve the
-            fabric&apos;s water-repellent coating.
+          <p className="text-xs text-[#3087ff] leading-relaxed font-bold">
+            <strong>Protective Finish:</strong> High-build electrostatic blue epoxy coating per AWWA C116 standards, holiday-free tested to resist acidic burial soils, ground moisture, and UV degradation.
           </p>
         </section>
 
         {/* ========================================================
-            10. VERIFIED CUSTOMER TESTIMONIALS
+            10. VERIFIED WATER AUTHORITY TESTIMONIALS
         ======================================================== */}
         <section className="mt-16 sm:mt-24">
           <div className="text-center max-w-2xl mx-auto mb-10">
-            <span className="text-xs font-black uppercase tracking-widest text-[#153e20]">
-              REAL FIELD REVIEWS
+            <span className="text-xs font-black uppercase tracking-widest bg-[#3087ff] text-white px-3 py-1 border border-[#3087ff]">
+              MUNICIPAL PROOF
             </span>
-            <h3 className="text-2xl sm:text-3xl font-extrabold text-gray-950 mt-1">
-              What Customers Are Saying
+            <h3 className="text-2xl sm:text-3xl font-black uppercase text-[#3087ff] mt-2">
+              Specified by Water Districts Across North America
             </h3>
           </div>
 
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-6 max-w-4xl mx-auto">
-            <div className="bg-white border border-gray-200 rounded-xl p-6 shadow-sm flex flex-col justify-between">
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-6 max-w-5xl mx-auto">
+            <div className="bg-white border-4 border-[#3087ff] p-6 shadow-md flex flex-col justify-between text-[#3087ff]">
               <div>
                 <div className="flex items-center gap-2 mb-3">
-                  <div className="flex text-[#f59e0b]">
+                  <div className="flex text-[#3087ff]">
                     {[...Array(5)].map((_, i) => (
-                      <Star key={i} className="w-4 h-4 fill-current" />
+                      <Star key={i} className="w-4 h-4 fill-current text-[#3087ff]" />
                     ))}
                   </div>
-                  <span className="text-[11px] font-bold text-[#153e20] bg-emerald-50 px-2 py-0.5 rounded flex items-center gap-1">
-                    <Check className="w-3 h-3" /> Verified Buyer
+                  <span className="text-[11px] font-black uppercase bg-[#3087ff] text-white px-2 py-0.5 border border-[#3087ff]">
+                    Verified Municipal Spec
                   </span>
                 </div>
-                <p className="text-sm text-gray-800 leading-relaxed italic mb-4">
-                  &ldquo;Wear this jacket for my morning walks and weekend errands in Colorado. It
-                  blocks the wind completely, handles light rain with ease, and is extremely
-                  comfortable while driving.&rdquo;
+                <p className="text-sm text-[#3087ff] leading-relaxed italic mb-4 font-medium">
+                  &ldquo;We retrofitted 45 sampling points with Aqua Industries Model 695 stations for our EPA Lead and Copper monitoring program. False positive bacteria tests dropped to zero immediately, saving our utility hundreds of testing hours.&rdquo;
                 </p>
               </div>
-              <p className="text-xs font-bold text-gray-900">
-                Mark T., Grand Junction, CO (Age 54)
+              <p className="text-xs font-black uppercase text-[#3087ff]">
+                James K., Water Quality Superintendent &bull; Nassau County Water Authority, NY
               </p>
             </div>
 
-            <div className="bg-white border border-gray-200 rounded-xl p-6 shadow-sm flex flex-col justify-between">
+            <div className="bg-white border-4 border-[#3087ff] p-6 shadow-md flex flex-col justify-between text-[#3087ff]">
               <div>
                 <div className="flex items-center gap-2 mb-3">
-                  <div className="flex text-[#f59e0b]">
+                  <div className="flex text-[#3087ff]">
                     {[...Array(5)].map((_, i) => (
-                      <Star key={i} className="w-4 h-4 fill-current" />
+                      <Star key={i} className="w-4 h-4 fill-current text-[#3087ff]" />
                     ))}
                   </div>
-                  <span className="text-[11px] font-bold text-[#153e20] bg-emerald-50 px-2 py-0.5 rounded flex items-center gap-1">
-                    <Check className="w-3 h-3" /> Verified Buyer
+                  <span className="text-[11px] font-black uppercase bg-[#3087ff] text-white px-2 py-0.5 border border-[#3087ff]">
+                    Verified Municipal Spec
                   </span>
                 </div>
-                <p className="text-sm text-gray-800 leading-relaxed italic mb-4">
-                  &ldquo;Finally a jacket that looks sharp, fits my shoulders properly without
-                  feeling tight, and keeps me warm on chilly mornings without feeling like a heavy
-                  winter coat.&rdquo;
+                <p className="text-sm text-[#3087ff] leading-relaxed italic mb-4 font-medium">
+                  &ldquo;The Model 696 freeze-proof stations survived -18°F winter conditions without a single frozen line. The heavy ductile iron shroud takes severe weed-whacker and snowplow strikes without a scratch.&rdquo;
                 </p>
               </div>
-              <p className="text-xs font-bold text-gray-900">
-                David R., Tyler, TX (Age 48)
+              <p className="text-xs font-black uppercase text-[#3087ff]">
+                Robert M., Senior Civil Utilities Engineer &bull; Travis County Municipal District, TX
               </p>
             </div>
           </div>
         </section>
 
         {/* ========================================================
-            11. COMMUNITY UGC PHOTO GALLERY
+            11. AUTHENTIC COMPANY INFRASTRUCTURE PRODUCT GALLERY
         ======================================================== */}
         <section className="mt-16 sm:mt-24">
           <div className="text-center mb-8">
-            <h3 className="text-xl sm:text-2xl font-black text-gray-950">Join Our Community</h3>
-            <p className="text-xs sm:text-sm text-gray-600 mt-1">
-              Tagged #TheArtisanWalk on everyday outdoor adventures
+            <span className="text-xs font-black uppercase tracking-widest bg-[#3087ff] text-white px-3 py-1 border border-[#3087ff]">
+              FOUNDRY LINEUP
+            </span>
+            <h3 className="text-xl sm:text-3xl font-black uppercase text-[#3087ff] mt-2">
+              Authentic Aqua Industries Infrastructure Line
+            </h3>
+            <p className="text-xs sm:text-sm text-[#3087ff] font-medium mt-1">
+              American foundry castings engineered for municipal waterworks, highway drainage, and pipeline utility networks
             </p>
           </div>
 
           <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-6 gap-3">
-            {PRODUCT_DATA.communityImages.map((imgUrl, idx) => (
+            {PRODUCT_DATA.jobsiteGallery.map((item, idx) => (
               <div
                 key={idx}
-                className="aspect-[3/4] rounded-lg overflow-hidden border border-gray-200 bg-gray-100 group relative"
+                className="border-2 border-[#3087ff] bg-white p-3 shadow-md flex flex-col justify-between hover:border-[#1d62c4] transition-all group"
               >
-                <img
-                  src={imgUrl}
-                  alt={`Community gallery ${idx + 1}`}
-                  className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110"
-                />
-                <div className="absolute inset-0 bg-black/40 opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center text-white">
-                  <Heart className="w-6 h-6 fill-white" />
+                <div className="aspect-square w-full flex items-center justify-center p-2 overflow-hidden mb-2">
+                  <img
+                    src={item.img}
+                    alt={item.title}
+                    className="max-h-full max-w-full object-contain filter drop-shadow-md group-hover:scale-105 transition-transform"
+                  />
+                </div>
+                <div>
+                  <span className="text-[9px] font-black uppercase bg-[#3087ff] text-white px-1.5 py-0.5 inline-block mb-1">
+                    {item.tag}
+                  </span>
+                  <p className="text-xs font-black text-[#3087ff] uppercase leading-tight line-clamp-1">
+                    {item.title}
+                  </p>
                 </div>
               </div>
             ))}
@@ -910,121 +1012,133 @@ export default function ArtisanWalkJacketPage() {
         </section>
 
         {/* ========================================================
-            12. HIGH-CONVERTING CLOSING CTA BANNER
+            12. HIGH-CONVERTING CLOSING BIDDING CTA BANNER
         ======================================================== */}
-        <section className="mt-16 sm:mt-24 bg-[#153e20] text-white rounded-2xl p-8 sm:p-14 text-center shadow-2xl relative overflow-hidden">
-          <div className="max-w-2xl mx-auto space-y-4">
-            <h3 className="text-2xl sm:text-4xl font-extrabold tracking-tight">
-              Upgrade Your Everyday Outerwear Today
+        <section className="mt-16 sm:mt-24 bg-[#3087ff] text-white p-8 sm:p-14 text-center shadow-2xl border-4 border-[#3087ff] relative overflow-hidden">
+          <div className="max-w-3xl mx-auto space-y-4">
+            <h3 className="text-2xl sm:text-4xl font-black uppercase tracking-tight">
+              Specify Aqua Industries for Your Municipal Water Utility Project
             </h3>
-            <p className="text-sm text-emerald-100 leading-relaxed">
-              Experience reliable weather protection, clean styling, and uncompromised comfort on
-              your next outing.
+            <p className="text-sm text-white/95 leading-relaxed font-medium">
+              Submit your project drawings, takeoff quantities, or bid specifications directly to our engineering team for guaranteed project pricing and submittal verification.
             </p>
 
-            <div className="pt-4">
+            <div className="pt-4 flex flex-col sm:flex-row items-center justify-center gap-3">
               <a
                 href="#buy-now"
-                className="inline-block px-8 py-4 bg-white text-[#153e20] font-black text-sm uppercase tracking-wider rounded-md hover:bg-gray-100 transition-all shadow-xl hover:scale-105"
+                className="w-full sm:w-auto px-8 py-4 bg-white text-[#3087ff] font-black text-sm uppercase tracking-wider hover:bg-gray-100 transition-all shadow-xl hover:scale-105 cursor-pointer border-2 border-white"
               >
-                Claim 30-Day Risk-Free Trial
+                Add to Municipal RFQ / Request Quote
               </a>
+              <button
+                type="button"
+                onClick={() => setShowSubmittalModal(true)}
+                className="w-full sm:w-auto px-8 py-4 bg-transparent text-white font-black text-sm uppercase tracking-wider hover:bg-white/10 transition-all border-2 border-white cursor-pointer"
+              >
+                Download Submittal Cut Sheet
+              </button>
             </div>
 
-            <p className="text-xs text-emerald-200/80 pt-3">
-              🛡️ 30-Day Money-Back Guarantee &bull; 🚚 Fast US Shipping &bull; 💳 256-Bit SSL Safe Checkout
+            <p className="text-xs text-white/80 pt-3 font-bold uppercase tracking-wider">
+              🛡️ 100% AIS Compliant &bull; 🚚 Melville &amp; Dallas Hub Stock &bull; 📋 Certified Foundry MTRs Included
             </p>
           </div>
         </section>
       </main>
 
       {/* ========================================================
-          13. FOOTER SECTION (Deep Forest Green #153e20)
+          13. AQUA INDUSTRIES FOOTER (#3087ff Blue with White Text)
       ======================================================== */}
-      <footer className="mt-20 bg-[#153e20] text-white border-t border-emerald-900/60 pt-16 pb-28 sm:pb-16">
+      <footer className="mt-20 bg-[#3087ff] text-white border-t-4 border-white pt-16 pb-28 sm:pb-16 shadow-2xl">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-5 gap-10 pb-12 border-b border-white/10">
-            {/* Column 1: Brand */}
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-5 gap-10 pb-12 border-b-2 border-white/20">
+            {/* Col 1: Waterworks Products */}
             <div>
-              <h4 className="text-sm font-extrabold uppercase tracking-wider mb-4 text-emerald-300">
-                OUR BRAND
+              <h4 className="text-xs font-black uppercase tracking-widest mb-4 bg-white text-[#3087ff] px-2 py-0.5 inline-block">
+                WATERWORKS PRODUCTS
               </h4>
-              <ul className="space-y-2.5 text-xs text-white/80">
-                <li><a href="#" className="hover:text-white transition-colors">About Us</a></li>
-                <li><a href="#" className="hover:text-white transition-colors">Sustainability</a></li>
-                <li><a href="#" className="hover:text-white transition-colors">Contact Us</a></li>
+              <ul className="space-y-2 text-xs font-bold text-white/90">
+                <li><a href="/" className="hover:underline">Sampling Stations</a></li>
+                <li><a href="/" className="hover:underline">Bison Curb Boxes</a></li>
+                <li><a href="/" className="hover:underline">Ductile Iron MJ Fittings</a></li>
+                <li><a href="/" className="hover:underline">Mechanical Joint Restraints</a></li>
+                <li><a href="/" className="hover:underline">Trench Grates &amp; Inlets</a></li>
               </ul>
             </div>
 
-            {/* Column 2: Legal */}
+            {/* Col 2: Engineering & Standards */}
             <div>
-              <h4 className="text-sm font-extrabold uppercase tracking-wider mb-4 text-emerald-300">
-                LEGAL
+              <h4 className="text-xs font-black uppercase tracking-widest mb-4 bg-white text-[#3087ff] px-2 py-0.5 inline-block">
+                STANDARDS &amp; COMPLIANCE
               </h4>
-              <ul className="space-y-2.5 text-xs text-white/80">
-                <li><a href="#" className="hover:text-white transition-colors">Privacy Policy</a></li>
-                <li><a href="#" className="hover:text-white transition-colors">Terms of Service</a></li>
-                <li><a href="#" className="hover:text-white transition-colors">Refund Policy</a></li>
+              <ul className="space-y-2 text-xs font-bold text-white/90">
+                <li><a href="/" className="hover:underline">ANSI/NSF 61 Potable Water</a></li>
+                <li><a href="/" className="hover:underline">American Iron and Steel (AIS)</a></li>
+                <li><a href="/" className="hover:underline">AWWA C153 / C111 / C110</a></li>
+                <li><a href="/" className="hover:underline">ASTM A536 Ductile Iron Specs</a></li>
+                <li><a href="/" className="hover:underline">AASHTO H-20 Proof Load Testing</a></li>
               </ul>
             </div>
 
-            {/* Column 3: Service */}
+            {/* Col 3: Logistics & Yards */}
             <div>
-              <h4 className="text-sm font-extrabold uppercase tracking-wider mb-4 text-emerald-300">
-                SERVICE
+              <h4 className="text-xs font-black uppercase tracking-widest mb-4 bg-white text-[#3087ff] px-2 py-0.5 inline-block">
+                DISTRIBUTION YARDS
               </h4>
-              <ul className="space-y-2.5 text-xs text-white/80">
-                <li><a href="#" className="hover:text-white transition-colors">Shipping Info</a></li>
-                <li><a href="#" className="hover:text-white transition-colors">Track Your Order</a></li>
-                <li><a href="#" className="hover:text-white transition-colors">FAQ</a></li>
+              <ul className="space-y-2 text-xs font-bold text-white/90">
+                <li><a href="/" className="hover:underline">Melville, NY Distribution Hub</a></li>
+                <li><a href="/" className="hover:underline">Dallas, TX Logistics Yard</a></li>
+                <li><a href="/" className="hover:underline">Chicago, IL Transit Center</a></li>
+                <li><a href="/" className="hover:underline">Atlanta, GA Regional Hub</a></li>
               </ul>
             </div>
 
-            {/* Column 4: Quick Links */}
+            {/* Col 4: Engineering Resources */}
             <div>
-              <h4 className="text-sm font-extrabold uppercase tracking-wider mb-4 text-emerald-300">
-                QUICK LINKS
+              <h4 className="text-xs font-black uppercase tracking-widest mb-4 bg-white text-[#3087ff] px-2 py-0.5 inline-block">
+                ENGINEERING TOOLS
               </h4>
-              <ul className="space-y-2.5 text-xs text-white/80">
-                <li><a href="#" className="hover:text-white transition-colors">Men&apos;s Best Sellers</a></li>
-                <li><a href="#" className="hover:text-white transition-colors">Jackets &amp; Coats</a></li>
-                <li><a href="#" className="hover:text-white transition-colors">Footwear Collection</a></li>
+              <ul className="space-y-2 text-xs font-bold text-white/90">
+                <li><a href="/" className="hover:underline">AutoCAD .DWG Library</a></li>
+                <li><a href="/" className="hover:underline">Submittal PDF Builder</a></li>
+                <li><a href="/" className="hover:underline">Thrust Restraint Calculator</a></li>
+                <li><a href="/" className="hover:underline">Certified MTR Request Portal</a></li>
               </ul>
             </div>
 
-            {/* Column 5: Newsletter */}
+            {/* Col 5: Rapid Quote & Contact */}
             <div>
-              <h4 className="text-sm font-extrabold uppercase tracking-wider mb-2 text-white">
-                Stay In Touch
+              <h4 className="text-xs font-black uppercase tracking-widest mb-2 bg-white text-[#3087ff] px-2 py-0.5 inline-block">
+                RAPID RFQ SUBMISSION
               </h4>
-              <p className="text-xs text-white/80 mb-3">
-                Subscribe today and get 10% off your first purchase
+              <p className="text-xs text-white/90 mb-3 font-medium">
+                Send plan sheets or pipe takeoffs for 2-hour bid turnaround
               </p>
-              <form onSubmit={(e) => { e.preventDefault(); alert("Thank you for subscribing!"); }} className="space-y-2">
+              <form onSubmit={(e) => { e.preventDefault(); alert("Takeoff request received! An Aqua Industries civil sales engineer will contact you shortly."); }} className="space-y-2">
                 <input
                   type="email"
-                  placeholder="Enter your email"
+                  placeholder="Enter municipal / contractor email"
                   required
-                  className="w-full px-3 py-2.5 bg-black/30 border border-white/20 rounded text-xs text-white placeholder-white/50 focus:outline-hidden focus:border-white"
+                  className="w-full px-3 py-2 bg-white text-[#3087ff] font-bold text-xs placeholder-[#3087ff]/60 border-2 border-white focus:outline-hidden"
                 />
                 <button
                   type="submit"
-                  className="w-full py-2.5 bg-white text-black font-extrabold uppercase tracking-wider text-xs rounded hover:bg-gray-100 transition-colors"
+                  className="w-full py-2 bg-white text-[#3087ff] font-black uppercase tracking-wider text-xs border-2 border-white hover:bg-[#3087ff] hover:text-white transition-colors cursor-pointer"
                 >
-                  Subscribe
+                  Request Project Takeoff
                 </button>
               </form>
             </div>
           </div>
 
-          <div className="pt-8 flex flex-col sm:flex-row items-center justify-between text-xs text-white/60 gap-4">
-            <p>&copy; {new Date().getFullYear()} TheArtisanWalk. All rights reserved.</p>
-            <div className="flex gap-4">
-              <span>Visa</span>
-              <span>Mastercard</span>
-              <span>Amex</span>
-              <span>PayPal</span>
-              <span>Apple Pay</span>
+          <div className="pt-8 flex flex-col sm:flex-row items-center justify-between text-xs text-white font-bold gap-4">
+            <p>&copy; {new Date().getFullYear()} Aqua Industries Waterworks Inc. All rights reserved. Registered Domestic Foundry Tooling.</p>
+            <div className="flex gap-4 uppercase tracking-wider text-[11px]">
+              <span>AWWA Member</span>
+              <span>&bull;</span>
+              <span>NRWA Partner</span>
+              <span>&bull;</span>
+              <span>Melville, NY Melt Deck</span>
             </div>
           </div>
         </div>
@@ -1033,19 +1147,19 @@ export default function ArtisanWalkJacketPage() {
       {/* ========================================================
           14. PERSISTENT MOBILE STICKY BOTTOM ACTION BAR
       ======================================================== */}
-      <div className="lg:hidden fixed bottom-0 inset-x-0 bg-white border-t border-gray-200 p-3 shadow-2xl z-40 flex items-center justify-between gap-3">
+      <div className="lg:hidden fixed bottom-0 inset-x-0 bg-white border-t-4 border-[#3087ff] p-3 shadow-2xl z-40 flex items-center justify-between gap-3 text-[#3087ff]">
         <div className="flex items-center gap-2 min-w-0">
           <img
-            src={currentImages[0]}
+            src={currentGallery[0]}
             alt="Thumbnail"
-            className="w-10 h-10 rounded object-cover border border-gray-200 shrink-0"
+            className="w-10 h-10 object-contain border-2 border-[#3087ff] p-0.5 shrink-0 bg-white"
           />
           <div className="min-w-0">
-            <p className="text-xs font-bold text-gray-950 truncate">
-              ${PRODUCT_DATA.salePrice.toFixed(2)}
+            <p className="text-xs font-black text-[#3087ff] truncate">
+              ${PRODUCT_DATA.salePrice.toFixed(0)} USD
             </p>
-            <p className="text-[10px] text-gray-500 truncate">
-              {selectedSize} &bull; {selectedColor.name.split(" ")[0]}
+            <p className="text-[10px] text-[#3087ff]/80 truncate font-bold">
+              {selectedBury.label} &bull; {selectedModel.name.split("–")[0]}
             </p>
           </div>
         </div>
@@ -1053,68 +1167,76 @@ export default function ArtisanWalkJacketPage() {
         <div className="flex items-center gap-2 shrink-0">
           <button
             type="button"
-            onClick={handleAddToCart}
-            className="h-10 px-3 bg-white border border-black text-black text-xs font-bold uppercase rounded"
+            onClick={handleAddToRfq}
+            className="h-10 px-3 bg-white border-2 border-[#3087ff] text-[#3087ff] text-xs font-black uppercase"
           >
-            Add
+            + RFQ
           </button>
           <a
             href="#buy-now"
-            className="h-10 px-4 bg-black text-white text-xs font-bold uppercase rounded flex items-center justify-center"
+            className="h-10 px-4 bg-[#3087ff] text-white text-xs font-black uppercase flex items-center justify-center border-2 border-[#3087ff]"
           >
-            Buy Now
+            Order / Bid
           </a>
         </div>
       </div>
 
       {/* ========================================================
-          15. SIZE GUIDE MODAL (Optional popup)
+          15. ENGINEERING SUBMITTAL & CAD MODAL
       ======================================================== */}
-      {showSizeModal && (
-        <div className="fixed inset-0 bg-black/60 z-50 flex items-center justify-center p-4 backdrop-blur-xs">
-          <div className="bg-white rounded-xl max-w-lg w-full p-6 shadow-2xl space-y-4 max-h-[90vh] overflow-y-auto">
-            <div className="flex items-center justify-between border-b pb-3">
-              <h3 className="font-extrabold text-lg text-gray-950">Men&apos;s Sizing Guide</h3>
+      {showSubmittalModal && (
+        <div className="fixed inset-0 bg-black/70 z-50 flex items-center justify-center p-4 backdrop-blur-xs">
+          <div className="bg-white border-4 border-[#3087ff] max-w-lg w-full p-6 shadow-2xl space-y-4 max-h-[90vh] overflow-y-auto text-[#3087ff]">
+            <div className="flex items-center justify-between border-b-2 border-[#3087ff] pb-3">
+              <div>
+                <h3 className="font-black text-lg text-[#3087ff] uppercase">
+                  Submittal Specification &amp; CAD Package
+                </h3>
+                <p className="text-xs font-bold text-[#3087ff]/80">
+                  {selectedModel.name}
+                </p>
+              </div>
               <button
                 type="button"
-                onClick={() => setShowSizeModal(false)}
-                className="w-8 h-8 rounded-full bg-gray-100 flex items-center justify-center hover:bg-gray-200 cursor-pointer"
+                onClick={() => setShowSubmittalModal(false)}
+                className="w-8 h-8 bg-[#3087ff] text-white flex items-center justify-center font-bold text-xs cursor-pointer hover:bg-[#1d62c4]"
               >
                 ✕
               </button>
             </div>
 
-            <p className="text-xs text-gray-600">
-              {PRODUCT_DATA.sizeTable[0].chest} - {PRODUCT_DATA.sizeTable[PRODUCT_DATA.sizeTable.length - 1].chest} chest coverage.
+            <p className="text-xs text-[#3087ff] font-medium leading-relaxed">
+              Certified engineering cut sheets ready for project engineer submittals. Includes certified dimension schematics, ASTM A536 chemical analysis, and NSF 61 potable compliance certificates.
             </p>
 
-            <table className="w-full text-xs text-left border-collapse">
-              <thead>
-                <tr className="bg-gray-100 font-bold">
-                  <th className="p-2">Size</th>
-                  <th className="p-2">Chest</th>
-                  <th className="p-2">Length</th>
-                  <th className="p-2">Sleeve</th>
-                </tr>
-              </thead>
-              <tbody className="divide-y divide-gray-200">
-                {PRODUCT_DATA.sizeTable.map((r) => (
-                  <tr key={r.size} className={r.size === selectedSize ? "bg-emerald-50 font-bold" : ""}>
-                    <td className="p-2">{r.size}</td>
-                    <td className="p-2">{r.chest}</td>
-                    <td className="p-2">{r.length}</td>
-                    <td className="p-2">{r.sleeve}</td>
-                  </tr>
-                ))}
-              </tbody>
-            </table>
+            <div className="space-y-2">
+              <a
+                href="/files/SUBMITTAL_AQUA_WSS_SERIES.PDF"
+                download
+                onClick={(e) => { e.preventDefault(); alert("Submittal PDF Generated: Aqua Industries WSS Series Specification Sheet."); }}
+                className="w-full py-3 bg-[#3087ff] text-white font-black text-xs uppercase tracking-wider flex items-center justify-center gap-2 border border-[#3087ff] hover:bg-[#1d62c4] transition-all cursor-pointer"
+              >
+                <Download className="w-4 h-4" />
+                <span>Download Engineering Submittal PDF</span>
+              </a>
+
+              <a
+                href="/files/AQUA_WSS_CAD.DWG"
+                download
+                onClick={(e) => { e.preventDefault(); alert("AutoCAD Vector File Generated: AQUA_WSS_695.DWG"); }}
+                className="w-full py-3 bg-white text-[#3087ff] font-black text-xs uppercase tracking-wider flex items-center justify-center gap-2 border-2 border-[#3087ff] hover:bg-[#3087ff] hover:text-white transition-all cursor-pointer"
+              >
+                <FileCheck2 className="w-4 h-4" />
+                <span>Download AutoCAD Vector (.DWG)</span>
+              </a>
+            </div>
 
             <button
               type="button"
-              onClick={() => setShowSizeModal(false)}
-              className="w-full py-2.5 bg-black text-white text-xs font-bold uppercase rounded"
+              onClick={() => setShowSubmittalModal(false)}
+              className="w-full py-2.5 bg-gray-100 text-[#3087ff] text-xs font-black uppercase hover:bg-gray-200 transition-colors cursor-pointer"
             >
-              Close Guide
+              Close Window
             </button>
           </div>
         </div>
