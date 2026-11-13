@@ -40,7 +40,7 @@ const VIDEO_SHOWCASES: VideoShowcaseCard[] = [
     sublabel: "Non-Contaminating Direct Mainline Sampling",
     standard: "ANSI/NSF 61 & 372 Certified",
     duration: "0:45",
-    videoUrl: "https://soleno.com/wp-content/uploads/2024/12/bkg_water111.mp4",
+    videoUrl: "/videos/umbrellas/sampling_station.mp4",
     posterUrl: "/images/our-images/sampling-station.png",
     summary:
       "See how the dedicated lead-free brass waterway bypasses private plumbing to deliver true EPA Lead & Copper Rule water samples with a -20°F freeze-proof core.",
@@ -62,14 +62,14 @@ const VIDEO_SHOWCASES: VideoShowcaseCard[] = [
   {
     id: "video-3",
     badge: "MECHANICAL RESTRAINT",
-    title: "Valves",
-    sublabel: "Concrete-Free Radial Cam Wedge Leverage",
-    standard: "UL Listed & FM Approved",
+    title: "Valves & Restraints",
+    sublabel: "Precision 360° Rotatable Swivel Follower Gland",
+    standard: "AWWA C111 • ASTM A536",
     duration: "1:05",
-    videoUrl: "https://soleno.com/wp-content/uploads/2024/12/bkg_water111.mp4",
-    posterUrl: "/images/products/Joint-Restraints.jpg",
+    videoUrl: "/videos/umbrellas/valves.mp4",
+    posterUrl: "/images/fittings/swivel-glands.png",
     summary:
-      "Observe ductile iron cam wedges automatically bite deeper into the pipe wall under hydraulic surge pressures up to 500 PSI, eliminating thrust blocks.",
+      "Observe ductile iron swivel follower glands rotate 360 degrees for plumb valve and hydrant alignment while maintaining full 350 PSI pressure seal integrity.",
     product: PRODUCTS_CATALOG[2],
   },
   {
@@ -79,7 +79,7 @@ const VIDEO_SHOWCASES: VideoShowcaseCard[] = [
     sublabel: "Electric Furnace Pouring & Spectrometry",
     standard: "ASTM A536 Grade 65-45-12",
     duration: "1:12",
-    videoUrl: "https://soleno.com/wp-content/uploads/2024/12/bkg_water111.mp4",
+    videoUrl: "/videos/umbrellas/mj_fitting.mp4",
     posterUrl: "/images/our-images/MJ_Fittings.jpeg",
     summary:
       "Tour the Melville, NY electric induction melt deck. Witness physical pull bar tensile testing and permanent traceable heat numbers cast onto every fitting.",
