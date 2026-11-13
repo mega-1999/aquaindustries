@@ -61,12 +61,14 @@ const PRODUCT_DATA = {
       name: "Model 695 – Standard Municipal Utility Base",
       specTag: "300 PSI Working • All-Climate Ductile Housing",
       colorHex: "#3087ff",
-      image: "/images/our-images/Sampling Station H20.695.png",
+      image: "/images/SAMPLING-STATION/Sampling Station H20.695.png",
       gallery: [
-        "/images/our-images/Sampling Station H20.695.png",
-        "/images/our-images/sampling-station.png",
-        "/images/SAMPLING-STATION/Sampling station with base.png",
-        "/images/SAMPLING-STATION/Sampling Station red Color.png",
+        "/images/SAMPLING-STATION/Sampling Station H20.695.png",
+        "/images/SAMPLING-STATION/Sampling Station H20.701.png",
+        "/images/SAMPLING-STATION/Sampling Station H20.702.png",
+        "/images/SAMPLING-STATION/88 cut station.7.png",
+        "/images/SAMPLING-STATION/WhatsApp Image 2026-05-07 at 10.19.08 AM.jpeg",
+        "/images/SAMPLING-STATION/WhatsApp Image 2026-05-07 at 5.10.46 AM.jpeg",
       ],
       description:
         "Standard municipal water testing station with unthreaded NSF 61 certified lead-free brass sampling nozzle, padlock-ready protective hood, and 1\" subterranean watermain connection.",
@@ -76,11 +78,13 @@ const PRODUCT_DATA = {
       name: "Model 696 – Heated & Insulated -20°F Frost Shield",
       specTag: "-20°F Thermal Core • Cold Climate Shield",
       colorHex: "#1d62c4",
-      image: "/images/our-images/Sampling Station H20.696.png",
+      image: "/images/SAMPLING-STATION/Sampling Station H20.696.png",
       gallery: [
-        "/images/our-images/Sampling Station H20.696.png",
-        "/images/our-images/Sampling Station H20.695.png",
-        "/images/SAMPLING-STATION/Sampling station with base.png",
+        "/images/SAMPLING-STATION/Sampling Station H20.696.png",
+        "/images/SAMPLING-STATION/Sampling Station H20.703.png",
+        "/images/SAMPLING-STATION/Sampling Station H20.704.png",
+        "/images/SAMPLING-STATION/88 cut station.8.png",
+        "/images/SAMPLING-STATION/WhatsApp Image 2026-05-07 at 10.19.09 AM.jpeg",
       ],
       description:
         "Cold-climate freeze-proof sampling station engineered with R-14 polyurethane thermal insulation retaining geothermal ground heat without requiring external electrical tracing.",
@@ -90,11 +94,12 @@ const PRODUCT_DATA = {
       name: "Model 697 – Subterranean High-Deflection Mainline Feed",
       specTag: "High-Deflection Mechanical Joint Tap",
       colorHex: "#4f98ff",
-      image: "/images/our-images/Sampling Station H20.697.png",
+      image: "/images/SAMPLING-STATION/Sampling Station H20.697.png",
       gallery: [
-        "/images/our-images/Sampling Station H20.697.png",
-        "/images/our-images/Sampling Station H20.698.png",
-        "/images/our-images/sampling-station.png",
+        "/images/SAMPLING-STATION/Sampling Station H20.697.png",
+        "/images/SAMPLING-STATION/Sampling Station H20.698.png",
+        "/images/SAMPLING-STATION/Sampling Station H20.701.png",
+        "/images/SAMPLING-STATION/WhatsApp Image 2026-05-07 at 5.51.19 AM.jpeg",
       ],
       description:
         "Equipped with an integrated mechanical joint flexible elbow at the subterranean inlet, eliminating pipe stress from ground shifting and seismic settlement.",
@@ -104,28 +109,80 @@ const PRODUCT_DATA = {
       name: "Model 698 – Dual-Port High-Volume Sampling Header",
       specTag: "Dual Sampling Ports • Emergency Flushing",
       colorHex: "#0e4eb8",
-      image: "/images/our-images/Sampling Station H20.698.png",
+      image: "/images/SAMPLING-STATION/Sampling Station H20.698.png",
       gallery: [
-        "/images/our-images/Sampling Station H20.698.png",
-        "/images/our-images/Sampling Station H20.695.png",
-        "/images/SAMPLING-STATION/Sampling Station red Color.png",
+        "/images/SAMPLING-STATION/Sampling Station H20.698.png",
+        "/images/SAMPLING-STATION/Sampling Station H20.695.png",
+        "/images/SAMPLING-STATION/88 cut station.7.png",
+        "/images/SAMPLING-STATION/WhatsApp Image 2026-05-07 at 10.19.10 AM.jpeg",
       ],
       description:
         "High-capacity dual-outlet testing head allowing simultaneous coliform microbiological sampling and high-velocity line flushing without disconnecting sampling apparatus.",
     },
     {
-      id: "model-red",
-      name: "Model 695-RED – Safety High-Visibility Municipal Enclosure",
-      specTag: "Safety Red Epoxy • High-Traffic Right-of-Way",
-      colorHex: "#d9381e",
-      image: "/images/SAMPLING-STATION/Sampling Station red Color.png",
+      id: "model-717",
+      name: "Model 717 – Integrated Catch Basin Sampling Station",
+      specTag: "Self-Draining Catch Basin • Potable Sump",
+      colorHex: "#2563eb",
+      image: "/images/SAMPLING-STATION/Sampling Station with basin H20.717.png",
       gallery: [
-        "/images/SAMPLING-STATION/Sampling Station red Color.png",
-        "/images/our-images/sampling-station.png",
-        "/images/our-images/Sampling Station H20.695.png",
+        "/images/SAMPLING-STATION/Sampling Station with basin H20.717.png",
+        "/images/SAMPLING-STATION/Sampling Station with basin H20.718.png",
+        "/images/SAMPLING-STATION/Sampling Station with basin H20.719.png",
+        "/images/SAMPLING-STATION/Sampling Station with basin H20.720.png",
+        "/images/SAMPLING-STATION/WhatsApp Image 2026-05-07 at 10.19.08 AM.jpeg",
+      ],
+      description:
+        "Engineered with a heavy ductile iron self-draining catch basin collecting purge runoff water and redirecting it safely below frost grade, eliminating icy winter sidewalks.",
+    },
+    {
+      id: "model-737",
+      name: "Model 737 – Industrial Black Coated Basin Station",
+      specTag: "Heavy Coal Tar Epoxy • Industrial Sump",
+      colorHex: "#1f2937",
+      image: "/images/SAMPLING-STATION/Sampling station with basin H20 black color .737.png",
+      gallery: [
+        "/images/SAMPLING-STATION/Sampling station with basin H20 black color .737.png",
+        "/images/SAMPLING-STATION/Sampling station with basin H20 black color .738.png",
+        "/images/SAMPLING-STATION/Sampling station with basin H20 black color .739.png",
+        "/images/SAMPLING-STATION/Sampling station with basin H20 black color .740.png",
+      ],
+      description:
+        "Industrial water sampling station finished in chemical-resistant black asphaltic coating with integral catchment sump, ideal for petrochemical plants and wastewater utility headers.",
+    },
+    {
+      id: "model-725-red",
+      name: "Model 725-RED – Safety High-Visibility Municipal Enclosure",
+      specTag: "Safety Red Epoxy • High-Traffic Right-of-Way",
+      colorHex: "#dc2626",
+      image: "/images/SAMPLING-STATION/Sampling Station red Color  H20.725.png",
+      gallery: [
+        "/images/SAMPLING-STATION/Sampling Station red Color  H20.725.png",
+        "/images/SAMPLING-STATION/Sampling Station red Color  H20.726.png",
+        "/images/SAMPLING-STATION/Sampling Station red Color  H20.728.png",
+        "/images/SAMPLING-STATION/Sampling Station red Color  H20.730.png",
+        "/images/SAMPLING-STATION/RED station.14.png",
+        "/images/SAMPLING-STATION/RED station.15.png",
+        "/images/SAMPLING-STATION/RED station.7.png",
       ],
       description:
         "High-visibility UV-resistant safety red thermal powder coat, designated for rapid identification in DOT highway rights-of-way, airport aprons, and industrial parks.",
+    },
+    {
+      id: "model-88-cut",
+      name: "Model 88-CUT – Internal Cutaway Engineering Specimen",
+      specTag: "Sectional Cutaway • Inspection & Submittals",
+      colorHex: "#3087ff",
+      image: "/images/SAMPLING-STATION/88 cut station.7.png",
+      gallery: [
+        "/images/SAMPLING-STATION/88 cut station.7.png",
+        "/images/SAMPLING-STATION/88 cut station.8.png",
+        "/images/SAMPLING-STATION/Sampling Station H20.695.png",
+        "/images/SAMPLING-STATION/Sampling Station with basin H20.717.png",
+        "/images/SAMPLING-STATION/WhatsApp Image 2026-05-07 at 5.10.45 AM.jpeg",
+      ],
+      description:
+        "Internal sectional cutaway exposing the NSF 61 lead-free brass smooth-bore waterway, R-14 thermal chamber, and automated subterranean weep drain valve for engineering submittal reviews.",
     },
   ],
   buryDepths: [
@@ -145,12 +202,12 @@ const PRODUCT_DATA = {
     { bury: '8.0 FT (96")', inlet: '1" NPT (or MJ)', pressure: "300 PSI Working", flowRate: "35 GPM", weight: "202 LBS", standard: "NSF 61 / ASTM A536" },
   ],
   jobsiteGallery: [
-    { img: "/images/our-images/Sampling Station H20.695.png", title: "Water Sampling Station", tag: "EPA Potable Main" },
-    { img: "/images/our-images/curb-box-ultimate.png", title: "Bison H-20 Curb Box", tag: "Heavy Highway Proof" },
-    { img: "/images/our-images/MJ_Fittings.jpeg", title: "Compact Ductile MJ Fittings", tag: "AWWA C153 350 PSI" },
-    { img: "/images/our-images/trench-grates.png", title: "Chevron Trench Grates", tag: "AASHTO High-Inflow" },
-    { img: "/images/our-images/curb_inlet_riser_heavy_iron.png", title: "Curb Inlet Extension Riser", tag: "DOT Resurfacing" },
-    { img: "/images/our-images/cleanout.png", title: "Modular Cleanout Box", tag: "PR Foundry Tooling" },
+    { img: "/images/SAMPLING-STATION/Sampling Station H20.695.png", title: "Model 695 Standard", tag: "EPA Potable Main" },
+    { img: "/images/SAMPLING-STATION/Sampling Station with basin H20.717.png", title: "Model 717 Catch Basin", tag: "Integrated Sump" },
+    { img: "/images/SAMPLING-STATION/Sampling station with basin H20 black color .737.png", title: "Model 737 Black Coated", tag: "Industrial Spec" },
+    { img: "/images/SAMPLING-STATION/Sampling Station red Color  H20.725.png", title: "Model 725-RED Safety", tag: "DOT Right-of-Way" },
+    { img: "/images/SAMPLING-STATION/88 cut station.7.png", title: "Model 88-CUT Sectional", tag: "Brass Core Cutaway" },
+    { img: "/images/SAMPLING-STATION/WhatsApp Image 2026-05-07 at 10.19.08 AM.jpeg", title: "Municipal Jobsite Direct", tag: "Field Installation" },
   ],
 };
 
@@ -215,7 +272,7 @@ export default function AquaSamplingStationProductPage() {
       {/* ========================================================
           3. MAIN PRODUCT SHOWCASE (Above The Fold Workbench)
       ======================================================== */}
-      <main className="w-full px-4 sm:px-6 lg:px-8 xl:px-12 py-8 sm:py-12">
+      <main className="w-full px-4 sm:px-6 lg:px-8 py-6 sm:py-10">
         {/* Breadcrumb Path */}
         <nav aria-label="Breadcrumb" className="w-full text-xs text-[#3087ff] font-bold mb-6 flex items-center gap-2">
           <a href="/" className="hover:underline">Home</a>
@@ -227,35 +284,13 @@ export default function AquaSamplingStationProductPage() {
           </span>
         </nav>
 
-        <div className="w-full grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-12 xl:gap-16 items-start">
+        <div className="w-full grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-10 xl:gap-12 items-start">
           {/* ========================================================
-              LEFT COLUMN: PRODUCT GALLERY (7 Cols)
+              LEFT COLUMN: PRODUCT GALLERY (7 Cols) - HORIZONTAL ALIGNMENT (NO LEFT BLANK SPACE)
           ======================================================== */}
-          <div className="lg:col-span-7 flex flex-col-reverse md:flex-row gap-4">
-            {/* Thumbnail rail (Left) */}
-            <div className="flex md:flex-col gap-3 overflow-x-auto md:overflow-y-auto max-h-[600px] pb-2 md:pb-0 scrollbar-none shrink-0">
-              {currentGallery.map((imgUrl, idx) => (
-                <button
-                  key={idx}
-                  type="button"
-                  onClick={() => setSelectedImageIndex(idx)}
-                  className={`relative w-18 h-24 sm:w-22 sm:h-28 overflow-hidden border-2 cursor-pointer transition-all shrink-0 bg-white p-1 flex items-center justify-center ${
-                    selectedImageIndex === idx
-                      ? "border-[#3087ff] ring-4 ring-[#3087ff]/20 shadow-md"
-                      : "border-gray-300 hover:border-[#3087ff] opacity-80 hover:opacity-100"
-                  }`}
-                >
-                  <img
-                    src={imgUrl}
-                    alt={`Product angle ${idx + 1}`}
-                    className="w-full h-full object-contain filter drop-shadow-sm"
-                  />
-                </button>
-              ))}
-            </div>
-
-            {/* Main Stage Image Display */}
-            <div className="relative flex-1 bg-white rounded-none overflow-hidden border-4 border-[#3087ff] shadow-2xl p-6 sm:p-10 flex flex-col items-center justify-center group min-h-[460px] sm:min-h-[540px]">
+          <div className="lg:col-span-7 flex flex-col gap-4 w-full">
+            {/* Main Stage Image Display (Flush to Left Edge) */}
+            <div className="relative w-full bg-white rounded-none overflow-hidden border-4 border-[#3087ff] shadow-2xl p-6 sm:p-10 flex flex-col items-center justify-center group min-h-[460px] sm:min-h-[540px]">
               {/* Top-left certification badge */}
               <div className="absolute top-4 left-4 z-10 bg-[#3087ff] text-white text-xs font-black px-3 py-1 shadow-md uppercase tracking-wider border border-[#3087ff]">
                 ANSI/NSF 61 CERTIFIED
@@ -267,10 +302,10 @@ export default function AquaSamplingStationProductPage() {
                 <span>LEAD-FREE NSF 372</span>
               </div>
 
-              <div className="w-full h-[340px] sm:h-[420px] flex items-center justify-center select-none">
+              <div className="w-full h-[360px] sm:h-[440px] flex items-center justify-center select-none">
                 <img
                   src={currentGallery[selectedImageIndex] || currentGallery[0]}
-                  alt={PRODUCT_DATA.title}
+                  alt={selectedModel.name}
                   className="max-h-full max-w-full object-contain filter drop-shadow-2xl transition-transform duration-500 group-hover:scale-105"
                 />
               </div>
@@ -314,6 +349,28 @@ export default function AquaSamplingStationProductPage() {
                   </button>
                 </>
               )}
+            </div>
+
+            {/* Horizontal Thumbnail Strip (Below the Main Image - 100% Horizontal Alignment) */}
+            <div className="w-full flex items-center gap-3 overflow-x-auto pb-2 pt-1 scrollbar-thin">
+              {currentGallery.map((imgUrl, idx) => (
+                <button
+                  key={idx}
+                  type="button"
+                  onClick={() => setSelectedImageIndex(idx)}
+                  className={`relative w-20 h-24 sm:w-24 sm:h-28 overflow-hidden border-2 cursor-pointer transition-all shrink-0 bg-white p-1 flex items-center justify-center ${
+                    selectedImageIndex === idx
+                      ? "border-[#3087ff] ring-4 ring-[#3087ff]/20 shadow-md scale-105"
+                      : "border-gray-300 hover:border-[#3087ff] opacity-80 hover:opacity-100"
+                  }`}
+                >
+                  <img
+                    src={imgUrl}
+                    alt={`Product angle ${idx + 1}`}
+                    className="w-full h-full object-contain filter drop-shadow-sm"
+                  />
+                </button>
+              ))}
             </div>
           </div>
 
@@ -663,8 +720,8 @@ export default function AquaSamplingStationProductPage() {
             </div>
             <div className="lg:col-span-6 border-4 border-[#3087ff] p-6 sm:p-10 shadow-xl bg-white flex items-center justify-center">
               <img
-                src="/images/our-images/sampling-station.png"
-                alt="Sanitary Potable Waterway"
+                src="/images/SAMPLING-STATION/88 cut station.7.png"
+                alt="Sanitary Potable Waterway Cutaway"
                 className="max-h-[420px] object-contain filter drop-shadow-xl"
               />
             </div>
@@ -674,8 +731,8 @@ export default function AquaSamplingStationProductPage() {
           <div className="w-full grid grid-cols-1 lg:grid-cols-12 gap-8 xl:gap-12 items-center lg:flex-row-reverse">
             <div className="lg:col-span-6 border-4 border-[#3087ff] p-6 sm:p-10 shadow-xl bg-white flex items-center justify-center lg:order-2">
               <img
-                src="/images/SAMPLING-STATION/Sampling station with base.png"
-                alt="Thermal Frost Core Enclosure"
+                src="/images/SAMPLING-STATION/Sampling Station with basin H20.717.png"
+                alt="Thermal Frost Core Enclosure with Basin"
                 className="max-h-[420px] object-contain filter drop-shadow-xl"
               />
             </div>
@@ -738,7 +795,7 @@ export default function AquaSamplingStationProductPage() {
             </div>
             <div className="lg:col-span-6 border-4 border-[#3087ff] p-6 sm:p-10 shadow-xl bg-white flex items-center justify-center">
               <img
-                src="/images/our-images/Sampling Station H20.696.png"
+                src="/images/SAMPLING-STATION/Sampling Station H20.696.png"
                 alt="Ductile Iron Protective Housing"
                 className="max-h-[420px] object-contain filter drop-shadow-xl"
               />
