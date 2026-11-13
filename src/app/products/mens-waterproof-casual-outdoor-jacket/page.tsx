@@ -26,6 +26,15 @@ import {
   Gauge,
   Award,
 } from "lucide-react";
+import { GlobalUtilityTicker } from "../../../components/navigation/GlobalUtilityTicker";
+import { MainNavbar } from "../../../components/navigation/MainNavbar";
+import { IndustrialFooter } from "../../../components/footer/IndustrialFooter";
+import { ClientPortalModal } from "../../../components/modals/ClientPortalModal";
+import { AccountRegistrationModal } from "../../../components/modals/AccountRegistrationModal";
+import { YardSelectorModal } from "../../../components/modals/YardSelectorModal";
+import { SuperAdminApprovalModal } from "../../../components/modals/SuperAdminApprovalModal";
+import { DISTRIBUTION_YARDS } from "../../../data/waterworks-data";
+import type { YardLocation } from "../../../types";
 
 // Aqua Industries Flagship Product Data & Authentic Photography
 const PRODUCT_DATA = {
@@ -153,21 +162,13 @@ export default function AquaSamplingStationProductPage() {
   const [showSubmittalModal, setShowSubmittalModal] = useState(false);
   const [rfqCount, setRfqCount] = useState(0);
   const [addedToast, setAddedToast] = useState(false);
-  const [announcementIdx, setAnnouncementIdx] = useState(0);
 
-  const announcements = [
-    "100% AIS & Buy America Compliant • Domestic Foundry Tooling",
-    "Melville, NY & Dallas Logistics Yards • Immediate Dispatch on Stocked Orders",
-    "Certified Mill Test Reports (MTRs) and Traceable Heat Numbers with Every Shipment",
-    "EPA Lead & Copper Rule Revision (LCRR) Approved Sampling Stations",
-  ];
-
-  useEffect(() => {
-    const timer = setInterval(() => {
-      setAnnouncementIdx((prev) => (prev + 1) % announcements.length);
-    }, 4500);
-    return () => clearInterval(timer);
-  }, [announcements.length]);
+  // Modal states for existing MainNavbar & IndustrialFooter
+  const [loginModalOpen, setLoginModalOpen] = useState(false);
+  const [registerModalOpen, setRegisterModalOpen] = useState(false);
+  const [superAdminModalOpen, setSuperAdminModalOpen] = useState(false);
+  const [yardModalOpen, setYardModalOpen] = useState(false);
+  const [selectedYard, setSelectedYard] = useState<YardLocation>(DISTRIBUTION_YARDS[0]);
 
   const handleModelChange = (model: typeof PRODUCT_DATA.models[0]) => {
     setSelectedModel(model);
@@ -184,109 +185,19 @@ export default function AquaSamplingStationProductPage() {
 
   return (
     <div className="min-h-screen bg-white text-[#3087ff] font-sans antialiased selection:bg-[#3087ff] selection:text-white">
-      {/* ========================================================
-          1. TOP UTILITY ANNOUNCEMENT BAR (#3087ff Blue)
-      ======================================================== */}
-      <aside aria-label="Utility announcement" className="w-full bg-[#3087ff] text-white text-xs py-2.5 px-4 sm:px-6 lg:px-8 xl:px-12 sticky top-0 z-50 border-b border-white/20 shadow-sm">
-        <div className="w-full flex items-center justify-between">
-          <div className="hidden lg:flex items-center gap-4 text-white text-[11px] font-bold">
-            <span className="flex items-center gap-1.5">
-              <Award className="w-3.5 h-3.5 text-white" />
-              FOUNDRY CERTIFIED ASTM A536
-            </span>
-            <span>&bull;</span>
-            <span className="flex items-center gap-1.5">
-              <ShieldCheck className="w-3.5 h-3.5 text-white" />
-              ANSI/NSF 61 POTABLE COMPLIANT
-            </span>
-          </div>
+      {/* Top Utility Ribbon */}
+      <GlobalUtilityTicker
+        onOpenYardModal={() => setYardModalOpen(true)}
+        selectedYardCity={`${selectedYard.city}, ${selectedYard.state}`}
+      />
 
-          <div className="flex-1 flex items-center justify-center text-center font-black tracking-wide text-white text-xs px-2">
-            <span>{announcements[announcementIdx]}</span>
-          </div>
-
-          <div className="hidden lg:flex items-center gap-3 text-white text-xs font-black">
-            <a href="tel:18005552782" className="flex items-center gap-1 hover:underline">
-              <PhoneCall className="w-3.5 h-3.5" />
-              <span>(800) 555-AQUA</span>
-            </a>
-            <span>&bull;</span>
-            <span className="bg-white text-[#3087ff] px-2 py-0.5 font-mono text-[10px] font-black border border-white">
-              AIS READY
-            </span>
-          </div>
-        </div>
-      </aside>
-
-      {/* ========================================================
-          2. AQUA INDUSTRIES MAIN NAVBAR (#ffffff White with #3087ff Border)
-      ======================================================== */}
-      <header className="w-full border-b-4 border-[#3087ff] bg-white sticky top-[37px] z-40 transition-shadow shadow-md">
-        <div className="w-full px-4 sm:px-6 lg:px-8 xl:px-12 h-20 sm:h-22 flex items-center justify-between">
-          {/* Brand Logo & Waterworks Title */}
-          <div className="flex items-center gap-3">
-            <a href="/" className="flex items-center gap-3 group">
-              <img
-                src="/images/AI_Fevicon.png"
-                alt="Aqua Industries Waterdrop"
-                className="w-10 h-10 sm:w-11 sm:h-11 object-contain filter drop-shadow-md transition-transform group-hover:scale-105"
-              />
-              <div className="flex flex-col">
-                <span className="text-xl sm:text-2xl font-black tracking-tight text-[#3087ff] uppercase leading-none font-serif">
-                  AQUA INDUSTRIES
-                </span>
-                <span className="text-[10px] sm:text-[11px] font-bold text-[#3087ff] tracking-widest uppercase mt-1">
-                  Waterworks Castings &bull; Domestic Foundry Tooling
-                </span>
-              </div>
-            </a>
-          </div>
-
-          {/* Navigation Links */}
-          <nav className="hidden xl:flex items-center gap-8 text-xs font-black text-[#3087ff] tracking-wider uppercase">
-            <a href="/" className="hover:underline transition-all">Overview</a>
-            <a href="/#engineering-spotlight" className="text-[#3087ff] border-b-2 border-[#3087ff] pb-1 transition-all">
-              MJ Engineering
-            </a>
-            <a href="/#our-new-innovations" className="hover:underline transition-all">
-              Innovations
-            </a>
-            <a href="/#bison-box" className="hover:underline transition-all">
-              Curb Boxes
-            </a>
-            <a href="/#submittal-library" className="hover:underline transition-all">
-              Submittal Library
-            </a>
-          </nav>
-
-          {/* Right Action Icons & RFQ Counter */}
-          <div className="flex items-center gap-3">
-            <button
-              type="button"
-              onClick={() => setShowSubmittalModal(true)}
-              className="hidden sm:inline-flex items-center gap-1.5 px-3 py-2 bg-white text-[#3087ff] border-2 border-[#3087ff] text-xs font-black uppercase tracking-wider hover:bg-[#3087ff] hover:text-white transition-all shadow-xs cursor-pointer"
-            >
-              <Download className="w-3.5 h-3.5" />
-              <span>Submittals / CAD</span>
-            </button>
-
-            <button
-              type="button"
-              onClick={handleAddToRfq}
-              className="relative p-2.5 bg-[#3087ff] text-white hover:bg-[#1d62c4] transition-all shadow-md cursor-pointer border border-[#3087ff] flex items-center gap-2"
-              aria-label="View RFQ Cart"
-            >
-              <FileText className="w-5 h-5 text-white" />
-              <span className="text-xs font-black uppercase tracking-wider hidden sm:inline">RFQ Cart</span>
-              {rfqCount > 0 && (
-                <span className="bg-white text-[#3087ff] text-[11px] font-black w-5 h-5 flex items-center justify-center border border-[#3087ff] shadow-xs">
-                  {rfqCount}
-                </span>
-              )}
-            </button>
-          </div>
-        </div>
-      </header>
+      {/* Sticky Main Navigation Bar */}
+      <MainNavbar
+        onOpenLoginModal={() => setLoginModalOpen(true)}
+        onOpenRegisterModal={() => setRegisterModalOpen(true)}
+        onOpenYardModal={() => setYardModalOpen(true)}
+        onOpenSuperAdminModal={() => setSuperAdminModalOpen(true)}
+      />
 
       {/* Added to RFQ Toast Alert */}
       {addedToast && (
@@ -1074,102 +985,40 @@ export default function AquaSamplingStationProductPage() {
       </main>
 
       {/* ========================================================
-          13. AQUA INDUSTRIES FOOTER (#3087ff Blue with White Text)
+          13. ORIGINAL INDUSTRIAL FOOTER & DIRECTORY
       ======================================================== */}
-      <footer className="w-full mt-20 bg-[#3087ff] text-white border-t-4 border-white pt-16 pb-28 sm:pb-16 shadow-2xl">
-        <div className="w-full px-4 sm:px-6 lg:px-8 xl:px-12">
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-5 gap-10 pb-12 border-b-2 border-white/20">
-            {/* Col 1: Waterworks Products */}
-            <div>
-              <h4 className="text-xs font-black uppercase tracking-widest mb-4 bg-white text-[#3087ff] px-2 py-0.5 inline-block">
-                WATERWORKS PRODUCTS
-              </h4>
-              <ul className="space-y-2 text-xs font-bold text-white/90">
-                <li><a href="/" className="hover:underline">Sampling Stations</a></li>
-                <li><a href="/" className="hover:underline">Bison Curb Boxes</a></li>
-                <li><a href="/" className="hover:underline">Ductile Iron MJ Fittings</a></li>
-                <li><a href="/" className="hover:underline">Mechanical Joint Restraints</a></li>
-                <li><a href="/" className="hover:underline">Trench Grates &amp; Inlets</a></li>
-              </ul>
-            </div>
+      <IndustrialFooter
+        onOpenYardModal={() => setYardModalOpen(true)}
+        onOpenLoginModal={() => setLoginModalOpen(true)}
+      />
 
-            {/* Col 2: Engineering & Standards */}
-            <div>
-              <h4 className="text-xs font-black uppercase tracking-widest mb-4 bg-white text-[#3087ff] px-2 py-0.5 inline-block">
-                STANDARDS &amp; COMPLIANCE
-              </h4>
-              <ul className="space-y-2 text-xs font-bold text-white/90">
-                <li><a href="/" className="hover:underline">ANSI/NSF 61 Potable Water</a></li>
-                <li><a href="/" className="hover:underline">American Iron and Steel (AIS)</a></li>
-                <li><a href="/" className="hover:underline">AWWA C153 / C111 / C110</a></li>
-                <li><a href="/" className="hover:underline">ASTM A536 Ductile Iron Specs</a></li>
-                <li><a href="/" className="hover:underline">AASHTO H-20 Proof Load Testing</a></li>
-              </ul>
-            </div>
+      {/* Integrated Modals */}
+      <ClientPortalModal
+        isOpen={loginModalOpen}
+        onClose={() => setLoginModalOpen(false)}
+        onOpenRegisterModal={() => setRegisterModalOpen(true)}
+      />
 
-            {/* Col 3: Logistics & Yards */}
-            <div>
-              <h4 className="text-xs font-black uppercase tracking-widest mb-4 bg-white text-[#3087ff] px-2 py-0.5 inline-block">
-                DISTRIBUTION YARDS
-              </h4>
-              <ul className="space-y-2 text-xs font-bold text-white/90">
-                <li><a href="/" className="hover:underline">Melville, NY Distribution Hub</a></li>
-                <li><a href="/" className="hover:underline">Dallas, TX Logistics Yard</a></li>
-                <li><a href="/" className="hover:underline">Chicago, IL Transit Center</a></li>
-                <li><a href="/" className="hover:underline">Atlanta, GA Regional Hub</a></li>
-              </ul>
-            </div>
+      <AccountRegistrationModal
+        isOpen={registerModalOpen}
+        onClose={() => setRegisterModalOpen(false)}
+      />
 
-            {/* Col 4: Engineering Resources */}
-            <div>
-              <h4 className="text-xs font-black uppercase tracking-widest mb-4 bg-white text-[#3087ff] px-2 py-0.5 inline-block">
-                ENGINEERING TOOLS
-              </h4>
-              <ul className="space-y-2 text-xs font-bold text-white/90">
-                <li><a href="/" className="hover:underline">AutoCAD .DWG Library</a></li>
-                <li><a href="/" className="hover:underline">Submittal PDF Builder</a></li>
-                <li><a href="/" className="hover:underline">Thrust Restraint Calculator</a></li>
-                <li><a href="/" className="hover:underline">Certified MTR Request Portal</a></li>
-              </ul>
-            </div>
+      <SuperAdminApprovalModal
+        isOpen={superAdminModalOpen}
+        onClose={() => setSuperAdminModalOpen(false)}
+        onOpenContractorLogin={() => {
+          setSuperAdminModalOpen(false);
+          setLoginModalOpen(true);
+        }}
+      />
 
-            {/* Col 5: Rapid Quote & Contact */}
-            <div>
-              <h4 className="text-xs font-black uppercase tracking-widest mb-2 bg-white text-[#3087ff] px-2 py-0.5 inline-block">
-                RAPID RFQ SUBMISSION
-              </h4>
-              <p className="text-xs text-white/90 mb-3 font-medium">
-                Send plan sheets or pipe takeoffs for 2-hour bid turnaround
-              </p>
-              <form onSubmit={(e) => { e.preventDefault(); alert("Takeoff request received! An Aqua Industries civil sales engineer will contact you shortly."); }} className="space-y-2">
-                <input
-                  type="email"
-                  placeholder="Enter municipal / contractor email"
-                  required
-                  className="w-full px-3 py-2 bg-white text-[#3087ff] font-bold text-xs placeholder-[#3087ff]/60 border-2 border-white focus:outline-hidden"
-                />
-                <button
-                  type="submit"
-                  className="w-full py-2 bg-white text-[#3087ff] font-black uppercase tracking-wider text-xs border-2 border-white hover:bg-[#3087ff] hover:text-white transition-colors cursor-pointer"
-                >
-                  Request Project Takeoff
-                </button>
-              </form>
-            </div>
-          </div>
-
-          <div className="pt-8 flex flex-col sm:flex-row items-center justify-between text-xs text-white font-bold gap-4">
-            <p>&copy; {new Date().getFullYear()} Aqua Industries Waterworks Inc. All rights reserved. Registered Domestic Foundry Tooling.</p>
-            <div className="flex gap-4 uppercase tracking-wider text-[11px]">
-              <span>AWWA Member</span>
-              <span>&bull;</span>
-              <span>NRWA Partner</span>
-              <span>&bull;</span>
-              <span>Melville, NY Melt Deck</span>
-            </div>
-          </div>
-        </div>
-      </footer>
+      <YardSelectorModal
+        isOpen={yardModalOpen}
+        onClose={() => setYardModalOpen(false)}
+        selectedYardId={selectedYard.id}
+        onSelectYard={(yard) => setSelectedYard(yard)}
+      />
 
       {/* ========================================================
           14. PERSISTENT MOBILE STICKY BOTTOM ACTION BAR
