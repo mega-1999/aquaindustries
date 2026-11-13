@@ -187,8 +187,8 @@ export default function AquaSamplingStationProductPage() {
       {/* ========================================================
           1. TOP UTILITY ANNOUNCEMENT BAR (#3087ff Blue)
       ======================================================== */}
-      <aside aria-label="Utility announcement" className="bg-[#3087ff] text-white text-xs py-2.5 px-4 sticky top-0 z-50 border-b border-white/20 shadow-sm">
-        <div className="max-w-7xl mx-auto flex items-center justify-between">
+      <aside aria-label="Utility announcement" className="w-full bg-[#3087ff] text-white text-xs py-2.5 px-4 sm:px-6 lg:px-8 xl:px-12 sticky top-0 z-50 border-b border-white/20 shadow-sm">
+        <div className="w-full flex items-center justify-between">
           <div className="hidden lg:flex items-center gap-4 text-white text-[11px] font-bold">
             <span className="flex items-center gap-1.5">
               <Award className="w-3.5 h-3.5 text-white" />
@@ -221,8 +221,8 @@ export default function AquaSamplingStationProductPage() {
       {/* ========================================================
           2. AQUA INDUSTRIES MAIN NAVBAR (#ffffff White with #3087ff Border)
       ======================================================== */}
-      <header className="border-b-4 border-[#3087ff] bg-white sticky top-[37px] z-40 transition-shadow shadow-md">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-20 sm:h-22 flex items-center justify-between">
+      <header className="w-full border-b-4 border-[#3087ff] bg-white sticky top-[37px] z-40 transition-shadow shadow-md">
+        <div className="w-full px-4 sm:px-6 lg:px-8 xl:px-12 h-20 sm:h-22 flex items-center justify-between">
           {/* Brand Logo & Waterworks Title */}
           <div className="flex items-center gap-3">
             <a href="/" className="flex items-center gap-3 group">
@@ -304,9 +304,9 @@ export default function AquaSamplingStationProductPage() {
       {/* ========================================================
           3. MAIN PRODUCT SHOWCASE (Above The Fold Workbench)
       ======================================================== */}
-      <main className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8 sm:py-12">
+      <main className="w-full px-4 sm:px-6 lg:px-8 xl:px-12 py-8 sm:py-12">
         {/* Breadcrumb Path */}
-        <nav aria-label="Breadcrumb" className="text-xs text-[#3087ff] font-bold mb-6 flex items-center gap-2">
+        <nav aria-label="Breadcrumb" className="w-full text-xs text-[#3087ff] font-bold mb-6 flex items-center gap-2">
           <a href="/" className="hover:underline">Home</a>
           <span>/</span>
           <a href="/#catalog" className="hover:underline">Waterworks Catalog</a>
@@ -316,7 +316,7 @@ export default function AquaSamplingStationProductPage() {
           </span>
         </nav>
 
-        <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-14 items-start">
+        <div className="w-full grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-12 xl:gap-16 items-start">
           {/* ========================================================
               LEFT COLUMN: PRODUCT GALLERY (7 Cols)
           ======================================================== */}
@@ -637,31 +637,56 @@ export default function AquaSamplingStationProductPage() {
         {/* ========================================================
             4. EDITORIAL STORY BANNER (#3087ff Blue Card)
         ======================================================== */}
-        <section className="mt-16 sm:mt-24 bg-[#3087ff] text-white p-8 sm:p-14 shadow-2xl border-4 border-[#3087ff] relative overflow-hidden">
-          <div className="max-w-4xl">
-            <span className="text-xs font-black uppercase tracking-widest bg-white text-[#3087ff] px-3.5 py-1.5 border border-white inline-block mb-4 shadow-sm">
-              AMERICAN WATER INFRASTRUCTURE &bull; EPA LCRR MANDATE
-            </span>
-            <h2 className="text-2xl sm:text-4xl lg:text-5xl font-black uppercase tracking-tight leading-tight mb-4">
-              Why Municipal Water Authorities &amp; Civil Engineers Specify Aqua Industries Sampling Stations
-            </h2>
-            <p className="text-sm sm:text-base text-white/95 leading-relaxed font-medium">
-              Commercial fire hydrants, hose bibbs, and building taps harbor stagnant water and biofilm in threaded nozzles,
-              frequently triggering false-positive coliform tests that result in unnecessary EPA boil-water advisories.
-              Aqua Industries sampling stations provide an unthreaded, dedicated lead-free brass waterway directly tapped into
-              the municipal watermain, delivering true representative water quality samples in any climate.
-            </p>
+        <section className="w-full mt-16 sm:mt-24 bg-[#3087ff] text-white p-8 sm:p-12 xl:p-14 shadow-2xl border-4 border-[#3087ff] relative overflow-hidden">
+          <div className="w-full grid grid-cols-1 lg:grid-cols-12 gap-8 xl:gap-12 items-center">
+            <div className="lg:col-span-8 space-y-4">
+              <span className="text-xs font-black uppercase tracking-widest bg-white text-[#3087ff] px-3.5 py-1.5 border border-white inline-block shadow-sm">
+                AMERICAN WATER INFRASTRUCTURE &bull; EPA LCRR MANDATE
+              </span>
+              <h2 className="text-2xl sm:text-4xl lg:text-5xl font-black uppercase tracking-tight leading-tight">
+                Why Municipal Water Authorities &amp; Civil Engineers Specify Aqua Industries Sampling Stations
+              </h2>
+              <p className="text-sm sm:text-base text-white/95 leading-relaxed font-medium">
+                Commercial fire hydrants, hose bibbs, and building taps harbor stagnant water and biofilm in threaded nozzles,
+                frequently triggering false-positive coliform tests that result in unnecessary EPA boil-water advisories.
+                Aqua Industries sampling stations provide an unthreaded, dedicated lead-free brass waterway directly tapped into
+                the municipal watermain, delivering true representative water quality samples in any climate.
+              </p>
+            </div>
+            <div className="lg:col-span-4 grid grid-cols-2 gap-4">
+              <div className="border-2 border-white bg-white/10 backdrop-blur-xs p-4 text-center">
+                <span className="block text-2xl sm:text-3xl font-black text-white">0%</span>
+                <span className="text-[11px] font-bold uppercase tracking-wider text-white/90">False Positives</span>
+              </div>
+              <div className="border-2 border-white bg-white/10 backdrop-blur-xs p-4 text-center">
+                <span className="block text-2xl sm:text-3xl font-black text-white">-20°F</span>
+                <span className="text-[11px] font-bold uppercase tracking-wider text-white/90">Freeze Rating</span>
+              </div>
+              <div className="border-2 border-white bg-white/10 backdrop-blur-xs p-4 text-center">
+                <span className="block text-2xl sm:text-3xl font-black text-white">100%</span>
+                <span className="text-[11px] font-bold uppercase tracking-wider text-white/90">AIS Compliant</span>
+              </div>
+              <div className="border-2 border-white bg-white/10 backdrop-blur-xs p-4 text-center">
+                <span className="block text-2xl sm:text-3xl font-black text-white">300 PSI</span>
+                <span className="text-[11px] font-bold uppercase tracking-wider text-white/90">Working Test</span>
+              </div>
+            </div>
           </div>
         </section>
 
         {/* ========================================================
             5. FRUSTRATION CALLOUT CARD (White with #3087ff Border)
         ======================================================== */}
-        <section className="mt-10 bg-white border-4 border-[#3087ff] p-6 sm:p-10 shadow-lg">
-          <h3 className="text-xl sm:text-2xl font-black text-[#3087ff] uppercase tracking-tight mb-6">
-            Frustrated with False Contamination Readings &amp; Frozen Winter Taps?
-          </h3>
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-6 text-[#3087ff]">
+        <section className="w-full mt-10 bg-white border-4 border-[#3087ff] p-6 sm:p-10 shadow-lg">
+          <div className="w-full flex flex-col md:flex-row md:items-center justify-between gap-4 mb-6 pb-4 border-b-2 border-[#3087ff]">
+            <h3 className="text-xl sm:text-2xl font-black text-[#3087ff] uppercase tracking-tight">
+              Frustrated with False Contamination Readings &amp; Frozen Winter Taps?
+            </h3>
+            <span className="text-xs font-black uppercase bg-[#3087ff] text-white px-3 py-1 self-start md:self-auto border border-[#3087ff]">
+              THE AQUA INDUSTRIES SOLUTION
+            </span>
+          </div>
+          <div className="w-full grid grid-cols-1 md:grid-cols-3 gap-6 text-[#3087ff]">
             <div className="space-y-2 border-l-4 border-[#3087ff] pl-3">
               <h4 className="font-black text-sm uppercase tracking-wide">
                 1. False-Positive Bacterial Readings:
@@ -695,9 +720,9 @@ export default function AquaSamplingStationProductPage() {
         {/* ========================================================
             6. FEATURE DEEP DIVES (3 Detailed Feature Blocks)
         ======================================================== */}
-        <section className="mt-16 sm:mt-24 space-y-16">
+        <section className="w-full mt-16 sm:mt-24 space-y-16">
           {/* Feature 01: Lead-Free Potable Waterway */}
-          <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 items-center">
+          <div className="w-full grid grid-cols-1 lg:grid-cols-12 gap-8 xl:gap-12 items-center">
             <div className="lg:col-span-6 space-y-4">
               <span className="text-xs font-black uppercase tracking-widest bg-[#3087ff] text-white px-3 py-1 border border-[#3087ff]">
                 FEATURE 01 &bull; SANITARY WATERWAY
@@ -725,22 +750,22 @@ export default function AquaSamplingStationProductPage() {
                 </li>
               </ul>
             </div>
-            <div className="lg:col-span-6 border-4 border-[#3087ff] p-6 shadow-xl bg-white flex items-center justify-center">
+            <div className="lg:col-span-6 border-4 border-[#3087ff] p-6 sm:p-10 shadow-xl bg-white flex items-center justify-center">
               <img
                 src="/images/our-images/sampling-station.png"
                 alt="Sanitary Potable Waterway"
-                className="max-h-[380px] object-contain filter drop-shadow-xl"
+                className="max-h-[420px] object-contain filter drop-shadow-xl"
               />
             </div>
           </div>
 
           {/* Feature 02: Thermal Frost Core */}
-          <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 items-center lg:flex-row-reverse">
-            <div className="lg:col-span-6 border-4 border-[#3087ff] p-6 shadow-xl bg-white flex items-center justify-center lg:order-2">
+          <div className="w-full grid grid-cols-1 lg:grid-cols-12 gap-8 xl:gap-12 items-center lg:flex-row-reverse">
+            <div className="lg:col-span-6 border-4 border-[#3087ff] p-6 sm:p-10 shadow-xl bg-white flex items-center justify-center lg:order-2">
               <img
                 src="/images/SAMPLING-STATION/Sampling station with base.png"
                 alt="Thermal Frost Core Enclosure"
-                className="max-h-[380px] object-contain filter drop-shadow-xl"
+                className="max-h-[420px] object-contain filter drop-shadow-xl"
               />
             </div>
             <div className="lg:col-span-6 space-y-4 lg:order-1">
@@ -773,7 +798,7 @@ export default function AquaSamplingStationProductPage() {
           </div>
 
           {/* Feature 03: Vandal-Proof Shroud */}
-          <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 items-center">
+          <div className="w-full grid grid-cols-1 lg:grid-cols-12 gap-8 xl:gap-12 items-center">
             <div className="lg:col-span-6 space-y-4">
               <span className="text-xs font-black uppercase tracking-widest bg-[#3087ff] text-white px-3 py-1 border border-[#3087ff]">
                 FEATURE 03 &bull; SECURITY ENCLOSURE
@@ -800,11 +825,11 @@ export default function AquaSamplingStationProductPage() {
                 </li>
               </ul>
             </div>
-            <div className="lg:col-span-6 border-4 border-[#3087ff] p-6 shadow-xl bg-white flex items-center justify-center">
+            <div className="lg:col-span-6 border-4 border-[#3087ff] p-6 sm:p-10 shadow-xl bg-white flex items-center justify-center">
               <img
                 src="/images/our-images/Sampling Station H20.696.png"
                 alt="Ductile Iron Protective Housing"
-                className="max-h-[380px] object-contain filter drop-shadow-xl"
+                className="max-h-[420px] object-contain filter drop-shadow-xl"
               />
             </div>
           </div>
@@ -813,11 +838,11 @@ export default function AquaSamplingStationProductPage() {
         {/* ========================================================
             7. MUNICIPAL APPLICATION PILLS
         ======================================================== */}
-        <section className="mt-14 py-8 border-y-2 border-[#3087ff] text-center">
+        <section className="w-full mt-14 py-8 border-y-2 border-[#3087ff] text-center">
           <p className="text-xs font-black uppercase tracking-widest text-[#3087ff] mb-4">
             APPROVED FOR MUNICIPAL &amp; INDUSTRIAL WATER DISTRIBUTION NETWORKS
           </p>
-          <div className="flex flex-wrap items-center justify-center gap-3">
+          <div className="w-full flex flex-wrap items-center justify-center gap-3">
             <span className="px-4 py-2 bg-[#3087ff] text-white text-xs font-black uppercase tracking-wider border border-[#3087ff] shadow-sm">
               💧 EPA Lead &amp; Copper Rule (LCRR) Sampling
             </span>
@@ -836,8 +861,8 @@ export default function AquaSamplingStationProductPage() {
         {/* ========================================================
             8. ENGINEERING SPECIFICATIONS & BURY SCHEDULE TABLE
         ======================================================== */}
-        <section id="engineering-specs" className="mt-16 sm:mt-24">
-          <div className="text-center max-w-2xl mx-auto mb-8">
+        <section id="engineering-specs" className="w-full mt-16 sm:mt-24">
+          <div className="text-center w-full max-w-3xl mx-auto mb-8">
             <span className="text-xs font-black uppercase tracking-widest bg-[#3087ff] text-white px-3 py-1 border border-[#3087ff]">
               FOUNDRY SPECIFICATIONS
             </span>
@@ -849,45 +874,45 @@ export default function AquaSamplingStationProductPage() {
             </p>
           </div>
 
-          <div className="max-w-5xl mx-auto border-4 border-[#3087ff] shadow-xl overflow-hidden bg-white">
+          <div className="w-full border-4 border-[#3087ff] shadow-xl overflow-hidden bg-white">
             <div className="overflow-x-auto">
               <table className="w-full text-left border-collapse text-xs sm:text-sm">
                 <thead>
                   <tr className="bg-[#3087ff] text-white uppercase text-[11px] font-black tracking-wider border-b-2 border-white">
-                    <th className="py-3.5 px-4">Bury Depth</th>
-                    <th className="py-3.5 px-4">Inlet Connection</th>
-                    <th className="py-3.5 px-4">Max Pressure</th>
-                    <th className="py-3.5 px-4">Rated Flow</th>
-                    <th className="py-3.5 px-4">Total Weight</th>
-                    <th className="py-3.5 px-4">Standards</th>
+                    <th className="py-4 px-6">Bury Depth</th>
+                    <th className="py-4 px-6">Inlet Connection</th>
+                    <th className="py-4 px-6">Max Pressure</th>
+                    <th className="py-4 px-6">Rated Flow</th>
+                    <th className="py-4 px-6">Total Weight</th>
+                    <th className="py-4 px-6">Standards</th>
                   </tr>
                 </thead>
                 <tbody className="divide-y-2 divide-[#3087ff]/20 bg-white text-[#3087ff]">
                   {PRODUCT_DATA.engineeringTable.map((row, idx) => (
                     <tr
                       key={row.bury}
-                      className={idx % 2 === 0 ? "bg-white" : "bg-blue-50/40"}
+                      className={idx % 2 === 0 ? "bg-white hover:bg-blue-50/30 transition-colors" : "bg-blue-50/40 hover:bg-blue-50/60 transition-colors"}
                     >
-                      <td className="py-3 px-4 font-black">{row.bury}</td>
-                      <td className="py-3 px-4 font-medium">{row.inlet}</td>
-                      <td className="py-3 px-4 font-bold">{row.pressure}</td>
-                      <td className="py-3 px-4 font-medium">{row.flowRate}</td>
-                      <td className="py-3 px-4 font-black">{row.weight}</td>
-                      <td className="py-3 px-4 font-mono text-[11px] font-bold">{row.standard}</td>
+                      <td className="py-3.5 px-6 font-black">{row.bury}</td>
+                      <td className="py-3.5 px-6 font-medium">{row.inlet}</td>
+                      <td className="py-3.5 px-6 font-bold">{row.pressure}</td>
+                      <td className="py-3.5 px-6 font-medium">{row.flowRate}</td>
+                      <td className="py-3.5 px-6 font-black">{row.weight}</td>
+                      <td className="py-3.5 px-6 font-mono text-[11px] font-bold">{row.standard}</td>
                     </tr>
                   ))}
                 </tbody>
               </table>
             </div>
 
-            <div className="bg-white border-t-2 border-[#3087ff] p-4 text-xs text-[#3087ff] font-bold flex items-center justify-between">
+            <div className="bg-white border-t-2 border-[#3087ff] p-4 sm:p-5 text-xs text-[#3087ff] font-bold flex flex-col sm:flex-row items-center justify-between gap-3">
               <span>
                 💡 <strong>AIS Compliance Note:</strong> Every sampling station is poured in American foundries and furnished with certified Mill Test Reports (MTRs) and permanent heat numbers.
               </span>
               <button
                 type="button"
                 onClick={() => setShowSubmittalModal(true)}
-                className="underline uppercase font-black cursor-pointer hover:text-[#1d62c4] shrink-0 ml-4"
+                className="underline uppercase font-black cursor-pointer hover:text-[#1d62c4] shrink-0"
               >
                 Download Submittal Packet (.PDF)
               </button>
@@ -898,24 +923,26 @@ export default function AquaSamplingStationProductPage() {
         {/* ========================================================
             9. METALLURGY & MATERIAL STANDARDS BLOCK
         ======================================================== */}
-        <section className="mt-10 max-w-5xl mx-auto bg-white border-4 border-[#3087ff] p-6 sm:p-8 text-[#3087ff] shadow-md">
-          <h4 className="text-base font-black uppercase tracking-wide mb-2">
-            Metallurgy &amp; Corrosion Resistance Standards
-          </h4>
-          <p className="text-xs sm:text-sm text-[#3087ff] leading-relaxed mb-3 font-medium">
-            <strong>Protective Enclosure:</strong> Heavy-wall ASTM A536 Grade 65-45-12 Ductile Iron with 65,000 PSI tensile strength and 12% elongation.
-            <strong> Waterway Core:</strong> Lead-Free Cast Bronze per ASTM B584 (Alloy C89833 / UNS C89833) with zero lead content exceeding ANSI/NSF 372.
-          </p>
-          <p className="text-xs text-[#3087ff] leading-relaxed font-bold">
-            <strong>Protective Finish:</strong> High-build electrostatic blue epoxy coating per AWWA C116 standards, holiday-free tested to resist acidic burial soils, ground moisture, and UV degradation.
-          </p>
+        <section className="w-full mt-10 bg-white border-4 border-[#3087ff] p-6 sm:p-8 text-[#3087ff] shadow-md">
+          <div className="w-full">
+            <h4 className="text-base font-black uppercase tracking-wide mb-2">
+              Metallurgy &amp; Corrosion Resistance Standards
+            </h4>
+            <p className="text-xs sm:text-sm text-[#3087ff] leading-relaxed mb-3 font-medium">
+              <strong>Protective Enclosure:</strong> Heavy-wall ASTM A536 Grade 65-45-12 Ductile Iron with 65,000 PSI tensile strength and 12% elongation.
+              <strong> Waterway Core:</strong> Lead-Free Cast Bronze per ASTM B584 (Alloy C89833 / UNS C89833) with zero lead content exceeding ANSI/NSF 372.
+            </p>
+            <p className="text-xs text-[#3087ff] leading-relaxed font-bold">
+              <strong>Protective Finish:</strong> High-build electrostatic blue epoxy coating per AWWA C116 standards, holiday-free tested to resist acidic burial soils, ground moisture, and UV degradation.
+            </p>
+          </div>
         </section>
 
         {/* ========================================================
             10. VERIFIED WATER AUTHORITY TESTIMONIALS
         ======================================================== */}
-        <section className="mt-16 sm:mt-24">
-          <div className="text-center max-w-2xl mx-auto mb-10">
+        <section className="w-full mt-16 sm:mt-24">
+          <div className="text-center w-full max-w-3xl mx-auto mb-10">
             <span className="text-xs font-black uppercase tracking-widest bg-[#3087ff] text-white px-3 py-1 border border-[#3087ff]">
               MUNICIPAL PROOF
             </span>
@@ -924,8 +951,8 @@ export default function AquaSamplingStationProductPage() {
             </h3>
           </div>
 
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-6 max-w-5xl mx-auto">
-            <div className="bg-white border-4 border-[#3087ff] p-6 shadow-md flex flex-col justify-between text-[#3087ff]">
+          <div className="w-full grid grid-cols-1 md:grid-cols-2 gap-6">
+            <div className="bg-white border-4 border-[#3087ff] p-6 sm:p-8 shadow-md flex flex-col justify-between text-[#3087ff]">
               <div>
                 <div className="flex items-center gap-2 mb-3">
                   <div className="flex text-[#3087ff]">
@@ -946,7 +973,7 @@ export default function AquaSamplingStationProductPage() {
               </p>
             </div>
 
-            <div className="bg-white border-4 border-[#3087ff] p-6 shadow-md flex flex-col justify-between text-[#3087ff]">
+            <div className="bg-white border-4 border-[#3087ff] p-6 sm:p-8 shadow-md flex flex-col justify-between text-[#3087ff]">
               <div>
                 <div className="flex items-center gap-2 mb-3">
                   <div className="flex text-[#3087ff]">
@@ -972,8 +999,8 @@ export default function AquaSamplingStationProductPage() {
         {/* ========================================================
             11. AUTHENTIC COMPANY INFRASTRUCTURE PRODUCT GALLERY
         ======================================================== */}
-        <section className="mt-16 sm:mt-24">
-          <div className="text-center mb-8">
+        <section className="w-full mt-16 sm:mt-24">
+          <div className="text-center w-full max-w-3xl mx-auto mb-8">
             <span className="text-xs font-black uppercase tracking-widest bg-[#3087ff] text-white px-3 py-1 border border-[#3087ff]">
               FOUNDRY LINEUP
             </span>
@@ -985,7 +1012,7 @@ export default function AquaSamplingStationProductPage() {
             </p>
           </div>
 
-          <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-6 gap-3">
+          <div className="w-full grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-6 gap-4">
             {PRODUCT_DATA.jobsiteGallery.map((item, idx) => (
               <div
                 key={idx}
@@ -1014,8 +1041,8 @@ export default function AquaSamplingStationProductPage() {
         {/* ========================================================
             12. HIGH-CONVERTING CLOSING BIDDING CTA BANNER
         ======================================================== */}
-        <section className="mt-16 sm:mt-24 bg-[#3087ff] text-white p-8 sm:p-14 text-center shadow-2xl border-4 border-[#3087ff] relative overflow-hidden">
-          <div className="max-w-3xl mx-auto space-y-4">
+        <section className="w-full mt-16 sm:mt-24 bg-[#3087ff] text-white p-8 sm:p-14 text-center shadow-2xl border-4 border-[#3087ff] relative overflow-hidden">
+          <div className="w-full max-w-4xl mx-auto space-y-4">
             <h3 className="text-2xl sm:text-4xl font-black uppercase tracking-tight">
               Specify Aqua Industries for Your Municipal Water Utility Project
             </h3>
@@ -1049,8 +1076,8 @@ export default function AquaSamplingStationProductPage() {
       {/* ========================================================
           13. AQUA INDUSTRIES FOOTER (#3087ff Blue with White Text)
       ======================================================== */}
-      <footer className="mt-20 bg-[#3087ff] text-white border-t-4 border-white pt-16 pb-28 sm:pb-16 shadow-2xl">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <footer className="w-full mt-20 bg-[#3087ff] text-white border-t-4 border-white pt-16 pb-28 sm:pb-16 shadow-2xl">
+        <div className="w-full px-4 sm:px-6 lg:px-8 xl:px-12">
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-5 gap-10 pb-12 border-b-2 border-white/20">
             {/* Col 1: Waterworks Products */}
             <div>
