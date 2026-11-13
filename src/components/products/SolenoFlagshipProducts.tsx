@@ -267,11 +267,11 @@ export const SolenoFlagshipProducts: React.FC<SolenoFlagshipProductsProps> = ({
 
         {/* 4-Column Compact Flagship Card Grid (Initially 8, Expands to All 10) */}
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-5 sm:gap-6 items-stretch">
-          {(showAll ? flagshipItems : flagshipItems.slice(0, 8)).map((item) => {
+          {(showAll ? flagshipItems : flagshipItems.slice(0, 8)).map((item, idx) => {
             const isAdded = addedIds[item.product.id];
             return (
               <div
-                key={item.product.id}
+                key={`${item.product.id}-${item.label}-${idx}`}
                 className="bg-white border-4 border-[#3087ff] rounded-none p-4 sm:p-5 flex flex-col justify-between shadow-2xl hover:border-white transition-all duration-300 group hover:-translate-y-1 relative text-[#3087ff] h-full min-w-0 overflow-hidden"
               >
                 <div>
