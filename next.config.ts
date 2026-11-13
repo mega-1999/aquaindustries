@@ -9,6 +9,15 @@ const nextConfig: NextConfig = {
   generateBuildId: async () => {
     return `aqua-fresh-release-${Date.now()}`;
   },
+  async redirects() {
+    return [
+      {
+        source: "/products/mens-waterproof-casual-outdoor-jacket",
+        destination: "/products/water-sampling-station",
+        permanent: false,
+      },
+    ];
+  },
   async headers() {
     return [
       {
