@@ -202,12 +202,12 @@ const PRODUCT_DATA = {
     { bury: '8.0 FT (96")', inlet: '1" NPT (or MJ)', pressure: "300 PSI Working", flowRate: "35 GPM", weight: "202 LBS", standard: "NSF 61 / ASTM A536" },
   ],
   jobsiteGallery: [
-    { img: "/images/SAMPLING-STATION/Sampling Station H20.695.png", title: "Model 695 Standard", tag: "EPA Potable Main" },
-    { img: "/images/SAMPLING-STATION/Sampling Station with basin H20.717.png", title: "Model 717 Catch Basin", tag: "Integrated Sump" },
-    { img: "/images/SAMPLING-STATION/Sampling station with basin H20 black color .737.png", title: "Model 737 Black Coated", tag: "Industrial Spec" },
-    { img: "/images/SAMPLING-STATION/Sampling Station red Color  H20.725.png", title: "Model 725-RED Safety", tag: "DOT Right-of-Way" },
-    { img: "/images/SAMPLING-STATION/88 cut station.7.png", title: "Model 88-CUT Sectional", tag: "Brass Core Cutaway" },
-    { img: "/images/SAMPLING-STATION/WhatsApp Image 2026-05-07 at 10.19.08 AM.jpeg", title: "Municipal Jobsite Direct", tag: "Field Installation" },
+    { img: "/images/SAMPLING-STATION/Sampling Station H20.695.png", title: "Model 695 Standard Base", tag: "EPA Potable Waterway" },
+    { img: "/images/SAMPLING-STATION/Sampling Station H20.696.png", title: "Model 696 -20°F Frost Shield", tag: "Thermal Insulation" },
+    { img: "/images/SAMPLING-STATION/Sampling Station with basin H20.717.png", title: "Model 717 Sump Basin", tag: "Catchment Drainage" },
+    { img: "/images/SAMPLING-STATION/Sampling station with basin H20 black color .737.png", title: "Model 737 Black Coated", tag: "Industrial Header" },
+    { img: "/images/SAMPLING-STATION/Sampling Station red Color  H20.725.png", title: "Model 725-RED Safety", tag: "High-Visibility DOT" },
+    { img: "/images/SAMPLING-STATION/88 cut station.7.png", title: "Model 88-CUT Cutaway", tag: "Brass Core Review" },
   ],
 };
 
@@ -808,20 +808,23 @@ export default function AquaSamplingStationProductPage() {
         ======================================================== */}
         <section className="w-full mt-14 py-8 border-y-2 border-[#3087ff] text-center">
           <p className="text-xs font-black uppercase tracking-widest text-[#3087ff] mb-4">
-            APPROVED FOR MUNICIPAL &amp; INDUSTRIAL WATER DISTRIBUTION NETWORKS
+            APPROVED FOR MUNICIPAL &amp; POTABLE WATER DISTRIBUTION NETWORKS
           </p>
           <div className="w-full flex flex-wrap items-center justify-center gap-3">
             <span className="px-4 py-2 bg-[#3087ff] text-white text-xs font-black uppercase tracking-wider border border-[#3087ff] shadow-sm">
               💧 EPA Lead &amp; Copper Rule (LCRR) Sampling
             </span>
             <span className="px-4 py-2 bg-white text-[#3087ff] text-xs font-black uppercase tracking-wider border-2 border-[#3087ff] shadow-sm">
-              🏙️ Municipal Potable Watermains
+              🏙️ Municipal Potable Watermain Monitoring Stations
             </span>
             <span className="px-4 py-2 bg-[#3087ff] text-white text-xs font-black uppercase tracking-wider border border-[#3087ff] shadow-sm">
-              🏥 Hospital &amp; School Dedicated Service Feeders
+              🏥 Hospital &amp; School Dedicated Health Sampling Risers
             </span>
             <span className="px-4 py-2 bg-white text-[#3087ff] text-xs font-black uppercase tracking-wider border-2 border-[#3087ff] shadow-sm">
-              🏭 Industrial Treatment &amp; Backflow Monitoring
+              🏭 Industrial Backflow &amp; Water Quality Test Ports
+            </span>
+            <span className="px-4 py-2 bg-[#3087ff] text-white text-xs font-black uppercase tracking-wider border border-[#3087ff] shadow-sm">
+              ❄️ Cold-Climate Deep Frost Geothermal Sampling Points
             </span>
           </div>
         </section>
@@ -965,18 +968,18 @@ export default function AquaSamplingStationProductPage() {
         </section>
 
         {/* ========================================================
-            11. AUTHENTIC COMPANY INFRASTRUCTURE PRODUCT GALLERY
+            11. AUTHENTIC COMPANY WATER SAMPLING STATION LINEUP
         ======================================================== */}
         <section className="w-full mt-16 sm:mt-24">
           <div className="text-center w-full max-w-3xl mx-auto mb-8">
             <span className="text-xs font-black uppercase tracking-widest bg-[#3087ff] text-white px-3 py-1 border border-[#3087ff]">
-              FOUNDRY LINEUP
+              SERIES LINEUP
             </span>
             <h3 className="text-xl sm:text-3xl font-black uppercase text-[#3087ff] mt-2">
-              Authentic Aqua Industries Infrastructure Line
+              Aqua Industries Water Sampling Station Series
             </h3>
             <p className="text-xs sm:text-sm text-[#3087ff] font-medium mt-1">
-              American foundry castings engineered for municipal waterworks, highway drainage, and pipeline utility networks
+              Complete range of certified sanitary water sampling stations, freeze-proof subterranean risers, and drainage basin configurations
             </p>
           </div>
 
@@ -1012,10 +1015,10 @@ export default function AquaSamplingStationProductPage() {
         <section className="w-full mt-16 sm:mt-24 bg-[#3087ff] text-white p-8 sm:p-14 text-center shadow-2xl border-4 border-[#3087ff] relative overflow-hidden">
           <div className="w-full max-w-4xl mx-auto space-y-4">
             <h3 className="text-2xl sm:text-4xl font-black uppercase tracking-tight">
-              Specify Aqua Industries for Your Municipal Water Utility Project
+              Specify Aqua Industries Water Sampling Stations for Your Municipal Project
             </h3>
             <p className="text-sm text-white/95 leading-relaxed font-medium">
-              Submit your project drawings, takeoff quantities, or bid specifications directly to our engineering team for guaranteed project pricing and submittal verification.
+              Submit your station takeoff quantities, trench bury depths, and municipal specs directly to our civil engineering team for 2-hour submittal verification.
             </p>
 
             <div className="pt-4 flex flex-col sm:flex-row items-center justify-center gap-3">
